@@ -1,0 +1,17 @@
+# Build system
+bin
+build
+gmon.out
+*.stats
+Thumbs.db
+.DS_Store
+
+# VS Code
+.vscode/ipch
+
+# Project specific
+#
+
+info.md
+*.rar
+.out/
