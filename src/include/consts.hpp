@@ -12,4 +12,8 @@
 #ifndef __CONST_HPP__
 #define __CONST_HPP__
 
-#endif
+#define M_PI 3.14 //16
+#define WINDOW_WIDTH 800
+#define WINDOW_HEIGHT 600
+
+#endif // __CONST_HPP__
