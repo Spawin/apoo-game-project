@@ -1,4 +1,5 @@
 # Liste des classes
+- GameObject
 - Personage
   -
   >life
