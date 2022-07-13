@@ -8,6 +8,13 @@ class GameOject
 {
 public:
 	GameOject();
+	/**
+	 * @brief Construct a new Game Oject object
+	 *
+	 * @param imageSpritePath le chemin de l'image de l'objet
+	 */
+	GameOject(std::string_view const& imageSpritePath);
+
 	virtual ~GameOject();
 
 	/**
@@ -16,12 +23,8 @@ public:
 	 * @param window
 	 */
 	virtual void show(sf::RenderWindow& window) const;
-	/**
-	 * @brief Sera appelé à chaque frame...
-	 *
-	 * @param time
-	 */
-	virtual void update(float time);
+	//Sera appelé à chaque frame...
+	virtual void update() = 0;
 	/**
 	 * ! Depracted
 	 *
@@ -30,6 +33,16 @@ public:
 	 * @param event
 	 */
 	// void sendEvent(sf::Event const& event);
+
+	/**
+	 * @brief Set the Time object
+	 *
+	 * @param t
+	 */
+	inline static void SetTime(float t)
+	{
+		m_time = t;
+	};
 
 protected:
 	// REVIEW -
@@ -40,8 +53,9 @@ protected:
 	Position m_position {};
 	// Vitesse de déplacement actuelle
 	MyVector m_speed { 0.f, 0.f };
+
 	// Temps pour calculer la vitesse de déplacement
-	float m_time { 0.f };
+	static float m_time;
 
 	// sf::Vector2f m_speed2 { 0.f, 0.f };
 

@@ -8,13 +8,10 @@ class Personage : public GameOject
 {
 public:
 	Personage();
+	Personage(std::string_view const& imageSpritePath);
 	// virtual ~Personage();
-	/**
-	 * @brief Sera appelé à chaque frame...
-	 *
-	 * @param time
-	 */
-	virtual void update(float time);
+	//Sera appelé à chaque frame...
+	virtual void update();
 
 protected:
 	// La quantité de vie du personnage

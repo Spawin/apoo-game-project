@@ -3,21 +3,16 @@
 
 Personage::Personage()
 {
-	if (!m_texture.loadFromFile("content/sfml.png"))
-	{
-		std::cerr << "Image introuvable" << std::endl;
-	}
-	m_body.setTexture(m_texture);
-	// m_body.setColor();
-	// On place le personnage au milieu de l'
-	m_body.setOrigin(m_body.getLocalBounds().width / 2, m_body.getLocalBounds().height / 2);
-	m_body.setPosition(m_position.getX(), m_position.getY());
 }
 
-void Personage::update(float time)
+Personage::Personage(std::string_view const& imageSpritePath) :
+	GameOject(imageSpritePath)
+{
+}
+
+void Personage::update()
 {
 	updatePosition();
-	m_time = time;
 }
 
 void Personage::updatePosition()

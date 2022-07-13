@@ -49,7 +49,10 @@ int main()
 			// spawin.sendEvent(event);
 		}
 
-		spawin.update(chrono.restart().asSeconds());
+		// initialisation du time du game object
+		GameOject::SetTime(chrono.restart().asSeconds());
+
+		spawin.update();
 
 		// Clear screen
 		window.clear();

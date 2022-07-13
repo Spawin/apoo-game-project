@@ -1,18 +1,40 @@
 #include "include/GameOject.hpp"
 
+float GameOject::m_time = 0.f;
+
 GameOject::GameOject()
-{}
+{
+	//* Chargement d'une image par defaut
+	if (!m_texture.loadFromFile("content/sfml.png"))
+	{
+		std::cerr << "Image < content/sfml.png > introuvable" << std::endl;
+	}
+	m_body.setTexture(m_texture);
+
+	m_body.setOrigin(m_body.getLocalBounds().width / 2, m_body.getLocalBounds().height / 2);
+	m_body.setPosition(m_position.getX(), m_position.getY());
+}
+
+GameOject::GameOject(std::string_view const& imageSpritePath)
+{
+
+	if (!m_texture.loadFromFile(imageSpritePath.data()))
+	{
+		std::cerr << "Image < " << imageSpritePath << " > introuvable" << std::endl;
+	}
+	m_body.setTexture(m_texture);
+	// m_body.setColor();
+	// On définit son centre de "gravité"
+	m_body.setOrigin(m_body.getLocalBounds().width / 2, m_body.getLocalBounds().height / 2);
+	m_body.setPosition(m_position.getX(), m_position.getY());
+}
+
 GameOject::~GameOject()
 {}
 
 void GameOject::show(sf::RenderWindow& window) const
 {
 	window.draw(m_body);
-}
-
-void GameOject::update(float time)
-{
-	m_time = time;
 }
 
 // void GameOject::sendEvent(sf::Event const& event)
