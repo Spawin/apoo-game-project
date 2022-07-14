@@ -31,6 +31,7 @@ GameObject::GameObject(std::string_view const& imageSpritePath)
 		std::cerr << "Image < " << imageSpritePath << " > introuvable" << std::endl;
 	}
 	m_body.setTexture(m_texture);
+	m_body.setColor(sf::Color::Red);
 	// m_body.setColor();
 	// On définit son centre de "gravité"
 	m_body.setOrigin(m_body.getLocalBounds().width / 2, m_body.getLocalBounds().height / 2);

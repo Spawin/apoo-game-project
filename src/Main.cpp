@@ -1,4 +1,5 @@
 #include "Platform/Platform.hpp"
+#include "include/Collider.hpp"
 #include "include/Personage.hpp"
 #include "include/Position.hpp"
 #include "include/consts.hpp"
@@ -48,6 +49,9 @@ int main()
 
 			// spawin.sendEvent(event);
 		}
+
+		// Appel pour tester la proximité de chaque collider
+		Collider::update();
 
 		// initialisation du time du game object
 		GameObject::SetTime(chrono.restart().asSeconds());

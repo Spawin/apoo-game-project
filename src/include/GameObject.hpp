@@ -48,6 +48,7 @@ public:
 	{
 		m_time = t;
 	};
+
 	// Retourne l'id du game object
 	int getGameObjectId() const;
 
@@ -101,7 +102,7 @@ protected:
 	 */
 	virtual void updatePosition() = 0;
 
-	Collider* m_collider;
+	Collider* m_collider { nullptr };
 	int m_width { 100 };
 	int m_height { 100 };
 };

@@ -4,9 +4,12 @@
 
 Personage::Personage()
 {
-	m_collider = new BoxCollider(*this);
 	m_width = 50;
 	m_height = 150;
+
+	m_gameObjectName = "personnage";
+
+	m_collider = new BoxCollider((*this));
 }
 
 Personage::Personage(std::string_view const& imageSpritePath) :

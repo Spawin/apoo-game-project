@@ -14,10 +14,12 @@ class Collider
 public:
 	Collider(GameObject const& parent);
 	virtual ~Collider();
-	virtual void update();
+
+	static void update();
 
 protected:
 	// Il s'agit de l'object auquel appartient le game object
+	// GameObject const& parent;
 	GameObject const& parent;
 	// static std::map<std::string, GameObject*> m_objects;
 	static std::map<std::string, std::shared_ptr<GameObject>> m_objects;

@@ -2,7 +2,7 @@
 #define __PERSONGE_HPP__
 
 #include "include/GameObject.hpp"
-#include <SFML/Graphics.hpp>
+#include <string>
 
 class Personage : public GameObject
 {
@@ -12,6 +12,11 @@ public:
 	virtual ~Personage();
 	//Sera appelé à chaque frame...
 	virtual void update();
+
+	inline void setGameObjectName(std::string name)
+	{
+		m_gameObjectName = name;
+	};
 
 protected:
 	// La quantité de vie du personnage
