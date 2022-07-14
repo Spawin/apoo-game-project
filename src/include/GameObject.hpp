@@ -6,6 +6,7 @@
 #include "include/MyVector.hpp"
 #include "include/Position.hpp"
 
+class Collision;
 class Collider;
 
 class GameObject
@@ -65,8 +66,7 @@ public:
 	 *
 	 * @param collider
 	 */
-	void
-	onCollisionEnter(Collision const& Collision);
+	void onCollisionEnter(Collision const& collision);
 
 protected:
 	// identifiant unique du game Object

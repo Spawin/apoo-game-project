@@ -9,7 +9,7 @@ class Personage : public GameObject
 public:
 	Personage();
 	Personage(std::string_view const& imageSpritePath);
-	// virtual ~Personage();
+	virtual ~Personage();
 	//Sera appelé à chaque frame...
 	virtual void update();
 

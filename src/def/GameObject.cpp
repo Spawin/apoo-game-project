@@ -52,6 +52,13 @@ int GameObject::getGameObjectId() const
 {
 	return m_id;
 }
+
+void GameObject::onCollisionEnter(Collision const& collision)
+{
+	collision.test();
+	// std::cout << "une collision avec" << collision.getGameObject;
+}
+
 // void GameObject::sendEvent(sf::Event const& event)
 // {
 // 	if (event.type == sf::Event::KeyPressed)

@@ -15,6 +15,11 @@ Personage::Personage(std::string_view const& imageSpritePath) :
 	Personage();
 }
 
+Personage::~Personage()
+{
+	// delete m_collider; // Déjà fait au niveau du GameObject.
+}
+
 void Personage::update()
 {
 	updatePosition();
