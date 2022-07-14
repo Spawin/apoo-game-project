@@ -50,7 +50,7 @@ int main()
 		}
 
 		// initialisation du time du game object
-		GameOject::SetTime(chrono.restart().asSeconds());
+		GameObject::SetTime(chrono.restart().asSeconds());
 
 		spawin.update();
 

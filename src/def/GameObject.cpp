@@ -1,9 +1,15 @@
-#include "include/GameOject.hpp"
+#include "include/GameObject.hpp"
 
-float GameOject::m_time = 0.f;
+#include <iostream>
 
-GameOject::GameOject()
+float GameObject::m_time = 0.f;
+int GameObject::m_count = 0;
+
+GameObject::GameObject()
 {
+	// On incrémente le compteur
+	incrementCount();
+
 	//* Chargement d'une image par defaut
 	if (!m_texture.loadFromFile("content/sfml.png"))
 	{
@@ -15,8 +21,10 @@ GameOject::GameOject()
 	m_body.setPosition(m_position.getX(), m_position.getY());
 }
 
-GameOject::GameOject(std::string_view const& imageSpritePath)
+GameObject::GameObject(std::string_view const& imageSpritePath)
 {
+	// On incrémente le compteur
+	incrementCount();
 
 	if (!m_texture.loadFromFile(imageSpritePath.data()))
 	{
@@ -29,15 +37,22 @@ GameOject::GameOject(std::string_view const& imageSpritePath)
 	m_body.setPosition(m_position.getX(), m_position.getY());
 }
 
-GameOject::~GameOject()
-{}
+GameObject::~GameObject()
+{
+	std::cout << "Appel du destructeur du gameObject" << std::endl;
+	delete m_collider;
+}
 
-void GameOject::show(sf::RenderWindow& window) const
+void GameObject::show(sf::RenderWindow& window) const
 {
 	window.draw(m_body);
 }
 
-// void GameOject::sendEvent(sf::Event const& event)
+int GameObject::getGameObjectId() const
+{
+	return m_id;
+}
+// void GameObject::sendEvent(sf::Event const& event)
 // {
 // 	if (event.type == sf::Event::KeyPressed)
 // 	{

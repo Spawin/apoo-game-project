@@ -1,10 +1,10 @@
 #ifndef __PERSONGE_HPP__
 #define __PERSONGE_HPP__
 
-#include "include/GameOject.hpp"
+#include "include/GameObject.hpp"
 #include <SFML/Graphics.hpp>
 
-class Personage : public GameOject
+class Personage : public GameObject
 {
 public:
 	Personage();

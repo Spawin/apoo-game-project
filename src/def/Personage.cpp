@@ -1,13 +1,18 @@
 #include "include/Personage.hpp"
+#include "include/BoxCollider.hpp"
 #include "include/MyVector.hpp"
 
 Personage::Personage()
 {
+	m_collider = new BoxCollider(*this);
+	m_width = 50;
+	m_height = 150;
 }
 
 Personage::Personage(std::string_view const& imageSpritePath) :
-	GameOject(imageSpritePath)
+	GameObject(imageSpritePath)
 {
+	Personage();
 }
 
 void Personage::update()
