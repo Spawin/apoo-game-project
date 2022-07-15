@@ -31,7 +31,12 @@ int main()
 	// Initialisations de l'espace pour tous les éléments du jeux
 	Position::initSpace(windowWidth, windowHeight);
 
-	Personage spawin = Personage();
+	Personage spawin = Personage(true);
+	spawin.setGameObjectName("spawin");
+
+	Personage p2 = Personage(50, 50);
+	Personage p3 = Personage(50, 50);
+	p3.setGameObjectName("cool");
 
 	auto chrono = sf::Clock();
 	sf::Event event;
@@ -56,13 +61,17 @@ int main()
 		// initialisation du time du game object
 		GameObject::SetTime(chrono.restart().asSeconds());
 
+		//* ANCHOR - Appel des update
 		spawin.update();
+		p2.update();
 
 		// Clear screen
 		window.clear();
 
 		// window.draw(shape);
+		//* ANCHOR - Affichage des gameObjects
 		spawin.show(window);
+		p2.show(window);
 
 		// Update the window
 		window.display();

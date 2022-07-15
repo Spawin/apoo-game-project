@@ -31,10 +31,30 @@ GameObject::GameObject(std::string_view const& imageSpritePath)
 		std::cerr << "Image < " << imageSpritePath << " > introuvable" << std::endl;
 	}
 	m_body.setTexture(m_texture);
-	m_body.setColor(sf::Color::Red);
-	// m_body.setColor();
+	// m_body.setColor(sf::Color::Red);
+
 	// On définit son centre de "gravité"
 	m_body.setOrigin(m_body.getLocalBounds().width / 2, m_body.getLocalBounds().height / 2);
+	m_body.setPosition(m_position.getX(), m_position.getY());
+}
+
+GameObject::GameObject(float posX, float posY)
+{
+	// On incrémente le compteur
+	incrementCount();
+
+	//* Chargement d'une image par defaut
+	if (!m_texture.loadFromFile("content/sfml.png"))
+	{
+		std::cerr << "Image < content/sfml.png > introuvable" << std::endl;
+	}
+
+	m_body.setTexture(m_texture);
+
+	// On définit son centre de "gravité"
+	m_body.setOrigin(m_body.getLocalBounds().width / 2, m_body.getLocalBounds().height / 2);
+
+	m_position = Position(posX, posY);
 	m_body.setPosition(m_position.getX(), m_position.getY());
 }
 

@@ -40,22 +40,31 @@ void Collider::update()
 {
 	//
 	GameObjectMap::iterator it1;
-	vector<string> already = {};
+	// Pour lister les collider déjà testés
+	vector<string> alreadyChecked = {};
+
+	// cout << "nombre d'objet avec collider " << m_objects.size() << endl;
 	for (it1 = m_objects.begin(); it1 != m_objects.end(); ++it1)
 	{
+		alreadyChecked.push_back(it1->first);
 		GameObjectMap::iterator it2;
 		for (it2 = m_objects.begin(); it2 != m_objects.end(); ++it2)
 		{
-			if (find(already.begin(), already.end(), it1->first) != already.end())
+			if (find(alreadyChecked.begin(), alreadyChecked.end(), it2->first) != alreadyChecked.end())
 				continue;
 
-			if (it1->second->getPosition().getDistanceWith(it2->second->getPosition()) <= (float)DISTANCE_MIN_BETWEEN_OBJECTS)
+			// if (it1->second->getPosition().getDistanceWith(it2->second->getPosition()) < (float)DISTANCE_MIN_BETWEEN_OBJECTS)
+			if (m_objects[it1->first]->getPosition().getDistanceWith(m_objects[it2->first]->getPosition()) < (float)DISTANCE_MIN_BETWEEN_OBJECTS)
 			{
+				// cout << "1 - " << m_objects[it1->first]->getGameObjectName() << " " << m_objects[it1->first]->getGameObjectId() << endl;
+				// cout << "2 - " << m_objects[it2->first]->getGameObjectName() << " " << m_objects[it2->first]->getGameObjectId() << endl;
+
+				// cout << "distance entre les deux " << it1->second->getPosition().getDistanceWith(it2->second->getPosition()) << endl;
+
 				m_objects[it1->first]->onCollisionEnter(Collision(*m_objects[it2->first]));
 				m_objects[it2->first]->onCollisionEnter(Collision(*m_objects[it1->first]));
 			}
 		}
-		already.push_back(it1->first);
 	}
 }
 
@@ -69,7 +78,7 @@ void Collider::update()
 // 	 */
 // 	map<string, shared_ptr<GameObject>>::iterator it;
 // 	// Pour receillir les clés des object déjà parcourut
-// 	vector<string> already = {};
+// 	vector<string> alreadyChecked = {};
 // 	// for (auto&& gameObject : m_objects)
 // 	// for (pair<string, GameObject*> gameObject_1 : m_objects)
 // 	for (it = m_objects.begin(); it != m_objects.end(); ++it)
@@ -81,7 +90,7 @@ void Collider::update()
 // 		map<string, shared_ptr<GameObject>>::iterator it2;
 // 		for (it2 = m_objects.begin(); it2 != m_objects.end(); ++it2)
 // 		{
-// 			if (find(already.begin(), already.end(), it->first) != already.end())
+// 			if (find(alreadyChecked.begin(), alreadyChecked.end(), it->first) != alreadyChecked.end())
 // 				continue;
 
 // 			// const Position* gameObject_2_position = it2->second->getPosition();
@@ -94,7 +103,7 @@ void Collider::update()
 
 // 			// delete gameObject_2_position;
 // 		}
-// 		already.push_back(it->first);
+// 		alreadyChecked.push_back(it->first);
 
 // 		// delete gameObject_1_position;
 // 	}

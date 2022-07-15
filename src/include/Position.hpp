@@ -32,6 +32,7 @@ public:
 
 	float getDistanceWith(Position const& autre) const;
 	void operator+=(MyVector const& v);
+	void operator=(Position const& p);
 
 private:
 	void recalculate(); // recalcule les coordonnées pour qu’elles soient dans les limites ; inutile d’y accéder de l’extérieur, donc privée

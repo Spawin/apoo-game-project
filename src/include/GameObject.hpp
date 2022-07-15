@@ -20,6 +20,14 @@ public:
 	 */
 	explicit GameObject(std::string_view const& imageSpritePath);
 
+	/**
+	 * @brief Construct a new Game Object object
+	 *
+	 * @param posX la position x de l'objet
+	 * @param posY la position y de l'objet
+	 */
+	explicit GameObject(float posX, float posY);
+
 	virtual ~GameObject();
 
 	/**
@@ -57,9 +65,9 @@ public:
 	/**
 	 * @brief émit quand il entre en contacte avec un autre élément
 	 *
-	 * @param collider
+	 * @param collision
 	 */
-	void onCollisionEnter(Collision const& collision) const;
+	virtual void onCollisionEnter(Collision const& collision) const;
 
 protected:
 	// identifiant unique du game Object

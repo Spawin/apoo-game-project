@@ -34,6 +34,13 @@ void Position::operator+=(MyVector const& v)
 	recalculate();
 }
 
+void Position::operator=(Position const& p)
+{
+	x = p.getX();
+	y = p.getY();
+	recalculate();
+}
+
 void Position::initSpace(int width, int height)
 {
 	// on envoie un message d’erreur si l’espace était déjà initialisé
