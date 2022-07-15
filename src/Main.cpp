@@ -25,21 +25,20 @@ int main()
 
 	// Create the main window
 	// Use the screenScalingFactor
-	window.create(sf::VideoMode(windowWidth, windowHeight), "Le guerrier");
+	window.create(sf::VideoMode(windowWidth, windowHeight), "Le guerrier" /*, sf::Style::Close*/);
 	platform.setIcon(window.getSystemHandle());
 
 	// Initialisations de l'espace pour tous les éléments du jeux
-	Position::initSpace(windowWidth, windowHeight);
+	Position::initSpace(GAME_MAP_WIDTH, GAME_MAP_HEIGHT);
 
-	Personage spawin = Personage(true);
+	Personage spawin = Personage(300, 200, true);
 	spawin.setGameObjectName("spawin");
 
 	Personage p2 = Personage(50, 50);
-	Personage p3 = Personage(50, 50);
-	p3.setGameObjectName("cool");
 
 	auto chrono = sf::Clock();
 	sf::Event event;
+
 	// Start the game loop
 	while (window.isOpen())
 	{

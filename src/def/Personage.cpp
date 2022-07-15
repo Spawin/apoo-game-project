@@ -71,8 +71,9 @@ void Personage::updatePosition()
 {
 	if (m_isPlayer)
 	{
-
+		// Gestion du déplacement du joueur.
 		bool anyDirectionalKeyIsPressed(false);
+
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 		{
 			// m_speed.x = MOVE_SPEED * m_time;

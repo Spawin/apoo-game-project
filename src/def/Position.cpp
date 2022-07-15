@@ -1,4 +1,6 @@
 #include "include/Position.hpp"
+#include "include/consts.hpp"
+#include "include/utils.hpp"
 #include <algorithm>
 #include <cmath>
 #include <iostream>
@@ -7,7 +9,8 @@ int Position::m_spaceWidth { 0 };
 int Position::m_spaceHeight { 0 };
 
 // Constructeur factultatif mais ici on envoie un message d’erreur si une coordonnée est créée avant l’initialisation de l’espace
-Position::Position()
+Position::Position(float detectabilityRadius) :
+	DETECTABILITY_RADIUS(detectabilityRadius)
 {
 	if (m_spaceWidth == 0 || m_spaceHeight == 0)
 	{
@@ -15,10 +18,15 @@ Position::Position()
 	}
 }
 
-Position::Position(float px, float py) :
-	x(px),
-	y(py)
+Position::Position(float px, float py, float detectabilityRadius) :
+	m_x(px),
+	m_y(py),
+	DETECTABILITY_RADIUS(detectabilityRadius)
 {
+	if (m_spaceWidth == 0 || m_spaceHeight == 0)
+	{
+		std::cerr << "Attention : une coordonnée a été créée avant l’initialisation de l’espace !" << std::endl;
+	}
 	recalculate();
 }
 
@@ -29,15 +37,15 @@ Position::~Position()
 // L’opérateur += ajoute déjà le vecteur en paramètre puis ajoute ou retire la taille de l’espace sur les composantes x,y si besoin
 void Position::operator+=(MyVector const& v)
 {
-	x += v.m_x;
-	y += v.m_y;
+	m_x += v.m_x;
+	m_y += v.m_y;
 	recalculate();
 }
 
 void Position::operator=(Position const& p)
 {
-	x = p.getX();
-	y = p.getY();
+	m_x = p.getX();
+	m_y = p.getY();
 	recalculate();
 }
 
@@ -54,26 +62,149 @@ void Position::initSpace(int width, int height)
 
 void Position::recalculate()
 {
-	while (x > m_spaceWidth)
+	if (!canMove())
 	{
-		x -= m_spaceWidth;
+		// TODO -
+
+		//* On replace m_y
+		if (m_y < WALL_WIDTH + DETECTABILITY_RADIUS)
+		{
+			m_y = WALL_WIDTH + DETECTABILITY_RADIUS;
+		}
+		if (m_y > GAME_MAP_HEIGHT - WALL_WIDTH - DETECTABILITY_RADIUS)
+		{
+			m_y = GAME_MAP_HEIGHT - WALL_WIDTH - DETECTABILITY_RADIUS;
+		}
+		if (isBetween(m_y, 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS, 300))
+		{
+			m_y = 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
+		}
+		if (isBetween(m_y, 300, 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
+		{
+			m_y = 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
+		}
+		if (isBetween(m_y, 2 * 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS, 2 * 300))
+		{
+			m_y = 2 * 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
+		}
+		if (isBetween(m_y, 2 * 300, 2 * 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
+		{
+			m_y = 2 * 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
+		}
+		if (isBetween(m_y, 3 * 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS, 3 * 300))
+		{
+			m_y = 3 * 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
+		}
+		if (isBetween(m_y, 3 * 300, 3 * 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
+		{
+			m_y = 3 * 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
+		}
+		if (isBetween(m_y, 4 * 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS, 4 * 300))
+		{
+			m_y = 4 * 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
+		}
+		if (isBetween(m_y, 4 * 300, 4 * 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
+		{
+			m_y = 4 * 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
+		}
+		if (isBetween(m_y, 5 * 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS, 5 * 300))
+		{
+			m_y = 5 * 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
+		}
+		if (isBetween(m_y, 5 * 300, 5 * 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
+		{
+			m_y = 5 * 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
+		}
+		if (isBetween(m_y, 6 * 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS, 6 * 300))
+		{
+			m_y = 6 * 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
+		}
+		if (isBetween(m_y, 6 * 300, 6 * 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
+		{
+			m_y = 6 * 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
+		}
+		//* On replace m_x
+		if (m_x < WALL_WIDTH + DETECTABILITY_RADIUS)
+		{
+			m_x = WALL_WIDTH + DETECTABILITY_RADIUS;
+		}
+		if (m_x > GAME_MAP_WIDTH - WALL_WIDTH - DETECTABILITY_RADIUS)
+		{
+			m_x = GAME_MAP_WIDTH - WALL_WIDTH - DETECTABILITY_RADIUS;
+		}
+		if (m_y < 6 * 300)
+		{
+			if (isBetween(m_x, 400 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS, 400))
+			{
+				m_x = 400 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
+			}
+			if (isBetween(m_x, 400, 400 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
+			{
+				m_x = 400 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
+			}
+			if (isBetween(m_x, 400 + 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS, 400 + 300))
+			{
+				m_x = 400 + 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
+			}
+			if (isBetween(m_x, 400 + 300, 400 + 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
+			{
+				m_x = 400 + 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
+			}
+		}
 	}
-	while (x < 0)
+	//* Implémentation pour faire apparaitre l'élément du coté opposé
+	/*
+	while (m_x > m_spaceWidth)
 	{
-		x += m_spaceWidth;
+		m_x -= m_spaceWidth;
 	}
-	while (y > m_spaceHeight)
+	while (m_x < 0)
 	{
-		y -= m_spaceHeight;
+		m_x += m_spaceWidth;
 	}
-	while (y < 0)
+	while (m_y > m_spaceHeight)
 	{
-		y += m_spaceHeight;
+		m_y -= m_spaceHeight;
 	}
+	while (m_y < 0)
+	{
+		m_y += m_spaceHeight;
+	}
+	//*/
 }
 
 float Position::getDistanceWith(Position const& autre) const
 {
-	auto delta = MyVector { std::min({ abs(x - autre.x), abs(x - autre.x - m_spaceWidth), abs(x - autre.x + m_spaceWidth) }), std::min({ abs(y - autre.y), abs(y - autre.y - m_spaceHeight), abs(y - autre.y + m_spaceHeight) }) };
+	auto delta = MyVector { std::min({ abs(m_x - autre.m_x), abs(m_x - autre.m_x - m_spaceWidth), abs(m_x - autre.m_x + m_spaceWidth) }), std::min({ abs(m_y - autre.m_y), abs(m_y - autre.m_y - m_spaceHeight), abs(m_y - autre.m_y + m_spaceHeight) }) };
 	return sqrt(delta.m_x * delta.m_x + delta.m_y * delta.m_y);
+}
+
+void Position::setPosition(float posX, float posY)
+{
+	m_x = posX;
+	m_y = posY;
+}
+
+bool Position::canMove()
+{
+	bool canMove(0);
+	// On va repousser la zone de non mouvement d'un facteur
+	// pour qu'il n'y ai pas de conflit avec la zone de redéploiment avec la fonction recalculate d'un corps qui ne doit pas bouger.
+	int fac(0);
+	if (isBetween(m_y, 6 * 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, GAME_MAP_HEIGHT - WALL_WIDTH - DETECTABILITY_RADIUS + fac))
+	{
+		if (isBetween(m_x, WALL_WIDTH + DETECTABILITY_RADIUS - fac, GAME_MAP_WIDTH - WALL_WIDTH - DETECTABILITY_RADIUS + fac))
+		{
+			canMove = true;
+		}
+	}
+	else if (isBetween(m_y, WALL_WIDTH + DETECTABILITY_RADIUS - fac, 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 2 * 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, 2 * 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 3 * 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, 3 * 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 4 * 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, 4 * 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 5 * 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, 5 * 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 6 * 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac))
+	{
+		if (isBetween(m_x, WALL_WIDTH + DETECTABILITY_RADIUS - fac, 400 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_x, 400 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 400 + 300 - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_x, 400 + 300 + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, GAME_MAP_WIDTH - WALL_WIDTH - DETECTABILITY_RADIUS + fac))
+		{
+			canMove = true;
+		}
+	}
+
+	return canMove;
 }

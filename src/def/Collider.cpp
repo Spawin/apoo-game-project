@@ -54,15 +54,18 @@ void Collider::update()
 				continue;
 
 			// if (it1->second->getPosition().getDistanceWith(it2->second->getPosition()) < (float)DISTANCE_MIN_BETWEEN_OBJECTS)
+			// On va dabor tester la proximité des deux entité par rapport à une constante qui définit la distance minimale entre 2 object
 			if (m_objects[it1->first]->getPosition().getDistanceWith(m_objects[it2->first]->getPosition()) < (float)DISTANCE_MIN_BETWEEN_OBJECTS)
 			{
 				// cout << "1 - " << m_objects[it1->first]->getGameObjectName() << " " << m_objects[it1->first]->getGameObjectId() << endl;
 				// cout << "2 - " << m_objects[it2->first]->getGameObjectName() << " " << m_objects[it2->first]->getGameObjectId() << endl;
 
 				// cout << "distance entre les deux " << it1->second->getPosition().getDistanceWith(it2->second->getPosition()) << endl;
-
-				m_objects[it1->first]->onCollisionEnter(Collision(*m_objects[it2->first]));
-				m_objects[it2->first]->onCollisionEnter(Collision(*m_objects[it1->first]));
+				if (m_objects[it1->first]->getSprite().getLocalBounds().intersects(m_objects[it2->first]->getSprite().getLocalBounds()))
+				{
+					m_objects[it1->first]->onCollisionEnter(Collision(*m_objects[it2->first]));
+					m_objects[it2->first]->onCollisionEnter(Collision(*m_objects[it1->first]));
+				}
 			}
 		}
 	}

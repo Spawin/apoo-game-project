@@ -1,58 +1,67 @@
 #include "include/GameObject.hpp"
-
+#include "include/consts.hpp"
 #include <iostream>
 
 float GameObject::m_time = 0.f;
 int GameObject::m_count = 0;
 
-GameObject::GameObject()
+void GameObject::init()
 {
 	// On incrémente le compteur
 	incrementCount();
 
-	//* Chargement d'une image par defaut
-	if (!m_texture.loadFromFile("content/sfml.png"))
-	{
-		std::cerr << "Image < content/sfml.png > introuvable" << std::endl;
-	}
-	m_body.setTexture(m_texture);
+	m_body.setColor(sf::Color::White);
 
-	m_body.setOrigin(m_body.getLocalBounds().width / 2, m_body.getLocalBounds().height / 2);
+	sf::Texture texture;
+	if (!texture.create(PERSONNAGE_WIDTH, PERSONNAGE_WIDTH))
+	{
+		std::cerr << "Erreur lors de la mise en place d'une texture vide (GameObject)" << std::endl;
+	}
+	sf::Uint8* pixels = new sf::Uint8[PERSONNAGE_WIDTH * PERSONNAGE_WIDTH * 4]; // * 4 car les pixels ont 4 composantes (RGBA)
+	texture.update(pixels);
+	m_body.setTexture(texture);
+
+	// On définit son centre de "gravité"
+	// m_body.setOrigin(m_body.getLocalBounds().width / 2, m_body.getLocalBounds().height / 2);
+	m_body.setOrigin(PERSONNAGE_WIDTH / 2, PERSONNAGE_WIDTH / 2);
 	m_body.setPosition(m_position.getX(), m_position.getY());
+}
+
+GameObject::GameObject()
+{
+	// initialisation
+	init();
 }
 
 GameObject::GameObject(std::string_view const& imageSpritePath)
 {
-	// On incrémente le compteur
-	incrementCount();
+	// initialisation
+	init();
 
-	if (!m_texture.loadFromFile(imageSpritePath.data()))
+	if (!imageSpritePath.empty())
 	{
-		std::cerr << "Image < " << imageSpritePath << " > introuvable" << std::endl;
-	}
-	m_body.setTexture(m_texture);
-	// m_body.setColor(sf::Color::Red);
 
-	// On définit son centre de "gravité"
-	m_body.setOrigin(m_body.getLocalBounds().width / 2, m_body.getLocalBounds().height / 2);
-	m_body.setPosition(m_position.getX(), m_position.getY());
+		if (!m_texture.loadFromFile(imageSpritePath.data()))
+		{
+			std::cerr << "Image < " << imageSpritePath << " > introuvable" << std::endl;
+		}
+		m_body.setTexture(m_texture);
+	}
 }
 
-GameObject::GameObject(float posX, float posY)
+GameObject::GameObject(float posX, float posY, std::string_view const& imageSpritePath)
 {
-	// On incrémente le compteur
-	incrementCount();
-
-	//* Chargement d'une image par defaut
-	if (!m_texture.loadFromFile("content/sfml.png"))
+	// initialisation
+	init();
+	if (!imageSpritePath.empty())
 	{
-		std::cerr << "Image < content/sfml.png > introuvable" << std::endl;
+		if (!m_texture.loadFromFile(imageSpritePath.data()))
+		{
+			std::cerr << "Image < " << imageSpritePath << " > introuvable" << std::endl;
+		}
+
+		m_body.setTexture(m_texture);
 	}
-
-	m_body.setTexture(m_texture);
-
-	// On définit son centre de "gravité"
-	m_body.setOrigin(m_body.getLocalBounds().width / 2, m_body.getLocalBounds().height / 2);
 
 	m_position = Position(posX, posY);
 	m_body.setPosition(m_position.getX(), m_position.getY());
@@ -60,7 +69,6 @@ GameObject::GameObject(float posX, float posY)
 
 GameObject::~GameObject()
 {
-	std::cout << "Appel du destructeur du gameObject" << std::endl;
 	delete m_collider;
 }
 
@@ -96,6 +104,11 @@ void GameObject::onCollisionEnter(Collision const& collision) const
 {
 	collision.test(); // REVIEW
 					  // std::cout << "une collision avec" << collision.getGameObject;
+}
+
+sf::Sprite const& GameObject::getSprite() const
+{
+	return m_body;
 }
 
 void GameObject::updatePosition()

@@ -18,6 +18,10 @@ public:
 	explicit Collider(GameObject const& parent);
 	virtual ~Collider();
 
+	/**
+	 * @brief C'est à ce niveau qu'on gère la détection de collisions.
+	 *
+	 */
 	static void update();
 
 protected:

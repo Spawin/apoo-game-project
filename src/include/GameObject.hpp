@@ -26,7 +26,7 @@ public:
 	 * @param posX la position x de l'objet
 	 * @param posY la position y de l'objet
 	 */
-	explicit GameObject(float posX, float posY);
+	explicit GameObject(float posX, float posY, std::string_view const& imageSpritePath = "");
 
 	virtual ~GameObject();
 
@@ -69,7 +69,14 @@ public:
 	 */
 	virtual void onCollisionEnter(Collision const& collision) const;
 
+	sf::Sprite const& getSprite() const;
+
 protected:
+	/**
+	 * @brief Pour initialiser les valeur par défaut du GameObject
+	 *
+	 */
+	void init();
 	// identifiant unique du game Object
 	const int m_id { GameObject::m_count + 1 };
 	// Nom du game object
