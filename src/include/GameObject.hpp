@@ -12,13 +12,13 @@ class Collider;
 class GameObject
 {
 public:
-	GameObject();
+	explicit GameObject();
 	/**
 	 * @brief Construct a new Game Oject object
 	 *
 	 * @param imageSpritePath le chemin de l'image de l'objet
 	 */
-	GameObject(std::string_view const& imageSpritePath);
+	explicit GameObject(std::string_view const& imageSpritePath);
 
 	virtual ~GameObject();
 
@@ -29,7 +29,8 @@ public:
 	 */
 	virtual void show(sf::RenderWindow& window) const;
 	//Sera appelé à chaque frame...
-	virtual void update() = 0;
+	// virtual void update() = 0;
+	virtual void update();
 	/**
 	 * ! Depracted
 	 *
@@ -44,36 +45,27 @@ public:
 	 *
 	 * @param t
 	 */
-	inline static void SetTime(float t)
-	{
-		m_time = t;
-	};
+	static void SetTime(float t);
 
 	// Retourne l'id du game object
 	int getGameObjectId() const;
 
-	inline const Position* getPosition()
-	{
-		return &m_position;
-	};
+	Position const& getPosition() const;
 
-	inline std::string getGameObjectName()
-	{
-		return m_gameObjectName;
-	}
+	std::string getGameObjectName() const;
 
 	/**
 	 * @brief émit quand il entre en contacte avec un autre élément
 	 *
 	 * @param collider
 	 */
-	void onCollisionEnter(Collision const& collision);
+	void onCollisionEnter(Collision const& collision) const;
 
 protected:
 	// identifiant unique du game Object
 	const int m_id { GameObject::m_count + 1 };
 	// Nom du game object
-	std::string m_gameObjectName { "" };
+	std::string m_gameObjectName { "GameObject" };
 	// le nombre de gameObject créé au total (compte aussi ceux qui sont déjà détruit)
 	static int m_count;
 	// Incrémente le compteur
@@ -100,7 +92,8 @@ protected:
 	 * Cette position sera déterminé par l'évenement reçu au préalable.
 	 * Aussi il s'agit dans ce cas d'une accélération uniforme.
 	 */
-	virtual void updatePosition() = 0;
+	// virtual void updatePosition() = 0;
+	virtual void updatePosition();
 
 	Collider* m_collider { nullptr };
 	int m_width { 100 };

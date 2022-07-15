@@ -6,7 +6,7 @@
 class BoxCollider : public Collider
 {
 public:
-	BoxCollider(GameObject const& parent);
+	explicit BoxCollider(GameObject const& parent);
 	~BoxCollider();
 
 	void update();

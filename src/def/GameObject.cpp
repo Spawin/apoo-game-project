@@ -49,16 +49,37 @@ void GameObject::show(sf::RenderWindow& window) const
 	window.draw(m_body);
 }
 
+void GameObject::update()
+{}
+
+void GameObject::SetTime(float t)
+{
+	m_time = t;
+}
+
 int GameObject::getGameObjectId() const
 {
 	return m_id;
 }
 
-void GameObject::onCollisionEnter(Collision const& collision)
+Position const& GameObject::getPosition() const
 {
-	collision.test();
-	// std::cout << "une collision avec" << collision.getGameObject;
+	return m_position;
 }
+
+std::string GameObject::getGameObjectName() const
+{
+	return m_gameObjectName;
+}
+
+void GameObject::onCollisionEnter(Collision const& collision) const
+{
+	collision.test(); // REVIEW
+					  // std::cout << "une collision avec" << collision.getGameObject;
+}
+
+void GameObject::updatePosition()
+{}
 
 // void GameObject::sendEvent(sf::Event const& event)
 // {

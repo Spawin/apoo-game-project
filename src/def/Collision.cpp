@@ -3,10 +3,11 @@
 
 using namespace std;
 
-// Collision::Collision(GameObject const& gameObject) :
+Collision::Collision(GameObject const& gameObject) :
+	// m_gameObject((GameObject*)&gameObject)
+	m_gameObject(gameObject)
+// Collision::Collision(shared_ptr<GameObject> gameObject) :
 // 	m_gameObject((GameObject*)&gameObject)
-Collision::Collision(shared_ptr<GameObject> gameObject) :
-	m_gameObject((GameObject*)&gameObject)
 {
 }
 

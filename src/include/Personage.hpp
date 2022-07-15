@@ -7,11 +7,12 @@
 class Personage : public GameObject
 {
 public:
-	Personage();
-	Personage(std::string_view const& imageSpritePath);
+	explicit Personage();
+	// explicit Personage(Personage const& p) = delete; // NOTE -  Pour empêcher la copie de la classe lors de l'initialisati d...
+	explicit Personage(std::string_view const& imageSpritePath);
 	virtual ~Personage();
 	//Sera appelé à chaque frame...
-	virtual void update();
+	virtual void update() override;
 
 	inline void setGameObjectName(std::string name)
 	{
@@ -29,7 +30,7 @@ protected:
 	 * Cette position sera déterminé par l'évenement reçu au préalable.
 	 * Aussi il s'agit dans ce cas d'une accélération uniforme.
 	 */
-	virtual void updatePosition();
+	virtual void updatePosition() override;
 };
 
 #endif // __PERSONGE_HPP__

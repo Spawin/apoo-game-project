@@ -9,8 +9,8 @@ class GameObject;
 class Collision
 {
 public:
-	// Collision(GameObject const& gameObject);
-	Collision(std::shared_ptr<GameObject> gameObject);
+	explicit Collision(GameObject const& gameObject);
+	// explicit Collision(std::shared_ptr<GameObject> gameObject);
 	~Collision();
 
 	/**
@@ -23,7 +23,8 @@ public:
 	inline void test() const {}; // TODO - Remove this after
 
 private:
-	std::shared_ptr<GameObject> m_gameObject;
+	GameObject const& m_gameObject;
+	// std::shared_ptr<GameObject> m_gameObject;
 };
 
 #endif // __COLLISION_HPP__

@@ -6,8 +6,8 @@
 class Position
 {
 public:
-	Position();
-	Position(float px, float py);
+	explicit Position();
+	explicit Position(float px, float py);
 	~Position();
 
 	static void initSpace(int width, int height); // méthode static car l’espace sera le même pour tous les objets Coordonnees
