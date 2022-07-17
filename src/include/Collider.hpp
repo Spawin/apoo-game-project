@@ -24,7 +24,7 @@ public:
 	 */
 	static void update();
 
-    GameObject const& getParent() const;
+	GameObject const& getParent() const;
 
 	std::vector<sf::Vector2f> const& getContactPoints() const;
 	virtual bool touchEachOther(Collider const& collider) const = 0;
@@ -34,6 +34,11 @@ protected:
 	GameObject const& parent;
 	static GameObjectMap m_objects;
 
+	/**
+	 * @brief Coordonnées des points de contact.
+	 * Les coordonnes sont données en fonction du centre du sprite.
+	 *
+	 */
 	std::vector<sf::Vector2f> m_contactPoints;
 	// static std::vector<const GameObject*> m_vectors;
 	// static std::map<std::string, std::shared_ptr<GameObject>> m_objects;

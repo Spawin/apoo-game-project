@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 
+#include "include/GameMaster.hpp"
 #include "include/consts.hpp"
 
 using namespace std;
@@ -17,7 +18,7 @@ void Personage::init()
 
 	m_gameObjectName = "Personage";
 
-	m_collider = new PolygonCollider((*this), { sf::Vector2f(0.f, 0.f) });
+	m_collider = new PolygonCollider((*this), { sf::Vector2f(18.f - GameMaster::getSPRITE_BOX_CENTER().x, 5.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(22.f - GameMaster::getSPRITE_BOX_CENTER().x, 12.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(22.f - GameMaster::getSPRITE_BOX_CENTER().x, 20.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(18.f - GameMaster::getSPRITE_BOX_CENTER().x, 27.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(11.f - GameMaster::getSPRITE_BOX_CENTER().x, 22.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(11.f - GameMaster::getSPRITE_BOX_CENTER().x, 12.f - GameMaster::getSPRITE_BOX_CENTER().y) });
 	m_rigidbody = new Rigidbody((*this));
 
 	int w(32);

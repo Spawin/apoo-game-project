@@ -56,7 +56,8 @@ int main()
 	window.setView(player_view);
 	// window.setView(minimap_view);
 
-	Personage spawin = Personage(/*"content/personage/personage.png", */ true);
+	Personage spawin = Personage("content/personage/personage.png", true);
+	// Personage spawin = Personage(true);
 	spawin.setGameObjectName("spawin");
 
 	Personage p2 = Personage(32 * 20 + 16, 32 * 70);

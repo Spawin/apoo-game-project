@@ -37,10 +37,10 @@ bool PolygonCollider::touchEachOther(Collider const& collider) const
 
 			// auto delta = MyVector { min({ abs(v1.x - v2.x), abs(v1.x - v2.x - (int)GameMap::getGAME_MAP_WIDTH), abs(v1.x - v2.x + (int)GameMap::getGAME_MAP_WIDTH) }), min({ abs(v1.y - v2.y), abs(v1.y - v2.y - (int)GameMap::getGAME_MAP_HEIGHT), abs(v1.y - v2.y + (int)GameMap::getGAME_MAP_HEIGHT) }) };
 			// return 0 < sqrt(delta.m_x * delta.m_x + delta.m_y * delta.m_y);
-			double deltat = sqrt(pow((v1.x - v2.x), 2) + pow((v1.y - v2.y), 2));
-			cout << "distance entre A(" << v1.x << ";" << v1.y;
-			cout << ") et B(" << v2.x << ";" << v2.y << ") est : " << deltat << endl;
-			return deltat < 10;
+			float deltat = sqrt(pow((v1.x - v2.x), 2) + pow((v1.y - v2.y), 2));
+			// cout << "distance entre A(" << v1.x << ";" << v1.y;
+			// cout << ") et B(" << v2.x << ";" << v2.y << ") est : " << deltat << endl;
+			return deltat < (float)DISTANCE_MIN_BETWEEN_OBJECTS;
 		}
 	}
 	return false;
