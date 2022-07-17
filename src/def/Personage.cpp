@@ -1,6 +1,7 @@
 #include "include/Personage.hpp"
 #include "include/BoxCollider.hpp"
 #include "include/MyVector.hpp"
+#include "include/Rigidbody.hpp"
 
 #include <iostream>
 #include <string>
@@ -17,10 +18,12 @@ void Personage::init()
 	m_gameObjectName = "Personage";
 
 	m_collider = new BoxCollider((*this));
+	m_rigidbody = new Rigidbody((*this));
 
 	int w(32);
 	int h(32);
-	m_body.setTextureRect(sf::IntRect(0, 0, w, h));
+	m_body.setTextureRect(sf::IntRect(0, 0, w, h)); // REVIEW - Un personnage par défaut plus stylé
+	// m_body.setColor(sf::Color::Black);
 	m_body.setScale((float)PERSONNAGE_WIDTH / (float)w, (float)PERSONNAGE_WIDTH / (float)h);
 	if (m_isPlayer)
 	{

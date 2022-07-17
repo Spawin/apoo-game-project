@@ -2,7 +2,10 @@
 #define __POSITION_HPP__
 
 #include "include/MyVector.hpp"
+// #include "include/Rigidbody.hpp"
 #include "include/consts.hpp"
+
+// class RigidRigidbody;
 
 class Position
 {
@@ -13,24 +16,13 @@ public:
 	~Position();
 
 	static void initSpace(int width, int height); // méthode static car l’espace sera le même pour tous les objets Coordonnees
-	static inline int getSpaceWidth()
-	{
-		return m_spaceWidth;
-	};
-	static inline int getSpaceHeight()
-	{
-		return m_spaceHeight;
-	};
 
-	// inline pour plus de performance, revient en terme de performance à un accès direct à l’attribut
-	inline float getX() const
-	{
-		return m_x;
-	};
-	inline float getY() const
-	{
-		return m_y;
-	};
+	int getSpaceWidth() const;
+
+	int getSpaceHeight() const;
+
+	float getX() const;
+	float getY() const;
 
 	/**
 	 * @brief Get the Distance With object
@@ -65,11 +57,19 @@ private:
 	float m_x { m_spaceWidth / 2.f };  // REVIEW -
 	float m_y { m_spaceHeight / 2.f }; // REVIEW -
 
+	MyVector m_previousPosition { 0.f, 0.f };
+	void setPreviousPosition(float x, float y);
+	void setPreviousPosition(MyVector v);
+
 	// longueur et hauteur de l’espace sont static, partagés par tous les objets Coordonnees
 	static int m_spaceWidth;
 	static int m_spaceHeight;
 
 	float const DETECTABILITY_RADIUS;
+
+	bool m_thereIsARigidBody { false };
+
+	// friend class Rigidbody;
 
 	/**
 	 * @brief Vérifie si l'élément peut bouger

@@ -72,6 +72,9 @@ GameObject::GameObject(float posX, float posY, std::string_view const& imageSpri
 GameObject::~GameObject()
 {
 	delete m_collider;
+	m_collider = nullptr;
+	delete m_rigidbody;
+	m_rigidbody = nullptr;
 }
 
 void GameObject::show(sf::RenderWindow& window)
@@ -115,6 +118,19 @@ sf::Sprite const& GameObject::getSprite() const
 
 void GameObject::updatePosition()
 {}
+
+bool GameObject::isArigidBody() const
+{
+	return m_rigidbody != nullptr;
+}
+
+void GameObject::fromColliderToRigidBody() const
+{
+	if (isArigidBody())
+	{
+		m_rigidbody->onAnotherRigidBodyDetection();
+	}
+}
 
 // void GameObject::sendEvent(sf::Event const& event)
 // {

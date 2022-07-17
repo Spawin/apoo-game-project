@@ -5,9 +5,12 @@
 #include "include/Collision.hpp"
 #include "include/MyVector.hpp"
 #include "include/Position.hpp"
+#include "include/Rigidbody.hpp"
 
 class Collision;
 class Collider;
+class Rigidbody;
+class Position;
 
 class GameObject
 {
@@ -63,6 +66,22 @@ public:
 
 	sf::Sprite const& getSprite() const;
 
+	/**
+	 * @brief Vérifie si 'objet est un corps rigid.
+	 * (On ne peut pas passer à travers un corps rigid)
+	 *
+	 * @return true
+	 * @return false
+	 */
+	bool isArigidBody() const;
+
+	/**
+	 * @brief Quand un collider détect une collision,
+	 * il envoi l'information au rigidBody
+	 *
+	 */
+	void fromColliderToRigidBody() const;
+
 protected:
 	/**
 	 * @brief Pour initialiser les valeur par défaut du GameObject
@@ -92,6 +111,8 @@ protected:
 	// Temps pour calculer la vitesse de déplacement
 	static float m_time;
 
+	friend class Rigidbody;
+
 	// sf::Vector2f m_speed2 { 0.f, 0.f };
 
 	/**
@@ -103,6 +124,8 @@ protected:
 	virtual void updatePosition();
 
 	Collider* m_collider { nullptr };
+	Rigidbody* m_rigidbody { nullptr };
+
 	int m_width { 100 };
 	int m_height { 100 };
 };

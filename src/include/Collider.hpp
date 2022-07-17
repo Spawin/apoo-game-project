@@ -26,7 +26,6 @@ public:
 
 protected:
 	// Il s'agit de l'object auquel appartient le game object
-	// GameObject const& parent;
 	GameObject const& parent;
 	static GameObjectMap m_objects;
 	// static std::vector<const GameObject*> m_vectors;

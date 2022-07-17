@@ -59,7 +59,7 @@ int main()
 	Personage spawin = Personage("content/personage/personage.png", true);
 	spawin.setGameObjectName("spawin");
 
-	// Personage p2 = Personage(50, 50);
+	Personage p2 = Personage(32 * 20 + 16, 32 * 70);
 
 	auto chrono = sf::Clock();
 	sf::Event event;
@@ -94,7 +94,7 @@ int main()
 
 		//* ANCHOR - Appel des update
 		spawin.update();
-		// p2.update();
+		p2.update();
 
 		// Clear screen
 		window.clear();
@@ -104,7 +104,7 @@ int main()
 
 		//* ANCHOR - Affichage des gameObjects
 		spawin.show(window);
-		// p2.show(window);
+		p2.show(window);
 
 		// Update the window
 		window.display();

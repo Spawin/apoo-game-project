@@ -19,6 +19,7 @@ Position::Position(float detectabilityRadius) :
 	{
 		std::cerr << "Attention : une coordonnée a été créée avant l’initialisation de l’espace !" << std::endl;
 	}
+	setPreviousPosition(m_x, m_y);
 	recalculate();
 }
 
@@ -31,6 +32,7 @@ Position::Position(float px, float py, float detectabilityRadius) :
 	{
 		std::cerr << "Attention : une coordonnée a été créée avant l’initialisation de l’espace !" << std::endl;
 	}
+	setPreviousPosition(m_x, m_y);
 	recalculate();
 }
 
@@ -38,9 +40,32 @@ Position::~Position()
 {
 }
 
+//
+
+int Position::getSpaceWidth() const
+{
+	return m_spaceWidth;
+}
+
+int Position::getSpaceHeight() const
+{
+	return m_spaceHeight;
+}
+
+float Position::getX() const
+{
+	return m_x;
+}
+
+float Position::getY() const
+{
+	return m_y;
+}
+
 // L’opérateur += ajoute déjà le vecteur en paramètre puis ajoute ou retire la taille de l’espace sur les composantes x,y si besoin
 void Position::operator+=(MyVector const& v)
 {
+	setPreviousPosition(m_x, m_y);
 	m_x += v.m_x;
 	m_y += v.m_y;
 	recalculate();
@@ -48,6 +73,7 @@ void Position::operator+=(MyVector const& v)
 
 void Position::operator=(Position const& p)
 {
+	setPreviousPosition(m_x, m_y);
 	m_x = p.getX();
 	m_y = p.getY();
 	recalculate();
@@ -73,11 +99,25 @@ void Position::initSpace(int width, int height)
 
 void Position::recalculate()
 {
+	if (!canMove() || m_thereIsARigidBody)
+	{
+		if (m_x != m_previousPosition.m_x)
+		{
+			m_x = m_previousPosition.m_x;
+		}
+		if (m_y != m_previousPosition.m_y)
+		{
+			m_y = m_previousPosition.m_y;
+		}
+		m_thereIsARigidBody = false;
+	}
+	//* Pour replacer dans la zone autorisé : méthode pas ouf
+	/*
 	if (!canMove())
 	{
 		// TODO -
 		// REVIEW - Pour le cas du lounge, les dimensions ont changés
-		//* On replace m_y
+		// On replace m_y
 		if (m_y < WALL_WIDTH + DETECTABILITY_RADIUS)
 		{
 			m_y = WALL_WIDTH + DETECTABILITY_RADIUS;
@@ -134,7 +174,7 @@ void Position::recalculate()
 		{
 			m_y = 6 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
 		}
-		//* On replace m_x
+		// On replace m_x
 		if (m_x < WALL_WIDTH + DETECTABILITY_RADIUS)
 		{
 			m_x = WALL_WIDTH + DETECTABILITY_RADIUS;
@@ -163,24 +203,6 @@ void Position::recalculate()
 			}
 		}
 	}
-	//* Implémentation pour faire apparaitre l'élément du coté opposé
-	/*
-	while (m_x > m_spaceWidth)
-	{
-		m_x -= m_spaceWidth;
-	}
-	while (m_x < 0)
-	{
-		m_x += m_spaceWidth;
-	}
-	while (m_y > m_spaceHeight)
-	{
-		m_y -= m_spaceHeight;
-	}
-	while (m_y < 0)
-	{
-		m_y += m_spaceHeight;
-	}
 	//*/
 }
 
@@ -192,13 +214,26 @@ float Position::getDistanceWith(Position const& autre) const
 
 void Position::setPosition(float posX, float posY)
 {
+	setPreviousPosition(m_x, m_y);
 	m_x = posX;
 	m_y = posY;
+	recalculate();
 }
 
 MyVector Position::getPosition() const
 {
 	return MyVector { m_x, m_y };
+}
+
+void Position::setPreviousPosition(float x, float y)
+{
+	m_previousPosition.m_x = x;
+	m_previousPosition.m_y = y;
+}
+
+void Position::setPreviousPosition(MyVector v)
+{
+	m_previousPosition = v;
 }
 
 bool Position::canMove()
