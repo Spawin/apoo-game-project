@@ -7,6 +7,8 @@ struct MyVector
 {
 	void operator+=(MyVector const& v);
 	void operator-=(MyVector const& v);
+	bool operator==(MyVector const& v);
+	bool operator!=(sf::Vector2f const& v);
 	MyVector operator*(float coefficient) const;
 	/**
 	 * @brief

@@ -19,6 +19,13 @@ public:
 	explicit Personage(float posX, float posY, bool isPlayer = false);
 	virtual ~Personage();
 
+	/**
+	 * @brief Pour dessiner l'élement dans la fenêtre.
+	 *
+	 * @param window
+	 */
+	virtual void show(sf::RenderWindow& window) override;
+
 	//Sera appelé à chaque frame...
 	void update() override;
 
@@ -35,9 +42,11 @@ protected:
 	// La quantité de vie du personnage
 	int m_life;
 	// Valeur de l'accélération du déplacement (accélération uniforme)
-	const float MOVE_SPEED { 100.f };
+	const float MOVE_SPEED { 300.f };
 
 	const bool m_isPlayer;
+
+	sf::RenderWindow* m_window { 0 };
 
 	/**
 	 * @brief Permet de mettre à jour la position actuelle.

@@ -35,18 +35,10 @@ public:
 	 *
 	 * @param window
 	 */
-	virtual void show(sf::RenderWindow& window) const;
+	virtual void show(sf::RenderWindow& window);
 	//Sera appelé à chaque frame...
 	// virtual void update() = 0;
 	virtual void update();
-	/**
-	 * ! Depracted
-	 *
-	 * @brief Reçois l'évenement actuel
-	 *
-	 * @param event
-	 */
-	// void sendEvent(sf::Event const& event);
 
 	/**
 	 * @brief Set the Time object

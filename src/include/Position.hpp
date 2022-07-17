@@ -48,8 +48,16 @@ public:
 	 */
 	void setPosition(float posX, float posY);
 
+	/**
+	 * @brief Get the Position object
+	 *
+	 * @return MyVector
+	 */
+	MyVector getPosition() const;
+
 	void operator+=(MyVector const& v);
 	void operator=(Position const& p);
+	friend std::ostream& operator<<(std::ostream& out, Position const& p);
 
 private:
 	// recalcule les coordonnées pour qu’elles soient dans les limites ; inutile d’y accéder de l’extérieur, donc privée

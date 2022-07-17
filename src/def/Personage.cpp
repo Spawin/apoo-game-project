@@ -22,6 +22,11 @@ void Personage::init()
 	int h(32);
 	m_body.setTextureRect(sf::IntRect(0, 0, w, h));
 	m_body.setScale((float)PERSONNAGE_WIDTH / (float)w, (float)PERSONNAGE_WIDTH / (float)h);
+	if (m_isPlayer)
+	{
+		m_position = Position(32 * 4, 32 * 78); // REVIEW -
+		m_body.setPosition(m_position.getX(), m_position.getY());
+	}
 }
 
 Personage::Personage(bool isPlayer) :
@@ -47,6 +52,13 @@ Personage::Personage(float posX, float posY, bool isPlayer) :
 Personage::~Personage()
 {
 	// delete m_collider; // Déjà fait au niveau du GameObject.
+	m_window = 0;
+}
+
+void Personage::show(sf::RenderWindow& window)
+{
+	GameObject::show(window);
+	m_window = &window;
 }
 
 void Personage::update()
@@ -117,8 +129,30 @@ void Personage::updatePosition()
 
 		// m_body.move(m_speed);
 		// m_body.move(m_speed2.m_x, m_speed2.m_y);
-		m_position += m_speed; // * m_time;
-		m_body.setPosition(m_position.getX(), m_position.getY());
-		// cout << "pose x=" << m_position.getX() << " y=" << m_position.getY();
+		// MyVector mv{0.f,0.f};
+		// mv += m_position.getPosition();
+		// mv += m_speed
+
+		//* On applique des modification si la position à changé
+		// REVIEW - (ceci n'est pas encore fait) Ou si le centre de la vue est différent de la position du joueur
+		// if ( m_position.getPosition() != m_body.getPosition())
+		// || m_body.getPosition() != m_window->getView().getCenter()
+		if (m_speed != sf::Vector2f(0.f, 0.f))
+		{
+			m_position += m_speed; // * m_time;
+			// On replace le body
+			m_body.setPosition(m_position.getX(), m_position.getY());
+			cout << "Position du joueur " << m_position << endl;
+
+			// On replace la vue
+			if (m_window != 0)
+			{
+				// cout << "On replace la vue" << endl;
+				sf::View player_view(m_window->getView());
+				player_view.setCenter(m_position.getX(), m_position.getY());
+				m_window->setView(player_view);
+			}
+		}
+		// cout << "pose x=" << m_position.getX() << " y=" << m_position.getY() << endl;
 	}
 }

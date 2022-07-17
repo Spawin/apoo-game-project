@@ -14,6 +14,16 @@ void MyVector::operator-=(MyVector const& v)
 	m_y -= v.m_y;
 }
 
+bool MyVector::operator==(MyVector const& v)
+{
+	return m_x == v.m_x && m_y == v.m_y;
+}
+
+bool MyVector::operator!=(sf::Vector2f const& v)
+{
+	return m_x != v.x || m_y != v.y;
+}
+
 MyVector MyVector::operator*(float coefficient) const
 {
 	return { m_x * coefficient, m_y * coefficient };

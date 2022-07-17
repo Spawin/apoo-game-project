@@ -30,7 +30,7 @@ int main()
 
 	// Create the main window
 	// Use the screenScalingFactor
-	window.create(sf::VideoMode(windowWidth, windowHeight), "Le guerrier" /*, sf::Style::Close*/);
+	window.create(sf::VideoMode(windowWidth, windowHeight), "Le guerrier", sf::Style::Close);
 	platform.setIcon(window.getSystemHandle());
 
 	// Initialisations de l'espace pour tous les éléments du jeux
@@ -46,9 +46,15 @@ int main()
 
 	// Mise en place des vues
 	// sf::View player_view(sf::Vector2f(350.f, 300.f), sf::Vector2f(1000.f, 600.f));
-	sf::View player_view(sf::Vector2f(350.f, 300.f), sf::Vector2f(1000.f, 600.f));
+	sf::View player_view;
+	player_view.setCenter(sf::Vector2f(WINDOW_WIDTH / 2.f, WINDOW_HEIGHT / 2.f));
+	player_view.setSize(sf::Vector2f(GameMap::getGAME_MAP_WIDTH() / 2, GameMap::getGAME_MAP_HEIGHT() / 8));
 	sf::View minimap_view;
 	minimap_view.setViewport(sf::FloatRect(0.75f, 0.f, 0.25f, 0.25f));
+
+	// activation de la vue
+	window.setView(player_view);
+	// window.setView(minimap_view);
 
 	Personage spawin = Personage("content/personage/personage.png", true);
 	spawin.setGameObjectName("spawin");
@@ -57,10 +63,6 @@ int main()
 
 	auto chrono = sf::Clock();
 	sf::Event event;
-
-	// activation de la vue
-	window.setView(player_view);
-	// window.setView(minimap_view);
 
 	// Start the game loop
 	while (window.isOpen())
@@ -76,8 +78,8 @@ int main()
 				// on met à jour la vue, avec la nouvelle taille de la fenêtre
 				// sf::FloatRect visibleArea(0.f, 0.f, event.size.width, event.size.height);
 				// window.setView(sf::View(visibleArea));
-				player_view.setSize(event.size.width, event.size.height);
-				window.setView(player_view);
+				// player_view.setSize(event.size.width, event.size.height);
+				// window.setView(player_view);
 				// window.setView(minimap_view);
 			}
 

@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <cmath>
 #include <iostream>
+#include <math.h>
 
 int Position::m_spaceWidth { 0 };
 int Position::m_spaceHeight { 0 };
@@ -18,6 +19,7 @@ Position::Position(float detectabilityRadius) :
 	{
 		std::cerr << "Attention : une coordonnée a été créée avant l’initialisation de l’espace !" << std::endl;
 	}
+	recalculate();
 }
 
 Position::Position(float px, float py, float detectabilityRadius) :
@@ -49,6 +51,13 @@ void Position::operator=(Position const& p)
 	m_x = p.getX();
 	m_y = p.getY();
 	recalculate();
+}
+
+std::ostream& operator<<(std::ostream& out, Position const& p)
+{
+	out << "[ x=" << p.getX() << " , y=" << p.getY() << " ]";
+	out << " Block [ x=" << ceil(p.getX() / (float)GAME_BLOCKS_WIDTH) << " , y=" << ceil(p.getY() / (float)GAME_BLOCKS_WIDTH) << " ]";
+	return out;
 }
 
 void Position::initSpace(int width, int height)
@@ -185,6 +194,11 @@ void Position::setPosition(float posX, float posY)
 {
 	m_x = posX;
 	m_y = posY;
+}
+
+MyVector Position::getPosition() const
+{
+	return MyVector { m_x, m_y };
 }
 
 bool Position::canMove()
