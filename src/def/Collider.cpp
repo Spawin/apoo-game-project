@@ -61,7 +61,7 @@ void Collider::update()
 				// cout << "2 - " << m_objects[it2->first]->getGameObjectName() << " " << m_objects[it2->first]->getGameObjectId() << endl;
 
 				// cout << "distance entre les deux " << it1->second->getPosition().getDistanceWith(it2->second->getPosition()) << endl;
-				if (m_objects[it1->first]->getSprite().getLocalBounds().intersects(m_objects[it2->first]->getSprite().getLocalBounds()))
+				if (m_objects[it1->first]->getSprite().getGlobalBounds().intersects(m_objects[it2->first]->getSprite().getGlobalBounds()))
 				{
 					m_objects[it1->first]->onCollisionEnter(Collision(*m_objects[it2->first]));
 					m_objects[it2->first]->onCollisionEnter(Collision(*m_objects[it1->first]));

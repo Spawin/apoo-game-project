@@ -54,8 +54,8 @@ public:
 private:
 	// recalcule les coordonnées pour qu’elles soient dans les limites ; inutile d’y accéder de l’extérieur, donc privée
 	void recalculate();
-	float m_x { m_spaceWidth / 2.f };
-	float m_y { m_spaceHeight / 2.f };
+	float m_x { m_spaceWidth / 2.f };  // REVIEW -
+	float m_y { m_spaceHeight / 2.f }; // REVIEW -
 
 	// longueur et hauteur de l’espace sont static, partagés par tous les objets Coordonnees
 	static int m_spaceWidth;

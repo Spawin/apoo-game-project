@@ -27,6 +27,11 @@ public:
 	void onCollisionEnter(Collision const& collision) const override;
 
 protected:
+	/**
+	 * @brief Pour initialiser les valeur par défaut du GameObject
+	 *
+	 */
+	void init();
 	// La quantité de vie du personnage
 	int m_life;
 	// Valeur de l'accélération du déplacement (accélération uniforme)

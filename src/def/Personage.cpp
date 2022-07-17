@@ -5,41 +5,43 @@
 #include <iostream>
 #include <string>
 
+#include "include/consts.hpp"
+
 using namespace std;
 
-Personage::Personage(bool isPlayer) :
-	m_isPlayer(isPlayer)
+void Personage::init()
 {
-	m_width = 50;
-	m_height = 150;
+	m_width = 32;
+	m_height = 50;
 
 	m_gameObjectName = "Personage";
 
 	m_collider = new BoxCollider((*this));
+
+	int w(32);
+	int h(32);
+	m_body.setTextureRect(sf::IntRect(0, 0, w, h));
+	m_body.setScale((float)PERSONNAGE_WIDTH / (float)w, (float)PERSONNAGE_WIDTH / (float)h);
+}
+
+Personage::Personage(bool isPlayer) :
+	m_isPlayer(isPlayer)
+{
+	init();
 }
 
 Personage::Personage(std::string_view const& imageSpritePath, bool isPlayer) :
 	GameObject(imageSpritePath),
 	m_isPlayer(isPlayer)
 {
-	m_width = 50;
-	m_height = 150;
-
-	m_gameObjectName = "Personage";
-
-	m_collider = new BoxCollider((*this));
+	init();
 }
 
 Personage::Personage(float posX, float posY, bool isPlayer) :
 	GameObject(posX, posY),
 	m_isPlayer(isPlayer)
 {
-	m_width = 50;
-	m_height = 150;
-
-	m_gameObjectName = "Personage";
-
-	m_collider = new BoxCollider((*this));
+	init();
 }
 
 Personage::~Personage()
@@ -63,7 +65,7 @@ void Personage::onCollisionEnter(Collision const& collision) const
 	if (m_isPlayer)
 	{
 		cout << "Collision de " << m_gameObjectName << " avec "
-			 << "*(collision.getGameObject())->getGameObjectName()" << endl;
+			 << "collision.getGameObject()->getGameObjectName()" << endl;
 	}
 }
 
@@ -117,5 +119,6 @@ void Personage::updatePosition()
 		// m_body.move(m_speed2.m_x, m_speed2.m_y);
 		m_position += m_speed; // * m_time;
 		m_body.setPosition(m_position.getX(), m_position.getY());
+		// cout << "pose x=" << m_position.getX() << " y=" << m_position.getY();
 	}
 }

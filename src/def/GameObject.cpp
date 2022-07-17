@@ -24,6 +24,8 @@ void GameObject::init()
 	// On définit son centre de "gravité"
 	// m_body.setOrigin(m_body.getLocalBounds().width / 2, m_body.getLocalBounds().height / 2);
 	m_body.setOrigin(PERSONNAGE_WIDTH / 2, PERSONNAGE_WIDTH / 2);
+
+	m_position = Position(300, 300); // REVIEW -
 	m_body.setPosition(m_position.getX(), m_position.getY());
 }
 

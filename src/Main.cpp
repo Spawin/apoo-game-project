@@ -1,5 +1,7 @@
 #include "Platform/Platform.hpp"
 #include "include/Collider.hpp"
+#include "include/GameMap.hpp"
+#include "include/House.hpp"
 #include "include/Personage.hpp"
 #include "include/Position.hpp"
 #include "include/consts.hpp"
@@ -23,21 +25,42 @@ int main()
 	windowWidth = (float)WINDOW_WIDTH * screenScalingFactor;
 	windowHeight = (float)WINDOW_HEIGHT * screenScalingFactor;
 
+	// On fix la limite de frames
+	window.setFramerateLimit(60);
+
 	// Create the main window
 	// Use the screenScalingFactor
 	window.create(sf::VideoMode(windowWidth, windowHeight), "Le guerrier" /*, sf::Style::Close*/);
 	platform.setIcon(window.getSystemHandle());
 
 	// Initialisations de l'espace pour tous les éléments du jeux
-	Position::initSpace(GAME_MAP_WIDTH, GAME_MAP_HEIGHT);
+	Position::initSpace((int)GameMap::getGAME_MAP_WIDTH, (int)GameMap::getGAME_MAP_HEIGHT);
 
-	Personage spawin = Personage(300, 200, true);
+	// Construction de la maison
+	House house;
+	if (!house.load("content/house.png", sf::Vector2u(32, 32), house.getDisposition(), 40, 80))
+	{
+		std::cerr << "Erreur chargement < content/Tiles.png >" << std::endl;
+		return -1;
+	}
+
+	// Mise en place des vues
+	// sf::View player_view(sf::Vector2f(350.f, 300.f), sf::Vector2f(1000.f, 600.f));
+	sf::View player_view(sf::Vector2f(350.f, 300.f), sf::Vector2f(1000.f, 600.f));
+	sf::View minimap_view;
+	minimap_view.setViewport(sf::FloatRect(0.75f, 0.f, 0.25f, 0.25f));
+
+	Personage spawin = Personage("content/personage/personage.png", true);
 	spawin.setGameObjectName("spawin");
 
-	Personage p2 = Personage(50, 50);
+	// Personage p2 = Personage(50, 50);
 
 	auto chrono = sf::Clock();
 	sf::Event event;
+
+	// activation de la vue
+	window.setView(player_view);
+	// window.setView(minimap_view);
 
 	// Start the game loop
 	while (window.isOpen())
@@ -48,8 +71,15 @@ int main()
 			if (event.type == sf::Event::Closed)
 				window.close();
 
-			///     if (event.type == sf::Event::Resized)
-			///         doSomethingWithTheNewSize(event.size.width, event.size.height);
+			if (event.type == sf::Event::Resized)
+			{
+				// on met à jour la vue, avec la nouvelle taille de la fenêtre
+				// sf::FloatRect visibleArea(0.f, 0.f, event.size.width, event.size.height);
+				// window.setView(sf::View(visibleArea));
+				player_view.setSize(event.size.width, event.size.height);
+				window.setView(player_view);
+				// window.setView(minimap_view);
+			}
 
 			// spawin.sendEvent(event);
 		}
@@ -62,15 +92,17 @@ int main()
 
 		//* ANCHOR - Appel des update
 		spawin.update();
-		p2.update();
+		// p2.update();
 
 		// Clear screen
 		window.clear();
 
-		// window.draw(shape);
+		//* Affichage de la maison
+		window.draw(house);
+
 		//* ANCHOR - Affichage des gameObjects
 		spawin.show(window);
-		p2.show(window);
+		// p2.show(window);
 
 		// Update the window
 		window.display();
