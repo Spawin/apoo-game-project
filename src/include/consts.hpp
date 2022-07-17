@@ -18,7 +18,7 @@
 // #define GAME_MAP_WIDTH 1100	 // !depracted
 // #define GAME_MAP_HEIGHT 2200 // !depracted
 
-#define DISTANCE_MIN_BETWEEN_OBJECTS 64
+#define DISTANCE_MIN_BETWEEN_OBJECTS 10 // Distance minimal entre deux points de contact d'un objet
 
 #define DEFAULT_DETECTABILITY_RADIUS 16	   // Diamètre 32
 #define PERSONNAGE_DETECTABILITY_RADIUS 16 // Diamètre 32

@@ -1,6 +1,6 @@
 #include "include/Personage.hpp"
-#include "include/BoxCollider.hpp"
 #include "include/MyVector.hpp"
+#include "include/PolygonCollider.hpp"
 #include "include/Rigidbody.hpp"
 
 #include <iostream>
@@ -17,7 +17,7 @@ void Personage::init()
 
 	m_gameObjectName = "Personage";
 
-	m_collider = new BoxCollider((*this));
+	m_collider = new PolygonCollider((*this), { sf::Vector2f(0.f, 0.f) });
 	m_rigidbody = new Rigidbody((*this));
 
 	int w(32);
@@ -79,8 +79,8 @@ void Personage::onCollisionEnter(Collision const& collision) const
 	collision.test();
 	if (m_isPlayer)
 	{
-		cout << "Collision de " << m_gameObjectName << " avec "
-			 << "collision.getGameObject()->getGameObjectName()" << endl;
+		// cout << "Collision de " << m_gameObjectName << " avec "
+		// 	 << "collision.getGameObject()->getGameObjectName()" << endl;
 	}
 }
 

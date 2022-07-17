@@ -3,11 +3,11 @@
 
 #include "include/Collider.hpp"
 
-class BoxCollider : public Collider
+class PolygonCollider : public Collider
 {
 public:
-	explicit BoxCollider(GameObject const& parent, std::vector<sf::Vector2f> contactPoints);
-	~BoxCollider();
+	explicit PolygonCollider(GameObject const& parent, std::vector<sf::Vector2f> contactPoints);
+	~PolygonCollider();
 
 	bool touchEachOther(Collider const& collider) const override;
 

@@ -22,9 +22,16 @@ Collider::GameObjectMap Collider::m_objects = [] {
 	return ret;
 }();
 
-Collider::Collider(GameObject const& parent) :
-	parent(parent)
+Collider::Collider(GameObject const& parent, std::vector<sf::Vector2f> contactPoints) :
+	parent(parent),
+	m_contactPoints(contactPoints)
 {
+	if (contactPoints.empty())
+	{
+		cerr << "AU moin un point de contact" << endl;
+		exit(-1);
+	}
+	// m_contactPoints.insert(m_contactPoints.end(), contactPoints.begin(), contactPoints.end());
 	// m_objects.insert({ to_string(parent.getGameObjectId()), (GameObject*)&parent }); // REVIEW -
 
 	// cout << "dans le constructeur du collider" << endl;
@@ -35,6 +42,18 @@ Collider::Collider(GameObject const& parent) :
 
 Collider::~Collider()
 {}
+
+//
+
+GameObject const& Collider::getParent() const
+{
+	return parent;
+}
+
+std::vector<sf::Vector2f> const& Collider::getContactPoints() const
+{
+	return m_contactPoints;
+}
 
 void Collider::update()
 {
@@ -53,22 +72,23 @@ void Collider::update()
 			if (find(alreadyChecked.begin(), alreadyChecked.end(), it2->first) != alreadyChecked.end())
 				continue;
 
-			// if (it1->second->getPosition().getDistanceWith(it2->second->getPosition()) < (float)DISTANCE_MIN_BETWEEN_OBJECTS)
 			// On va dabor tester la proximité des deux entité par rapport à une constante qui définit la distance minimale entre 2 object
-			if (m_objects[it1->first]->getPosition().getDistanceWith(m_objects[it2->first]->getPosition()) < (float)DISTANCE_MIN_BETWEEN_OBJECTS)
+			// if (m_objects[it1->first]->getPosition().getDistanceWith(m_objects[it2->first]->getPosition()) < (float)DISTANCE_MIN_BETWEEN_OBJECTS)
+			if (m_objects[it1->first]->getCollider().touchEachOther(m_objects[it2->first]->getCollider()))
 			{
 				// cout << "1 - " << m_objects[it1->firset]->getGameObjectName() << " " << m_objects[it1->first]->getGameObjectId() << endl;
 				// cout << "2 - " << m_objects[it2->first]->getGameObjectName() << " " << m_objects[it2->first]->getGameObjectId() << endl;
 
 				// cout << "distance entre les deux " << it1->second->getPosition().getDistanceWith(it2->second->getPosition()) << endl;
-				if (m_objects[it1->first]->getSprite().getGlobalBounds().intersects(m_objects[it2->first]->getSprite().getGlobalBounds()))
-				{
-					m_objects[it1->first]->fromColliderToRigidBody();
-					m_objects[it2->first]->fromColliderToRigidBody();
+				// NOTE -  Commenté car me sort un bug que j n'ai pas envie de géré
+				// if (m_objects[it1->first]->getSprite().getGlobalBounds().intersects(m_objects[it2->first]->getSprite().getGlobalBounds()))
+				// {
+				m_objects[it1->first]->fromColliderToRigidBody();
+				m_objects[it2->first]->fromColliderToRigidBody();
 
-					m_objects[it1->first]->onCollisionEnter(Collision(*m_objects[it2->first]));
-					m_objects[it2->first]->onCollisionEnter(Collision(*m_objects[it1->first]));
-				}
+				m_objects[it1->first]->onCollisionEnter(Collision(*m_objects[it2->first]));
+				m_objects[it2->first]->onCollisionEnter(Collision(*m_objects[it1->first]));
+				// }
 			}
 		}
 	}

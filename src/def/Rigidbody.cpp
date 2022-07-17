@@ -13,5 +13,5 @@ Rigidbody::~Rigidbody()
 
 void Rigidbody::onAnotherRigidBodyDetection()
 {
-	// m_parent.m_position.m_thereIsARigidBody = true;
+	m_parent.m_position.m_thereIsARigidBody = true;
 }

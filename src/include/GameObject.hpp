@@ -82,6 +82,8 @@ public:
 	 */
 	void fromColliderToRigidBody() const;
 
+	Collider const& getCollider() const;
+
 protected:
 	/**
 	 * @brief Pour initialiser les valeur par défaut du GameObject

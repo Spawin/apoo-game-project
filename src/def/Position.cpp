@@ -1,4 +1,5 @@
 #include "include/Position.hpp"
+#include "include/Collider.hpp"
 #include "include/GameMap.hpp"
 #include "include/Hall.hpp"
 #include "include/consts.hpp"
@@ -99,6 +100,9 @@ void Position::initSpace(int width, int height)
 
 void Position::recalculate()
 {
+
+	Collider::update();
+
 	if (!canMove() || m_thereIsARigidBody)
 	{
 		if (m_x != m_previousPosition.m_x)

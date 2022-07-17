@@ -132,6 +132,11 @@ void GameObject::fromColliderToRigidBody() const
 	}
 }
 
+Collider const& GameObject::getCollider() const
+{
+	return *m_collider;
+}
+
 // void GameObject::sendEvent(sf::Event const& event)
 // {
 // 	if (event.type == sf::Event::KeyPressed)

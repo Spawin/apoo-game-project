@@ -5,7 +5,7 @@
 // #include "include/Rigidbody.hpp"
 #include "include/consts.hpp"
 
-// class RigidRigidbody;
+class RigidRigidbody;
 
 class Position
 {
@@ -69,7 +69,7 @@ private:
 
 	bool m_thereIsARigidBody { false };
 
-	// friend class Rigidbody;
+	friend class Rigidbody;
 
 	/**
 	 * @brief Vérifie si l'élément peut bouger
