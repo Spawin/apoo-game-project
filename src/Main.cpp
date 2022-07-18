@@ -1,6 +1,7 @@
 #include "Platform/Platform.hpp"
 #include "include/Collider.hpp"
 #include "include/GameMap.hpp"
+#include "include/GameMaster.hpp"
 #include "include/House.hpp"
 #include "include/Personage.hpp"
 #include "include/Position.hpp"
@@ -28,6 +29,9 @@ int main()
 
 	// On fix la limite de frames
 	window.setFramerateLimit(60);
+
+	// Activation du vsync
+	window.setVerticalSyncEnabled(true);
 
 	// Create the main window
 	// Use the screenScalingFactor
