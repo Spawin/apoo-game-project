@@ -5,10 +5,12 @@
 
 class Religious : public Personage
 {
-private:
 public:
 	Religious();
 	~Religious();
+
+private:
+	void init();
 };
 
 #endif // __RELIGIOUS_HPP__

@@ -103,7 +103,7 @@ protected:
 	}
 	// REVIEW -
 	sf::Texture m_texture {};
-	// Le corps de l'objet
+	// Sprite du corps de l'objet
 	sf::Sprite m_body {};
 	// Représente la position de l'objet
 	Position m_position {};

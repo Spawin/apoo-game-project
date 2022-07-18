@@ -4,6 +4,7 @@
 #include "include/House.hpp"
 #include "include/Personage.hpp"
 #include "include/Position.hpp"
+#include "include/Soldier.hpp"
 #include "include/consts.hpp"
 
 int main()
@@ -47,7 +48,8 @@ int main()
 	// Mise en place des vues
 	// sf::View player_view(sf::Vector2f(350.f, 300.f), sf::Vector2f(1000.f, 600.f));
 	sf::View player_view;
-	player_view.setCenter(sf::Vector2f(WINDOW_WIDTH / 2.f, WINDOW_HEIGHT / 2.f));
+	// player_view.setCenter(sf::Vector2f(WINDOW_WIDTH / 2.f, WINDOW_HEIGHT / 2.f));
+	player_view.setCenter(sf::Vector2f(32.f * 4.f, 32.f * 78.f));
 	player_view.setSize(sf::Vector2f(GameMap::getGAME_MAP_WIDTH() / 2, GameMap::getGAME_MAP_HEIGHT() / 8));
 	sf::View minimap_view;
 	minimap_view.setViewport(sf::FloatRect(0.75f, 0.f, 0.25f, 0.25f));
@@ -56,11 +58,11 @@ int main()
 	window.setView(player_view);
 	// window.setView(minimap_view);
 
-	Personage spawin = Personage("content/personage/personage.png", true);
+	Personage* spawin = new Soldier(true);
 	// Personage spawin = Personage(true);
-	spawin.setGameObjectName("spawin");
+	spawin->setGameObjectName("spawin");
 
-	Personage p2 = Personage(32 * 20 + 16, 32 * 70);
+	Personage* p2 = new Soldier();
 
 	auto chrono = sf::Clock();
 	sf::Event event;
@@ -94,8 +96,8 @@ int main()
 		Collider::update();
 
 		//* ANCHOR - Appel des update
-		spawin.update();
-		p2.update();
+		spawin->update();
+		p2->update();
 
 		// Clear screen
 		window.clear();
@@ -104,12 +106,14 @@ int main()
 		window.draw(house);
 
 		//* ANCHOR - Affichage des gameObjects
-		spawin.show(window);
-		p2.show(window);
+		spawin->show(window);
+		p2->show(window);
 
 		// Update the window
 		window.display();
 	}
 
+	delete spawin;
+	delete p2;
 	return 0;
 }

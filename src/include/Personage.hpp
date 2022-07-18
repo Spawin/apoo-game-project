@@ -33,16 +33,55 @@ public:
 
 	void onCollisionEnter(Collision const& collision) const override;
 
+	/**
+	 * @brief Get the Health object
+	 *
+	 * @return int
+	 */
+	int getHealth() const;
+
+	virtual void simpleAttack(Personage& target) = 0;
+	virtual void specialAttack(Personage& target) = 0;
+
 protected:
 	/**
 	 * @brief Pour initialiser les valeur par défaut du GameObject
 	 *
 	 */
 	void init();
+
 	// La quantité de vie du personnage
-	int m_life;
+	int m_health { 100 };
+
+	// La quantité de ça spécialité
+	int m_speciality { 100 };
+
+	// Le nom de la spécialité
+	std::string m_specialtyName;
+
+	// Valeur de l'attaque
+	int m_simpleAttackValue { 10 };
+
+	// Valeur de l'attaque
+	int m_specialAttackValue { 25 };
+
+	// probabilité d'attaque réussi (entre 0 et 1) mais évitons le zéro
+	float m_probabilitySuccessAttack { .5f };
+
+	// variation de l'attaque (valeur de l'attaque +/- cette valeur)
+	int m_attackVariation { 5 };
+
+	// sf::Texture m_healthBarTexture;
+	sf::Sprite m_healthBarSprite;
+
+	// sf::Texture m_specialityBarTexture;
+	sf::Sprite m_specialityBarSprite;
+
+	// sf::Texture m_
+	sf::Sprite m_suit;
+
 	// Valeur de l'accélération du déplacement (accélération uniforme)
-	const float MOVE_SPEED { 300.f };
+	const float m_MOVE_SPEED { 200.f };
 
 	const bool m_isPlayer;
 

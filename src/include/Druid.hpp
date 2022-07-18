@@ -10,6 +10,7 @@ public:
 	~Druid();
 
 private:
+	void init();
 };
 
 #endif // __DRUID_HPP__

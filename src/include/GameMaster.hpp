@@ -19,6 +19,8 @@ private:
 	 *
 	 */
 	static const sf::Vector2i m_spriteBoxCenter;
+
+	sf::Texture m_gameTexture;
 };
 
 #endif // __GAME_MASTER__

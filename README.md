@@ -3,7 +3,7 @@
   -
   - Personage Abstract
     -
-    >life                                       max 100
+    >health                                     max 100
     - Soldier
       > rage                                    max 100
     - Religious

@@ -21,20 +21,30 @@ void Personage::init()
 	m_collider = new PolygonCollider((*this), { sf::Vector2f(18.f - GameMaster::getSPRITE_BOX_CENTER().x, 5.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(22.f - GameMaster::getSPRITE_BOX_CENTER().x, 12.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(22.f - GameMaster::getSPRITE_BOX_CENTER().x, 20.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(18.f - GameMaster::getSPRITE_BOX_CENTER().x, 27.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(11.f - GameMaster::getSPRITE_BOX_CENTER().x, 22.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(11.f - GameMaster::getSPRITE_BOX_CENTER().x, 12.f - GameMaster::getSPRITE_BOX_CENTER().y) });
 	m_rigidbody = new Rigidbody((*this));
 
-	int w(32);
-	int h(32);
-	m_body.setTextureRect(sf::IntRect(0, 0, w, h)); // REVIEW - Un personnage par défaut plus stylé
-	// m_body.setColor(sf::Color::Black);
-	m_body.setScale((float)PERSONNAGE_WIDTH / (float)w, (float)PERSONNAGE_WIDTH / (float)h);
+	// int w(32);
+	// int h(32);
+	// m_body.setTextureRect(sf::IntRect(0, 0, w, h)); // REVIEW - Un personnage par défaut plus stylé
+
+	// m_body.setScale((float)PERSONNAGE_WIDTH / (float)w, (float)PERSONNAGE_WIDTH / (float)h);
+
+	// Initialisation de la position en temps que joeurs
 	if (m_isPlayer)
 	{
 		m_position = Position(32 * 4, 32 * 78); // REVIEW -
 		m_body.setPosition(m_position.getX(), m_position.getY());
 	}
+	else
+	{
+		// TODO -
+		m_position = Position(32 * 20 + 16, 32 * 70); // REVIEW -
+		m_body.setPosition(m_position.getX(), m_position.getY());
+	}
 }
 
 Personage::Personage(bool isPlayer) :
+	GameObject("content/personage/personage.png"),
 	m_isPlayer(isPlayer)
+
 {
 	init();
 }
@@ -85,6 +95,11 @@ void Personage::onCollisionEnter(Collision const& collision) const
 	}
 }
 
+int Personage::getHealth() const
+{
+	return m_health;
+}
+
 void Personage::updatePosition()
 {
 	if (m_isPlayer)
@@ -96,28 +111,28 @@ void Personage::updatePosition()
 		{
 			// m_speed.x = MOVE_SPEED * m_time;
 			// m_speed2 = MyVector::createFromAngle(MOVE_SPEED * m_time, m_body.getRotation());
-			m_speed = MyVector::createFromAngle(MOVE_SPEED * m_time, 0.f);
+			m_speed = MyVector::createFromAngle(m_MOVE_SPEED * m_time, 0.f);
 			anyDirectionalKeyIsPressed = true;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 		{
 			// m_speed.x = -MOVE_SPEED * m_time;
 			// m_speed2 = MyVector::createFromAngle(MOVE_SPEED * m_time, m_body.getRotation());
-			m_speed = MyVector::createFromAngle(MOVE_SPEED * m_time, 180.f);
+			m_speed = MyVector::createFromAngle(m_MOVE_SPEED * m_time, 180.f);
 			anyDirectionalKeyIsPressed = true;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 		{
 			// m_speed.y = -MOVE_SPEED * m_time;
 			// m_speed2 = MyVector::createFromAngle(MOVE_SPEED * m_time, m_body.getRotation());
-			m_speed = MyVector::createFromAngle(MOVE_SPEED * m_time, 270.f);
+			m_speed = MyVector::createFromAngle(m_MOVE_SPEED * m_time, 270.f);
 			anyDirectionalKeyIsPressed = true;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 		{
 			// m_speed.y = MOVE_SPEED * m_time;
 			// m_speed2 = MyVector::createFromAngle(MOVE_SPEED * m_time, m_body.getRotation());
-			m_speed = MyVector::createFromAngle(MOVE_SPEED * m_time, 90.f);
+			m_speed = MyVector::createFromAngle(m_MOVE_SPEED * m_time, 90.f);
 			anyDirectionalKeyIsPressed = true;
 		}
 

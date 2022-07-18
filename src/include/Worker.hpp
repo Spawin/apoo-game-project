@@ -10,6 +10,7 @@ public:
 	~Worker();
 
 private:
+	void init();
 };
 
 #endif // __WORKER_HPP__

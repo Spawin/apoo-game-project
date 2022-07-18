@@ -101,7 +101,7 @@ void Position::initSpace(int width, int height)
 void Position::recalculate()
 {
 
-	Collider::update();
+	Collider::update(); // REVIEW - On peut l'enlever mait il faudrait augmenter les points de contact.
 
 	if (!canMove() || m_thereIsARigidBody)
 	{
