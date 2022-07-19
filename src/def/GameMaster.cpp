@@ -10,8 +10,79 @@ GameMaster* GameMaster::m_gameMaster = nullptr;
 //
 void GameMaster::initWindow()
 {
-	//
+	// utilisation du window.ini
+	std::ifstream ifs("Config/window.ini");
+
+	string title = "None";
+	sf::VideoMode window_bounds(1200, 600);
+	unsigned framerate_limit = 60;
+	bool vertical_sync_enabled = true;
+	if (ifs.is_open())
+	{
+		std::getline(ifs, title);
+		ifs >> window_bounds.width >> window_bounds.height;
+		ifs >> framerate_limit;
+		ifs >> vertical_sync_enabled;
+	}
+	ifs.close();
+
+	this->window = new sf::RenderWindow();
+
+	util::Platform platform;
+
+	// in Windows at least, this must be called before creating the window
+	float screenScalingFactor = platform.getScreenScalingFactor(window->getSystemHandle());
+	// Use the screenScalingFactor
+	window_bounds.width *= screenScalingFactor;
+	window_bounds.height *= screenScalingFactor;
+
+	// Create the main window
+	window->create(window_bounds, title, sf::Style::Close);
+	platform.setIcon(window->getSystemHandle());
+	// On fix la limite de frames
+	window->setFramerateLimit(framerate_limit);
+	// Activation du vsync
+	window->setVerticalSyncEnabled(vertical_sync_enabled);
+
+	// Initialisations de l'espace pour tous les éléments du jeux
+	Position::initSpace((int)GameMap::getGAME_MAP_WIDTH, (int)GameMap::getGAME_MAP_HEIGHT);
+
+	// Construction de la maison
+	House house;
+	if (!house.load("content/house.png", sf::Vector2u(32, 32), house.getDisposition(), 40, 80))
+	{
+		std::cerr << "Erreur chargement < content/Tiles.png >" << std::endl;
+		return exit(-1);
+	}
+
+	// Mise en place des vues
+	// sf::View player_view(sf::Vector2f(350.f, 300.f), sf::Vector2f(1000.f, 600.f));
+	sf::View player_view;
+	// player_view.setCenter(sf::Vector2f(WINDOW_WIDTH / 2.f, WINDOW_HEIGHT / 2.f));
+	player_view.setCenter(sf::Vector2f(32.f * 4.f, 32.f * 78.f));
+	player_view.setSize(sf::Vector2f(GameMap::getGAME_MAP_WIDTH() / 2, GameMap::getGAME_MAP_HEIGHT() / 8));
+	sf::View minimap_view;
+	minimap_view.setViewport(sf::FloatRect(0.75f, 0.f, 0.25f, 0.25f));
+
+	// activation de la vue
+	window->setView(player_view);
+	// window->setView(minimap_view);
+
+	// Personage* spawin = new Soldier(true);
+	// // Personage spawin = Personage(true);
+	// spawin->setGameObjectName("spawin");
+
+	// Personage* p2 = new Soldier();
+
+	// auto chrono = sf::Clock();
+	// sf::Event event;
 }
+
+void GameMaster::intiStates()
+{
+	this->states.push(new GameState(this->window));
+}
+// ---------------------------------------
 
 GameMaster::GameMaster()
 {
@@ -22,14 +93,27 @@ GameMaster::GameMaster()
 		exit(-1);
 	}
 
+	this->initWindow();
+	this->intiStates();
+
 	GameMaster::m_gameMaster = this;
 }
 
 GameMaster::~GameMaster()
 {
+	delete this->window;
+	// delete spawin;
+	// delete p2;
+
+	// REVIEW -
+	while (!this->states.empty())
+	{
+		delete this->states.top();
+		this->states.pop();
+	}
 }
 
-//
+// ------------------------------------
 
 const sf::Vector2i GameMaster::getSPRITE_BOX_CENTER()
 {
@@ -41,13 +125,92 @@ const GameMaster* GameMaster::GAME_MASTER()
 	return m_gameMaster;
 }
 
-//
-
+// -----------------------------------
+void GameMaster::endApplication()
+{
+	cout << "fin application" << endl;
+}
+void GameMaster::updateDeltatime()
+{
+	this->deltaTime = this->dtClock.restart().asSeconds();
+}
 void GameMaster::updateSFMLEvents()
-{}
+{
+
+	while (this->window->pollEvent(this->sfEvent))
+	{
+		// Close window: exit
+		if (this->sfEvent.type == sf::Event::Closed)
+			this->window->close();
+
+		if (this->sfEvent.type == sf::Event::Resized)
+		{
+			// TODO -
+		}
+	}
+}
 void GameMaster::update()
-{}
+{
+	this->updateSFMLEvents();
+
+	// Update items
+	if (!this->states.empty())
+	{
+		this->states.top()->update(this->deltaTime);
+
+		if (this->states.top()->getQuit())
+		{
+			this->states.top()->endState();
+			delete this->states.top();
+			this->states.pop();
+		}
+	}
+	// Application end
+	else
+	{
+		this->endApplication();
+		this->window->close();
+	}
+}
 void GameMaster::render()
-{}
+{
+
+	// initialisation du time du game object
+	// GameObject::SetTime(chrono.restart().asSeconds());
+
+	// Appel pour tester la proximité de chaque collider
+	Collider::update();
+
+	//* ANCHOR - Appel des update
+	// spawin->update();
+	// p2->update();
+
+	// Clear screen
+	this->window->clear(); // NOTE -
+	// ----------------------
+	// Render items
+	if (!this->states.empty())
+		this->states.top()->render(this->window);
+
+	// ----------------------
+	//* Affichage de la maison
+	// this->window->draw(house);
+
+	//* ANCHOR - Affichage des gameObjects
+	// spawin->show(this->window);
+	// p2->show(this->window);
+
+	// Update the window
+	this->window->display(); // NOTE -
+}
 void GameMaster::run()
-{}
+{
+
+	// Start the game loop
+	while (this->window->isOpen())
+	{
+		this->updateDeltatime();
+		this->update();
+		this->render();
+	}
+}

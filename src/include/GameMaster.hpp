@@ -1,8 +1,7 @@
 #if !defined(__GAME_MASTER__)
 	#define __GAME_MASTER__
 
-	#include <memory>
-	#include <vector>
+	#include "include/GameState.hpp"
 
 class GameMaster
 {
@@ -10,9 +9,14 @@ public:
 	GameMaster();
 	~GameMaster();
 
+	// Fonctions
+	void endApplication();
+
+	void updateDeltatime();
 	void updateSFMLEvents();
 	void update();
 	void render();
+	// Core
 	void run();
 
 	//
@@ -28,9 +32,17 @@ public:
 
 private:
 	// Variables
+	sf::RenderWindow* window;
+	sf::Event sfEvent;
+
+	sf::Clock dtClock;
+	float deltaTime;
+
+	std::stack<State*> states;
 
 	// Initialisation
 	void initWindow();
+	void intiStates();
 	//
 	//
 	//
