@@ -1,0 +1,46 @@
+\hypertarget{_collider_8hpp_source}{}\doxysection{Collider.\+hpp}
+\label{_collider_8hpp_source}\index{include/Collider.hpp@{include/Collider.hpp}}
+\mbox{\hyperlink{_collider_8hpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#ifndef \_\_COLLIDER\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#define \_\_COLLIDER\_HPP\_}}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_game_object_8hpp}{include/GameObject.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00011}00011 \textcolor{keyword}{class }\mbox{\hyperlink{class_game_object}{GameObject}};}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00013}\mbox{\hyperlink{class_collider}{00013}} \textcolor{keyword}{class }\mbox{\hyperlink{class_collider}{Collider}}}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00014}00014 \{}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00015}00015     \textcolor{keyword}{using }GameObjectMap = std::map<std::string, const GameObject*>;}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00017}00017 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00018}00018     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_collider_a5f7d036476d2bff521151c2031f20d46}{Collider}}(\mbox{\hyperlink{class_game_object}{GameObject}} \textcolor{keyword}{const}\& \mbox{\hyperlink{class_collider_a937ddad2dd8d4d6a67370334d447210b}{parent}}, std::string typeOfCollider \textcolor{comment}{/*, std::vector<sf::Vector2f> contactPoints*/});}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00019}00019     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_collider_a564acde9860f875a32a6638c573d87be}{\string~Collider}}();}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00025}00025     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_collider_a765cffbef5d5e713672cea46c563dc67}{update}}();}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00027}00027     \mbox{\hyperlink{class_game_object}{GameObject}} \textcolor{keyword}{const}\& \mbox{\hyperlink{class_collider_ac5e78bcb91de52d8202beea5c4b3a5f8}{getParent}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00029}\mbox{\hyperlink{class_collider_a97506e7e7a75b63c3358eb898194b866}{00029}}     \textcolor{keyword}{virtual} std::vector<sf::Vector2f> \mbox{\hyperlink{class_collider_a97506e7e7a75b63c3358eb898194b866}{getContactPoints}}() \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00030}\mbox{\hyperlink{class_collider_acecb570f58b885affcfcc5c25e9bc217}{00030}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_collider_acecb570f58b885affcfcc5c25e9bc217}{touchEachOther}}(\mbox{\hyperlink{class_collider}{Collider}} \textcolor{keyword}{const}\& collider) \textcolor{keyword}{const} = 0;}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00031}00031     \textcolor{comment}{// virtual static const std::string getName() = 0;}}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00033}00033 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00034}00034     \textcolor{comment}{// Il s'agit de l'object auquel appartient le game object}}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00035}\mbox{\hyperlink{class_collider_a937ddad2dd8d4d6a67370334d447210b}{00035}}     \mbox{\hyperlink{class_game_object}{GameObject}} \textcolor{keyword}{const}\& \mbox{\hyperlink{class_collider_a937ddad2dd8d4d6a67370334d447210b}{parent}};}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00036}\mbox{\hyperlink{class_collider_a1440a92b8642490b4c118eeb83758189}{00036}}     std::string \mbox{\hyperlink{class_collider_a1440a92b8642490b4c118eeb83758189}{m\_colliderType}};}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00037}\mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{00037}}     \textcolor{keyword}{static} GameObjectMap \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}};}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00044}00044     \textcolor{comment}{// std::vector<sf::Vector2f> m\_contactPoints;}}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00045}00045     \textcolor{comment}{// static std::vector<const GameObject*> m\_vectors;}}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00046}00046     \textcolor{comment}{// static std::map<std::string, std::shared\_ptr<GameObject>> m\_objects;}}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00047}00047 \};}
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_collider_8hpp_source_l00049}00049 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_COLLIDER\_HPP\_}}
+
+\end{DoxyCode}

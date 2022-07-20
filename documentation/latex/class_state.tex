@@ -1,0 +1,248 @@
+\hypertarget{class_state}{}\doxysection{Référence de la classe State}
+\label{class_state}\index{State@{State}}
+
+
+{\ttfamily \#include $<$State.\+hpp$>$}
+
+Graphe d\textquotesingle{}héritage de State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_state}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_state_a7c7da67402bc6116b7a3015aefe31761}{State}} (\mbox{\hyperlink{struct_state_data}{State\+Data}} $\ast$\mbox{\hyperlink{class_state_a9c55cdba6e8a4a7b8a6a83fa51311514}{state\+Data}})
+\item 
+virtual \mbox{\hyperlink{class_state_afab438d92b90dc18d194dbd9c9c8bab3}{$\sim$\+State}} ()
+\item 
+const bool \& \mbox{\hyperlink{class_state_a18c3b970753bab2937141803644aaf24}{get\+Quit}} () const
+\item 
+virtual void \mbox{\hyperlink{class_state_a27907b80e927649f92e4dc6a845a9213}{end\+State}} ()
+\item 
+virtual void \mbox{\hyperlink{class_state_a55cd17e1b46e2a7345f3b98f01c123b8}{update\+Mouse\+Positions}} ()
+\item 
+virtual void \mbox{\hyperlink{class_state_ace2914fa0071bbfaea22fa28bbec5146}{update\+Input}} (const float \&delta\+Time)=0
+\item 
+virtual void \mbox{\hyperlink{class_state_a15d17b8c28e7c800578816be9661fab3}{update}} (const float \&delta\+Time)=0
+\item 
+virtual void \mbox{\hyperlink{class_state_aa1f36587befc2c03c4033366e5000d2c}{render}} (sf\+::\+Render\+Target $\ast$target=nullptr)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_state_data}{State\+Data}} $\ast$ \mbox{\hyperlink{class_state_a9c55cdba6e8a4a7b8a6a83fa51311514}{state\+Data}}
+\item 
+std\+::stack$<$ \mbox{\hyperlink{class_state}{State}} $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_state_a5692fac721147048fe1d2656f8a7a687}{states}}
+\item 
+sf\+::\+Render\+Window $\ast$ \mbox{\hyperlink{class_state_ae6259a383c98ae7496266a76a9daf478}{window}}
+\item 
+bool \mbox{\hyperlink{class_state_a67102294962f79cfb8fa952a113a351d}{quit}}
+\item 
+bool \mbox{\hyperlink{class_state_a6f1d7cdbac7fcc935b81eedae466c7f3}{paused}}
+\item 
+sf\+::\+Vector2i \mbox{\hyperlink{class_state_ae55b0beb4bfe6bb44a9fc1fc05d8b90c}{mouse\+Pos\+Screen}}
+\item 
+sf\+::\+Vector2i \mbox{\hyperlink{class_state_ae19be9c58de5545c8cd162f11969d6ee}{mouse\+Pos\+Window}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_state_a9f930912be370fcd0ecae58e17e0c35e}{mouse\+Pos\+View}}
+\item 
+std\+::map$<$ std\+::string, sf\+::\+Texture $>$ \mbox{\hyperlink{class_state_af747b588cad4683d34c38a03c2f8d046}{textures}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+
+
+Définition à la ligne \mbox{\hyperlink{_state_8hpp_source_l00032}{32}} du fichier \mbox{\hyperlink{_state_8hpp_source}{State.\+hpp}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_state_a7c7da67402bc6116b7a3015aefe31761}\label{class_state_a7c7da67402bc6116b7a3015aefe31761}} 
+\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\doxysubsubsection{\texorpdfstring{State()}{State()}}
+{\footnotesize\ttfamily State\+::\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_state_data}{State\+Data}} $\ast$}]{state\+Data }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_state_8cpp_source_l00007}{7}} du fichier \mbox{\hyperlink{_state_8cpp_source}{State.\+cpp}}.
+
+\mbox{\Hypertarget{class_state_afab438d92b90dc18d194dbd9c9c8bab3}\label{class_state_afab438d92b90dc18d194dbd9c9c8bab3}} 
+\index{State@{State}!````~State@{$\sim$State}}
+\index{````~State@{$\sim$State}!State@{State}}
+\doxysubsubsection{\texorpdfstring{$\sim$State()}{~State()}}
+{\footnotesize\ttfamily State\+::$\sim$\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_state_8cpp_source_l00016}{16}} du fichier \mbox{\hyperlink{_state_8cpp_source}{State.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_state_a27907b80e927649f92e4dc6a845a9213}\label{class_state_a27907b80e927649f92e4dc6a845a9213}} 
+\index{State@{State}!endState@{endState}}
+\index{endState@{endState}!State@{State}}
+\doxysubsubsection{\texorpdfstring{endState()}{endState()}}
+{\footnotesize\ttfamily void State\+::end\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Réimplémentée dans \mbox{\hyperlink{class_game_state_a47b539f3bbad01019e5fdad0e82c3fda}{Game\+State}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_state_8cpp_source_l00020}{20}} du fichier \mbox{\hyperlink{_state_8cpp_source}{State.\+cpp}}.
+
+\mbox{\Hypertarget{class_state_a18c3b970753bab2937141803644aaf24}\label{class_state_a18c3b970753bab2937141803644aaf24}} 
+\index{State@{State}!getQuit@{getQuit}}
+\index{getQuit@{getQuit}!State@{State}}
+\doxysubsubsection{\texorpdfstring{getQuit()}{getQuit()}}
+{\footnotesize\ttfamily const bool \& State\+::get\+Quit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_state_8cpp_source_l00025}{25}} du fichier \mbox{\hyperlink{_state_8cpp_source}{State.\+cpp}}.
+
+\mbox{\Hypertarget{class_state_aa1f36587befc2c03c4033366e5000d2c}\label{class_state_aa1f36587befc2c03c4033366e5000d2c}} 
+\index{State@{State}!render@{render}}
+\index{render@{render}!State@{State}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily virtual void State\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target $\ast$}]{target = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implémenté dans \mbox{\hyperlink{class_game_state_ab50a5f29dacea5b56158b45ae4129b51}{Game\+State}}, et \mbox{\hyperlink{class_main_menu_state_a343f2f93b5fe14251f425b0709bf43ba}{Main\+Menu\+State}}.
+
+\mbox{\Hypertarget{class_state_a15d17b8c28e7c800578816be9661fab3}\label{class_state_a15d17b8c28e7c800578816be9661fab3}} 
+\index{State@{State}!update@{update}}
+\index{update@{update}!State@{State}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void State\+::update (\begin{DoxyParamCaption}\item[{const float \&}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implémenté dans \mbox{\hyperlink{class_game_state_a775a7d0cf422aec17e5846852f3c997d}{Game\+State}}, et \mbox{\hyperlink{class_main_menu_state_af30b0d74b670cdde52f3f5be4d31f6d7}{Main\+Menu\+State}}.
+
+\mbox{\Hypertarget{class_state_ace2914fa0071bbfaea22fa28bbec5146}\label{class_state_ace2914fa0071bbfaea22fa28bbec5146}} 
+\index{State@{State}!updateInput@{updateInput}}
+\index{updateInput@{updateInput}!State@{State}}
+\doxysubsubsection{\texorpdfstring{updateInput()}{updateInput()}}
+{\footnotesize\ttfamily virtual void State\+::update\+Input (\begin{DoxyParamCaption}\item[{const float \&}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implémenté dans \mbox{\hyperlink{class_game_state_a879974629713034e25dd515dae008c78}{Game\+State}}, et \mbox{\hyperlink{class_main_menu_state_ad1bb8199b0e05cee38637cb28ffe278b}{Main\+Menu\+State}}.
+
+\mbox{\Hypertarget{class_state_a55cd17e1b46e2a7345f3b98f01c123b8}\label{class_state_a55cd17e1b46e2a7345f3b98f01c123b8}} 
+\index{State@{State}!updateMousePositions@{updateMousePositions}}
+\index{updateMousePositions@{updateMousePositions}!State@{State}}
+\doxysubsubsection{\texorpdfstring{updateMousePositions()}{updateMousePositions()}}
+{\footnotesize\ttfamily void State\+::update\+Mouse\+Positions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_state_8cpp_source_l00039}{39}} du fichier \mbox{\hyperlink{_state_8cpp_source}{State.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_state_ae55b0beb4bfe6bb44a9fc1fc05d8b90c}\label{class_state_ae55b0beb4bfe6bb44a9fc1fc05d8b90c}} 
+\index{State@{State}!mousePosScreen@{mousePosScreen}}
+\index{mousePosScreen@{mousePosScreen}!State@{State}}
+\doxysubsubsection{\texorpdfstring{mousePosScreen}{mousePosScreen}}
+{\footnotesize\ttfamily sf\+::\+Vector2i State\+::mouse\+Pos\+Screen\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_state_8hpp_source_l00058}{58}} du fichier \mbox{\hyperlink{_state_8hpp_source}{State.\+hpp}}.
+
+\mbox{\Hypertarget{class_state_a9f930912be370fcd0ecae58e17e0c35e}\label{class_state_a9f930912be370fcd0ecae58e17e0c35e}} 
+\index{State@{State}!mousePosView@{mousePosView}}
+\index{mousePosView@{mousePosView}!State@{State}}
+\doxysubsubsection{\texorpdfstring{mousePosView}{mousePosView}}
+{\footnotesize\ttfamily sf\+::\+Vector2f State\+::mouse\+Pos\+View\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_state_8hpp_source_l00060}{60}} du fichier \mbox{\hyperlink{_state_8hpp_source}{State.\+hpp}}.
+
+\mbox{\Hypertarget{class_state_ae19be9c58de5545c8cd162f11969d6ee}\label{class_state_ae19be9c58de5545c8cd162f11969d6ee}} 
+\index{State@{State}!mousePosWindow@{mousePosWindow}}
+\index{mousePosWindow@{mousePosWindow}!State@{State}}
+\doxysubsubsection{\texorpdfstring{mousePosWindow}{mousePosWindow}}
+{\footnotesize\ttfamily sf\+::\+Vector2i State\+::mouse\+Pos\+Window\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_state_8hpp_source_l00059}{59}} du fichier \mbox{\hyperlink{_state_8hpp_source}{State.\+hpp}}.
+
+\mbox{\Hypertarget{class_state_a6f1d7cdbac7fcc935b81eedae466c7f3}\label{class_state_a6f1d7cdbac7fcc935b81eedae466c7f3}} 
+\index{State@{State}!paused@{paused}}
+\index{paused@{paused}!State@{State}}
+\doxysubsubsection{\texorpdfstring{paused}{paused}}
+{\footnotesize\ttfamily bool State\+::paused\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_state_8hpp_source_l00056}{56}} du fichier \mbox{\hyperlink{_state_8hpp_source}{State.\+hpp}}.
+
+\mbox{\Hypertarget{class_state_a67102294962f79cfb8fa952a113a351d}\label{class_state_a67102294962f79cfb8fa952a113a351d}} 
+\index{State@{State}!quit@{quit}}
+\index{quit@{quit}!State@{State}}
+\doxysubsubsection{\texorpdfstring{quit}{quit}}
+{\footnotesize\ttfamily bool State\+::quit\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_state_8hpp_source_l00055}{55}} du fichier \mbox{\hyperlink{_state_8hpp_source}{State.\+hpp}}.
+
+\mbox{\Hypertarget{class_state_a9c55cdba6e8a4a7b8a6a83fa51311514}\label{class_state_a9c55cdba6e8a4a7b8a6a83fa51311514}} 
+\index{State@{State}!stateData@{stateData}}
+\index{stateData@{stateData}!State@{State}}
+\doxysubsubsection{\texorpdfstring{stateData}{stateData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_state_data}{State\+Data}}$\ast$ State\+::state\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_state_8hpp_source_l00051}{51}} du fichier \mbox{\hyperlink{_state_8hpp_source}{State.\+hpp}}.
+
+\mbox{\Hypertarget{class_state_a5692fac721147048fe1d2656f8a7a687}\label{class_state_a5692fac721147048fe1d2656f8a7a687}} 
+\index{State@{State}!states@{states}}
+\index{states@{states}!State@{State}}
+\doxysubsubsection{\texorpdfstring{states}{states}}
+{\footnotesize\ttfamily std\+::stack$<$\mbox{\hyperlink{class_state}{State}}$\ast$$>$$\ast$ State\+::states\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_state_8hpp_source_l00052}{52}} du fichier \mbox{\hyperlink{_state_8hpp_source}{State.\+hpp}}.
+
+\mbox{\Hypertarget{class_state_af747b588cad4683d34c38a03c2f8d046}\label{class_state_af747b588cad4683d34c38a03c2f8d046}} 
+\index{State@{State}!textures@{textures}}
+\index{textures@{textures}!State@{State}}
+\doxysubsubsection{\texorpdfstring{textures}{textures}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, sf\+::\+Texture$>$ State\+::textures\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_state_8hpp_source_l00062}{62}} du fichier \mbox{\hyperlink{_state_8hpp_source}{State.\+hpp}}.
+
+\mbox{\Hypertarget{class_state_ae6259a383c98ae7496266a76a9daf478}\label{class_state_ae6259a383c98ae7496266a76a9daf478}} 
+\index{State@{State}!window@{window}}
+\index{window@{window}!State@{State}}
+\doxysubsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily sf\+::\+Render\+Window$\ast$ State\+::window\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_state_8hpp_source_l00053}{53}} du fichier \mbox{\hyperlink{_state_8hpp_source}{State.\+hpp}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_state_8hpp}{State.\+hpp}}\item 
+include/\mbox{\hyperlink{_state_8cpp}{State.\+cpp}}\end{DoxyCompactItemize}

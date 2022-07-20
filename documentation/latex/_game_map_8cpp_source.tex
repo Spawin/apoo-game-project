@@ -1,0 +1,141 @@
+\hypertarget{_game_map_8cpp_source}{}\doxysection{Game\+Map.\+cpp}
+\label{_game_map_8cpp_source}\index{include/GameMap.cpp@{include/GameMap.cpp}}
+\mbox{\hyperlink{_game_map_8cpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_game_map_8hpp}{include/GameMap.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00003}00003 \textcolor{keyword}{const} \textcolor{keywordtype}{float} GameMap::GAME\_MAP\_WIDTH(32 * 40);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00004}00004 \textcolor{keyword}{const} \textcolor{keywordtype}{float} GameMap::GAME\_MAP\_HEIGHT(32 * 80);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00006}\mbox{\hyperlink{class_game_map_aae71e5694cf19612fcaa4c1e21b03b71}{00006}} \mbox{\hyperlink{class_game_map_aae71e5694cf19612fcaa4c1e21b03b71}{GameMap::GameMap}}()}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00007}00007 \{}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00008}00008 \}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00010}\mbox{\hyperlink{class_game_map_a85d51ef20c2d27f11c739ff02d5717c3}{00010}} \mbox{\hyperlink{class_game_map_a85d51ef20c2d27f11c739ff02d5717c3}{GameMap::\string~GameMap}}()}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00011}00011 \{}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00012}00012 \}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00014}\mbox{\hyperlink{class_game_map_ababbd90ae6aef61967528cd04bd91e83}{00014}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_game_map_ababbd90ae6aef61967528cd04bd91e83}{GameMap::getGAME\_MAP\_WIDTH}}()}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00015}00015 \{}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00016}00016     \textcolor{keywordflow}{return} GAME\_MAP\_WIDTH;}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00017}00017 \}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00018}\mbox{\hyperlink{class_game_map_a8a00f063b5d3ed56f4eb3e8d76a95028}{00018}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_game_map_a8a00f063b5d3ed56f4eb3e8d76a95028}{GameMap::getGAME\_MAP\_HEIGHT}}()}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00019}00019 \{}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00020}00020     \textcolor{keywordflow}{return} GAME\_MAP\_HEIGHT;}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00021}00021 \}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00023}\mbox{\hyperlink{class_game_map_a574501859cc67c40fe14a722633ca4e2}{00023}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_game_map_a574501859cc67c40fe14a722633ca4e2}{GameMap::load}}(\textcolor{keyword}{const} std::string\& tileset, sf::Vector2u tileSize, \textcolor{keyword}{const} \textcolor{keywordtype}{int}* tiles, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} width, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} height)}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00024}00024 \{}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00025}00025     \textcolor{comment}{// on charge la texture du tileset}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00026}00026     \textcolor{keywordflow}{if} (!m\_tileset.loadFromFile(tileset))}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00027}00027     \{}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00028}00028         std::cerr << \textcolor{stringliteral}{"{}erreur chargement dans GameMap :"{}} << tileset << std::endl;}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00029}00029         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00030}00030     \}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00032}00032     \textcolor{comment}{// on redimensionne le tableau de vertex pour qu'il puisse contenir tout le niveau}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00033}00033     m\_vertices.setPrimitiveType(sf::Quads);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00034}00034     m\_vertices.resize(width * height * 4);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00036}00036     \textcolor{comment}{// on remplit le tableau de vertex, avec un quad par tuile}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00037}00037     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < width; ++i)}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00038}00038         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < height; ++j)}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00039}00039         \{}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00040}00040             \textcolor{comment}{// on récupère le numéro de tuile courant}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00041}00041             \textcolor{comment}{// int tileNumber = tiles[i + j * width];}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00042}00042             \textcolor{keywordtype}{int} tileNumber = tiles[i + j * width];}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00044}00044             \textcolor{comment}{// on en déduit sa position dans la texture du tileset}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00045}00045             \textcolor{keywordtype}{int} tu = tileNumber \% (m\_tileset.getSize().x / tileSize.x);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00046}00046             \textcolor{keywordtype}{int} tv = tileNumber / (m\_tileset.getSize().x / tileSize.x);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00048}00048             \textcolor{comment}{// on récupère un pointeur vers le quad à définir dans le tableau de vertex}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00049}00049             sf::Vertex* quad = \&m\_vertices[(i + j * width) * 4];}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00051}00051             \textcolor{comment}{// on définit ses quatre coins}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00052}00052             quad[0].position = sf::Vector2f(i * tileSize.x, j * tileSize.y);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00053}00053             quad[1].position = sf::Vector2f((i + 1) * tileSize.x, j * tileSize.y);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00054}00054             quad[2].position = sf::Vector2f((i + 1) * tileSize.x, (j + 1) * tileSize.y);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00055}00055             quad[3].position = sf::Vector2f(i * tileSize.x, (j + 1) * tileSize.y);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00057}00057             \textcolor{comment}{// on définit ses quatre coordonnées de texture}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00058}00058             quad[0].texCoords = sf::Vector2f(tu * tileSize.x, tv * tileSize.y);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00059}00059             quad[1].texCoords = sf::Vector2f((tu + 1) * tileSize.x, tv * tileSize.y);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00060}00060             quad[2].texCoords = sf::Vector2f((tu + 1) * tileSize.x, (tv + 1) * tileSize.y);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00061}00061             quad[3].texCoords = sf::Vector2f(tu * tileSize.x, (tv + 1) * tileSize.y);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00062}00062         \}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00064}00064     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00065}00065 \}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00067}\mbox{\hyperlink{class_game_map_afa00d7a664494a7b8cb3e96f86ff3fc2}{00067}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_game_map_a574501859cc67c40fe14a722633ca4e2}{GameMap::load}}(\textcolor{keyword}{const} std::string\& tileset, sf::Vector2u* tileSize, sf::Vector2u* tilesStart, \textcolor{keyword}{const} \textcolor{keywordtype}{int}* tiles, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} width, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} height, \textcolor{keywordtype}{int} count)}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00068}00068 \{}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00069}00069     \textcolor{comment}{// TODO -\/ Controller si la tailles des tableau envoyés diffèrent}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00071}00071     \textcolor{comment}{// on charge la texture du tileset}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00072}00072     \textcolor{keywordflow}{if} (!m\_tileset.loadFromFile(tileset))}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00073}00073     \{}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00074}00074         std::cerr << \textcolor{stringliteral}{"{}erreur chargement dans GameMap :"{}} << tileset << std::endl;}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00075}00075         std::cerr << count << tileset << std::endl;}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00076}00076         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00077}00077     \}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00079}00079     \textcolor{comment}{// on redimensionne le tableau de vertex pour qu'il puisse contenir tout le niveau}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00080}00080     m\_vertices.setPrimitiveType(sf::Quads);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00081}00081     m\_vertices.resize(width * height * 4);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00083}00083     \textcolor{comment}{// for (int i = 0; i < (int)(width * height); i++)}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00084}00084     \textcolor{comment}{// \{}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00085}00085     \textcolor{comment}{// on remplit le tableau de vertex, avec un quad par tuile}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00086}00086     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < width; ++i)}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00087}00087         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j = 0; j < height; ++j)}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00088}00088         \{}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00089}00089             \textcolor{comment}{// tile number}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00090}00090             \textcolor{keywordtype}{int} k(tiles[i + j * width]);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00091}00091             \textcolor{comment}{// on remplit le tableau de vertex, avec un quad par tuile}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00093}00093             \textcolor{comment}{// on récupère le numéro de tuile courant}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00094}00094             \textcolor{comment}{// int tileNumber = tiles[k * width[k]];}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00096}00096             \textcolor{comment}{// on en déduit sa position dans la texture du tileset}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00097}00097             \textcolor{comment}{// int tu = tileNumber \% (m\_tileset.getSize().x / tileSize[k].x);}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00098}00098             \textcolor{comment}{// int tv = tileNumber / (m\_tileset.getSize().x / tileSize[k].x);}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00100}00100             \textcolor{comment}{// on récupère un pointeur vers le quad à définir dans le tableau de vertex}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00101}00101             sf::Vertex* quad = \&m\_vertices[(i + j * width) * 4];}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00103}00103             \textcolor{comment}{// on définit ses quatre coins}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00104}00104             quad[0].position = sf::Vector2f(i * tileSize[k].x, j * tileSize[k].y);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00105}00105             quad[1].position = sf::Vector2f((i + 1) * tileSize[k].x, j * tileSize[k].y);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00106}00106             quad[2].position = sf::Vector2f((i + 1) * tileSize[k].x, (j + 1) * tileSize[k].y);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00107}00107             quad[3].position = sf::Vector2f(i * tileSize[k].x, (j + 1) * tileSize[k].y);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00109}00109             \textcolor{comment}{//? coordonnée de sortie?}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00110}00110             \textcolor{comment}{// on définit ses quatre coordonnées de texture}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00111}00111             quad[0].texCoords = sf::Vector2f(tilesStart[k].x, tilesStart[k].y);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00112}00112             quad[1].texCoords = sf::Vector2f(tilesStart[k].x + tileSize[k].x, tileSize[k].y);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00113}00113             quad[2].texCoords = sf::Vector2f(tilesStart[k].x + tileSize[k].x, tilesStart[k].y + tileSize[k].y);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00114}00114             quad[3].texCoords = sf::Vector2f(tilesStart[k].x, tilesStart[k].y + tileSize[k].y);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00116}00116             \textcolor{comment}{// for (unsigned int i = 0; i < width[k]; ++i)}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00117}00117             \textcolor{comment}{//  for (unsigned int j = 0; j < height[k]; ++j)}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00118}00118             \textcolor{comment}{//  \{}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00119}00119             \textcolor{comment}{//  \}}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00120}00120         \}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00122}00122     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00123}00123 \}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00125}00125 \textcolor{keywordtype}{void} GameMap::draw(sf::RenderTarget\& target, sf::RenderStates states)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00126}00126 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00127}00127     \textcolor{comment}{// on applique la transformation}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00128}00128     states.transform *= getTransform();}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00130}00130     \textcolor{comment}{// on applique la texture du tileset}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00131}00131     states.texture = \&m\_tileset;}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00133}00133     \textcolor{comment}{// et on dessine enfin le tableau de vertex}}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00134}00134     target.draw(m\_vertices, states);}
+\DoxyCodeLine{\Hypertarget{_game_map_8cpp_source_l00135}00135 \}}
+
+\end{DoxyCode}

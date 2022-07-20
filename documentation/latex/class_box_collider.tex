@@ -1,0 +1,128 @@
+\hypertarget{class_box_collider}{}\doxysection{Référence de la classe Box\+Collider}
+\label{class_box_collider}\index{BoxCollider@{BoxCollider}}
+
+
+{\ttfamily \#include $<$Box\+Collider.\+hpp$>$}
+
+Graphe d\textquotesingle{}héritage de Box\+Collider\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_box_collider}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_box_collider_a172c4aae83dda5a0201673cd29b78b2d}{Box\+Collider}} (\mbox{\hyperlink{class_game_object}{Game\+Object}} const \&\mbox{\hyperlink{class_collider_a937ddad2dd8d4d6a67370334d447210b}{parent}}, float width, float height, sf\+::\+Vector2f left\+Top\+Point)
+\begin{DoxyCompactList}\small\item\em Construct a new Box \mbox{\hyperlink{class_collider}{Collider}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_box_collider_a8c33dbb4325d76d441de38b7c4ae43af}{$\sim$\+Box\+Collider}} ()
+\item 
+std\+::vector$<$ sf\+::\+Vector2f $>$ \mbox{\hyperlink{class_box_collider_ac9e717b633ad63fdcbaefb479d6d1e25}{get\+Contact\+Points}} () const override
+\item 
+bool \mbox{\hyperlink{class_box_collider_a38200ed6f93b0f91bcb0f9f6b19954f9}{touch\+Each\+Other}} (\mbox{\hyperlink{class_collider}{Collider}} const \&collider) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::string \mbox{\hyperlink{class_box_collider_a85be8a791e72a24c40e82c066599d4d5}{get\+Name}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Membres hérités additionnels}
+
+
+\doxysubsection{Description détaillée}
+
+
+Définition à la ligne \mbox{\hyperlink{_box_collider_8hpp_source_l00007}{7}} du fichier \mbox{\hyperlink{_box_collider_8hpp_source}{Box\+Collider.\+hpp}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_box_collider_a172c4aae83dda5a0201673cd29b78b2d}\label{class_box_collider_a172c4aae83dda5a0201673cd29b78b2d}} 
+\index{BoxCollider@{BoxCollider}!BoxCollider@{BoxCollider}}
+\index{BoxCollider@{BoxCollider}!BoxCollider@{BoxCollider}}
+\doxysubsubsection{\texorpdfstring{BoxCollider()}{BoxCollider()}}
+{\footnotesize\ttfamily Box\+Collider\+::\+Box\+Collider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_object}{Game\+Object}} const \&}]{parent,  }\item[{float}]{width,  }\item[{float}]{height,  }\item[{sf\+::\+Vector2f}]{left\+Top\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new Box \mbox{\hyperlink{class_collider}{Collider}} object. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em parent} & \\
+\hline
+{\em contact\+Points} & Ne doit pas dépasser\\
+\hline
+\end{DoxyParams}
+Construct a new Box \mbox{\hyperlink{class_collider}{Collider}} object ! Les cordonnée du left\+Top\+Point sont données en fonction du centre de l\textquotesingle{}objet 
+\begin{DoxyParams}{Paramètres}
+{\em parent} & \\
+\hline
+{\em width} & \\
+\hline
+{\em height} & \\
+\hline
+{\em left\+Top\+Point} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \mbox{\hyperlink{_box_collider_8cpp_source_l00014}{14}} du fichier \mbox{\hyperlink{_box_collider_8cpp_source}{Box\+Collider.\+cpp}}.
+
+\mbox{\Hypertarget{class_box_collider_a8c33dbb4325d76d441de38b7c4ae43af}\label{class_box_collider_a8c33dbb4325d76d441de38b7c4ae43af}} 
+\index{BoxCollider@{BoxCollider}!````~BoxCollider@{$\sim$BoxCollider}}
+\index{````~BoxCollider@{$\sim$BoxCollider}!BoxCollider@{BoxCollider}}
+\doxysubsubsection{\texorpdfstring{$\sim$BoxCollider()}{~BoxCollider()}}
+{\footnotesize\ttfamily Box\+Collider\+::$\sim$\+Box\+Collider (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_box_collider_8cpp_source_l00021}{21}} du fichier \mbox{\hyperlink{_box_collider_8cpp_source}{Box\+Collider.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_box_collider_ac9e717b633ad63fdcbaefb479d6d1e25}\label{class_box_collider_ac9e717b633ad63fdcbaefb479d6d1e25}} 
+\index{BoxCollider@{BoxCollider}!getContactPoints@{getContactPoints}}
+\index{getContactPoints@{getContactPoints}!BoxCollider@{BoxCollider}}
+\doxysubsubsection{\texorpdfstring{getContactPoints()}{getContactPoints()}}
+{\footnotesize\ttfamily std\+::vector$<$ sf\+::\+Vector2f $>$ Box\+Collider\+::get\+Contact\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_collider_a97506e7e7a75b63c3358eb898194b866}{Collider}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_box_collider_8cpp_source_l00032}{32}} du fichier \mbox{\hyperlink{_box_collider_8cpp_source}{Box\+Collider.\+cpp}}.
+
+\mbox{\Hypertarget{class_box_collider_a85be8a791e72a24c40e82c066599d4d5}\label{class_box_collider_a85be8a791e72a24c40e82c066599d4d5}} 
+\index{BoxCollider@{BoxCollider}!getName@{getName}}
+\index{getName@{getName}!BoxCollider@{BoxCollider}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const std\+::string Box\+Collider\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_box_collider_8cpp_source_l00027}{27}} du fichier \mbox{\hyperlink{_box_collider_8cpp_source}{Box\+Collider.\+cpp}}.
+
+\mbox{\Hypertarget{class_box_collider_a38200ed6f93b0f91bcb0f9f6b19954f9}\label{class_box_collider_a38200ed6f93b0f91bcb0f9f6b19954f9}} 
+\index{BoxCollider@{BoxCollider}!touchEachOther@{touchEachOther}}
+\index{touchEachOther@{touchEachOther}!BoxCollider@{BoxCollider}}
+\doxysubsubsection{\texorpdfstring{touchEachOther()}{touchEachOther()}}
+{\footnotesize\ttfamily bool Box\+Collider\+::touch\+Each\+Other (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collider}{Collider}} const \&}]{collider }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_collider_acecb570f58b885affcfcc5c25e9bc217}{Collider}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_box_collider_8cpp_source_l00042}{42}} du fichier \mbox{\hyperlink{_box_collider_8cpp_source}{Box\+Collider.\+cpp}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_box_collider_8hpp}{Box\+Collider.\+hpp}}\item 
+include/\mbox{\hyperlink{_box_collider_8cpp}{Box\+Collider.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,236 @@
+\hypertarget{_game_master_8cpp_source}{}\doxysection{Game\+Master.\+cpp}
+\label{_game_master_8cpp_source}\index{include/GameMaster.cpp@{include/GameMaster.cpp}}
+\mbox{\hyperlink{_game_master_8cpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_game_master_8hpp}{include/GameMaster.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00003}00003 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00005}00005 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00006}00006 \textcolor{keyword}{const} sf::Vector2i GameMaster::m\_spriteBoxCenter(17, 16);}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00007}00007 \textcolor{keywordtype}{int} GameMaster::m\_countInstance = 0;}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00008}00008 \mbox{\hyperlink{class_game_master}{GameMaster}}* GameMaster::m\_gameMaster = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00010}00010 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00011}00011 \textcolor{keywordtype}{void} GameMaster::initWindow()}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00012}00012 \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00013}00013     \textcolor{comment}{// utilisation du window.ini}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00014}00014     std::ifstream ifs(\textcolor{stringliteral}{"{}Config/window.ini"{}});}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00016}00016     \textcolor{keywordtype}{string} title = \textcolor{stringliteral}{"{}None"{}};}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00017}00017     sf::VideoMode window\_bounds(1200, 675); \textcolor{comment}{//600}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00018}00018     \textcolor{keywordtype}{unsigned} framerate\_limit = 60;}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00019}00019     \textcolor{keywordtype}{bool} vertical\_sync\_enabled = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00020}00020     \textcolor{keywordflow}{if} (ifs.is\_open())}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00021}00021     \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00022}00022         std::getline(ifs, title);}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00023}00023         ifs >> window\_bounds.width >> window\_bounds.height;}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00024}00024         ifs >> framerate\_limit;}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00025}00025         ifs >> vertical\_sync\_enabled;}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00026}00026     \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00027}00027     ifs.close();}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00029}00029     this-\/>window = \textcolor{keyword}{new} sf::RenderWindow();}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00031}00031     util::Platform platform;}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00033}00033     \textcolor{comment}{// in Windows at least, this must be called before creating the window}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00034}00034     \textcolor{keywordtype}{float} screenScalingFactor = platform.getScreenScalingFactor(window-\/>getSystemHandle());}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00035}00035     \textcolor{comment}{// Use the screenScalingFactor}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00036}00036     window\_bounds.width *= screenScalingFactor;}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00037}00037     window\_bounds.height *= screenScalingFactor;}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00039}00039     \textcolor{comment}{// Create the main window}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00040}00040     window-\/>create(window\_bounds, title, sf::Style::Close);}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00041}00041     platform.setIcon(window-\/>getSystemHandle());}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00042}00042     \textcolor{comment}{// On fix la limite de frames}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00043}00043     window-\/>setFramerateLimit(framerate\_limit);}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00044}00044     \textcolor{comment}{// Activation du vsync}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00045}00045     window-\/>setVerticalSyncEnabled(vertical\_sync\_enabled);}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00047}00047     \textcolor{comment}{// Initialisations de l'espace pour tous les éléments du jeux}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00048}00048     \mbox{\hyperlink{class_position_a0302c02c82ed30325e54bbe00bd5aee3}{Position::initSpace}}((\textcolor{keywordtype}{int})\mbox{\hyperlink{class_game_map_ababbd90ae6aef61967528cd04bd91e83}{GameMap::getGAME\_MAP\_WIDTH}}, (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_game_map_a8a00f063b5d3ed56f4eb3e8d76a95028}{GameMap::getGAME\_MAP\_HEIGHT}});}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00050}00050     \textcolor{comment}{// Construction de la maison}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00051}00051     \mbox{\hyperlink{class_house}{House}} house;}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00052}00052     \textcolor{keywordflow}{if} (!house.\mbox{\hyperlink{class_game_map_a574501859cc67c40fe14a722633ca4e2}{load}}(\textcolor{stringliteral}{"{}content/house.png"{}}, sf::Vector2u(32, 32), house.\mbox{\hyperlink{class_house_afd2e45c5ffa182341a9a18c2d1655105}{getDisposition}}(), 40, 80))}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00053}00053     \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00054}00054         std::cerr << \textcolor{stringliteral}{"{}Erreur chargement < content/Tiles.png >"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00055}00055         \textcolor{keywordflow}{return} exit(-\/1);}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00056}00056     \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00058}00058     \textcolor{comment}{/* TODO -\/ C'est pour la partie GameState}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00059}00059 \textcolor{comment}{    // Mise en place des vues}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00060}00060 \textcolor{comment}{    // sf::View player\_view(sf::Vector2f(350.f, 300.f), sf::Vector2f(1000.f, 600.f));}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00061}00061 \textcolor{comment}{    sf::View player\_view;}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00062}00062 \textcolor{comment}{    // player\_view.setCenter(sf::Vector2f(WINDOW\_WIDTH / 2.f, WINDOW\_HEIGHT / 2.f));}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00063}00063 \textcolor{comment}{    player\_view.setCenter(sf::Vector2f(32.f * 4.f, 32.f * 78.f));}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00064}00064 \textcolor{comment}{    player\_view.setSize(sf::Vector2f(GameMap::getGAME\_MAP\_WIDTH() / 2, GameMap::getGAME\_MAP\_HEIGHT() / 8));}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00065}00065 \textcolor{comment}{    sf::View minimap\_view;}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00066}00066 \textcolor{comment}{    minimap\_view.setViewport(sf::FloatRect(0.75f, 0.f, 0.25f, 0.25f));}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00067}00067 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00068}00068 \textcolor{comment}{    // activation de la vue}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00069}00069 \textcolor{comment}{    window-\/>setView(player\_view);}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00070}00070 \textcolor{comment}{    // window-\/>setView(minimap\_view);}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00071}00071 \textcolor{comment}{    //*/}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00073}00073     \textcolor{comment}{// Personage* spawin = new Soldier(true);}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00074}00074     \textcolor{comment}{// // Personage spawin = Personage(true);}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00075}00075     \textcolor{comment}{// spawin-\/>setGameObjectName("{}spawin"{});}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00077}00077     \textcolor{comment}{// Personage* p2 = new Soldier();}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00079}00079     \textcolor{comment}{// auto chrono = sf::Clock();}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00080}00080     \textcolor{comment}{// sf::Event event;}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00081}00081 \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00083}00083 \textcolor{keywordtype}{void} GameMaster::intiStateData()}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00084}00084 \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00085}00085     this-\/>stateData.\mbox{\hyperlink{struct_state_data_a07974705606e19f59185a4b34895eef0}{window}} = this-\/>window;}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00086}00086     \textcolor{comment}{// this-\/>stateData.gfxSettings = \&this-\/>gfxSettings;}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00087}00087     \textcolor{comment}{// this-\/>stateData.supportedKeys = \&this-\/>supportedKeys;}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00088}00088     this-\/>stateData.\mbox{\hyperlink{struct_state_data_af7e8fb0c57ed292d0d8cf319643baebf}{states}} = \&this-\/>states;}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00089}00089     \textcolor{comment}{// this-\/>stateData.gridSize = this-\/>gridSize;}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00090}00090 \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00092}00092 \textcolor{keywordtype}{void} GameMaster::intiStates()}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00093}00093 \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00094}00094     this-\/>states.push(\textcolor{keyword}{new} \mbox{\hyperlink{class_main_menu_state}{MainMenuState}}(\&this-\/>stateData));}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00095}00095     \textcolor{comment}{// this-\/>states.push(new GameState(this-\/>window));}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00096}00096 \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00097}00097 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00099}\mbox{\hyperlink{class_game_master_af68133fd8969aa4ed20ad3009ad8cdb2}{00099}} \mbox{\hyperlink{class_game_master_af68133fd8969aa4ed20ad3009ad8cdb2}{GameMaster::GameMaster}}()}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00100}00100 \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00101}00101     m\_countInstance++;}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00102}00102     \textcolor{keywordflow}{if} (m\_countInstance > 1)}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00103}00103     \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00104}00104         cerr << \textcolor{stringliteral}{"{}LE game master ne doit pas etre instancié plus d'une fois"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00105}00105         exit(-\/1);}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00106}00106     \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00108}00108     this-\/>initWindow();}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00109}00109     this-\/>intiStateData();}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00110}00110     this-\/>intiStates();}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00112}00112     GameMaster::m\_gameMaster = \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00113}00113 \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00115}\mbox{\hyperlink{class_game_master_a628f25862a6d8114c339bc58e9fa48c7}{00115}} \mbox{\hyperlink{class_game_master_a628f25862a6d8114c339bc58e9fa48c7}{GameMaster::\string~GameMaster}}()}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00116}00116 \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00117}00117     \textcolor{keyword}{delete} this-\/>window;}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00118}00118     \textcolor{comment}{// delete spawin;}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00119}00119     \textcolor{comment}{// delete p2;}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00121}00121     \textcolor{comment}{// REVIEW -\/}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00122}00122     \textcolor{keywordflow}{while} (!this-\/>states.empty())}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00123}00123     \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00124}00124         \textcolor{keyword}{delete} this-\/>states.top();}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00125}00125         this-\/>states.pop();}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00126}00126     \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00127}00127 \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00129}00129 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00130}00130 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00131}\mbox{\hyperlink{class_game_master_a9297a3a4c4d556aed10f181a006b0a1f}{00131}} \textcolor{keyword}{const} sf::Vector2i \mbox{\hyperlink{class_game_master_a9297a3a4c4d556aed10f181a006b0a1f}{GameMaster::getSPRITE\_BOX\_CENTER}}()}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00132}00132 \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00133}00133     \textcolor{keywordflow}{return} m\_spriteBoxCenter;}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00134}00134 \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00135}00135 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00136}\mbox{\hyperlink{class_game_master_adf444a2c424ba691d20433bc5c7e8b12}{00136}} \textcolor{keyword}{const} \mbox{\hyperlink{class_game_master}{GameMaster}}* \mbox{\hyperlink{class_game_master_adf444a2c424ba691d20433bc5c7e8b12}{GameMaster::GAME\_MASTER}}()}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00137}00137 \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00138}00138     \textcolor{keywordflow}{return} m\_gameMaster;}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00139}00139 \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00141}00141 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00142}\mbox{\hyperlink{class_game_master_a994ddff04a8411feb16cc0bf0cfdb4ec}{00142}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_master_a994ddff04a8411feb16cc0bf0cfdb4ec}{GameMaster::endApplication}}()}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00143}00143 \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00144}00144     cout << \textcolor{stringliteral}{"{}fin application"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00145}00145 \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00146}00146 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00147}\mbox{\hyperlink{class_game_master_a495d4518b25254927fd5b3c129ea1b5e}{00147}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_master_a495d4518b25254927fd5b3c129ea1b5e}{GameMaster::updateDeltatime}}()}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00148}00148 \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00149}00149     this-\/>deltaTime = this-\/>dtClock.restart().asSeconds();}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00150}00150     \textcolor{comment}{// initialisation du time du game object}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00151}00151     \mbox{\hyperlink{class_game_object_a5f826d1945fc978181c713da7fd7ccb9}{GameObject::SetTime}}(this-\/>deltaTime);}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00152}00152 \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00153}\mbox{\hyperlink{class_game_master_af88011b157f4e29e37ca9d6fce093196}{00153}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_master_af88011b157f4e29e37ca9d6fce093196}{GameMaster::updateSFMLEvents}}()}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00154}00154 \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00156}00156     \textcolor{keywordflow}{while} (this-\/>window-\/>pollEvent(this-\/>sfEvent))}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00157}00157     \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00158}00158         \textcolor{comment}{// Close window: exit}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00159}00159         \textcolor{keywordflow}{if} (this-\/>sfEvent.type == sf::Event::Closed)}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00160}00160             this-\/>window-\/>close();}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00161}00161 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00162}00162         \textcolor{keywordflow}{if} (this-\/>sfEvent.type == sf::Event::Resized)}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00163}00163         \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00164}00164             \textcolor{comment}{// TODO -\/}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00165}00165         \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00166}00166     \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00167}00167 \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00168}\mbox{\hyperlink{class_game_master_a08b8b7d117386ecb33ea75b8dd988a89}{00168}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_master_a08b8b7d117386ecb33ea75b8dd988a89}{GameMaster::update}}()}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00169}00169 \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00170}00170     this-\/>\mbox{\hyperlink{class_game_master_af88011b157f4e29e37ca9d6fce093196}{updateSFMLEvents}}();}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00171}00171 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00172}00172     \textcolor{comment}{// Update items}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00173}00173     \textcolor{keywordflow}{if} (!this-\/>states.empty())}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00174}00174     \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00175}00175         this-\/>states.top()-\/>update(this-\/>deltaTime);}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00176}00176 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00177}00177         \textcolor{keywordflow}{if} (this-\/>states.top()-\/>getQuit())}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00178}00178         \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00179}00179             this-\/>states.top()-\/>endState();}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00180}00180             \textcolor{keyword}{delete} this-\/>states.top();}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00181}00181             this-\/>states.pop();}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00182}00182         \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00183}00183     \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00184}00184     \textcolor{comment}{// Application end}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00185}00185     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00186}00186     \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00187}00187         this-\/>\mbox{\hyperlink{class_game_master_a994ddff04a8411feb16cc0bf0cfdb4ec}{endApplication}}();}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00188}00188         this-\/>window-\/>close();}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00189}00189     \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00190}00190 \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00191}\mbox{\hyperlink{class_game_master_abf9e9d93a26bcfd91e5c2863924c0d1a}{00191}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_master_abf9e9d93a26bcfd91e5c2863924c0d1a}{GameMaster::render}}()}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00192}00192 \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00193}00193 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00196}00196 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00197}00197     \textcolor{comment}{// Appel pour tester la proximité de chaque collider}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00198}00198     \mbox{\hyperlink{class_collider_a765cffbef5d5e713672cea46c563dc67}{Collider::update}}();}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00199}00199 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00200}00200     \textcolor{comment}{//* ANCHOR -\/ Appel des update}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00201}00201     \textcolor{comment}{// spawin-\/>update();}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00202}00202     \textcolor{comment}{// p2-\/>update();}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00203}00203 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00204}00204     \textcolor{comment}{// Clear screen}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00205}00205     this-\/>window-\/>clear(); \textcolor{comment}{// NOTE -\/}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00206}00206     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00207}00207     \textcolor{comment}{// Render items}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00208}00208     \textcolor{keywordflow}{if} (!this-\/>states.empty())}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00209}00209         this-\/>states.top()-\/>render(this-\/>window);}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00210}00210 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00211}00211     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00212}00212     \textcolor{comment}{//* Affichage de la maison}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00213}00213     \textcolor{comment}{// this-\/>window-\/>draw(house);}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00214}00214 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00215}00215     \textcolor{comment}{//* ANCHOR -\/ Affichage des gameObjects}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00216}00216     \textcolor{comment}{// spawin-\/>show(this-\/>window);}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00217}00217     \textcolor{comment}{// p2-\/>show(this-\/>window);}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00218}00218 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00219}00219     \textcolor{comment}{// Update the window}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00220}00220     this-\/>window-\/>display(); \textcolor{comment}{// NOTE -\/}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00221}00221 \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00222}\mbox{\hyperlink{class_game_master_ac24934f7f53ef8e48726e16190974320}{00222}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_master_ac24934f7f53ef8e48726e16190974320}{GameMaster::run}}()}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00223}00223 \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00224}00224 }
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00225}00225     \textcolor{comment}{// Start the game loop}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00226}00226     \textcolor{keywordflow}{while} (this-\/>window-\/>isOpen())}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00227}00227     \{}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00228}00228         this-\/>\mbox{\hyperlink{class_game_master_a495d4518b25254927fd5b3c129ea1b5e}{updateDeltatime}}();}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00229}00229         this-\/>\mbox{\hyperlink{class_game_master_a08b8b7d117386ecb33ea75b8dd988a89}{update}}();}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00230}00230         this-\/>\mbox{\hyperlink{class_game_master_abf9e9d93a26bcfd91e5c2863924c0d1a}{render}}();}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00231}00231     \}}
+\DoxyCodeLine{\Hypertarget{_game_master_8cpp_source_l00232}00232 \}}
+
+\end{DoxyCode}

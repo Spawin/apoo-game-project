@@ -1,0 +1,106 @@
+\hypertarget{class_polygon_collider}{}\doxysection{Référence de la classe Polygon\+Collider}
+\label{class_polygon_collider}\index{PolygonCollider@{PolygonCollider}}
+
+
+{\ttfamily \#include $<$Polygon\+Collider.\+hpp$>$}
+
+Graphe d\textquotesingle{}héritage de Polygon\+Collider\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_polygon_collider}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_polygon_collider_a4d002aa2dca37e006a6cfee1982b273f}{Polygon\+Collider}} (\mbox{\hyperlink{class_game_object}{Game\+Object}} const \&\mbox{\hyperlink{class_collider_a937ddad2dd8d4d6a67370334d447210b}{parent}}, std\+::vector$<$ sf\+::\+Vector2f $>$ contact\+Points)
+\item 
+\mbox{\hyperlink{class_polygon_collider_a95f37484cda64df8a2cf43fd2376c49c}{$\sim$\+Polygon\+Collider}} ()
+\item 
+std\+::vector$<$ sf\+::\+Vector2f $>$ \mbox{\hyperlink{class_polygon_collider_ae312be67f56fcc6db3967f4b46a6242b}{get\+Contact\+Points}} () const override
+\item 
+bool \mbox{\hyperlink{class_polygon_collider_a6db0242a202318ed2b1e8017fc06ac19}{touch\+Each\+Other}} (\mbox{\hyperlink{class_collider}{Collider}} const \&collider) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::string \mbox{\hyperlink{class_polygon_collider_aa7f7844a644d377871a162345a97c43b}{get\+Name}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Membres hérités additionnels}
+
+
+\doxysubsection{Description détaillée}
+
+
+Définition à la ligne \mbox{\hyperlink{_polygon_collider_8hpp_source_l00006}{6}} du fichier \mbox{\hyperlink{_polygon_collider_8hpp_source}{Polygon\+Collider.\+hpp}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_polygon_collider_a4d002aa2dca37e006a6cfee1982b273f}\label{class_polygon_collider_a4d002aa2dca37e006a6cfee1982b273f}} 
+\index{PolygonCollider@{PolygonCollider}!PolygonCollider@{PolygonCollider}}
+\index{PolygonCollider@{PolygonCollider}!PolygonCollider@{PolygonCollider}}
+\doxysubsubsection{\texorpdfstring{PolygonCollider()}{PolygonCollider()}}
+{\footnotesize\ttfamily Polygon\+Collider\+::\+Polygon\+Collider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_object}{Game\+Object}} const \&}]{parent,  }\item[{std\+::vector$<$ sf\+::\+Vector2f $>$}]{contact\+Points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_polygon_collider_8cpp_source_l00014}{14}} du fichier \mbox{\hyperlink{_polygon_collider_8cpp_source}{Polygon\+Collider.\+cpp}}.
+
+\mbox{\Hypertarget{class_polygon_collider_a95f37484cda64df8a2cf43fd2376c49c}\label{class_polygon_collider_a95f37484cda64df8a2cf43fd2376c49c}} 
+\index{PolygonCollider@{PolygonCollider}!````~PolygonCollider@{$\sim$PolygonCollider}}
+\index{````~PolygonCollider@{$\sim$PolygonCollider}!PolygonCollider@{PolygonCollider}}
+\doxysubsubsection{\texorpdfstring{$\sim$PolygonCollider()}{~PolygonCollider()}}
+{\footnotesize\ttfamily Polygon\+Collider\+::$\sim$\+Polygon\+Collider (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_polygon_collider_8cpp_source_l00019}{19}} du fichier \mbox{\hyperlink{_polygon_collider_8cpp_source}{Polygon\+Collider.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_polygon_collider_ae312be67f56fcc6db3967f4b46a6242b}\label{class_polygon_collider_ae312be67f56fcc6db3967f4b46a6242b}} 
+\index{PolygonCollider@{PolygonCollider}!getContactPoints@{getContactPoints}}
+\index{getContactPoints@{getContactPoints}!PolygonCollider@{PolygonCollider}}
+\doxysubsubsection{\texorpdfstring{getContactPoints()}{getContactPoints()}}
+{\footnotesize\ttfamily std\+::vector$<$ sf\+::\+Vector2f $>$ Polygon\+Collider\+::get\+Contact\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_collider_a97506e7e7a75b63c3358eb898194b866}{Collider}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_polygon_collider_8cpp_source_l00029}{29}} du fichier \mbox{\hyperlink{_polygon_collider_8cpp_source}{Polygon\+Collider.\+cpp}}.
+
+\mbox{\Hypertarget{class_polygon_collider_aa7f7844a644d377871a162345a97c43b}\label{class_polygon_collider_aa7f7844a644d377871a162345a97c43b}} 
+\index{PolygonCollider@{PolygonCollider}!getName@{getName}}
+\index{getName@{getName}!PolygonCollider@{PolygonCollider}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const std\+::string Polygon\+Collider\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_polygon_collider_8cpp_source_l00024}{24}} du fichier \mbox{\hyperlink{_polygon_collider_8cpp_source}{Polygon\+Collider.\+cpp}}.
+
+\mbox{\Hypertarget{class_polygon_collider_a6db0242a202318ed2b1e8017fc06ac19}\label{class_polygon_collider_a6db0242a202318ed2b1e8017fc06ac19}} 
+\index{PolygonCollider@{PolygonCollider}!touchEachOther@{touchEachOther}}
+\index{touchEachOther@{touchEachOther}!PolygonCollider@{PolygonCollider}}
+\doxysubsubsection{\texorpdfstring{touchEachOther()}{touchEachOther()}}
+{\footnotesize\ttfamily bool Polygon\+Collider\+::touch\+Each\+Other (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collider}{Collider}} const \&}]{collider }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_collider_acecb570f58b885affcfcc5c25e9bc217}{Collider}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_polygon_collider_8cpp_source_l00034}{34}} du fichier \mbox{\hyperlink{_polygon_collider_8cpp_source}{Polygon\+Collider.\+cpp}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_polygon_collider_8hpp}{Polygon\+Collider.\+hpp}}\item 
+include/\mbox{\hyperlink{_polygon_collider_8cpp}{Polygon\+Collider.\+cpp}}\end{DoxyCompactItemize}

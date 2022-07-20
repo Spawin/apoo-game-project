@@ -1,0 +1,35 @@
+\hypertarget{_game_state_8hpp_source}{}\doxysection{Game\+State.\+hpp}
+\label{_game_state_8hpp_source}\index{include/GameState.hpp@{include/GameState.hpp}}
+\mbox{\hyperlink{_game_state_8hpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#if !defined(\_\_GAME\_STATE\_HPP\_\_)}}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00002}00002 \textcolor{preprocessor}{    \#define \_\_GAME\_STATE\_HPP\_\_}}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00004}00004 \textcolor{preprocessor}{    \#include "{}\mbox{\hyperlink{_state_8hpp}{State.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00006}\mbox{\hyperlink{class_game_state}{00006}} \textcolor{keyword}{class }\mbox{\hyperlink{class_game_state}{GameState}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_state}{State}}}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00007}00007 \{}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00009}00009 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00010}00010     \textcolor{comment}{// Constructeurs/Destructeur}}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00011}00011     \mbox{\hyperlink{class_game_state_a17b02b1db2986100cbeb35195087fb9b}{GameState}}(\mbox{\hyperlink{struct_state_data}{StateData}}* \mbox{\hyperlink{class_state_a9c55cdba6e8a4a7b8a6a83fa51311514}{stateData}});}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00012}00012     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_game_state_ae623df5042cd0c17daa3394fdcb397b3}{\string~GameState}}();}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00014}00014     \textcolor{comment}{// Fonctions/Méthodes}}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00015}00015     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_state_a47b539f3bbad01019e5fdad0e82c3fda}{endState}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00016}00016     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_state_a879974629713034e25dd515dae008c78}{updateInput}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00017}00017     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_state_a775a7d0cf422aec17e5846852f3c997d}{update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00018}00018     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_state_ab50a5f29dacea5b56158b45ae4129b51}{render}}(sf::RenderTarget* target = \textcolor{keyword}{nullptr}) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00020}00020 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00021}00021     \textcolor{comment}{// Variables}}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00022}00022     sf::View view;}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00023}00023     \mbox{\hyperlink{class_player}{Player}}* player;}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00025}00025     \textcolor{comment}{// Fonctions d'initialisation}}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00026}00026     \textcolor{keywordtype}{void} initPlayer();}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00027}00027 \};}
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_game_state_8hpp_source_l00029}00029 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_GAME\_STATE\_HPP\_\_}}
+
+\end{DoxyCode}

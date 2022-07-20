@@ -1,0 +1,72 @@
+\hypertarget{_gui_8hpp_source}{}\doxysection{Gui.\+hpp}
+\label{_gui_8hpp_source}\index{include/Gui.hpp@{include/Gui.hpp}}
+\mbox{\hyperlink{_gui_8hpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#if !defined(\_\_GUI\_\_)}}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00002}\mbox{\hyperlink{_gui_8hpp_a080710b45b38bfa4dff2946beadfec1e}{00002}} \textcolor{preprocessor}{    \#define \_\_GUI\_HPP\_\_}}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00004}\mbox{\hyperlink{_gui_8hpp_a11a6094191da43b6b4568e7736fb89ba}{00004}} \textcolor{keyword}{enum} \mbox{\hyperlink{_gui_8hpp_a11a6094191da43b6b4568e7736fb89ba}{button\_states}}}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00005}00005 \{}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00006}\mbox{\hyperlink{_gui_8hpp_a11a6094191da43b6b4568e7736fb89baab07455a5cba7480564ccdf0225f8d082}{00006}}     \mbox{\hyperlink{_gui_8hpp_a11a6094191da43b6b4568e7736fb89baab07455a5cba7480564ccdf0225f8d082}{BTN\_IDLE}} = 0,}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00007}\mbox{\hyperlink{_gui_8hpp_a11a6094191da43b6b4568e7736fb89baad6fdb8a1568b56acfc5a2870feef75aa}{00007}}     \mbox{\hyperlink{_gui_8hpp_a11a6094191da43b6b4568e7736fb89baad6fdb8a1568b56acfc5a2870feef75aa}{BTN\_HOVER}},}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00008}00008     \mbox{\hyperlink{_gui_8hpp_a11a6094191da43b6b4568e7736fb89baaba1830557d2dc99efd3e5fc8a7dd64ab}{BTN\_ACTIVE}}}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00009}\mbox{\hyperlink{_gui_8hpp_a11a6094191da43b6b4568e7736fb89baaba1830557d2dc99efd3e5fc8a7dd64ab}{00009}} \};}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00011}\mbox{\hyperlink{namespacegui}{00011}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacegui}{gui}}}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00012}00012 \{}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00013}00013 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{p2pX}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} perc, \textcolor{keyword}{const} sf::VideoMode\& vm);}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00014}00014 \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{p2pY}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} perc, \textcolor{keyword}{const} sf::VideoMode\& vm);}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00015}00015 \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{namespacegui_a4e55941333524a17e5ab3e09d5fe89b7}{calcCharSize}}(\textcolor{keyword}{const} sf::VideoMode\& vm, \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} modifier = 60);}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00017}\mbox{\hyperlink{classgui_1_1_button}{00017}} \textcolor{keyword}{class }\mbox{\hyperlink{classgui_1_1_button}{Button}}}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00018}00018 \{}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00020}00020 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00021}00021     \textcolor{comment}{// Constructeurs/Destructeur}}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00022}00022     \mbox{\hyperlink{classgui_1_1_button_a72ea5110415334f3e1abdf20263a9111}{Button}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} width, \textcolor{keywordtype}{float} height,}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00023}00023         sf::Font* font, std::string text, \textcolor{keywordtype}{unsigned} characterSize,}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00024}00024         sf::Color text\_idle\_color, sf::Color text\_hover\_color, sf::Color text\_active\_color,}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00025}00025         sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor,}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00026}00026         sf::Color outline\_idle\_color = sf::Color::Transparent, sf::Color outline\_hover\_color = sf::Color::Transparent, sf::Color outline\_active\_color = sf::Color::Transparent, \textcolor{keywordtype}{short} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{id} = 0);}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00027}00027     \mbox{\hyperlink{classgui_1_1_button_a088a6010b58ae6ee6e94210213dbf000}{\string~Button}}();}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00029}00029     \textcolor{comment}{// Fonctions/Méthodes}}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00030}00030     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classgui_1_1_button_ae636da5f0375715fff7e373dd7ffcc0a}{isPressed}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00031}00031     \textcolor{keyword}{const} std::string \mbox{\hyperlink{classgui_1_1_button_abdab94a0f529a791517d45a97eeb6396}{getText}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00032}00032     \textcolor{keyword}{const} \textcolor{keywordtype}{short} \textcolor{keywordtype}{unsigned}\& \mbox{\hyperlink{classgui_1_1_button_ab4b11239a7d9e4c0b8f25ea0d969d17b}{getId}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00034}00034     \textcolor{keywordtype}{void} \mbox{\hyperlink{classgui_1_1_button_a3a7697b6b4c7e45c017d1ca1d91c48f8}{setText}}(\textcolor{keyword}{const} std::string text);}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00035}00035     \textcolor{keywordtype}{void} \mbox{\hyperlink{classgui_1_1_button_ab122a118ea70e45d29c10eeb0dcf24b8}{setId}}(\textcolor{keyword}{const} \textcolor{keywordtype}{short} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00037}00037     \textcolor{keywordtype}{void} \mbox{\hyperlink{classgui_1_1_button_a6d2cd8b3c7f7efd824742b4fdd7eacd0}{update}}(\textcolor{keyword}{const} sf::Vector2i\& mousePosWindow);}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00038}00038     \textcolor{keywordtype}{void} \mbox{\hyperlink{classgui_1_1_button_a1f93eac2279f05eef417a376b0bd7429}{render}}(sf::RenderTarget\& target);}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00040}00040 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00041}00041     \textcolor{comment}{// Variables}}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00042}00042     \textcolor{keywordtype}{short} \textcolor{keywordtype}{unsigned} buttonState;}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00043}00043     \textcolor{keywordtype}{short} \textcolor{keywordtype}{unsigned} id;}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00045}00045     sf::RectangleShape shape;}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00046}00046     sf::Font* font;}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00047}00047     sf::Text text;}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00049}00049     sf::Color textIdleColor;}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00050}00050     sf::Color textHoverColor;}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00051}00051     sf::Color textActiveColor;}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00053}00053     sf::Color idleColor;}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00054}00054     sf::Color hoverColor;}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00055}00055     sf::Color activeColor;}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00057}00057     sf::Color outlineIdleColor;}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00058}00058     sf::Color outlineHoverColor;}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00059}00059     sf::Color outlineActiveColor;}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00061}00061     \textcolor{comment}{// Fonctions d'initialisation}}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00062}00062 \};}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00064}00064 \} \textcolor{comment}{// namespace gui}}
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_gui_8hpp_source_l00066}00066 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_HUTTON\_HPP\_\_}}
+
+\end{DoxyCode}

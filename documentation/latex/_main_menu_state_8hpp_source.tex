@@ -1,0 +1,45 @@
+\hypertarget{_main_menu_state_8hpp_source}{}\doxysection{Main\+Menu\+State.\+hpp}
+\label{_main_menu_state_8hpp_source}\index{include/MainMenuState.hpp@{include/MainMenuState.hpp}}
+\mbox{\hyperlink{_main_menu_state_8hpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#if !defined(\_\_MAIN\_MENU\_STATE\_HPP\_\_)}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00002}00002 \textcolor{preprocessor}{    \#define \_\_MAIN\_MENU\_STATE\_HPP\_\_}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00004}00004 \textcolor{preprocessor}{    \#include "{}\mbox{\hyperlink{_game_state_8hpp}{include/GameState.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00005}00005 \textcolor{preprocessor}{    \#include "{}\mbox{\hyperlink{_gui_8hpp}{Gui.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00007}\mbox{\hyperlink{class_main_menu_state}{00007}} \textcolor{keyword}{class }\mbox{\hyperlink{class_main_menu_state}{MainMenuState}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_state}{State}}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00009}00009 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00010}00010     \textcolor{comment}{// Constructeurs/Destructeur}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00011}00011     \mbox{\hyperlink{class_main_menu_state_a4203159ff9f6dac008cfddac3df67ee8}{MainMenuState}}(\mbox{\hyperlink{struct_state_data}{StateData}}* \mbox{\hyperlink{class_state_a9c55cdba6e8a4a7b8a6a83fa51311514}{stateData}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00012}00012     \mbox{\hyperlink{class_main_menu_state_a8af4d586b93c315a1a15b5fe83ec0760}{\string~MainMenuState}}();}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00014}00014     \textcolor{comment}{// Fonctions/Méthodes}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00015}00015     \textcolor{comment}{// void endState() override;}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00017}00017     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_state_ad1bb8199b0e05cee38637cb28ffe278b}{updateInput}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00018}00018     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_state_a814fcf755b02804447b0460a57e25833}{updateButtons}}();}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00019}00019     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_state_af30b0d74b670cdde52f3f5be4d31f6d7}{update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00020}00020     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_state_a1a2766e02c64d370018588a79d32b584}{renderButtons}}(sf::RenderTarget\& target);}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00021}00021     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_state_a343f2f93b5fe14251f425b0709bf43ba}{render}}(sf::RenderTarget* target = \textcolor{keyword}{nullptr}) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00023}00023 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00024}00024     \textcolor{comment}{// Variables}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00025}00025     sf::Texture backgroundTexture;}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00026}00026     sf::RectangleShape background;}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00027}00027     sf::Font font;}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00029}00029     std::map<std::string, gui::Button*> buttons;}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00031}00031     \textcolor{comment}{// Fonctions d'initialisation}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00032}00032     \textcolor{comment}{// void initVariables();}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00033}00033     \textcolor{keywordtype}{void} initFonts();}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00034}00034     \textcolor{comment}{// void initKeybinds();}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00035}00035     \textcolor{keywordtype}{void} initGui();}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00036}00036     \textcolor{keywordtype}{void} resetGui();}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00037}00037 \};}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8hpp_source_l00039}00039 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_MAIN\_MENU\_STATE\_HPP\_\_}}
+
+\end{DoxyCode}

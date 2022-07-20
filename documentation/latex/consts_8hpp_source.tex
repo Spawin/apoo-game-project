@@ -1,0 +1,50 @@
+\hypertarget{consts_8hpp_source}{}\doxysection{consts.\+hpp}
+\label{consts_8hpp_source}\index{include/consts.hpp@{include/consts.hpp}}
+\mbox{\hyperlink{consts_8hpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00012}00012 \textcolor{preprocessor}{\#ifndef \_\_CONST\_HPP\_\_}}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00013}00013 \textcolor{preprocessor}{\#define \_\_CONST\_HPP\_\_}}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00015}\mbox{\hyperlink{consts_8hpp_ae71449b1cc6e6250b91f539153a7a0d3}{00015}} \textcolor{preprocessor}{\#define M\_PI 3.14         }\textcolor{comment}{//16}}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00016}\mbox{\hyperlink{consts_8hpp_a498d9f026138406895e9a34b504ac6a6}{00016}} \textcolor{preprocessor}{\#define WINDOW\_WIDTH 1200 }\textcolor{comment}{// 800 NOTE -\/ On va la gerder}}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00017}\mbox{\hyperlink{consts_8hpp_a5473cf64fa979b48335079c99532e243}{00017}} \textcolor{preprocessor}{\#define WINDOW\_HEIGHT 600 }\textcolor{comment}{// 540}}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00018}00018 \textcolor{comment}{// \#define GAME\_MAP\_WIDTH 1100   // !depracted}}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00019}00019 \textcolor{comment}{// \#define GAME\_MAP\_HEIGHT 2200 // !depracted}}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00021}\mbox{\hyperlink{consts_8hpp_afb515af395568ee4252070ae1dd100b0}{00021}} \textcolor{preprocessor}{\#define DISTANCE\_MIN\_BETWEEN\_OBJECTS 10 }\textcolor{comment}{// Distance minimal entre deux points de contact d'un objet}}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00023}\mbox{\hyperlink{consts_8hpp_a93bc36c56985322fbb217e9f19a8c257}{00023}} \textcolor{preprocessor}{\#define DEFAULT\_DETECTABILITY\_RADIUS 16    }\textcolor{comment}{// Diamètre 32}}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00024}\mbox{\hyperlink{consts_8hpp_ac2c698c4142aae0255cee3156cda7468}{00024}} \textcolor{preprocessor}{\#define PERSONNAGE\_DETECTABILITY\_RADIUS 16 }\textcolor{comment}{// Diamètre 32}}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00025}\mbox{\hyperlink{consts_8hpp_a09c369032df8530305d224e54d56aece}{00025}} \textcolor{preprocessor}{\#define PERSONNAGE\_WIDTH 32                }\textcolor{comment}{// Diamètre de la zone occupé par un personnage}}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00026}\mbox{\hyperlink{consts_8hpp_a380a7e9f541ce122b8a0196adc3c1c1f}{00026}} \textcolor{preprocessor}{\#define GAME\_BLOCKS\_WIDTH 32               }\textcolor{comment}{// Taille de la largeur d'un bloc; un bloc est carré...}}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00028}\mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{00028}} \textcolor{preprocessor}{\#define WALL\_WIDTH 32}}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00030}\mbox{\hyperlink{consts_8hpp_a4ab8841dc3be7e29bd4704ed45b6a0e4}{00030}} \textcolor{keyword}{enum} \mbox{\hyperlink{consts_8hpp_a4ab8841dc3be7e29bd4704ed45b6a0e4}{movement\_states}}}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00031}00031 \{}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00032}\mbox{\hyperlink{consts_8hpp_a4ab8841dc3be7e29bd4704ed45b6a0e4afd6a0e4343048b10646dd2976cc5ad18}{00032}}     \mbox{\hyperlink{consts_8hpp_a4ab8841dc3be7e29bd4704ed45b6a0e4afd6a0e4343048b10646dd2976cc5ad18}{IDLE}} = 0,}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00033}\mbox{\hyperlink{consts_8hpp_a4ab8841dc3be7e29bd4704ed45b6a0e4a16ebdcb23eb5337fd5bc598fa8d6035d}{00033}}     \mbox{\hyperlink{consts_8hpp_a4ab8841dc3be7e29bd4704ed45b6a0e4a16ebdcb23eb5337fd5bc598fa8d6035d}{MOVING}},}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00034}\mbox{\hyperlink{consts_8hpp_a4ab8841dc3be7e29bd4704ed45b6a0e4af2d17378db8b161d333e0dd8e88ebad9}{00034}}     \mbox{\hyperlink{consts_8hpp_a4ab8841dc3be7e29bd4704ed45b6a0e4af2d17378db8b161d333e0dd8e88ebad9}{MOVING\_LEFT}},}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00035}\mbox{\hyperlink{consts_8hpp_a4ab8841dc3be7e29bd4704ed45b6a0e4af618166e0dfa62dd63fc0d9f677ca871}{00035}}     \mbox{\hyperlink{consts_8hpp_a4ab8841dc3be7e29bd4704ed45b6a0e4af618166e0dfa62dd63fc0d9f677ca871}{MOVING\_RIGHT}},}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00036}\mbox{\hyperlink{consts_8hpp_a4ab8841dc3be7e29bd4704ed45b6a0e4ad0d69c60b9d20b96b089b680f8d7566d}{00036}}     \mbox{\hyperlink{consts_8hpp_a4ab8841dc3be7e29bd4704ed45b6a0e4ad0d69c60b9d20b96b089b680f8d7566d}{MOVING\_UP}},}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00037}00037     \mbox{\hyperlink{consts_8hpp_a4ab8841dc3be7e29bd4704ed45b6a0e4aa9afce301988e16292cfcae76a57d9a8}{MOVING\_DOWN}}}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00038}\mbox{\hyperlink{consts_8hpp_a4ab8841dc3be7e29bd4704ed45b6a0e4aa9afce301988e16292cfcae76a57d9a8}{00038}} \};}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00040}\mbox{\hyperlink{namespacegame}{00040}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacegame}{game}}}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00041}00041 \{}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00043}\mbox{\hyperlink{namespacegame_ad60933589116204d8fea5cc921815b4c}{00043}} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{float} \mbox{\hyperlink{namespacegame_ad60933589116204d8fea5cc921815b4c}{PERSONAGE\_MOVE\_VELOCITY}} = 200.f;}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00045}00045 \textcolor{comment}{// REVIEW -\/}}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00046}\mbox{\hyperlink{namespacegame_ae06dcf0f83792737e9567f33c22f9829}{00046}} \textcolor{keyword}{inline} std::string \textcolor{keyword}{const}\& \mbox{\hyperlink{namespacegame_ae06dcf0f83792737e9567f33c22f9829}{GAME\_NAME}}()}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00047}00047 \{}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00048}00048     \textcolor{keyword}{static} std::string ret = \textcolor{stringliteral}{"{}-\/-\/-\/"{}};}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00049}00049     \textcolor{keywordflow}{return} ret;}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00050}00050 \}}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00052}00052 \}}
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{consts_8hpp_source_l00054}00054 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_CONST\_HPP\_\_}}
+
+\end{DoxyCode}

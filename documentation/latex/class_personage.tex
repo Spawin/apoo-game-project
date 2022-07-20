@@ -1,0 +1,424 @@
+\hypertarget{class_personage}{}\doxysection{Référence de la classe Personage}
+\label{class_personage}\index{Personage@{Personage}}
+
+
+{\ttfamily \#include $<$Personage.\+hpp$>$}
+
+Graphe d\textquotesingle{}héritage de Personage\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_personage}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_personage_a53b3b6c7865b2eb80de7c6edab217944}{Personage}} (bool is\+Player=false)
+\item 
+\mbox{\hyperlink{class_personage_a2bc02be347c9e2ea7af9502e7194491c}{Personage}} (std\+::string\+\_\+view const \&image\+Sprite\+Path, bool is\+Player=false)
+\item 
+\mbox{\hyperlink{class_personage_a590260b9f0cdb7394c8922ce9435989e}{Personage}} (float posX, float posY, bool is\+Player=false)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_personage}{Personage}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_personage_a1767f263a4d3681ce02ef14f9b2afae8}{$\sim$\+Personage}} ()
+\item 
+virtual void \mbox{\hyperlink{class_personage_a5519958ec983d06abd2ff81902dc49ac}{show}} (sf\+::\+Render\+Target \&window) override
+\begin{DoxyCompactList}\small\item\em Pour dessiner l\textquotesingle{}élement dans la fenêtre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_personage_a492d4164bc6c439d43cc44fefcbd6468}{update}} () override
+\item 
+void \mbox{\hyperlink{class_personage_a3f8afca1fd73cff32ab7f6d2df048c6d}{set\+Game\+Object\+Name}} (std\+::string name)
+\item 
+void \mbox{\hyperlink{class_personage_ac0e67cb98d13d11d49395bcaa9a8f6dd}{on\+Collision\+Enter}} (\mbox{\hyperlink{class_collision}{Collision}} const \&collision) const override
+\begin{DoxyCompactList}\small\item\em émit quand il entre en contacte avec un autre élément \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_personage_a7bff2cb2291f1405ca85fc8075721534}{get\+Health}} () const
+\begin{DoxyCompactList}\small\item\em Get the Health object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_personage_a1dade2c8ec548dd2df7791252719fe1d}{simple\+Attack}} (\mbox{\hyperlink{class_personage}{Personage}} \&target)=0
+\item 
+virtual void \mbox{\hyperlink{class_personage_a71f84a092284e295db1de628af4e918d}{special\+Attack}} (\mbox{\hyperlink{class_personage}{Personage}} \&target)=0
+\item 
+virtual void \mbox{\hyperlink{class_personage_acecd31422b51e2d0755c6d2de94d9510}{move}} (\mbox{\hyperlink{struct_my_vector}{My\+Vector}} \&speed) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_personage_a26d96b1af8f4a482b60a56e18629e14b}{init}} ()
+\begin{DoxyCompactList}\small\item\em Pour initialiser les valeur par défaut du \mbox{\hyperlink{class_game_object}{Game\+Object}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_personage_a37baf30f19be05e97e839ace9fde91b8}{update\+Position}} (\mbox{\hyperlink{class_position}{Position}} \&position) override
+\begin{DoxyCompactList}\small\item\em Permet de mettre à jour la position actuelle. Cette position sera déterminé par l\textquotesingle{}évenement reçu au préalable. Aussi il s\textquotesingle{}agit dans ce cas d\textquotesingle{}une accélération uniforme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_personage_a6ef19ba69263cdcec05c4ef5287cbe27}{m\+\_\+health}} \{ 100 \}
+\item 
+int \mbox{\hyperlink{class_personage_aa927ac8acdb77e3fa7c340ecdaaf47b1}{m\+\_\+speciality}} \{ 100 \}
+\item 
+std\+::string \mbox{\hyperlink{class_personage_a2e14c7228a3a5a6b6531c7b1077baa7f}{m\+\_\+specialty\+Name}}
+\item 
+int \mbox{\hyperlink{class_personage_ab894906ea503da5bc523baf2198fb038}{m\+\_\+simple\+Attack\+Value}} \{ 10 \}
+\item 
+int \mbox{\hyperlink{class_personage_ae6d43eebc4cdebd9006c879f92998c1c}{m\+\_\+special\+Attack\+Value}} \{ 25 \}
+\item 
+float \mbox{\hyperlink{class_personage_aa9dffcf73f47fcb193f0f267fefcb810}{m\+\_\+probability\+Success\+Attack}} \{ .\+5f \}
+\item 
+int \mbox{\hyperlink{class_personage_aef777eeaca1c30390140764d7c965555}{m\+\_\+attack\+Variation}} \{ 5 \}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_personage_a9b2858ea1da06025a640a0151f6834dd}{m\+\_\+health\+Bar\+Sprite}}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_personage_a11d7f7c3126f55b6e2a9826c03987c64}{m\+\_\+speciality\+Bar\+Sprite}}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{class_personage_a446643fca11a76d0cd1ed94e234612da}{m\+\_\+suit}}
+\item 
+const bool \mbox{\hyperlink{class_personage_aee1579f7f20f7d3ce28dc50b4b888259}{m\+\_\+is\+Player}}
+\item 
+sf\+::\+Render\+Target $\ast$ \mbox{\hyperlink{class_personage_a824057a6da265aa4e58fa1dfbdd6037a}{m\+\_\+window}} \{ 0 \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Membres hérités additionnels}
+
+
+\doxysubsection{Description détaillée}
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8hpp_source_l00007}{7}} du fichier \mbox{\hyperlink{_personage_8hpp_source}{Personage.\+hpp}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_personage_a53b3b6c7865b2eb80de7c6edab217944}\label{class_personage_a53b3b6c7865b2eb80de7c6edab217944}} 
+\index{Personage@{Personage}!Personage@{Personage}}
+\index{Personage@{Personage}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{Personage()}{Personage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Personage\+::\+Personage (\begin{DoxyParamCaption}\item[{bool}]{is\+Player = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8cpp_source_l00050}{50}} du fichier \mbox{\hyperlink{_personage_8cpp_source}{Personage.\+cpp}}.
+
+\mbox{\Hypertarget{class_personage_a2bc02be347c9e2ea7af9502e7194491c}\label{class_personage_a2bc02be347c9e2ea7af9502e7194491c}} 
+\index{Personage@{Personage}!Personage@{Personage}}
+\index{Personage@{Personage}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{Personage()}{Personage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Personage\+::\+Personage (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view const \&}]{image\+Sprite\+Path,  }\item[{bool}]{is\+Player = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8cpp_source_l00058}{58}} du fichier \mbox{\hyperlink{_personage_8cpp_source}{Personage.\+cpp}}.
+
+\mbox{\Hypertarget{class_personage_a590260b9f0cdb7394c8922ce9435989e}\label{class_personage_a590260b9f0cdb7394c8922ce9435989e}} 
+\index{Personage@{Personage}!Personage@{Personage}}
+\index{Personage@{Personage}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{Personage()}{Personage()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Personage\+::\+Personage (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{bool}]{is\+Player = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_personage}{Personage}} object. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em posX} & la position x de l\textquotesingle{}objet \\
+\hline
+{\em posY} & la position y de l\textquotesingle{}objet \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8cpp_source_l00065}{65}} du fichier \mbox{\hyperlink{_personage_8cpp_source}{Personage.\+cpp}}.
+
+\mbox{\Hypertarget{class_personage_a1767f263a4d3681ce02ef14f9b2afae8}\label{class_personage_a1767f263a4d3681ce02ef14f9b2afae8}} 
+\index{Personage@{Personage}!````~Personage@{$\sim$Personage}}
+\index{````~Personage@{$\sim$Personage}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{$\sim$Personage()}{~Personage()}}
+{\footnotesize\ttfamily Personage\+::$\sim$\+Personage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8cpp_source_l00072}{72}} du fichier \mbox{\hyperlink{_personage_8cpp_source}{Personage.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_personage_a7bff2cb2291f1405ca85fc8075721534}\label{class_personage_a7bff2cb2291f1405ca85fc8075721534}} 
+\index{Personage@{Personage}!getHealth@{getHealth}}
+\index{getHealth@{getHealth}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{getHealth()}{getHealth()}}
+{\footnotesize\ttfamily int Personage\+::get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Health object. 
+
+\begin{DoxyReturn}{Renvoie}
+int 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8cpp_source_l00104}{104}} du fichier \mbox{\hyperlink{_personage_8cpp_source}{Personage.\+cpp}}.
+
+\mbox{\Hypertarget{class_personage_a26d96b1af8f4a482b60a56e18629e14b}\label{class_personage_a26d96b1af8f4a482b60a56e18629e14b}} 
+\index{Personage@{Personage}!init@{init}}
+\index{init@{init}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Personage\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pour initialiser les valeur par défaut du \mbox{\hyperlink{class_game_object}{Game\+Object}}. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8cpp_source_l00014}{14}} du fichier \mbox{\hyperlink{_personage_8cpp_source}{Personage.\+cpp}}.
+
+\mbox{\Hypertarget{class_personage_acecd31422b51e2d0755c6d2de94d9510}\label{class_personage_acecd31422b51e2d0755c6d2de94d9510}} 
+\index{Personage@{Personage}!move@{move}}
+\index{move@{move}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Personage\+::move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_my_vector}{My\+Vector}} \&}]{speed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_game_object_a5845033077a9f7669e3e7479dae824c0}{Game\+Object}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8cpp_source_l00201}{201}} du fichier \mbox{\hyperlink{_personage_8cpp_source}{Personage.\+cpp}}.
+
+\mbox{\Hypertarget{class_personage_ac0e67cb98d13d11d49395bcaa9a8f6dd}\label{class_personage_ac0e67cb98d13d11d49395bcaa9a8f6dd}} 
+\index{Personage@{Personage}!onCollisionEnter@{onCollisionEnter}}
+\index{onCollisionEnter@{onCollisionEnter}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{onCollisionEnter()}{onCollisionEnter()}}
+{\footnotesize\ttfamily void Personage\+::on\+Collision\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collision}{Collision}} const \&}]{collision }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+émit quand il entre en contacte avec un autre élément 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em collision} & \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \mbox{\hyperlink{class_game_object_a394309d681a8e5eb59656029a32881de}{Game\+Object}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8cpp_source_l00094}{94}} du fichier \mbox{\hyperlink{_personage_8cpp_source}{Personage.\+cpp}}.
+
+\mbox{\Hypertarget{class_personage_a3f8afca1fd73cff32ab7f6d2df048c6d}\label{class_personage_a3f8afca1fd73cff32ab7f6d2df048c6d}} 
+\index{Personage@{Personage}!setGameObjectName@{setGameObjectName}}
+\index{setGameObjectName@{setGameObjectName}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{setGameObjectName()}{setGameObjectName()}}
+{\footnotesize\ttfamily void Personage\+::set\+Game\+Object\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8cpp_source_l00089}{89}} du fichier \mbox{\hyperlink{_personage_8cpp_source}{Personage.\+cpp}}.
+
+\mbox{\Hypertarget{class_personage_a5519958ec983d06abd2ff81902dc49ac}\label{class_personage_a5519958ec983d06abd2ff81902dc49ac}} 
+\index{Personage@{Personage}!show@{show}}
+\index{show@{show}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily void Personage\+::show (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pour dessiner l\textquotesingle{}élement dans la fenêtre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Réimplémentée à partir de \mbox{\hyperlink{class_game_object_a3f7a674006e1cce96ccb6c60f0ff9aaf}{Game\+Object}}.
+
+
+
+Réimplémentée dans \mbox{\hyperlink{class_soldier_a6b61c53708ea3325f9e6d36ea7d1cd64}{Soldier}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8cpp_source_l00078}{78}} du fichier \mbox{\hyperlink{_personage_8cpp_source}{Personage.\+cpp}}.
+
+\mbox{\Hypertarget{class_personage_a1dade2c8ec548dd2df7791252719fe1d}\label{class_personage_a1dade2c8ec548dd2df7791252719fe1d}} 
+\index{Personage@{Personage}!simpleAttack@{simpleAttack}}
+\index{simpleAttack@{simpleAttack}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{simpleAttack()}{simpleAttack()}}
+{\footnotesize\ttfamily virtual void Personage\+::simple\+Attack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_personage}{Personage}} \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implémenté dans \mbox{\hyperlink{class_soldier_ad55488b632b3e91eca9d20cfb06f52d7}{Soldier}}.
+
+\mbox{\Hypertarget{class_personage_a71f84a092284e295db1de628af4e918d}\label{class_personage_a71f84a092284e295db1de628af4e918d}} 
+\index{Personage@{Personage}!specialAttack@{specialAttack}}
+\index{specialAttack@{specialAttack}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{specialAttack()}{specialAttack()}}
+{\footnotesize\ttfamily virtual void Personage\+::special\+Attack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_personage}{Personage}} \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implémenté dans \mbox{\hyperlink{class_soldier_aebd513f96b6f365ddc1d56ca1ea16a64}{Soldier}}.
+
+\mbox{\Hypertarget{class_personage_a492d4164bc6c439d43cc44fefcbd6468}\label{class_personage_a492d4164bc6c439d43cc44fefcbd6468}} 
+\index{Personage@{Personage}!update@{update}}
+\index{update@{update}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Personage\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_game_object_ae83128d0e0efef691417779605ee037c}{Game\+Object}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8cpp_source_l00084}{84}} du fichier \mbox{\hyperlink{_personage_8cpp_source}{Personage.\+cpp}}.
+
+\mbox{\Hypertarget{class_personage_a37baf30f19be05e97e839ace9fde91b8}\label{class_personage_a37baf30f19be05e97e839ace9fde91b8}} 
+\index{Personage@{Personage}!updatePosition@{updatePosition}}
+\index{updatePosition@{updatePosition}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{updatePosition()}{updatePosition()}}
+{\footnotesize\ttfamily void Personage\+::update\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_position}{Position}} \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Permet de mettre à jour la position actuelle. Cette position sera déterminé par l\textquotesingle{}évenement reçu au préalable. Aussi il s\textquotesingle{}agit dans ce cas d\textquotesingle{}une accélération uniforme. 
+
+
+
+Implémente \mbox{\hyperlink{class_game_object_a370e2175ad8b4017ff2aa095e11e955b}{Game\+Object}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8cpp_source_l00109}{109}} du fichier \mbox{\hyperlink{_personage_8cpp_source}{Personage.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_personage_aef777eeaca1c30390140764d7c965555}\label{class_personage_aef777eeaca1c30390140764d7c965555}} 
+\index{Personage@{Personage}!m\_attackVariation@{m\_attackVariation}}
+\index{m\_attackVariation@{m\_attackVariation}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{m\_attackVariation}{m\_attackVariation}}
+{\footnotesize\ttfamily int Personage\+::m\+\_\+attack\+Variation \{ 5 \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8hpp_source_l00073}{73}} du fichier \mbox{\hyperlink{_personage_8hpp_source}{Personage.\+hpp}}.
+
+\mbox{\Hypertarget{class_personage_a6ef19ba69263cdcec05c4ef5287cbe27}\label{class_personage_a6ef19ba69263cdcec05c4ef5287cbe27}} 
+\index{Personage@{Personage}!m\_health@{m\_health}}
+\index{m\_health@{m\_health}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{m\_health}{m\_health}}
+{\footnotesize\ttfamily int Personage\+::m\+\_\+health \{ 100 \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8hpp_source_l00055}{55}} du fichier \mbox{\hyperlink{_personage_8hpp_source}{Personage.\+hpp}}.
+
+\mbox{\Hypertarget{class_personage_a9b2858ea1da06025a640a0151f6834dd}\label{class_personage_a9b2858ea1da06025a640a0151f6834dd}} 
+\index{Personage@{Personage}!m\_healthBarSprite@{m\_healthBarSprite}}
+\index{m\_healthBarSprite@{m\_healthBarSprite}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{m\_healthBarSprite}{m\_healthBarSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite Personage\+::m\+\_\+health\+Bar\+Sprite\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8hpp_source_l00076}{76}} du fichier \mbox{\hyperlink{_personage_8hpp_source}{Personage.\+hpp}}.
+
+\mbox{\Hypertarget{class_personage_aee1579f7f20f7d3ce28dc50b4b888259}\label{class_personage_aee1579f7f20f7d3ce28dc50b4b888259}} 
+\index{Personage@{Personage}!m\_isPlayer@{m\_isPlayer}}
+\index{m\_isPlayer@{m\_isPlayer}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{m\_isPlayer}{m\_isPlayer}}
+{\footnotesize\ttfamily const bool Personage\+::m\+\_\+is\+Player\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8hpp_source_l00087}{87}} du fichier \mbox{\hyperlink{_personage_8hpp_source}{Personage.\+hpp}}.
+
+\mbox{\Hypertarget{class_personage_aa9dffcf73f47fcb193f0f267fefcb810}\label{class_personage_aa9dffcf73f47fcb193f0f267fefcb810}} 
+\index{Personage@{Personage}!m\_probabilitySuccessAttack@{m\_probabilitySuccessAttack}}
+\index{m\_probabilitySuccessAttack@{m\_probabilitySuccessAttack}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{m\_probabilitySuccessAttack}{m\_probabilitySuccessAttack}}
+{\footnotesize\ttfamily float Personage\+::m\+\_\+probability\+Success\+Attack \{ .\+5f \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8hpp_source_l00070}{70}} du fichier \mbox{\hyperlink{_personage_8hpp_source}{Personage.\+hpp}}.
+
+\mbox{\Hypertarget{class_personage_ab894906ea503da5bc523baf2198fb038}\label{class_personage_ab894906ea503da5bc523baf2198fb038}} 
+\index{Personage@{Personage}!m\_simpleAttackValue@{m\_simpleAttackValue}}
+\index{m\_simpleAttackValue@{m\_simpleAttackValue}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{m\_simpleAttackValue}{m\_simpleAttackValue}}
+{\footnotesize\ttfamily int Personage\+::m\+\_\+simple\+Attack\+Value \{ 10 \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8hpp_source_l00064}{64}} du fichier \mbox{\hyperlink{_personage_8hpp_source}{Personage.\+hpp}}.
+
+\mbox{\Hypertarget{class_personage_ae6d43eebc4cdebd9006c879f92998c1c}\label{class_personage_ae6d43eebc4cdebd9006c879f92998c1c}} 
+\index{Personage@{Personage}!m\_specialAttackValue@{m\_specialAttackValue}}
+\index{m\_specialAttackValue@{m\_specialAttackValue}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{m\_specialAttackValue}{m\_specialAttackValue}}
+{\footnotesize\ttfamily int Personage\+::m\+\_\+special\+Attack\+Value \{ 25 \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8hpp_source_l00067}{67}} du fichier \mbox{\hyperlink{_personage_8hpp_source}{Personage.\+hpp}}.
+
+\mbox{\Hypertarget{class_personage_aa927ac8acdb77e3fa7c340ecdaaf47b1}\label{class_personage_aa927ac8acdb77e3fa7c340ecdaaf47b1}} 
+\index{Personage@{Personage}!m\_speciality@{m\_speciality}}
+\index{m\_speciality@{m\_speciality}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{m\_speciality}{m\_speciality}}
+{\footnotesize\ttfamily int Personage\+::m\+\_\+speciality \{ 100 \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8hpp_source_l00058}{58}} du fichier \mbox{\hyperlink{_personage_8hpp_source}{Personage.\+hpp}}.
+
+\mbox{\Hypertarget{class_personage_a11d7f7c3126f55b6e2a9826c03987c64}\label{class_personage_a11d7f7c3126f55b6e2a9826c03987c64}} 
+\index{Personage@{Personage}!m\_specialityBarSprite@{m\_specialityBarSprite}}
+\index{m\_specialityBarSprite@{m\_specialityBarSprite}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{m\_specialityBarSprite}{m\_specialityBarSprite}}
+{\footnotesize\ttfamily sf\+::\+Sprite Personage\+::m\+\_\+speciality\+Bar\+Sprite\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8hpp_source_l00079}{79}} du fichier \mbox{\hyperlink{_personage_8hpp_source}{Personage.\+hpp}}.
+
+\mbox{\Hypertarget{class_personage_a2e14c7228a3a5a6b6531c7b1077baa7f}\label{class_personage_a2e14c7228a3a5a6b6531c7b1077baa7f}} 
+\index{Personage@{Personage}!m\_specialtyName@{m\_specialtyName}}
+\index{m\_specialtyName@{m\_specialtyName}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{m\_specialtyName}{m\_specialtyName}}
+{\footnotesize\ttfamily std\+::string Personage\+::m\+\_\+specialty\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8hpp_source_l00061}{61}} du fichier \mbox{\hyperlink{_personage_8hpp_source}{Personage.\+hpp}}.
+
+\mbox{\Hypertarget{class_personage_a446643fca11a76d0cd1ed94e234612da}\label{class_personage_a446643fca11a76d0cd1ed94e234612da}} 
+\index{Personage@{Personage}!m\_suit@{m\_suit}}
+\index{m\_suit@{m\_suit}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{m\_suit}{m\_suit}}
+{\footnotesize\ttfamily sf\+::\+Sprite Personage\+::m\+\_\+suit\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8hpp_source_l00082}{82}} du fichier \mbox{\hyperlink{_personage_8hpp_source}{Personage.\+hpp}}.
+
+\mbox{\Hypertarget{class_personage_a824057a6da265aa4e58fa1dfbdd6037a}\label{class_personage_a824057a6da265aa4e58fa1dfbdd6037a}} 
+\index{Personage@{Personage}!m\_window@{m\_window}}
+\index{m\_window@{m\_window}!Personage@{Personage}}
+\doxysubsubsection{\texorpdfstring{m\_window}{m\_window}}
+{\footnotesize\ttfamily sf\+::\+Render\+Target$\ast$ Personage\+::m\+\_\+window \{ 0 \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_personage_8hpp_source_l00089}{89}} du fichier \mbox{\hyperlink{_personage_8hpp_source}{Personage.\+hpp}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_personage_8hpp}{Personage.\+hpp}}\item 
+include/\mbox{\hyperlink{_personage_8cpp}{Personage.\+cpp}}\end{DoxyCompactItemize}

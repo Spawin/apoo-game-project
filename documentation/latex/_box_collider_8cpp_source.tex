@@ -1,0 +1,81 @@
+\hypertarget{_box_collider_8cpp_source}{}\doxysection{Box\+Collider.\+cpp}
+\label{_box_collider_8cpp_source}\index{include/BoxCollider.cpp@{include/BoxCollider.cpp}}
+\mbox{\hyperlink{_box_collider_8cpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_box_collider_8hpp}{include/BoxCollider.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00003}00003 \textcolor{keyword}{const} std::string BoxCollider::m\_name(\textcolor{stringliteral}{"{}BoxCollider"{}});}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00005}00005 \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00006}00006 \textcolor{comment}{BoxCollider::BoxCollider(GameObject const\& parent, std::vector<sf::Vector2f> contactPoints) :}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00007}00007 \textcolor{comment}{    Collider(parent, contactPoints)}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00008}00008 \textcolor{comment}{\{}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00009}00009 \textcolor{comment}{    if(contactPoints.size() > 4) \{}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00010}00010 \textcolor{comment}{        //}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00011}00011 \textcolor{comment}{    \}}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00012}00012 \textcolor{comment}{\}}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00013}00013 \textcolor{comment}{//*/}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00014}\mbox{\hyperlink{class_box_collider_a172c4aae83dda5a0201673cd29b78b2d}{00014}} \mbox{\hyperlink{class_box_collider_a172c4aae83dda5a0201673cd29b78b2d}{BoxCollider::BoxCollider}}(\mbox{\hyperlink{class_game_object}{GameObject}} \textcolor{keyword}{const}\& parent, \textcolor{keywordtype}{float} width, \textcolor{keywordtype}{float} height, sf::Vector2f leftTopPoint) :}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00015}00015     \mbox{\hyperlink{class_collider}{Collider}}(parent, \textcolor{stringliteral}{"{}BoxCollider"{}}),}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00016}00016     m\_width(width),}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00017}00017     m\_height(height),}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00018}00018     m\_leftTopPoint(leftTopPoint)}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00019}00019 \{\}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00021}\mbox{\hyperlink{class_box_collider_a8c33dbb4325d76d441de38b7c4ae43af}{00021}} \mbox{\hyperlink{class_box_collider_a8c33dbb4325d76d441de38b7c4ae43af}{BoxCollider::\string~BoxCollider}}()}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00022}00022 \{}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00023}00023 \}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00025}00025 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00027}\mbox{\hyperlink{class_box_collider_a85be8a791e72a24c40e82c066599d4d5}{00027}} \textcolor{keyword}{const} std::string \mbox{\hyperlink{class_box_collider_a85be8a791e72a24c40e82c066599d4d5}{BoxCollider::getName}}()}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00028}00028 \{}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00029}00029     \textcolor{keywordflow}{return} m\_name;}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00030}00030 \}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00032}\mbox{\hyperlink{class_box_collider_ac9e717b633ad63fdcbaefb479d6d1e25}{00032}} std::vector<sf::Vector2f> \mbox{\hyperlink{class_box_collider_ac9e717b633ad63fdcbaefb479d6d1e25}{BoxCollider::getContactPoints}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00033}00033 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00034}00034     \textcolor{keywordflow}{return} \{}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00035}00035         sf::Vector2f(m\_leftTopPoint),}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00036}00036         sf::Vector2f(m\_leftTopPoint.x + m\_width, m\_leftTopPoint.y),}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00037}00037         sf::Vector2f(m\_leftTopPoint.x + m\_width, m\_leftTopPoint.y -\/ m\_height),}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00038}00038         sf::Vector2f(m\_leftTopPoint.x, m\_leftTopPoint.y -\/ m\_height),}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00039}00039     \};}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00040}00040 \}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00042}\mbox{\hyperlink{class_box_collider_a38200ed6f93b0f91bcb0f9f6b19954f9}{00042}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_box_collider_a38200ed6f93b0f91bcb0f9f6b19954f9}{BoxCollider::touchEachOther}}(\mbox{\hyperlink{class_collider}{Collider}} \textcolor{keyword}{const}\& collider)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00043}00043 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00044}00044     \textcolor{comment}{// REVIEW -\/  On va considérer que c'est un box collider}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00046}00046     \textcolor{comment}{// Comparaison de la proximité de tous les points}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00047}00047     \mbox{\hyperlink{struct_my_vector}{MyVector}} c1 = (*this).parent.getPosition().getPosition();}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00048}00048     \mbox{\hyperlink{struct_my_vector}{MyVector}} c2 = collider.\mbox{\hyperlink{class_collider_ac5e78bcb91de52d8202beea5c4b3a5f8}{getParent}}().\mbox{\hyperlink{class_game_object_a8c97fc15be278b8c42d138517e0a05bb}{getPosition}}().\mbox{\hyperlink{class_position_af409de5592dd7da6fb0ccb8d1681bb19}{getPosition}}();}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00049}00049     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} j = 0; j < collider.\mbox{\hyperlink{class_collider_a97506e7e7a75b63c3358eb898194b866}{getContactPoints}}().size(); j++)}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00050}00050     \{}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00051}00051         sf::Vector2f p2 = collider.\mbox{\hyperlink{class_collider_a97506e7e7a75b63c3358eb898194b866}{getContactPoints}}()[j];}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00052}00052         p2.x += c2.\mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}};}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00053}00053         p2.y += c2.\mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}};}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00055}00055         \textcolor{comment}{// sf::Vector2f point = collider.getContactPoints()[j];}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00056}00056         \textcolor{keywordflow}{if} ((m\_leftTopPoint.x + c1.\mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}}) < p2.x \&\& p2.x < (m\_leftTopPoint.x + c1.\mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}} + m\_width))}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00057}00057         \{}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00058}00058             \textcolor{keywordflow}{if} ((m\_leftTopPoint.y + c1.\mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}} -\/ m\_height) < p2.y \&\& p2.y < (m\_leftTopPoint.y + c1.\mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}}))}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00059}00059             \{}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00060}00060                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00061}00061             \}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00062}00062         \}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00063}00063     \}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00065}00065     \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00066}00066 \textcolor{comment}{    for (size\_t i = 0; i < (*this).m\_contactPoints.size(); i++)}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00067}00067 \textcolor{comment}{    \{}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00068}00068 \textcolor{comment}{        for (size\_t j = 0; j < collider.getContactPoints().size(); j++)}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00069}00069 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00070}00070 \textcolor{comment}{            // Comparaison de la proximité de tous les points}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00071}00071 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00072}00072 \textcolor{comment}{    \}}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00073}00073 \textcolor{comment}{    //*/}}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00074}00074     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00075}00075 \}}
+
+\end{DoxyCode}

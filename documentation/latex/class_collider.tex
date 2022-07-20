@@ -1,0 +1,166 @@
+\hypertarget{class_collider}{}\doxysection{Référence de la classe Collider}
+\label{class_collider}\index{Collider@{Collider}}
+
+
+{\ttfamily \#include $<$Collider.\+hpp$>$}
+
+Graphe d\textquotesingle{}héritage de Collider\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_collider}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_collider_a5f7d036476d2bff521151c2031f20d46}{Collider}} (\mbox{\hyperlink{class_game_object}{Game\+Object}} const \&\mbox{\hyperlink{class_collider_a937ddad2dd8d4d6a67370334d447210b}{parent}}, std\+::string type\+Of\+Collider)
+\item 
+virtual \mbox{\hyperlink{class_collider_a564acde9860f875a32a6638c573d87be}{$\sim$\+Collider}} ()
+\item 
+\mbox{\hyperlink{class_game_object}{Game\+Object}} const \& \mbox{\hyperlink{class_collider_ac5e78bcb91de52d8202beea5c4b3a5f8}{get\+Parent}} () const
+\item 
+virtual std\+::vector$<$ sf\+::\+Vector2f $>$ \mbox{\hyperlink{class_collider_a97506e7e7a75b63c3358eb898194b866}{get\+Contact\+Points}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{class_collider_acecb570f58b885affcfcc5c25e9bc217}{touch\+Each\+Other}} (\mbox{\hyperlink{class_collider}{Collider}} const \&collider) const =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_collider_a765cffbef5d5e713672cea46c563dc67}{update}} ()
+\begin{DoxyCompactList}\small\item\em C\textquotesingle{}est à ce niveau qu\textquotesingle{}on gère la détection de collisions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_object}{Game\+Object}} const  \& \mbox{\hyperlink{class_collider_a937ddad2dd8d4d6a67370334d447210b}{parent}}
+\item 
+std\+::string \mbox{\hyperlink{class_collider_a1440a92b8642490b4c118eeb83758189}{m\+\_\+collider\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Attributs protégés statiques}
+\begin{DoxyCompactItemize}
+\item 
+static Game\+Object\+Map \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\+\_\+objects}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+
+
+Définition à la ligne \mbox{\hyperlink{_collider_8hpp_source_l00013}{13}} du fichier \mbox{\hyperlink{_collider_8hpp_source}{Collider.\+hpp}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_collider_a5f7d036476d2bff521151c2031f20d46}\label{class_collider_a5f7d036476d2bff521151c2031f20d46}} 
+\index{Collider@{Collider}!Collider@{Collider}}
+\index{Collider@{Collider}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{Collider()}{Collider()}}
+{\footnotesize\ttfamily Collider\+::\+Collider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_object}{Game\+Object}} const \&}]{parent,  }\item[{std\+::string}]{type\+Of\+Collider }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_collider_8cpp_source_l00025}{25}} du fichier \mbox{\hyperlink{_collider_8cpp_source}{Collider.\+cpp}}.
+
+\mbox{\Hypertarget{class_collider_a564acde9860f875a32a6638c573d87be}\label{class_collider_a564acde9860f875a32a6638c573d87be}} 
+\index{Collider@{Collider}!````~Collider@{$\sim$Collider}}
+\index{````~Collider@{$\sim$Collider}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{$\sim$Collider()}{~Collider()}}
+{\footnotesize\ttfamily Collider\+::$\sim$\+Collider (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_collider_8cpp_source_l00044}{44}} du fichier \mbox{\hyperlink{_collider_8cpp_source}{Collider.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_collider_a97506e7e7a75b63c3358eb898194b866}\label{class_collider_a97506e7e7a75b63c3358eb898194b866}} 
+\index{Collider@{Collider}!getContactPoints@{getContactPoints}}
+\index{getContactPoints@{getContactPoints}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{getContactPoints()}{getContactPoints()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$ sf\+::\+Vector2f $>$ Collider\+::get\+Contact\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implémenté dans \mbox{\hyperlink{class_box_collider_ac9e717b633ad63fdcbaefb479d6d1e25}{Box\+Collider}}, et \mbox{\hyperlink{class_polygon_collider_ae312be67f56fcc6db3967f4b46a6242b}{Polygon\+Collider}}.
+
+\mbox{\Hypertarget{class_collider_ac5e78bcb91de52d8202beea5c4b3a5f8}\label{class_collider_ac5e78bcb91de52d8202beea5c4b3a5f8}} 
+\index{Collider@{Collider}!getParent@{getParent}}
+\index{getParent@{getParent}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{getParent()}{getParent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_object}{Game\+Object}} const  \& Collider\+::get\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_collider_8cpp_source_l00049}{49}} du fichier \mbox{\hyperlink{_collider_8cpp_source}{Collider.\+cpp}}.
+
+\mbox{\Hypertarget{class_collider_acecb570f58b885affcfcc5c25e9bc217}\label{class_collider_acecb570f58b885affcfcc5c25e9bc217}} 
+\index{Collider@{Collider}!touchEachOther@{touchEachOther}}
+\index{touchEachOther@{touchEachOther}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{touchEachOther()}{touchEachOther()}}
+{\footnotesize\ttfamily virtual bool Collider\+::touch\+Each\+Other (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collider}{Collider}} const \&}]{collider }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implémenté dans \mbox{\hyperlink{class_box_collider_a38200ed6f93b0f91bcb0f9f6b19954f9}{Box\+Collider}}, et \mbox{\hyperlink{class_polygon_collider_a6db0242a202318ed2b1e8017fc06ac19}{Polygon\+Collider}}.
+
+\mbox{\Hypertarget{class_collider_a765cffbef5d5e713672cea46c563dc67}\label{class_collider_a765cffbef5d5e713672cea46c563dc67}} 
+\index{Collider@{Collider}!update@{update}}
+\index{update@{update}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Collider\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+C\textquotesingle{}est à ce niveau qu\textquotesingle{}on gère la détection de collisions. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{_collider_8cpp_source_l00059}{59}} du fichier \mbox{\hyperlink{_collider_8cpp_source}{Collider.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_collider_a1440a92b8642490b4c118eeb83758189}\label{class_collider_a1440a92b8642490b4c118eeb83758189}} 
+\index{Collider@{Collider}!m\_colliderType@{m\_colliderType}}
+\index{m\_colliderType@{m\_colliderType}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{m\_colliderType}{m\_colliderType}}
+{\footnotesize\ttfamily std\+::string Collider\+::m\+\_\+collider\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_collider_8hpp_source_l00036}{36}} du fichier \mbox{\hyperlink{_collider_8hpp_source}{Collider.\+hpp}}.
+
+\mbox{\Hypertarget{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}\label{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}} 
+\index{Collider@{Collider}!m\_objects@{m\_objects}}
+\index{m\_objects@{m\_objects}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{m\_objects}{m\_objects}}
+{\footnotesize\ttfamily Collider\+::\+Game\+Object\+Map Collider\+::m\+\_\+objects\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+{\bfseries Valeur initiale \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= [] \{}
+\DoxyCodeLine{    GameObjectMap ret;}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} ret;}
+\DoxyCodeLine{\}()}
+
+\end{DoxyCode}
+
+
+Définition à la ligne \mbox{\hyperlink{_collider_8hpp_source_l00037}{37}} du fichier \mbox{\hyperlink{_collider_8hpp_source}{Collider.\+hpp}}.
+
+\mbox{\Hypertarget{class_collider_a937ddad2dd8d4d6a67370334d447210b}\label{class_collider_a937ddad2dd8d4d6a67370334d447210b}} 
+\index{Collider@{Collider}!parent@{parent}}
+\index{parent@{parent}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_object}{Game\+Object}} const\& Collider\+::parent\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_collider_8hpp_source_l00035}{35}} du fichier \mbox{\hyperlink{_collider_8hpp_source}{Collider.\+hpp}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_collider_8hpp}{Collider.\+hpp}}\item 
+include/\mbox{\hyperlink{_collider_8cpp}{Collider.\+cpp}}\end{DoxyCompactItemize}

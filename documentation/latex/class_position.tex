@@ -1,0 +1,247 @@
+\hypertarget{class_position}{}\doxysection{Référence de la classe Position}
+\label{class_position}\index{Position@{Position}}
+
+
+{\ttfamily \#include $<$Position.\+hpp$>$}
+
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_position_a5174f59a8b42cb5520823922ee486c4b}{Position}} (float detectability\+Radius=\mbox{\hyperlink{consts_8hpp_a93bc36c56985322fbb217e9f19a8c257}{DEFAULT\+\_\+\+DETECTABILITY\+\_\+\+RADIUS}})
+\item 
+\mbox{\hyperlink{class_position_a6e1818dd1a616f07379175b9f292650a}{Position}} (float px, float py, float detectability\+Radius=\mbox{\hyperlink{consts_8hpp_a93bc36c56985322fbb217e9f19a8c257}{DEFAULT\+\_\+\+DETECTABILITY\+\_\+\+RADIUS}})
+\item 
+\mbox{\hyperlink{class_position_abe83df4cab7af756636b4e39e4378f4a}{$\sim$\+Position}} ()
+\item 
+int \mbox{\hyperlink{class_position_a508061dd3d4ebddcf2d58679d6c4df11}{get\+Space\+Width}} () const
+\item 
+int \mbox{\hyperlink{class_position_ada8f3a2ea417b19569c095ab0601b0b3}{get\+Space\+Height}} () const
+\item 
+float \mbox{\hyperlink{class_position_a252efaf275c7276a6f35338d198de7ee}{getX}} () const
+\item 
+float \mbox{\hyperlink{class_position_a53ad8ec2f8383db4d615b3fc4e888f77}{getY}} () const
+\item 
+float \mbox{\hyperlink{class_position_aafccfd0fdf3662f2ce3a9648374f6ccb}{get\+Distance\+With}} (\mbox{\hyperlink{class_position}{Position}} const \&autre) const
+\begin{DoxyCompactList}\small\item\em Get the Distance With object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_position_a44364e1b27dac50ec6d0e9e4d7d1b2c1}{set\+Position}} (float posX, float posY)
+\begin{DoxyCompactList}\small\item\em Set the \mbox{\hyperlink{class_position}{Position}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_my_vector}{My\+Vector}} \mbox{\hyperlink{class_position_af409de5592dd7da6fb0ccb8d1681bb19}{get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{class_position}{Position}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_position_ab5438e7590e0a9bff42748b810ca109a}{operator+=}} (\mbox{\hyperlink{struct_my_vector}{My\+Vector}} const \&v)
+\item 
+void \mbox{\hyperlink{class_position_a6674b6c7cbf33bf73dfa4daed319a8f4}{operator=}} (\mbox{\hyperlink{class_position}{Position}} const \&p)
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres publiques statiques}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_position_a0302c02c82ed30325e54bbe00bd5aee3}{init\+Space}} (int width, int height)
+\end{DoxyCompactItemize}
+\doxysubsection*{Amis}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_position_ab9677fbc0a8849136cf78204d65c4935}{Rigidbody}}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_position_a05ae23b24acbddfc067c554402e59997}{operator$<$$<$}} (std\+::ostream \&out, \mbox{\hyperlink{class_position}{Position}} const \&p)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+
+
+Définition à la ligne \mbox{\hyperlink{_position_8hpp_source_l00010}{10}} du fichier \mbox{\hyperlink{_position_8hpp_source}{Position.\+hpp}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_position_a5174f59a8b42cb5520823922ee486c4b}\label{class_position_a5174f59a8b42cb5520823922ee486c4b}} 
+\index{Position@{Position}!Position@{Position}}
+\index{Position@{Position}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{Position()}{Position()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Position\+::\+Position (\begin{DoxyParamCaption}\item[{float}]{detectability\+Radius = {\ttfamily \mbox{\hyperlink{consts_8hpp_a93bc36c56985322fbb217e9f19a8c257}{DEFAULT\+\_\+\+DETECTABILITY\+\_\+\+RADIUS}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_position_8cpp_source_l00016}{16}} du fichier \mbox{\hyperlink{_position_8cpp_source}{Position.\+cpp}}.
+
+\mbox{\Hypertarget{class_position_a6e1818dd1a616f07379175b9f292650a}\label{class_position_a6e1818dd1a616f07379175b9f292650a}} 
+\index{Position@{Position}!Position@{Position}}
+\index{Position@{Position}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{Position()}{Position()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Position\+::\+Position (\begin{DoxyParamCaption}\item[{float}]{px,  }\item[{float}]{py,  }\item[{float}]{detectability\+Radius = {\ttfamily \mbox{\hyperlink{consts_8hpp_a93bc36c56985322fbb217e9f19a8c257}{DEFAULT\+\_\+\+DETECTABILITY\+\_\+\+RADIUS}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_position_8cpp_source_l00027}{27}} du fichier \mbox{\hyperlink{_position_8cpp_source}{Position.\+cpp}}.
+
+\mbox{\Hypertarget{class_position_abe83df4cab7af756636b4e39e4378f4a}\label{class_position_abe83df4cab7af756636b4e39e4378f4a}} 
+\index{Position@{Position}!````~Position@{$\sim$Position}}
+\index{````~Position@{$\sim$Position}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{$\sim$Position()}{~Position()}}
+{\footnotesize\ttfamily Position\+::$\sim$\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_position_8cpp_source_l00040}{40}} du fichier \mbox{\hyperlink{_position_8cpp_source}{Position.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_position_aafccfd0fdf3662f2ce3a9648374f6ccb}\label{class_position_aafccfd0fdf3662f2ce3a9648374f6ccb}} 
+\index{Position@{Position}!getDistanceWith@{getDistanceWith}}
+\index{getDistanceWith@{getDistanceWith}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{getDistanceWith()}{getDistanceWith()}}
+{\footnotesize\ttfamily float Position\+::get\+Distance\+With (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_position}{Position}} const \&}]{autre }\end{DoxyParamCaption}) const}
+
+
+
+Get the Distance With object. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em autre} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+float 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_position_8cpp_source_l00213}{213}} du fichier \mbox{\hyperlink{_position_8cpp_source}{Position.\+cpp}}.
+
+\mbox{\Hypertarget{class_position_af409de5592dd7da6fb0ccb8d1681bb19}\label{class_position_af409de5592dd7da6fb0ccb8d1681bb19}} 
+\index{Position@{Position}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_my_vector}{My\+Vector}} Position\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the \mbox{\hyperlink{class_position}{Position}} object. 
+
+\begin{DoxyReturn}{Renvoie}
+\mbox{\hyperlink{struct_my_vector}{My\+Vector}} 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_position_8cpp_source_l00227}{227}} du fichier \mbox{\hyperlink{_position_8cpp_source}{Position.\+cpp}}.
+
+\mbox{\Hypertarget{class_position_ada8f3a2ea417b19569c095ab0601b0b3}\label{class_position_ada8f3a2ea417b19569c095ab0601b0b3}} 
+\index{Position@{Position}!getSpaceHeight@{getSpaceHeight}}
+\index{getSpaceHeight@{getSpaceHeight}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{getSpaceHeight()}{getSpaceHeight()}}
+{\footnotesize\ttfamily int Position\+::get\+Space\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_position_8cpp_source_l00051}{51}} du fichier \mbox{\hyperlink{_position_8cpp_source}{Position.\+cpp}}.
+
+\mbox{\Hypertarget{class_position_a508061dd3d4ebddcf2d58679d6c4df11}\label{class_position_a508061dd3d4ebddcf2d58679d6c4df11}} 
+\index{Position@{Position}!getSpaceWidth@{getSpaceWidth}}
+\index{getSpaceWidth@{getSpaceWidth}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{getSpaceWidth()}{getSpaceWidth()}}
+{\footnotesize\ttfamily int Position\+::get\+Space\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_position_8cpp_source_l00046}{46}} du fichier \mbox{\hyperlink{_position_8cpp_source}{Position.\+cpp}}.
+
+\mbox{\Hypertarget{class_position_a252efaf275c7276a6f35338d198de7ee}\label{class_position_a252efaf275c7276a6f35338d198de7ee}} 
+\index{Position@{Position}!getX@{getX}}
+\index{getX@{getX}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily float Position\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_position_8cpp_source_l00056}{56}} du fichier \mbox{\hyperlink{_position_8cpp_source}{Position.\+cpp}}.
+
+\mbox{\Hypertarget{class_position_a53ad8ec2f8383db4d615b3fc4e888f77}\label{class_position_a53ad8ec2f8383db4d615b3fc4e888f77}} 
+\index{Position@{Position}!getY@{getY}}
+\index{getY@{getY}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily float Position\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_position_8cpp_source_l00061}{61}} du fichier \mbox{\hyperlink{_position_8cpp_source}{Position.\+cpp}}.
+
+\mbox{\Hypertarget{class_position_a0302c02c82ed30325e54bbe00bd5aee3}\label{class_position_a0302c02c82ed30325e54bbe00bd5aee3}} 
+\index{Position@{Position}!initSpace@{initSpace}}
+\index{initSpace@{initSpace}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{initSpace()}{initSpace()}}
+{\footnotesize\ttfamily void Position\+::init\+Space (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_position_8cpp_source_l00090}{90}} du fichier \mbox{\hyperlink{_position_8cpp_source}{Position.\+cpp}}.
+
+\mbox{\Hypertarget{class_position_ab5438e7590e0a9bff42748b810ca109a}\label{class_position_ab5438e7590e0a9bff42748b810ca109a}} 
+\index{Position@{Position}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily void Position\+::operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_my_vector}{My\+Vector}} const \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_position_8cpp_source_l00067}{67}} du fichier \mbox{\hyperlink{_position_8cpp_source}{Position.\+cpp}}.
+
+\mbox{\Hypertarget{class_position_a6674b6c7cbf33bf73dfa4daed319a8f4}\label{class_position_a6674b6c7cbf33bf73dfa4daed319a8f4}} 
+\index{Position@{Position}!operator=@{operator=}}
+\index{operator=@{operator=}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily void Position\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_position}{Position}} const \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_position_8cpp_source_l00075}{75}} du fichier \mbox{\hyperlink{_position_8cpp_source}{Position.\+cpp}}.
+
+\mbox{\Hypertarget{class_position_a44364e1b27dac50ec6d0e9e4d7d1b2c1}\label{class_position_a44364e1b27dac50ec6d0e9e4d7d1b2c1}} 
+\index{Position@{Position}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Position\+::set\+Position (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY }\end{DoxyParamCaption})}
+
+
+
+Set the \mbox{\hyperlink{class_position}{Position}} object. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em posX} & \\
+\hline
+{\em posY} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \mbox{\hyperlink{_position_8cpp_source_l00219}{219}} du fichier \mbox{\hyperlink{_position_8cpp_source}{Position.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des fonctions amies et associées}
+\mbox{\Hypertarget{class_position_a05ae23b24acbddfc067c554402e59997}\label{class_position_a05ae23b24acbddfc067c554402e59997}} 
+\index{Position@{Position}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{class_position}{Position}} const \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_position_8cpp_source_l00083}{83}} du fichier \mbox{\hyperlink{_position_8cpp_source}{Position.\+cpp}}.
+
+\mbox{\Hypertarget{class_position_ab9677fbc0a8849136cf78204d65c4935}\label{class_position_ab9677fbc0a8849136cf78204d65c4935}} 
+\index{Position@{Position}!Rigidbody@{Rigidbody}}
+\index{Rigidbody@{Rigidbody}!Position@{Position}}
+\doxysubsubsection{\texorpdfstring{Rigidbody}{Rigidbody}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_rigidbody}{Rigidbody}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_position_8hpp_source_l00072}{72}} du fichier \mbox{\hyperlink{_position_8hpp_source}{Position.\+hpp}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_position_8hpp}{Position.\+hpp}}\item 
+include/\mbox{\hyperlink{_position_8cpp}{Position.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,77 @@
+\hypertarget{_p_c_h_8hpp_source}{}\doxysection{PCH.\+hpp}
+\mbox{\hyperlink{_p_c_h_8hpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#ifndef PRECOMPILED\_HEADER\_HPP}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#define PRECOMPILED\_HEADER\_HPP}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#ifndef \_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00005}00005 \textcolor{preprocessor}{    \#ifndef NDEBUG}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00006}\mbox{\hyperlink{_p_c_h_8hpp_a8de3ed741dadc9c979a4ff17c0a9116e}{00006}} \textcolor{preprocessor}{        \#define NDEBUG}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00007}00007 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_DEBUG}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00010}00010 \textcolor{comment}{// SFML}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00011}00011 \textcolor{preprocessor}{\#include <SFML/Audio.hpp>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00012}00012 \textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00013}00013 \textcolor{preprocessor}{\#include <SFML/Network.hpp>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00014}00014 \textcolor{preprocessor}{\#include <SFML/System.hpp>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00015}00015 \textcolor{preprocessor}{\#include <SFML/Window.hpp>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00017}00017 \textcolor{comment}{// Raspberry Pi}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00018}00018 \textcolor{preprocessor}{\#ifdef SFML\_SYSTEM\_LINUX}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00019}00019 \textcolor{preprocessor}{    \#ifdef \_\_arm\_\_}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00020}00020 \textcolor{preprocessor}{        \#define SFML\_SYSTEM\_PI}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00021}00021 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00022}00022 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SFML SYSTEM\_LINUX}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00024}00024 \textcolor{comment}{// Typical stdafx.h}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00025}00025 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00026}00026 \textcolor{preprocessor}{\#include <cstdio>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00027}00027 \textcolor{preprocessor}{\#include <deque>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00028}00028 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00029}00029 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00030}00030 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00031}00031 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00032}00032 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00033}00033 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00034}00034 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00035}00035 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00037}00037 \textcolor{comment}{// Additional C/C++ libs}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00038}00038 \textcolor{preprocessor}{\#include <atomic>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00039}00039 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00040}00040 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#include <cstdlib>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00042}00042 \textcolor{preprocessor}{\#include <exception>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00043}00043 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00044}00044 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00045}00045 \textcolor{preprocessor}{\#include <mutex>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00046}00046 \textcolor{preprocessor}{\#include <random>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00047}00047 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00048}00048 \textcolor{preprocessor}{\#include <thread>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00049}00049 \textcolor{preprocessor}{\#include <type\_traits>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00051}00051 \textcolor{comment}{// Windows}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00052}00052 \textcolor{preprocessor}{\#ifdef \_WIN32}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00053}00053 \textcolor{preprocessor}{    \#ifndef UNICODE}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00054}00054 \textcolor{preprocessor}{        \#define UNICODE}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00055}00055 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00057}00057 \textcolor{preprocessor}{    \#ifndef \_UNICODE}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00058}00058 \textcolor{preprocessor}{        \#define \_UNICODE}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00059}00059 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00061}00061 \textcolor{preprocessor}{    \#define WIN32\_LEAN\_AND\_MEAN}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00062}00062 \textcolor{preprocessor}{    \#include <windows.h>}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00063}00063 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_WIN32}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00065}00065 \textcolor{comment}{// Utils}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00066}00066 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_file_system_8hpp}{Utility/FileSystem.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00067}00067 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_types_8hpp}{Utility/Types.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00069}00069 \textcolor{comment}{// Macros}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00070}\mbox{\hyperlink{_p_c_h_8hpp_a86d500a34c624c2cae56bc25a31b12f3}{00070}} \textcolor{preprocessor}{\#define UNUSED(x) (void)(x)}}
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_p_c_h_8hpp_source_l00072}00072 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// PRECOMPILED\_HEADER\_HPP}}
+
+\end{DoxyCode}

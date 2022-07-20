@@ -1,0 +1,35 @@
+\hypertarget{_windows_platform_8hpp_source}{}\doxysection{Windows\+Platform.\+hpp}
+\label{_windows_platform_8hpp_source}\index{Platform/Win32/WindowsPlatform.hpp@{Platform/Win32/WindowsPlatform.hpp}}
+\mbox{\hyperlink{_windows_platform_8hpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#ifndef UTIL\_WINDOWS\_PLATFORM\_HPP}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#define UTIL\_WINDOWS\_PLATFORM\_HPP}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_i_platform_8hpp}{Platform/IPlatform.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00006}00006 \textcolor{comment}{// TODO: WM\_DISPLAYCHANGE event handling (multi-\/monitor support)}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00008}00008 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutil}{util}}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00009}00009 \{}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00010}\mbox{\hyperlink{structutil_1_1_windows_platform}{00010}} \textcolor{keyword}{struct }\mbox{\hyperlink{structutil_1_1_windows_platform}{WindowsPlatform}} : \mbox{\hyperlink{structutil_1_1_i_platform}{IPlatform}}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00011}00011 \{}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00012}\mbox{\hyperlink{structutil_1_1_windows_platform_a6f3766048e1807d75413ebcf026d8392}{00012}}     \mbox{\hyperlink{structutil_1_1_windows_platform_a6f3766048e1807d75413ebcf026d8392}{WindowsPlatform}}();}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00014}\mbox{\hyperlink{structutil_1_1_windows_platform_a04ac02ad7151860559fb480e6190f895}{00014}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{structutil_1_1_windows_platform_a04ac02ad7151860559fb480e6190f895}{setIcon}}(\textcolor{keyword}{const} sf::WindowHandle\& inHandle) \textcolor{keyword}{final};}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00015}\mbox{\hyperlink{structutil_1_1_windows_platform_a12d82194c51ac484ac01f3cc6f3652fc}{00015}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{structutil_1_1_windows_platform_a12d82194c51ac484ac01f3cc6f3652fc}{toggleFullscreen}}(\textcolor{keyword}{const} sf::WindowHandle\& inHandle, \textcolor{keyword}{const} sf::Uint32 inStyle, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} inWindowed, \textcolor{keyword}{const} sf::Vector2u\& inResolution) \textcolor{keyword}{final};}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00016}\mbox{\hyperlink{structutil_1_1_windows_platform_a9cdc52b10354c5f3949aa08fb9c1eea6}{00016}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{structutil_1_1_windows_platform_a9cdc52b10354c5f3949aa08fb9c1eea6}{getScreenScalingFactor}}(\textcolor{keyword}{const} sf::WindowHandle\& inHandle) \textcolor{keyword}{final};}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00017}\mbox{\hyperlink{structutil_1_1_windows_platform_a4b3656c1ca3cf7eab52bd8205729c5f4}{00017}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{structutil_1_1_windows_platform_a4b3656c1ca3cf7eab52bd8205729c5f4}{getRefreshRate}}(\textcolor{keyword}{const} sf::WindowHandle\& inHandle) \textcolor{keyword}{final};}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00019}00019 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00020}00020     PBYTE getIconDirectory(\textcolor{keyword}{const} \textcolor{keywordtype}{int} inResourceId);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00021}00021     HICON getIconFromIconDirectory(PBYTE inIconDirectory, \textcolor{keyword}{const} \mbox{\hyperlink{_types_8hpp_a2e1c09bb972fc5997dcc8ea0cf5fa447}{uint}} inSize);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00022}00022     DWORD sfmlWindowStyleToWin32WindowStyle(\textcolor{keyword}{const} sf::Uint32 inStyle);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00024}00024     \textcolor{keywordtype}{float} m\_screenScalingFactor = 0.0f;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00025}00025     \textcolor{keywordtype}{int} m\_refreshRate = 0;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00026}00026 \};}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00027}00027 \}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8hpp_source_l00029}00029 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// UTIL\_WINDOWS\_PLATFORM\_HPP}}
+
+\end{DoxyCode}

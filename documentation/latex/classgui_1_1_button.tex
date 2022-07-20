@@ -1,0 +1,136 @@
+\hypertarget{classgui_1_1_button}{}\doxysection{Référence de la classe gui\+::Button}
+\label{classgui_1_1_button}\index{gui::Button@{gui::Button}}
+
+
+{\ttfamily \#include $<$Gui.\+hpp$>$}
+
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgui_1_1_button_a72ea5110415334f3e1abdf20263a9111}{Button}} (float x, float y, float width, float height, sf\+::\+Font $\ast$font, std\+::string text, unsigned character\+Size, sf\+::\+Color text\+\_\+idle\+\_\+color, sf\+::\+Color text\+\_\+hover\+\_\+color, sf\+::\+Color text\+\_\+active\+\_\+color, sf\+::\+Color idle\+Color, sf\+::\+Color hover\+Color, sf\+::\+Color active\+Color, sf\+::\+Color outline\+\_\+idle\+\_\+color=sf\+::\+Color\+::\+Transparent, sf\+::\+Color outline\+\_\+hover\+\_\+color=sf\+::\+Color\+::\+Transparent, sf\+::\+Color outline\+\_\+active\+\_\+color=sf\+::\+Color\+::\+Transparent, short unsigned id=0)
+\item 
+\mbox{\hyperlink{classgui_1_1_button_a088a6010b58ae6ee6e94210213dbf000}{$\sim$\+Button}} ()
+\item 
+bool \mbox{\hyperlink{classgui_1_1_button_ae636da5f0375715fff7e373dd7ffcc0a}{is\+Pressed}} () const
+\item 
+const std\+::string \mbox{\hyperlink{classgui_1_1_button_abdab94a0f529a791517d45a97eeb6396}{get\+Text}} () const
+\item 
+const short unsigned \& \mbox{\hyperlink{classgui_1_1_button_ab4b11239a7d9e4c0b8f25ea0d969d17b}{get\+Id}} () const
+\item 
+void \mbox{\hyperlink{classgui_1_1_button_a3a7697b6b4c7e45c017d1ca1d91c48f8}{set\+Text}} (const std\+::string text)
+\item 
+void \mbox{\hyperlink{classgui_1_1_button_ab122a118ea70e45d29c10eeb0dcf24b8}{set\+Id}} (const short unsigned id)
+\item 
+void \mbox{\hyperlink{classgui_1_1_button_a6d2cd8b3c7f7efd824742b4fdd7eacd0}{update}} (const sf\+::\+Vector2i \&mouse\+Pos\+Window)
+\item 
+void \mbox{\hyperlink{classgui_1_1_button_a1f93eac2279f05eef417a376b0bd7429}{render}} (sf\+::\+Render\+Target \&target)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+
+
+Définition à la ligne \mbox{\hyperlink{_gui_8hpp_source_l00017}{17}} du fichier \mbox{\hyperlink{_gui_8hpp_source}{Gui.\+hpp}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{classgui_1_1_button_a72ea5110415334f3e1abdf20263a9111}\label{classgui_1_1_button_a72ea5110415334f3e1abdf20263a9111}} 
+\index{gui::Button@{gui::Button}!Button@{Button}}
+\index{Button@{Button}!gui::Button@{gui::Button}}
+\doxysubsubsection{\texorpdfstring{Button()}{Button()}}
+{\footnotesize\ttfamily gui\+::\+Button\+::\+Button (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{width,  }\item[{float}]{height,  }\item[{sf\+::\+Font $\ast$}]{font,  }\item[{std\+::string}]{text,  }\item[{unsigned}]{character\+Size,  }\item[{sf\+::\+Color}]{text\+\_\+idle\+\_\+color,  }\item[{sf\+::\+Color}]{text\+\_\+hover\+\_\+color,  }\item[{sf\+::\+Color}]{text\+\_\+active\+\_\+color,  }\item[{sf\+::\+Color}]{idle\+Color,  }\item[{sf\+::\+Color}]{hover\+Color,  }\item[{sf\+::\+Color}]{active\+Color,  }\item[{sf\+::\+Color}]{outline\+\_\+idle\+\_\+color = {\ttfamily sf\+:\+:Color\+:\+:Transparent},  }\item[{sf\+::\+Color}]{outline\+\_\+hover\+\_\+color = {\ttfamily sf\+:\+:Color\+:\+:Transparent},  }\item[{sf\+::\+Color}]{outline\+\_\+active\+\_\+color = {\ttfamily sf\+:\+:Color\+:\+:Transparent},  }\item[{short unsigned}]{id = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_gui_8cpp_source_l00052}{52}} du fichier \mbox{\hyperlink{_gui_8cpp_source}{Gui.\+cpp}}.
+
+\mbox{\Hypertarget{classgui_1_1_button_a088a6010b58ae6ee6e94210213dbf000}\label{classgui_1_1_button_a088a6010b58ae6ee6e94210213dbf000}} 
+\index{gui::Button@{gui::Button}!````~Button@{$\sim$Button}}
+\index{````~Button@{$\sim$Button}!gui::Button@{gui::Button}}
+\doxysubsubsection{\texorpdfstring{$\sim$Button()}{~Button()}}
+{\footnotesize\ttfamily gui\+::\+Button\+::$\sim$\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_gui_8cpp_source_l00090}{90}} du fichier \mbox{\hyperlink{_gui_8cpp_source}{Gui.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classgui_1_1_button_ab4b11239a7d9e4c0b8f25ea0d969d17b}\label{classgui_1_1_button_ab4b11239a7d9e4c0b8f25ea0d969d17b}} 
+\index{gui::Button@{gui::Button}!getId@{getId}}
+\index{getId@{getId}!gui::Button@{gui::Button}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily const short unsigned \& gui\+::\+Button\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_gui_8cpp_source_l00108}{108}} du fichier \mbox{\hyperlink{_gui_8cpp_source}{Gui.\+cpp}}.
+
+\mbox{\Hypertarget{classgui_1_1_button_abdab94a0f529a791517d45a97eeb6396}\label{classgui_1_1_button_abdab94a0f529a791517d45a97eeb6396}} 
+\index{gui::Button@{gui::Button}!getText@{getText}}
+\index{getText@{getText}!gui::Button@{gui::Button}}
+\doxysubsubsection{\texorpdfstring{getText()}{getText()}}
+{\footnotesize\ttfamily const std\+::string gui\+::\+Button\+::get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_gui_8cpp_source_l00103}{103}} du fichier \mbox{\hyperlink{_gui_8cpp_source}{Gui.\+cpp}}.
+
+\mbox{\Hypertarget{classgui_1_1_button_ae636da5f0375715fff7e373dd7ffcc0a}\label{classgui_1_1_button_ae636da5f0375715fff7e373dd7ffcc0a}} 
+\index{gui::Button@{gui::Button}!isPressed@{isPressed}}
+\index{isPressed@{isPressed}!gui::Button@{gui::Button}}
+\doxysubsubsection{\texorpdfstring{isPressed()}{isPressed()}}
+{\footnotesize\ttfamily bool gui\+::\+Button\+::is\+Pressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_gui_8cpp_source_l00095}{95}} du fichier \mbox{\hyperlink{_gui_8cpp_source}{Gui.\+cpp}}.
+
+\mbox{\Hypertarget{classgui_1_1_button_a1f93eac2279f05eef417a376b0bd7429}\label{classgui_1_1_button_a1f93eac2279f05eef417a376b0bd7429}} 
+\index{gui::Button@{gui::Button}!render@{render}}
+\index{render@{render}!gui::Button@{gui::Button}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void gui\+::\+Button\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_gui_8cpp_source_l00169}{169}} du fichier \mbox{\hyperlink{_gui_8cpp_source}{Gui.\+cpp}}.
+
+\mbox{\Hypertarget{classgui_1_1_button_ab122a118ea70e45d29c10eeb0dcf24b8}\label{classgui_1_1_button_ab122a118ea70e45d29c10eeb0dcf24b8}} 
+\index{gui::Button@{gui::Button}!setId@{setId}}
+\index{setId@{setId}!gui::Button@{gui::Button}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily void gui\+::\+Button\+::set\+Id (\begin{DoxyParamCaption}\item[{const short unsigned}]{id }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_gui_8cpp_source_l00118}{118}} du fichier \mbox{\hyperlink{_gui_8cpp_source}{Gui.\+cpp}}.
+
+\mbox{\Hypertarget{classgui_1_1_button_a3a7697b6b4c7e45c017d1ca1d91c48f8}\label{classgui_1_1_button_a3a7697b6b4c7e45c017d1ca1d91c48f8}} 
+\index{gui::Button@{gui::Button}!setText@{setText}}
+\index{setText@{setText}!gui::Button@{gui::Button}}
+\doxysubsubsection{\texorpdfstring{setText()}{setText()}}
+{\footnotesize\ttfamily void gui\+::\+Button\+::set\+Text (\begin{DoxyParamCaption}\item[{const std\+::string}]{text }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_gui_8cpp_source_l00113}{113}} du fichier \mbox{\hyperlink{_gui_8cpp_source}{Gui.\+cpp}}.
+
+\mbox{\Hypertarget{classgui_1_1_button_a6d2cd8b3c7f7efd824742b4fdd7eacd0}\label{classgui_1_1_button_a6d2cd8b3c7f7efd824742b4fdd7eacd0}} 
+\index{gui::Button@{gui::Button}!update@{update}}
+\index{update@{update}!gui::Button@{gui::Button}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void gui\+::\+Button\+::update (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2i \&}]{mouse\+Pos\+Window }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_gui_8cpp_source_l00123}{123}} du fichier \mbox{\hyperlink{_gui_8cpp_source}{Gui.\+cpp}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_gui_8hpp}{Gui.\+hpp}}\item 
+include/\mbox{\hyperlink{_gui_8cpp}{Gui.\+cpp}}\end{DoxyCompactItemize}

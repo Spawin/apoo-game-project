@@ -1,0 +1,194 @@
+\hypertarget{_windows_platform_8cpp_source}{}\doxysection{Windows\+Platform.\+cpp}
+\label{_windows_platform_8cpp_source}\index{Platform/Win32/WindowsPlatform.cpp@{Platform/Win32/WindowsPlatform.cpp}}
+\mbox{\hyperlink{_windows_platform_8cpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#ifdef \_WIN32}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00002}00002 \textcolor{preprocessor}{    \#include "{}\mbox{\hyperlink{_windows_platform_8hpp}{Platform/Win32/WindowsPlatform.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00004}00004 \textcolor{preprocessor}{    \#include "{}\mbox{\hyperlink{_resource_8h}{Resource.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00006}00006 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutil}{util}}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00007}00007 \{}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00008}00008 \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00009}00009 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00010}00010 \textcolor{comment}{ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00011}00011 \mbox{\hyperlink{structutil_1_1_windows_platform_a6f3766048e1807d75413ebcf026d8392}{WindowsPlatform::WindowsPlatform}}()}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00012}00012 \{}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00013}00013     \textcolor{comment}{// Get the default device info}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00014}00014     m\_screenScalingFactor = \mbox{\hyperlink{structutil_1_1_windows_platform_a9cdc52b10354c5f3949aa08fb9c1eea6}{getScreenScalingFactor}}(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00015}00015     m\_refreshRate = \mbox{\hyperlink{structutil_1_1_windows_platform_a4b3656c1ca3cf7eab52bd8205729c5f4}{getRefreshRate}}(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00016}00016 \}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00018}00018 \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00019}00019 \textcolor{comment}{ * The window handle uses 32x32 (ICON\_BIG) \& 16x16 (ICON\_SMALL) sized icons.}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00020}00020 \textcolor{comment}{ * This should be called any time the SFML window is create/recreated}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00021}00021 \textcolor{comment}{ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00022}00022 \textcolor{keywordtype}{void} \mbox{\hyperlink{structutil_1_1_windows_platform_a04ac02ad7151860559fb480e6190f895}{WindowsPlatform::setIcon}}(\textcolor{keyword}{const} sf::WindowHandle\& inHandle)}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00023}00023 \{}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00024}00024     \textcolor{comment}{// Get the icon directory}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00025}00025     PBYTE iconDirectory = getIconDirectory(\mbox{\hyperlink{_resource_8h_a4f5358baf3f90e0f3f1a14d91ba076ab}{WIN32\_ICON\_MAIN}});}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00026}00026     std::array<int, 5> icons = \{ 16, 32, 48, 64, 128 \};}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00028}00028     std::size\_t indexSmallIcon = \textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(std::min(std::max(std::ceil(m\_screenScalingFactor -\/ 1.0f), 0.0f), \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(icons.size()) -\/ 1.0f));}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00029}00029     std::size\_t indexBigIcon = \textcolor{keyword}{static\_cast<}std::size\_t\textcolor{keyword}{>}(std::min(std::max(std::ceil(m\_screenScalingFactor -\/ 1.0f), 0.0f) + 1.0f, \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(icons.size()) -\/ 1.0f));}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00031}00031     HICON smallIcon = getIconFromIconDirectory(iconDirectory, icons[indexSmallIcon]);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00032}00032     HICON bigIcon = getIconFromIconDirectory(iconDirectory, icons[indexBigIcon]);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00034}00034     \textcolor{keywordflow}{if} (smallIcon)}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00035}00035         SendMessage(inHandle, WM\_SETICON, ICON\_SMALL, (LPARAM)smallIcon);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00037}00037     \textcolor{keywordflow}{if} (bigIcon)}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00038}00038         SendMessage(inHandle, WM\_SETICON, ICON\_BIG, (LPARAM)bigIcon);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00040}00040     \textcolor{comment}{// https://docs.microsoft.com/en-\/us/windows/win32/api/winuser/nf-\/winuser-\/destroyicon}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00041}00041     \textcolor{comment}{// It is only necessary to call DestroyIcon for icons and cursors created with the following functions:}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00042}00042     \textcolor{comment}{//   CreateIconFromResourceEx (if called without the LR\_SHARED flag)}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00043}00043 \}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00045}00045 \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00046}00046 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00047}00047 \textcolor{comment}{ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00048}00048 \textcolor{keywordtype}{void} \mbox{\hyperlink{structutil_1_1_windows_platform_a12d82194c51ac484ac01f3cc6f3652fc}{WindowsPlatform::toggleFullscreen}}(\textcolor{keyword}{const} sf::WindowHandle\& inHandle, \textcolor{keyword}{const} sf::Uint32 inStyle, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} inWindowed, \textcolor{keyword}{const} sf::Vector2u\& inResolution)}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00049}00049 \{}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00050}00050     DWORD win32Style = sfmlWindowStyleToWin32WindowStyle(inStyle);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00051}00051     UINT flags = SWP\_DRAWFRAME | SWP\_FRAMECHANGED;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00053}00053     \textcolor{keywordflow}{if} (inWindowed)}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00054}00054     \{}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00055}00055         \textcolor{comment}{// Window (centered on the focused screen)}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00056}00056         HDC screenDC = GetDC(inHandle);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00057}00057         \textcolor{keywordtype}{int} screenWidth = GetDeviceCaps(screenDC, HORZRES);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00058}00058         \textcolor{keywordtype}{int} screenHeight = GetDeviceCaps(screenDC, VERTRES);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00059}00059         ReleaseDC(inHandle, screenDC);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00061}00061         \textcolor{keywordtype}{int} width = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(inResolution.x);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00062}00062         \textcolor{keywordtype}{int} height = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(inResolution.y);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00063}00063         \textcolor{keywordtype}{int} left = (screenWidth -\/ width) / 2;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00064}00064         \textcolor{keywordtype}{int} top = (screenHeight -\/ height) / 2;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00065}00065         RECT rectangle = \{ 0, 0, width, height \};}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00066}00066         AdjustWindowRect(\&rectangle, win32Style, \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00067}00067         width = rectangle.right -\/ rectangle.left;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00068}00068         height = rectangle.bottom -\/ rectangle.top;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00070}00070         SetWindowLongPtr(inHandle, GWL\_STYLE, win32Style);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00071}00071         SetWindowLongPtr(inHandle, GWL\_EXSTYLE, 0);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00072}00072         SetWindowPos(inHandle, \textcolor{keyword}{nullptr}, left, top, width, height, flags);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00073}00073     \}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00074}00074     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00075}00075     \{}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00076}00076         \textcolor{comment}{// Fullscreen}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00077}00077         \textcolor{keywordtype}{int} width = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(inResolution.x);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00078}00078         \textcolor{keywordtype}{int} height = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(inResolution.y);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00080}00080         \textcolor{comment}{// first time prevents the border from showing in the corner}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00081}00081         SetWindowPos(inHandle, HWND\_TOP, 0, 0, width, height, flags);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00082}00082         SetWindowLongPtr(inHandle, GWL\_EXSTYLE, WS\_EX\_APPWINDOW);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00083}00083         SetWindowLongPtr(inHandle, GWL\_STYLE, win32Style);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00085}00085         \textcolor{comment}{// second time cleans up the rect after the border has been removed}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00086}00086         SetWindowPos(inHandle, HWND\_TOP, 0, 0, width, height, flags);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00088}00088         \textcolor{comment}{// note: double SetWindowPos call isn't very effective on slower machines anyway :/}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00089}00089     \}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00090}00090     ShowWindow(inHandle, SW\_SHOW);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00091}00091 \}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00093}00093 \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00094}00094 \textcolor{comment}{ * Gets the screen scaling factor of the device from the supplied handle}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00095}00095 \textcolor{comment}{ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00096}00096 \textcolor{keywordtype}{float} \mbox{\hyperlink{structutil_1_1_windows_platform_a9cdc52b10354c5f3949aa08fb9c1eea6}{WindowsPlatform::getScreenScalingFactor}}(\textcolor{keyword}{const} sf::WindowHandle\& inHandle)}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00097}00097 \{}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00098}00098     \mbox{\hyperlink{_p_c_h_8hpp_a86d500a34c624c2cae56bc25a31b12f3}{UNUSED}}(inHandle);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00100}00100     \textcolor{keywordflow}{if} (m\_screenScalingFactor != 0.0f)}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00101}00101         \textcolor{keywordflow}{return} m\_screenScalingFactor;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00103}00103     HDC screenDC = GetDC(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00104}00104     \textcolor{keywordtype}{int} logicalScreenHeight = GetDeviceCaps(screenDC, VERTRES);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00105}00105     \textcolor{keywordtype}{int} physicalScreenHeight = GetDeviceCaps(screenDC, DESKTOPVERTRES);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00106}00106     m\_screenScalingFactor = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(physicalScreenHeight) / \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(logicalScreenHeight);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00107}00107     ReleaseDC(\textcolor{keyword}{nullptr}, screenDC);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00109}00109     \textcolor{keywordflow}{return} m\_screenScalingFactor;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00110}00110 \}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00112}00112 \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00113}00113 \textcolor{comment}{ * Gets the refresh rate of the device from the supplied handle}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00114}00114 \textcolor{comment}{ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00115}00115 \textcolor{keywordtype}{int} \mbox{\hyperlink{structutil_1_1_windows_platform_a4b3656c1ca3cf7eab52bd8205729c5f4}{WindowsPlatform::getRefreshRate}}(\textcolor{keyword}{const} sf::WindowHandle\& inHandle)}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00116}00116 \{}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00117}00117     \mbox{\hyperlink{_p_c_h_8hpp_a86d500a34c624c2cae56bc25a31b12f3}{UNUSED}}(inHandle);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00119}00119     \textcolor{keywordflow}{if} (m\_refreshRate != 0)}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00120}00120         \textcolor{keywordflow}{return} m\_refreshRate;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00122}00122     HDC screenDC = GetDC(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00123}00123     m\_refreshRate = GetDeviceCaps(screenDC, VREFRESH);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00124}00124     ReleaseDC(\textcolor{keyword}{nullptr}, screenDC);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00126}00126     \textcolor{keywordflow}{return} m\_refreshRate;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00127}00127 \}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00129}00129 \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00130}00130 \textcolor{comment}{ * Loads a .ico file from The application's resources, and can contain multiple}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00131}00131 \textcolor{comment}{ * sizes (for instance 16x16, 32x32 \& 64x64). This is referred to as an}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00132}00132 \textcolor{comment}{ * "{}Icon Directory"{}. Additionally, it can have a single icon}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00133}00133 \textcolor{comment}{ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00134}00134 PBYTE WindowsPlatform::getIconDirectory(\textcolor{keyword}{const} \textcolor{keywordtype}{int} inResourceId)}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00135}00135 \{}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00136}00136     HMODULE hModule = GetModuleHandle(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00137}00137     HRSRC hResource = FindResource(hModule, MAKEINTRESOURCE(inResourceId), RT\_GROUP\_ICON);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00138}00138 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00139}00139     HGLOBAL hData = LoadResource(hModule, hResource);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00140}00140     PBYTE data = (PBYTE)LockResource(hData);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00141}00141 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00142}00142     \textcolor{keywordflow}{return} data;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00143}00143 \}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00145}00145 \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00146}00146 \textcolor{comment}{ * This will attempt to load a single icon from an icon directory}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00147}00147 \textcolor{comment}{ * If the requested size isn't found, the first one is returned}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00148}00148 \textcolor{comment}{ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00149}00149 HICON WindowsPlatform::getIconFromIconDirectory(PBYTE inIconDirectory, \textcolor{keyword}{const} \mbox{\hyperlink{_types_8hpp_a2e1c09bb972fc5997dcc8ea0cf5fa447}{uint}} inSize)}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00150}00150 \{}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00151}00151     HMODULE hModule = GetModuleHandle(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00152}00152     \textcolor{keywordtype}{int} resourceId = LookupIconIdFromDirectoryEx(inIconDirectory, TRUE, inSize, inSize, LR\_DEFAULTCOLOR | LR\_SHARED);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00153}00153     HRSRC hResource = FindResource(hModule, MAKEINTRESOURCE(resourceId), RT\_ICON);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00154}00154 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00155}00155     HGLOBAL hData = LoadResource(hModule, hResource);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00156}00156     PBYTE data = (PBYTE)LockResource(hData);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00157}00157     DWORD sizeofData = SizeofResource(hModule, hResource);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00158}00158 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00159}00159     HICON icon = CreateIconFromResourceEx(data, sizeofData, TRUE, 0x00030000, inSize, inSize, LR\_DEFAULTCOLOR | LR\_SHARED);}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00160}00160     \textcolor{keywordflow}{return} icon;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00161}00161 \}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00162}00162 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00163}00163 \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00164}00164 \textcolor{comment}{ * Takes an SFML window style and matches it back to the Win32 equivalent}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00165}00165 \textcolor{comment}{ *****************************************************************************/}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00166}00166 DWORD WindowsPlatform::sfmlWindowStyleToWin32WindowStyle(\textcolor{keyword}{const} sf::Uint32 inStyle)}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00167}00167 \{}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00168}00168     DWORD style = 0;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00169}00169     \textcolor{keywordflow}{if} (inStyle == sf::Style::None || inStyle == sf::Style::Fullscreen)}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00170}00170     \{}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00171}00171         style = WS\_VISIBLE | WS\_POPUP | WS\_CLIPCHILDREN | WS\_CLIPSIBLINGS;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00172}00172     \}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00173}00173     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00174}00174     \{}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00175}00175         style = WS\_VISIBLE;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00176}00176         \textcolor{keywordflow}{if} (inStyle \& sf::Style::Titlebar)}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00177}00177             style |= WS\_CAPTION | WS\_MINIMIZEBOX;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00178}00178         \textcolor{keywordflow}{if} (inStyle \& sf::Style::Resize)}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00179}00179             style |= WS\_THICKFRAME | WS\_MAXIMIZEBOX;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00180}00180         \textcolor{keywordflow}{if} (inStyle \& sf::Style::Close)}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00181}00181             style |= WS\_SYSMENU;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00182}00182     \}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00183}00183 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00184}00184     \textcolor{keywordflow}{return} style;}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00185}00185 \}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00186}00186 \}}
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00187}00187 }
+\DoxyCodeLine{\Hypertarget{_windows_platform_8cpp_source_l00188}00188 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_WIN32}}
+
+\end{DoxyCode}

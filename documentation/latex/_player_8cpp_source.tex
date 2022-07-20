@@ -1,0 +1,75 @@
+\hypertarget{_player_8cpp_source}{}\doxysection{Player.\+cpp}
+\label{_player_8cpp_source}\index{include/Player.cpp@{include/Player.cpp}}
+\mbox{\hyperlink{_player_8cpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_player_8hpp}{include/Player.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00003}00003 \textcolor{comment}{// Fonction static}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00005}00005 \textcolor{comment}{// Fonctions d'initialisation}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00007}00007 \textcolor{comment}{// Constructeurs/Destructeur}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00008}\mbox{\hyperlink{class_player_adacf4eab6353e0d82a345d4dc9181e80}{00008}} \mbox{\hyperlink{class_player_adacf4eab6353e0d82a345d4dc9181e80}{Player::Player}}(\mbox{\hyperlink{class_personage}{Personage}}* personage) :}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00009}00009     personage(personage)}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00010}00010 \{}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00011}00011 \}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00013}\mbox{\hyperlink{class_player_a749d2c00e1fe0f5c2746f7505a58c062}{00013}} \mbox{\hyperlink{class_player_a749d2c00e1fe0f5c2746f7505a58c062}{Player::\string~Player}}()}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00014}00014 \{}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00015}00015 \}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00017}00017 \textcolor{comment}{// Fonctions/Méthodes}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00018}\mbox{\hyperlink{class_player_aa14422c8d3c3950584dcd307172741b7}{00018}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_aa14422c8d3c3950584dcd307172741b7}{Player::manageMove}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime)}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00019}00019 \{}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00020}00020     \mbox{\hyperlink{struct_my_vector}{MyVector}} speed \{ 0.f, 0.f \};}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00022}00022     \textcolor{comment}{// Gestion du déplacement du joueur.}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00023}00023     \textcolor{comment}{// TODO -\/ Additionner les angles avant de l'associer à la vitesse; on enlevera le temps}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00024}00024     \textcolor{keywordflow}{if} (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00025}00025     \{}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00026}00026         speed += \mbox{\hyperlink{struct_my_vector_aa4151ebdc189aa7572c9a2937ea63ac1}{MyVector::createFromAngle}}(\mbox{\hyperlink{namespacegame_ad60933589116204d8fea5cc921815b4c}{game::PERSONAGE\_MOVE\_VELOCITY}}, 0.f);}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00027}00027     \}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00028}00028     \textcolor{keywordflow}{if} (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00029}00029     \{}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00030}00030         speed += \mbox{\hyperlink{struct_my_vector_aa4151ebdc189aa7572c9a2937ea63ac1}{MyVector::createFromAngle}}(\mbox{\hyperlink{namespacegame_ad60933589116204d8fea5cc921815b4c}{game::PERSONAGE\_MOVE\_VELOCITY}}, 180.f);}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00031}00031     \}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00032}00032     \textcolor{keywordflow}{if} (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00033}00033     \{}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00034}00034         speed += \mbox{\hyperlink{struct_my_vector_aa4151ebdc189aa7572c9a2937ea63ac1}{MyVector::createFromAngle}}(\mbox{\hyperlink{namespacegame_ad60933589116204d8fea5cc921815b4c}{game::PERSONAGE\_MOVE\_VELOCITY}}, 270.f);}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00035}00035     \}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00036}00036     \textcolor{keywordflow}{if} (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00037}00037     \{}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00038}00038         speed += \mbox{\hyperlink{struct_my_vector_aa4151ebdc189aa7572c9a2937ea63ac1}{MyVector::createFromAngle}}(\mbox{\hyperlink{namespacegame_ad60933589116204d8fea5cc921815b4c}{game::PERSONAGE\_MOVE\_VELOCITY}}, 90.f);}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00039}00039     \}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00041}00041     \textcolor{comment}{// m\_body.move(m\_speed);}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00042}00042     \textcolor{comment}{// m\_body.move(m\_speed2.m\_x, m\_speed2.m\_y);}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00043}00043     \textcolor{comment}{// MyVector mv\{0.f,0.f\};}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00044}00044     \textcolor{comment}{// mv += m\_position.getPosition();}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00045}00045     \textcolor{comment}{// mv += m\_speed}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00047}00047     \textcolor{comment}{//* On applique des modification si la position à changé}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00048}00048     \textcolor{comment}{// REVIEW -\/ (ceci n'est pas encore fait) Ou si le centre de la vue est différent de la position du joueur}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00049}00049     \textcolor{comment}{// if ( m\_position.getPosition() != m\_body.getPosition())}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00050}00050     \textcolor{comment}{// || m\_body.getPosition() != m\_window-\/>getView().getCenter()}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00051}00051     \textcolor{keywordflow}{if} (speed != sf::Vector2f(0.f, 0.f))}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00052}00052     \{}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00053}00053         speed.m\_x *= deltaTime;}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00054}00054         speed.m\_y *= deltaTime;}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00055}00055         this-\/>personage-\/>\mbox{\hyperlink{class_personage_acecd31422b51e2d0755c6d2de94d9510}{move}}(speed);}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00056}00056     \}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00057}00057 \}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00059}\mbox{\hyperlink{class_player_ad6867e0c7bc18e82a1da4be7bf156d97}{00059}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_ad6867e0c7bc18e82a1da4be7bf156d97}{Player::update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime)}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00060}00060 \{}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00061}00061     this-\/>\mbox{\hyperlink{class_player_aa14422c8d3c3950584dcd307172741b7}{manageMove}}(deltaTime);}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00063}00063     this-\/>personage-\/>\mbox{\hyperlink{class_personage_a492d4164bc6c439d43cc44fefcbd6468}{update}}();}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00064}00064 \}}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00066}\mbox{\hyperlink{class_player_a04d2bfed2fa42488eea9ff0cd9818b2a}{00066}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a04d2bfed2fa42488eea9ff0cd9818b2a}{Player::render}}(sf::RenderTarget\& target)}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00067}00067 \{}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00068}00068     personage-\/>\mbox{\hyperlink{class_personage_a5519958ec983d06abd2ff81902dc49ac}{show}}(target);}
+\DoxyCodeLine{\Hypertarget{_player_8cpp_source_l00069}00069 \}}
+
+\end{DoxyCode}
