@@ -8,41 +8,54 @@ int GameMaster::m_countInstance = 0;
 GameMaster* GameMaster::m_gameMaster = nullptr;
 
 //
+void GameMaster::initGraphicsSettings()
+{
+	//
+	this->graphicsSettings.loadFromFile("Config/window.ini");
+}
+
 void GameMaster::initWindow()
 {
-	// utilisation du window.ini
-	std::ifstream ifs("Config/window.ini");
-
-	string title = "None";
-	sf::VideoMode window_bounds(1200, 675); //600
-	unsigned framerate_limit = 60;
-	bool vertical_sync_enabled = true;
-	if (ifs.is_open())
-	{
-		std::getline(ifs, title);
-		ifs >> window_bounds.width >> window_bounds.height;
-		ifs >> framerate_limit;
-		ifs >> vertical_sync_enabled;
-	}
-	ifs.close();
-
 	this->window = new sf::RenderWindow();
 
 	util::Platform platform;
-
 	// in Windows at least, this must be called before creating the window
 	float screenScalingFactor = platform.getScreenScalingFactor(window->getSystemHandle());
+
+	sf::VideoMode vm = this->graphicsSettings.resolution;
 	// Use the screenScalingFactor
-	window_bounds.width *= screenScalingFactor;
-	window_bounds.height *= screenScalingFactor;
+	vm.width *= screenScalingFactor;
+	vm.height *= screenScalingFactor;
 
 	// Create the main window
-	window->create(window_bounds, title, sf::Style::Close);
+	if (this->graphicsSettings.fullscreen)
+	{
+		window->create(vm, this->graphicsSettings.title, sf::Style::Fullscreen);
+		// this->window = new sf::RenderWindow(
+		// 	vm,
+		// 	// this->graphicsSettings.resolution, //? vm à la place
+		// 	this->graphicsSettings.title,
+		// 	sf::Style::Fullscreen /*,
+		// 	this->graphicsSettings.contextSettings*/
+		// );
+	}
+	else
+	{
+
+		window->create(vm, this->graphicsSettings.title, sf::Style::Close);
+		// this->window = new sf::RenderWindow(
+		// 	vm,
+		// 	// this->graphicsSettings.resolution, //? vm à la place
+		// 	this->graphicsSettings.title,
+		// 	sf::Style::Titlebar | sf::Style::Close /*,
+		// 	this->graphicsSettings.contextSettings*/
+		// );
+	}
+
+	this->window->setFramerateLimit(this->graphicsSettings.frameRateLimit);
+	this->window->setVerticalSyncEnabled(this->graphicsSettings.verticalSync);
+
 	platform.setIcon(window->getSystemHandle());
-	// On fix la limite de frames
-	window->setFramerateLimit(framerate_limit);
-	// Activation du vsync
-	window->setVerticalSyncEnabled(vertical_sync_enabled);
 
 	// Initialisations de l'espace pour tous les éléments du jeux
 	Position::initSpace((int)GameMap::getGAME_MAP_WIDTH, (int)GameMap::getGAME_MAP_HEIGHT);
@@ -83,7 +96,7 @@ void GameMaster::initWindow()
 void GameMaster::intiStateData()
 {
 	this->stateData.window = this->window;
-	// this->stateData.gfxSettings = &this->gfxSettings;
+	this->stateData.graphicsSettings = &this->graphicsSettings;
 	// this->stateData.supportedKeys = &this->supportedKeys;
 	this->stateData.states = &this->states;
 	// this->stateData.gridSize = this->gridSize;
@@ -96,7 +109,7 @@ void GameMaster::intiStates()
 }
 // ---------------------------------------
 
-GameMaster::GameMaster()
+GameMaster::GameMaster(/*util::Platform& platform*/)
 {
 	m_countInstance++;
 	if (m_countInstance > 1)
@@ -105,6 +118,7 @@ GameMaster::GameMaster()
 		exit(-1);
 	}
 
+	this->initGraphicsSettings();
 	this->initWindow();
 	this->intiStateData();
 	this->intiStates();

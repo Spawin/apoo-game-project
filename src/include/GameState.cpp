@@ -4,7 +4,44 @@ using namespace std;
 
 // Fonction static
 
-// Fonctions d'initialisation
+// -------------------------- Fonctions d'initialisation ---------------------
+void GameState::initDeferredRender()
+{
+	this->renderTexture.create(
+		this->stateData->graphicsSettings->resolution.width,
+		this->stateData->graphicsSettings->resolution.height);
+
+	this->renderSprite.setTexture(this->renderTexture.getTexture());
+	this->renderSprite.setTextureRect(
+		sf::IntRect(
+			0,
+			0,
+			this->stateData->graphicsSettings->resolution.width,
+			this->stateData->graphicsSettings->resolution.height));
+}
+
+void GameState::initFonts()
+{
+	if (!this->font.loadFromFile("content/fonts/Dosis-Light.ttf"))
+	{
+		throw("ERROR::MAINMENUSTATE::COULD_NOT_LOAD_FONT");
+	}
+}
+
+void GameState::initPauseMenu()
+{
+	const sf::VideoMode& vm = this->stateData->graphicsSettings->resolution;
+	this->pauseMenu = new PauseMenu(this->stateData->graphicsSettings->resolution, this->font);
+
+	this->pauseMenu->addButton("QUIT", gui::p2pY(74.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Quitter");
+}
+
+void GameState::initKeyTime()
+{
+	this->keyTimeMax = 0.3f;
+	this->keyTimer.restart();
+}
+
 void GameState::initPlayer()
 {
 	cout << "Initialisation du joueur\n";
@@ -15,18 +52,44 @@ void GameState::initPlayer()
 GameState::GameState(StateData* stateData) :
 	State(stateData)
 {
+	this->initDeferredRender();
+	// this->initView();
+	// this->initKeybinds();
+	this->initFonts();
+	// this->initTextures();
+	this->initPauseMenu();
+	// this->initShaders();
+	this->initKeyTime();
+	// this->initDebugText();
+
 	this->initPlayer();
+	// this->initPlayerGUI();
+	// this->initEnemySystem();
+	// this->initTileMap();
+	// this->initSystems();
 }
 
 GameState::~GameState()
 {
+	delete this->pauseMenu;
 	delete this->player;
 }
 
 // Fonctions/Méthodes
-void GameState::endState()
+// void GameState::endState()
+// {
+// 	cout << "Fin du game state\n";
+// }
+
+bool GameState::getKeyTime()
 {
-	cout << "Fin du game state\n";
+	if (this->keyTimer.getElapsedTime().asSeconds() >= this->keyTimeMax)
+	{
+		this->keyTimer.restart();
+		return true;
+	}
+
+	return false;
 }
 
 void GameState::updateInput(const float& deltaTime)
@@ -34,7 +97,15 @@ void GameState::updateInput(const float& deltaTime)
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
 	{
 		cout << "Q" << deltaTime << endl;
-		this->quit = true;
+		if (!this->paused)
+			this->paused = true;
+		else
+			this->paused = false;
+
+		// if (!this->paused)
+		// 	this->pauseState();
+		// else
+		// 	this->unpauseState();
 	}
 
 	// TODO - Ramener le controle du personnge à ce niveau ou dans player
@@ -42,12 +113,29 @@ void GameState::updateInput(const float& deltaTime)
 	// move est virtuel et appartiens à personnage
 }
 
+void GameState::updatePauseMenuButtons()
+{
+	if (this->pauseMenu->isButtonPressed("QUIT"))
+		this->endState();
+}
+
 void GameState::update(const float& deltaTime)
 {
 	this->updateMousePositions();
+	this->updateKeytime(deltaTime);
 	this->updateInput(deltaTime);
 
-	this->player->update(deltaTime);
+	if (!this->paused)
+	{
+		cout << "\tPas en pause\n";
+		this->player->update(deltaTime);
+	}
+	else
+	{
+		cout << "En pause\n";
+		this->pauseMenu->update(this->mousePosWindow);
+		this->updatePauseMenuButtons();
+	}
 }
 
 void GameState::render(sf::RenderTarget* target)
@@ -57,4 +145,15 @@ void GameState::render(sf::RenderTarget* target)
 		target = this->window;
 
 	this->player->render((*target));
+
+	if (this->paused) //Pause menu render
+	{
+		//this->renderTexture.setView(this->renderTexture.getDefaultView());
+		this->pauseMenu->render(this->renderTexture);
+	}
+
+	//FINAL RENDER
+	this->renderTexture.display();
+	this->renderSprite.setTexture(this->renderTexture.getTexture());
+	target->draw(this->renderSprite);
 }

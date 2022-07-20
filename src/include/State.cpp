@@ -42,3 +42,20 @@ void State::updateMousePositions()
 	this->mousePosWindow = sf::Mouse::getPosition(*this->window);
 	this->mousePosView = this->window->mapPixelToCoords(sf::Mouse::getPosition(*this->window));
 }
+
+bool State::getKeyTime()
+{
+	if (this->keytime >= this->keytimeMax)
+	{
+		this->keytime = 0.f;
+		return true;
+	}
+
+	return false;
+}
+
+void State::updateKeytime(const float& deltaTime)
+{
+	if (this->keytime < this->keytimeMax)
+		this->keytime += 100.f * deltaTime;
+}

@@ -3,11 +3,12 @@
 
 	#include "include/GameState.hpp"
 	#include "include/MainMenuState.hpp"
+	#include "include/consts.hpp"
 
 class GameMaster
 {
 public:
-	GameMaster();
+	GameMaster(/*util::Platform& platform*/);
 	~GameMaster();
 
 	// Fonctions
@@ -33,9 +34,12 @@ public:
 
 private:
 	// Variables
+	GraphicsSettings graphicsSettings;
 	StateData stateData;
 	sf::RenderWindow* window;
 	sf::Event sfEvent;
+
+	// util::Platform platform;
 
 	sf::Clock dtClock;
 	float deltaTime;
@@ -43,6 +47,7 @@ private:
 	std::stack<State*> states;
 
 	// Initialisation
+	void initGraphicsSettings();
 	void initWindow();
 	void intiStateData();
 	void intiStates();

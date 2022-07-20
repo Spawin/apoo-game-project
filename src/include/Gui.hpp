@@ -1,4 +1,4 @@
-#if !defined(__GUI__)
+#if !defined(__GUI_HPP__)
 	#define __GUI_HPP__
 
 enum button_states
@@ -63,4 +63,4 @@ private:
 
 } // namespace gui
 
-#endif // __HUTTON_HPP__
+#endif // __GUI_HPP__

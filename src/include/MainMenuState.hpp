@@ -2,7 +2,7 @@
 	#define __MAIN_MENU_STATE_HPP__
 
 	#include "include/GameState.hpp"
-	#include "Gui.hpp"
+	#include "include/Gui.hpp"
 
 class MainMenuState : public State
 {

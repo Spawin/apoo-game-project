@@ -9,7 +9,8 @@ int main()
 #if defined(_DEBUG)
 	std::cout << "Hello World!" << std::endl;
 #endif
-
+	// util::Platform platform;
+	// GameMaster game(platform);
 	GameMaster game;
 
 	game.run();

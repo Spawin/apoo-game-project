@@ -13,7 +13,9 @@ void MainMenuState::initFonts()
 		throw("ERROR::MAIN_MENU_STATE::COULD_NOT_LOAD_FONT");
 	}
 }
+
 // void MainMenuState::initFonts(){}
+
 void MainMenuState::initGui()
 {
 	const sf::VideoMode& vm = sf::VideoMode::getDesktopMode(); // REVIEW -
@@ -76,6 +78,7 @@ void MainMenuState::initGui()
 		sf::Color(150, 150, 150, 0),
 		sf::Color(20, 20, 20, 0));
 }
+
 void MainMenuState::resetGui()
 {}
 

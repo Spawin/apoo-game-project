@@ -15,6 +15,7 @@
 	#include "include/Collider.hpp"
 	#include "include/Player.hpp"
 	#include "include/Personage.hpp"
+	#include "include/GraphicsSettings.hpp"
 	#include <stack>
 	#include <map>
 
@@ -24,7 +25,7 @@ struct StateData
 {
 	float gridSize;
 	sf::RenderWindow* window;
-	// GraphicsSettings* gfxSettings;
+	GraphicsSettings* graphicsSettings;
 	// std::map<std::string, int>* supportedKeys;
 	std::stack<State*>* states;
 };
@@ -37,11 +38,13 @@ public:
 	virtual ~State();
 	// Fonctions/Méthodes
 	const bool& getQuit() const;
+	virtual bool getKeyTime();
 
 	// virtual void checkForQuit();
 
 	virtual void endState();
 	virtual void updateMousePositions();
+	virtual void updateKeytime(const float& deltaTime);
 	virtual void updateInput(const float& deltaTime) = 0;
 	virtual void update(const float& deltaTime) = 0;
 	virtual void render(sf::RenderTarget* target = nullptr) = 0;
@@ -54,6 +57,8 @@ protected:
 
 	bool quit;
 	bool paused;
+	float keytime;
+	float keytimeMax;
 
 	sf::Vector2i mousePosScreen;
 	sf::Vector2i mousePosWindow;
