@@ -41,7 +41,7 @@ public:
 	virtual void show(sf::RenderTarget& window);
 	//Sera appelé à chaque frame...
 	// virtual void update() = 0;
-	virtual void update();
+	virtual void update() = 0;
 
 	/**
 	 * @brief Set the Time object
@@ -62,7 +62,7 @@ public:
 	 *
 	 * @param collision
 	 */
-	virtual void onCollisionEnter(Collision const& collision) const;
+	virtual void onCollisionEnter(Collision const& collision) const = 0;
 
 	sf::Sprite const& getSprite() const;
 
@@ -84,6 +84,8 @@ public:
 
 	Collider const& getCollider() const;
 
+	virtual void move(MyVector& speed) = 0;
+
 protected:
 	/**
 	 * @brief Pour initialiser les valeur par défaut du GameObject
@@ -97,10 +99,7 @@ protected:
 	// le nombre de gameObject créé au total (compte aussi ceux qui sont déjà détruit)
 	static int m_count;
 	// Incrémente le compteur
-	inline static void incrementCount()
-	{
-		m_count++;
-	}
+	static void incrementCount();
 	// REVIEW -
 	sf::Texture m_texture {};
 	// Sprite du corps de l'objet
@@ -113,7 +112,7 @@ protected:
 	// Temps pour calculer la vitesse de déplacement
 	static float m_time;
 
-	friend class Rigidbody;
+	friend class Rigidbody; // REVIEW -
 
 	// sf::Vector2f m_speed2 { 0.f, 0.f };
 
@@ -123,7 +122,7 @@ protected:
 	 * Aussi il s'agit dans ce cas d'une accélération uniforme.
 	 */
 	// virtual void updatePosition() = 0;
-	virtual void updatePosition();
+	virtual void updatePosition(Position& position) = 0;
 
 	Collider* m_collider { nullptr };
 	Rigidbody* m_rigidbody { nullptr };

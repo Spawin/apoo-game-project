@@ -37,4 +37,18 @@ enum movement_states
 	MOVING_DOWN
 };
 
+namespace game
+{
+
+constexpr float PERSONAGE_MOVE_VELOCITY = 200.f;
+
+// REVIEW -
+inline std::string const& GAME_NAME()
+{
+	static std::string ret = "---";
+	return ret;
+}
+
+}
+
 #endif // __CONST_HPP__

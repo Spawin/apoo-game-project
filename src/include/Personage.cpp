@@ -83,7 +83,7 @@ void Personage::show(sf::RenderTarget& window)
 
 void Personage::update()
 {
-	updatePosition();
+	//
 }
 
 void Personage::setGameObjectName(string name)
@@ -106,8 +106,9 @@ int Personage::getHealth() const
 	return m_health;
 }
 
-void Personage::updatePosition()
+void Personage::updatePosition(Position& position)
 {
+	/*
 	if (m_isPlayer)
 	{
 		// Gestion du déplacement du joueur.
@@ -158,7 +159,7 @@ void Personage::updatePosition()
 		// mv += m_position.getPosition();
 		// mv += m_speed
 
-		//* On applique des modification si la position à changé
+		// On applique des modification si la position à changé
 		// REVIEW - (ceci n'est pas encore fait) Ou si le centre de la vue est différent de la position du joueur
 		// if ( m_position.getPosition() != m_body.getPosition())
 		// || m_body.getPosition() != m_window->getView().getCenter()
@@ -180,4 +181,25 @@ void Personage::updatePosition()
 		}
 		// cout << "pose x=" << m_position.getX() << " y=" << m_position.getY() << endl;
 	}
+	//*/
+
+	m_position = position;
+	// On replace le body
+	m_body.setPosition(m_position.getX(), m_position.getY());
+	cout << "Position du joueur " << m_position << endl;
+	// On replace la vue si c'est le joueur
+	if (m_isPlayer)
+		if (m_window != 0)
+		{
+			// cout << "On replace la vue" << endl;
+			sf::View player_view(m_window->getView());
+			player_view.setCenter(m_position.getX(), m_position.getY());
+			m_window->setView(player_view);
+		}
+}
+
+void Personage::move(MyVector& speed)
+{
+	Position p(getPosition().getX() + speed.m_x, getPosition().getY() + speed.m_y);
+	updatePosition(p);
 }

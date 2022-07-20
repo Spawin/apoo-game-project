@@ -31,8 +31,11 @@ void GameState::endState()
 
 void GameState::updateInput(const float& deltaTime)
 {
-	cout << deltaTime << endl;
-	this->checkForQuit();
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+	{
+		cout << "Q" << deltaTime << endl;
+		this->quit = true;
+	}
 
 	// TODO - Ramener le controle du personnge à ce niveau ou dans player
 	//* on ora un truc du genre this->player.move(...)

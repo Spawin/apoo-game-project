@@ -10,74 +10,68 @@ void MainMenuState::initFonts()
 {
 	if (!this->font.loadFromFile("content/fonts/Dosis-Light.ttf"))
 	{
-		throw("ERROR::MAIN_MENU_STATE::COULD NOT LOAD FONT");
+		throw("ERROR::MAIN_MENU_STATE::COULD_NOT_LOAD_FONT");
 	}
 }
 // void MainMenuState::initFonts(){}
 void MainMenuState::initGui()
 {
-	this->background.setSize(sf::Vector2f(this->window->getSize().x, this->window->getSize().y));
-	this->background.setFillColor(sf::Color::Magenta);
-	this->background.setPosition(this->window->getView().getCenter().x - this->window->getSize().x / 2, this->window->getView().getCenter().y - this->window->getSize().y / 2);
+	const sf::VideoMode& vm = sf::VideoMode::getDesktopMode(); // REVIEW -
 
-	// this->gameState_btn = new gui::Button(720, 355, 150, 50, &this->font, "Nouvelle partie", sf::Color(70, 70, 70, 200), sf::Color(150, 150, 150, 255), sf::Color(20, 20, 20, 200));
+	//* Background
+	this->background.setSize(sf::Vector2f(this->window->getSize().x, this->window->getSize().y));
+	if (!this->backgroundTexture.loadFromFile("content/backgrounds/bg1.png"))
+	{
+		throw "ERROR::MAIN_MENU_STATE::FAILED_TO_LOAD_BACKGROUND_TEXTURE";
+	}
+	this->background.setTexture(&this->backgroundTexture);
+	// this->background.setScale();
+	// this->background.setFillColor(sf::Color::Magenta);
+	// this->background.setPosition(this->window->getView().getCenter().x - this->window->getSize().x / 2, this->window->getView().getCenter().y - this->window->getSize().y / 2);
+
 	//* Buttons
 	this->buttons["GAME_STATE"] = new gui::Button(
-		// gui::p2pX(15.6f, vm), gui::p2pY(30.f, vm),
-		// gui::p2pX(13.f, vm), gui::p2pY(6.f, vm),
-		// &this->font, "New Game", gui::calcCharSize(vm),
-		300,
-		100,
-		150,
-		50,
-		&this->font,
+		gui::p2pX(15.6f, vm), gui::p2pY(30.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), &this->font,
 		"Nouvelle partie", //
-		// sf::Color(200, 200, 200, 200), sf::Color(255, 255, 255, 255), sf::Color(20, 20, 20, 50),
-		sf::Color(70, 70, 70, 200),
-		sf::Color(150, 150, 150, 200),
-		sf::Color(20, 20, 20, 200));
+		gui::calcCharSize(vm),
+		sf::Color(200, 200, 200, 200),
+		sf::Color(255, 255, 255, 255),
+		sf::Color(20, 20, 20, 50),
+		sf::Color(70, 70, 70, 0),
+		sf::Color(150, 150, 150, 0),
+		sf::Color(20, 20, 20, 0));
 
 	this->buttons["SETTINGS_STATE"] = new gui::Button(
-		// gui::p2pX(15.6f, vm), gui::p2pY(40.f, vm),
-		// gui::p2pX(13.f, vm), gui::p2pY(6.f, vm),
-		// &this->font, "Settings", gui::calcCharSize(vm),
-		300,
-		200,
-		150,
-		50,
-		&this->font,
-		"Nouvelle partie", //
-		// sf::Color(200, 200, 200, 200), sf::Color(255, 255, 255, 255), sf::Color(20, 20, 20, 50),
+		gui::p2pX(15.6f, vm), gui::p2pY(40.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), &this->font,
+		"Param", //
+		gui::calcCharSize(vm),
+		sf::Color(200, 200, 200, 200),
+		sf::Color(255, 255, 255, 255),
+		sf::Color(20, 20, 20, 50),
 		sf::Color(70, 70, 70, 0),
 		sf::Color(150, 150, 150, 0),
 		sf::Color(20, 20, 20, 0));
 
+	//*
 	this->buttons["EDITOR_STATE"] = new gui::Button(
-		// gui::p2pX(15.6f, vm), gui::p2pY(50.f, vm),
-		// gui::p2pX(13.f, vm), gui::p2pY(6.f, vm),
-		// &this->font, "Editor", gui::calcCharSize(vm),
-		300,
-		300,
-		150,
-		50,
-		&this->font,
-		"Nouvelle partie", //
-		// sf::Color(200, 200, 200, 200), sf::Color(255, 255, 255, 255), sf::Color(20, 20, 20, 50),
+		gui::p2pX(15.6f, vm), gui::p2pY(50.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), &this->font,
+		"...", //
+		gui::calcCharSize(vm),
+		sf::Color(200, 200, 200, 200),
+		sf::Color(255, 255, 255, 255),
+		sf::Color(20, 20, 20, 50),
 		sf::Color(70, 70, 70, 0),
 		sf::Color(150, 150, 150, 0),
 		sf::Color(20, 20, 20, 0));
+	//*/
 
 	this->buttons["EXIT_STATE"] = new gui::Button(
-		// gui::p2pX(15.6f, vm), gui::p2pY(65.f, vm),
-		// gui::p2pX(13.f, vm), gui::p2pY(6.f, vm),
-		// &this->font, "Quit", gui::calcCharSize(vm),
-		300,
-		400,
-		150,
-		50,
-		&this->font,
-		"Nouvelle partie", //
-		// sf::Color(200, 200, 200, 200), sf::Color(255, 255, 255, 255), sf::Color(20, 20, 20, 50),
+		gui::p2pX(15.6f, vm), gui::p2pY(65.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), &this->font,
+		"Quitter", //
+		gui::calcCharSize(vm),
+		sf::Color(200, 200, 200, 200),
+		sf::Color(255, 255, 255, 255),
+		sf::Color(20, 20, 20, 50),
 		sf::Color(100, 100, 100, 0),
 		sf::Color(150, 150, 150, 0),
 		sf::Color(20, 20, 20, 0));
@@ -114,7 +108,7 @@ MainMenuState::~MainMenuState()
 void MainMenuState::updateInput(const float& deltaTime)
 {
 	cout << deltaTime << endl;
-	this->checkForQuit();
+	// this->checkForQuit();
 }
 
 void MainMenuState::updateButtons()
@@ -172,6 +166,8 @@ void MainMenuState::render(sf::RenderTarget* target)
 	// REVIEW -
 	if (!target)
 		target = this->window;
+
+	cout << "Ecran : x" << this->window->getView().getCenter().x << " y" << this->window->getView().getCenter().y;
 
 	target->draw(this->background);
 

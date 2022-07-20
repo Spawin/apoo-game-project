@@ -10,12 +10,13 @@ public:
 	~Player();
 
 	// Fonctions/Méthodes
+	void manageMove(const float& deltaTime);
 	void update(const float& deltaTime);
 	void render(sf::RenderTarget& target);
 
 private:
 	// Variables
-	Personage* m_personnage;
+	Personage* personage;
 
 	// Fonctions d'initialisation
 };

@@ -5,10 +5,15 @@
 float GameObject::m_time = 0.f;
 int GameObject::m_count = 0;
 
+void GameObject::incrementCount()
+{
+	GameObject::m_count++;
+}
+
 void GameObject::init()
 {
 	// On incrémente le compteur
-	incrementCount();
+	GameObject::incrementCount();
 
 	m_body.setColor(sf::Color::White);
 
@@ -84,8 +89,8 @@ void GameObject::show(sf::RenderTarget& window)
 	window.draw(m_body);
 }
 
-void GameObject::update()
-{}
+// void GameObject::update()
+// {}
 
 void GameObject::SetTime(float t)
 {
@@ -107,19 +112,19 @@ std::string GameObject::getGameObjectName() const
 	return m_gameObjectName;
 }
 
-void GameObject::onCollisionEnter(Collision const& collision) const
-{
-	collision.test(); // REVIEW
-					  // std::cout << "une collision avec" << collision.getGameObject;
-}
+// void GameObject::onCollisionEnter(Collision const& collision) const
+// {
+// 	collision.test(); // REVIEW
+// 					  // std::cout << "une collision avec" << collision.getGameObject;
+// }
 
 sf::Sprite const& GameObject::getSprite() const
 {
 	return m_body;
 }
 
-void GameObject::updatePosition()
-{}
+// void GameObject::updatePosition(Position m_position)
+// {}
 
 bool GameObject::isArigidBody() const
 {

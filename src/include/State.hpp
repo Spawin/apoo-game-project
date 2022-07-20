@@ -5,6 +5,7 @@
 	#include "include/Position.hpp"
 	#include "include/GameMap.hpp"
 	#include "include/consts.hpp"
+	#include "include/MyVector.hpp"
 	#include <memory>
 	#include <vector>
 	#include <fstream>
@@ -37,9 +38,9 @@ public:
 	// Fonctions/Méthodes
 	const bool& getQuit() const;
 
-	virtual void checkForQuit();
+	// virtual void checkForQuit();
 
-	virtual void endState() = 0;
+	virtual void endState();
 	virtual void updateMousePositions();
 	virtual void updateInput(const float& deltaTime) = 0;
 	virtual void update(const float& deltaTime) = 0;
@@ -58,7 +59,7 @@ protected:
 	sf::Vector2i mousePosWindow;
 	sf::Vector2f mousePosView;
 
-	std::vector<sf::Texture> textures;
+	std::map<std::string, sf::Texture> textures;
 
 	// Fonctions d'initialisation
 };

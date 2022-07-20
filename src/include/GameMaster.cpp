@@ -14,7 +14,7 @@ void GameMaster::initWindow()
 	std::ifstream ifs("Config/window.ini");
 
 	string title = "None";
-	sf::VideoMode window_bounds(1200, 600);
+	sf::VideoMode window_bounds(1200, 675); //600
 	unsigned framerate_limit = 60;
 	bool vertical_sync_enabled = true;
 	if (ifs.is_open())

@@ -42,6 +42,7 @@ public:
 
 	virtual void simpleAttack(Personage& target) = 0;
 	virtual void specialAttack(Personage& target) = 0;
+	virtual void move(MyVector& speed) override;
 
 protected:
 	/**
@@ -81,7 +82,7 @@ protected:
 	sf::Sprite m_suit;
 
 	// Valeur de l'accélération du déplacement (accélération uniforme)
-	const float m_MOVE_SPEED { 200.f };
+	// const float m_MOVE_SPEED { 200.f };
 
 	const bool m_isPlayer;
 
@@ -92,7 +93,7 @@ protected:
 	 * Cette position sera déterminé par l'évenement reçu au préalable.
 	 * Aussi il s'agit dans ce cas d'une accélération uniforme.
 	 */
-	virtual void updatePosition() override;
+	virtual void updatePosition(Position& position) override;
 };
 
 #endif // __PERSONGE_HPP__

@@ -1,4 +1,46 @@
 #include "include/Gui.hpp"
+// REVIEW -
+float gui::p2pX(const float perc, const sf::VideoMode& vm)
+{
+	/*
+	 * Converts a percentage value to pixels relative to the current resolution in the x-axis.
+	 *
+	 * @param		float perc				The percentage value.
+	 * @param		sf::VideoMode& vm		The current videomode of the window (resolution).
+	 *
+	 * @return		float					The calculated pixel value.
+	 */
+
+	return std::floor(static_cast<float>(vm.width) * (perc / 100.f));
+}
+
+float gui::p2pY(const float perc, const sf::VideoMode& vm)
+{
+	/*
+	 * Converts a percentage value to pixels relative to the current resolution in the y-axis.
+	 *
+	 * @param		float perc				The percentage value.
+	 * @param		sf::VideoMode& vm		The current videomode of the window (resolution).
+	 *
+	 * @return		float					The calculated pixel value.
+	 */
+
+	return std::floor(static_cast<float>(vm.height) * (perc / 100.f));
+}
+
+unsigned gui::calcCharSize(const sf::VideoMode& vm, const unsigned modifier)
+{
+	/*
+	 * Calculates the character size for text using the current resolution and a constant.
+	 *
+	 * @param		sf::VideoMode& vm		The current videomode of the window (resolution).
+	 * @param		unsigned modifier		Used to modify the character size in a more custom way.
+	 *
+	 * @return		unsigned				The calculated character size value.
+	 */
+
+	return static_cast<unsigned>((vm.width + vm.height) / modifier);
+}
 
 // ********************************* Button
 
@@ -8,26 +50,41 @@
 
 // Constructeurs/Destructeur
 gui::Button::Button(float x, float y, float width, float height,
-	sf::Font* font, std::string text,
-	sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor)
+	sf::Font* font, std::string text, unsigned characterSize,
+	sf::Color text_idle_color, sf::Color text_hover_color, sf::Color text_active_color,
+	sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor,
+	sf::Color outline_idle_color, sf::Color outline_hover_color, sf::Color outline_active_color, short unsigned id)
 {
+	this->buttonState = BTN_IDLE;
+	this->id = id;
+
 	this->shape.setPosition(sf::Vector2f(x, y));
 	this->shape.setSize(sf::Vector2f(width, height));
+	this->shape.setFillColor(idleColor);
+	this->shape.setOutlineThickness(1.f);
+	this->shape.setOutlineColor(outline_idle_color);
 
 	this->font = font;
 	this->text.setFont(*this->font);
 	this->text.setString(text);
-	this->text.setFillColor(sf::Color::White);
-	this->text.setCharacterSize(12);
+	this->text.setFillColor(text_idle_color);
+	this->text.setCharacterSize(characterSize);
 	this->text.setPosition(
 		this->shape.getPosition().x + (this->shape.getGlobalBounds().width / 2.f) - this->text.getGlobalBounds().width / 2.f,
-		this->shape.getPosition().y + (this->shape.getGlobalBounds().height / 2.f) - this->text.getGlobalBounds().height / 2.f);
+		// this->shape.getPosition().y + (this->shape.getGlobalBounds().height / 2.f) - this->text.getGlobalBounds().height / 2.f);
+		this->shape.getPosition().y);
+
+	this->textIdleColor = text_idle_color;
+	this->textHoverColor = text_hover_color;
+	this->textActiveColor = text_active_color;
 
 	this->idleColor = idleColor;
 	this->hoverColor = hoverColor;
 	this->activeColor = activeColor;
 
-	this->shape.setFillColor(this->idleColor);
+	this->outlineIdleColor = outline_idle_color;
+	this->outlineHoverColor = outline_hover_color;
+	this->outlineActiveColor = outline_active_color;
 }
 
 gui::Button::~Button()
@@ -85,20 +142,20 @@ void gui::Button::update(const sf::Vector2i& mousePosWindow)
 	{
 		case BTN_IDLE:
 			this->shape.setFillColor(this->idleColor);
-			// this->text.setFillColor(this->textIdleColor);
-			// this->shape.setOutlineColor(this->outlineIdleColor);
+			this->text.setFillColor(this->textIdleColor);
+			this->shape.setOutlineColor(this->outlineIdleColor);
 			break;
 
 		case BTN_HOVER:
 			this->shape.setFillColor(this->hoverColor);
-			// this->text.setFillColor(this->textHoverColor);
-			// this->shape.setOutlineColor(this->outlineHoverColor);
+			this->text.setFillColor(this->textHoverColor);
+			this->shape.setOutlineColor(this->outlineHoverColor);
 			break;
 
 		case BTN_ACTIVE:
 			this->shape.setFillColor(this->activeColor);
-			// this->text.setFillColor(this->textActiveColor);
-			// this->shape.setOutlineColor(this->outlineActiveColor);
+			this->text.setFillColor(this->textActiveColor);
+			this->shape.setOutlineColor(this->outlineActiveColor);
 			break;
 
 		default:
