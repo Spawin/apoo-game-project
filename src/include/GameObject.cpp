@@ -17,10 +17,12 @@ void GameObject::init()
 	{
 		std::cerr << "Erreur lors de la mise en place d'une texture vide (GameObject)" << std::endl;
 	}
+	// REVIEW -
 	sf::Uint8* pixels = new sf::Uint8[PERSONNAGE_WIDTH * PERSONNAGE_WIDTH * 4]; // * 4 car les pixels ont 4 composantes (RGBA)
 	texture.update(pixels);
 	m_body.setTexture(texture);
 
+	// REVIEW -
 	// On définit son centre de "gravité"
 	// m_body.setOrigin(m_body.getLocalBounds().width / 2, m_body.getLocalBounds().height / 2);
 	m_body.setOrigin(PERSONNAGE_WIDTH / 2, PERSONNAGE_WIDTH / 2);
@@ -77,7 +79,7 @@ GameObject::~GameObject()
 	m_rigidbody = nullptr;
 }
 
-void GameObject::show(sf::RenderWindow& window)
+void GameObject::show(sf::RenderTarget& window)
 {
 	window.draw(m_body);
 }

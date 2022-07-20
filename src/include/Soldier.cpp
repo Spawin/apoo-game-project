@@ -28,7 +28,7 @@ void Soldier::specialAttack(Personage& target)
 	cout << "" << target.getHealth();
 }
 
-void Soldier::show(sf::RenderWindow& window)
+void Soldier::show(sf::RenderTarget& window)
 {
 	Personage::show(window);
 

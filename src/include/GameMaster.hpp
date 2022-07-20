@@ -2,6 +2,7 @@
 	#define __GAME_MASTER__
 
 	#include "include/GameState.hpp"
+	#include "include/MainMenuState.hpp"
 
 class GameMaster
 {
@@ -32,6 +33,7 @@ public:
 
 private:
 	// Variables
+	StateData stateData;
 	sf::RenderWindow* window;
 	sf::Event sfEvent;
 
@@ -42,6 +44,7 @@ private:
 
 	// Initialisation
 	void initWindow();
+	void intiStateData();
 	void intiStates();
 	//
 	//

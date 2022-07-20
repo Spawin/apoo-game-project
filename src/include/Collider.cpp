@@ -22,15 +22,16 @@ Collider::GameObjectMap Collider::m_objects = [] {
 	return ret;
 }();
 
-Collider::Collider(GameObject const& parent, std::vector<sf::Vector2f> contactPoints) :
+Collider::Collider(GameObject const& parent, std::string typeOfCollider /*, std::vector<sf::Vector2f> contactPoints*/) :
 	parent(parent),
-	m_contactPoints(contactPoints)
+	m_colliderType(typeOfCollider) //,
+// m_contactPoints(contactPoints)
 {
-	if (contactPoints.empty())
-	{
-		cerr << "AU moin un point de contact" << endl;
-		exit(-1);
-	}
+	// if (contactPoints.empty())
+	// {
+	// 	cerr << "AU moin un point de contact" << endl;
+	// 	exit(-1);
+	// }
 	// m_contactPoints.insert(m_contactPoints.end(), contactPoints.begin(), contactPoints.end());
 	// m_objects.insert({ to_string(parent.getGameObjectId()), (GameObject*)&parent }); // REVIEW -
 
@@ -50,10 +51,10 @@ GameObject const& Collider::getParent() const
 	return parent;
 }
 
-std::vector<sf::Vector2f> const& Collider::getContactPoints() const
-{
-	return m_contactPoints;
-}
+// std::vector<sf::Vector2f> const& Collider::getContactPoints() const
+// {
+// 	return m_contactPoints;
+// }
 
 void Collider::update()
 {

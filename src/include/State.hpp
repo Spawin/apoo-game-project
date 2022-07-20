@@ -12,31 +12,53 @@
 	#include "include/House.hpp"
 	#include "include/Soldier.hpp"
 	#include "include/Collider.hpp"
+	#include "include/Player.hpp"
 	#include "include/Personage.hpp"
-
-	#include <stack> // REVIEW -
+	#include <stack>
 	#include <map>
+
+class State;
+
+struct StateData
+{
+	float gridSize;
+	sf::RenderWindow* window;
+	// GraphicsSettings* gfxSettings;
+	// std::map<std::string, int>* supportedKeys;
+	std::stack<State*>* states;
+};
 
 class State
 {
 public:
 	// Constructeurs/Destructeur
-	State(sf::RenderWindow* window);
+	State(StateData* stateData);
 	virtual ~State();
 	// Fonctions/Méthodes
 	const bool& getQuit() const;
+
 	virtual void checkForQuit();
 
 	virtual void endState() = 0;
-	virtual void updateKeyBinds(const float& deltaTime) = 0;
+	virtual void updateMousePositions();
+	virtual void updateInput(const float& deltaTime) = 0;
 	virtual void update(const float& deltaTime) = 0;
 	virtual void render(sf::RenderTarget* target = nullptr) = 0;
 
-private:
+protected:
 	// Variables
+	StateData* stateData;
+	std::stack<State*>* states;
 	sf::RenderWindow* window;
-	std::vector<sf::Texture> textures;
+
 	bool quit;
+	bool paused;
+
+	sf::Vector2i mousePosScreen;
+	sf::Vector2i mousePosWindow;
+	sf::Vector2f mousePosView;
+
+	std::vector<sf::Texture> textures;
 
 	// Fonctions d'initialisation
 };

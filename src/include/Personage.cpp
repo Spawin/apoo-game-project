@@ -18,7 +18,13 @@ void Personage::init()
 
 	m_gameObjectName = "Personage";
 
-	m_collider = new PolygonCollider((*this), { sf::Vector2f(18.f - GameMaster::getSPRITE_BOX_CENTER().x, 5.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(22.f - GameMaster::getSPRITE_BOX_CENTER().x, 12.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(22.f - GameMaster::getSPRITE_BOX_CENTER().x, 20.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(18.f - GameMaster::getSPRITE_BOX_CENTER().x, 27.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(11.f - GameMaster::getSPRITE_BOX_CENTER().x, 22.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(11.f - GameMaster::getSPRITE_BOX_CENTER().x, 12.f - GameMaster::getSPRITE_BOX_CENTER().y) });
+	// On définit son centre de "gravité"
+	// m_body.setOrigin(m_body.getLocalBounds().width / 2, m_body.getLocalBounds().height / 2);
+	m_body.setOrigin(PERSONNAGE_WIDTH / 2, PERSONNAGE_WIDTH / 2);
+
+	// m_collider = new PolygonCollider((*this), { sf::Vector2f(18.f - GameMaster::getSPRITE_BOX_CENTER().x, 5.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(22.f - GameMaster::getSPRITE_BOX_CENTER().x, 12.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(22.f - GameMaster::getSPRITE_BOX_CENTER().x, 20.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(18.f - GameMaster::getSPRITE_BOX_CENTER().x, 27.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(11.f - GameMaster::getSPRITE_BOX_CENTER().x, 22.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(11.f - GameMaster::getSPRITE_BOX_CENTER().x, 12.f - GameMaster::getSPRITE_BOX_CENTER().y) });
+	// m_collider = new PolygonCollider((*this), { sf::Vector2f(18.f - m_body.getOrigin().x, 5.f - m_body.getOrigin().y), sf::Vector2f(22.f - m_body.getOrigin().x, 12.f - m_body.getOrigin().y), sf::Vector2f(22.f - m_body.getOrigin().x, 20.f - m_body.getOrigin().y), sf::Vector2f(18.f - m_body.getOrigin().x, 27.f - m_body.getOrigin().y), sf::Vector2f(11.f - m_body.getOrigin().x, 22.f - m_body.getOrigin().y), sf::Vector2f(11.f - m_body.getOrigin().x, 12.f - m_body.getOrigin().y) });
+
 	m_rigidbody = new Rigidbody((*this));
 
 	// int w(32);
@@ -66,13 +72,13 @@ Personage::Personage(float posX, float posY, bool isPlayer) :
 Personage::~Personage()
 {
 	// delete m_collider; // Déjà fait au niveau du GameObject.
-	m_window = 0;
+	m_window = nullptr;
 }
 
-void Personage::show(sf::RenderWindow& window)
+void Personage::show(sf::RenderTarget& window)
 {
 	GameObject::show(window);
-	m_window = &window;
+	m_window = &window; // REVIEW -
 }
 
 void Personage::update()
@@ -106,7 +112,7 @@ void Personage::updatePosition()
 	{
 		// Gestion du déplacement du joueur.
 		bool anyDirectionalKeyIsPressed(false);
-
+		// TODO - Additionner les angles avant de l'associer à la vitesse; on enlevera le temps
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 		{
 			// m_speed.x = MOVE_SPEED * m_time;

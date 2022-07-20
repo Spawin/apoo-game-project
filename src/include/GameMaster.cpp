@@ -55,6 +55,7 @@ void GameMaster::initWindow()
 		return exit(-1);
 	}
 
+	/* TODO - C'est pour la partie GameState
 	// Mise en place des vues
 	// sf::View player_view(sf::Vector2f(350.f, 300.f), sf::Vector2f(1000.f, 600.f));
 	sf::View player_view;
@@ -67,6 +68,7 @@ void GameMaster::initWindow()
 	// activation de la vue
 	window->setView(player_view);
 	// window->setView(minimap_view);
+	//*/
 
 	// Personage* spawin = new Soldier(true);
 	// // Personage spawin = Personage(true);
@@ -78,9 +80,19 @@ void GameMaster::initWindow()
 	// sf::Event event;
 }
 
+void GameMaster::intiStateData()
+{
+	this->stateData.window = this->window;
+	// this->stateData.gfxSettings = &this->gfxSettings;
+	// this->stateData.supportedKeys = &this->supportedKeys;
+	this->stateData.states = &this->states;
+	// this->stateData.gridSize = this->gridSize;
+}
+
 void GameMaster::intiStates()
 {
-	this->states.push(new GameState(this->window));
+	this->states.push(new MainMenuState(&this->stateData));
+	// this->states.push(new GameState(this->window));
 }
 // ---------------------------------------
 
@@ -94,6 +106,7 @@ GameMaster::GameMaster()
 	}
 
 	this->initWindow();
+	this->intiStateData();
 	this->intiStates();
 
 	GameMaster::m_gameMaster = this;
@@ -130,9 +143,12 @@ void GameMaster::endApplication()
 {
 	cout << "fin application" << endl;
 }
+
 void GameMaster::updateDeltatime()
 {
 	this->deltaTime = this->dtClock.restart().asSeconds();
+	// initialisation du time du game object
+	GameObject::SetTime(this->deltaTime);
 }
 void GameMaster::updateSFMLEvents()
 {
@@ -175,8 +191,8 @@ void GameMaster::update()
 void GameMaster::render()
 {
 
-	// initialisation du time du game object
-	// GameObject::SetTime(chrono.restart().asSeconds());
+	//// initialisation du time du game object
+	//// GameObject::SetTime(chrono.restart().asSeconds());
 
 	// Appel pour tester la proximité de chaque collider
 	Collider::update();

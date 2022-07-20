@@ -9,29 +9,44 @@
 
 using namespace std;
 
+const string PolygonCollider::m_name("PolygonCollider");
+
 PolygonCollider::PolygonCollider(GameObject const& parent, std::vector<sf::Vector2f> contactPoints) :
-	Collider(parent, contactPoints)
-{
-}
+	Collider(parent, "PolygonCollider"),
+	m_contactPoints(contactPoints)
+{}
 
 PolygonCollider::~PolygonCollider()
 {
 }
 
+// -----------------------
+const std::string PolygonCollider::getName()
+{
+	return m_name;
+}
+
+std::vector<sf::Vector2f> PolygonCollider::getContactPoints() const
+{
+	return m_contactPoints;
+}
+
 bool PolygonCollider::touchEachOther(Collider const& collider) const
 {
-
+	// REVIEW pour le cas du box collider
 	// Comparaison de la proximité de tous les points
+	MyVector c1 = (*this).parent.getPosition().getPosition();
+	MyVector c2 = collider.getParent().getPosition().getPosition();
 	for (size_t i = 0; i < (*this).m_contactPoints.size(); i++)
 	{
 		sf::Vector2f v1 = (*this).m_contactPoints[i];
-		MyVector c1 = (*this).parent.getPosition().getPosition();
+		// MyVector c1 = (*this).parent.getPosition().getPosition();
 		v1.x += c1.m_x;
 		v1.y += c1.m_y;
 		for (size_t j = 0; j < collider.getContactPoints().size(); j++)
 		{
 			sf::Vector2f v2 = collider.getContactPoints()[j];
-			MyVector c2 = collider.getParent().getPosition().getPosition();
+			// MyVector c2 = collider.getParent().getPosition().getPosition();
 			v2.x += c2.m_x;
 			v2.y += c2.m_y;
 

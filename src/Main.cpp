@@ -1,3 +1,4 @@
+#include "Platform/Platform.hpp"
 #include "include/GameMaster.hpp"
 
 int main()

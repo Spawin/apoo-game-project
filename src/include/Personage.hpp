@@ -24,7 +24,7 @@ public:
 	 *
 	 * @param window
 	 */
-	virtual void show(sf::RenderWindow& window) override;
+	virtual void show(sf::RenderTarget& window) override;
 
 	//Sera appelé à chaque frame...
 	void update() override;
@@ -85,7 +85,7 @@ protected:
 
 	const bool m_isPlayer;
 
-	sf::RenderWindow* m_window { 0 };
+	sf::RenderTarget* m_window { 0 };
 
 	/**
 	 * @brief Permet de mettre à jour la position actuelle.

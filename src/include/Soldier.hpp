@@ -14,7 +14,7 @@ public:
 	 *
 	 * @param window
 	 */
-	virtual void show(sf::RenderWindow& window) override;
+	virtual void show(sf::RenderTarget& window) override;
 
 	virtual void simpleAttack(Personage& target) override;
 	virtual void specialAttack(Personage& target) override;

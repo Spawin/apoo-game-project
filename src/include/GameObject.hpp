@@ -38,7 +38,7 @@ public:
 	 *
 	 * @param window
 	 */
-	virtual void show(sf::RenderWindow& window);
+	virtual void show(sf::RenderTarget& window);
 	//Sera appelé à chaque frame...
 	// virtual void update() = 0;
 	virtual void update();
