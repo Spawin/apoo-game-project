@@ -41,6 +41,7 @@ public:
 	virtual bool getKeyTime();
 
 	// virtual void checkForQuit();
+	virtual void updateSFMLEvents(const sf::Event& sfEvent) = 0;
 
 	virtual void endState();
 	virtual void updateMousePositions();
@@ -54,6 +55,8 @@ protected:
 	StateData* stateData;
 	std::stack<State*>* states;
 	sf::RenderWindow* window;
+
+	// sf::Event sfEvent;
 
 	bool quit;
 	bool paused;

@@ -14,63 +14,37 @@ void GameObject::init()
 {
 	// On incrémente le compteur
 	GameObject::incrementCount();
-
-	m_body.setColor(sf::Color::White);
-
-	sf::Texture texture;
-	if (!texture.create(PERSONNAGE_WIDTH, PERSONNAGE_WIDTH))
-	{
-		std::cerr << "Erreur lors de la mise en place d'une texture vide (GameObject)" << std::endl;
-	}
-	// REVIEW -
-	sf::Uint8* pixels = new sf::Uint8[PERSONNAGE_WIDTH * PERSONNAGE_WIDTH * 4]; // * 4 car les pixels ont 4 composantes (RGBA)
-	texture.update(pixels);
-	m_body.setTexture(texture);
-
-	// REVIEW -
-	// On définit son centre de "gravité"
-	// m_body.setOrigin(m_body.getLocalBounds().width / 2, m_body.getLocalBounds().height / 2);
-	m_body.setOrigin(PERSONNAGE_WIDTH / 2, PERSONNAGE_WIDTH / 2);
-
-	m_position = Position(32 * 4, 32 * 70); // REVIEW -
-	m_body.setPosition(m_position.getX(), m_position.getY());
 }
 
-GameObject::GameObject()
-{
-	// initialisation
-	init();
-}
+// GameObject::GameObject()
+// {
+// 	// initialisation
+// 	init();
+// }
 
-GameObject::GameObject(std::string_view const& imageSpritePath)
+// GameObject::GameObject(std::string_view const& imageSpritePath)
+// {
+// 	// initialisation
+// 	init();
+// 		if (!m_texture.loadFromFile(imageSpritePath.data()))
+// 		{
+// 			std::cerr << "Image < " << imageSpritePath << " > introuvable" << std::endl;
+// 		}
+// 		m_body.setTexture(m_texture);
+// }
+
+GameObject::GameObject(std::string_view const& imageSpritePath, float posX, float posY)
 {
 	// initialisation
 	init();
 
-	if (!imageSpritePath.empty())
+	if (!m_texture.loadFromFile(imageSpritePath.data())) // TODO  - A changer; ces paramètre doivent venir du constructeur
+	// if (!m_texture.create(200, 200))
 	{
-
-		if (!m_texture.loadFromFile(imageSpritePath.data()))
-		{
-			std::cerr << "Image < " << imageSpritePath << " > introuvable" << std::endl;
-		}
-		m_body.setTexture(m_texture);
+		std::cerr << "Image < " << imageSpritePath << " > introuvable" << std::endl;
 	}
-}
 
-GameObject::GameObject(float posX, float posY, std::string_view const& imageSpritePath)
-{
-	// initialisation
-	init();
-	if (!imageSpritePath.empty())
-	{
-		if (!m_texture.loadFromFile(imageSpritePath.data()))
-		{
-			std::cerr << "Image < " << imageSpritePath << " > introuvable" << std::endl;
-		}
-
-		m_body.setTexture(m_texture);
-	}
+	m_body.setTexture(m_texture);
 
 	m_position = Position(posX, posY);
 	m_body.setPosition(m_position.getX(), m_position.getY());

@@ -8,6 +8,7 @@
 Player::Player(Personage* personage) :
 	personage(personage)
 {
+	this->lastSideIsRight = true;
 }
 
 Player::~Player()
@@ -18,31 +19,38 @@ Player::~Player()
 void Player::manageMove(const float& deltaTime)
 {
 	MyVector speed { 0.f, 0.f };
+	float angle(0.f);
 
 	// Gestion du déplacement du joueur.
 	// TODO - Additionner les angles avant de l'associer à la vitesse; on enlevera le temps
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
-		speed += MyVector::createFromAngle(game::PERSONAGE_MOVE_VELOCITY, 0.f);
+		angle += 0.f;
+		speed += { game::PERSONAGE_MOVE_VELOCITY, 0.f };
+		// speed += MyVector::createFromAngle(game::PERSONAGE_MOVE_VELOCITY, 0.f);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
-		speed += MyVector::createFromAngle(game::PERSONAGE_MOVE_VELOCITY, 180.f);
+		angle += 180.f;
+		speed += { -game::PERSONAGE_MOVE_VELOCITY, 0.f };
+		// speed += MyVector::createFromAngle(game::PERSONAGE_MOVE_VELOCITY, 180.f);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
-		speed += MyVector::createFromAngle(game::PERSONAGE_MOVE_VELOCITY, 270.f);
+		angle += 270.f;
+		speed += { 0.f, -game::PERSONAGE_MOVE_VELOCITY };
+		// speed += MyVector::createFromAngle(game::PERSONAGE_MOVE_VELOCITY, 270.f);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
-		speed += MyVector::createFromAngle(game::PERSONAGE_MOVE_VELOCITY, 90.f);
+		angle += 90.f;
+		speed += { 0.f, game::PERSONAGE_MOVE_VELOCITY };
+		// speed += MyVector::createFromAngle(game::PERSONAGE_MOVE_VELOCITY, 90.f);
 	}
 
-	// m_body.move(m_speed);
-	// m_body.move(m_speed2.m_x, m_speed2.m_y);
-	// MyVector mv{0.f,0.f};
-	// mv += m_position.getPosition();
-	// mv += m_speed
+	// if(angle <=  90.f ) {
+
+	// }
 
 	//* On applique des modification si la position à changé
 	// REVIEW - (ceci n'est pas encore fait) Ou si le centre de la vue est différent de la position du joueur
@@ -50,9 +58,36 @@ void Player::manageMove(const float& deltaTime)
 	// || m_body.getPosition() != m_window->getView().getCenter()
 	if (speed != sf::Vector2f(0.f, 0.f))
 	{
+		std::cout << "\t X" << speed.m_x << " Y" << speed.m_y << std::endl;
+
+		// Animation
+		if (speed.m_x < 0.0f)
+		{
+			this->personage->getAnimationComponent()->play("LEFT_WALK", deltaTime);
+
+			this->lastSideIsRight = false;
+		}
+		else
+		{
+			this->personage->getAnimationComponent()->play("RIGHT_WALK", deltaTime);
+
+			this->lastSideIsRight = true;
+		}
+
 		speed.m_x *= deltaTime;
 		speed.m_y *= deltaTime;
 		this->personage->move(speed);
+	}
+	else
+	{
+		if (this->lastSideIsRight)
+		{
+			this->personage->getAnimationComponent()->play("RIGHT_IDLE", deltaTime);
+		}
+		else
+		{
+			this->personage->getAnimationComponent()->play("LEFT_IDLE", deltaTime);
+		}
 	}
 }
 

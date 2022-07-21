@@ -1,22 +1,23 @@
 #ifndef __PERSONGE_HPP__
 #define __PERSONGE_HPP__
 
-#include "include/GameObject.hpp"
+#include "include/MovableGameObject.hpp"
 #include <string>
 
-class Personage : public GameObject
+class Personage : public MovableGameObject
 {
 public:
 	explicit Personage(bool isPlayer = false);
-	// explicit Personage(Personage const& p) = delete; // NOTE -  Pour empêcher la copie de la classe lors de l'initialisati d...
-	explicit Personage(std::string_view const& imageSpritePath, bool isPlayer = false);
-	/**
-	 * @brief Construct a new Personage object
-	 *
-	 * @param posX la position x de l'objet
-	 * @param posY la position y de l'objet
-	 */
-	explicit Personage(float posX, float posY, bool isPlayer = false);
+	// NOTE -  Pour empêcher la copie de la classe lors de l'initialisati d...
+	explicit Personage(Personage const& p) = delete;
+	// explicit Personage(std::string_view const& imageSpritePath, bool isPlayer = false);
+	// /**
+	//  * @brief Construct a new Personage object
+	//  *
+	//  * @param posX la position x de l'objet
+	//  * @param posY la position y de l'objet
+	//  */
+	// explicit Personage(float posX, float posY, bool isPlayer = false);
 	virtual ~Personage();
 
 	/**
@@ -50,6 +51,11 @@ protected:
 	 *
 	 */
 	void init();
+	/**
+	 * @brief Pour ajouter les animation pour un personnage
+	 *
+	 */
+	void initAnimations();
 
 	// La quantité de vie du personnage
 	int m_health { 100 };

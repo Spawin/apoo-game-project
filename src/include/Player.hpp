@@ -17,6 +17,11 @@ public:
 private:
 	// Variables
 	Personage* personage;
+	/**
+	 * @brief Permet de controler de quelque coté diriger une animation (dauche ou droite)
+	 *
+	 */
+	bool lastSideIsRight;
 
 	// Fonctions d'initialisation
 };

@@ -114,6 +114,14 @@ void MainMenuState::updateInput(const float& deltaTime)
 	// this->checkForQuit();
 }
 
+void MainMenuState::updateSFMLEvents(const sf::Event& sfEvent)
+{
+	if (sfEvent.type == sf::Event::KeyReleased)
+	{
+		// Racouci clavier pour lancer les chose comme en utilisant la souris
+	}
+}
+
 void MainMenuState::updateButtons()
 {
 	/*Updates all the buttons in the state and handles their functionlaity.*/
@@ -170,7 +178,7 @@ void MainMenuState::render(sf::RenderTarget* target)
 	if (!target)
 		target = this->window;
 
-	cout << "Ecran : x" << this->window->getView().getCenter().x << " y" << this->window->getView().getCenter().y;
+	// cout << "Ecran : x" << this->window->getView().getCenter().x << " y" << this->window->getView().getCenter().y;
 
 	target->draw(this->background);
 

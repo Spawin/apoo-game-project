@@ -177,6 +177,12 @@ void GameMaster::updateSFMLEvents()
 		{
 			// TODO -
 		}
+
+		// On envois les events sfml au state en cours
+		if (!this->states.empty())
+		{
+			this->states.top()->updateSFMLEvents(this->sfEvent);
+		}
 	}
 }
 void GameMaster::update()
@@ -202,6 +208,7 @@ void GameMaster::update()
 		this->window->close();
 	}
 }
+
 void GameMaster::render()
 {
 

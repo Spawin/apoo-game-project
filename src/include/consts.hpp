@@ -12,7 +12,6 @@
 #ifndef __CONST_HPP__
 #define __CONST_HPP__
 
-#define M_PI 3.14 //16
 // #define GAME_MAP_WIDTH 1100	 // !depracted
 // #define GAME_MAP_HEIGHT 2200 // !depracted
 
@@ -40,6 +39,7 @@ namespace game
 constexpr int WINDOW_WIDTH = 1200;
 constexpr int WINDOW_HEIGHT = 675;
 constexpr float PERSONAGE_MOVE_VELOCITY = 200.f;
+constexpr float M_PI = 3.14159f;
 
 // REVIEW -
 inline std::string const& GAME_NAME()

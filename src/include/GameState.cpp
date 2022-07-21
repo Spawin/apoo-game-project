@@ -38,7 +38,7 @@ void GameState::initPauseMenu()
 
 void GameState::initKeyTime()
 {
-	this->keyTimeMax = 0.3f;
+	this->keyTimeMax = 0.5f;
 	this->keyTimer.restart();
 }
 
@@ -92,21 +92,30 @@ bool GameState::getKeyTime()
 	return false;
 }
 
+void GameState::updateSFMLEvents(const sf::Event& sfEvent)
+{
+	if (sfEvent.type == sf::Event::KeyReleased)
+	{
+		if (sfEvent.key.code == sf::Keyboard::Escape)
+		{
+			// On switch l'état de la pause
+			this->paused = !this->paused;
+		}
+	}
+}
+
 void GameState::updateInput(const float& deltaTime)
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+	if (deltaTime > 100.f)
 	{
-		cout << "Q" << deltaTime << endl;
-		if (!this->paused)
-			this->paused = true;
-		else
-			this->paused = false;
-
-		// if (!this->paused)
-		// 	this->pauseState();
-		// else
-		// 	this->unpauseState();
+		// REVIEW -
 	}
+	// C'est ici on voit vraiment l'utilité du getKeyTime
+	// if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && this->getKeyTime())
+	// {
+	// 	// On switch l'état de la pause
+	// 	this->paused = !this->paused;
+	// }
 
 	// TODO - Ramener le controle du personnge à ce niveau ou dans player
 	//* on ora un truc du genre this->player.move(...)
@@ -121,17 +130,19 @@ void GameState::updatePauseMenuButtons()
 
 void GameState::update(const float& deltaTime)
 {
+	// this->updateSFMLEvents();
 	this->updateMousePositions();
 	this->updateKeytime(deltaTime);
 	this->updateInput(deltaTime);
 
 	if (!this->paused)
 	{
-		cout << "\tPas en pause\n";
+		//* Le jeu n'est pas en pause
 		this->player->update(deltaTime);
 	}
 	else
 	{
+		//* Le jeu est en pause
 		cout << "En pause\n";
 		this->pauseMenu->update(this->mousePosWindow);
 		this->updatePauseMenuButtons();
@@ -150,10 +161,15 @@ void GameState::render(sf::RenderTarget* target)
 	{
 		//this->renderTexture.setView(this->renderTexture.getDefaultView());
 		this->pauseMenu->render(this->renderTexture);
+
+		//FINAL RENDER
+		this->renderTexture.display();
+		this->renderSprite.setTexture(this->renderTexture.getTexture());
+		target->draw(this->renderSprite);
 	}
 
-	//FINAL RENDER
-	this->renderTexture.display();
-	this->renderSprite.setTexture(this->renderTexture.getTexture());
-	target->draw(this->renderSprite);
+	// //FINAL RENDER
+	// this->renderTexture.display();
+	// this->renderSprite.setTexture(this->renderTexture.getTexture());
+	// target->draw(this->renderSprite);
 }

@@ -13,14 +13,19 @@ using namespace std;
 
 void Personage::init()
 {
-	m_width = 32;
-	m_height = 50;
+	// m_width = 32;
+	// m_height = 50;
 
 	m_gameObjectName = "Personage";
 
+	// m_texture.setSmooth(true);
+
+	// m_body.setScale(0.3f, 0.3f);
+	// m_body.setColor(sf::Color::White);
+
 	// On définit son centre de "gravité"
 	// m_body.setOrigin(m_body.getLocalBounds().width / 2, m_body.getLocalBounds().height / 2);
-	m_body.setOrigin(PERSONNAGE_WIDTH / 2, PERSONNAGE_WIDTH / 2);
+	// m_body.setOrigin(PERSONNAGE_WIDTH / 2, PERSONNAGE_WIDTH / 2);
 
 	// m_collider = new PolygonCollider((*this), { sf::Vector2f(18.f - GameMaster::getSPRITE_BOX_CENTER().x, 5.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(22.f - GameMaster::getSPRITE_BOX_CENTER().x, 12.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(22.f - GameMaster::getSPRITE_BOX_CENTER().x, 20.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(18.f - GameMaster::getSPRITE_BOX_CENTER().x, 27.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(11.f - GameMaster::getSPRITE_BOX_CENTER().x, 22.f - GameMaster::getSPRITE_BOX_CENTER().y), sf::Vector2f(11.f - GameMaster::getSPRITE_BOX_CENTER().x, 12.f - GameMaster::getSPRITE_BOX_CENTER().y) });
 	// m_collider = new PolygonCollider((*this), { sf::Vector2f(18.f - m_body.getOrigin().x, 5.f - m_body.getOrigin().y), sf::Vector2f(22.f - m_body.getOrigin().x, 12.f - m_body.getOrigin().y), sf::Vector2f(22.f - m_body.getOrigin().x, 20.f - m_body.getOrigin().y), sf::Vector2f(18.f - m_body.getOrigin().x, 27.f - m_body.getOrigin().y), sf::Vector2f(11.f - m_body.getOrigin().x, 22.f - m_body.getOrigin().y), sf::Vector2f(11.f - m_body.getOrigin().x, 12.f - m_body.getOrigin().y) });
@@ -36,7 +41,8 @@ void Personage::init()
 	// Initialisation de la position en temps que joeurs
 	if (m_isPlayer)
 	{
-		m_position = Position(32 * 4, 32 * 78); // REVIEW -
+		// m_position = Position(32 * 4, 32 * 78); // REVIEW -
+		m_position = Position(32 * 4, 32 * 4);
 		m_body.setPosition(m_position.getX(), m_position.getY());
 	}
 	else
@@ -45,29 +51,53 @@ void Personage::init()
 		m_position = Position(32 * 20 + 16, 32 * 70); // REVIEW -
 		m_body.setPosition(m_position.getX(), m_position.getY());
 	}
+
+	// m_body.setScale(.3f, .3f);
+}
+
+void Personage::initAnimations()
+{
+	// Création du gestionnaire d'animation
+	this->createAnimationComponent(m_texture);
+	// Ajout des animations
+	this->animationComponent->addAnimation("RIGHT_IDLE", 10.f, 0, 0, 0, 0, 150, 150);
+	this->animationComponent->addAnimation("RIGHT_WALK", 10.f, 0, 0, 3, 0, 150, 150);				 //
+	this->animationComponent->addAnimation("RIGHT_ATTACK_BOXING_GLOVES", 5.f, 0, 2, 8, 2, 150, 150); // Une fois
+	this->animationComponent->addAnimation("RIGHT_ATTACK_SWORD", 6.f, 0, 4, 4, 4, 150, 150);		 // Une fois
+	this->animationComponent->addAnimation("RIGHT_DEFEND_SHIELD", 6.f, 0, 6, 3, 6, 150, 150);		 // Une fois et reste maintenu
+	this->animationComponent->addAnimation("RIGHT_HURT", 5.f, 0, 8, 1, 8, 150, 150);				 // Une fois
+	this->animationComponent->addAnimation("RIGHT_DIE", 10.f, 0, 10, 7, 10, 150, 150);				 // Une fois et reste maintenu
+
+	this->animationComponent->addAnimation("LEFT_IDLE", 10.f, 0, 1, 0, 1, 150, 150);
+	this->animationComponent->addAnimation("LEFT_WALK", 10.f, 0, 1, 3, 1, 150, 150);				//
+	this->animationComponent->addAnimation("LEFT_ATTACK_BOXING_GLOVES", 5.f, 0, 3, 8, 3, 150, 150); // Une fois
+	this->animationComponent->addAnimation("LEFT_ATTACK_SWORD", 6.f, 0, 5, 4, 5, 150, 150);			// Une fois
+	this->animationComponent->addAnimation("LEFT_DEFEND_SHIELD", 6.f, 0, 7, 3, 7, 150, 150);		// Une fois et reste maintenu
+	this->animationComponent->addAnimation("LEFT_HURT", 5.f, 0, 9, 1, 9, 150, 150);					// Une fois
+	this->animationComponent->addAnimation("LEFT_DIE", 10.f, 0, 11, 7, 11, 150, 150);				// Une fois et reste maintenu
 }
 
 Personage::Personage(bool isPlayer) :
-	GameObject("content/personage/personage.png"),
-	m_isPlayer(isPlayer)
-
-{
-	init();
-}
-
-Personage::Personage(std::string_view const& imageSpritePath, bool isPlayer) :
-	GameObject(imageSpritePath),
+	MovableGameObject("content/personage/personage.png", 0, 0), // REVIEW -
 	m_isPlayer(isPlayer)
 {
 	init();
+	initAnimations();
 }
 
-Personage::Personage(float posX, float posY, bool isPlayer) :
-	GameObject(posX, posY),
-	m_isPlayer(isPlayer)
-{
-	init();
-}
+// Personage::Personage(std::string_view const& imageSpritePath, bool isPlayer) :
+// 	GameObject(imageSpritePath),
+// 	m_isPlayer(isPlayer)
+// {
+// 	init();
+// }
+
+// Personage::Personage(float posX, float posY, bool isPlayer) :
+// 	GameObject(posX, posY),
+// 	m_isPlayer(isPlayer)
+// {
+// 	init();
+// }
 
 Personage::~Personage()
 {

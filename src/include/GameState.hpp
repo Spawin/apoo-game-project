@@ -16,6 +16,7 @@ public:
 	// void endState() override;
 	bool getKeyTime() override;
 
+	virtual void updateSFMLEvents(const sf::Event& sfEvent) override;
 	void updateInput(const float& deltaTime) override;
 	void updatePauseMenuButtons();
 

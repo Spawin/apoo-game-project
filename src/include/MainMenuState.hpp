@@ -13,7 +13,7 @@ public:
 
 	// Fonctions/Méthodes
 	// void endState() override;
-
+	virtual void updateSFMLEvents(const sf::Event& sfEvent) override;
 	void updateInput(const float& deltaTime) override;
 	void updateButtons();
 	void update(const float& deltaTime) override;

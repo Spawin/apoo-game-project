@@ -15,13 +15,13 @@ class Position;
 class GameObject
 {
 public:
-	explicit GameObject();
-	/**
-	 * @brief Construct a new Game Oject object
-	 *
-	 * @param imageSpritePath le chemin de l'image de l'objet
-	 */
-	explicit GameObject(std::string_view const& imageSpritePath);
+	// explicit GameObject();
+	// /**
+	//  * @brief Construct a new Game Oject object
+	//  *
+	//  * @param imageSpritePath le chemin de l'image de l'objet
+	//  */
+	// explicit GameObject(std::string_view const& imageSpritePath);
 
 	/**
 	 * @brief Construct a new Game Object object
@@ -29,7 +29,7 @@ public:
 	 * @param posX la position x de l'objet
 	 * @param posY la position y de l'objet
 	 */
-	explicit GameObject(float posX, float posY, std::string_view const& imageSpritePath = "");
+	explicit GameObject(std::string_view const& imageSpritePath, float posX, float posY);
 
 	virtual ~GameObject();
 
@@ -127,8 +127,8 @@ protected:
 	Collider* m_collider { nullptr };
 	Rigidbody* m_rigidbody { nullptr };
 
-	int m_width { 100 };
-	int m_height { 100 };
+	// int m_width { 100 };
+	// int m_height { 100 };
 };
 
 #endif // __GameObject_HPP__
