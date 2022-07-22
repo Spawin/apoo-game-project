@@ -1,7 +1,9 @@
 #ifndef __MYVECTOR_HPP__
 #define __MYVECTOR_HPP__
 
-// TODO - Encapsulation....
+#include "include/consts.hpp"
+#include <cmath>
+#define M_PI 3.14159265358979323846
 
 struct MyVector
 {

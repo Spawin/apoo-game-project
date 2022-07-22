@@ -24,6 +24,12 @@
 
 #define WALL_WIDTH 32
 
+namespace game
+{
+constexpr int WINDOW_WIDTH = 1200;
+constexpr int WINDOW_HEIGHT = 675;
+constexpr float PERSONAGE_MOVE_VELOCITY = 200.f;
+
 enum movement_states
 {
 	IDLE = 0,
@@ -33,13 +39,6 @@ enum movement_states
 	MOVING_UP,
 	MOVING_DOWN
 };
-
-namespace game
-{
-constexpr int WINDOW_WIDTH = 1200;
-constexpr int WINDOW_HEIGHT = 675;
-constexpr float PERSONAGE_MOVE_VELOCITY = 200.f;
-constexpr float M_PI = 3.14159f;
 
 // REVIEW -
 inline std::string const& GAME_NAME()

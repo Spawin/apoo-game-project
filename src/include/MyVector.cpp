@@ -1,6 +1,4 @@
 #include "include/MyVector.hpp"
-#include "include/consts.hpp"
-#include <cmath>
 
 void MyVector::operator+=(MyVector const& v)
 {
@@ -31,5 +29,6 @@ MyVector MyVector::operator*(float coefficient) const
 
 MyVector MyVector::createFromAngle(float simpleSize, float angleInDegree)
 {
-	return { simpleSize * static_cast<float>(cos(angleInDegree / 180.0000f * static_cast<float>(game::M_PI))), simpleSize * static_cast<float>(sin(angleInDegree / 180.0000f * game::M_PI)) };
+	// return { simpleSize * static_cast<float>(cos(angleInDegree / 180.0000f * static_cast<float>(M_PI))), simpleSize * static_cast<float>(sin(angleInDegree / 180.0000f * M_PI)) };
+	return { simpleSize * static_cast<float>(cos(angleInDegree / 180.0000f * M_PI)), simpleSize * static_cast<float>(sin(angleInDegree / 180.0000f * M_PI)) };
 }

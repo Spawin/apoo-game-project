@@ -18,7 +18,7 @@ private:
 	// Variables
 	Personage* personage;
 	/**
-	 * @brief Permet de controler de quelque coté diriger une animation (dauche ou droite)
+	 * @brief Permet de controler de quelque coté diriger une animation (gauche ou droite)
 	 *
 	 */
 	bool lastSideIsRight;

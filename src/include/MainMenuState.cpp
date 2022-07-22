@@ -110,7 +110,8 @@ MainMenuState::~MainMenuState()
 
 void MainMenuState::updateInput(const float& deltaTime)
 {
-	cout << deltaTime << endl;
+	if (deltaTime > 1)
+		cerr << deltaTime << endl;
 	// this->checkForQuit();
 }
 
