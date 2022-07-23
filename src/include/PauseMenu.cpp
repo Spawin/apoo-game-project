@@ -1,14 +1,21 @@
 #include "include/PauseMenu.hpp"
+// Fonction static
 
+// Fonctions d'initialisation
+
+// Constructeurs/Destructeur
 PauseMenu::PauseMenu(sf::VideoMode& vm, sf::Font& font) :
 	font(font)
 {
+	std::cout << "Pause menu : w=" << vm.width << " h=" << vm.height << std::endl;
+
 	//Init background
 	this->background.setSize(
 		sf::Vector2f(
 			static_cast<float>(vm.width),
 			static_cast<float>(vm.height)));
 	this->background.setFillColor(sf::Color(20, 20, 20, 100));
+	// this->background.setFillColor(sf::Color(255, 255, 255, 100));
 
 	//Init container
 	this->container.setSize(
@@ -39,12 +46,13 @@ PauseMenu::~PauseMenu()
 	}
 }
 
+// Fonctions/Méthodes
+
 std::map<std::string, gui::Button*>& PauseMenu::getButtons()
 {
 	return this->buttons;
 }
 
-//Functions
 bool PauseMenu::isButtonPressed(const std::string key)
 {
 	return this->buttons[key]->isPressed();

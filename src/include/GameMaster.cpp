@@ -6,26 +6,36 @@ using namespace std;
 const sf::Vector2i GameMaster::m_spriteBoxCenter(17, 16);
 int GameMaster::m_countInstance = 0;
 GameMaster* GameMaster::m_gameMaster = nullptr;
+float GameMaster::screenScalingFactor(1.f);
 
 //
 void GameMaster::initGraphicsSettings()
 {
+	// NOTE - Because we use this->window hera; we must parialy init it here...
+	this->window = new sf::RenderWindow();
+
 	//
 	this->graphicsSettings.loadFromFile("Config/window.ini");
+
+	util::Platform platform;
+	// in Windows at least, this must be called before creating the window
+	float screenScalingFactor = platform.getScreenScalingFactor(this->window->getSystemHandle());
+	GameMaster::screenScalingFactor = screenScalingFactor;
+
+	// Update the graphicsSetting.resolution with screenScalingFactor
+	this->graphicsSettings.resolution.width *= screenScalingFactor;
+	this->graphicsSettings.resolution.height *= screenScalingFactor;
+
+	// We set the icon here...
+	platform.setIcon(window->getSystemHandle());
 }
 
 void GameMaster::initWindow()
 {
-	this->window = new sf::RenderWindow();
-
-	util::Platform platform;
-	// in Windows at least, this must be called before creating the window
-	float screenScalingFactor = platform.getScreenScalingFactor(window->getSystemHandle());
-
 	sf::VideoMode vm = this->graphicsSettings.resolution;
-	// Use the screenScalingFactor
-	vm.width *= screenScalingFactor;
-	vm.height *= screenScalingFactor;
+	// // Use the screenScalingFactor
+	// vm.width *= screenScalingFactor;
+	// vm.height *= screenScalingFactor;
 
 	// Create the main window
 	if (this->graphicsSettings.fullscreen)
@@ -55,18 +65,16 @@ void GameMaster::initWindow()
 	this->window->setFramerateLimit(this->graphicsSettings.frameRateLimit);
 	this->window->setVerticalSyncEnabled(this->graphicsSettings.verticalSync);
 
-	platform.setIcon(window->getSystemHandle());
-
 	// Initialisations de l'espace pour tous les éléments du jeux
 	Position::initSpace((int)GameMap::getGAME_MAP_WIDTH, (int)GameMap::getGAME_MAP_HEIGHT);
 
-	// Construction de la maison
-	House house;
-	if (!house.load("content/house.png", sf::Vector2u(32, 32), house.getDisposition(), 40, 80))
-	{
-		std::cerr << "Erreur chargement < content/Tiles.png >" << std::endl;
-		return exit(-1);
-	}
+	//! Construction de la maison
+	// House house;
+	// if (!house.load("content/house.png", sf::Vector2u(32, 32), house.getDisposition(), 40, 80))
+	// {
+	// 	std::cerr << "Erreur chargement < content/Tiles.png >" << std::endl;
+	// 	return exit(-1);
+	// }
 
 	/* TODO - C'est pour la partie GameState
 	// Mise en place des vues
@@ -150,6 +158,11 @@ const sf::Vector2i GameMaster::getSPRITE_BOX_CENTER()
 const GameMaster* GameMaster::GAME_MASTER()
 {
 	return m_gameMaster;
+}
+
+float GameMaster::getSCREEN_SCALING_FACTOR()
+{
+	return screenScalingFactor;
 }
 
 // -----------------------------------

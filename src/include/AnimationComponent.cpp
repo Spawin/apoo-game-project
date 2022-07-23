@@ -7,7 +7,8 @@
 // Constructeurs/Destructeur
 AnimationComponent::AnimationComponent(sf::Sprite& sprite, sf::Texture& textureSheet) :
 	sprite(sprite),
-	textureSheet(textureSheet)
+	textureSheet(textureSheet),
+	lastAnimation(nullptr)
 {
 }
 
@@ -32,7 +33,18 @@ void AnimationComponent::addAnimation(const std::string animation, float animati
 
 // void AnimationComponent::resetAnimation(const std::string animation){}
 
-void AnimationComponent::play(const std::string animation, const float& deltatime)
+void AnimationComponent::play(const std::string animationKey, const float& deltatime)
 {
-	this->animations[animation]->play(deltatime);
+	if (this->lastAnimation != this->animations[animationKey])
+	{
+		if (this->lastAnimation == NULL)
+			this->lastAnimation = this->animations[animationKey];
+		else
+		{
+			this->lastAnimation->reset();
+			this->lastAnimation = this->animations[animationKey];
+		}
+	}
+
+	this->animations[animationKey]->play(deltatime);
 }

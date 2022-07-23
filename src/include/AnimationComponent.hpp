@@ -15,13 +15,14 @@ public:
 	// void startAnimation(const std::string animation);
 	// void pauseAnimation(const std::string animation);
 	// void resetAnimation(const std::string animation);
-	void play(const std::string animation, const float& deltatime);
+	void play(const std::string animationKey, const float& deltatime);
 
 private:
 	// Variables
 	sf::Sprite& sprite;
 	sf::Texture& textureSheet;
 	std::map<std::string, Animation*> animations;
+	Animation* lastAnimation;
 
 	// Fonctions d'initialisation
 };
