@@ -20,12 +20,28 @@ public:
 	// explicit Personage(float posX, float posY, bool isPlayer = false);
 	virtual ~Personage();
 
+	// Fonctions/Méthodes
+	// Getters
+	const int& getHealthLevel() const
+	{
+		return m_healthLevel;
+	}
+
+	const int& getSpecialityLevel() const
+	{
+		return m_specialityLevel;
+	}
+
+	//
+	bool isDied() const;
+
 	/**
 	 * @brief Pour dessiner l'élement dans la fenêtre.
 	 *
 	 * @param window
 	 */
-	virtual void show(sf::RenderTarget& window) override;
+	virtual void
+	show(sf::RenderTarget& window) override;
 
 	//Sera appelé à chaque frame...
 	void update() override;
@@ -34,18 +50,12 @@ public:
 
 	void onCollisionEnter(Collision const& collision) const override;
 
-	/**
-	 * @brief Get the Health object
-	 *
-	 * @return int
-	 */
-	int getHealth() const;
-
 	virtual void simpleAttack(Personage& target) = 0;
 	virtual void specialAttack(Personage& target) = 0;
 	virtual void move(MyVector& speed) override;
 
 protected:
+	// REVIEW - Faire les initialisation dans le cpp
 	/**
 	 * @brief Pour initialiser les valeur par défaut du GameObject
 	 *
@@ -58,10 +68,10 @@ protected:
 	void initAnimations();
 
 	// La quantité de vie du personnage
-	int m_health { 100 };
+	int m_healthLevel { 100 };
 
 	// La quantité de ça spécialité
-	int m_speciality { 100 };
+	int m_specialityLevel { 100 };
 
 	// Le nom de la spécialité
 	std::string m_specialtyName;

@@ -143,7 +143,7 @@ void GameState::update(const float& deltaTime)
 	else
 	{
 		//* Le jeu est en pause
-		cout << "En pause\n";
+		// cout << "En pause\n";
 		this->pauseMenu->update(this->mousePosWindow);
 		this->updatePauseMenuButtons();
 	}

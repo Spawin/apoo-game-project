@@ -22,29 +22,58 @@ AnimationComponent::~AnimationComponent()
 }
 
 // Fonctions/Méthodes
-void AnimationComponent::addAnimation(const std::string animation, float animationTimer, int start_x, int start_y, int end_x, int end_y, int width, int height)
+const bool& AnimationComponent::isDone(const std::string key)
 {
-	this->animations[animation] = new Animation(this->sprite, this->textureSheet, animationTimer, start_x, start_y, end_x, end_y, width, height);
+	return this->animations[key]->isDone();
 }
 
-// void AnimationComponent::startAnimation(const std::string animation){}
-
-// void AnimationComponent::pauseAnimation(const std::string animation){}
-
-// void AnimationComponent::resetAnimation(const std::string animation){}
-
-void AnimationComponent::play(const std::string animationKey, const float& deltatime)
+void AnimationComponent::addAnimation(int priority, const std::string animation, float animationTimer, int start_x, int start_y, int end_x, int end_y, int width, int height, bool fixLastFrame)
 {
-	if (this->lastAnimation != this->animations[animationKey])
+	this->animations[animation] = new Animation(priority, this->sprite, this->textureSheet, animationTimer, start_x, start_y, end_x, end_y, width, height, fixLastFrame);
+}
+
+bool AnimationComponent::canPlay(const std::string& animationKey)
+{
+	if (this->lastAnimation == nullptr)
 	{
-		if (this->lastAnimation == NULL)
-			this->lastAnimation = this->animations[animationKey];
-		else
-		{
-			this->lastAnimation->reset();
-			this->lastAnimation = this->animations[animationKey];
-		}
+		return true;
+	}
+	return this->animations[animationKey]->getPriority() < this->lastAnimation->getPriority() || this->lastAnimation->isDone();
+}
+
+const bool& AnimationComponent::play(const std::string& animationKey, const float& deltatime)
+{
+	if (this->lastAnimation == NULL)
+	{
+		// std::cout << "Ancien null\n";
+		this->lastAnimation = this->animations[animationKey];
 	}
 
-	this->animations[animationKey]->play(deltatime);
+	if (this->animations[animationKey]->getPriority() <= this->lastAnimation->getPriority())
+	{
+		// std::cout << "Est prioritaire\n";
+		if (this->lastAnimation != this->animations[animationKey])
+		{
+			// std::cout << "ancien diférent du nouveau\n";
+			this->lastAnimation->reset();
+		}
+		this->lastAnimation = this->animations[animationKey];
+
+		return this->animations[animationKey]->play(deltatime);
+	}
+	else
+	{
+		// On joue l'ancienne car la nouvelle n'est pas prioritaire.
+		if (!this->lastAnimation->isDone())
+		{
+			// std::cout << "l'ancienne n'est pas finie\n";
+			return this->lastAnimation->play(deltatime);
+		}
+
+		// std::cout << "l'ancienne est finie\n";
+		// L'ancienne animation est finie donc on va aller sur la nouvelle
+		this->lastAnimation->reset();
+		this->lastAnimation = this->animations[animationKey];
+		return this->animations[animationKey]->play(deltatime);
+	}
 }

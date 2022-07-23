@@ -21,11 +21,11 @@ Soldier::~Soldier()
 
 void Soldier::simpleAttack(Personage& target)
 {
-	cout << "" << target.getHealth();
+	cout << "" << target.getHealthLevel();
 }
 void Soldier::specialAttack(Personage& target)
 {
-	cout << "" << target.getHealth();
+	cout << "" << target.getHealthLevel();
 }
 
 void Soldier::show(sf::RenderTarget& window)

@@ -11,11 +11,33 @@ public:
 	~AnimationComponent();
 
 	// Fonctions/Méthodes
-	void addAnimation(const std::string animation, float animationTimer, int start_x, int start_y, int end_x, int end_y, int width, int height);
-	// void startAnimation(const std::string animation);
-	// void pauseAnimation(const std::string animation);
-	// void resetAnimation(const std::string animation);
-	void play(const std::string animationKey, const float& deltatime);
+	const bool& isDone(const std::string key);
+	/**
+	 * @brief
+	 *
+	 * @param priority
+	 * @param animation
+	 * @param animationTimer
+	 * @param start_x
+	 * @param start_y
+	 * @param end_x
+	 * @param end_y
+	 * @param width
+	 * @param height
+	 * @param fixLastFrame indique si l'animation une fois arrivée à la dernière frame ne dois pas recommencer de zéro (si bien sur c'est elle qui à la priorité)
+	 */
+	void addAnimation(int priority, const std::string animation, float animationTimer, int start_x, int start_y, int end_x, int end_y, int width, int height, bool fixLastFrame = false);
+	/**
+	 * @brief Vérifie si cette animation peut etre lancée
+	 * (on va comparer les priorité)
+	 * Retourne vrai si la dernière animation est finie ou si la nouvelle animation est prioritaire
+	 *
+	 * @param animationKey
+	 * @return true
+	 * @return false
+	 */
+	bool canPlay(const std::string& animationKey);
+	const bool& play(const std::string& animationKey, const float& deltatime);
 
 private:
 	// Variables

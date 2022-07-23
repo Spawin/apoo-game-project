@@ -60,21 +60,21 @@ void Personage::initAnimations()
 	// Création du gestionnaire d'animation
 	this->createAnimationComponent(m_texture);
 	// Ajout des animations
-	this->animationComponent->addAnimation("RIGHT_IDLE", 10.f, 0, 0, 0, 0, 150, 150);
-	this->animationComponent->addAnimation("RIGHT_WALK", 10.f, 0, 0, 3, 0, 150, 150);				 //
-	this->animationComponent->addAnimation("RIGHT_ATTACK_BOXING_GLOVES", 5.f, 0, 2, 8, 2, 150, 150); // Une fois
-	this->animationComponent->addAnimation("RIGHT_ATTACK_SWORD", 6.f, 0, 4, 4, 4, 150, 150);		 // Une fois
-	this->animationComponent->addAnimation("RIGHT_DEFEND_SHIELD", 6.f, 0, 6, 3, 6, 150, 150);		 // Une fois et reste maintenu
-	this->animationComponent->addAnimation("RIGHT_HURT", 5.f, 0, 8, 1, 8, 150, 150);				 // Une fois
-	this->animationComponent->addAnimation("RIGHT_DIE", 10.f, 0, 10, 7, 10, 150, 150);				 // Une fois et reste maintenu
+	this->animationComponent->addAnimation(4, "RIGHT_IDLE", 10.f, 0, 0, 0, 0, 150, 150);
+	this->animationComponent->addAnimation(3, "RIGHT_WALK", 10.f, 0, 0, 3, 0, 150, 150);				//
+	this->animationComponent->addAnimation(2, "RIGHT_ATTACK_BOXING_GLOVES", 5.f, 0, 2, 8, 2, 150, 150); // Une fois
+	this->animationComponent->addAnimation(2, "RIGHT_ATTACK_SWORD", 7.f, 0, 4, 4, 4, 150, 150);			// Une fois
+	this->animationComponent->addAnimation(2, "RIGHT_DEFEND_SHIELD", 6.f, 0, 6, 3, 6, 150, 150, true);	// Une fois et reste maintenu
+	this->animationComponent->addAnimation(1, "RIGHT_HURT", 5.f, 0, 8, 1, 8, 150, 150);					// Une fois
+	this->animationComponent->addAnimation(0, "RIGHT_DIE", 10.f, 0, 10, 7, 10, 150, 150);				// Une fois et reste maintenu
 
-	this->animationComponent->addAnimation("LEFT_IDLE", 10.f, 0, 1, 0, 1, 150, 150);
-	this->animationComponent->addAnimation("LEFT_WALK", 10.f, 0, 1, 3, 1, 150, 150);				//
-	this->animationComponent->addAnimation("LEFT_ATTACK_BOXING_GLOVES", 5.f, 0, 3, 8, 3, 150, 150); // Une fois
-	this->animationComponent->addAnimation("LEFT_ATTACK_SWORD", 6.f, 0, 5, 4, 5, 150, 150);			// Une fois
-	this->animationComponent->addAnimation("LEFT_DEFEND_SHIELD", 6.f, 0, 7, 3, 7, 150, 150);		// Une fois et reste maintenu
-	this->animationComponent->addAnimation("LEFT_HURT", 5.f, 0, 9, 1, 9, 150, 150);					// Une fois
-	this->animationComponent->addAnimation("LEFT_DIE", 10.f, 0, 11, 7, 11, 150, 150);				// Une fois et reste maintenu
+	this->animationComponent->addAnimation(4, "LEFT_IDLE", 10.f, 0, 1, 0, 1, 150, 150);
+	this->animationComponent->addAnimation(3, "LEFT_WALK", 10.f, 0, 1, 3, 1, 150, 150);				   //
+	this->animationComponent->addAnimation(2, "LEFT_ATTACK_BOXING_GLOVES", 5.f, 0, 3, 8, 3, 150, 150); // Une fois
+	this->animationComponent->addAnimation(2, "LEFT_ATTACK_SWORD", 7.f, 0, 5, 4, 5, 150, 150);		   // Une fois
+	this->animationComponent->addAnimation(2, "LEFT_DEFEND_SHIELD", 6.f, 0, 7, 3, 7, 150, 150, true);  // Une fois et reste maintenu
+	this->animationComponent->addAnimation(1, "LEFT_HURT", 5.f, 0, 9, 1, 9, 150, 150);				   // Une fois
+	this->animationComponent->addAnimation(0, "LEFT_DIE", 10.f, 0, 11, 7, 11, 150, 150);			   // Une fois et reste maintenu
 }
 
 Personage::Personage(bool isPlayer) :
@@ -105,6 +105,12 @@ Personage::~Personage()
 	m_window = nullptr;
 }
 
+//
+bool Personage::isDied() const
+{
+	return m_healthLevel == 0; // REVIEW -
+}
+
 void Personage::show(sf::RenderTarget& window)
 {
 	GameObject::show(window);
@@ -129,11 +135,6 @@ void Personage::onCollisionEnter(Collision const& collision) const
 		// cout << "Collision de " << m_gameObjectName << " avec "
 		// 	 << "collision.getGameObject()->getGameObjectName()" << endl;
 	}
-}
-
-int Personage::getHealth() const
-{
-	return m_health;
 }
 
 void Personage::updatePosition(Position& position)

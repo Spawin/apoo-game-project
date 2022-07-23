@@ -11,6 +11,7 @@ public:
 
 	// Fonctions/Méthodes
 	void manageMove(const float& deltaTime);
+	// void updateAnimation(const float& deltaTime);
 	void update(const float& deltaTime);
 	void render(sf::RenderTarget& target);
 
@@ -22,6 +23,8 @@ private:
 	 *
 	 */
 	bool lastSideIsRight;
+
+	float waitAnimationEnd;
 
 	// Fonctions d'initialisation
 };
