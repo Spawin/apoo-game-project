@@ -26,15 +26,16 @@
 
 namespace game
 {
+//* ------------------- Constantes
 constexpr int WINDOW_WIDTH = 1200;
 constexpr int WINDOW_HEIGHT = 675;
 constexpr float PERSONAGE_MOVE_VELOCITY = 300.f;
 
-constexpr float GAME_MAP_WIDTH = 32 * 40;
-constexpr float GAME_MAP_HEIGHT = 32 * 80;
-constexpr int HOUSE_TILES_NUMBER = 40 * 80;
+constexpr int GAME_BLOCKS_WIDTH = 200; //32; // Taille de la largeur d'un bloc; un bloc est carré...
 
-constexpr int GAME_BLOCKS_WIDTH = 32; // Taille de la largeur d'un bloc; un bloc est carré...
+constexpr float GAME_MAP_WIDTH = game::GAME_BLOCKS_WIDTH * 40;
+constexpr float GAME_MAP_HEIGHT = game::GAME_BLOCKS_WIDTH * 80;
+constexpr int HOUSE_TILES_NUMBER = 40 * 80;
 
 enum movement_states
 {
@@ -45,6 +46,9 @@ enum movement_states
 	MOVING_UP,
 	MOVING_DOWN
 };
+
+//* ------------------- Variables
+// static float SCREEN_SCALING_FACTOR = 1.f;
 
 // REVIEW -
 inline std::string const& GAME_NAME()

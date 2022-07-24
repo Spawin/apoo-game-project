@@ -10,6 +10,7 @@ public:
 	House();
 	~House();
 
+	//
 	virtual const int* getDisposition() const override;
 	// virtual void render(sf::RenderTarget& target, sf::Vector2f playerPosition) override;
 

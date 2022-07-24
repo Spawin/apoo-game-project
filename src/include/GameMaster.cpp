@@ -21,6 +21,7 @@ void GameMaster::initGraphicsSettings()
 	// in Windows at least, this must be called before creating the window
 	float screenScalingFactor = platform.getScreenScalingFactor(this->window->getSystemHandle());
 	GameMaster::screenScalingFactor = screenScalingFactor;
+	// game::SCREEN_SCALING_FACTOR = screenScalingFactor;
 
 	// Update the graphicsSetting.resolution with screenScalingFactor
 	this->graphicsSettings.resolution.width *= screenScalingFactor;

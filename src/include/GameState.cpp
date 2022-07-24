@@ -1,4 +1,5 @@
 #include "include/GameState.hpp"
+#include "include/consts.hpp"
 
 using namespace std;
 
@@ -47,7 +48,7 @@ void GameState::initGameMap()
 	// REVIEW - Charger les textures à partir d'ici
 	this->gameMap = new House();
 
-	if (!this->gameMap->load("content/house.png", sf::Vector2u(32, 32), this->gameMap->getDisposition(), 40, 80))
+	if (!this->gameMap->load("content/house/house.png", sf::Vector2u(game::GAME_BLOCKS_WIDTH, game::GAME_BLOCKS_WIDTH), this->gameMap->getDisposition(), 40, 80))
 	{
 		std::cerr << "Erreur chargement < content/Tiles.png >" << std::endl;
 		return exit(-1);

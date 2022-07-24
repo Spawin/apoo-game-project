@@ -1,4 +1,6 @@
 #include "include/GameMap.hpp"
+// #include "include/GameMaster.hpp"
+#include "include/consts.hpp"
 
 GameMap::GameMap()
 {
@@ -8,6 +10,7 @@ GameMap::~GameMap()
 {
 }
 
+//! Remove after
 bool GameMap::load(const std::string& tileset, sf::Vector2u tileSize, const int* tiles, unsigned int width, unsigned int height)
 {
 	// on charge la texture du tileset
@@ -106,6 +109,8 @@ bool GameMap::load(const std::string& tileset, sf::Vector2u* tileSize, sf::Vecto
 			// 	{
 			// 	}
 		}
+
+	// this->setScale(GameMaster::getSCREEN_SCALING_FACTOR(), GameMaster::getSCREEN_SCALING_FACTOR());
 
 	return true;
 }
