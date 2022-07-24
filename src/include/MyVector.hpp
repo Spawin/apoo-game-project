@@ -20,8 +20,8 @@ struct MyVector
 	 * @return MyVector
 	 */
 	static MyVector createFromAngle(float simpleSize, float angleInDegree);
-	float m_x { 0.f };
-	float m_y { 0.f };
+	float x { 0.f };
+	float y { 0.f };
 	sf::Vector2f toVector2f();
 };
 

@@ -232,6 +232,6 @@ void Personage::updatePosition(Position& position)
 
 void Personage::move(MyVector& speed)
 {
-	Position p(getPosition().getX() + speed.m_x, getPosition().getY() + speed.m_y);
+	Position p(getPosition().getX() + speed.x, getPosition().getY() + speed.y);
 	updatePosition(p);
 }

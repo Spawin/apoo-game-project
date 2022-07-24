@@ -22,7 +22,7 @@ void MainMenuState::initGui()
 
 	//* Background
 	this->background.setSize(sf::Vector2f(this->window->getSize().x, this->window->getSize().y));
-	if (!this->backgroundTexture.loadFromFile("content/backgrounds/bg1.png"))
+	if (!this->backgroundTexture.loadFromFile("content/backgrounds/backgrounds.png"))
 	{
 		throw "ERROR::MAIN_MENU_STATE::FAILED_TO_LOAD_BACKGROUND_TEXTURE";
 	}

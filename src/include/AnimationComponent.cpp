@@ -32,12 +32,19 @@ void AnimationComponent::addAnimation(int priority, const std::string animation,
 	this->animations[animation] = new Animation(priority, this->sprite, this->textureSheet, animationTimer, start_x, start_y, end_x, end_y, width, height, fixLastFrame);
 }
 
-bool AnimationComponent::canPlay(const std::string& animationKey)
+bool AnimationComponent::canPlay(const std::string& animationKey, bool allowSimilar)
 {
 	if (this->lastAnimation == nullptr)
 	{
 		return true;
 	}
+
+	if (allowSimilar)
+		if (this->animations[animationKey] == this->lastAnimation)
+		{
+			return true;
+		}
+
 	return this->animations[animationKey]->getPriority() < this->lastAnimation->getPriority() || this->lastAnimation->isDone();
 }
 

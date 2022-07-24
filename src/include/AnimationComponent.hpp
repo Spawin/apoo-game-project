@@ -33,10 +33,11 @@ public:
 	 * Retourne vrai si la dernière animation est finie ou si la nouvelle animation est prioritaire
 	 *
 	 * @param animationKey
+	 * @param allowSimilar renvera true si c'est la même animation qui est en cours
 	 * @return true
 	 * @return false
 	 */
-	bool canPlay(const std::string& animationKey);
+	bool canPlay(const std::string& animationKey, bool allowSimilar = false);
 	const bool& play(const std::string& animationKey, const float& deltatime);
 
 private:

@@ -2,29 +2,29 @@
 
 void MyVector::operator+=(MyVector const& v)
 {
-	m_x += v.m_x;
-	m_y += v.m_y;
+	x += v.x;
+	y += v.y;
 }
 
 void MyVector::operator-=(MyVector const& v)
 {
-	m_x -= v.m_x;
-	m_y -= v.m_y;
+	x -= v.x;
+	y -= v.y;
 }
 
 bool MyVector::operator==(MyVector const& v)
 {
-	return m_x == v.m_x && m_y == v.m_y;
+	return x == v.x && y == v.y;
 }
 
 bool MyVector::operator!=(sf::Vector2f const& v)
 {
-	return m_x != v.x || m_y != v.y;
+	return x != v.x || y != v.y;
 }
 
 MyVector MyVector::operator*(float coefficient) const
 {
-	return { m_x * coefficient, m_y * coefficient };
+	return { x * coefficient, y * coefficient };
 }
 
 MyVector MyVector::createFromAngle(float simpleSize, float angleInDegree)
@@ -35,5 +35,5 @@ MyVector MyVector::createFromAngle(float simpleSize, float angleInDegree)
 
 sf::Vector2f MyVector::toVector2f()
 {
-	return sf::Vector2f(m_x, m_y);
+	return sf::Vector2f(x, y);
 }

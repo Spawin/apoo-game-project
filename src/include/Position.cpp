@@ -67,8 +67,8 @@ float Position::getY() const
 void Position::operator+=(MyVector const& v)
 {
 	setPreviousPosition(m_x, m_y);
-	m_x += v.m_x;
-	m_y += v.m_y;
+	m_x += v.x;
+	m_y += v.y;
 	recalculate();
 }
 
@@ -105,13 +105,13 @@ void Position::recalculate()
 
 	if (!canMove() || m_thereIsARigidBody)
 	{
-		if (m_x != m_previousPosition.m_x)
+		if (m_x != m_previousPosition.x)
 		{
-			m_x = m_previousPosition.m_x;
+			m_x = m_previousPosition.x;
 		}
-		if (m_y != m_previousPosition.m_y)
+		if (m_y != m_previousPosition.y)
 		{
-			m_y = m_previousPosition.m_y;
+			m_y = m_previousPosition.y;
 		}
 		m_thereIsARigidBody = false;
 	}
@@ -213,7 +213,7 @@ void Position::recalculate()
 float Position::getDistanceWith(Position const& autre) const
 {
 	auto delta = MyVector { std::min({ abs(m_x - autre.m_x), abs(m_x - autre.m_x - m_spaceWidth), abs(m_x - autre.m_x + m_spaceWidth) }), std::min({ abs(m_y - autre.m_y), abs(m_y - autre.m_y - m_spaceHeight), abs(m_y - autre.m_y + m_spaceHeight) }) };
-	return sqrt(delta.m_x * delta.m_x + delta.m_y * delta.m_y);
+	return sqrt(delta.x * delta.x + delta.y * delta.y);
 }
 
 void Position::setPosition(float posX, float posY)
@@ -231,8 +231,8 @@ MyVector Position::getPosition() const
 
 void Position::setPreviousPosition(float x, float y)
 {
-	m_previousPosition.m_x = x;
-	m_previousPosition.m_y = y;
+	m_previousPosition.x = x;
+	m_previousPosition.y = y;
 }
 
 void Position::setPreviousPosition(MyVector v)

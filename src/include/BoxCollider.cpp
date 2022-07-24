@@ -49,13 +49,13 @@ bool BoxCollider::touchEachOther(Collider const& collider) const
 	for (size_t j = 0; j < collider.getContactPoints().size(); j++)
 	{
 		sf::Vector2f p2 = collider.getContactPoints()[j];
-		p2.x += c2.m_x;
-		p2.y += c2.m_y;
+		p2.x += c2.x;
+		p2.y += c2.y;
 
 		// sf::Vector2f point = collider.getContactPoints()[j];
-		if ((m_leftTopPoint.x + c1.m_x) < p2.x && p2.x < (m_leftTopPoint.x + c1.m_x + m_width))
+		if ((m_leftTopPoint.x + c1.x) < p2.x && p2.x < (m_leftTopPoint.x + c1.x + m_width))
 		{
-			if ((m_leftTopPoint.y + c1.m_y - m_height) < p2.y && p2.y < (m_leftTopPoint.y + c1.m_y))
+			if ((m_leftTopPoint.y + c1.y - m_height) < p2.y && p2.y < (m_leftTopPoint.y + c1.y))
 			{
 				return true;
 			}

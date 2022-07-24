@@ -86,7 +86,7 @@ void Player::manageMove(const float& deltaTime)
 	}
 
 	// Mouvement de déplacement: marche
-	if (this->personage->getAnimationComponent()->canPlay("RIGHT_WALK"))
+	if (this->personage->getAnimationComponent()->canPlay("RIGHT_WALK", true) || this->personage->getAnimationComponent()->canPlay("LEFT_WALK", true))
 	{
 
 		MyVector speed { 0.f, 0.f };
@@ -120,21 +120,29 @@ void Player::manageMove(const float& deltaTime)
 			// std::cout << "\t X" << speed.m_x << " Y" << speed.m_y << std::endl;
 
 			// Animation
-			if (speed.m_x < 0.0f)
+			if (speed.x < 0.0f)
 			{
-				this->personage->getAnimationComponent()->play("LEFT_WALK", deltaTime);
+				// Vérifie que l'animation précedente de la marche est terminée
+				if (this->personage->getAnimationComponent()->isDone("RIGHT_WALK") || this->personage->getAnimationComponent()->isDone("LEFT_WALK"))
+				{
+					this->personage->getAnimationComponent()->play("LEFT_WALK", deltaTime);
+				}
 
 				this->lastSideIsRight = false;
 			}
 			else
 			{
-				this->personage->getAnimationComponent()->play("RIGHT_WALK", deltaTime);
+				// Vérifie que l'animation précedente de la marche est terminée
+				if (this->personage->getAnimationComponent()->isDone("RIGHT_WALK") || this->personage->getAnimationComponent()->isDone("LEFT_WALK"))
+				{
+					this->personage->getAnimationComponent()->play("RIGHT_WALK", deltaTime);
+				}
 
 				this->lastSideIsRight = true;
 			}
 
-			speed.m_x *= deltaTime * game::PERSONAGE_MOVE_VELOCITY;
-			speed.m_y *= deltaTime * game::PERSONAGE_MOVE_VELOCITY;
+			speed.x *= deltaTime * game::PERSONAGE_MOVE_VELOCITY;
+			speed.y *= deltaTime * game::PERSONAGE_MOVE_VELOCITY;
 			this->personage->move(speed);
 			return;
 		}
