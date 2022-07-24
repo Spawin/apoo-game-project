@@ -20,7 +20,7 @@
 #define DEFAULT_DETECTABILITY_RADIUS 16	   // Diamètre 32
 #define PERSONNAGE_DETECTABILITY_RADIUS 16 // Diamètre 32
 #define PERSONNAGE_WIDTH 32				   // Diamètre de la zone occupé par un personnage
-#define GAME_BLOCKS_WIDTH 32			   // Taille de la largeur d'un bloc; un bloc est carré...
+// #define GAME_BLOCKS_WIDTH 32			   // Taille de la largeur d'un bloc; un bloc est carré...
 
 #define WALL_WIDTH 32
 
@@ -33,6 +33,8 @@ constexpr float PERSONAGE_MOVE_VELOCITY = 300.f;
 constexpr float GAME_MAP_WIDTH = 32 * 40;
 constexpr float GAME_MAP_HEIGHT = 32 * 80;
 constexpr int HOUSE_TILES_NUMBER = 40 * 80;
+
+constexpr int GAME_BLOCKS_WIDTH = 32; // Taille de la largeur d'un bloc; un bloc est carré...
 
 enum movement_states
 {

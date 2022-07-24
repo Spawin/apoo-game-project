@@ -118,10 +118,6 @@ void PauseMenu::setGraphicsElementPosition(sf::View const& view)
 	for (auto& i : this->buttons)
 	{
 		// i.second->setPosition(i.second->getPosition().x + addX, i.second->getPosition().y + addY);
-		// std::cout << "1-ok " << this->container.getPosition().x;
-		// std::cout << " 2-ok " << this->container.getSize().x / 2.f;
-		// std::cout << " 3-ok " << -std::floor(s.x * (13.f / 100.f)) / 2.f << std::endl;
-		// std::cout << " 4-Y " << std::floor(s.y * (74.f / 100.f)) << std::endl;
 		i.second->setPosition((this->container.getPosition().x + this->container.getSize().x / 2.f - std::floor(s.x * (13.f / 100.f)) / 2.f), std::floor(s.y * (74.f / 100.f)) + addY, addX, addY);
 	}
 }

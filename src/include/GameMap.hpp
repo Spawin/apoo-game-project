@@ -7,6 +7,8 @@ public:
 	GameMap();
 	~GameMap();
 
+	virtual const int* getDisposition() const = 0;
+
 	bool load(const std::string& tileset, sf::Vector2u tileSize, const int* tiles, unsigned int width, unsigned int height);
 	/**
 	 * @brief

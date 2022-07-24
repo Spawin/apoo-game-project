@@ -1,11 +1,7 @@
-#include "include/House.hpp"
-#include <algorithm>
-#include <cmath>
-#include <iostream>
-#include <math.h>
+#include "include/Test.hpp"
 
-House::House() :
-	m_disposition {
+Maison::Maison() :
+	disposition {
 		0,
 		2,
 		2,
@@ -3286,69 +3282,30 @@ House::House() :
 		2,
 		11,
 	}
+
 {
-	// m_sprite
+	this->background.setSize(sf::Vector2f(500.f, 500.f));
+	this->background.setFillColor(sf::Color::Green);
+
+	if (!this->texture.loadFromFile("content/house.png"))
+	{
+		std::cerr << "erreur chargement dans GameMap :"
+				  << "content/house.png" << std::endl;
+		exit(-1);
+	}
+
+	// this->sprite.set
 }
 
-House::~House()
+Maison::~Maison()
 {
 }
 
 //
 
-const int* House::getDisposition() const
-{
-	return m_disposition;
-}
-
-/*
-void House::render(sf::RenderTarget& target, sf::Vector2f playerPosition)
-{ // on charge la texture du tileset
-	if (!m_tileset.loadFromFile("content/house.png"))
-	{
-		std::cerr << "erreur chargement dans GameMap :"
-				  << "content/house.png" << std::endl;
-		return exit(-1);
-	}
-
-	unsigned int width(10);
-	unsigned int height(10);
-	const int* tiles = m_disposition;
-	sf::Vector2u tileSize(32, 32);
-	unsigned int startBlocX(ceil(playerPosition.x / (float)game::GAME_BLOCKS_WIDTH) - ceil(width / 2));
-	unsigned int startBlocY(ceil(playerPosition.y / (float)game::GAME_BLOCKS_WIDTH) - ceil(height / 2));
-
-	// on redimensionne le tableau de vertex pour qu'il puisse contenir tout le niveau
-	m_vertices.setPrimitiveType(sf::Quads);
-	m_vertices.resize(width * height * 4);
-
-	for (unsigned int i = startBlocX; i < width; ++i)
-		for (unsigned int j = startBlocY; j < height; ++j)
-		{
-			// on récupère le numéro de tuile courant
-			// int tileNumber = tiles[i + j * width];
-			int tileNumber = tiles[i + j * width];
-
-			// on en déduit sa position dans la texture du tileset
-			int tu = tileNumber % (m_tileset.getSize().x / tileSize.x);
-			int tv = tileNumber / (m_tileset.getSize().x / tileSize.x);
-
-			// on récupère un pointeur vers le quad à définir dans le tableau de vertex
-			sf::Vertex* quad = &m_vertices[(i + j * width) * 4];
-
-			// on définit ses quatre coins
-			quad[0].position = sf::Vector2f(i * tileSize.x, j * tileSize.y);
-			quad[1].position = sf::Vector2f((i + 1) * tileSize.x, j * tileSize.y);
-			quad[2].position = sf::Vector2f((i + 1) * tileSize.x, (j + 1) * tileSize.y);
-			quad[3].position = sf::Vector2f(i * tileSize.x, (j + 1) * tileSize.y);
-
-			// on définit ses quatre coordonnées de texture
-			quad[0].texCoords = sf::Vector2f(tu * tileSize.x, tv * tileSize.y);
-			quad[1].texCoords = sf::Vector2f((tu + 1) * tileSize.x, tv * tileSize.y);
-			quad[2].texCoords = sf::Vector2f((tu + 1) * tileSize.x, (tv + 1) * tileSize.y);
-			quad[3].texCoords = sf::Vector2f(tu * tileSize.x, (tv + 1) * tileSize.y);
-		}
-
-	target.draw(*this);
-}
-// */
+void Maison::update()
+{}
+// void Maison::render(sf::RenderTarget& target, sf::Vector2f playerPosition)
+// {
+// 	target.draw(this->background);
+// }

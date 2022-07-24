@@ -83,7 +83,7 @@ void Position::operator=(Position const& p)
 std::ostream& operator<<(std::ostream& out, Position const& p)
 {
 	out << "[ x=" << p.getX() << " , y=" << p.getY() << " ]";
-	out << " Block [ x=" << ceil(p.getX() / (float)GAME_BLOCKS_WIDTH) << " , y=" << ceil(p.getY() / (float)GAME_BLOCKS_WIDTH) << " ]";
+	out << " Block [ x=" << ceil(p.getX() / (float)game::GAME_BLOCKS_WIDTH) << " , y=" << ceil(p.getY() / (float)game::GAME_BLOCKS_WIDTH) << " ]";
 	return out;
 }
 

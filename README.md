@@ -1,3 +1,6 @@
+# Quelque points :
+- là ou il y a les override, ajouter virtual devant
+
 # Liste des classes
 - GameObject Abstract
   -

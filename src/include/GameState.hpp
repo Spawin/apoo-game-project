@@ -3,6 +3,7 @@
 
 	#include "State.hpp"
 	#include "include/PauseMenu.hpp"
+	#include "include/GameMap.hpp"
 
 class GameState : public State
 {
@@ -39,12 +40,15 @@ private:
 
 	PauseMenu* pauseMenu;
 
+	GameMap* gameMap;
+
 	// Fonctions d'initialisation
 	void initDeferredRender();
 	void initFonts();
 	void initPauseMenu();
 	void initKeyTime();
 
+	void initGameMap();
 	void initPlayer();
 };
 

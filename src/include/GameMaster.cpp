@@ -262,6 +262,7 @@ void GameMaster::run()
 	{
 		this->updateDeltatime();
 		this->update();
+		// this->window->clear(); // REVIEW - Il n'était pas là et ça marchait
 		this->render();
 	}
 }

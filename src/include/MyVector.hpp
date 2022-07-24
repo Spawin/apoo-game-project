@@ -22,6 +22,7 @@ struct MyVector
 	static MyVector createFromAngle(float simpleSize, float angleInDegree);
 	float m_x { 0.f };
 	float m_y { 0.f };
+	sf::Vector2f toVector2f();
 };
 
 #endif // __MYVECTOR_HPP__

@@ -16,6 +16,11 @@ Player::~Player()
 }
 
 // Fonctions/Méthodes
+sf::Vector2f Player::getPosition() const
+{
+	return this->personage->getPosition().getPosition().toVector2f();
+}
+
 void Player::manageMove(const float& deltaTime)
 {
 	// On ne fait pas de mouvement quand on est mort...

@@ -42,6 +42,18 @@ void GameState::initKeyTime()
 	this->keyTimer.restart();
 }
 
+void GameState::initGameMap()
+{
+	// REVIEW - Charger les textures à partir d'ici
+	this->gameMap = new House();
+
+	if (!this->gameMap->load("content/house.png", sf::Vector2u(32, 32), this->gameMap->getDisposition(), 40, 80))
+	{
+		std::cerr << "Erreur chargement < content/Tiles.png >" << std::endl;
+		return exit(-1);
+	}
+}
+
 void GameState::initPlayer()
 {
 	cout << "Initialisation du joueur\n";
@@ -62,6 +74,7 @@ GameState::GameState(StateData* stateData) :
 	this->initKeyTime();
 	// this->initDebugText();
 
+	this->initGameMap();
 	this->initPlayer();
 	// this->initPlayerGUI();
 	// this->initEnemySystem();
@@ -73,6 +86,7 @@ GameState::~GameState()
 {
 	delete this->pauseMenu;
 	delete this->player;
+	delete this->gameMap;
 }
 
 // Fonctions/Méthodes
@@ -157,6 +171,10 @@ void GameState::render(sf::RenderTarget* target)
 
 	// On éfface
 	this->renderTexture.clear();
+
+	// On rend la maison
+	// this->gameMap->render(this->renderTexture, this->player->getPosition());
+	renderTexture.draw(*this->gameMap);
 
 	// this->player->render((*target));
 	this->player->render(this->renderTexture);
