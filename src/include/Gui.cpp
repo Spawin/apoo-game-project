@@ -85,6 +85,8 @@ gui::Button::Button(float x, float y, float width, float height,
 	this->outlineIdleColor = outline_idle_color;
 	this->outlineHoverColor = outline_hover_color;
 	this->outlineActiveColor = outline_active_color;
+
+	this->offset = sf::Vector2f(0.f, 0.f);
 }
 
 gui::Button::~Button()
@@ -120,14 +122,34 @@ void gui::Button::setId(const short unsigned id)
 	this->id = id;
 }
 
+const sf::Vector2f& gui::Button::getPosition() const
+{
+	return this->shape.getPosition();
+}
+
+void gui::Button::setPosition(float x, float y, float addX, float addY)
+{
+	// std::cout << "Param Pos : x=" << x << " y=" << y << std::endl;
+	this->shape.setPosition(x, y);
+	// std::cout << "Shape Pos : x=" << this->shape.getPosition().x << " y=" << this->shape.getPosition().y << std::endl;
+	// std::cout << "Shape getGlobalBounds : x=" << this->shape.getPosition().x << " y=" << this->shape.getPosition().y << std::endl;
+	this->text.setPosition(
+		this->shape.getPosition().x + (this->shape.getGlobalBounds().width / 2.f) - this->text.getGlobalBounds().width / 2.f,
+		this->shape.getPosition().y);
+
+	this->offset = sf::Vector2f(addX, addY);
+}
+
 void gui::Button::update(const sf::Vector2i& mousePosWindow)
 {
+
 	// std::cout << "Position de la souris " << mousePosWindow.x << " " << mousePosWindow.y << std::endl;
+	// std::cout << "Position du shape " << this->shape.getPosition().x << " " << this->shape.getPosition().y << std::endl;
 	// Idle
 	this->buttonState = BTN_IDLE;
 
 	// Hover
-	if (this->shape.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePosWindow)))
+	if (this->shape.getGlobalBounds().contains(mousePosWindow.x + this->offset.x, mousePosWindow.y + this->offset.y)) // NOTE - On a ajouter la position du shape pour tenir compte des décalage lors de l'affichage du menu dans certaines vues
 	{
 		this->buttonState = BTN_HOVER;
 

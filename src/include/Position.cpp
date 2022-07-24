@@ -246,16 +246,16 @@ bool Position::canMove()
 	// On va repousser la zone de non mouvement d'un facteur
 	// pour qu'il n'y ai pas de conflit avec la zone de redéploiment avec la fonction recalculate d'un corps qui ne doit pas bouger.
 	int fac(0);
-	if (isBetween(m_y, 6 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, (int)GameMap::getGAME_MAP_HEIGHT - WALL_WIDTH - DETECTABILITY_RADIUS + fac))
+	if (isBetween(m_y, 6 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, (int)game::GAME_MAP_HEIGHT - WALL_WIDTH - DETECTABILITY_RADIUS + fac))
 	{
-		if (isBetween(m_x, WALL_WIDTH + DETECTABILITY_RADIUS - fac, (int)GameMap::getGAME_MAP_WIDTH - WALL_WIDTH - DETECTABILITY_RADIUS + fac))
+		if (isBetween(m_x, WALL_WIDTH + DETECTABILITY_RADIUS - fac, (int)game::GAME_MAP_WIDTH - WALL_WIDTH - DETECTABILITY_RADIUS + fac))
 		{
 			canMove = true;
 		}
 	}
 	else if (isBetween(m_y, WALL_WIDTH + DETECTABILITY_RADIUS - fac, (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 2 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, 2 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 3 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, 3 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 4 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, 4 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 5 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, 5 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 6 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac))
 	{
-		if (isBetween(m_x, WALL_WIDTH + DETECTABILITY_RADIUS - fac, (int)Hall::getMIN_WIDTH - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_x, (int)Hall::getMIN_WIDTH + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_x, (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, (int)GameMap::getGAME_MAP_WIDTH - WALL_WIDTH - DETECTABILITY_RADIUS + fac))
+		if (isBetween(m_x, WALL_WIDTH + DETECTABILITY_RADIUS - fac, (int)Hall::getMIN_WIDTH - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_x, (int)Hall::getMIN_WIDTH + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_x, (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, (int)game::GAME_MAP_WIDTH - WALL_WIDTH - DETECTABILITY_RADIUS + fac))
 		{
 			canMove = true;
 		}

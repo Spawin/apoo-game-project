@@ -32,7 +32,7 @@ void GameState::initPauseMenu()
 {
 	const sf::VideoMode& vm = this->stateData->graphicsSettings->resolution;
 	this->pauseMenu = new PauseMenu(this->stateData->graphicsSettings->resolution, this->font);
-
+	cout << "init menu y=" << gui::p2pY(74.f, vm) << endl;
 	this->pauseMenu->addButton("QUIT", gui::p2pY(74.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Quitter");
 }
 
@@ -155,21 +155,25 @@ void GameState::render(sf::RenderTarget* target)
 	if (!target)
 		target = this->window;
 
-	this->player->render((*target));
+	// On éfface
+	this->renderTexture.clear();
+
+	// this->player->render((*target));
+	this->player->render(this->renderTexture);
 
 	if (this->paused) //Pause menu render
 	{
 		//this->renderTexture.setView(this->renderTexture.getDefaultView());
 		this->pauseMenu->render(this->renderTexture);
 
-		//FINAL RENDER
-		this->renderTexture.display();
-		this->renderSprite.setTexture(this->renderTexture.getTexture());
-		target->draw(this->renderSprite);
+		// //FINAL RENDER
+		// this->renderTexture.display();
+		// this->renderSprite.setTexture(this->renderTexture.getTexture());
+		// target->draw(this->renderSprite);
 	}
 
-	// //FINAL RENDER
-	// this->renderTexture.display();
-	// this->renderSprite.setTexture(this->renderTexture.getTexture());
-	// target->draw(this->renderSprite);
+	//FINAL RENDER
+	this->renderTexture.display();
+	this->renderSprite.setTexture(this->renderTexture.getTexture());
+	target->draw(this->renderSprite);
 }

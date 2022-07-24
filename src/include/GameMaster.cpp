@@ -11,7 +11,7 @@ float GameMaster::screenScalingFactor(1.f);
 //
 void GameMaster::initGraphicsSettings()
 {
-	// NOTE - Because we use this->window hera; we must parialy init it here...
+	// NOTE - Because we use this->windowrender; we must parialy init it here...
 	this->window = new sf::RenderWindow();
 
 	//
@@ -66,7 +66,7 @@ void GameMaster::initWindow()
 	this->window->setVerticalSyncEnabled(this->graphicsSettings.verticalSync);
 
 	// Initialisations de l'espace pour tous les éléments du jeux
-	Position::initSpace((int)GameMap::getGAME_MAP_WIDTH, (int)GameMap::getGAME_MAP_HEIGHT);
+	Position::initSpace(game::GAME_MAP_WIDTH, game::GAME_MAP_HEIGHT);
 
 	//! Construction de la maison
 	// House house;
@@ -177,6 +177,7 @@ void GameMaster::updateDeltatime()
 	// initialisation du time du game object
 	GameObject::SetTime(this->deltaTime);
 }
+
 void GameMaster::updateSFMLEvents()
 {
 

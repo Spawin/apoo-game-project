@@ -22,7 +22,7 @@ public:
 		const float height,
 		const unsigned char_size,
 		const std::string text);
-	void update(const sf::Vector2i& mousePosWindow);
+	void update(const sf::Vector2i& mousePosView);
 	void render(sf::RenderTarget& target);
 
 private:
@@ -33,6 +33,8 @@ private:
 	sf::RectangleShape container;
 
 	std::map<std::string, gui::Button*> buttons;
+
+	void setGraphicsElementPosition(sf::View const& view);
 };
 
 #endif // __PAUSE_MENU_HPP__

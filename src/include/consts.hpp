@@ -28,7 +28,11 @@ namespace game
 {
 constexpr int WINDOW_WIDTH = 1200;
 constexpr int WINDOW_HEIGHT = 675;
-constexpr float PERSONAGE_MOVE_VELOCITY = 200.f;
+constexpr float PERSONAGE_MOVE_VELOCITY = 300.f;
+
+constexpr float GAME_MAP_WIDTH = 32 * 40;
+constexpr float GAME_MAP_HEIGHT = 32 * 80;
+constexpr int HOUSE_TILES_NUMBER = 40 * 80;
 
 enum movement_states
 {

@@ -7,9 +7,6 @@ public:
 	GameMap();
 	~GameMap();
 
-	static float getGAME_MAP_WIDTH();
-	static float getGAME_MAP_HEIGHT();
-
 	bool load(const std::string& tileset, sf::Vector2u tileSize, const int* tiles, unsigned int width, unsigned int height);
 	/**
 	 * @brief
@@ -27,9 +24,6 @@ public:
 	bool load(const std::string& tileset, sf::Vector2u* tileSize, sf::Vector2u* tilesStart, const int* tiles, unsigned int width, unsigned int height, int count);
 
 private:
-	static const float GAME_MAP_WIDTH;
-	static const float GAME_MAP_HEIGHT;
-
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 	sf::VertexArray m_vertices;

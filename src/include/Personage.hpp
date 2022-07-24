@@ -40,8 +40,7 @@ public:
 	 *
 	 * @param window
 	 */
-	virtual void
-	show(sf::RenderTarget& window) override;
+	virtual void show(sf::RenderTarget& target) override;
 
 	//Sera appelé à chaque frame...
 	void update() override;

@@ -111,10 +111,11 @@ bool Personage::isDied() const
 	return m_healthLevel == 0; // REVIEW -
 }
 
-void Personage::show(sf::RenderTarget& window)
+void Personage::show(sf::RenderTarget& target)
 {
-	GameObject::show(window);
-	m_window = &window; // REVIEW -
+	m_window = &target; // REVIEW -
+	// GameObject::show(window);
+	target.draw(m_body);
 }
 
 void Personage::update()
@@ -217,7 +218,7 @@ void Personage::updatePosition(Position& position)
 	m_position = position;
 	// On replace le body
 	m_body.setPosition(m_position.getX(), m_position.getY());
-	cout << "Position du joueur " << m_position << endl;
+	cout << "Position du joueur " << m_gameObjectName << " : " << m_position << endl;
 	// On replace la vue si c'est le joueur
 	if (m_isPlayer)
 		if (m_window != 0)

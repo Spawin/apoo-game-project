@@ -34,6 +34,17 @@ public:
 	void setText(const std::string text);
 	void setId(const short unsigned id);
 
+	const sf::Vector2f& getPosition() const;
+	/**
+	 * @brief Set the Position object
+	 *
+	 * @param x
+	 * @param y
+	 * @param addX Décalage sur l'axe des x
+	 * @param addY Décalage sur l'axe des y
+	 */
+	void setPosition(float x, float y, float addX, float addY);
+
 	void update(const sf::Vector2i& mousePosWindow);
 	void render(sf::RenderTarget& target);
 
@@ -57,6 +68,9 @@ private:
 	sf::Color outlineIdleColor;
 	sf::Color outlineHoverColor;
 	sf::Color outlineActiveColor;
+
+	// Pour tenir compte du décalage de la position de la souris sur certains affichages (quand oon modifie le centre de la vue et la position des shapes)
+	sf::Vector2f offset;
 
 	// Fonctions d'initialisation
 };
