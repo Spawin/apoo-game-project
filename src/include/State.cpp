@@ -17,11 +17,6 @@ State::~State()
 {}
 
 // Fonctions/Méthodes
-void State::endState()
-{
-	this->quit = true;
-}
-
 const bool& State::getQuit() const
 {
 	return this->quit;
@@ -36,13 +31,6 @@ const bool& State::getQuit() const
 // 	}
 // }
 
-void State::updateMousePositions()
-{
-	this->mousePosScreen = sf::Mouse::getPosition();
-	this->mousePosWindow = sf::Mouse::getPosition(*this->window);
-	this->mousePosView = this->window->mapPixelToCoords(sf::Mouse::getPosition(*this->window));
-}
-
 bool State::getKeyTime()
 {
 	if (this->keytime >= this->keytimeMax)
@@ -52,6 +40,23 @@ bool State::getKeyTime()
 	}
 
 	return false;
+}
+
+float const& State::scScF()
+{
+	return this->stateData->graphicsSettings->scScF();
+}
+
+void State::endState()
+{
+	this->quit = true;
+}
+
+void State::updateMousePositions()
+{
+	this->mousePosScreen = sf::Mouse::getPosition();
+	this->mousePosWindow = sf::Mouse::getPosition(*this->window);
+	this->mousePosView = this->window->mapPixelToCoords(sf::Mouse::getPosition(*this->window));
 }
 
 void State::updateKeytime(const float& deltaTime)

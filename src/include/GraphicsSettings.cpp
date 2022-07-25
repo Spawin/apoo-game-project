@@ -9,6 +9,19 @@ GraphicsSettings::GraphicsSettings()
 	this->frameRateLimit = 60;
 	// this->contextSettings.antialiasingLevel = 0;
 	this->videoModes = sf::VideoMode::getFullscreenModes();
+
+	this->screenScalingFactor = 1.f;
+}
+
+//
+float const& GraphicsSettings::scScF()
+{
+	return this->screenScalingFactor;
+}
+
+void GraphicsSettings::setScreenScalingFactor(float scScF)
+{
+	this->screenScalingFactor = scScF;
 }
 
 void GraphicsSettings::loadFromFile(const std::string path)
@@ -22,6 +35,7 @@ void GraphicsSettings::loadFromFile(const std::string path)
 		ifs >> this->fullscreen;
 		ifs >> this->frameRateLimit;
 		ifs >> this->verticalSync;
+		ifs >> this->screenScalingFactor;
 		// ifs >> this->contextSettings.antialiasingLevel;
 	}
 

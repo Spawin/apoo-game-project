@@ -24,8 +24,9 @@ void GameMaster::initGraphicsSettings()
 	// game::SCREEN_SCALING_FACTOR = screenScalingFactor;
 
 	// Update the graphicsSetting.resolution with screenScalingFactor
-	this->graphicsSettings.resolution.width *= screenScalingFactor;
-	this->graphicsSettings.resolution.height *= screenScalingFactor;
+	// this->graphicsSettings.resolution.width *= screenScalingFactor;
+	// this->graphicsSettings.resolution.height *= screenScalingFactor;
+	// this->graphicsSettings.setScreenScalingFactor(screenScalingFactor);
 
 	// We set the icon here...
 	platform.setIcon(window->getSystemHandle());
@@ -200,6 +201,7 @@ void GameMaster::updateSFMLEvents()
 		}
 	}
 }
+
 void GameMaster::update()
 {
 	this->updateSFMLEvents();
@@ -255,6 +257,7 @@ void GameMaster::render()
 	// Update the window
 	this->window->display(); // NOTE -
 }
+
 void GameMaster::run()
 {
 

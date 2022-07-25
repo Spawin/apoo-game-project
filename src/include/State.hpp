@@ -39,6 +39,13 @@ public:
 	// Fonctions/Méthodes
 	const bool& getQuit() const;
 	virtual bool getKeyTime();
+	/**
+	 * @brief Retourne le <screenScalingFactor>
+	 * fournit par le stateData...
+	 *
+	 * @return float const&
+	 */
+	float const& scScF();
 
 	// virtual void checkForQuit();
 	virtual void updateSFMLEvents(const sf::Event& sfEvent) = 0;

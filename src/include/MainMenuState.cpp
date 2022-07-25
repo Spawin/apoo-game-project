@@ -18,7 +18,11 @@ void MainMenuState::initFonts()
 
 void MainMenuState::initGui()
 {
-	const sf::VideoMode& vm = sf::VideoMode::getDesktopMode(); // REVIEW -
+	// const sf::VideoMode& vm = sf::VideoMode::getDesktopMode(); // REVIEW -
+	const sf::VideoMode vm(this->stateData->graphicsSettings->resolution); // = sf::VideoMode::getDesktopMode(); // REVIEW -
+	// NOTE - Pour utiliser const sf::VideoMode& vm = sf::VideoMode::getDesktopMode();
+	// IL faudrait réadapter les coordonnées des points. On aura par exemples
+	// gui::p2pX(15.6f, vm), gui::p2pY(30.f, vm) pour le premir boutton et ainsi de suite
 
 	//* Background
 	this->background.setSize(sf::Vector2f(this->window->getSize().x, this->window->getSize().y));
@@ -32,8 +36,19 @@ void MainMenuState::initGui()
 	// this->background.setPosition(this->window->getView().getCenter().x - this->window->getSize().x / 2, this->window->getView().getCenter().y - this->window->getSize().y / 2);
 
 	//* Buttons
-	this->buttons["GAME_STATE"] = new gui::Button(
-		gui::p2pX(15.6f, vm), gui::p2pY(30.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), &this->font,
+	this->buttons["GAME_STATE_RESUME"] = new gui::Button(
+		gui::p2pX(15.6f, vm), gui::p2pY(40.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), &this->font,
+		"Reprendre", //
+		gui::calcCharSize(vm),
+		sf::Color(200, 200, 200, 200),
+		sf::Color(255, 255, 255, 255),
+		sf::Color(20, 20, 20, 50),
+		sf::Color(70, 70, 70, 0),
+		sf::Color(150, 150, 150, 0),
+		sf::Color(20, 20, 20, 0));
+
+	this->buttons["GAME_STATE_NEW"] = new gui::Button(
+		gui::p2pX(15.6f, vm), gui::p2pY(50.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), &this->font,
 		"Nouvelle partie", //
 		gui::calcCharSize(vm),
 		sf::Color(200, 200, 200, 200),
@@ -44,7 +59,7 @@ void MainMenuState::initGui()
 		sf::Color(20, 20, 20, 0));
 
 	this->buttons["SETTINGS_STATE"] = new gui::Button(
-		gui::p2pX(15.6f, vm), gui::p2pY(40.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), &this->font,
+		gui::p2pX(15.6f, vm), gui::p2pY(60.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), &this->font,
 		"Param", //
 		gui::calcCharSize(vm),
 		sf::Color(200, 200, 200, 200),
@@ -56,7 +71,7 @@ void MainMenuState::initGui()
 
 	//*
 	this->buttons["EDITOR_STATE"] = new gui::Button(
-		gui::p2pX(15.6f, vm), gui::p2pY(50.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), &this->font,
+		gui::p2pX(15.6f, vm), gui::p2pY(70.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), &this->font,
 		"...", //
 		gui::calcCharSize(vm),
 		sf::Color(200, 200, 200, 200),
@@ -68,7 +83,7 @@ void MainMenuState::initGui()
 	//*/
 
 	this->buttons["EXIT_STATE"] = new gui::Button(
-		gui::p2pX(15.6f, vm), gui::p2pY(65.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), &this->font,
+		gui::p2pX(15.6f, vm), gui::p2pY(85.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), &this->font,
 		"Quitter", //
 		gui::calcCharSize(vm),
 		sf::Color(200, 200, 200, 200),
@@ -100,6 +115,7 @@ MainMenuState::~MainMenuState()
 	{
 		delete it->second;
 	}
+	this->buttons.clear();
 }
 
 // Fonctions/Méthodes
@@ -133,7 +149,13 @@ void MainMenuState::updateButtons()
 	}
 
 	//New game
-	if (this->buttons["GAME_STATE"]->isPressed())
+	if (this->buttons["GAME_STATE_RESUME"]->isPressed())
+	{
+		// this->states->push(new GameState(this->stateData));
+	}
+
+	//New game
+	if (this->buttons["GAME_STATE_NEW"]->isPressed())
 	{
 		this->states->push(new GameState(this->stateData));
 	}
