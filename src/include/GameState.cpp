@@ -233,7 +233,10 @@ void GameState::render(sf::RenderTarget* target)
 	// On affiche les bords des pièces
 	for (auto&& hall : this->halls)
 	{
-		hall->render(renderTexture);
+		if (hall->isIn(this->player->getPosition()))
+		{
+			hall->render(renderTexture);
+		}
 	}
 #endif
 

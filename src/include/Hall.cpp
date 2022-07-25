@@ -29,7 +29,20 @@ bool Hall::isIn(MyVector const& coordinates)
 {
 	// Vérifions si le point se trouve à l'intérieur du rectangle/carré
 	if (coordinates.x > this->topLeftPoint.x)
-		if (coordinates.x > this->topLeftPoint.x + this->width)
+		if (coordinates.x < this->topLeftPoint.x + this->width)
+			if (coordinates.y > this->topLeftPoint.y)
+				if (coordinates.y < this->topLeftPoint.y + this->height)
+					return true;
+
+	return false;
+}
+
+bool Hall::isIn(sf::Vector2f const& coordinates)
+{
+	// std::cout << "this->topLeftPoint.x" << this->topLeftPoint.x << std::endl;
+	// Vérifions si le point se trouve à l'intérieur du rectangle/carré
+	if (coordinates.x > this->topLeftPoint.x)
+		if (coordinates.x < this->topLeftPoint.x + this->width)
 			if (coordinates.y > this->topLeftPoint.y)
 				if (coordinates.y < this->topLeftPoint.y + this->height)
 					return true;

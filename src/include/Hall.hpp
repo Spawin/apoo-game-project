@@ -12,6 +12,7 @@ public:
 
 	// Fonctions/Méthodes
 	bool isIn(MyVector const& coordinates);
+	bool isIn(sf::Vector2f const& coordinates);
 
 	void render(sf::RenderTarget& target);
 
