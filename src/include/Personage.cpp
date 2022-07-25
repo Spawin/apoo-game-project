@@ -38,7 +38,10 @@ void Personage::init()
 
 	// m_body.setScale((float)PERSONNAGE_WIDTH / (float)w, (float)PERSONNAGE_WIDTH / (float)h);
 
-	// Initialisation de la position en temps que joeurs
+	// On définit l'origine du sprite (c'est a partir de cette dernière qu'on calcul la position du joueur.)
+	m_body.setOrigin(75.f, 115.f);
+
+	// Initialisation de la position en temps que joueurs
 	if (m_isPlayer)
 	{
 		m_position = Position(game::GAME_BLOCKS_WIDTH * 4, game::GAME_BLOCKS_WIDTH * 78); // REVIEW -

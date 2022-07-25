@@ -66,37 +66,37 @@ void GameState::initPlayer()
 void GameState::initHalls()
 {
 	// 0
-	this->halls.push_back(new Lounge(sf::Vector2i(1 * game::GAME_BLOCKS_WIDTH / 2, 67 * game::GAME_BLOCKS_WIDTH), 38 * game::GAME_BLOCKS_WIDTH, (12 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+	this->halls.push_back(new Lounge(sf::Vector2i(1 * game::GAME_BLOCKS_WIDTH / 2, 67 * game::GAME_BLOCKS_WIDTH), 38 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH, (12 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
 
 	// 1
 	this->halls.push_back(new Room(sf::Vector2i(1 * game::GAME_BLOCKS_WIDTH / 2, 56 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH / 2 + game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
 	this->halls.push_back(new Room(sf::Vector2i(15 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 56 * game::GAME_BLOCKS_WIDTH), 10 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
-	this->halls.push_back(new Room(sf::Vector2i(26 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 56 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT + game::GAME_BLOCKS_WIDTH / 2, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+	this->halls.push_back(new Room(sf::Vector2i(26 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 56 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH / 2 + game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
 
 	// 2
 	this->halls.push_back(new Room(sf::Vector2i(1 * game::GAME_BLOCKS_WIDTH / 2, 45 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH / 2 + game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
 	this->halls.push_back(new Room(sf::Vector2i(15 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 45 * game::GAME_BLOCKS_WIDTH), 10 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
-	this->halls.push_back(new Room(sf::Vector2i(26 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 45 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT + game::GAME_BLOCKS_WIDTH / 2, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+	this->halls.push_back(new Room(sf::Vector2i(26 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 45 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH / 2 + game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
 
 	// 3
 	this->halls.push_back(new Room(sf::Vector2i(1 * game::GAME_BLOCKS_WIDTH / 2, 34 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH / 2 + game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
 	this->halls.push_back(new Room(sf::Vector2i(15 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 34 * game::GAME_BLOCKS_WIDTH), 10 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
-	this->halls.push_back(new Room(sf::Vector2i(26 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 34 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT + game::GAME_BLOCKS_WIDTH / 2, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+	this->halls.push_back(new Room(sf::Vector2i(26 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 34 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH / 2 + game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
 
 	// 4
 	this->halls.push_back(new Room(sf::Vector2i(1 * game::GAME_BLOCKS_WIDTH / 2, 23 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH / 2 + game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
 	this->halls.push_back(new Room(sf::Vector2i(15 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 23 * game::GAME_BLOCKS_WIDTH), 10 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
-	this->halls.push_back(new Room(sf::Vector2i(26 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 23 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT + game::GAME_BLOCKS_WIDTH / 2, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+	this->halls.push_back(new Room(sf::Vector2i(26 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 23 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH / 2 + game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
 
 	// 5
 	this->halls.push_back(new Room(sf::Vector2i(1 * game::GAME_BLOCKS_WIDTH / 2, 12 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH / 2 + game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
 	this->halls.push_back(new Room(sf::Vector2i(15 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 12 * game::GAME_BLOCKS_WIDTH), 10 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
-	this->halls.push_back(new Room(sf::Vector2i(26 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 12 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT + game::GAME_BLOCKS_WIDTH / 2, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+	this->halls.push_back(new Room(sf::Vector2i(26 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 12 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH / 2 + game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
 
 	// 6
 	this->halls.push_back(new Room(sf::Vector2i(1 * game::GAME_BLOCKS_WIDTH / 2, 1 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH / 2 + game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
 	this->halls.push_back(new Room(sf::Vector2i(15 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 1 * game::GAME_BLOCKS_WIDTH), 10 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
-	this->halls.push_back(new Room(sf::Vector2i(26 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 1 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT + game::GAME_BLOCKS_WIDTH / 2, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+	this->halls.push_back(new Room(sf::Vector2i(26 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 1 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH / 2 + game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
 }
 
 // Constructeurs/Destructeur
