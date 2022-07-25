@@ -10,9 +10,9 @@ class RigidRigidbody;
 class Position
 {
 public:
-	explicit Position(float detectabilityRadius = DEFAULT_DETECTABILITY_RADIUS);
+	explicit Position(float detectabilityRadius = game::DEFAULT_DETECTABILITY_RADIUS);
 
-	explicit Position(float px, float py, float detectabilityRadius = DEFAULT_DETECTABILITY_RADIUS);
+	explicit Position(float px, float py, float detectabilityRadius = game::DEFAULT_DETECTABILITY_RADIUS);
 	~Position();
 
 	static void initSpace(int width, int height); // méthode static car l’espace sera le même pour tous les objets Coordonnees

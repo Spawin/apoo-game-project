@@ -50,12 +50,13 @@ bool AnimationComponent::canPlay(const std::string& animationKey, bool allowSimi
 
 const bool& AnimationComponent::play(const std::string& animationKey, const float& deltatime)
 {
-	if (this->lastAnimation == NULL)
+	if (this->lastAnimation == nullptr)
 	{
 		// std::cout << "Ancien null\n";
 		this->lastAnimation = this->animations[animationKey];
 	}
 
+	// A la même priorité ou une priorité égale à l'ancienne animation (valable aussi pour une même animation)
 	if (this->animations[animationKey]->getPriority() <= this->lastAnimation->getPriority())
 	{
 		// std::cout << "Est prioritaire\n";
@@ -63,8 +64,8 @@ const bool& AnimationComponent::play(const std::string& animationKey, const floa
 		{
 			// std::cout << "ancien diférent du nouveau\n";
 			this->lastAnimation->reset();
+			this->lastAnimation = this->animations[animationKey]; // REVIEW - On dirait une réafectation inutile. on le place pluto dans la condition précédente et c bon
 		}
-		this->lastAnimation = this->animations[animationKey];
 
 		return this->animations[animationKey]->play(deltatime);
 	}

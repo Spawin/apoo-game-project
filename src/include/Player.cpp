@@ -123,7 +123,7 @@ void Player::manageMove(const float& deltaTime)
 			if (speed.x < 0.0f)
 			{
 				// Vérifie que l'animation précedente de la marche est terminée
-				if (this->personage->getAnimationComponent()->isDone("RIGHT_WALK") || this->personage->getAnimationComponent()->isDone("LEFT_WALK"))
+				if (!this->personage->getAnimationComponent()->isDone("RIGHT_WALK") || this->personage->getAnimationComponent()->isDone("LEFT_WALK"))
 				{
 					this->personage->getAnimationComponent()->play("LEFT_WALK", deltaTime);
 				}
@@ -133,7 +133,7 @@ void Player::manageMove(const float& deltaTime)
 			else
 			{
 				// Vérifie que l'animation précedente de la marche est terminée
-				if (this->personage->getAnimationComponent()->isDone("RIGHT_WALK") || this->personage->getAnimationComponent()->isDone("LEFT_WALK"))
+				if (this->personage->getAnimationComponent()->isDone("RIGHT_WALK") || !this->personage->getAnimationComponent()->isDone("LEFT_WALK"))
 				{
 					this->personage->getAnimationComponent()->play("RIGHT_WALK", deltaTime);
 				}

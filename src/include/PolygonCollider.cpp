@@ -55,7 +55,7 @@ bool PolygonCollider::touchEachOther(Collider const& collider) const
 			float deltat = sqrt(pow((v1.x - v2.x), 2) + pow((v1.y - v2.y), 2));
 			// cout << "distance entre A(" << v1.x << ";" << v1.y;
 			// cout << ") et B(" << v2.x << ";" << v2.y << ") est : " << deltat << endl;
-			return deltat < (float)DISTANCE_MIN_BETWEEN_OBJECTS;
+			return deltat < (float)game::DISTANCE_MIN_BETWEEN_OBJECTS;
 		}
 	}
 	return false;

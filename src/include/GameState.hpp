@@ -1,9 +1,11 @@
 #if !defined(__GAME_STATE_HPP__)
 	#define __GAME_STATE_HPP__
 
-	#include "State.hpp"
+	#include "include/State.hpp"
 	#include "include/PauseMenu.hpp"
 	#include "include/GameMap.hpp"
+	#include "include/Hall.hpp"
+	#include <vector>
 
 class GameState : public State
 {
@@ -42,6 +44,8 @@ private:
 
 	GameMap* gameMap;
 
+	std::vector<Hall*> halls;
+
 	// Fonctions d'initialisation
 	void initDeferredRender();
 	void initFonts();
@@ -50,6 +54,7 @@ private:
 
 	void initGameMap();
 	void initPlayer();
+	void initHalls();
 };
 
 #endif // __GAME_STATE_HPP__

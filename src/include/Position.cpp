@@ -122,88 +122,88 @@ void Position::recalculate()
 		// TODO -
 		// REVIEW - Pour le cas du lounge, les dimensions ont changés
 		// On replace m_y
-		if (m_y < WALL_WIDTH + DETECTABILITY_RADIUS)
+		if (m_y < game::WALL_WIDTH + DETECTABILITY_RADIUS)
 		{
-			m_y = WALL_WIDTH + DETECTABILITY_RADIUS;
+			m_y = game::WALL_WIDTH + DETECTABILITY_RADIUS;
 		}
-		if (m_y > (int)GameMap::getGAME_MAP_HEIGHT - WALL_WIDTH - DETECTABILITY_RADIUS)
+		if (m_y > (int)GameMap::getGAME_MAP_HEIGHT - game::WALL_WIDTH - DETECTABILITY_RADIUS)
 		{
-			m_y = (int)GameMap::getGAME_MAP_HEIGHT - WALL_WIDTH - DETECTABILITY_RADIUS;
+			m_y = (int)GameMap::getGAME_MAP_HEIGHT - game::WALL_WIDTH - DETECTABILITY_RADIUS;
 		}
-		if (isBetween(m_y, (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS, (int)Hall::getMIN_HEIGHT))
+		if (isBetween(m_y, (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS, (int)Hall::getMIN_HEIGHT))
 		{
-			m_y = (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
+			m_y = (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
 		}
-		if (isBetween(m_y, (int)Hall::getMIN_HEIGHT, (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
+		if (isBetween(m_y, (int)Hall::getMIN_HEIGHT, (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
 		{
-			m_y = (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
+			m_y = (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
 		}
-		if (isBetween(m_y, 2 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS, 2 * (int)Hall::getMIN_HEIGHT))
+		if (isBetween(m_y, 2 * (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS, 2 * (int)Hall::getMIN_HEIGHT))
 		{
-			m_y = 2 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
+			m_y = 2 * (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
 		}
-		if (isBetween(m_y, 2 * (int)Hall::getMIN_HEIGHT, 2 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
+		if (isBetween(m_y, 2 * (int)Hall::getMIN_HEIGHT, 2 * (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
 		{
-			m_y = 2 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
+			m_y = 2 * (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
 		}
-		if (isBetween(m_y, 3 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS, 3 * (int)Hall::getMIN_HEIGHT))
+		if (isBetween(m_y, 3 * (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS, 3 * (int)Hall::getMIN_HEIGHT))
 		{
-			m_y = 3 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
+			m_y = 3 * (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
 		}
-		if (isBetween(m_y, 3 * (int)Hall::getMIN_HEIGHT, 3 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
+		if (isBetween(m_y, 3 * (int)Hall::getMIN_HEIGHT, 3 * (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
 		{
-			m_y = 3 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
+			m_y = 3 * (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
 		}
-		if (isBetween(m_y, 4 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS, 4 * (int)Hall::getMIN_HEIGHT))
+		if (isBetween(m_y, 4 * (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS, 4 * (int)Hall::getMIN_HEIGHT))
 		{
-			m_y = 4 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
+			m_y = 4 * (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
 		}
-		if (isBetween(m_y, 4 * (int)Hall::getMIN_HEIGHT, 4 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
+		if (isBetween(m_y, 4 * (int)Hall::getMIN_HEIGHT, 4 * (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
 		{
-			m_y = 4 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
+			m_y = 4 * (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
 		}
-		if (isBetween(m_y, 5 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS, 5 * (int)Hall::getMIN_HEIGHT))
+		if (isBetween(m_y, 5 * (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS, 5 * (int)Hall::getMIN_HEIGHT))
 		{
-			m_y = 5 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
+			m_y = 5 * (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
 		}
-		if (isBetween(m_y, 5 * (int)Hall::getMIN_HEIGHT, 5 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
+		if (isBetween(m_y, 5 * (int)Hall::getMIN_HEIGHT, 5 * (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
 		{
-			m_y = 5 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
+			m_y = 5 * (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
 		}
-		if (isBetween(m_y, 6 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS, 6 * (int)Hall::getMIN_HEIGHT))
+		if (isBetween(m_y, 6 * (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS, 6 * (int)Hall::getMIN_HEIGHT))
 		{
-			m_y = 6 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
+			m_y = 6 * (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
 		}
-		if (isBetween(m_y, 6 * (int)Hall::getMIN_HEIGHT, 6 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
+		if (isBetween(m_y, 6 * (int)Hall::getMIN_HEIGHT, 6 * (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
 		{
-			m_y = 6 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
+			m_y = 6 * (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
 		}
 		// On replace m_x
-		if (m_x < WALL_WIDTH + DETECTABILITY_RADIUS)
+		if (m_x < game::WALL_WIDTH + DETECTABILITY_RADIUS)
 		{
-			m_x = WALL_WIDTH + DETECTABILITY_RADIUS;
+			m_x = game::WALL_WIDTH + DETECTABILITY_RADIUS;
 		}
-		if (m_x > (int)GameMap::getGAME_MAP_WIDTH - WALL_WIDTH - DETECTABILITY_RADIUS)
+		if (m_x > (int)GameMap::getGAME_MAP_WIDTH - game::WALL_WIDTH - DETECTABILITY_RADIUS)
 		{
-			m_x = (int)GameMap::getGAME_MAP_WIDTH - WALL_WIDTH - DETECTABILITY_RADIUS;
+			m_x = (int)GameMap::getGAME_MAP_WIDTH - game::WALL_WIDTH - DETECTABILITY_RADIUS;
 		}
 		if (m_y < 6 * (int)Hall::getMIN_HEIGHT)
 		{
-			if (isBetween(m_x, (int)Hall::getMIN_WIDTH - WALL_WIDTH / 2 - DETECTABILITY_RADIUS, (int)Hall::getMIN_WIDTH))
+			if (isBetween(m_x, (int)Hall::getMIN_WIDTH - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS, (int)Hall::getMIN_WIDTH))
 			{
-				m_x = (int)Hall::getMIN_WIDTH - WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
+				m_x = (int)Hall::getMIN_WIDTH - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
 			}
-			if (isBetween(m_x, (int)Hall::getMIN_WIDTH, (int)Hall::getMIN_WIDTH + WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
+			if (isBetween(m_x, (int)Hall::getMIN_WIDTH, (int)Hall::getMIN_WIDTH + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
 			{
-				m_x = (int)Hall::getMIN_WIDTH + WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
+				m_x = (int)Hall::getMIN_WIDTH + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
 			}
-			if (isBetween(m_x, (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS, (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT))
+			if (isBetween(m_x, (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS, (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT))
 			{
-				m_x = (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
+				m_x = (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS;
 			}
-			if (isBetween(m_x, (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT, (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
+			if (isBetween(m_x, (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT, (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS))
 			{
-				m_x = (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
+				m_x = (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS;
 			}
 		}
 	}
@@ -242,24 +242,27 @@ void Position::setPreviousPosition(MyVector v)
 
 bool Position::canMove()
 {
+	// TODO -
+	return true;
+
 	bool canMove(0);
 	// On va repousser la zone de non mouvement d'un facteur
 	// pour qu'il n'y ai pas de conflit avec la zone de redéploiment avec la fonction recalculate d'un corps qui ne doit pas bouger.
-	int fac(0);
-	if (isBetween(m_y, 6 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, (int)game::GAME_MAP_HEIGHT - WALL_WIDTH - DETECTABILITY_RADIUS + fac))
-	{
-		if (isBetween(m_x, WALL_WIDTH + DETECTABILITY_RADIUS - fac, (int)game::GAME_MAP_WIDTH - WALL_WIDTH - DETECTABILITY_RADIUS + fac))
-		{
-			canMove = true;
-		}
-	}
-	else if (isBetween(m_y, WALL_WIDTH + DETECTABILITY_RADIUS - fac, (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 2 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, 2 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 3 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, 3 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 4 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, 4 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 5 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, 5 * (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 6 * (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac))
-	{
-		if (isBetween(m_x, WALL_WIDTH + DETECTABILITY_RADIUS - fac, (int)Hall::getMIN_WIDTH - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_x, (int)Hall::getMIN_WIDTH + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT - WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_x, (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT + WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, (int)game::GAME_MAP_WIDTH - WALL_WIDTH - DETECTABILITY_RADIUS + fac))
-		{
-			canMove = true;
-		}
-	}
+	// int fac(0);
+	// if (isBetween(m_y, 6 * (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, (int)game::GAME_MAP_HEIGHT - game::WALL_WIDTH - DETECTABILITY_RADIUS + fac))
+	// {
+	// 	if (isBetween(m_x, game::WALL_WIDTH + DETECTABILITY_RADIUS - fac, (int)game::GAME_MAP_WIDTH - game::WALL_WIDTH - DETECTABILITY_RADIUS + fac))
+	// 	{
+	// 		canMove = true;
+	// 	}
+	// }
+	// else if (isBetween(m_y, game::WALL_WIDTH + DETECTABILITY_RADIUS - fac, (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 2 * (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, 2 * (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 3 * (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, 3 * (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 4 * (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, 4 * (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 5 * (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_y, 5 * (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, 6 * (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac))
+	// {
+	// 	if (isBetween(m_x, game::WALL_WIDTH + DETECTABILITY_RADIUS - fac, (int)Hall::getMIN_WIDTH - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_x, (int)Hall::getMIN_WIDTH + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT - game::WALL_WIDTH / 2 - DETECTABILITY_RADIUS + fac) || isBetween(m_x, (int)Hall::getMIN_WIDTH + (int)Hall::getMIN_HEIGHT + game::WALL_WIDTH / 2 + DETECTABILITY_RADIUS - fac, (int)game::GAME_MAP_WIDTH - game::WALL_WIDTH - DETECTABILITY_RADIUS + fac))
+	// 	{
+	// 		canMove = true;
+	// 	}
+	// }
 
 	return canMove;
 }

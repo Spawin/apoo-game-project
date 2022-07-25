@@ -1,4 +1,6 @@
 #include "include/GameState.hpp"
+#include "include/Lounge.hpp"
+#include "include/Room.hpp"
 #include "include/consts.hpp"
 
 using namespace std;
@@ -61,6 +63,42 @@ void GameState::initPlayer()
 	this->player = new Player(new Soldier(true));
 }
 
+void GameState::initHalls()
+{
+	// 0
+	this->halls.push_back(new Lounge(sf::Vector2i(1 * game::GAME_BLOCKS_WIDTH / 2, 67 * game::GAME_BLOCKS_WIDTH), 38 * game::GAME_BLOCKS_WIDTH, (12 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+
+	// 1
+	this->halls.push_back(new Room(sf::Vector2i(1 * game::GAME_BLOCKS_WIDTH / 2, 56 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH / 2 + game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+	this->halls.push_back(new Room(sf::Vector2i(15 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 56 * game::GAME_BLOCKS_WIDTH), 10 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+	this->halls.push_back(new Room(sf::Vector2i(26 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 56 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT + game::GAME_BLOCKS_WIDTH / 2, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+
+	// 2
+	this->halls.push_back(new Room(sf::Vector2i(1 * game::GAME_BLOCKS_WIDTH / 2, 45 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH / 2 + game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+	this->halls.push_back(new Room(sf::Vector2i(15 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 45 * game::GAME_BLOCKS_WIDTH), 10 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+	this->halls.push_back(new Room(sf::Vector2i(26 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 45 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT + game::GAME_BLOCKS_WIDTH / 2, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+
+	// 3
+	this->halls.push_back(new Room(sf::Vector2i(1 * game::GAME_BLOCKS_WIDTH / 2, 34 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH / 2 + game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+	this->halls.push_back(new Room(sf::Vector2i(15 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 34 * game::GAME_BLOCKS_WIDTH), 10 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+	this->halls.push_back(new Room(sf::Vector2i(26 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 34 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT + game::GAME_BLOCKS_WIDTH / 2, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+
+	// 4
+	this->halls.push_back(new Room(sf::Vector2i(1 * game::GAME_BLOCKS_WIDTH / 2, 23 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH / 2 + game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+	this->halls.push_back(new Room(sf::Vector2i(15 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 23 * game::GAME_BLOCKS_WIDTH), 10 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+	this->halls.push_back(new Room(sf::Vector2i(26 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 23 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT + game::GAME_BLOCKS_WIDTH / 2, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+
+	// 5
+	this->halls.push_back(new Room(sf::Vector2i(1 * game::GAME_BLOCKS_WIDTH / 2, 12 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH / 2 + game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+	this->halls.push_back(new Room(sf::Vector2i(15 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 12 * game::GAME_BLOCKS_WIDTH), 10 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+	this->halls.push_back(new Room(sf::Vector2i(26 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 12 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT + game::GAME_BLOCKS_WIDTH / 2, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+
+	// 6
+	this->halls.push_back(new Room(sf::Vector2i(1 * game::GAME_BLOCKS_WIDTH / 2, 1 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH / 2 + game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+	this->halls.push_back(new Room(sf::Vector2i(15 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 1 * game::GAME_BLOCKS_WIDTH), 10 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+	this->halls.push_back(new Room(sf::Vector2i(26 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 1 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + 2 * game::WALL_HEIGHT + game::GAME_BLOCKS_WIDTH / 2, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
+}
+
 // Constructeurs/Destructeur
 GameState::GameState(StateData* stateData) :
 	State(stateData)
@@ -81,6 +119,8 @@ GameState::GameState(StateData* stateData) :
 	// this->initEnemySystem();
 	// this->initTileMap();
 	// this->initSystems();
+
+	this->initHalls();
 }
 
 GameState::~GameState()
@@ -88,6 +128,12 @@ GameState::~GameState()
 	delete this->pauseMenu;
 	delete this->player;
 	delete this->gameMap;
+
+	for (int i = this->halls.size() - 1; i >= 0; i--)
+	{
+		delete this->halls[i];
+	}
+	this->halls.clear();
 }
 
 // Fonctions/Méthodes
@@ -116,6 +162,12 @@ void GameState::updateSFMLEvents(const sf::Event& sfEvent)
 			// On switch l'état de la pause
 			this->paused = !this->paused;
 		}
+	}
+
+	// Si le fenêtre perd le focus, on met en pause.
+	if (sfEvent.type == sf::Event::LostFocus)
+	{
+		this->paused = true;
 	}
 }
 
@@ -176,6 +228,14 @@ void GameState::render(sf::RenderTarget* target)
 	// On rend la maison
 	// this->gameMap->render(this->renderTexture, this->player->getPosition());
 	renderTexture.draw(*this->gameMap);
+
+#if defined(_DEBUG)
+	// On affiche les bords des pièces
+	for (auto&& hall : this->halls)
+	{
+		hall->render(renderTexture);
+	}
+#endif
 
 	// this->player->render((*target));
 	this->player->render(this->renderTexture);

@@ -1,18 +1,31 @@
 #if !defined(__HALL_HPP__)
 	#define __HALL_HPP__
 
+	#include "include/MyVector.hpp"
+
 class Hall
 {
 public:
-	Hall();
+	// Constructeurs/Destructeur
+	Hall(sf::Vector2i topLeftPoint, int width, int height);
 	~Hall();
 
-	static float getMIN_WIDTH();
-	static float getMIN_HEIGHT();
+	// Fonctions/Méthodes
+	bool isIn(MyVector const& coordinates);
+
+	void render(sf::RenderTarget& target);
 
 private:
-	static const float MIN_WIDTH;  // REVIEW - Mais faire attention avec l'utilisation dans Position
-	static const float MIN_HEIGHT; // REVIEW -
+	// Variables
+	sf::Vector2i topLeftPoint;
+	int width;
+	int height;
+
+	// #if defined(_DEBUG)
+	sf::RectangleShape debug_shape;
+	// #endif
+
+	// Fonctions d'initialisation
 };
 
 #endif // __HALL_HPP__

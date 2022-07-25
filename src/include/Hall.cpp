@@ -1,22 +1,43 @@
 #include "include/Hall.hpp"
 
-const float Hall::MIN_WIDTH(416);  //32*13
-const float Hall::MIN_HEIGHT(320); //32*10
+// Fonction static
 
-Hall::Hall()
+// Fonctions d'initialisation
+
+// Constructeurs/Destructeur
+Hall::Hall(sf::Vector2i topLeftPoint, int width, int height) :
+	topLeftPoint(topLeftPoint),
+	width(width),
+	height(height)
 {
+	// #if defined(_DEBUG)
+	// std::cout << "Initialisation Hall x" << topLeftPoint.x << " y" << topLeftPoint.y << std::endl;
+	this->debug_shape.setPosition(topLeftPoint.x, topLeftPoint.y);
+	this->debug_shape.setSize(sf::Vector2f(width, height));
+	this->debug_shape.setFillColor(sf::Color::Transparent);
+	this->debug_shape.setOutlineThickness(-10.f);
+	this->debug_shape.setOutlineColor(sf::Color::Red);
+	// #endif
 }
 
 Hall::~Hall()
 {
 }
 
-float Hall::getMIN_WIDTH()
+// Fonctions/Méthodes
+bool Hall::isIn(MyVector const& coordinates)
 {
-	return MIN_WIDTH;
+	// Vérifions si le point se trouve à l'intérieur du rectangle/carré
+	if (coordinates.x > this->topLeftPoint.x)
+		if (coordinates.x > this->topLeftPoint.x + this->width)
+			if (coordinates.y > this->topLeftPoint.y)
+				if (coordinates.y < this->topLeftPoint.y + this->height)
+					return true;
+
+	return false;
 }
 
-float Hall::getMIN_HEIGHT()
+void Hall::render(sf::RenderTarget& target)
 {
-	return MIN_HEIGHT;
+	target.draw(this->debug_shape);
 }

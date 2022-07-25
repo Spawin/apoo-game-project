@@ -41,14 +41,14 @@ void Personage::init()
 	// Initialisation de la position en temps que joeurs
 	if (m_isPlayer)
 	{
-		// m_position = Position(32 * 4, 32 * 78); // REVIEW -
-		m_position = Position(32 * 4, 32 * 4);
+		m_position = Position(game::GAME_BLOCKS_WIDTH * 4, game::GAME_BLOCKS_WIDTH * 78); // REVIEW -
+		// m_position = Position(game::GAME_BLOCKS_WIDTH * 4, game::GAME_BLOCKS_WIDTH * 4);
 		m_body.setPosition(m_position.getX(), m_position.getY());
 	}
 	else
 	{
-		// TODO -
-		m_position = Position(32 * 20 + 16, 32 * 70); // REVIEW -
+		// TODO - Sera un énémi donc on devra avoir une classe spéciale pour lui
+		m_position = Position(game::GAME_BLOCKS_WIDTH * 20, game::GAME_BLOCKS_WIDTH * 70); // REVIEW -
 		m_body.setPosition(m_position.getX(), m_position.getY());
 	}
 

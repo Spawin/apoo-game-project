@@ -70,6 +70,7 @@ void Animation::reset()
 	// Car la première image me sempble pas importante
 	this->timer = this->animationTimer;
 	this->currentRect = this->startRect;
+	this->done = false;
 }
 
 const int& Animation::getPriority() const

@@ -15,15 +15,6 @@
 // #define GAME_MAP_WIDTH 1100	 // !depracted
 // #define GAME_MAP_HEIGHT 2200 // !depracted
 
-#define DISTANCE_MIN_BETWEEN_OBJECTS 10 // Distance minimal entre deux points de contact d'un objet
-
-#define DEFAULT_DETECTABILITY_RADIUS 16	   // Diamètre 32
-#define PERSONNAGE_DETECTABILITY_RADIUS 16 // Diamètre 32
-#define PERSONNAGE_WIDTH 32				   // Diamètre de la zone occupé par un personnage
-// #define GAME_BLOCKS_WIDTH 32			   // Taille de la largeur d'un bloc; un bloc est carré...
-
-#define WALL_WIDTH 32
-
 namespace game
 {
 //* ------------------- Constantes
@@ -31,11 +22,28 @@ constexpr int WINDOW_WIDTH = 1200;
 constexpr int WINDOW_HEIGHT = 675;
 constexpr float PERSONAGE_MOVE_VELOCITY = 300.f;
 
-constexpr int GAME_BLOCKS_WIDTH = 200; //32; // Taille de la largeur d'un bloc; un bloc est carré...
+// Taille de la largeur d'un bloc; un bloc est carré...
+constexpr int GAME_BLOCKS_WIDTH = 200;
 
 constexpr float GAME_MAP_WIDTH = game::GAME_BLOCKS_WIDTH * 40;
 constexpr float GAME_MAP_HEIGHT = game::GAME_BLOCKS_WIDTH * 80;
 constexpr int HOUSE_TILES_NUMBER = 40 * 80;
+
+constexpr int WALL_WIDTH = 120; //32
+// Représente la marge considérée d'un mur mis en horizontal
+constexpr int WALL_HEIGHT = 32;
+
+// Distance minimal entre deux points de contact d'un objet
+constexpr int DISTANCE_MIN_BETWEEN_OBJECTS = 10;
+
+// Diamètre 32
+constexpr int DEFAULT_DETECTABILITY_RADIUS = 16;
+// Diamètre 32
+constexpr int PERSONNAGE_DETECTABILITY_RADIUS = 16;
+// Diamètre de la zone occupé par un personnage
+constexpr int PERSONNAGE_WIDTH = 32;
+
+// constexpr int NOMBER_OF_WALLS = 32;
 
 enum movement_states
 {
