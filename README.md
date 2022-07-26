@@ -32,7 +32,7 @@
   - Bag
     -
     Chaque type d'item aura un nombre limite qui peut être rangé dans le sac
-  - NotMovableOject Abstract (objets non déplaçables)
+  - NotMovableGameObject Abstract (objets non déplaçables)
     -
     Chaque objet va se présenter devant le joueur ^_^
     - Gate (la porte)

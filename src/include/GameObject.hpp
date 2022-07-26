@@ -29,7 +29,7 @@ public:
 	 * @param posX la position x de l'objet
 	 * @param posY la position y de l'objet
 	 */
-	explicit GameObject(std::string_view const& imageSpritePath, float posX, float posY);
+	explicit GameObject(std::string_view const& imageSpritePath, float posX = 200 * 4.f, float posY = 200 * 70.f); // REVIEW -
 
 	virtual ~GameObject();
 
@@ -53,7 +53,8 @@ public:
 	// Retourne l'id du game object
 	int getGameObjectId() const;
 
-	Position const& getPosition() const;
+	const Position* getPosition() const;
+	Position* getNonConstPosition();
 
 	std::string getGameObjectName() const;
 
@@ -84,14 +85,13 @@ public:
 
 	Collider const& getCollider() const;
 
-	virtual void move(MyVector& speed) = 0;
-
 protected:
 	/**
 	 * @brief Pour initialiser les valeur par défaut du GameObject
 	 *
 	 */
 	void init();
+	void initPosition(float posX, float posY);
 	// identifiant unique du game Object
 	const int m_id { GameObject::m_count + 1 };
 	// Nom du game object
@@ -105,7 +105,7 @@ protected:
 	// Sprite du corps de l'objet
 	sf::Sprite m_body {};
 	// Représente la position de l'objet
-	Position m_position {};
+	Position* m_position;
 	// Vitesse de déplacement actuelle
 	MyVector m_speed { 0.f, 0.f };
 
@@ -117,12 +117,11 @@ protected:
 	// sf::Vector2f m_speed2 { 0.f, 0.f };
 
 	/**
+	 * REVIEW
 	 * @brief Permet de mettre à jour la position actuelle.
-	 * Cette position sera déterminé par l'évenement reçu au préalable.
-	 * Aussi il s'agit dans ce cas d'une accélération uniforme.
 	 */
 	// virtual void updatePosition() = 0;
-	virtual void updatePosition(Position& position) = 0;
+	// virtual void updatePosition(Position& position) = 0;
 
 	Collider* m_collider { nullptr };
 	Rigidbody* m_rigidbody { nullptr };

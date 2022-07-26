@@ -11,6 +11,8 @@ public:
 
 	// Fonctions/Méthodes
 	sf::Vector2f getPosition() const;
+	Personage* getPersonage();
+
 	void manageMove(const float& deltaTime);
 	// void updateAnimation(const float& deltaTime);
 	void update(const float& deltaTime);

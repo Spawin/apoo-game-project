@@ -1,5 +1,6 @@
 #include "include/GameState.hpp"
 #include "include/Lounge.hpp"
+#include "include/MovableGameObject.hpp"
 #include "include/Room.hpp"
 #include "include/consts.hpp"
 
@@ -57,12 +58,6 @@ void GameState::initGameMap()
 	}
 }
 
-void GameState::initPlayer()
-{
-	cout << "Initialisation du joueur\n";
-	this->player = new Player(new Soldier(true));
-}
-
 void GameState::initHalls()
 {
 	// 0
@@ -99,6 +94,21 @@ void GameState::initHalls()
 	this->halls.push_back(new Room(sf::Vector2i(26 * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT, 1 * game::GAME_BLOCKS_WIDTH), 13 * game::GAME_BLOCKS_WIDTH + game::GAME_BLOCKS_WIDTH / 2 + game::WALL_HEIGHT, (10 + 1) * game::GAME_BLOCKS_WIDTH - game::WALL_HEIGHT));
 }
 
+void GameState::initPlayer()
+{
+	cout << "Initialisation du joueur\n";
+	this->player = new Player(new Soldier(true)); // REVIEW -
+
+	// On ajoute le joueur dans la salle de départ
+	this->halls[0]->addMovableGameObject(this->player->getPersonage());
+
+	// On informe le joueur qu'il se trouve dans la salle de départ
+	this->player->getPersonage()->addToHall(this->halls[0]);
+
+	// On place le joueur dans la salle de départ!
+	this->player->getPersonage()->getNonConstPosition()->setPosition(game::GAME_BLOCKS_WIDTH * 4, game::GAME_BLOCKS_WIDTH * 78);
+}
+
 // Constructeurs/Destructeur
 GameState::GameState(StateData* stateData) :
 	State(stateData)
@@ -114,13 +124,12 @@ GameState::GameState(StateData* stateData) :
 	// this->initDebugText();
 
 	this->initGameMap();
+	this->initHalls();
 	this->initPlayer();
 	// this->initPlayerGUI();
 	// this->initEnemySystem();
 	// this->initTileMap();
 	// this->initSystems();
-
-	this->initHalls();
 }
 
 GameState::~GameState()

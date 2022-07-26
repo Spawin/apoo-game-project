@@ -10,10 +10,10 @@ class RigidRigidbody;
 class Position
 {
 public:
-	explicit Position(float detectabilityRadius = game::DEFAULT_DETECTABILITY_RADIUS);
+	// explicit Position(float detectabilityRadius = game::DEFAULT_DETECTABILITY_RADIUS);
 
 	explicit Position(float px, float py, float detectabilityRadius = game::DEFAULT_DETECTABILITY_RADIUS);
-	~Position();
+	virtual ~Position();
 
 	static void initSpace(int width, int height); // méthode static car l’espace sera le même pour tous les objets Coordonnees
 
@@ -47,17 +47,25 @@ public:
 	 */
 	MyVector getPosition() const;
 
+	/**
+	 * @brief Met à jour les nouvelle limite de déplacement.
+	 *
+	 * @param hall
+	 */
+	virtual void setPositionMovementLimit(sf::IntRect const& hall);
+
 	void operator+=(MyVector const& v);
 	void operator=(Position const& p);
 	friend std::ostream& operator<<(std::ostream& out, Position const& p);
 
 private:
+	void init();
 	// recalcule les coordonnées pour qu’elles soient dans les limites ; inutile d’y accéder de l’extérieur, donc privée
 	void recalculate();
-	float m_x { m_spaceWidth / 2.f };  // REVIEW -
-	float m_y { m_spaceHeight / 2.f }; // REVIEW -
+	float m_x; // REVIEW -
+	float m_y; // REVIEW -
 
-	MyVector m_previousPosition { 0.f, 0.f };
+	MyVector m_previousPosition;
 	void setPreviousPosition(float x, float y);
 	void setPreviousPosition(MyVector v);
 
@@ -67,12 +75,16 @@ private:
 
 	float const DETECTABILITY_RADIUS;
 
-	bool m_thereIsARigidBody { false };
+	bool m_thereIsARigidBody;
 
 	friend class Rigidbody;
 
+	// Represente la salle dans laquelle la position peut occupée des coordonnées.
+	sf::IntRect hall;
+
 	/**
-	 * @brief Vérifie si l'élément peut bouger
+	 * @brief Vérifie si l'élément à le droit de se déplacer.
+	 * Ici on concidère les limite de l'epace fixé (Hall)
 	 *
 	 * @return true
 	 * @return false

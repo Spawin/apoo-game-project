@@ -35,8 +35,8 @@ bool PolygonCollider::touchEachOther(Collider const& collider) const
 {
 	// REVIEW pour le cas du box collider
 	// Comparaison de la proximité de tous les points
-	MyVector c1 = (*this).parent.getPosition().getPosition();
-	MyVector c2 = collider.getParent().getPosition().getPosition();
+	MyVector c1 = (*this).parent.getPosition()->getPosition();
+	MyVector c2 = collider.getParent().getPosition()->getPosition();
 	for (size_t i = 0; i < (*this).m_contactPoints.size(); i++)
 	{
 		sf::Vector2f v1 = (*this).m_contactPoints[i];

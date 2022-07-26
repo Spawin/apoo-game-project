@@ -42,18 +42,21 @@ void Personage::init()
 	m_body.setOrigin(75.f, 115.f);
 
 	// Initialisation de la position en temps que joueurs
-	if (m_isPlayer)
-	{
-		m_position = Position(game::GAME_BLOCKS_WIDTH * 4, game::GAME_BLOCKS_WIDTH * 78); // REVIEW -
-		// m_position = Position(game::GAME_BLOCKS_WIDTH * 4, game::GAME_BLOCKS_WIDTH * 4);
-		m_body.setPosition(m_position.getX(), m_position.getY());
-	}
-	else
-	{
-		// TODO - Sera un énémi donc on devra avoir une classe spéciale pour lui
-		m_position = Position(game::GAME_BLOCKS_WIDTH * 20, game::GAME_BLOCKS_WIDTH * 70); // REVIEW -
-		m_body.setPosition(m_position.getX(), m_position.getY());
-	}
+	// REVIEW - Cela se fera après l'ajout dans une salle
+	// if (m_isPlayer)
+	// {
+	// 	cout << "Placement du joueur sur le lieu de départ\n";
+
+	// 	m_position->setPosition(game::GAME_BLOCKS_WIDTH * 4, game::GAME_BLOCKS_WIDTH * 78); // REVIEW -
+	// 	// m_position = Position(game::GAME_BLOCKS_WIDTH * 4, game::GAME_BLOCKS_WIDTH * 4);
+	// 	m_body.setPosition(m_position->getX(), m_position->getY());
+	// }
+	// else
+	// {
+	// 	// TODO - Sera un énémi donc on devra avoir une classe spéciale pour lui
+	// 	m_position->setPosition(game::GAME_BLOCKS_WIDTH * 20, game::GAME_BLOCKS_WIDTH * 70); // REVIEW -
+	// 	m_body.setPosition(m_position->getX(), m_position->getY());
+	// }
 
 	// m_body.setScale(.3f, .3f);
 }
@@ -81,7 +84,7 @@ void Personage::initAnimations()
 }
 
 Personage::Personage(bool isPlayer) :
-	MovableGameObject("content/personage/personage.png", 0, 0), // REVIEW -
+	MovableGameObject("content/personage/personage.png"), // REVIEW -
 	m_isPlayer(isPlayer)
 {
 	init();
@@ -141,7 +144,7 @@ void Personage::onCollisionEnter(Collision const& collision) const
 	}
 }
 
-void Personage::updatePosition(Position& position)
+void Personage::updatePosition(float posX, float posY)
 {
 	/*
 	if (m_isPlayer)
@@ -218,23 +221,23 @@ void Personage::updatePosition(Position& position)
 	}
 	//*/
 
-	m_position = position;
+	m_position->setPosition(posX, posY);
 	// On replace le body
-	m_body.setPosition(m_position.getX(), m_position.getY());
-	cout << "Position du joueur " << m_gameObjectName << " : " << m_position << endl;
+	m_body.setPosition(m_position->getPosition().toVector2f());
+	cout << "Position du joueur " << m_gameObjectName << " : " << m_position << " => " << (*m_position) << endl;
 	// On replace la vue si c'est le joueur
 	if (m_isPlayer)
 		if (m_window != 0)
 		{
 			// cout << "On replace la vue" << endl;
 			sf::View player_view(m_window->getView());
-			player_view.setCenter(m_position.getX(), m_position.getY());
+			// player_view.setCenter(m_position.getX(), m_position.getY());
+			player_view.setCenter(this->m_position->getPosition().toVector2f());
 			m_window->setView(player_view);
 		}
 }
 
 void Personage::move(MyVector& speed)
 {
-	Position p(getPosition().getX() + speed.x, getPosition().getY() + speed.y);
-	updatePosition(p);
+	updatePosition(this->getPosition()->getX() + speed.x, this->getPosition()->getY() + speed.y);
 }

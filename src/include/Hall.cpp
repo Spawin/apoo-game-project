@@ -8,7 +8,8 @@
 Hall::Hall(sf::Vector2i topLeftPoint, int width, int height) :
 	topLeftPoint(topLeftPoint),
 	width(width),
-	height(height)
+	height(height),
+	intRect(topLeftPoint, sf::Vector2i(width, height))
 {
 	// #if defined(_DEBUG)
 	// std::cout << "Initialisation Hall x" << topLeftPoint.x << " y" << topLeftPoint.y << std::endl;
@@ -25,7 +26,13 @@ Hall::~Hall()
 }
 
 // Fonctions/Méthodes
-bool Hall::isIn(MyVector const& coordinates)
+bool Hall::addMovableGameObject(MovableGameObject* movableGameObject)
+{
+	this->hallMovablesGameObjects.push_back(movableGameObject);
+	return true;
+}
+
+bool Hall::isIn(MyVector const& coordinates) const
 {
 	// Vérifions si le point se trouve à l'intérieur du rectangle/carré
 	if (coordinates.x > this->topLeftPoint.x)
@@ -37,7 +44,7 @@ bool Hall::isIn(MyVector const& coordinates)
 	return false;
 }
 
-bool Hall::isIn(sf::Vector2f const& coordinates)
+bool Hall::isIn(sf::Vector2f const& coordinates) const
 {
 	// std::cout << "this->topLeftPoint.x" << this->topLeftPoint.x << std::endl;
 	// Vérifions si le point se trouve à l'intérieur du rectangle/carré
@@ -48,6 +55,11 @@ bool Hall::isIn(sf::Vector2f const& coordinates)
 					return true;
 
 	return false;
+}
+
+const sf::IntRect& Hall::getIntRect() const
+{
+	return this->intRect;
 }
 
 void Hall::render(sf::RenderTarget& target)

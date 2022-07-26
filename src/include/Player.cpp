@@ -13,12 +13,18 @@ Player::Player(Personage* personage) :
 
 Player::~Player()
 {
+	delete this->personage;
 }
 
 // Fonctions/Méthodes
 sf::Vector2f Player::getPosition() const
 {
-	return this->personage->getPosition().getPosition().toVector2f();
+	return this->personage->getPosition()->getPosition().toVector2f();
+}
+
+Personage* Player::getPersonage()
+{
+	return this->personage;
 }
 
 void Player::manageMove(const float& deltaTime)

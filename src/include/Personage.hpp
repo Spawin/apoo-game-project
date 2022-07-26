@@ -108,7 +108,7 @@ protected:
 	 * Cette position sera déterminé par l'évenement reçu au préalable.
 	 * Aussi il s'agit dans ce cas d'une accélération uniforme.
 	 */
-	virtual void updatePosition(Position& position) override;
+	virtual void updatePosition(float posX, float posY) override;
 };
 
 #endif // __PERSONGE_HPP__

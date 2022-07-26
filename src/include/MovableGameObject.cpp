@@ -5,8 +5,8 @@
 // Fonctions d'initialisation
 
 // Constructeurs/Destructeur
-MovableGameObject::MovableGameObject(std::string_view const& imageSpritePath, float posX, float posY) :
-	GameObject(imageSpritePath, posX, posY)
+MovableGameObject::MovableGameObject(std::string_view const& imageSpritePath) :
+	GameObject(imageSpritePath)
 {}
 
 MovableGameObject::~MovableGameObject()
@@ -23,4 +23,21 @@ void MovableGameObject::createAnimationComponent(sf::Texture& texture)
 AnimationComponent* MovableGameObject::getAnimationComponent()
 {
 	return this->animationComponent;
+}
+
+bool MovableGameObject::addToHall(Hall* hall)
+{
+	this->hall = hall;
+	this->setPositionMovementLimit(this->hall);
+	return true;
+}
+
+void MovableGameObject::show(sf::RenderTarget& window)
+{
+	GameObject::show(window);
+}
+
+void MovableGameObject::setPositionMovementLimit(const Hall* hall)
+{
+	this->m_position->setPositionMovementLimit(hall->getIntRect());
 }

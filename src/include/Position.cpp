@@ -12,17 +12,22 @@
 int Position::m_spaceWidth { 0 };
 int Position::m_spaceHeight { 0 };
 
-// Constructeur factultatif mais ici on envoie un message d’erreur si une coordonnée est créée avant l’initialisation de l’espace
-Position::Position(float detectabilityRadius) :
-	DETECTABILITY_RADIUS(detectabilityRadius)
+void Position::init()
 {
-	if (m_spaceWidth == 0 || m_spaceHeight == 0)
-	{
-		std::cerr << "Attention : une coordonnée a été créée avant l’initialisation de l’espace !" << std::endl;
-	}
-	setPreviousPosition(m_x, m_y);
-	recalculate();
+	//
 }
+
+// Constructeur factultatif mais ici on envoie un message d’erreur si une coordonnée est créée avant l’initialisation de l’espace
+// Position::Position(float detectabilityRadius) :
+// 	DETECTABILITY_RADIUS(detectabilityRadius)
+// {
+// 	if (m_spaceWidth == 0 || m_spaceHeight == 0)
+// 	{
+// 		std::cerr << "Attention : une coordonnée a été créée avant l’initialisation de l’espace !" << std::endl;
+// 	}
+// 	setPreviousPosition(m_x, m_y);
+// 	recalculate();
+// }
 
 Position::Position(float px, float py, float detectabilityRadius) :
 	m_x(px),
@@ -33,6 +38,7 @@ Position::Position(float px, float py, float detectabilityRadius) :
 	{
 		std::cerr << "Attention : une coordonnée a été créée avant l’initialisation de l’espace !" << std::endl;
 	}
+	m_thereIsARigidBody = false;
 	setPreviousPosition(m_x, m_y);
 	recalculate();
 }
@@ -229,6 +235,14 @@ MyVector Position::getPosition() const
 	return MyVector { m_x, m_y };
 }
 
+void Position::setPositionMovementLimit(sf::IntRect const& hall)
+{
+	this->hall.top = hall.top;
+	this->hall.left = hall.left;
+	this->hall.width = hall.width;
+	this->hall.height = hall.height;
+}
+
 void Position::setPreviousPosition(float x, float y)
 {
 	m_previousPosition.x = x;
@@ -242,8 +256,9 @@ void Position::setPreviousPosition(MyVector v)
 
 bool Position::canMove()
 {
-	// TODO -
-	return true;
+	// REVIEW -
+	return this->hall.contains(this->getX(), this->getY());
+	// return true;
 
 	bool canMove(0);
 	// On va repousser la zone de non mouvement d'un facteur

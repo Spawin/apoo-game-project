@@ -16,6 +16,12 @@ void GameObject::init()
 	GameObject::incrementCount();
 }
 
+void GameObject::initPosition(float posX, float posY)
+{
+	m_position = new Position(posX, posY);
+	m_body.setPosition(m_position->getPosition().toVector2f());
+}
+
 // GameObject::GameObject()
 // {
 // 	// initialisation
@@ -37,6 +43,7 @@ GameObject::GameObject(std::string_view const& imageSpritePath, float posX, floa
 {
 	// initialisation
 	init();
+	initPosition(posX, posY);
 
 	if (!m_texture.loadFromFile(imageSpritePath.data())) // TODO  - A changer; ces paramètre doivent venir du constructeur
 	// if (!m_texture.create(200, 200))
@@ -45,9 +52,6 @@ GameObject::GameObject(std::string_view const& imageSpritePath, float posX, floa
 	}
 
 	m_body.setTexture(m_texture);
-
-	m_position = Position(posX, posY);
-	m_body.setPosition(m_position.getX(), m_position.getY());
 }
 
 GameObject::~GameObject()
@@ -56,6 +60,8 @@ GameObject::~GameObject()
 	m_collider = nullptr;
 	delete m_rigidbody;
 	m_rigidbody = nullptr;
+	delete m_position;
+	m_position = nullptr;
 }
 
 void GameObject::show(sf::RenderTarget& window)
@@ -76,7 +82,12 @@ int GameObject::getGameObjectId() const
 	return m_id;
 }
 
-Position const& GameObject::getPosition() const
+const Position* GameObject::getPosition() const
+{
+	return m_position;
+}
+
+Position* GameObject::getNonConstPosition()
 {
 	return m_position;
 }
