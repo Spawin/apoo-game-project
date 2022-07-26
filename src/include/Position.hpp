@@ -12,7 +12,7 @@ class Position
 public:
 	// explicit Position(float detectabilityRadius = game::DEFAULT_DETECTABILITY_RADIUS);
 
-	explicit Position(float px, float py, float detectabilityRadius = game::DEFAULT_DETECTABILITY_RADIUS);
+	explicit Position(float px, float py, bool forMovableObject = true, float detectabilityRadius = game::DEFAULT_DETECTABILITY_RADIUS);
 	virtual ~Position();
 
 	static void initSpace(int width, int height); // méthode static car l’espace sera le même pour tous les objets Coordonnees
@@ -64,6 +64,9 @@ private:
 	void recalculate();
 	float m_x; // REVIEW -
 	float m_y; // REVIEW -
+
+	// Pour les NotMovableObject, on ne recalcul pas les coordonnées
+	bool const forMovableObject;
 
 	MyVector m_previousPosition;
 	void setPreviousPosition(float x, float y);

@@ -58,6 +58,7 @@ protected:
 	const Hall* hall;
 
 	// Fonctions d'initialisation
+	virtual void initPosition(float posX, float posY) override;
 
 	// Fonctions
 	/**

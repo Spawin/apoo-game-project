@@ -29,7 +29,7 @@ public:
 	 * @param posX la position x de l'objet
 	 * @param posY la position y de l'objet
 	 */
-	explicit GameObject(std::string_view const& imageSpritePath, float posX = 200 * 4.f, float posY = 200 * 70.f); // REVIEW -
+	explicit GameObject(std::string_view const& imageSpritePath); // REVIEW -
 
 	virtual ~GameObject();
 
@@ -91,7 +91,7 @@ protected:
 	 *
 	 */
 	void init();
-	void initPosition(float posX, float posY);
+	virtual void initPosition(float posX, float posY) = 0;
 	// identifiant unique du game Object
 	const int m_id { GameObject::m_count + 1 };
 	// Nom du game object

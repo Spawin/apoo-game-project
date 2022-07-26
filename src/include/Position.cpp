@@ -29,9 +29,10 @@ void Position::init()
 // 	recalculate();
 // }
 
-Position::Position(float px, float py, float detectabilityRadius) :
+Position::Position(float px, float py, bool forMovableObject, float detectabilityRadius) :
 	m_x(px),
 	m_y(py),
+	forMovableObject(forMovableObject),
 	DETECTABILITY_RADIUS(detectabilityRadius)
 {
 	if (m_spaceWidth == 0 || m_spaceHeight == 0)
@@ -48,7 +49,6 @@ Position::~Position()
 }
 
 //
-
 int Position::getSpaceWidth() const
 {
 	return m_spaceWidth;
@@ -108,6 +108,14 @@ void Position::recalculate()
 {
 
 	Collider::update(); // REVIEW - On peut l'enlever mait il faudrait augmenter les points de contact.
+
+	if (!this->forMovableObject)
+	{
+		// REVIEW - Un truc pour indiquer si le truc se trouve à la même position qu'un rigidBody
+
+		// On ne recalcul pas si c'est
+		return;
+	}
 
 	if (!canMove() || m_thereIsARigidBody)
 	{
