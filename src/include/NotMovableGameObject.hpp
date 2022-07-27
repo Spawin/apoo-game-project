@@ -13,6 +13,11 @@ class Hall;
 class Position;
 class GameObject;
 
+/**
+ * @brief Represente les objets imobiles.
+ * NOTE - Certains de ces Object Peuvent être déplacée ou transporté par un Personnage par exemple.
+ *
+ */
 class NotMovableGameObject : public GameObject
 {
 public:
