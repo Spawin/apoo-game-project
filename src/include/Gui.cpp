@@ -251,9 +251,8 @@ void gui::ProgressBar::setPosition(sf::Vector2f const& position, sf::VideoMode& 
 
 void gui::ProgressBar::update(int current_value, int max_value)
 {
-	// current_value = gui::p2pX(current_value, this->vm);
-	// max_value = gui::p2pX(max_value, this->vm);
-	// float height = gui::p2pY(_height, this->vm);
+	// On met d'abord à jour le text dans la bar
+	this->barString = std::to_string(current_value) + " / " + std::to_string(max_value);
 
 	current_value = current_value * this->maxWidth / max_value;
 
@@ -264,7 +263,6 @@ void gui::ProgressBar::update(int current_value, int max_value)
 			static_cast<float>(std::floor(this->maxWidth * percent)),
 			this->inner.getSize().y));
 
-	this->barString = std::to_string(current_value) + " / " + std::to_string(this->maxWidth);
 	this->text.setString(this->barString);
 }
 

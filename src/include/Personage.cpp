@@ -86,13 +86,13 @@ void Personage::initAnimations()
 void Personage::initEXPBar()
 {
 	this->expBar = new gui::ProgressBar(
-		this->calculateProgressBarsPosition().x - 10.4f * 5.5f, this->calculateProgressBarsPosition().y + 8.3f, 10.4f, 1.9f, sf::Color::Blue, 220, GameMaster::STATE_DATA()->graphicsSettings->resolution, &GameMaster::STATE_DATA()->defaultFont);
+		this->calculateProgressBarsPosition().x - 10.4f * 5.5f, this->calculateProgressBarsPosition().y + 5.6f * 5, 10.4f, 1.9f, sf::Color::Blue, 220, GameMaster::STATE_DATA()->graphicsSettings->resolution, &GameMaster::STATE_DATA()->defaultFont);
 }
 
 void Personage::initHPBar()
 {
 	this->hpBar = new gui::ProgressBar(
-		this->calculateProgressBarsPosition().x - 10.4f * 5.5f, this->calculateProgressBarsPosition().y + 5.6f * 5, 10.4f, 2.8f, sf::Color::Red, 180, GameMaster::STATE_DATA()->graphicsSettings->resolution, &GameMaster::STATE_DATA()->defaultFont);
+		this->calculateProgressBarsPosition().x - 10.4f * 5.5f, this->calculateProgressBarsPosition().y + 8.3f, 10.4f, 2.8f, sf::Color::Red, 180, GameMaster::STATE_DATA()->graphicsSettings->resolution, &GameMaster::STATE_DATA()->defaultFont);
 }
 
 Personage::Personage(bool isPlayer) :
@@ -251,8 +251,8 @@ void Personage::updatePosition(float posX, float posY)
 	m_body.setPosition(m_position->getPosition().toVector2f());
 
 	// On déplace les progresses
-	this->expBar->setPosition(sf::Vector2f(this->calculateProgressBarsPosition().x - 10.4f * 5.5f, this->calculateProgressBarsPosition().y + 8.3f), GameMaster::STATE_DATA()->graphicsSettings->resolution);
-	this->hpBar->setPosition(sf::Vector2f(this->calculateProgressBarsPosition().x - 10.4f * 5.5f, this->calculateProgressBarsPosition().y + 5.6f * 5), GameMaster::STATE_DATA()->graphicsSettings->resolution);
+	this->hpBar->setPosition(sf::Vector2f(this->calculateProgressBarsPosition().x - 10.4f * 5.5f, this->calculateProgressBarsPosition().y + 8.3f), GameMaster::STATE_DATA()->graphicsSettings->resolution);
+	this->expBar->setPosition(sf::Vector2f(this->calculateProgressBarsPosition().x - 10.4f * 5.5f, this->calculateProgressBarsPosition().y + 5.6f * 5), GameMaster::STATE_DATA()->graphicsSettings->resolution);
 
 	// On replace la vue si c'est le joueur
 	if (m_isPlayer)
