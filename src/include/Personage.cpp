@@ -83,12 +83,26 @@ void Personage::initAnimations()
 	this->animationComponent->addAnimation(0, "LEFT_DIE", 10.f, 0, 11, 7, 11, 150, 150);			   // Une fois et reste maintenu
 }
 
+void Personage::initEXPBar()
+{
+	this->expBar = new gui::ProgressBar(
+		this->calculateProgressBarsPosition().x - 10.4f * 5.5f, this->calculateProgressBarsPosition().y + 8.3f, 10.4f, 1.9f, sf::Color::Blue, 220, GameMaster::STATE_DATA()->graphicsSettings->resolution, &GameMaster::STATE_DATA()->defaultFont);
+}
+
+void Personage::initHPBar()
+{
+	this->hpBar = new gui::ProgressBar(
+		this->calculateProgressBarsPosition().x - 10.4f * 5.5f, this->calculateProgressBarsPosition().y + 5.6f * 5, 10.4f, 2.8f, sf::Color::Red, 180, GameMaster::STATE_DATA()->graphicsSettings->resolution, &GameMaster::STATE_DATA()->defaultFont);
+}
+
 Personage::Personage(bool isPlayer) :
 	MovableGameObject("content/personage/personage.png"), // REVIEW -
 	m_isPlayer(isPlayer)
 {
-	init();
-	initAnimations();
+	this->init();
+	this->initAnimations();
+	this->initEXPBar();
+	this->initHPBar();
 }
 
 // Personage::Personage(std::string_view const& imageSpritePath, bool isPlayer) :
@@ -109,9 +123,16 @@ Personage::~Personage()
 {
 	// delete m_collider; // Déjà fait au niveau du GameObject.
 	m_window = nullptr;
+	delete this->hpBar;
+	delete this->expBar;
 }
 
 //
+sf::Vector2f Personage::calculateProgressBarsPosition()
+{
+	return sf::Vector2f(this->getPosition()->getPosition().x, this->getPosition()->getPosition().y - 150.f);
+}
+
 bool Personage::isDied() const
 {
 	return m_healthLevel == 0; // REVIEW -
@@ -122,11 +143,15 @@ void Personage::show(sf::RenderTarget& target)
 	m_window = &target; // REVIEW -
 	// GameObject::show(window);
 	target.draw(m_body);
+
+	this->renderEXPBar(target);
+	this->renderHPBar(target);
 }
 
 void Personage::update()
 {
-	//
+	this->updateEXPBar();
+	this->updateHPBar();
 }
 
 void Personage::setGameObjectName(string name)
@@ -224,7 +249,11 @@ void Personage::updatePosition(float posX, float posY)
 	m_position->setPosition(posX, posY);
 	// On replace le body
 	m_body.setPosition(m_position->getPosition().toVector2f());
-	cout << "Position du joueur " << m_gameObjectName << " : " << m_position << " => " << (*m_position) << endl;
+
+	// On déplace les progresses
+	this->expBar->setPosition(sf::Vector2f(this->calculateProgressBarsPosition().x - 10.4f * 5.5f, this->calculateProgressBarsPosition().y + 8.3f), GameMaster::STATE_DATA()->graphicsSettings->resolution);
+	this->hpBar->setPosition(sf::Vector2f(this->calculateProgressBarsPosition().x - 10.4f * 5.5f, this->calculateProgressBarsPosition().y + 5.6f * 5), GameMaster::STATE_DATA()->graphicsSettings->resolution);
+
 	// On replace la vue si c'est le joueur
 	if (m_isPlayer)
 		if (m_window != 0)
@@ -235,9 +264,31 @@ void Personage::updatePosition(float posX, float posY)
 			player_view.setCenter(this->m_position->getPosition().toVector2f());
 			m_window->setView(player_view);
 		}
+
+	cout << "Position du joueur " << m_gameObjectName << " : " << m_position << " => " << (*m_position) << endl;
 }
 
 void Personage::move(MyVector& speed)
 {
 	updatePosition(this->getPosition()->getX() + speed.x, this->getPosition()->getY() + speed.y);
+}
+
+void Personage::updateEXPBar()
+{
+	this->expBar->update(this->m_specialityLevel, game::PERSONNAGE_MAX_SPECIALITY);
+}
+
+void Personage::updateHPBar()
+{
+	this->hpBar->update(this->m_healthLevel, game::PERSONNAGE_MAX_HEALTH);
+}
+
+void Personage::renderEXPBar(sf::RenderTarget& target)
+{
+	this->expBar->render(target);
+}
+
+void Personage::renderHPBar(sf::RenderTarget& target)
+{
+	this->hpBar->render(target);
 }

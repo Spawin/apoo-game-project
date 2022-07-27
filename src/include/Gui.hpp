@@ -75,6 +75,32 @@ private:
 	// Fonctions d'initialisation
 };
 
+class ProgressBar
+{
+private:
+	sf::VideoMode& vm;
+	std::string barString;
+	sf::Text text;
+	float maxWidth;
+	sf::RectangleShape back;
+	sf::RectangleShape inner;
+
+public:
+	ProgressBar(float x, float y, float width, float height,
+		sf::Color inner_color, unsigned character_size,
+		sf::VideoMode& vm, sf::Font* font = NULL, bool text_bold = false);
+	~ProgressBar();
+
+	//Accessors
+
+	//Modifiers
+	void setPosition(sf::Vector2f const& position, sf::VideoMode& vm);
+
+	//Functions
+	void update(int current_value, int max_value);
+	void render(sf::RenderTarget& target);
+};
+
 } // namespace gui
 
 #endif // __GUI_HPP__

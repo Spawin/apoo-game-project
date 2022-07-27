@@ -1,7 +1,9 @@
 #ifndef __PERSONGE_HPP__
 #define __PERSONGE_HPP__
 
+#include "include/Gui.hpp"
 #include "include/MovableGameObject.hpp"
+#include "include/consts.hpp"
 #include <string>
 
 class Personage : public MovableGameObject
@@ -65,12 +67,16 @@ protected:
 	 *
 	 */
 	void initAnimations();
+	void initEXPBar();
+	void initHPBar();
+
+	sf::Vector2f calculateProgressBarsPosition();
 
 	// La quantité de vie du personnage
 	int m_healthLevel { 100 };
 
 	// La quantité de ça spécialité
-	int m_specialityLevel { 100 };
+	int m_specialityLevel { 50 };
 
 	// Le nom de la spécialité
 	std::string m_specialtyName;
@@ -103,12 +109,24 @@ protected:
 
 	sf::RenderTarget* m_window { 0 };
 
+	//EXP Bar
+	gui::ProgressBar* expBar;
+
+	//HP Bar
+	gui::ProgressBar* hpBar;
+
 	/**
 	 * @brief Permet de mettre à jour la position actuelle.
 	 * Cette position sera déterminé par l'évenement reçu au préalable.
 	 * Aussi il s'agit dans ce cas d'une accélération uniforme.
 	 */
 	virtual void updatePosition(float posX, float posY) override;
+
+	void updateEXPBar();
+	void updateHPBar();
+
+	void renderEXPBar(sf::RenderTarget& target);
+	void renderHPBar(sf::RenderTarget& target);
 };
 
 #endif // __PERSONGE_HPP__

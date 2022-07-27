@@ -7,6 +7,7 @@ const sf::Vector2i GameMaster::m_spriteBoxCenter(17, 16);
 int GameMaster::m_countInstance = 0;
 GameMaster* GameMaster::m_gameMaster = nullptr;
 float GameMaster::screenScalingFactor(1.f);
+StateData* GameMaster::m_static_stateData = nullptr;
 
 //
 void GameMaster::initGraphicsSettings()
@@ -30,6 +31,9 @@ void GameMaster::initGraphicsSettings()
 
 	// We set the icon here...
 	platform.setIcon(window->getSystemHandle());
+
+	// // Initialisation du vidéo mode
+	// game::vm = &this->graphicsSettings.resolution;
 }
 
 void GameMaster::initWindow()
@@ -110,12 +114,24 @@ void GameMaster::intiStateData()
 	// this->stateData.supportedKeys = &this->supportedKeys;
 	this->stateData.states = &this->states;
 	// this->stateData.gridSize = this->gridSize;
+
+	this->initFonts();
+
+	GameMaster::m_static_stateData = &this->stateData;
 }
 
 void GameMaster::intiStates()
 {
 	this->states.push(new MainMenuState(&this->stateData));
 	// this->states.push(new GameState(this->window));
+}
+
+void GameMaster::initFonts()
+{
+	if (!this->stateData.defaultFont.loadFromFile("content/fonts/Dosis-Light.ttf"))
+	{
+		throw("ERROR::GAMEMASTER::COULD_NOT_LOAD_FONT");
+	}
 }
 // ---------------------------------------
 
@@ -160,6 +176,11 @@ const sf::Vector2i GameMaster::getSPRITE_BOX_CENTER()
 const GameMaster* GameMaster::GAME_MASTER()
 {
 	return m_gameMaster;
+}
+
+StateData* GameMaster::STATE_DATA()
+{
+	return m_static_stateData;
 }
 
 float GameMaster::getSCREEN_SCALING_FACTOR()

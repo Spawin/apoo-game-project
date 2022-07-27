@@ -43,6 +43,9 @@ constexpr int PERSONNAGE_DETECTABILITY_RADIUS = 16;
 // Diamètre de la zone occupé par un personnage
 constexpr int PERSONNAGE_WIDTH = 32;
 
+constexpr int PERSONNAGE_MAX_HEALTH = 100;
+constexpr int PERSONNAGE_MAX_SPECIALITY = 100;
+
 // constexpr int NOMBER_OF_WALLS = 32;
 
 enum movement_states
@@ -57,6 +60,9 @@ enum movement_states
 
 //* ------------------- Variables
 // static float SCREEN_SCALING_FACTOR = 1.f;
+// sf::VideoMode* vm = nullptr;
+// // Dosis-Light.ttf
+// sf::Font defaultFont;
 
 // REVIEW -
 inline std::string const& GAME_NAME()

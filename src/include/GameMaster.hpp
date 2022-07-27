@@ -30,6 +30,7 @@ public:
 	//
 	//
 	static const GameMaster* GAME_MASTER();
+	static StateData* STATE_DATA(); // TODO - static const
 	static const sf::Vector2i getSPRITE_BOX_CENTER();
 	static float getSCREEN_SCALING_FACTOR();
 
@@ -52,13 +53,17 @@ private:
 	void initWindow();
 	void intiStateData();
 	void intiStates();
+	void initFonts();
 	//
 	//
 	//
 	//
 	static int m_countInstance;
 	// L'objet gameMaster actuel
-	static GameMaster* m_gameMaster;
+	static GameMaster* m_gameMaster; // REVIEW -
+
+	//
+	static StateData* m_static_stateData;
 
 	// std::vector<std::shared_ptr<sf::Texture>> textures;
 	/**

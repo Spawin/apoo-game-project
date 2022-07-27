@@ -28,6 +28,8 @@ struct StateData
 	GraphicsSettings* graphicsSettings;
 	// std::map<std::string, int>* supportedKeys;
 	std::stack<State*>* states;
+	// Dosis-Light.ttf
+	sf::Font defaultFont;
 };
 
 class State
