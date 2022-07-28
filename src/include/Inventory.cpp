@@ -1,4 +1,5 @@
 #include "include/Inventory.hpp"
+#include "include/GameMaster.hpp"
 #include "include/Vial.hpp"
 
 // Fonction static
@@ -6,20 +7,25 @@
 // Fonctions d'initialisation
 void Inventory::initLimitPerType(unsigned vial_capacity, unsigned armory_capacity, unsigned teleportKey_capacity, unsigned money_capacity)
 {
-	this->limitPerType[inventory_items_types::DEFAULT] = 0; // REVIEW -
-	this->limitPerType[inventory_items_types::VIAL] = vial_capacity;
-	this->limitPerType[inventory_items_types::ARMORY] = armory_capacity;
-	this->limitPerType[inventory_items_types::TELEPORTKEY] = teleportKey_capacity;
-	this->limitPerType[inventory_items_types::MONEY] = money_capacity;
+	this->limitPerType[game::inventory_items_types::DEFAULT] = 0; // REVIEW -
+	this->limitPerType[game::inventory_items_types::VIAL] = vial_capacity;
+	this->limitPerType[game::inventory_items_types::ARMORY] = armory_capacity;
+	this->limitPerType[game::inventory_items_types::TELEPORTKEY] = teleportKey_capacity;
+	this->limitPerType[game::inventory_items_types::MONEY] = money_capacity;
 }
 
 void Inventory::initItemsMapStructure()
 {
-	// this->items[inventory_items_types::DEFAULT];
-	// this->items[inventory_items_types::VIAL] = std::vector<Vial*, std::allocator<Item*>>();
-	// this->items[inventory_items_types::ARMORY];
-	// this->items[inventory_items_types::TELEPORTKEY];
-	// this->items[inventory_items_types::MONEY];
+	// this->items[game::inventory_items_types::DEFAULT];
+	// this->items[game::inventory_items_types::VIAL] = std::vector<Vial*, std::allocator<Item*>>();
+	// this->items[game::inventory_items_types::ARMORY];
+	// this->items[game::inventory_items_types::TELEPORTKEY];
+	// this->items[game::inventory_items_types::MONEY];
+}
+
+void Inventory::iniInventorytGui()
+{
+	this->inventoryGui = new gui::Inventory(GameMaster::STATE_DATA()->defaultFont);
 }
 
 // Constructeurs/Destructeur
@@ -27,6 +33,7 @@ Inventory::Inventory(unsigned vial_capacity, unsigned armory_capacity, unsigned 
 {
 	this->initLimitPerType(vial_capacity, armory_capacity, teleportKey_capacity, money_capacity);
 	this->initItemsMapStructure();
+	this->iniInventorytGui();
 }
 
 Inventory::~Inventory()
@@ -40,10 +47,12 @@ Inventory::~Inventory()
 
 		it1->second.clear();
 	}
+
+	delete this->inventoryGui;
 }
 
 // Fonctions/Méthodes
-bool Inventory::add(Item* item, inventory_items_types type)
+bool Inventory::add(Item* item, game::inventory_items_types type)
 {
 	// REVIEW - Cas des doublons
 	if ((int)(this->items[type].size()) >= this->limitPerType[type])
@@ -56,7 +65,7 @@ bool Inventory::add(Item* item, inventory_items_types type)
 	return true;
 }
 
-bool Inventory::move(Item* item, inventory_items_types type, Inventory* to_inventory)
+bool Inventory::move(Item* item, game::inventory_items_types type, Inventory* to_inventory)
 {
 	// REVIEW - des vérification pour voir si l'object existe réelement
 
@@ -68,7 +77,7 @@ bool Inventory::move(Item* item, inventory_items_types type, Inventory* to_inven
 	return true;
 }
 
-bool Inventory::remove(Item* item, inventory_items_types type)
+bool Inventory::remove(Item* item, game::inventory_items_types type)
 {
 	// TODO - Vérifications et try catch
 	delete this->items[type][this->getItemIndex(item, type)];
@@ -77,17 +86,22 @@ bool Inventory::remove(Item* item, inventory_items_types type)
 	return true;
 }
 
-int Inventory::getTypeLimit(inventory_items_types type)
+int Inventory::getTypeLimit(game::inventory_items_types type)
 {
 	return this->limitPerType[type];
 }
 
-int Inventory::getFreePlace(inventory_items_types type)
+int Inventory::getFreePlace(game::inventory_items_types type)
 {
 	return this->limitPerType[type] - this->items[type].size();
 }
 
-unsigned Inventory::getItemIndex(Item* item, inventory_items_types type)
+gui::Inventory* Inventory::getGui()
+{
+	return this->inventoryGui;
+}
+
+unsigned Inventory::getItemIndex(Item* item, game::inventory_items_types type)
 {
 	for (size_t i = 0; i < this->items[type].size(); i++)
 	{
@@ -100,7 +114,7 @@ unsigned Inventory::getItemIndex(Item* item, inventory_items_types type)
 	return -1;
 }
 
-std::vector<Item*>::iterator Inventory::getItemIterator(Item* item, inventory_items_types type)
+std::vector<Item*>::iterator Inventory::getItemIterator(Item* item, game::inventory_items_types type)
 {
 	for (auto it = this->items[type].begin(); it != this->items[type].end(); it++)
 	{

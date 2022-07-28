@@ -46,6 +46,8 @@ constexpr int PERSONNAGE_WIDTH = 32;
 constexpr int PERSONNAGE_MAX_HEALTH = 100;
 constexpr int PERSONNAGE_MAX_SPECIALITY = 100;
 
+constexpr int INVENTORY_BLOCK_WIDTH = 80;
+
 // constexpr int NOMBER_OF_WALLS = 32;
 
 enum movement_states
@@ -56,6 +58,15 @@ enum movement_states
 	MOVING_RIGHT,
 	MOVING_UP,
 	MOVING_DOWN
+};
+
+enum inventory_items_types
+{
+	DEFAULT = -1,
+	VIAL = 0,
+	ARMORY,
+	TELEPORTKEY,
+	MONEY
 };
 
 //* ------------------- Variables

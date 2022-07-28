@@ -7,7 +7,7 @@
 PauseMenu::PauseMenu(sf::VideoMode& vm, sf::Font& font) :
 	font(font)
 {
-	std::cout << "Pause menu : w=" << vm.width << " h=" << vm.height << std::endl;
+	std::cout << "Pause menu / Inventaire : w=" << vm.width << " h=" << vm.height << std::endl;
 
 	//Init background
 	this->background.setSize(

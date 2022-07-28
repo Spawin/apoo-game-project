@@ -1,4 +1,8 @@
 #include "include/Gui.hpp"
+#include "consts.hpp"
+#include <algorithm>
+#include <math.h>
+
 // REVIEW -
 float gui::p2pX(const float perc, const sf::VideoMode& vm)
 {
@@ -273,3 +277,246 @@ void gui::ProgressBar::render(sf::RenderTarget& target)
 	target.draw(this->text);
 }
 // ********************************* End ProgressBar
+
+// ********************************* Inventory
+// Fonction static
+
+// Fonctions d'initialisation
+void gui::Inventory::initBackground()
+{
+	this->background.setSize(sf::Vector2f(game::INVENTORY_BLOCK_WIDTH * 13, game::INVENTORY_BLOCK_WIDTH * 5));
+	this->background.setFillColor(sf::Color::Magenta);
+	this->background.setPosition(5 * 200, 70 * 200);
+}
+
+void gui::Inventory::initInventoryItemSprites()
+{
+	// sf::Sprite sp = sf::Sprite();
+
+	// this->inventoryItemSprites[game::inventory_items_types::DEFAULT]= sf::Sprite(sf::Texture());
+	// this->inventoryItemSprites[game::inventory_items_types::ARMORY]= sf::Sprite();
+	// this->inventoryItemSprites[game::inventory_items_types::MONEY]= sf::Sprite();
+	// this->inventoryItemSprites[game::inventory_items_types::TELEPORTKEY]= sf::Sprite();
+	// this->inventoryItemSprites[game::inventory_items_types::VIAL]= sf::Sprite();
+}
+
+// Constructeurs/Destructeur
+gui::Inventory::Inventory(sf::Font const& font) :
+	font(font)
+{
+	this->initBackground();
+	this->initInventoryItemSprites();
+}
+
+gui::Inventory::~Inventory()
+{
+	for (auto it = this->inventoryButtons.begin(); it != this->inventoryButtons.end(); it++)
+	{
+		for (size_t i = 0; i < it->second.size(); i++)
+		{
+			delete it->second[i];
+		}
+	}
+}
+
+// Fonctions/Méthodes
+bool gui::Inventory::addItem(const Item* item, game::inventory_items_types type)
+{
+	// this->inventoryItemSprites[type].push_back(item->getSprite());
+	switch (type)
+	{
+		case game::inventory_items_types::DEFAULT: {
+		}
+		break;
+		case game::inventory_items_types::ARMORY: {
+			float x = 80.f + 80.f * 4.f + 80.f * (this->inventoryButtons[type].size() % 2);
+			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
+			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50)));
+			return true;
+		}
+		break;
+		case game::inventory_items_types::MONEY: {
+		}
+		break;
+		case game::inventory_items_types::TELEPORTKEY: {
+		}
+		break;
+		case game::inventory_items_types::VIAL: {
+			float x = 80.f + 80.f + 80.f * (this->inventoryButtons[type].size() % 2);
+			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
+			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50)));
+			return true;
+		}
+		break;
+		default: {
+			return false;
+		}
+		break;
+	}
+	return false;
+}
+
+bool gui::Inventory::removeItem(int index /*, sf::Sprite const& itemSprite*/, game::inventory_items_types type)
+{
+	// REVIEW -
+	// vec.erase(std::remove(vec.begin(), vec.end(), value), vec.end());
+	// this->inventoryItemSprites[type].erase(std::remove(this->inventoryItemSprites[type].begin(), this->inventoryItemSprites[type].end(), itemSprite), this->inventoryItemSprites[type].end());
+	delete this->inventoryButtons[type][index];
+	this->inventoryButtons[type].erase(std::remove(this->inventoryButtons[type].begin(), this->inventoryButtons[type].end(), this->inventoryButtons[type][index]), this->inventoryButtons[type].end());
+	//
+
+	return true;
+}
+
+void gui::Inventory::update(const sf::Vector2i& mousePosView)
+{
+	// Hover
+	for (auto&& inventoryButtonVectorPair : this->inventoryButtons)
+	{
+		for (size_t i = 0; i < inventoryButtonVectorPair.second.size(); i++)
+		{
+			inventoryButtonVectorPair.second[i]->update(mousePosView);
+		}
+	}
+}
+
+void gui::Inventory::render(sf::RenderTarget& target)
+{
+	for (auto it = this->inventoryButtons.begin(); it != this->inventoryButtons.end(); it++)
+	{
+		for (size_t i = 0; i < it->second.size(); i++)
+		{
+			it->second[i]->render(target);
+		}
+	}
+}
+
+// std::vector<sf::Sprite const&>::iterator gui::Inventory::getItemSpriteIterator(sf::Sprite const& itemSprite, game::inventory_items_types type)
+// {
+// 	for (auto it = this->inventoryItemSprites[type].begin(); it != this->inventoryItemSprites[type].end(); it++)
+// 	{
+// 		if ((*it) == itemSprite)
+// 		{
+// 			return it;
+// 		}
+// 	}
+// 	return std::vector<sf::Sprite const&>::iterator(); // REVIEW -
+// }
+
+// ********************************* End Inventory
+
+// ********************************* InventoryButton
+// Fonction static
+
+// Fonctions d'initialisation
+
+// Constructeurs/Destructeur
+gui::InventoryButton::InventoryButton(float x, float y, sf::Sprite const& sprite,
+	sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor,
+	sf::Color outline_idle_color, sf::Color outline_hover_color, sf::Color outline_active_color, short unsigned id) :
+	sprite(sprite)
+{
+	this->buttonState = BTN_IDLE;
+	this->id = id;
+
+	this->shape.setPosition(sf::Vector2f(x, y));
+	this->shape.setSize(sf::Vector2f(this->sprite.getTexture()->getSize().x, this->sprite.getTexture()->getSize().y));
+	this->shape.setFillColor(idleColor);
+	this->shape.setOutlineThickness(1.f);
+	this->shape.setOutlineColor(outline_idle_color);
+
+	this->idleColor = idleColor;
+	this->hoverColor = hoverColor;
+	this->activeColor = activeColor;
+
+	this->outlineIdleColor = outline_idle_color;
+	this->outlineHoverColor = outline_hover_color;
+	this->outlineActiveColor = outline_active_color;
+
+	this->offset = sf::Vector2f(0.f, 0.f);
+}
+
+gui::InventoryButton::~InventoryButton()
+{}
+
+// Fonctions/Méthodes
+bool gui::InventoryButton::isPressed() const
+{
+	if (this->buttonState == BTN_ACTIVE)
+		return true;
+
+	return false;
+}
+
+const sf::Vector2f& gui::InventoryButton::getPosition() const
+{
+	return this->shape.getPosition();
+}
+
+void gui::InventoryButton::setPosition(float x, float y, float addX, float addY)
+{
+	// std::cout << "Param Pos : x=" << x << " y=" << y << std::endl;
+	this->shape.setPosition(x, y);
+	// std::cout << "Shape Pos : x=" << this->shape.getPosition().x << " y=" << this->shape.getPosition().y << std::endl;
+	// std::cout << "Shape getGlobalBounds : x=" << this->shape.getPosition().x << " y=" << this->shape.getPosition().y << std::endl;
+
+	// this->sprite REVIEW -
+
+	this->offset = sf::Vector2f(addX, addY);
+}
+
+void gui::InventoryButton::update(const sf::Vector2i& mousePosWindow)
+{
+
+	// std::cout << "Position de la souris " << mousePosWindow.x << " " << mousePosWindow.y << std::endl;
+	// std::cout << "Position du shape " << this->shape.getPosition().x << " " << this->shape.getPosition().y << std::endl;
+	// Idle
+	this->buttonState = BTN_IDLE;
+
+	// Hover
+	if (this->shape.getGlobalBounds().contains(mousePosWindow.x + this->offset.x, mousePosWindow.y + this->offset.y)) // NOTE - On a ajouter la position du shape pour tenir compte des décalage lors de l'affichage du menu dans certaines vues
+	{
+		this->buttonState = BTN_HOVER;
+
+		// Pressed
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+		{
+			this->buttonState = BTN_ACTIVE;
+		}
+	}
+
+	switch (this->buttonState)
+	{
+		case BTN_IDLE:
+			this->shape.setFillColor(this->idleColor);
+			// this->text.setFillColor(this->textIdleColor);
+			this->shape.setOutlineColor(this->outlineIdleColor);
+			break;
+
+		case BTN_HOVER:
+			this->shape.setFillColor(this->hoverColor);
+			// this->text.setFillColor(this->textHoverColor);
+			this->shape.setOutlineColor(this->outlineHoverColor);
+			break;
+
+		case BTN_ACTIVE:
+			this->shape.setFillColor(this->activeColor);
+			// this->text.setFillColor(this->textActiveColor);
+			this->shape.setOutlineColor(this->outlineActiveColor);
+			break;
+
+		default:
+			this->shape.setFillColor(sf::Color::Red);
+			// this->text.setFillColor(sf::Color::Blue);
+			this->shape.setOutlineColor(sf::Color::Green);
+			break;
+	}
+}
+
+void gui::InventoryButton::render(sf::RenderTarget& target)
+{
+	target.draw(this->sprite);
+	target.draw(this->shape);
+}
+
+// ********************************* End InventoryButton

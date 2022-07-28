@@ -5,17 +5,19 @@
 	#include <map>
 	#include <vector>
 	#include <string>
+	#include "include/Gui.hpp"
+	#include "include/consts.hpp"
 
 class Item;
 
-enum inventory_items_types
-{
-	DEFAULT = -1,
-	VIAL = 0,
-	ARMORY,
-	TELEPORTKEY,
-	MONEY
-};
+// enum inventory_items_types
+// {
+// 	DEFAULT = -1,
+// 	VIAL = 0,
+// 	ARMORY,
+// 	TELEPORTKEY,
+// 	MONEY
+// };
 
 class Inventory
 {
@@ -25,12 +27,14 @@ public:
 	~Inventory();
 
 	// Fonctions/Méthodes
-	bool add(Item* item, inventory_items_types type);
-	bool move(Item* item, inventory_items_types type, Inventory* to_inventory);
-	bool remove(Item* item, inventory_items_types type);
+	bool add(Item* item, game::inventory_items_types type);
+	bool move(Item* item, game::inventory_items_types type, Inventory* to_inventory);
+	bool remove(Item* item, game::inventory_items_types type);
 
-	int getTypeLimit(inventory_items_types type);
-	int getFreePlace(inventory_items_types type);
+	int getTypeLimit(game::inventory_items_types type);
+	int getFreePlace(game::inventory_items_types type);
+
+	gui::Inventory* getGui();
 
 private:
 	using ItemMap = std::map<int, std::vector<Item*>>;
@@ -41,9 +45,12 @@ private:
 	// Fonctions d'initialisation
 	void initLimitPerType(unsigned vial_capacity, unsigned armory_capacity, unsigned teleportKey_capacity, unsigned money_capacity);
 	void initItemsMapStructure();
+	void iniInventorytGui();
 
-	unsigned getItemIndex(Item* item, inventory_items_types type);
-	std::vector<Item*>::iterator getItemIterator(Item* item, inventory_items_types type);
+	unsigned getItemIndex(Item* item, game::inventory_items_types type);
+	std::vector<Item*>::iterator getItemIterator(Item* item, game::inventory_items_types type);
+
+	gui::Inventory* inventoryGui;
 };
 
 #endif // __INVENTORY_HPP__

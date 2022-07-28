@@ -17,6 +17,7 @@ public:
 	// Constructeurs/Destructeur
 
 	// Fonctions/Méthodes
+	// sf::Texture const& get
 	// bool use();
 
 protected:
