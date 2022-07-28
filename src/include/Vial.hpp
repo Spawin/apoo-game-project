@@ -9,7 +9,7 @@ class Vial : public Item
 {
 public:
 	// Constructeurs/Destructeur
-	Vial(std::string_view const& imageSpritePath);
+	Vial(std::string_view const& imageSpritePath, ItemsCategories categorie);
 	~Vial();
 
 	// Fonctions/Méthodes

@@ -1,11 +1,11 @@
 #if !defined(__SWORD__HPP__)
 	#define __SWORD__HPP__
 
-	#include "include/Item.hpp"
+	#include "include/Armory.hpp"
 
-class Item;
+class Armory;
 
-class Sword : public Item
+class Sword : public Armory
 {
 public:
 	// Constructeurs/Destructeur

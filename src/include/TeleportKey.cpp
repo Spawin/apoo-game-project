@@ -6,7 +6,7 @@
 
 // Constructeurs/Destructeur
 TeleportKey::TeleportKey() :
-	Item("content/gameObjects/teleportKey.png")
+	Item("content/gameObjects/teleportKey.png", ItemsCategories::TELEPORTKEY)
 {
 }
 

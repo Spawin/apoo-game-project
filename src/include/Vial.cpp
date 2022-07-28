@@ -5,8 +5,8 @@
 // Fonctions d'initialisation
 
 // Constructeurs/Destructeur
-Vial::Vial(std::string_view const& imageSpritePath) :
-	Item(imageSpritePath)
+Vial::Vial(std::string_view const& imageSpritePath, ItemsCategories categorie) :
+	Item(imageSpritePath, categorie)
 {
 }
 

@@ -6,15 +6,31 @@
 class NotMovableGameObject;
 
 /**
+	 * @brief Représente les catégories d'items.
+	 * TODO - Compléter....
+	 *
+	 */
+enum class ItemsCategories
+{
+	MONEY,
+	TELEPORTKEY,
+	DEFEND,
+	ATTACK_BODY_TO_BODY,
+	ATTACK_DISTANCE,
+	HEALTH_RESTORE,
+	EXP_RESTORE,
+};
+
+/**
  * @brief Représente éssentiellement les object que pourra manipuler les personnages
  *
  */
 class Item : public NotMovableGameObject
 {
 public:
-	Item(std::string_view const& imageSpritePath);
-	~Item();
 	// Constructeurs/Destructeur
+	Item(std::string_view const& imageSpritePath, ItemsCategories categorie);
+	~Item();
 
 	// Fonctions/Méthodes
 
@@ -28,6 +44,7 @@ public:
 
 protected:
 	// Variables
+	const ItemsCategories categorie;
 
 	// Fonctions d'initialisation
 

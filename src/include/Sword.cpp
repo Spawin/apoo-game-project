@@ -6,7 +6,7 @@
 
 // Constructeurs/Destructeur
 Sword::Sword() :
-	Item("content/gameObjects/sword.png")
+	Armory("content/gameObjects/sword.png", ItemsCategories::ATTACK_BODY_TO_BODY)
 {
 	m_gameObjectName = "Sword";
 

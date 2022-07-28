@@ -2,6 +2,7 @@
 	#define __ARMORY_HPP__
 
 	#include "include/Item.hpp"
+	#include "include/consts.hpp"
 
 class Item;
 
@@ -9,7 +10,7 @@ class Armory : public Item
 {
 public:
 	// Constructeurs/Destructeur
-	Armory(std::string_view const& imageSpritePath);
+	Armory(std::string_view const& imageSpritePath, ItemsCategories categorie);
 	~Armory();
 
 	// Fonctions/Méthodes

@@ -5,8 +5,8 @@
 // Fonctions d'initialisation
 
 // Constructeurs/Destructeur
-Armory::Armory(std::string_view const& imageSpritePath) :
-	Item(imageSpritePath)
+Armory::Armory(std::string_view const& imageSpritePath, ItemsCategories categorie) :
+	Item(imageSpritePath, categorie)
 {
 }
 

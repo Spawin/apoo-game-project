@@ -6,7 +6,7 @@
 
 // Constructeurs/Destructeur
 Money::Money() :
-	Item("content/gameObjects/gold_coin.png")
+	Item("content/gameObjects/gold_coin.png", ItemsCategories::MONEY)
 {
 }
 
