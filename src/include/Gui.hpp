@@ -190,6 +190,8 @@ private:
 	void initInventoryItemSprites();
 	void initInventoryButtons();
 
+	void setGraphicsElementPosition(sf::View const& view);
+
 	// std::vector<sf::Sprite const&>::iterator getItemSpriteIterator(sf::Sprite const& itemSprite, game::inventory_items_types type);
 };
 

@@ -278,150 +278,6 @@ void gui::ProgressBar::render(sf::RenderTarget& target)
 }
 // ********************************* End ProgressBar
 
-// ********************************* Inventory
-// Fonction static
-
-// Fonctions d'initialisation
-void gui::Inventory::initBackground()
-{
-	this->background.setSize(sf::Vector2f(game::INVENTORY_BLOCK_WIDTH * 13, game::INVENTORY_BLOCK_WIDTH * 5));
-	this->background.setFillColor(sf::Color::Magenta);
-	this->background.setPosition(5 * 200, 70 * 200);
-}
-
-void gui::Inventory::initInventoryItemSprites()
-{
-	// sf::Sprite sp = sf::Sprite();
-
-	// this->inventoryItemSprites[game::inventory_items_types::DEFAULT]= sf::Sprite(sf::Texture());
-	// this->inventoryItemSprites[game::inventory_items_types::ARMORY]= sf::Sprite();
-	// this->inventoryItemSprites[game::inventory_items_types::MONEY]= sf::Sprite();
-	// this->inventoryItemSprites[game::inventory_items_types::TELEPORTKEY]= sf::Sprite();
-	// this->inventoryItemSprites[game::inventory_items_types::VIAL]= sf::Sprite();
-}
-
-void gui::Inventory::initInventoryButtons()
-{
-	// sf::Sprite sp = sf::Sprite();
-
-	this->inventoryButtons[game::inventory_items_types::DEFAULT] = {};
-	this->inventoryButtons[game::inventory_items_types::ARMORY] = {};
-	this->inventoryButtons[game::inventory_items_types::MONEY] = {};
-	this->inventoryButtons[game::inventory_items_types::TELEPORTKEY] = {};
-	this->inventoryButtons[game::inventory_items_types::VIAL] = {};
-}
-
-// Constructeurs/Destructeur
-gui::Inventory::Inventory(sf::Font const& font) :
-	font(font)
-{
-	this->initBackground();
-	this->initInventoryItemSprites();
-	this->initInventoryButtons();
-}
-
-gui::Inventory::~Inventory()
-{
-	if (this->inventoryButtons.size() > 0) // REVIEW - On peut enlever
-	{
-		for (auto it = this->inventoryButtons.begin(); it != this->inventoryButtons.end(); it++)
-		{
-			for (size_t i = 0; i < it->second.size(); i++)
-			{
-				delete it->second[i];
-			}
-		}
-	}
-
-	std::cout << "c'est fini\n\n";
-}
-
-// Fonctions/Méthodes
-bool gui::Inventory::addItem(const Item* item, game::inventory_items_types type)
-{
-	// this->inventoryItemSprites[type].push_back(item->getSprite());
-	switch (type)
-	{
-		case game::inventory_items_types::DEFAULT: {
-		}
-		break;
-		case game::inventory_items_types::ARMORY: {
-			float x = 80.f + 80.f * 4.f + 80.f * (this->inventoryButtons[type].size() % 2);
-			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
-			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50)));
-			return true;
-		}
-		break;
-		case game::inventory_items_types::MONEY: {
-		}
-		break;
-		case game::inventory_items_types::TELEPORTKEY: {
-		}
-		break;
-		case game::inventory_items_types::VIAL: {
-			float x = 80.f + 80.f + 80.f * (this->inventoryButtons[type].size() % 2);
-			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
-			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50)));
-			return true;
-		}
-		break;
-		default: {
-			return false;
-		}
-		break;
-	}
-	return false;
-}
-
-bool gui::Inventory::removeItem(int index /*, sf::Sprite const& itemSprite*/, game::inventory_items_types type)
-{
-	// REVIEW -
-	// vec.erase(std::remove(vec.begin(), vec.end(), value), vec.end());
-	// this->inventoryItemSprites[type].erase(std::remove(this->inventoryItemSprites[type].begin(), this->inventoryItemSprites[type].end(), itemSprite), this->inventoryItemSprites[type].end());
-	delete this->inventoryButtons[type][index];
-	this->inventoryButtons[type].erase(std::remove(this->inventoryButtons[type].begin(), this->inventoryButtons[type].end(), this->inventoryButtons[type][index]), this->inventoryButtons[type].end());
-	//
-
-	return true;
-}
-
-void gui::Inventory::update(const sf::Vector2i& mousePosView)
-{
-	// Hover
-	for (auto&& inventoryButtonVectorPair : this->inventoryButtons)
-	{
-		for (size_t i = 0; i < inventoryButtonVectorPair.second.size(); i++)
-		{
-			inventoryButtonVectorPair.second[i]->update(mousePosView);
-		}
-	}
-}
-
-void gui::Inventory::render(sf::RenderTarget& target)
-{
-	for (auto it = this->inventoryButtons.begin(); it != this->inventoryButtons.end(); it++)
-	{
-		for (size_t i = 0; i < it->second.size(); i++)
-		{
-			it->second[i]->render(target);
-		}
-	}
-}
-
-// std::vector<sf::Sprite const&>::iterator gui::Inventory::getItemSpriteIterator(sf::Sprite const& itemSprite, game::inventory_items_types type)
-// {
-// 	for (auto it = this->inventoryItemSprites[type].begin(); it != this->inventoryItemSprites[type].end(); it++)
-// 	{
-// 		if ((*it) == itemSprite)
-// 		{
-// 			return it;
-// 		}
-// 	}
-// 	return std::vector<sf::Sprite const&>::iterator(); // REVIEW -
-// }
-
-// ********************************* End Inventory
-
 // ********************************* InventoryButton
 // Fonction static
 
@@ -537,3 +393,177 @@ void gui::InventoryButton::render(sf::RenderTarget& target)
 }
 
 // ********************************* End InventoryButton
+
+// ********************************* Inventory
+// Fonction static
+
+// Fonctions d'initialisation
+void gui::Inventory::initBackground()
+{
+	this->background.setSize(sf::Vector2f(game::INVENTORY_BLOCK_WIDTH * 13, game::INVENTORY_BLOCK_WIDTH * 5));
+	this->background.setFillColor(sf::Color::Magenta);
+	// this->background.setPosition(5 * 200, 70 * 200);
+}
+
+void gui::Inventory::initInventoryItemSprites()
+{
+	// sf::Sprite sp = sf::Sprite();
+
+	// this->inventoryItemSprites[game::inventory_items_types::DEFAULT]= sf::Sprite(sf::Texture());
+	// this->inventoryItemSprites[game::inventory_items_types::ARMORY]= sf::Sprite();
+	// this->inventoryItemSprites[game::inventory_items_types::MONEY]= sf::Sprite();
+	// this->inventoryItemSprites[game::inventory_items_types::TELEPORTKEY]= sf::Sprite();
+	// this->inventoryItemSprites[game::inventory_items_types::VIAL]= sf::Sprite();
+}
+
+void gui::Inventory::initInventoryButtons()
+{
+	// sf::Sprite sp = sf::Sprite();
+
+	this->inventoryButtons[game::inventory_items_types::DEFAULT] = {};
+	this->inventoryButtons[game::inventory_items_types::ARMORY] = {};
+	this->inventoryButtons[game::inventory_items_types::MONEY] = {};
+	this->inventoryButtons[game::inventory_items_types::TELEPORTKEY] = {};
+	this->inventoryButtons[game::inventory_items_types::VIAL] = {};
+}
+
+// Constructeurs/Destructeur
+gui::Inventory::Inventory(sf::Font const& font) :
+	font(font)
+{
+	this->initBackground();
+	this->initInventoryItemSprites();
+	this->initInventoryButtons();
+}
+
+gui::Inventory::~Inventory()
+{
+	if (this->inventoryButtons.size() > 0) // REVIEW - On peut enlever
+	{
+		for (auto it = this->inventoryButtons.begin(); it != this->inventoryButtons.end(); it++)
+		{
+			for (size_t i = 0; i < it->second.size(); i++)
+			{
+				delete it->second[i];
+			}
+		}
+	}
+}
+
+// Fonctions/Méthodes
+bool gui::Inventory::addItem(const Item* item, game::inventory_items_types type)
+{
+	// this->inventoryItemSprites[type].push_back(item->getSprite());
+	switch (type)
+	{
+		case game::inventory_items_types::DEFAULT: {
+		}
+		break;
+		case game::inventory_items_types::ARMORY: {
+			float x = 80.f + 80.f * 4.f + 80.f * (this->inventoryButtons[type].size() % 2);
+			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
+			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50)));
+			return true;
+		}
+		break;
+		case game::inventory_items_types::MONEY: {
+		}
+		break;
+		case game::inventory_items_types::TELEPORTKEY: {
+		}
+		break;
+		case game::inventory_items_types::VIAL: {
+			float x = 80.f + 80.f + 80.f * (this->inventoryButtons[type].size() % 2);
+			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
+			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50)));
+			return true;
+		}
+		break;
+		default: {
+			return false;
+		}
+		break;
+	}
+	return false;
+}
+
+bool gui::Inventory::removeItem(int index /*, sf::Sprite const& itemSprite*/, game::inventory_items_types type)
+{
+	// REVIEW -
+	// vec.erase(std::remove(vec.begin(), vec.end(), value), vec.end());
+	// this->inventoryItemSprites[type].erase(std::remove(this->inventoryItemSprites[type].begin(), this->inventoryItemSprites[type].end(), itemSprite), this->inventoryItemSprites[type].end());
+	delete this->inventoryButtons[type][index];
+	this->inventoryButtons[type].erase(std::remove(this->inventoryButtons[type].begin(), this->inventoryButtons[type].end(), this->inventoryButtons[type][index]), this->inventoryButtons[type].end());
+	//
+
+	return true;
+}
+
+void gui::Inventory::update(const sf::Vector2i& mousePosView)
+{
+	// Hover
+	for (auto&& inventoryButtonVectorPair : this->inventoryButtons)
+	{
+		for (size_t i = 0; i < inventoryButtonVectorPair.second.size(); i++)
+		{
+			inventoryButtonVectorPair.second[i]->update(mousePosView);
+		}
+	}
+}
+
+void gui::Inventory::render(sf::RenderTarget& target)
+{
+	this->setGraphicsElementPosition(target.getView());
+	// sf::CircleShape shape(200.f);
+
+	// shape.setFillColor(sf::Color(100, 250, 50));
+
+	// target.draw(shape); // REVIEW -
+
+	target.draw(this->background);
+
+	for (auto it = this->inventoryButtons.begin(); it != this->inventoryButtons.end(); it++)
+	{
+		for (size_t i = 0; i < it->second.size(); i++)
+		{
+			it->second[i]->render(target);
+		}
+	}
+}
+
+void gui::Inventory::setGraphicsElementPosition(sf::View const& view)
+{
+
+	sf::Vector2f v(view.getCenter());
+	sf::Vector2f s(view.getSize());
+
+	// On calcul le décallage du centre de la vue
+	float addX(v.x - s.x / 2.f);
+	float addY(v.y - s.y / 2.f);
+
+	this->background.setPosition(80.f + addX, 130.f + addY);
+
+	for (auto it = this->inventoryButtons.begin(); it != this->inventoryButtons.end(); it++)
+	{
+		for (size_t i = 0; i < it->second.size(); i++)
+		{
+			float x = 80.f + 80.f * 4.f + 80.f * (i % 2) + addX;
+			float y = 130.f + 80.f + 80 * (floor((float)i / 2.f)) + addY;
+			it->second[i]->setPosition(x, y, addX, addY);
+		}
+	}
+}
+
+// std::vector<sf::Sprite const&>::iterator gui::Inventory::getItemSpriteIterator(sf::Sprite const& itemSprite, game::inventory_items_types type)
+// {
+// 	for (auto it = this->inventoryItemSprites[type].begin(); it != this->inventoryItemSprites[type].end(); it++)
+// 	{
+// 		if ((*it) == itemSprite)
+// 		{
+// 			return it;
+// 		}
+// 	}
+// 	return std::vector<sf::Sprite const&>::iterator(); // REVIEW -
+// }
+
+// ********************************* End Inventory

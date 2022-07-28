@@ -37,7 +37,7 @@ void GameState::initPauseMenu()
 	const sf::VideoMode& vm = this->stateData->graphicsSettings->resolution;
 	this->pauseMenu = new PauseMenu(this->stateData->graphicsSettings->resolution, this->font);
 	// cout << "init menu y=" << gui::p2pY(74.f, vm) << endl;
-	this->pauseMenu->addButton("QUIT", gui::p2pY(74.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Quitter");
+	this->pauseMenu->addButton("QUIT", gui::p2pY(84.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Quitter");
 }
 
 void GameState::initKeyTime()
@@ -261,6 +261,8 @@ void GameState::render(sf::RenderTarget* target)
 		// this->renderTexture.display();
 		// this->renderSprite.setTexture(this->renderTexture.getTexture());
 		// target->draw(this->renderSprite);
+
+		this->player->getPersonage()->renderBagInventory(this->renderTexture);
 	}
 
 	//FINAL RENDER

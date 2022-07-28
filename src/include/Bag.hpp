@@ -24,6 +24,8 @@ public:
 	virtual void onCollisionEnter(Collision const& collision) const override;
 	virtual void update() override;
 
+	void renderInventory(sf::RenderTarget& target);
+
 private:
 	// Variables
 	Inventory* inventory;

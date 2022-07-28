@@ -59,6 +59,8 @@ public:
 	virtual void specialAttack(Personage& target) = 0;
 	virtual void move(MyVector& speed) override;
 
+	void renderBagInventory(sf::RenderTarget& target);
+
 protected:
 	Bag* bag;
 	// REVIEW - Faire les initialisation dans le cpp

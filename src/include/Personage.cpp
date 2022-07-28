@@ -280,6 +280,11 @@ void Personage::move(MyVector& speed)
 	updatePosition(this->getPosition()->getX() + speed.x, this->getPosition()->getY() + speed.y);
 }
 
+void Personage::renderBagInventory(sf::RenderTarget& target)
+{
+	this->bag->renderInventory(target);
+}
+
 void Personage::updateEXPBar()
 {
 	this->expBar->update(this->m_specialityLevel, game::PERSONNAGE_MAX_SPECIALITY);

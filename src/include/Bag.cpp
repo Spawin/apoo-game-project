@@ -43,6 +43,11 @@ void Bag::update()
 	// this->inventory-
 }
 
+void Bag::renderInventory(sf::RenderTarget& target)
+{
+	this->inventory->getGui()->render(target);
+}
+
 void Bag::updatePosition(float posX, float posY)
 {
 	m_position->setPosition(posX, posY);
