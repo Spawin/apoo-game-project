@@ -18,21 +18,21 @@ NotMovableGameObject::NotMovableGameObject(std::string_view const& imageSpritePa
 
 NotMovableGameObject::~NotMovableGameObject()
 {
-	delete this->animationComponent;
+	// delete this->animationComponent;
 	delete m_position;
 	m_position = nullptr;
 }
 
 // Fonctions/Méthodes
-void NotMovableGameObject::createAnimationComponent(sf::Texture& texture)
-{
-	this->animationComponent = new AnimationComponent(m_body, texture);
-}
+// void NotMovableGameObject::createAnimationComponent(sf::Texture& texture)
+// {
+// 	this->animationComponent = new AnimationComponent(m_body, texture);
+// }
 
-AnimationComponent* NotMovableGameObject::getAnimationComponent()
-{
-	return this->animationComponent;
-}
+// AnimationComponent* NotMovableGameObject::getAnimationComponent()
+// {
+// 	return this->animationComponent;
+// }
 
 bool NotMovableGameObject::addToHall(Hall* hall)
 {

@@ -22,7 +22,6 @@ public:
 
 	// Fonctions/Méthodes
 	virtual void move(MyVector& speed) = 0;
-	void createAnimationComponent(sf::Texture& texture);
 	AnimationComponent* getAnimationComponent();
 	/**
 	 * @brief Déplacer un objet vers une salle
@@ -53,12 +52,18 @@ public:
 protected:
 	// Variables
 	AnimationComponent* animationComponent;
+	void createAnimationComponent(sf::Texture& texture);
 	// Represente la salle dans laquelle se trouve actuellement le joueur
 	//! Ce pointeur ne doit pas être supprimé à ce niveau
 	const Hall* hall;
 
 	// Fonctions d'initialisation
 	virtual void initPosition(float posX, float posY) override;
+	/**
+	 * @brief Initialiser animationComponent et les animations
+	 *
+	 */
+	virtual void initAnimations() = 0;
 
 	// Fonctions
 	/**

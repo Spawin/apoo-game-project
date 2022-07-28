@@ -95,6 +95,11 @@ void Personage::initHPBar()
 		this->calculateProgressBarsPosition().x - 10.4f * 5.5f, this->calculateProgressBarsPosition().y + 8.3f, 10.4f, 2.8f, sf::Color::Red, 180, GameMaster::STATE_DATA()->graphicsSettings->resolution, &GameMaster::STATE_DATA()->defaultFont);
 }
 
+void Personage::initBag()
+{
+	this->bag = new Bag();
+}
+
 Personage::Personage(bool isPlayer) :
 	MovableGameObject("content/personage/personage.png"), // REVIEW -
 	m_isPlayer(isPlayer)
@@ -103,6 +108,7 @@ Personage::Personage(bool isPlayer) :
 	this->initAnimations();
 	this->initEXPBar();
 	this->initHPBar();
+	this->initBag();
 }
 
 // Personage::Personage(std::string_view const& imageSpritePath, bool isPlayer) :
@@ -125,6 +131,7 @@ Personage::~Personage()
 	m_window = nullptr;
 	delete this->hpBar;
 	delete this->expBar;
+	delete this->bag;
 }
 
 //
@@ -161,7 +168,7 @@ void Personage::setGameObjectName(string name)
 
 void Personage::onCollisionEnter(Collision const& collision) const
 {
-	collision.test();
+	collision.test(); // REVIEW
 	if (m_isPlayer)
 	{
 		// cout << "Collision de " << m_gameObjectName << " avec "

@@ -3,22 +3,32 @@
 // Fonction static
 
 // Fonctions d'initialisation
+void AnimationComponent::initEmptyAnimations()
+{
+	// this->animations =  std::map<std::string, Animation*>();
+}
 
 // Constructeurs/Destructeur
 AnimationComponent::AnimationComponent(sf::Sprite& sprite, sf::Texture& textureSheet) :
 	sprite(sprite),
 	textureSheet(textureSheet),
+	animations(),
 	lastAnimation(nullptr)
 {
+	this->initEmptyAnimations();
 }
 
 AnimationComponent::~AnimationComponent()
 {
-
-	for (auto& it : this->animations)
+	if (!this->animations.empty())
 	{
-		delete it.second;
+		for (auto& it : this->animations)
+		{
+			delete it.second;
+		}
 	}
+
+	std::cout << "Destruction du AnimationComponent\n";
 }
 
 // Fonctions/Méthodes

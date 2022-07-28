@@ -26,8 +26,7 @@ public:
 	~NotMovableGameObject();
 
 	// Fonctions/Méthodes
-	void createAnimationComponent(sf::Texture& texture);
-	AnimationComponent* getAnimationComponent();
+	// AnimationComponent* getAnimationComponent();
 	/**
 	 * @brief Déplacer un objet vers une salle
 	 * est virtuel pour permettre de récrire la fonction et
@@ -56,7 +55,13 @@ public:
 
 protected:
 	// Variables
-	AnimationComponent* animationComponent;
+	// AnimationComponent* animationComponent;
+	// void createAnimationComponent(sf::Texture& texture);
+	/**
+	 * @brief Initialiser animationComponent et les animations
+	 *
+	 */
+	// virtual void initAnimations() = 0;
 	// Represente la salle dans laquelle se trouve actuellement le joueur
 	//! Ce pointeur ne doit pas être supprimé à ce niveau
 	const Hall* hall;

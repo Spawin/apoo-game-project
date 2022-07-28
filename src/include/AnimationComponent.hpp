@@ -48,6 +48,7 @@ private:
 	Animation* lastAnimation;
 
 	// Fonctions d'initialisation
+	void initEmptyAnimations();
 };
 
 #endif // __ANIMATION_COMPONENT_HPP__

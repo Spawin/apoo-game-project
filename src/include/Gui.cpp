@@ -300,23 +300,40 @@ void gui::Inventory::initInventoryItemSprites()
 	// this->inventoryItemSprites[game::inventory_items_types::VIAL]= sf::Sprite();
 }
 
+void gui::Inventory::initInventoryButtons()
+{
+	// sf::Sprite sp = sf::Sprite();
+
+	this->inventoryButtons[game::inventory_items_types::DEFAULT] = {};
+	this->inventoryButtons[game::inventory_items_types::ARMORY] = {};
+	this->inventoryButtons[game::inventory_items_types::MONEY] = {};
+	this->inventoryButtons[game::inventory_items_types::TELEPORTKEY] = {};
+	this->inventoryButtons[game::inventory_items_types::VIAL] = {};
+}
+
 // Constructeurs/Destructeur
 gui::Inventory::Inventory(sf::Font const& font) :
 	font(font)
 {
 	this->initBackground();
 	this->initInventoryItemSprites();
+	this->initInventoryButtons();
 }
 
 gui::Inventory::~Inventory()
 {
-	for (auto it = this->inventoryButtons.begin(); it != this->inventoryButtons.end(); it++)
+	if (this->inventoryButtons.size() > 0) // REVIEW - On peut enlever
 	{
-		for (size_t i = 0; i < it->second.size(); i++)
+		for (auto it = this->inventoryButtons.begin(); it != this->inventoryButtons.end(); it++)
 		{
-			delete it->second[i];
+			for (size_t i = 0; i < it->second.size(); i++)
+			{
+				delete it->second[i];
+			}
 		}
 	}
+
+	std::cout << "c'est fini\n\n";
 }
 
 // Fonctions/Méthodes

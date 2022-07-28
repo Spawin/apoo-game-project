@@ -188,6 +188,7 @@ private:
 	// Fonctions d'initialisation
 	void initBackground();
 	void initInventoryItemSprites();
+	void initInventoryButtons();
 
 	// std::vector<sf::Sprite const&>::iterator getItemSpriteIterator(sf::Sprite const& itemSprite, game::inventory_items_types type);
 };

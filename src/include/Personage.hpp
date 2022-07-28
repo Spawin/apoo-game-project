@@ -1,10 +1,14 @@
 #ifndef __PERSONGE_HPP__
 #define __PERSONGE_HPP__
 
+#include "include/Bag.hpp"
 #include "include/Gui.hpp"
 #include "include/MovableGameObject.hpp"
 #include "include/consts.hpp"
 #include <string>
+
+class MovableGameObject;
+class Bag;
 
 class Personage : public MovableGameObject
 {
@@ -56,6 +60,7 @@ public:
 	virtual void move(MyVector& speed) override;
 
 protected:
+	Bag* bag;
 	// REVIEW - Faire les initialisation dans le cpp
 	/**
 	 * @brief Pour initialiser les valeur par défaut du GameObject
@@ -66,9 +71,10 @@ protected:
 	 * @brief Pour ajouter les animation pour un personnage
 	 *
 	 */
-	void initAnimations();
+	void initAnimations() override;
 	void initEXPBar();
 	void initHPBar();
+	void initBag();
 
 	sf::Vector2f calculateProgressBarsPosition();
 
