@@ -1,7 +1,9 @@
 #include "include/Gui.hpp"
 #include "consts.hpp"
 #include <algorithm>
+#include <iostream>
 #include <math.h>
+#include <string>
 
 // REVIEW -
 float gui::p2pX(const float perc, const sf::VideoMode& vm)
@@ -286,6 +288,7 @@ void gui::ProgressBar::render(sf::RenderTarget& target)
 // Constructeurs/Destructeur
 gui::InventoryButton::InventoryButton(float x, float y, sf::Sprite const& sprite,
 	sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor,
+	sf::Color text_idle_color, sf::Color text_hover_color, sf::Color text_active_color,
 	sf::Color outline_idle_color, sf::Color outline_hover_color, sf::Color outline_active_color, short unsigned id) :
 	sprite(sprite)
 {
@@ -299,6 +302,28 @@ gui::InventoryButton::InventoryButton(float x, float y, sf::Sprite const& sprite
 	this->shape.setOutlineColor(outline_idle_color);
 
 	this->sprite.setPosition(sf::Vector2f(x, y)); // TODO - envoyer la texture au lieux du sprite
+
+	// this->textIdleColor = sf::Color(200, 200, 200, 200);
+	// this->textHoverColor = sf::Color(255, 255, 255, 255);
+	// this->textActiveColor = sf::Color(20, 20, 20, 50);
+
+	this->textIdleColor = text_idle_color;
+	this->textHoverColor = text_hover_color;
+	this->textActiveColor = text_active_color;
+
+	if (!this->font.loadFromFile("content/fonts/Dosis-Light.ttf"))
+	{
+		throw("ERROR::GUI::INVENTORY_BUTTON::COULD_NOT_LOAD_FONT");
+	}
+	this->text.setFont(this->font);
+	this->text.setString("1");
+	this->text.setFillColor(this->textIdleColor);
+	this->text.setCharacterSize(20);
+	this->text.setStyle(sf::Text::Bold);
+	this->text.setPosition(
+		this->shape.getPosition().x + (this->shape.getGlobalBounds().width / 1.f) + 5.f,
+		// this->shape.getPosition().y + (this->shape.getGlobalBounds().height / 2.f) - this->text.getGlobalBounds().height / 2.f);
+		this->shape.getPosition().y);
 
 	this->idleColor = idleColor;
 	this->hoverColor = hoverColor;
@@ -315,6 +340,16 @@ gui::InventoryButton::~InventoryButton()
 {}
 
 // Fonctions/Méthodes
+void gui::InventoryButton::setText(const std::string text)
+{
+	this->text.setString(text);
+}
+
+const std::string gui::InventoryButton::getText() const
+{
+	return this->text.getString();
+}
+
 bool gui::InventoryButton::isPressed() const
 {
 	if (this->buttonState == BTN_ACTIVE)
@@ -335,7 +370,12 @@ void gui::InventoryButton::setPosition(float x, float y, float addX, float addY)
 	// std::cout << "Shape Pos : x=" << this->shape.getPosition().x << " y=" << this->shape.getPosition().y << std::endl;
 	// std::cout << "Shape getGlobalBounds : x=" << this->shape.getPosition().x << " y=" << this->shape.getPosition().y << std::endl;
 
-	// this->sprite REVIEW -
+	this->sprite.setPosition(x, y);
+
+	this->text.setPosition(
+		this->shape.getPosition().x + (this->shape.getGlobalBounds().width / 1.f) + 5.f,
+		// this->shape.getPosition().y + (this->shape.getGlobalBounds().height / 2.f) - this->text.getGlobalBounds().height / 2.f);
+		this->shape.getPosition().y);
 
 	this->offset = sf::Vector2f(addX, addY);
 }
@@ -364,25 +404,25 @@ void gui::InventoryButton::update(const sf::Vector2i& mousePosWindow)
 	{
 		case BTN_IDLE:
 			this->shape.setFillColor(this->idleColor);
-			// this->text.setFillColor(this->textIdleColor);
+			this->text.setFillColor(this->textIdleColor);
 			this->shape.setOutlineColor(this->outlineIdleColor);
 			break;
 
 		case BTN_HOVER:
 			this->shape.setFillColor(this->hoverColor);
-			// this->text.setFillColor(this->textHoverColor);
+			this->text.setFillColor(this->textHoverColor);
 			this->shape.setOutlineColor(this->outlineHoverColor);
 			break;
 
 		case BTN_ACTIVE:
 			this->shape.setFillColor(this->activeColor);
-			// this->text.setFillColor(this->textActiveColor);
+			this->text.setFillColor(this->textActiveColor);
 			this->shape.setOutlineColor(this->outlineActiveColor);
 			break;
 
 		default:
 			this->shape.setFillColor(sf::Color::Red);
-			// this->text.setFillColor(sf::Color::Blue);
+			this->text.setFillColor(sf::Color::Blue);
 			this->shape.setOutlineColor(sf::Color::Green);
 			break;
 	}
@@ -392,6 +432,7 @@ void gui::InventoryButton::render(sf::RenderTarget& target)
 {
 	target.draw(this->shape);
 	target.draw(this->sprite);
+	target.draw(this->text);
 }
 
 // ********************************* End InventoryButton
@@ -460,26 +501,53 @@ bool gui::Inventory::addItem(const Item* item, game::inventory_items_types type)
 	switch (type)
 	{
 		case game::inventory_items_types::DEFAULT: {
+			// TODO -
+			throw ".........";
 		}
 		break;
 		case game::inventory_items_types::ARMORY: {
 			float x = 80.f + 80.f * 4.f + 80.f * (this->inventoryButtons[type].size() % 2);
 			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
 			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));
-			// this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 0), sf::Color(250, 250, 250, 0), sf::Color(20, 20, 20, 0)));
 			return true;
 		}
 		break;
 		case game::inventory_items_types::MONEY: {
+			std::cout << "Affichage monaie\n";
+			// On affichera une seule fois le truc de la monaie
+			if (this->inventoryButtons[type].size() >= 1)
+			{
+				try
+				{
+					// std::cout << "ancien " << std::stoi(this->inventoryButtons[type][0]->getText()) << std::endl;
+					// std::cout << "maintenant " << std::to_string(std::stoi(this->inventoryButtons[type][0]->getText()) + 1) << std::endl;
+					// on recupère l'ancien text, on a joute 1 et on met à jour l'affichage
+					this->inventoryButtons[type][0]->setText(std::to_string(std::stoi(this->inventoryButtons[type][0]->getText()) + 1));
+				}
+				catch (const std::exception& e)
+				{
+					// TODO -
+				}
+
+				return true;
+			}
+			float x = 80.f + 80.f * 10.f + 80.f * (this->inventoryButtons[type].size() % 2);
+			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
+			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50), sf::Color(255, 255, 255, 255), sf::Color(255, 255, 255, 255), sf::Color(20, 20, 20, 50)));
+			return true;
 		}
 		break;
 		case game::inventory_items_types::TELEPORTKEY: {
+			float x = 80.f + 80.f * 7.f + 80.f * (this->inventoryButtons[type].size() % 2);
+			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
+			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));
+			return true;
 		}
 		break;
 		case game::inventory_items_types::VIAL: {
 			float x = 80.f + 80.f + 80.f * (this->inventoryButtons[type].size() % 2);
 			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
-			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 0), sf::Color(250, 250, 250, 10), sf::Color(20, 20, 20, 50)));
+			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));
 			return true;
 		}
 		break;
@@ -554,8 +622,38 @@ void gui::Inventory::setGraphicsElementPosition(sf::View const& view)
 	{
 		for (size_t i = 0; i < it->second.size(); i++)
 		{
-			float x = 80.f + 80.f * 4.f + 80.f * (i % 2) + addX;
-			float y = 130.f + 80.f + 80 * (floor((float)i / 2.f)) + addY;
+			float x(0.f);
+			float y(0.f);
+			switch (it->first)
+			{
+				case game::inventory_items_types::VIAL: {
+					x = 80.f + 80.f * 1.f + 80.f * (i % 2) + addX;
+					y = 130.f + 80.f + 80 * (floor((float)i / 2.f)) + addY;
+				}
+				break;
+				case game::inventory_items_types::ARMORY: {
+					x = 80.f + 80.f * 4.f + 80.f * (i % 2) + addX;
+					y = 130.f + 80.f + 80 * (floor((float)i / 2.f)) + addY;
+				}
+				break;
+				case game::inventory_items_types::TELEPORTKEY: {
+					x = 80.f + 80.f * 7.f + 80.f * (i % 2) + addX;
+					y = 130.f + 80.f + 80 * (floor((float)i / 2.f)) + addY;
+				}
+				break;
+				case game::inventory_items_types::MONEY: {
+					// On affichera une seule fois le truc de la monaie
+					if (i > 1)
+						continue;
+
+					x = 80.f + 80.f * 10.f + addX;
+					y = 130.f + 80.f + addY;
+				}
+				break;
+
+				default:
+					break;
+			}
 			it->second[i]->setPosition(x, y, addX, addY);
 		}
 	}

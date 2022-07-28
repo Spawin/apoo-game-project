@@ -6,19 +6,24 @@
 class NotMovableGameObject;
 
 /**
-	 * @brief Représente les catégories d'items.
-	 * TODO - Compléter....
-	 *
-	 */
+ * @brief Représente les catégories d'items.
+ * TODO - Compléter....
+ * Va surtout aider dans l'utilisation de l'item et son comportement
+ */
 enum class ItemsCategories
 {
 	MONEY,
-	TELEPORTKEY,
+	TELEPORTKEY, //
+	//
 	DEFEND,
 	ATTACK_BODY_TO_BODY,
 	ATTACK_DISTANCE,
-	HEALTH_RESTORE,
-	EXP_RESTORE,
+	// HEALTH_RESTORE,
+	// EXP_RESTORE,
+	VIAL_EXP,
+	VIAL_HEALTH,
+	VIAL_ATTACK_EXP,
+	VIAL_ATTACK_HEALTH,
 };
 
 /**

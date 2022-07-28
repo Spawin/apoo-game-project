@@ -1,23 +1,16 @@
-#if !defined(__VIAL_HPP__)
-	#define __VIAL_HPP__
+#if !defined(__SHIELD_HPP__)
+	#define __SHIELD_HPP__
 
-	#include "include/Item.hpp"
+	#include "include/Armory.hpp"
 
-class Item;
+class Armory;
 
-// enum class VialCategorie {
-// 	MEDECINE_HEALTH, // Augmente la santé
-// 	MEDECINE_EXP,// Augmente l'exp
-// 	POISON_HEALTH,// Diminue la santé
-// 	POISON_EXP,// Diminue l'exp
-// };
-
-class Vial : public Item
+class Shield : public Armory
 {
 public:
 	// Constructeurs/Destructeur
-	Vial(/*std::string_view const& imageSpritePath, */ ItemsCategories categorie);
-	~Vial();
+	Shield();
+	~Shield();
 
 	// Fonctions/Méthodes
 
@@ -41,4 +34,4 @@ private:
 	virtual void updatePosition(float posX, float posY) override;
 };
 
-#endif // __VIAL_HPP__
+#endif // __SHIELD_HPP__

@@ -7,7 +7,10 @@
 #include <string>
 
 #include "include/GameMaster.hpp"
+#include "include/Money.hpp"
+#include "include/Shield.hpp"
 #include "include/Sword.hpp"
+#include "include/Vial.hpp"
 #include "include/consts.hpp"
 
 using namespace std;
@@ -100,9 +103,20 @@ void Personage::initBag()
 {
 	this->bag = new Bag();
 
+	// Satrt Vials
+	this->bag->addItem(new Vial(ItemsCategories::VIAL_HEALTH), game::inventory_items_types::VIAL);
+	this->bag->addItem(new Vial(ItemsCategories::VIAL_EXP), game::inventory_items_types::VIAL);
+	this->bag->addItem(new Vial(ItemsCategories::VIAL_ATTACK_HEALTH), game::inventory_items_types::VIAL);
+	this->bag->addItem(new Vial(ItemsCategories::VIAL_ATTACK_EXP), game::inventory_items_types::VIAL);
+
+	// Start Armoies
+	this->bag->addItem(new Shield(), game::inventory_items_types::ARMORY);
 	this->bag->addItem(new Sword(), game::inventory_items_types::ARMORY);
-	this->bag->addItem(new Sword(), game::inventory_items_types::ARMORY);
-	this->bag->addItem(new Sword(), game::inventory_items_types::ARMORY);
+
+	// Start money "3"
+	this->bag->addItem(new Money(), game::inventory_items_types::MONEY);
+	this->bag->addItem(new Money(), game::inventory_items_types::MONEY);
+	this->bag->addItem(new Money(), game::inventory_items_types::MONEY);
 }
 
 Personage::Personage(bool isPlayer) :

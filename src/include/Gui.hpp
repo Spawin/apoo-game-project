@@ -117,6 +117,7 @@ public:
 	// Constructeurs/Destructeur
 	InventoryButton(float x, float y, sf::Sprite const& sprite,
 		sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor,
+		sf::Color text_idle_color = sf::Color::Transparent, sf::Color text_hover_color = sf::Color::Transparent, sf::Color text_active_color = sf::Color::Transparent,
 		sf::Color outline_idle_color = sf::Color::Transparent, sf::Color outline_hover_color = sf::Color::Transparent, sf::Color outline_active_color = sf::Color::Transparent, short unsigned id = 0);
 	~InventoryButton();
 
@@ -132,6 +133,8 @@ public:
 	 */
 	void setPosition(float x, float y, float addX, float addY);
 	const sf::Vector2f& getPosition() const;
+	void setText(const std::string text);
+	const std::string getText() const;
 
 	void update(const sf::Vector2i& mousePosWindow);
 	void render(sf::RenderTarget& target);
@@ -144,6 +147,12 @@ private:
 	short unsigned id;
 
 	sf::RectangleShape shape;
+	sf::Font font;
+	sf::Text text;
+
+	sf::Color textIdleColor;
+	sf::Color textHoverColor;
+	sf::Color textActiveColor;
 
 	sf::Color idleColor;
 	sf::Color hoverColor;
