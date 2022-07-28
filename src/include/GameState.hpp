@@ -7,6 +7,11 @@
 	#include "include/Hall.hpp"
 	#include <vector>
 
+class State;
+class PauseMenu;
+class GameMap;
+class Hall;
+
 class GameState : public State
 {
 

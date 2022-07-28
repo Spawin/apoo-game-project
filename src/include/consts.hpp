@@ -44,7 +44,7 @@ constexpr int PERSONNAGE_DETECTABILITY_RADIUS = 16;
 constexpr int PERSONNAGE_WIDTH = 32;
 
 constexpr int PERSONNAGE_MAX_HEALTH = 100;
-constexpr int PERSONNAGE_MAX_SPECIALITY = 100;
+constexpr int PERSONNAGE_MAX_EXP = 100;
 
 constexpr int INVENTORY_BLOCK_WIDTH = 80;
 
@@ -82,6 +82,6 @@ inline std::string const& GAME_NAME()
 	return ret;
 }
 
-}
+} // namespace gui
 
 #endif // __CONST_HPP__

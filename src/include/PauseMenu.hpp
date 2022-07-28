@@ -3,8 +3,6 @@
 
 	#include "include/Gui.hpp"
 
-class Gui;
-
 class PauseMenu
 {
 public:

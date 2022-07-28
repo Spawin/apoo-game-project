@@ -1,0 +1,74 @@
+.TH "PauseMenu" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PauseMenu
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PauseMenu\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBPauseMenu\fP (sf::VideoMode &vm, sf::Font &font)"
+.br
+.ti -1c
+.RI "virtual \fB~PauseMenu\fP ()"
+.br
+.ti -1c
+.RI "std::map< std::string, \fBgui::Button\fP * > & \fBgetButtons\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisButtonPressed\fP (const std::string key)"
+.br
+.ti -1c
+.RI "void \fBaddButton\fP (const std::string key, const float y, const float width, const float height, const unsigned char_size, const std::string text)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (const sf::Vector2i &mousePosView)"
+.br
+.ti -1c
+.RI "void \fBrender\fP (sf::RenderTarget &target)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB8\fP du fichier \fBPauseMenu\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "PauseMenu::PauseMenu (sf::VideoMode & vm, sf::Font & font)"
+
+.PP
+Définition à la ligne \fB7\fP du fichier \fBPauseMenu\&.cpp\fP\&.
+.SS "PauseMenu::~PauseMenu ()\fC [virtual]\fP"
+
+.PP
+Définition à la ligne \fB40\fP du fichier \fBPauseMenu\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void PauseMenu::addButton (const std::string key, const float y, const float width, const float height, const unsigned char_size, const std::string text)"
+
+.PP
+Définition à la ligne \fB61\fP du fichier \fBPauseMenu\&.cpp\fP\&.
+.SS "std::map< std::string, \fBgui::Button\fP * > & PauseMenu::getButtons ()"
+
+.PP
+Définition à la ligne \fB51\fP du fichier \fBPauseMenu\&.cpp\fP\&.
+.SS "bool PauseMenu::isButtonPressed (const std::string key)"
+
+.PP
+Définition à la ligne \fB56\fP du fichier \fBPauseMenu\&.cpp\fP\&.
+.SS "void PauseMenu::render (sf::RenderTarget & target)"
+
+.PP
+Définition à la ligne \fB83\fP du fichier \fBPauseMenu\&.cpp\fP\&.
+.SS "void PauseMenu::update (const sf::Vector2i & mousePosView)"
+
+.PP
+Définition à la ligne \fB75\fP du fichier \fBPauseMenu\&.cpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

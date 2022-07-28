@@ -1,0 +1,35 @@
+\hypertarget{_graphics_settings_8hpp_source}{}\doxysection{Graphics\+Settings.\+hpp}
+\label{_graphics_settings_8hpp_source}\index{C:/programs\_sc/CIC/MITST06/jeu/src/include/GraphicsSettings.hpp@{C:/programs\_sc/CIC/MITST06/jeu/src/include/GraphicsSettings.hpp}}
+\mbox{\hyperlink{_graphics_settings_8hpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#ifndef \_\_GRAPHICS\_SETTINGS\_HPP\_\_}}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#define \_\_GRAPHICS\_SETTINGS\_HPP\_\_}}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00004}00004 \textcolor{comment}{// TODO -\/ Transformer en structure ou appliquer l'encapsulation}}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00005}\mbox{\hyperlink{class_graphics_settings}{00005}} \textcolor{keyword}{class }\mbox{\hyperlink{class_graphics_settings}{GraphicsSettings}}}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00006}00006 \{}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00007}00007 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00008}00008     \mbox{\hyperlink{class_graphics_settings_a3c5fd3428c4a0549bfa5d5f3b1915c34}{GraphicsSettings}}();}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00010}00010     \textcolor{comment}{//Variables}}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00011}\mbox{\hyperlink{class_graphics_settings_a524c4928c24954f1664cbba71489198a}{00011}}     std::string \mbox{\hyperlink{class_graphics_settings_a524c4928c24954f1664cbba71489198a}{title}};}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00012}\mbox{\hyperlink{class_graphics_settings_adc582bb940381840fba48c7f0abd4d1d}{00012}}     sf::VideoMode \mbox{\hyperlink{class_graphics_settings_adc582bb940381840fba48c7f0abd4d1d}{resolution}};}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00013}\mbox{\hyperlink{class_graphics_settings_af0b9cbfba96c59aa9dd3b9454fbbe412}{00013}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_graphics_settings_af0b9cbfba96c59aa9dd3b9454fbbe412}{fullscreen}};}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00014}\mbox{\hyperlink{class_graphics_settings_a83ba01db4ea7807c5bfead8f063859ec}{00014}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_graphics_settings_a83ba01db4ea7807c5bfead8f063859ec}{verticalSync}};}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00015}\mbox{\hyperlink{class_graphics_settings_af8ca0dc53c9d85ba0b670e933da061fb}{00015}}     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_graphics_settings_af8ca0dc53c9d85ba0b670e933da061fb}{frameRateLimit}};}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00016}00016     \textcolor{comment}{// sf::ContextSettings contextSettings;}}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00017}\mbox{\hyperlink{class_graphics_settings_a6dd98c8ce866de60c10dd23e818171d0}{00017}}     std::vector<sf::VideoMode> \mbox{\hyperlink{class_graphics_settings_a6dd98c8ce866de60c10dd23e818171d0}{videoModes}};}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00019}00019     \textcolor{comment}{//Functions}}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00025}00025 \textcolor{comment}{}    \textcolor{keywordtype}{float} \textcolor{keyword}{const}\& \mbox{\hyperlink{class_graphics_settings_a47599e8abbe9f491da4740ba2c0e5d17}{scScF}}();}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00026}00026     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_graphics_settings_aca33dbfa2570b9ab2ef4228b04a740b8}{setScreenScalingFactor}}(\textcolor{keywordtype}{float} \mbox{\hyperlink{class_graphics_settings_a47599e8abbe9f491da4740ba2c0e5d17}{scScF}});}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00027}00027     \textcolor{comment}{// void saveToFile(const std::string path);}}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00028}00028     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_graphics_settings_a3fb097d3414159fff72c69117c10ab23}{loadFromFile}}(\textcolor{keyword}{const} std::string path);}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00030}00030 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00031}00031     \textcolor{keywordtype}{float} screenScalingFactor;}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00032}00032 \};}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8hpp_source_l00034}00034 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_GRAPHICS\_SETTINGS\_HPP\_\_}}
+
+\end{DoxyCode}

@@ -1,7 +1,10 @@
 var annotated_dup =
 [
     [ "gui", "namespacegui.html", [
-      [ "Button", "classgui_1_1_button.html", "classgui_1_1_button" ]
+      [ "Button", "classgui_1_1_button.html", "classgui_1_1_button" ],
+      [ "Inventory", "classgui_1_1_inventory.html", "classgui_1_1_inventory" ],
+      [ "InventoryButton", "classgui_1_1_inventory_button.html", "classgui_1_1_inventory_button" ],
+      [ "ProgressBar", "classgui_1_1_progress_bar.html", "classgui_1_1_progress_bar" ]
     ] ],
     [ "util", "namespaceutil.html", [
       [ "IPlatform", "structutil_1_1_i_platform.html", "structutil_1_1_i_platform" ],
@@ -9,6 +12,10 @@ var annotated_dup =
       [ "MacOSPlatform", "structutil_1_1_mac_o_s_platform.html", "structutil_1_1_mac_o_s_platform" ],
       [ "WindowsPlatform", "structutil_1_1_windows_platform.html", "structutil_1_1_windows_platform" ]
     ] ],
+    [ "Animation", "class_animation.html", "class_animation" ],
+    [ "AnimationComponent", "class_animation_component.html", "class_animation_component" ],
+    [ "Armory", "class_armory.html", "class_armory" ],
+    [ "Bag", "class_bag.html", "class_bag" ],
     [ "BoxCollider", "class_box_collider.html", "class_box_collider" ],
     [ "Collider", "class_collider.html", "class_collider" ],
     [ "Collision", "class_collision.html", "class_collision" ],
@@ -17,18 +24,32 @@ var annotated_dup =
     [ "GameMaster", "class_game_master.html", "class_game_master" ],
     [ "GameObject", "class_game_object.html", "class_game_object" ],
     [ "GameState", "class_game_state.html", "class_game_state" ],
+    [ "GraphicsSettings", "class_graphics_settings.html", "class_graphics_settings" ],
     [ "Hall", "class_hall.html", "class_hall" ],
     [ "House", "class_house.html", "class_house" ],
+    [ "Inventory", "class_inventory.html", "class_inventory" ],
+    [ "Item", "class_item.html", "class_item" ],
+    [ "Lounge", "class_lounge.html", "class_lounge" ],
     [ "MainMenuState", "class_main_menu_state.html", "class_main_menu_state" ],
+    [ "Maison", "class_maison.html", "class_maison" ],
+    [ "Money", "class_money.html", "class_money" ],
+    [ "MovableGameObject", "class_movable_game_object.html", "class_movable_game_object" ],
     [ "MyVector", "struct_my_vector.html", "struct_my_vector" ],
+    [ "NotMovableGameObject", "class_not_movable_game_object.html", "class_not_movable_game_object" ],
+    [ "PauseMenu", "class_pause_menu.html", "class_pause_menu" ],
     [ "Personage", "class_personage.html", "class_personage" ],
     [ "Player", "class_player.html", "class_player" ],
     [ "PolygonCollider", "class_polygon_collider.html", "class_polygon_collider" ],
     [ "Position", "class_position.html", "class_position" ],
     [ "Religious", "class_religious.html", "class_religious" ],
     [ "Rigidbody", "class_rigidbody.html", "class_rigidbody" ],
+    [ "Room", "class_room.html", "class_room" ],
+    [ "Shield", "class_shield.html", "class_shield" ],
     [ "Soldier", "class_soldier.html", "class_soldier" ],
     [ "State", "class_state.html", "class_state" ],
     [ "StateData", "struct_state_data.html", "struct_state_data" ],
+    [ "Sword", "class_sword.html", "class_sword" ],
+    [ "TeleportKey", "class_teleport_key.html", "class_teleport_key" ],
+    [ "Vial", "class_vial.html", "class_vial" ],
     [ "Worker", "class_worker.html", "class_worker" ]
 ];

@@ -1,41 +1,45 @@
 \hypertarget{_my_vector_8cpp_source}{}\doxysection{My\+Vector.\+cpp}
-\label{_my_vector_8cpp_source}\index{include/MyVector.cpp@{include/MyVector.cpp}}
+\label{_my_vector_8cpp_source}\index{C:/programs\_sc/CIC/MITST06/jeu/src/include/MyVector.cpp@{C:/programs\_sc/CIC/MITST06/jeu/src/include/MyVector.cpp}}
 \mbox{\hyperlink{_my_vector_8cpp}{Aller à la documentation de ce fichier.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_my_vector_8hpp}{include/MyVector.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{consts_8hpp}{include/consts.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include <cmath>}}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00004}00004 }
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00005}\mbox{\hyperlink{struct_my_vector_a073a8917f42cdfd70078cb2c2c16c871}{00005}} \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_my_vector_a073a8917f42cdfd70078cb2c2c16c871}{MyVector::operator+=}}(\mbox{\hyperlink{struct_my_vector}{MyVector}} \textcolor{keyword}{const}\& v)}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00006}00006 \{}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00007}00007     \mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}} += v.\mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}};}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00008}00008     \mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}} += v.\mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}};}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00009}00009 \}}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00010}00010 }
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00011}\mbox{\hyperlink{struct_my_vector_a4928582b63c2a7214dfab04cc0d0001b}{00011}} \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_my_vector_a4928582b63c2a7214dfab04cc0d0001b}{MyVector::operator-\/=}}(\mbox{\hyperlink{struct_my_vector}{MyVector}} \textcolor{keyword}{const}\& v)}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00012}00012 \{}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00013}00013     \mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}} -\/= v.\mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}};}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00014}00014     \mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}} -\/= v.\mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}};}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00015}00015 \}}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00016}00016 }
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00017}\mbox{\hyperlink{struct_my_vector_a23593df906d074cc73ccd33190e218a9}{00017}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_my_vector_a23593df906d074cc73ccd33190e218a9}{MyVector::operator==}}(\mbox{\hyperlink{struct_my_vector}{MyVector}} \textcolor{keyword}{const}\& v)}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00018}00018 \{}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00019}00019     \textcolor{keywordflow}{return} \mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}} == v.\mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}} \&\& \mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}} == v.\mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}};}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00020}00020 \}}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00021}00021 }
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00022}\mbox{\hyperlink{struct_my_vector_acdf772e37c629e2804577fa2c01f61ce}{00022}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_my_vector_acdf772e37c629e2804577fa2c01f61ce}{MyVector::operator!=}}(sf::Vector2f \textcolor{keyword}{const}\& v)}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00023}00023 \{}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00024}00024     \textcolor{keywordflow}{return} \mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}} != v.x || \mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}} != v.y;}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00025}00025 \}}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00026}00026 }
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00027}\mbox{\hyperlink{struct_my_vector_a77ee2e575060848a59d542feccebde4c}{00027}} \mbox{\hyperlink{struct_my_vector}{MyVector}} \mbox{\hyperlink{struct_my_vector_a77ee2e575060848a59d542feccebde4c}{MyVector::operator*}}(\textcolor{keywordtype}{float} coefficient)\textcolor{keyword}{ const}}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00028}00028 \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00029}00029     \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}} * coefficient, \mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}} * coefficient \};}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00030}00030 \}}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00031}00031 }
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00032}\mbox{\hyperlink{struct_my_vector_aa4151ebdc189aa7572c9a2937ea63ac1}{00032}} \mbox{\hyperlink{struct_my_vector}{MyVector}} \mbox{\hyperlink{struct_my_vector_aa4151ebdc189aa7572c9a2937ea63ac1}{MyVector::createFromAngle}}(\textcolor{keywordtype}{float} simpleSize, \textcolor{keywordtype}{float} angleInDegree)}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00033}00033 \{}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00034}00034     \textcolor{keywordflow}{return} \{ simpleSize * \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(cos(angleInDegree / 180.f * \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(\mbox{\hyperlink{consts_8hpp_ae71449b1cc6e6250b91f539153a7a0d3}{M\_PI}}))), simpleSize * \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(sin(angleInDegree / 180.f * \mbox{\hyperlink{consts_8hpp_ae71449b1cc6e6250b91f539153a7a0d3}{M\_PI}})) \};}
-\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00035}00035 \}}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00003}\mbox{\hyperlink{struct_my_vector_a073a8917f42cdfd70078cb2c2c16c871}{00003}} \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_my_vector_a073a8917f42cdfd70078cb2c2c16c871}{MyVector::operator+=}}(\mbox{\hyperlink{struct_my_vector}{MyVector}} \textcolor{keyword}{const}\& v)}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00004}00004 \{}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00005}00005     \mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}} += v.\mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}};}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00006}00006     \mbox{\hyperlink{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}{y}} += v.\mbox{\hyperlink{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}{y}};}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00007}00007 \}}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00009}\mbox{\hyperlink{struct_my_vector_a4928582b63c2a7214dfab04cc0d0001b}{00009}} \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_my_vector_a4928582b63c2a7214dfab04cc0d0001b}{MyVector::operator-\/=}}(\mbox{\hyperlink{struct_my_vector}{MyVector}} \textcolor{keyword}{const}\& v)}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00010}00010 \{}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00011}00011     \mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}} -\/= v.\mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}};}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00012}00012     \mbox{\hyperlink{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}{y}} -\/= v.\mbox{\hyperlink{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}{y}};}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00013}00013 \}}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00015}\mbox{\hyperlink{struct_my_vector_a23593df906d074cc73ccd33190e218a9}{00015}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_my_vector_a23593df906d074cc73ccd33190e218a9}{MyVector::operator==}}(\mbox{\hyperlink{struct_my_vector}{MyVector}} \textcolor{keyword}{const}\& v)}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00016}00016 \{}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00017}00017     \textcolor{keywordflow}{return} \mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}} == v.\mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}} \&\& \mbox{\hyperlink{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}{y}} == v.\mbox{\hyperlink{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}{y}};}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00018}00018 \}}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00020}\mbox{\hyperlink{struct_my_vector_acdf772e37c629e2804577fa2c01f61ce}{00020}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_my_vector_acdf772e37c629e2804577fa2c01f61ce}{MyVector::operator!=}}(sf::Vector2f \textcolor{keyword}{const}\& v)}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00021}00021 \{}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00022}00022     \textcolor{keywordflow}{return} \mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}} != v.x || \mbox{\hyperlink{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}{y}} != v.y;}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00023}00023 \}}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00025}\mbox{\hyperlink{struct_my_vector_a77ee2e575060848a59d542feccebde4c}{00025}} \mbox{\hyperlink{struct_my_vector}{MyVector}} \mbox{\hyperlink{struct_my_vector_a77ee2e575060848a59d542feccebde4c}{MyVector::operator*}}(\textcolor{keywordtype}{float} coefficient)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00026}00026 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00027}00027     \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}} * coefficient, \mbox{\hyperlink{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}{y}} * coefficient \};}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00028}00028 \}}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00030}\mbox{\hyperlink{struct_my_vector_aa4151ebdc189aa7572c9a2937ea63ac1}{00030}} \mbox{\hyperlink{struct_my_vector}{MyVector}} \mbox{\hyperlink{struct_my_vector_aa4151ebdc189aa7572c9a2937ea63ac1}{MyVector::createFromAngle}}(\textcolor{keywordtype}{float} simpleSize, \textcolor{keywordtype}{float} angleInDegree)}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00031}00031 \{}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00032}00032     \textcolor{comment}{// return \{ simpleSize * static\_cast<float>(cos(angleInDegree / 180.0000f * static\_cast<float>(M\_PI))), simpleSize * static\_cast<float>(sin(angleInDegree / 180.0000f * M\_PI)) \};}}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00033}00033     \textcolor{keywordflow}{return} \{ simpleSize * \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(cos(angleInDegree / 180.0000f * \mbox{\hyperlink{_my_vector_8hpp_ae71449b1cc6e6250b91f539153a7a0d3}{M\_PI}})), simpleSize * \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(sin(angleInDegree / 180.0000f * \mbox{\hyperlink{_my_vector_8hpp_ae71449b1cc6e6250b91f539153a7a0d3}{M\_PI}})) \};}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00034}00034 \}}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00036}\mbox{\hyperlink{struct_my_vector_ada641074b59d610778cdf2ec7c144905}{00036}} sf::Vector2f \mbox{\hyperlink{struct_my_vector_ada641074b59d610778cdf2ec7c144905}{MyVector::toVector2f}}()}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00037}00037 \{}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00038}00038     \textcolor{keywordflow}{return} sf::Vector2f(\mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}}, \mbox{\hyperlink{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}{y}});}
+\DoxyCodeLine{\Hypertarget{_my_vector_8cpp_source_l00039}00039 \}}
 
 \end{DoxyCode}

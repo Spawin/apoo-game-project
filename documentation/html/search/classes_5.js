@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['iplatform_0',['IPlatform',['../structutil_1_1_i_platform.html',1,'util']]]
+  ['hall_0',['Hall',['../class_hall.html',1,'']]],
+  ['house_1',['House',['../class_house.html',1,'']]]
 ];

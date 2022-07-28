@@ -4,6 +4,7 @@
 	#include "include/Item.hpp"
 
 class Item;
+class Personage;
 
 class Money : public Item
 {
@@ -19,6 +20,8 @@ public:
 	 */
 	virtual void onCollisionEnter(Collision const& collision) const override;
 	virtual void update() override;
+
+	virtual void useOn(Personage& personage) override;
 
 private:
 	// Variables

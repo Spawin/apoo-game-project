@@ -1,14 +1,18 @@
 #if !defined(__INVENTORY_HPP__)
 	#define __INVENTORY_HPP__
 
-	#include "include/Item.hpp"
 	#include <map>
 	#include <vector>
 	#include <string>
 	#include "include/Gui.hpp"
+	#include "include/Item.hpp"
 	#include "include/consts.hpp"
 
 class Item;
+namespace gui
+{
+class Inventory;
+}
 
 // enum inventory_items_types
 // {

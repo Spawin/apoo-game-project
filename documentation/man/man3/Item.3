@@ -1,0 +1,127 @@
+.TH "Item" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Item \- Représente éssentiellement les object que pourra manipuler les personnages\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Item\&.hpp>\fP
+.PP
+Est dérivée de \fBNotMovableGameObject\fP\&.
+.PP
+Dérivée par \fBArmory\fP, \fBMoney\fP, \fBTeleportKey\fP, et \fBVial\fP\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBItem\fP (std::string_view const &imageSpritePath, \fBItemsCategories\fP \fBcategorie\fP)"
+.br
+.ti -1c
+.RI "\fB~Item\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBonCollisionEnter\fP (\fBCollision\fP const &collision) const =0"
+.br
+.RI "émit quand il entre en contacte avec un autre élément "
+.ti -1c
+.RI "virtual void \fBupdate\fP ()=0"
+.br
+.ti -1c
+.RI "virtual \fBuseOn\fP (\fBPersonage\fP &personage)=0"
+.br
+.RI "Utiliser l'item sur le personnage indiqué "
+.in -1c
+.SS "Fonctions membres protégées"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBupdatePosition\fP (float posX, float posY)=0"
+.br
+.RI "Permet de mettre à jour la position actuelle\&. "
+.in -1c
+.SS "Attributs protégés"
+
+.in +1c
+.ti -1c
+.RI "unsigned \fBvalue\fP"
+.br
+.RI "Valeur de l'item à l'utilisation\&.\&.\&. "
+.ti -1c
+.RI "const \fBItemsCategories\fP \fBcategorie\fP"
+.br
+.in -1c
+.SS "Membres hérités additionnels"
+.SH "Description détaillée"
+.PP 
+Représente éssentiellement les object que pourra manipuler les personnages\&. 
+.PP
+Définition à la ligne \fB35\fP du fichier \fBItem\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "Item::Item (std::string_view const & imageSpritePath, \fBItemsCategories\fP categorie)"
+
+.PP
+Définition à la ligne \fB8\fP du fichier \fBItem\&.cpp\fP\&.
+.SS "Item::~Item ()"
+
+.PP
+Définition à la ligne \fB15\fP du fichier \fBItem\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "virtual void Item::onCollisionEnter (\fBCollision\fP const & collision) const\fC [pure virtual]\fP"
+
+.PP
+émit quand il entre en contacte avec un autre élément 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIcollision\fP 
+.RE
+.PP
+
+.PP
+Implémente \fBNotMovableGameObject\fP\&.
+.PP
+Implémenté dans \fBMoney\fP, \fBShield\fP, \fBSword\fP, et \fBVial\fP\&.
+.SS "virtual void Item::update ()\fC [pure virtual]\fP"
+
+.PP
+Implémente \fBNotMovableGameObject\fP\&.
+.PP
+Implémenté dans \fBMoney\fP, \fBShield\fP, \fBSword\fP, et \fBVial\fP\&.
+.SS "virtual void Item::updatePosition (float posX, float posY)\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+Permet de mettre à jour la position actuelle\&. 
+.PP
+Implémente \fBNotMovableGameObject\fP\&.
+.SS "virtual Item::useOn (\fBPersonage\fP & personage)\fC [pure virtual]\fP"
+
+.PP
+Utiliser l'item sur le personnage indiqué 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIpersonage\fP 
+.RE
+.PP
+
+.SH "Documentation des données membres"
+.PP 
+.SS "const \fBItemsCategories\fP Item::categorie\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB66\fP du fichier \fBItem\&.hpp\fP\&.
+.SS "unsigned Item::value\fC [protected]\fP"
+
+.PP
+Valeur de l'item à l'utilisation\&.\&.\&. 
+.PP
+Définition à la ligne \fB65\fP du fichier \fBItem\&.hpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

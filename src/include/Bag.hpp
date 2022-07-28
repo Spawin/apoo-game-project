@@ -6,6 +6,11 @@
 	#include "include/Item.hpp"
 	#include "include/consts.hpp"
 
+class NotMovableGameObject;
+class Inventory;
+class Item;
+class Collision;
+
 class Bag : public NotMovableGameObject
 {
 public:

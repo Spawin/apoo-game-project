@@ -1,0 +1,70 @@
+.TH "Money" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Money
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Money\&.hpp>\fP
+.PP
+Est dérivée de \fBItem\fP\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBMoney\fP ()"
+.br
+.ti -1c
+.RI "\fB~Money\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBonCollisionEnter\fP (\fBCollision\fP const &collision) const override"
+.br
+.RI "émit quand il entre en contacte avec un autre élément "
+.ti -1c
+.RI "virtual void \fBupdate\fP () override"
+.br
+.in -1c
+.SS "Membres hérités additionnels"
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB8\fP du fichier \fBMoney\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "Money::Money ()"
+
+.PP
+Définition à la ligne \fB8\fP du fichier \fBMoney\&.cpp\fP\&.
+.SS "Money::~Money ()"
+
+.PP
+Définition à la ligne \fB13\fP du fichier \fBMoney\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void Money::onCollisionEnter (\fBCollision\fP const & collision) const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+émit quand il entre en contacte avec un autre élément 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIcollision\fP 
+.RE
+.PP
+
+.PP
+Implémente \fBItem\fP\&.
+.PP
+Définition à la ligne \fB18\fP du fichier \fBMoney\&.cpp\fP\&.
+.SS "void Money::update ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implémente \fBItem\fP\&.
+.PP
+Définition à la ligne \fB23\fP du fichier \fBMoney\&.cpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

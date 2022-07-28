@@ -7,6 +7,10 @@
 
 using namespace std;
 
+class Lounge;
+class MovableGameObject;
+class Room;
+
 // Fonction static
 
 // -------------------------- Fonctions d'initialisation ---------------------

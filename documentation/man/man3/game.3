@@ -1,0 +1,190 @@
+.TH "game" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+game
+.SH SYNOPSIS
+.br
+.PP
+.SS "Énumérations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBmovement_states\fP { \fBIDLE\fP = 0, \fBMOVING\fP, \fBMOVING_LEFT\fP, \fBMOVING_RIGHT\fP, \fBMOVING_UP\fP, \fBMOVING_DOWN\fP }"
+.br
+.ti -1c
+.RI "enum \fBinventory_items_types\fP { \fBDEFAULT\fP = -1, \fBVIAL\fP = 0, \fBARMORY\fP, \fBTELEPORTKEY\fP, \fBMONEY\fP }"
+.br
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "std::string const & \fBGAME_NAME\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "constexpr int \fBWINDOW_WIDTH\fP = 1200"
+.br
+.ti -1c
+.RI "constexpr int \fBWINDOW_HEIGHT\fP = 675"
+.br
+.ti -1c
+.RI "constexpr float \fBPERSONAGE_MOVE_VELOCITY\fP = 300\&.f"
+.br
+.ti -1c
+.RI "constexpr int \fBGAME_BLOCKS_WIDTH\fP = 200"
+.br
+.ti -1c
+.RI "constexpr float \fBGAME_MAP_WIDTH\fP = \fBgame::GAME_BLOCKS_WIDTH\fP * 40"
+.br
+.ti -1c
+.RI "constexpr float \fBGAME_MAP_HEIGHT\fP = \fBgame::GAME_BLOCKS_WIDTH\fP * 80"
+.br
+.ti -1c
+.RI "constexpr int \fBHOUSE_TILES_NUMBER\fP = 40 * 80"
+.br
+.ti -1c
+.RI "constexpr int \fBWALL_WIDTH\fP = 120"
+.br
+.ti -1c
+.RI "constexpr int \fBWALL_HEIGHT\fP = 32"
+.br
+.ti -1c
+.RI "constexpr int \fBDISTANCE_MIN_BETWEEN_OBJECTS\fP = 10"
+.br
+.ti -1c
+.RI "constexpr int \fBDEFAULT_DETECTABILITY_RADIUS\fP = 16"
+.br
+.ti -1c
+.RI "constexpr int \fBPERSONNAGE_DETECTABILITY_RADIUS\fP = 16"
+.br
+.ti -1c
+.RI "constexpr int \fBPERSONNAGE_WIDTH\fP = 32"
+.br
+.ti -1c
+.RI "constexpr int \fBPERSONNAGE_MAX_HEALTH\fP = 100"
+.br
+.ti -1c
+.RI "constexpr int \fBPERSONNAGE_MAX_SPECIALITY\fP = 100"
+.br
+.ti -1c
+.RI "constexpr int \fBINVENTORY_BLOCK_WIDTH\fP = 80"
+.br
+.in -1c
+.SH "Documentation du type de l'énumération"
+.PP 
+.SS "enum \fBgame::inventory_items_types\fP"
+
+.PP
+\fBValeurs énumérées\fP
+.in +1c
+.TP
+\fB\fIDEFAULT \fP\fP
+.TP
+\fB\fIVIAL \fP\fP
+.TP
+\fB\fIARMORY \fP\fP
+.TP
+\fB\fITELEPORTKEY \fP\fP
+.TP
+\fB\fIMONEY \fP\fP
+.PP
+Définition à la ligne \fB63\fP du fichier \fBconsts\&.hpp\fP\&.
+.SS "enum \fBgame::movement_states\fP"
+
+.PP
+\fBValeurs énumérées\fP
+.in +1c
+.TP
+\fB\fIIDLE \fP\fP
+.TP
+\fB\fIMOVING \fP\fP
+.TP
+\fB\fIMOVING_LEFT \fP\fP
+.TP
+\fB\fIMOVING_RIGHT \fP\fP
+.TP
+\fB\fIMOVING_UP \fP\fP
+.TP
+\fB\fIMOVING_DOWN \fP\fP
+.PP
+Définition à la ligne \fB53\fP du fichier \fBconsts\&.hpp\fP\&.
+.SH "Documentation des fonctions"
+.PP 
+.SS "std::string const  & game::GAME_NAME ()\fC [inline]\fP"
+
+.PP
+Définition à la ligne \fB79\fP du fichier \fBconsts\&.hpp\fP\&.
+.SH "Documentation des variables"
+.PP 
+.SS "constexpr int game::DEFAULT_DETECTABILITY_RADIUS = 16\fC [constexpr]\fP"
+
+.PP
+Définition à la ligne \fB40\fP du fichier \fBconsts\&.hpp\fP\&.
+.SS "constexpr int game::DISTANCE_MIN_BETWEEN_OBJECTS = 10\fC [constexpr]\fP"
+
+.PP
+Définition à la ligne \fB37\fP du fichier \fBconsts\&.hpp\fP\&.
+.SS "constexpr int game::GAME_BLOCKS_WIDTH = 200\fC [constexpr]\fP"
+
+.PP
+Définition à la ligne \fB26\fP du fichier \fBconsts\&.hpp\fP\&.
+.SS "constexpr float game::GAME_MAP_HEIGHT = \fBgame::GAME_BLOCKS_WIDTH\fP * 80\fC [constexpr]\fP"
+
+.PP
+Définition à la ligne \fB29\fP du fichier \fBconsts\&.hpp\fP\&.
+.SS "constexpr float game::GAME_MAP_WIDTH = \fBgame::GAME_BLOCKS_WIDTH\fP * 40\fC [constexpr]\fP"
+
+.PP
+Définition à la ligne \fB28\fP du fichier \fBconsts\&.hpp\fP\&.
+.SS "constexpr int game::HOUSE_TILES_NUMBER = 40 * 80\fC [constexpr]\fP"
+
+.PP
+Définition à la ligne \fB30\fP du fichier \fBconsts\&.hpp\fP\&.
+.SS "constexpr int game::INVENTORY_BLOCK_WIDTH = 80\fC [constexpr]\fP"
+
+.PP
+Définition à la ligne \fB49\fP du fichier \fBconsts\&.hpp\fP\&.
+.SS "constexpr float game::PERSONAGE_MOVE_VELOCITY = 300\&.f\fC [constexpr]\fP"
+
+.PP
+Définition à la ligne \fB23\fP du fichier \fBconsts\&.hpp\fP\&.
+.SS "constexpr int game::PERSONNAGE_DETECTABILITY_RADIUS = 16\fC [constexpr]\fP"
+
+.PP
+Définition à la ligne \fB42\fP du fichier \fBconsts\&.hpp\fP\&.
+.SS "constexpr int game::PERSONNAGE_MAX_HEALTH = 100\fC [constexpr]\fP"
+
+.PP
+Définition à la ligne \fB46\fP du fichier \fBconsts\&.hpp\fP\&.
+.SS "constexpr int game::PERSONNAGE_MAX_SPECIALITY = 100\fC [constexpr]\fP"
+
+.PP
+Définition à la ligne \fB47\fP du fichier \fBconsts\&.hpp\fP\&.
+.SS "constexpr int game::PERSONNAGE_WIDTH = 32\fC [constexpr]\fP"
+
+.PP
+Définition à la ligne \fB44\fP du fichier \fBconsts\&.hpp\fP\&.
+.SS "constexpr int game::WALL_HEIGHT = 32\fC [constexpr]\fP"
+
+.PP
+Définition à la ligne \fB34\fP du fichier \fBconsts\&.hpp\fP\&.
+.SS "constexpr int game::WALL_WIDTH = 120\fC [constexpr]\fP"
+
+.PP
+Définition à la ligne \fB32\fP du fichier \fBconsts\&.hpp\fP\&.
+.SS "constexpr int game::WINDOW_HEIGHT = 675\fC [constexpr]\fP"
+
+.PP
+Définition à la ligne \fB22\fP du fichier \fBconsts\&.hpp\fP\&.
+.SS "constexpr int game::WINDOW_WIDTH = 1200\fC [constexpr]\fP"
+
+.PP
+Définition à la ligne \fB21\fP du fichier \fBconsts\&.hpp\fP\&.
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

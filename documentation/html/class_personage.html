@@ -98,11 +98,12 @@ Graphe d'héritage de Personage:</div>
  <div class="center">
   <img src="class_personage.png" usemap="#Personage_map" alt=""/>
   <map id="Personage_map" name="Personage_map">
-<area href="class_game_object.html" alt="GameObject" shape="rect" coords="136,0,217,24"/>
-<area href="class_druid.html" alt="Druid" shape="rect" coords="0,112,81,136"/>
-<area href="class_religious.html" alt="Religious" shape="rect" coords="91,112,172,136"/>
-<area href="class_soldier.html" alt="Soldier" shape="rect" coords="182,112,263,136"/>
-<area href="class_worker.html" alt="Worker" shape="rect" coords="273,112,354,136"/>
+<area href="class_movable_game_object.html" alt="MovableGameObject" shape="rect" coords="210,56,340,80"/>
+<area href="class_game_object.html" alt="GameObject" shape="rect" coords="210,0,340,24"/>
+<area href="class_druid.html" alt="Druid" shape="rect" coords="0,168,130,192"/>
+<area href="class_religious.html" alt="Religious" shape="rect" coords="140,168,270,192"/>
+<area href="class_soldier.html" alt="Soldier" shape="rect" coords="280,168,410,192"/>
+<area href="class_worker.html" alt="Worker" shape="rect" coords="420,168,550,192"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -110,41 +111,72 @@ Graphe d'héritage de Personage:</div>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a53b3b6c7865b2eb80de7c6edab217944"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a53b3b6c7865b2eb80de7c6edab217944">Personage</a> (bool isPlayer=false)</td></tr>
 <tr class="separator:a53b3b6c7865b2eb80de7c6edab217944"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bc02be347c9e2ea7af9502e7194491c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a2bc02be347c9e2ea7af9502e7194491c">Personage</a> (std::string_view const &amp;imageSpritePath, bool isPlayer=false)</td></tr>
-<tr class="separator:a2bc02be347c9e2ea7af9502e7194491c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a590260b9f0cdb7394c8922ce9435989e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a590260b9f0cdb7394c8922ce9435989e">Personage</a> (float posX, float posY, bool isPlayer=false)</td></tr>
-<tr class="memdesc:a590260b9f0cdb7394c8922ce9435989e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_personage.html">Personage</a> object.  <a href="class_personage.html#a590260b9f0cdb7394c8922ce9435989e">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a590260b9f0cdb7394c8922ce9435989e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ff0d64c3568a81517b84fdce5478820"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a9ff0d64c3568a81517b84fdce5478820">Personage</a> (<a class="el" href="class_personage.html">Personage</a> const &amp;p)=delete</td></tr>
+<tr class="separator:a9ff0d64c3568a81517b84fdce5478820"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1767f263a4d3681ce02ef14f9b2afae8"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a1767f263a4d3681ce02ef14f9b2afae8">~Personage</a> ()</td></tr>
 <tr class="separator:a1767f263a4d3681ce02ef14f9b2afae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5519958ec983d06abd2ff81902dc49ac"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a5519958ec983d06abd2ff81902dc49ac">show</a> (sf::RenderTarget &amp;window) override</td></tr>
-<tr class="memdesc:a5519958ec983d06abd2ff81902dc49ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour dessiner l'élement dans la fenêtre.  <a href="class_personage.html#a5519958ec983d06abd2ff81902dc49ac">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a5519958ec983d06abd2ff81902dc49ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81af0984599ce6981a4b6c4ded2b2b8a"><td class="memItemLeft" align="right" valign="top">const int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a81af0984599ce6981a4b6c4ded2b2b8a">getHealthLevel</a> () const</td></tr>
+<tr class="separator:a81af0984599ce6981a4b6c4ded2b2b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab373b15697442211943f0b3f630e9be6"><td class="memItemLeft" align="right" valign="top">const int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#ab373b15697442211943f0b3f630e9be6">getSpecialityLevel</a> () const</td></tr>
+<tr class="separator:ab373b15697442211943f0b3f630e9be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9f5f4c71cf2113a83f1e8f401020ba0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#af9f5f4c71cf2113a83f1e8f401020ba0">isDied</a> () const</td></tr>
+<tr class="separator:af9f5f4c71cf2113a83f1e8f401020ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01b776643850ebcc55ba806e2fa8085e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a01b776643850ebcc55ba806e2fa8085e">show</a> (sf::RenderTarget &amp;target) override</td></tr>
+<tr class="memdesc:a01b776643850ebcc55ba806e2fa8085e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour dessiner l'élement dans la fenêtre.  <a href="class_personage.html#a01b776643850ebcc55ba806e2fa8085e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a01b776643850ebcc55ba806e2fa8085e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a492d4164bc6c439d43cc44fefcbd6468"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a492d4164bc6c439d43cc44fefcbd6468">update</a> () override</td></tr>
 <tr class="separator:a492d4164bc6c439d43cc44fefcbd6468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a938d215023e4594db6e6eb4341101767"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a938d215023e4594db6e6eb4341101767">updateMousePosWindow</a> (sf::Vector2i mousePosWindow)</td></tr>
+<tr class="separator:a938d215023e4594db6e6eb4341101767"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f8afca1fd73cff32ab7f6d2df048c6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a3f8afca1fd73cff32ab7f6d2df048c6d">setGameObjectName</a> (std::string name)</td></tr>
 <tr class="separator:a3f8afca1fd73cff32ab7f6d2df048c6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0e67cb98d13d11d49395bcaa9a8f6dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#ac0e67cb98d13d11d49395bcaa9a8f6dd">onCollisionEnter</a> (<a class="el" href="class_collision.html">Collision</a> const &amp;collision) const override</td></tr>
 <tr class="memdesc:ac0e67cb98d13d11d49395bcaa9a8f6dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">émit quand il entre en contacte avec un autre élément  <a href="class_personage.html#ac0e67cb98d13d11d49395bcaa9a8f6dd">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac0e67cb98d13d11d49395bcaa9a8f6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bff2cb2291f1405ca85fc8075721534"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a7bff2cb2291f1405ca85fc8075721534">getHealth</a> () const</td></tr>
-<tr class="memdesc:a7bff2cb2291f1405ca85fc8075721534"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Health object.  <a href="class_personage.html#a7bff2cb2291f1405ca85fc8075721534">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a7bff2cb2291f1405ca85fc8075721534"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acecd31422b51e2d0755c6d2de94d9510"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#acecd31422b51e2d0755c6d2de94d9510">move</a> (<a class="el" href="struct_my_vector.html">MyVector</a> &amp;speed) override</td></tr>
+<tr class="separator:acecd31422b51e2d0755c6d2de94d9510"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71c0f3d9e3412c24050afd31c836872f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a71c0f3d9e3412c24050afd31c836872f">renderBagInventory</a> (sf::RenderTarget &amp;target)</td></tr>
+<tr class="separator:a71c0f3d9e3412c24050afd31c836872f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1dade2c8ec548dd2df7791252719fe1d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a1dade2c8ec548dd2df7791252719fe1d">simpleAttack</a> (<a class="el" href="class_personage.html">Personage</a> &amp;target)=0</td></tr>
 <tr class="separator:a1dade2c8ec548dd2df7791252719fe1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71f84a092284e295db1de628af4e918d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a71f84a092284e295db1de628af4e918d">specialAttack</a> (<a class="el" href="class_personage.html">Personage</a> &amp;target)=0</td></tr>
 <tr class="separator:a71f84a092284e295db1de628af4e918d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acecd31422b51e2d0755c6d2de94d9510"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#acecd31422b51e2d0755c6d2de94d9510">move</a> (<a class="el" href="struct_my_vector.html">MyVector</a> &amp;speed) override</td></tr>
-<tr class="separator:acecd31422b51e2d0755c6d2de94d9510"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a60566d579586450b87ac815d270f3c"><td class="memItemLeft" align="right" valign="top">virtual unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a5a60566d579586450b87ac815d270f3c">receiveHealthDamage</a> (int value)=0</td></tr>
+<tr class="memdesc:a5a60566d579586450b87ac815d270f3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)  <a href="class_personage.html#a5a60566d579586450b87ac815d270f3c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5a60566d579586450b87ac815d270f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74a713ccc0ab68213086699330abeadc"><td class="memItemLeft" align="right" valign="top">virtual unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a74a713ccc0ab68213086699330abeadc">receiveExpDamage</a> (int value)=0</td></tr>
+<tr class="memdesc:a74a713ccc0ab68213086699330abeadc"><td class="mdescLeft">&#160;</td><td class="mdescRight">pour recevoir les dégats d'exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)  <a href="class_personage.html#a74a713ccc0ab68213086699330abeadc">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a74a713ccc0ab68213086699330abeadc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e442afbcc6eb7fc843478cbd66ad21b"><td class="memItemLeft" align="right" valign="top">virtual unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a6e442afbcc6eb7fc843478cbd66ad21b">receiveHealthCare</a> (int value)=0</td></tr>
+<tr class="memdesc:a6e442afbcc6eb7fc843478cbd66ad21b"><td class="mdescLeft">&#160;</td><td class="mdescRight">pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)  <a href="class_personage.html#a6e442afbcc6eb7fc843478cbd66ad21b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6e442afbcc6eb7fc843478cbd66ad21b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e247c0fc009659808e3be549cbb54e7"><td class="memItemLeft" align="right" valign="top">virtual unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a5e247c0fc009659808e3be549cbb54e7">receiveExpCare</a> (int value)=0</td></tr>
+<tr class="memdesc:a5e247c0fc009659808e3be549cbb54e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)  <a href="class_personage.html#a5e247c0fc009659808e3be549cbb54e7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5e247c0fc009659808e3be549cbb54e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_movable_game_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_movable_game_object')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="class_movable_game_object.html">MovableGameObject</a></td></tr>
+<tr class="memitem:a786b4b88e7a155f561593313432c06f9 inherit pub_methods_class_movable_game_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#a786b4b88e7a155f561593313432c06f9">MovableGameObject</a> (std::string_view const &amp;imageSpritePath)</td></tr>
+<tr class="separator:a786b4b88e7a155f561593313432c06f9 inherit pub_methods_class_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab86ce333c409ff3cec75db7040d264d5 inherit pub_methods_class_movable_game_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#ab86ce333c409ff3cec75db7040d264d5">~MovableGameObject</a> ()</td></tr>
+<tr class="separator:ab86ce333c409ff3cec75db7040d264d5 inherit pub_methods_class_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5ac80937d289f9c159ea5c93dccfbba inherit pub_methods_class_movable_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#af5ac80937d289f9c159ea5c93dccfbba">move</a> (<a class="el" href="struct_my_vector.html">MyVector</a> &amp;speed)=0</td></tr>
+<tr class="separator:af5ac80937d289f9c159ea5c93dccfbba inherit pub_methods_class_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3b241b18227ac3eacee79069af64fc7 inherit pub_methods_class_movable_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_animation_component.html">AnimationComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#ad3b241b18227ac3eacee79069af64fc7">getAnimationComponent</a> ()</td></tr>
+<tr class="separator:ad3b241b18227ac3eacee79069af64fc7 inherit pub_methods_class_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3ca02b727df6802b66bc7cd677b0504 inherit pub_methods_class_movable_game_object"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#ac3ca02b727df6802b66bc7cd677b0504">addToHall</a> (<a class="el" href="class_hall.html">Hall</a> *<a class="el" href="class_movable_game_object.html#a82a572bd2815eb23cf9b752dbc70784e">hall</a>)</td></tr>
+<tr class="memdesc:ac3ca02b727df6802b66bc7cd677b0504 inherit pub_methods_class_movable_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déplacer un objet vers une salle est virtuel pour permettre de récrire la fonction et spécifier peut être des conditions de déplacement. NOTE - Cet déplacement ne concerne pas le chagement des cordonnes mais juste l'éta d'appartenance. Néanmoins c'est à partir d'elle qu'on informe l'object des nouvelles limites de mouvement.  <a href="class_movable_game_object.html#ac3ca02b727df6802b66bc7cd677b0504">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac3ca02b727df6802b66bc7cd677b0504 inherit pub_methods_class_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a642733a3472829a5526280e44bfd27e5 inherit pub_methods_class_movable_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#a642733a3472829a5526280e44bfd27e5">show</a> (sf::RenderTarget &amp;window)</td></tr>
+<tr class="memdesc:a642733a3472829a5526280e44bfd27e5 inherit pub_methods_class_movable_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour dessiner l'élement dans la fenêtre.  <a href="class_movable_game_object.html#a642733a3472829a5526280e44bfd27e5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a642733a3472829a5526280e44bfd27e5 inherit pub_methods_class_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65c649a0cf69aa86032cb3fc63e9da01 inherit pub_methods_class_movable_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#a65c649a0cf69aa86032cb3fc63e9da01">onCollisionEnter</a> (<a class="el" href="class_collision.html">Collision</a> const &amp;collision) const =0</td></tr>
+<tr class="memdesc:a65c649a0cf69aa86032cb3fc63e9da01 inherit pub_methods_class_movable_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">émit quand il entre en contacte avec un autre élément  <a href="class_movable_game_object.html#a65c649a0cf69aa86032cb3fc63e9da01">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a65c649a0cf69aa86032cb3fc63e9da01 inherit pub_methods_class_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07e44e5e7fd45ea5eb50fb86983473f1 inherit pub_methods_class_movable_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#a07e44e5e7fd45ea5eb50fb86983473f1">update</a> ()=0</td></tr>
+<tr class="separator:a07e44e5e7fd45ea5eb50fb86983473f1 inherit pub_methods_class_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_game_object')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="class_game_object.html">GameObject</a></td></tr>
-<tr class="memitem:a0348e3ee2e83d56eafca7a3547f432c4 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a0348e3ee2e83d56eafca7a3547f432c4">GameObject</a> ()</td></tr>
-<tr class="separator:a0348e3ee2e83d56eafca7a3547f432c4 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcc6c98f8a45808760930dc5911da2e8 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#abcc6c98f8a45808760930dc5911da2e8">GameObject</a> (std::string_view const &amp;imageSpritePath)</td></tr>
-<tr class="memdesc:abcc6c98f8a45808760930dc5911da2e8 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Game Oject object.  <a href="class_game_object.html#abcc6c98f8a45808760930dc5911da2e8">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:abcc6c98f8a45808760930dc5911da2e8 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Game Object object.  <a href="class_game_object.html#abcc6c98f8a45808760930dc5911da2e8">Plus de détails...</a><br /></td></tr>
 <tr class="separator:abcc6c98f8a45808760930dc5911da2e8 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89dbbcdbdb0d867e9d7baf0d0fced05d inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a89dbbcdbdb0d867e9d7baf0d0fced05d">GameObject</a> (float posX, float posY, std::string_view const &amp;imageSpritePath=&quot;&quot;)</td></tr>
-<tr class="memdesc:a89dbbcdbdb0d867e9d7baf0d0fced05d inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Game Object object.  <a href="class_game_object.html#a89dbbcdbdb0d867e9d7baf0d0fced05d">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a89dbbcdbdb0d867e9d7baf0d0fced05d inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab82dfdb656f9051c0587e6593b2dda97 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#ab82dfdb656f9051c0587e6593b2dda97">~GameObject</a> ()</td></tr>
 <tr class="separator:ab82dfdb656f9051c0587e6593b2dda97 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f7a674006e1cce96ccb6c60f0ff9aaf inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a3f7a674006e1cce96ccb6c60f0ff9aaf">show</a> (sf::RenderTarget &amp;window)</td></tr>
@@ -154,8 +186,10 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:ae83128d0e0efef691417779605ee037c inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bc5db5459f66fad48f88c7d8e1863b6 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a7bc5db5459f66fad48f88c7d8e1863b6">getGameObjectId</a> () const</td></tr>
 <tr class="separator:a7bc5db5459f66fad48f88c7d8e1863b6 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c97fc15be278b8c42d138517e0a05bb inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position.html">Position</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a8c97fc15be278b8c42d138517e0a05bb">getPosition</a> () const</td></tr>
-<tr class="separator:a8c97fc15be278b8c42d138517e0a05bb inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f5f8870bb5d7e1496c2e565f5dd8bbd inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_position.html">Position</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a5f5f8870bb5d7e1496c2e565f5dd8bbd">getPosition</a> () const</td></tr>
+<tr class="separator:a5f5f8870bb5d7e1496c2e565f5dd8bbd inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d7e99dbc0f116d7a20b0229180397db inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position.html">Position</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a1d7e99dbc0f116d7a20b0229180397db">getNonConstPosition</a> ()</td></tr>
+<tr class="separator:a1d7e99dbc0f116d7a20b0229180397db inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a800f7c8a8df0bd57aca9f8de170d7906 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a800f7c8a8df0bd57aca9f8de170d7906">getGameObjectName</a> () const</td></tr>
 <tr class="separator:a800f7c8a8df0bd57aca9f8de170d7906 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a394309d681a8e5eb59656029a32881de inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a394309d681a8e5eb59656029a32881de">onCollisionEnter</a> (<a class="el" href="class_collision.html">Collision</a> const &amp;collision) const =0</td></tr>
@@ -171,31 +205,63 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:a923eb7f3030e15e3e5cc2da08417b57c inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a509ced81c976fc9f230e501cd1f146e1 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_collider.html">Collider</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a509ced81c976fc9f230e501cd1f146e1">getCollider</a> () const</td></tr>
 <tr class="separator:a509ced81c976fc9f230e501cd1f146e1 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5845033077a9f7669e3e7479dae824c0 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a5845033077a9f7669e3e7479dae824c0">move</a> (<a class="el" href="struct_my_vector.html">MyVector</a> &amp;speed)=0</td></tr>
-<tr class="separator:a5845033077a9f7669e3e7479dae824c0 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Fonctions membres protégées</h2></td></tr>
 <tr class="memitem:a26d96b1af8f4a482b60a56e18629e14b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a26d96b1af8f4a482b60a56e18629e14b">init</a> ()</td></tr>
 <tr class="memdesc:a26d96b1af8f4a482b60a56e18629e14b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour initialiser les valeur par défaut du <a class="el" href="class_game_object.html">GameObject</a>.  <a href="class_personage.html#a26d96b1af8f4a482b60a56e18629e14b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a26d96b1af8f4a482b60a56e18629e14b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37baf30f19be05e97e839ace9fde91b8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a37baf30f19be05e97e839ace9fde91b8">updatePosition</a> (<a class="el" href="class_position.html">Position</a> &amp;position) override</td></tr>
-<tr class="memdesc:a37baf30f19be05e97e839ace9fde91b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de mettre à jour la position actuelle. Cette position sera déterminé par l'évenement reçu au préalable. Aussi il s'agit dans ce cas d'une accélération uniforme.  <a href="class_personage.html#a37baf30f19be05e97e839ace9fde91b8">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a37baf30f19be05e97e839ace9fde91b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ed3bc3b47bd9830238fc92ff8ff7cfd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a8ed3bc3b47bd9830238fc92ff8ff7cfd">initAnimations</a> () override</td></tr>
+<tr class="memdesc:a8ed3bc3b47bd9830238fc92ff8ff7cfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour ajouter les animation pour un personnage.  <a href="class_personage.html#a8ed3bc3b47bd9830238fc92ff8ff7cfd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8ed3bc3b47bd9830238fc92ff8ff7cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac03bba7d28058936fad17e76b8418811"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#ac03bba7d28058936fad17e76b8418811">initEXPBar</a> ()</td></tr>
+<tr class="separator:ac03bba7d28058936fad17e76b8418811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bc14851a9625f02a5fa04eed5d1af27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a2bc14851a9625f02a5fa04eed5d1af27">initHPBar</a> ()</td></tr>
+<tr class="separator:a2bc14851a9625f02a5fa04eed5d1af27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9670b4adc4283e6741f13289baf84387"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a9670b4adc4283e6741f13289baf84387">initBag</a> ()</td></tr>
+<tr class="separator:a9670b4adc4283e6741f13289baf84387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cca40cc77abdb95354998264a4f7229"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a0cca40cc77abdb95354998264a4f7229">calculateProgressBarsPosition</a> ()</td></tr>
+<tr class="separator:a0cca40cc77abdb95354998264a4f7229"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3994eb488c9212770b697ff73c2d153b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a3994eb488c9212770b697ff73c2d153b">updatePosition</a> (float posX, float posY) override</td></tr>
+<tr class="memdesc:a3994eb488c9212770b697ff73c2d153b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de mettre à jour la position actuelle. Cette position sera déterminé par l'évenement reçu au préalable. Aussi il s'agit dans ce cas d'une accélération uniforme.  <a href="class_personage.html#a3994eb488c9212770b697ff73c2d153b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3994eb488c9212770b697ff73c2d153b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae81af6eab1894c26eb89fead2d82ed0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#ae81af6eab1894c26eb89fead2d82ed0d">updateEXPBar</a> ()</td></tr>
+<tr class="separator:ae81af6eab1894c26eb89fead2d82ed0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b99762efecc865705da453c73ddf45d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a2b99762efecc865705da453c73ddf45d">updateHPBar</a> ()</td></tr>
+<tr class="separator:a2b99762efecc865705da453c73ddf45d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc3bc1054dfc52ccdf479a48616b5504"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#abc3bc1054dfc52ccdf479a48616b5504">renderEXPBar</a> (sf::RenderTarget &amp;target)</td></tr>
+<tr class="separator:abc3bc1054dfc52ccdf479a48616b5504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67392d993c6554540e2f59443abd5a59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a67392d993c6554540e2f59443abd5a59">renderHPBar</a> (sf::RenderTarget &amp;target)</td></tr>
+<tr class="separator:a67392d993c6554540e2f59443abd5a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_movable_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_movable_game_object')"><img src="closed.png" alt="-"/>&#160;Fonctions membres protégées hérités de <a class="el" href="class_movable_game_object.html">MovableGameObject</a></td></tr>
+<tr class="memitem:a2e91f66b167c69682916b93cc5d900ae inherit pro_methods_class_movable_game_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#a2e91f66b167c69682916b93cc5d900ae">createAnimationComponent</a> (sf::Texture &amp;texture)</td></tr>
+<tr class="separator:a2e91f66b167c69682916b93cc5d900ae inherit pro_methods_class_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e0909f577c773a6fd5c4b7f0661228c inherit pro_methods_class_movable_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#a0e0909f577c773a6fd5c4b7f0661228c">initPosition</a> (float posX, float posY) override</td></tr>
+<tr class="separator:a0e0909f577c773a6fd5c4b7f0661228c inherit pro_methods_class_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14ce6a7878ca03a4c451a64a0eb88555 inherit pro_methods_class_movable_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#a14ce6a7878ca03a4c451a64a0eb88555">initAnimations</a> ()=0</td></tr>
+<tr class="memdesc:a14ce6a7878ca03a4c451a64a0eb88555 inherit pro_methods_class_movable_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialiser animationComponent et les animations.  <a href="class_movable_game_object.html#a14ce6a7878ca03a4c451a64a0eb88555">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a14ce6a7878ca03a4c451a64a0eb88555 inherit pro_methods_class_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c21e1f1df5715b09a286255999d04b1 inherit pro_methods_class_movable_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#a3c21e1f1df5715b09a286255999d04b1">setPositionMovementLimit</a> (const <a class="el" href="class_hall.html">Hall</a> *<a class="el" href="class_movable_game_object.html#a82a572bd2815eb23cf9b752dbc70784e">hall</a>)</td></tr>
+<tr class="memdesc:a3c21e1f1df5715b09a286255999d04b1 inherit pro_methods_class_movable_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour les nouvelle limite de déplacement.  <a href="class_movable_game_object.html#a3c21e1f1df5715b09a286255999d04b1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3c21e1f1df5715b09a286255999d04b1 inherit pro_methods_class_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9fedc4f3a11d0a2fcc339324b01430a inherit pro_methods_class_movable_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#ae9fedc4f3a11d0a2fcc339324b01430a">updatePosition</a> (float posX, float posY)=0</td></tr>
+<tr class="memdesc:ae9fedc4f3a11d0a2fcc339324b01430a inherit pro_methods_class_movable_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de mettre à jour la position actuelle.  <a href="class_movable_game_object.html#ae9fedc4f3a11d0a2fcc339324b01430a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae9fedc4f3a11d0a2fcc339324b01430a inherit pro_methods_class_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_game_object')"><img src="closed.png" alt="-"/>&#160;Fonctions membres protégées hérités de <a class="el" href="class_game_object.html">GameObject</a></td></tr>
 <tr class="memitem:a9b565e5ec63bef28e5c860f724d2de7c inherit pro_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a9b565e5ec63bef28e5c860f724d2de7c">init</a> ()</td></tr>
 <tr class="memdesc:a9b565e5ec63bef28e5c860f724d2de7c inherit pro_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour initialiser les valeur par défaut du <a class="el" href="class_game_object.html">GameObject</a>.  <a href="class_game_object.html#a9b565e5ec63bef28e5c860f724d2de7c">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a9b565e5ec63bef28e5c860f724d2de7c inherit pro_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a370e2175ad8b4017ff2aa095e11e955b inherit pro_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a370e2175ad8b4017ff2aa095e11e955b">updatePosition</a> (<a class="el" href="class_position.html">Position</a> &amp;position)=0</td></tr>
-<tr class="memdesc:a370e2175ad8b4017ff2aa095e11e955b inherit pro_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de mettre à jour la position actuelle. Cette position sera déterminé par l'évenement reçu au préalable. Aussi il s'agit dans ce cas d'une accélération uniforme.  <a href="class_game_object.html#a370e2175ad8b4017ff2aa095e11e955b">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a370e2175ad8b4017ff2aa095e11e955b inherit pro_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad860b401fa64188046b2b7019e006283 inherit pro_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#ad860b401fa64188046b2b7019e006283">initPosition</a> (float posX, float posY)=0</td></tr>
+<tr class="separator:ad860b401fa64188046b2b7019e006283 inherit pro_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
-<tr class="memitem:a6ef19ba69263cdcec05c4ef5287cbe27"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a6ef19ba69263cdcec05c4ef5287cbe27">m_health</a> { 100 }</td></tr>
-<tr class="separator:a6ef19ba69263cdcec05c4ef5287cbe27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa927ac8acdb77e3fa7c340ecdaaf47b1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#aa927ac8acdb77e3fa7c340ecdaaf47b1">m_speciality</a> { 100 }</td></tr>
-<tr class="separator:aa927ac8acdb77e3fa7c340ecdaaf47b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0c020906dbb600cdb2aeb620e419e7f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_bag.html">Bag</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#ab0c020906dbb600cdb2aeb620e419e7f">bag</a></td></tr>
+<tr class="separator:ab0c020906dbb600cdb2aeb620e419e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adefd5be77df90ae0d9c9c24a86545771"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#adefd5be77df90ae0d9c9c24a86545771">m_healthLevel</a> { 100 }</td></tr>
+<tr class="separator:adefd5be77df90ae0d9c9c24a86545771"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1349843a464cb4c468394f18b9c2311d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a1349843a464cb4c468394f18b9c2311d">m_specialityLevel</a> { 50 }</td></tr>
+<tr class="separator:a1349843a464cb4c468394f18b9c2311d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e14c7228a3a5a6b6531c7b1077baa7f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a2e14c7228a3a5a6b6531c7b1077baa7f">m_specialtyName</a></td></tr>
 <tr class="separator:a2e14c7228a3a5a6b6531c7b1077baa7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab894906ea503da5bc523baf2198fb038"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#ab894906ea503da5bc523baf2198fb038">m_simpleAttackValue</a> { 10 }</td></tr>
@@ -216,6 +282,16 @@ Attributs protégés</h2></td></tr>
 <tr class="separator:aee1579f7f20f7d3ce28dc50b4b888259"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a824057a6da265aa4e58fa1dfbdd6037a"><td class="memItemLeft" align="right" valign="top">sf::RenderTarget *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a824057a6da265aa4e58fa1dfbdd6037a">m_window</a> { 0 }</td></tr>
 <tr class="separator:a824057a6da265aa4e58fa1dfbdd6037a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ee532510ee5e4078e2723d29975ad5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgui_1_1_progress_bar.html">gui::ProgressBar</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a8ee532510ee5e4078e2723d29975ad5c">expBar</a></td></tr>
+<tr class="separator:a8ee532510ee5e4078e2723d29975ad5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a395cf46197f77e7047cb4d3ac6993755"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgui_1_1_progress_bar.html">gui::ProgressBar</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a395cf46197f77e7047cb4d3ac6993755">hpBar</a></td></tr>
+<tr class="separator:a395cf46197f77e7047cb4d3ac6993755"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_class_movable_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_movable_game_object')"><img src="closed.png" alt="-"/>&#160;Attributs protégés hérités de <a class="el" href="class_movable_game_object.html">MovableGameObject</a></td></tr>
+<tr class="memitem:a655f3cc2f2a8b00c30ed90cd8c7b712e inherit pro_attribs_class_movable_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_animation_component.html">AnimationComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#a655f3cc2f2a8b00c30ed90cd8c7b712e">animationComponent</a></td></tr>
+<tr class="separator:a655f3cc2f2a8b00c30ed90cd8c7b712e inherit pro_attribs_class_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82a572bd2815eb23cf9b752dbc70784e inherit pro_attribs_class_movable_game_object"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_hall.html">Hall</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#a82a572bd2815eb23cf9b752dbc70784e">hall</a></td></tr>
+<tr class="memdesc:a82a572bd2815eb23cf9b752dbc70784e inherit pro_attribs_class_movable_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce pointeur ne doit pas être supprimé à ce niveau.  <a href="class_movable_game_object.html#a82a572bd2815eb23cf9b752dbc70784e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a82a572bd2815eb23cf9b752dbc70784e inherit pro_attribs_class_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_game_object')"><img src="closed.png" alt="-"/>&#160;Attributs protégés hérités de <a class="el" href="class_game_object.html">GameObject</a></td></tr>
 <tr class="memitem:a8e26cde3f70b648288f6e07855ec03f5 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a8e26cde3f70b648288f6e07855ec03f5">m_id</a> { <a class="el" href="class_game_object.html#a9c0e2d6826099f2d8a5680ac67f01eab">GameObject::m_count</a> + 1 }</td></tr>
 <tr class="separator:a8e26cde3f70b648288f6e07855ec03f5 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -225,18 +301,15 @@ Attributs protégés</h2></td></tr>
 <tr class="separator:ab0ed65316ecb25733ecc0f23aa3561ae inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9f3598767553b274e98b2df36122bbd inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#ab9f3598767553b274e98b2df36122bbd">m_body</a> {}</td></tr>
 <tr class="separator:ab9f3598767553b274e98b2df36122bbd inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4c79eddbc8c9c8203aab26a58dd4d93 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#af4c79eddbc8c9c8203aab26a58dd4d93">m_position</a> {}</td></tr>
-<tr class="separator:af4c79eddbc8c9c8203aab26a58dd4d93 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13cde9cf52cf7e4d6771eee5ccdaa5d7 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_position.html">Position</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a13cde9cf52cf7e4d6771eee5ccdaa5d7">m_position</a></td></tr>
+<tr class="separator:a13cde9cf52cf7e4d6771eee5ccdaa5d7 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd991cb0689c710bc0ca0a50fdb6cf9e inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_my_vector.html">MyVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#afd991cb0689c710bc0ca0a50fdb6cf9e">m_speed</a> { 0.f, 0.f }</td></tr>
 <tr class="separator:afd991cb0689c710bc0ca0a50fdb6cf9e inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75715d74bf69ee24626c26308e4a8bd4 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_collider.html">Collider</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a75715d74bf69ee24626c26308e4a8bd4">m_collider</a> { nullptr }</td></tr>
+<tr class="memdesc:a75715d74bf69ee24626c26308e4a8bd4 inherit pro_attribs_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de mettre à jour la position actuelle.  <a href="class_game_object.html#a75715d74bf69ee24626c26308e4a8bd4">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a75715d74bf69ee24626c26308e4a8bd4 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac358cb5bc96418e4c11f3a75be24810a inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rigidbody.html">Rigidbody</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#ac358cb5bc96418e4c11f3a75be24810a">m_rigidbody</a> { nullptr }</td></tr>
 <tr class="separator:ac358cb5bc96418e4c11f3a75be24810a inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3db171c5f799cd17f386672bd80a188 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#ad3db171c5f799cd17f386672bd80a188">m_width</a> { 100 }</td></tr>
-<tr class="separator:ad3db171c5f799cd17f386672bd80a188 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dd86983a7dc829e7b6b625bf5f59658 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a4dd86983a7dc829e7b6b625bf5f59658">m_height</a> { 100 }</td></tr>
-<tr class="separator:a4dd86983a7dc829e7b6b625bf5f59658 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Membres hérités additionnels</h2></td></tr>
@@ -255,10 +328,10 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock">
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00007">7</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00013">13</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="a53b3b6c7865b2eb80de7c6edab217944" name="a53b3b6c7865b2eb80de7c6edab217944"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53b3b6c7865b2eb80de7c6edab217944">&#9670;&nbsp;</a></span>Personage() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a53b3b6c7865b2eb80de7c6edab217944">&#9670;&nbsp;</a></span>Personage() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -281,12 +354,12 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00050">50</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00123">123</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a2bc02be347c9e2ea7af9502e7194491c" name="a2bc02be347c9e2ea7af9502e7194491c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bc02be347c9e2ea7af9502e7194491c">&#9670;&nbsp;</a></span>Personage() <span class="overload">[2/3]</span></h2>
+<a id="a9ff0d64c3568a81517b84fdce5478820" name="a9ff0d64c3568a81517b84fdce5478820"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ff0d64c3568a81517b84fdce5478820">&#9670;&nbsp;</a></span>Personage() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -297,82 +370,17 @@ Membres hérités additionnels</h2></td></tr>
         <tr>
           <td class="memname">Personage::Personage </td>
           <td>(</td>
-          <td class="paramtype">std::string_view const &amp;&#160;</td>
-          <td class="paramname"><em>imageSpritePath</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="class_personage.html">Personage</a> const &amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>isPlayer</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">explicit</span><span class="mlabel">delete</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00058">58</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a590260b9f0cdb7394c8922ce9435989e" name="a590260b9f0cdb7394c8922ce9435989e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a590260b9f0cdb7394c8922ce9435989e">&#9670;&nbsp;</a></span>Personage() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Personage::Personage </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>posX</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>posY</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>isPlayer</em> = <code>false</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Construct a new <a class="el" href="class_personage.html">Personage</a> object. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">posX</td><td>la position x de l'objet </td></tr>
-    <tr><td class="paramname">posY</td><td>la position y de l'objet </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00065">65</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
 
 </div>
 </div>
@@ -399,30 +407,89 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00072">72</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00148">148</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
-<a id="a7bff2cb2291f1405ca85fc8075721534" name="a7bff2cb2291f1405ca85fc8075721534"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7bff2cb2291f1405ca85fc8075721534">&#9670;&nbsp;</a></span>getHealth()</h2>
+<a id="a0cca40cc77abdb95354998264a4f7229" name="a0cca40cc77abdb95354998264a4f7229"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cca40cc77abdb95354998264a4f7229">&#9670;&nbsp;</a></span>calculateProgressBarsPosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Personage::getHealth </td>
+          <td class="memname">sf::Vector2f Personage::calculateProgressBarsPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00158">158</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a81af0984599ce6981a4b6c4ded2b2b8a" name="a81af0984599ce6981a4b6c4ded2b2b8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81af0984599ce6981a4b6c4ded2b2b8a">&#9670;&nbsp;</a></span>getHealthLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int &amp; Personage::getHealthLevel </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Get the Health object. </p>
-<dl class="section return"><dt>Renvoie</dt><dd>int </dd></dl>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00031">31</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00104">104</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+</div>
+</div>
+<a id="ab373b15697442211943f0b3f630e9be6" name="ab373b15697442211943f0b3f630e9be6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab373b15697442211943f0b3f630e9be6">&#9670;&nbsp;</a></span>getSpecialityLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int &amp; Personage::getSpecialityLevel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00036">36</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
 
 </div>
 </div>
@@ -451,7 +518,138 @@ Membres hérités additionnels</h2></td></tr>
 
 <p>Pour initialiser les valeur par défaut du <a class="el" href="class_game_object.html">GameObject</a>. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00014">14</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00018">18</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8ed3bc3b47bd9830238fc92ff8ff7cfd" name="a8ed3bc3b47bd9830238fc92ff8ff7cfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ed3bc3b47bd9830238fc92ff8ff7cfd">&#9670;&nbsp;</a></span>initAnimations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Personage::initAnimations </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pour ajouter les animation pour un personnage. </p>
+
+<p>Implémente <a class="el" href="class_movable_game_object.html#a14ce6a7878ca03a4c451a64a0eb88555">MovableGameObject</a>.</p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00068">68</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9670b4adc4283e6741f13289baf84387" name="a9670b4adc4283e6741f13289baf84387"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9670b4adc4283e6741f13289baf84387">&#9670;&nbsp;</a></span>initBag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Personage::initBag </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00102">102</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac03bba7d28058936fad17e76b8418811" name="ac03bba7d28058936fad17e76b8418811"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac03bba7d28058936fad17e76b8418811">&#9670;&nbsp;</a></span>initEXPBar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Personage::initEXPBar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00090">90</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2bc14851a9625f02a5fa04eed5d1af27" name="a2bc14851a9625f02a5fa04eed5d1af27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bc14851a9625f02a5fa04eed5d1af27">&#9670;&nbsp;</a></span>initHPBar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Personage::initHPBar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00096">96</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af9f5f4c71cf2113a83f1e8f401020ba0" name="af9f5f4c71cf2113a83f1e8f401020ba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9f5f4c71cf2113a83f1e8f401020ba0">&#9670;&nbsp;</a></span>isDied()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Personage::isDied </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00163">163</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
 
 </div>
 </div>
@@ -479,9 +677,9 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implémente <a class="el" href="class_game_object.html#a5845033077a9f7669e3e7479dae824c0">GameObject</a>.</p>
+<p>Implémente <a class="el" href="class_movable_game_object.html#af5ac80937d289f9c159ea5c93dccfbba">MovableGameObject</a>.</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00201">201</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00230">230</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
 
 </div>
 </div>
@@ -517,9 +715,233 @@ Membres hérités additionnels</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implémente <a class="el" href="class_game_object.html#a394309d681a8e5eb59656029a32881de">GameObject</a>.</p>
+<p>Implémente <a class="el" href="class_movable_game_object.html#a65c649a0cf69aa86032cb3fc63e9da01">MovableGameObject</a>.</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00094">94</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00196">196</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5e247c0fc009659808e3be549cbb54e7" name="a5e247c0fc009659808e3be549cbb54e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e247c0fc009659808e3be549cbb54e7">&#9670;&nbsp;</a></span>receiveExpCare()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual unsigned Personage::receiveExpCare </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>unsigned </dd></dl>
+
+<p>Implémenté dans <a class="el" href="class_druid.html#a3d9802ec7808c417c264f08270a41e36">Druid</a>, <a class="el" href="class_religious.html#afa9468ba625191fb0b296c704ddf89f1">Religious</a>, <a class="el" href="class_soldier.html#a3f0e9474cb28c4a769ccb88664d88d1f">Soldier</a>, et <a class="el" href="class_worker.html#a2c49aa970c7e20cfe847ce1efa794573">Worker</a>.</p>
+
+</div>
+</div>
+<a id="a74a713ccc0ab68213086699330abeadc" name="a74a713ccc0ab68213086699330abeadc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74a713ccc0ab68213086699330abeadc">&#9670;&nbsp;</a></span>receiveExpDamage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual unsigned Personage::receiveExpDamage </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>pour recevoir les dégats d'exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>unsigned </dd></dl>
+
+<p>Implémenté dans <a class="el" href="class_druid.html#aa7cfac7dabbcbd554967aa4533daca0f">Druid</a>, <a class="el" href="class_religious.html#a92ca5f1c15a0919f8116787427417fd2">Religious</a>, <a class="el" href="class_soldier.html#ae1d2c827e9eaa45938ae9e56f272104c">Soldier</a>, et <a class="el" href="class_worker.html#a8ac3ac378bc7f3153f0dd0df0f19d358">Worker</a>.</p>
+
+</div>
+</div>
+<a id="a6e442afbcc6eb7fc843478cbd66ad21b" name="a6e442afbcc6eb7fc843478cbd66ad21b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e442afbcc6eb7fc843478cbd66ad21b">&#9670;&nbsp;</a></span>receiveHealthCare()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual unsigned Personage::receiveHealthCare </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>unsigned </dd></dl>
+
+<p>Implémenté dans <a class="el" href="class_druid.html#a134363b5cacc53bc4a73dc57612c97f7">Druid</a>, <a class="el" href="class_religious.html#a777feb03645e5eccab512a16747e2c02">Religious</a>, <a class="el" href="class_soldier.html#a921f5dac4dc77a844c2a4a0550128793">Soldier</a>, et <a class="el" href="class_worker.html#a28557977add6a0726d53be410027c657">Worker</a>.</p>
+
+</div>
+</div>
+<a id="a5a60566d579586450b87ac815d270f3c" name="a5a60566d579586450b87ac815d270f3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a60566d579586450b87ac815d270f3c">&#9670;&nbsp;</a></span>receiveHealthDamage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual unsigned Personage::receiveHealthDamage </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>unsigned </dd></dl>
+
+<p>Implémenté dans <a class="el" href="class_druid.html#af5bd046f411f27d58e3ad4cf57189177">Druid</a>, <a class="el" href="class_religious.html#a815920536856368c1a008652701e4705">Religious</a>, <a class="el" href="class_soldier.html#a25ee422f10bef83f254fc2428075fb03">Soldier</a>, et <a class="el" href="class_worker.html#a94bb4bf6d58ada08dd1b035e255dfae7">Worker</a>.</p>
+
+</div>
+</div>
+<a id="a71c0f3d9e3412c24050afd31c836872f" name="a71c0f3d9e3412c24050afd31c836872f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71c0f3d9e3412c24050afd31c836872f">&#9670;&nbsp;</a></span>renderBagInventory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Personage::renderBagInventory </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderTarget &amp;&#160;</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00235">235</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+
+</div>
+</div>
+<a id="abc3bc1054dfc52ccdf479a48616b5504" name="abc3bc1054dfc52ccdf479a48616b5504"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc3bc1054dfc52ccdf479a48616b5504">&#9670;&nbsp;</a></span>renderEXPBar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Personage::renderEXPBar </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderTarget &amp;&#160;</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00250">250</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a67392d993c6554540e2f59443abd5a59" name="a67392d993c6554540e2f59443abd5a59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67392d993c6554540e2f59443abd5a59">&#9670;&nbsp;</a></span>renderHPBar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Personage::renderHPBar </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderTarget &amp;&#160;</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00255">255</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
 
 </div>
 </div>
@@ -539,12 +961,12 @@ Membres hérités additionnels</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00089">89</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00191">191</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a5519958ec983d06abd2ff81902dc49ac" name="a5519958ec983d06abd2ff81902dc49ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5519958ec983d06abd2ff81902dc49ac">&#9670;&nbsp;</a></span>show()</h2>
+<a id="a01b776643850ebcc55ba806e2fa8085e" name="a01b776643850ebcc55ba806e2fa8085e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01b776643850ebcc55ba806e2fa8085e">&#9670;&nbsp;</a></span>show()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -556,7 +978,7 @@ Membres hérités additionnels</h2></td></tr>
           <td class="memname">void Personage::show </td>
           <td>(</td>
           <td class="paramtype">sf::RenderTarget &amp;&#160;</td>
-          <td class="paramname"><em>window</em></td><td>)</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -575,11 +997,9 @@ Membres hérités additionnels</h2></td></tr>
   </dd>
 </dl>
 
-<p>Réimplémentée à partir de <a class="el" href="class_game_object.html#a3f7a674006e1cce96ccb6c60f0ff9aaf">GameObject</a>.</p>
+<p>Réimplémentée à partir de <a class="el" href="class_movable_game_object.html#a642733a3472829a5526280e44bfd27e5">MovableGameObject</a>.</p>
 
-<p>Réimplémentée dans <a class="el" href="class_soldier.html#a6b61c53708ea3325f9e6d36ea7d1cd64">Soldier</a>.</p>
-
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00078">78</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00168">168</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
 
 </div>
 </div>
@@ -607,7 +1027,7 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implémenté dans <a class="el" href="class_soldier.html#ad55488b632b3e91eca9d20cfb06f52d7">Soldier</a>.</p>
+<p>Implémenté dans <a class="el" href="class_druid.html#a3cb1c28741c04842a3921aba312c090e">Druid</a>, <a class="el" href="class_religious.html#a924be748e4e719d91732d6a6d9bd04dd">Religious</a>, <a class="el" href="class_soldier.html#ad55488b632b3e91eca9d20cfb06f52d7">Soldier</a>, et <a class="el" href="class_worker.html#aeca8465f8d57b446e3a90690d4420d5b">Worker</a>.</p>
 
 </div>
 </div>
@@ -635,7 +1055,7 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implémenté dans <a class="el" href="class_soldier.html#aebd513f96b6f365ddc1d56ca1ea16a64">Soldier</a>.</p>
+<p>Implémenté dans <a class="el" href="class_druid.html#ae2aa55867c1f8954659636a373f873e7">Druid</a>, <a class="el" href="class_religious.html#a9cb05467175db65c3dca56d5c4d6d460">Religious</a>, <a class="el" href="class_soldier.html#aebd513f96b6f365ddc1d56ca1ea16a64">Soldier</a>, et <a class="el" href="class_worker.html#a45c0f20484a018b7aa1b3a39081d601a">Worker</a>.</p>
 
 </div>
 </div>
@@ -662,14 +1082,88 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implémente <a class="el" href="class_game_object.html#ae83128d0e0efef691417779605ee037c">GameObject</a>.</p>
+<p>Implémente <a class="el" href="class_movable_game_object.html#a07e44e5e7fd45ea5eb50fb86983473f1">MovableGameObject</a>.</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00084">84</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00178">178</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a37baf30f19be05e97e839ace9fde91b8" name="a37baf30f19be05e97e839ace9fde91b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37baf30f19be05e97e839ace9fde91b8">&#9670;&nbsp;</a></span>updatePosition()</h2>
+<a id="ae81af6eab1894c26eb89fead2d82ed0d" name="ae81af6eab1894c26eb89fead2d82ed0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae81af6eab1894c26eb89fead2d82ed0d">&#9670;&nbsp;</a></span>updateEXPBar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Personage::updateEXPBar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00240">240</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2b99762efecc865705da453c73ddf45d" name="a2b99762efecc865705da453c73ddf45d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b99762efecc865705da453c73ddf45d">&#9670;&nbsp;</a></span>updateHPBar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Personage::updateHPBar </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00245">245</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a938d215023e4594db6e6eb4341101767" name="a938d215023e4594db6e6eb4341101767"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a938d215023e4594db6e6eb4341101767">&#9670;&nbsp;</a></span>updateMousePosWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Personage::updateMousePosWindow </td>
+          <td>(</td>
+          <td class="paramtype">sf::Vector2i&#160;</td>
+          <td class="paramname"><em>mousePosWindow</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00186">186</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3994eb488c9212770b697ff73c2d153b" name="a3994eb488c9212770b697ff73c2d153b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3994eb488c9212770b697ff73c2d153b">&#9670;&nbsp;</a></span>updatePosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -680,9 +1174,19 @@ Membres hérités additionnels</h2></td></tr>
         <tr>
           <td class="memname">void Personage::updatePosition </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_position.html">Position</a> &amp;&#160;</td>
-          <td class="paramname"><em>position</em></td><td>)</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>posX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>posY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -694,13 +1198,85 @@ Membres hérités additionnels</h2></td></tr>
 
 <p>Permet de mettre à jour la position actuelle. Cette position sera déterminé par l'évenement reçu au préalable. Aussi il s'agit dans ce cas d'une accélération uniforme. </p>
 
-<p>Implémente <a class="el" href="class_game_object.html#a370e2175ad8b4017ff2aa095e11e955b">GameObject</a>.</p>
+<p>Implémente <a class="el" href="class_movable_game_object.html#ae9fedc4f3a11d0a2fcc339324b01430a">MovableGameObject</a>.</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00109">109</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8cpp_source.html#l00206">206</a> du fichier <a class="el" href="_personage_8cpp_source.html">Personage.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentation des données membres</h2>
+<a id="ab0c020906dbb600cdb2aeb620e419e7f" name="ab0c020906dbb600cdb2aeb620e419e7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0c020906dbb600cdb2aeb620e419e7f">&#9670;&nbsp;</a></span>bag</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_bag.html">Bag</a>* Personage::bag</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00100">100</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8ee532510ee5e4078e2723d29975ad5c" name="a8ee532510ee5e4078e2723d29975ad5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ee532510ee5e4078e2723d29975ad5c">&#9670;&nbsp;</a></span>expBar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classgui_1_1_progress_bar.html">gui::ProgressBar</a>* Personage::expBar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00156">156</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a395cf46197f77e7047cb4d3ac6993755" name="a395cf46197f77e7047cb4d3ac6993755"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a395cf46197f77e7047cb4d3ac6993755">&#9670;&nbsp;</a></span>hpBar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classgui_1_1_progress_bar.html">gui::ProgressBar</a>* Personage::hpBar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00159">159</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
+
+</div>
+</div>
 <a id="aef777eeaca1c30390140764d7c965555" name="aef777eeaca1c30390140764d7c965555"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aef777eeaca1c30390140764d7c965555">&#9670;&nbsp;</a></span>m_attackVariation</h2>
 
@@ -721,31 +1297,7 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00073">73</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a6ef19ba69263cdcec05c4ef5287cbe27" name="a6ef19ba69263cdcec05c4ef5287cbe27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ef19ba69263cdcec05c4ef5287cbe27">&#9670;&nbsp;</a></span>m_health</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Personage::m_health { 100 }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00055">55</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00137">137</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
 
 </div>
 </div>
@@ -769,7 +1321,31 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00076">76</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00140">140</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
+
+</div>
+</div>
+<a id="adefd5be77df90ae0d9c9c24a86545771" name="adefd5be77df90ae0d9c9c24a86545771"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adefd5be77df90ae0d9c9c24a86545771">&#9670;&nbsp;</a></span>m_healthLevel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Personage::m_healthLevel { 100 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00119">119</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
 
 </div>
 </div>
@@ -793,7 +1369,7 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00087">87</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00151">151</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
 
 </div>
 </div>
@@ -817,7 +1393,7 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00070">70</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00134">134</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
 
 </div>
 </div>
@@ -841,7 +1417,7 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00064">64</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00128">128</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
 
 </div>
 </div>
@@ -865,31 +1441,7 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00067">67</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aa927ac8acdb77e3fa7c340ecdaaf47b1" name="aa927ac8acdb77e3fa7c340ecdaaf47b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa927ac8acdb77e3fa7c340ecdaaf47b1">&#9670;&nbsp;</a></span>m_speciality</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Personage::m_speciality { 100 }</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00058">58</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00131">131</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
 
 </div>
 </div>
@@ -913,7 +1465,31 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00079">79</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00143">143</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1349843a464cb4c468394f18b9c2311d" name="a1349843a464cb4c468394f18b9c2311d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1349843a464cb4c468394f18b9c2311d">&#9670;&nbsp;</a></span>m_specialityLevel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Personage::m_specialityLevel { 50 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00122">122</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
 
 </div>
 </div>
@@ -937,7 +1513,7 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00061">61</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00125">125</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
 
 </div>
 </div>
@@ -961,7 +1537,7 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00082">82</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00146">146</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
 
 </div>
 </div>
@@ -985,13 +1561,13 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00089">89</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_personage_8hpp_source.html#l00153">153</a> du fichier <a class="el" href="_personage_8hpp_source.html">Personage.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
-<li>include/<a class="el" href="_personage_8hpp_source.html">Personage.hpp</a></li>
-<li>include/<a class="el" href="_personage_8cpp_source.html">Personage.cpp</a></li>
+<li>C:/programs_sc/CIC/MITST06/jeu/src/include/<a class="el" href="_personage_8hpp_source.html">Personage.hpp</a></li>
+<li>C:/programs_sc/CIC/MITST06/jeu/src/include/<a class="el" href="_personage_8cpp_source.html">Personage.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -10,6 +10,7 @@
 #include "include/Money.hpp"
 #include "include/Shield.hpp"
 #include "include/Sword.hpp"
+#include "include/TeleportKey.hpp"
 #include "include/Vial.hpp"
 #include "include/consts.hpp"
 
@@ -111,7 +112,11 @@ void Personage::initBag()
 
 	// Start Armoies
 	this->bag->addItem(new Shield(), game::inventory_items_types::ARMORY);
+	// this->bag->addItem(new Sword(), game::inventory_items_types::ARMORY);
 	this->bag->addItem(new Sword(), game::inventory_items_types::ARMORY);
+
+	// Start teleportkey
+	this->bag->addItem(new TeleportKey(), game::inventory_items_types::ARMORY);
 
 	// Start money "3"
 	this->bag->addItem(new Money(), game::inventory_items_types::MONEY);
@@ -157,6 +162,48 @@ Personage::~Personage()
 sf::Vector2f Personage::calculateProgressBarsPosition()
 {
 	return sf::Vector2f(this->getPosition()->getPosition().x, this->getPosition()->getPosition().y - 150.f);
+}
+
+//* --------------------------- Gestion augmentation et diminution de la vie
+void Personage::increaseHealth(int value)
+{
+	m_healthLevel += value;
+
+	if (m_healthLevel > game::PERSONNAGE_MAX_HEALTH)
+	{
+		m_healthLevel = game::PERSONNAGE_MAX_HEALTH;
+	}
+}
+
+void Personage::increaseExp(int value)
+{
+	m_experienceLevel += value;
+
+	if (m_experienceLevel > game::PERSONNAGE_MAX_EXP)
+	{
+		m_experienceLevel = game::PERSONNAGE_MAX_EXP;
+	}
+}
+
+void Personage::decreaseHealth(int value)
+{
+	m_healthLevel -= value;
+
+	if (m_healthLevel < 0)
+	{
+		m_healthLevel = 0;
+		// TODO - Méthode die et tous ce qui va avec
+	}
+}
+
+void Personage::decreaseExp(int value)
+{
+	m_experienceLevel -= value;
+
+	if (m_experienceLevel < 0)
+	{
+		m_experienceLevel = 0;
+	}
 }
 
 bool Personage::isDied() const
@@ -236,9 +283,45 @@ void Personage::renderBagInventory(sf::RenderTarget& target)
 	this->bag->renderInventory(target);
 }
 
+//* ----------------------------  Gestion des effets d'item (interne externe)
+// TODO - Utiliser tous les systèmesde complexification de combat
+unsigned Personage::receiveHealthDamage(int value)
+{
+	this->decreaseHealth(value);
+
+	return value;
+}
+
+unsigned Personage::receiveExpDamage(int value)
+{
+	this->decreaseExp(value);
+
+	return value;
+}
+
+unsigned Personage::receiveHealthCare(int value)
+{
+	this->increaseHealth(value);
+
+	return value;
+}
+
+unsigned Personage::receiveExpCare(int value)
+{
+	this->increaseExp(value);
+
+	return value;
+}
+
+void Personage::receiveShieldboost(int value)
+{
+	// REVIEW -
+	this->m_shieldBoost = value;
+}
+
 void Personage::updateEXPBar()
 {
-	this->expBar->update(this->m_specialityLevel, game::PERSONNAGE_MAX_SPECIALITY);
+	this->expBar->update(this->m_experienceLevel, game::PERSONNAGE_MAX_EXP);
 }
 
 void Personage::updateHPBar()

@@ -1,0 +1,94 @@
+.TH "GameState" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GameState
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <GameState\&.hpp>\fP
+.PP
+Est dérivée de \fBState\fP\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBGameState\fP (\fBStateData\fP *\fBstateData\fP)"
+.br
+.ti -1c
+.RI "virtual \fB~GameState\fP ()"
+.br
+.ti -1c
+.RI "bool \fBgetKeyTime\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBupdateSFMLEvents\fP (const sf::Event &sfEvent) override"
+.br
+.ti -1c
+.RI "void \fBupdateInput\fP (const float &deltaTime) override"
+.br
+.ti -1c
+.RI "void \fBupdatePauseMenuButtons\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (const float &deltaTime) override"
+.br
+.ti -1c
+.RI "void \fBrender\fP (sf::RenderTarget *target=nullptr) override"
+.br
+.in -1c
+.SS "Membres hérités additionnels"
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB10\fP du fichier \fBGameState\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "GameState::GameState (\fBStateData\fP * stateData)"
+
+.PP
+Définition à la ligne \fB114\fP du fichier \fBGameState\&.cpp\fP\&.
+.SS "GameState::~GameState ()\fC [virtual]\fP"
+
+.PP
+Définition à la ligne \fB136\fP du fichier \fBGameState\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "bool GameState::getKeyTime ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Réimplémentée à partir de \fBState\fP\&.
+.PP
+Définition à la ligne \fB155\fP du fichier \fBGameState\&.cpp\fP\&.
+.SS "void GameState::render (sf::RenderTarget * target = \fCnullptr\fP)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implémente \fBState\fP\&.
+.PP
+Définition à la ligne \fB232\fP du fichier \fBGameState\&.cpp\fP\&.
+.SS "void GameState::update (const float & deltaTime)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implémente \fBState\fP\&.
+.PP
+Définition à la ligne \fB208\fP du fichier \fBGameState\&.cpp\fP\&.
+.SS "void GameState::updateInput (const float & deltaTime)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implémente \fBState\fP\&.
+.PP
+Définition à la ligne \fB184\fP du fichier \fBGameState\&.cpp\fP\&.
+.SS "void GameState::updatePauseMenuButtons ()"
+
+.PP
+Définition à la ligne \fB202\fP du fichier \fBGameState\&.cpp\fP\&.
+.SS "void GameState::updateSFMLEvents (const sf::Event & sfEvent)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implémente \fBState\fP\&.
+.PP
+Définition à la ligne \fB166\fP du fichier \fBGameState\&.cpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

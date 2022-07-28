@@ -1,0 +1,49 @@
+\hypertarget{_graphics_settings_8cpp_source}{}\doxysection{Graphics\+Settings.\+cpp}
+\label{_graphics_settings_8cpp_source}\index{C:/programs\_sc/CIC/MITST06/jeu/src/include/GraphicsSettings.cpp@{C:/programs\_sc/CIC/MITST06/jeu/src/include/GraphicsSettings.cpp}}
+\mbox{\hyperlink{_graphics_settings_8cpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_graphics_settings_8hpp}{include/GraphicsSettings.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00003}\mbox{\hyperlink{class_graphics_settings_a3c5fd3428c4a0549bfa5d5f3b1915c34}{00003}} \mbox{\hyperlink{class_graphics_settings_a3c5fd3428c4a0549bfa5d5f3b1915c34}{GraphicsSettings::GraphicsSettings}}()}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00004}00004 \{}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00005}00005     this-\/>\mbox{\hyperlink{class_graphics_settings_a524c4928c24954f1664cbba71489198a}{title}} = \textcolor{stringliteral}{"{}DEFAULT"{}};}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00006}00006     this-\/>\mbox{\hyperlink{class_graphics_settings_adc582bb940381840fba48c7f0abd4d1d}{resolution}} = sf::VideoMode::getDesktopMode();}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00007}00007     this-\/>\mbox{\hyperlink{class_graphics_settings_af0b9cbfba96c59aa9dd3b9454fbbe412}{fullscreen}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00008}00008     this-\/>\mbox{\hyperlink{class_graphics_settings_a83ba01db4ea7807c5bfead8f063859ec}{verticalSync}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00009}00009     this-\/>\mbox{\hyperlink{class_graphics_settings_af8ca0dc53c9d85ba0b670e933da061fb}{frameRateLimit}} = 60;}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00010}00010     \textcolor{comment}{// this-\/>contextSettings.antialiasingLevel = 0;}}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00011}00011     this-\/>\mbox{\hyperlink{class_graphics_settings_a6dd98c8ce866de60c10dd23e818171d0}{videoModes}} = sf::VideoMode::getFullscreenModes();}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00013}00013     this-\/>screenScalingFactor = 1.f;}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00014}00014 \}}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00016}00016 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00017}\mbox{\hyperlink{class_graphics_settings_a47599e8abbe9f491da4740ba2c0e5d17}{00017}} \textcolor{keywordtype}{float} \textcolor{keyword}{const}\& \mbox{\hyperlink{class_graphics_settings_a47599e8abbe9f491da4740ba2c0e5d17}{GraphicsSettings::scScF}}()}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00018}00018 \{}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00019}00019     \textcolor{keywordflow}{return} this-\/>screenScalingFactor;}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00020}00020 \}}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00022}\mbox{\hyperlink{class_graphics_settings_aca33dbfa2570b9ab2ef4228b04a740b8}{00022}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_graphics_settings_aca33dbfa2570b9ab2ef4228b04a740b8}{GraphicsSettings::setScreenScalingFactor}}(\textcolor{keywordtype}{float} scScF)}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00023}00023 \{}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00024}00024     this-\/>screenScalingFactor = \mbox{\hyperlink{class_graphics_settings_a47599e8abbe9f491da4740ba2c0e5d17}{scScF}};}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00025}00025 \}}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00027}\mbox{\hyperlink{class_graphics_settings_a3fb097d3414159fff72c69117c10ab23}{00027}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_graphics_settings_a3fb097d3414159fff72c69117c10ab23}{GraphicsSettings::loadFromFile}}(\textcolor{keyword}{const} std::string path)}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00028}00028 \{}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00029}00029     std::ifstream ifs(path);}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00031}00031     \textcolor{keywordflow}{if} (ifs.is\_open())}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00032}00032     \{}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00033}00033         std::getline(ifs, this-\/>\mbox{\hyperlink{class_graphics_settings_a524c4928c24954f1664cbba71489198a}{title}});}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00034}00034         ifs >> this-\/>\mbox{\hyperlink{class_graphics_settings_adc582bb940381840fba48c7f0abd4d1d}{resolution}}.width >> this-\/>\mbox{\hyperlink{class_graphics_settings_adc582bb940381840fba48c7f0abd4d1d}{resolution}}.height;}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00035}00035         ifs >> this-\/>\mbox{\hyperlink{class_graphics_settings_af0b9cbfba96c59aa9dd3b9454fbbe412}{fullscreen}};}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00036}00036         ifs >> this-\/>\mbox{\hyperlink{class_graphics_settings_af8ca0dc53c9d85ba0b670e933da061fb}{frameRateLimit}};}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00037}00037         ifs >> this-\/>\mbox{\hyperlink{class_graphics_settings_a83ba01db4ea7807c5bfead8f063859ec}{verticalSync}};}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00038}00038         ifs >> this-\/>screenScalingFactor;}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00039}00039         \textcolor{comment}{// ifs >> this-\/>contextSettings.antialiasingLevel;}}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00040}00040     \}}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00042}00042     ifs.close();}
+\DoxyCodeLine{\Hypertarget{_graphics_settings_8cpp_source_l00043}00043 \}}
+
+\end{DoxyCode}

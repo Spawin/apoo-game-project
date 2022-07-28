@@ -1,8 +1,10 @@
 #if !defined(__MAIN_MENU_STATE_HPP__)
 	#define __MAIN_MENU_STATE_HPP__
 
-	#include "include/GameState.hpp"
+	#include "include/State.hpp"
 	#include "include/Gui.hpp"
+
+class State;
 
 class MainMenuState : public State
 {

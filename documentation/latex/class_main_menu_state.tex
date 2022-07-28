@@ -17,6 +17,8 @@ Graphe d\textquotesingle{}héritage de Main\+Menu\+State\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_main_menu_state_a8af4d586b93c315a1a15b5fe83ec0760}{$\sim$\+Main\+Menu\+State}} ()
 \item 
+virtual void \mbox{\hyperlink{class_main_menu_state_a65bcc18f86712685e80aa103bdfefabe}{update\+SFMLEvents}} (const sf\+::\+Event \&sf\+Event) override
+\item 
 void \mbox{\hyperlink{class_main_menu_state_ad1bb8199b0e05cee38637cb28ffe278b}{update\+Input}} (const float \&delta\+Time) override
 \item 
 void \mbox{\hyperlink{class_main_menu_state_a814fcf755b02804447b0460a57e25833}{update\+Buttons}} ()
@@ -46,7 +48,7 @@ Définition à la ligne \mbox{\hyperlink{_main_menu_state_8hpp_source_l00007}{7}
 
 
 
-Définition à la ligne \mbox{\hyperlink{_main_menu_state_8cpp_source_l00083}{83}} du fichier \mbox{\hyperlink{_main_menu_state_8cpp_source}{Main\+Menu\+State.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_main_menu_state_8cpp_source_l00101}{101}} du fichier \mbox{\hyperlink{_main_menu_state_8cpp_source}{Main\+Menu\+State.\+cpp}}.
 
 \mbox{\Hypertarget{class_main_menu_state_a8af4d586b93c315a1a15b5fe83ec0760}\label{class_main_menu_state_a8af4d586b93c315a1a15b5fe83ec0760}} 
 \index{MainMenuState@{MainMenuState}!````~MainMenuState@{$\sim$MainMenuState}}
@@ -56,7 +58,7 @@ Définition à la ligne \mbox{\hyperlink{_main_menu_state_8cpp_source_l00083}{83
 
 
 
-Définition à la ligne \mbox{\hyperlink{_main_menu_state_8cpp_source_l00093}{93}} du fichier \mbox{\hyperlink{_main_menu_state_8cpp_source}{Main\+Menu\+State.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_main_menu_state_8cpp_source_l00111}{111}} du fichier \mbox{\hyperlink{_main_menu_state_8cpp_source}{Main\+Menu\+State.\+cpp}}.
 
 
 
@@ -73,7 +75,7 @@ Implémente \mbox{\hyperlink{class_state_aa1f36587befc2c03c4033366e5000d2c}{Stat
 
 
 
-Définition à la ligne \mbox{\hyperlink{_main_menu_state_8cpp_source_l00164}{164}} du fichier \mbox{\hyperlink{_main_menu_state_8cpp_source}{Main\+Menu\+State.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_main_menu_state_8cpp_source_l00198}{198}} du fichier \mbox{\hyperlink{_main_menu_state_8cpp_source}{Main\+Menu\+State.\+cpp}}.
 
 \mbox{\Hypertarget{class_main_menu_state_a1a2766e02c64d370018588a79d32b584}\label{class_main_menu_state_a1a2766e02c64d370018588a79d32b584}} 
 \index{MainMenuState@{MainMenuState}!renderButtons@{renderButtons}}
@@ -83,7 +85,7 @@ Définition à la ligne \mbox{\hyperlink{_main_menu_state_8cpp_source_l00164}{16
 
 
 
-Définition à la ligne \mbox{\hyperlink{_main_menu_state_8cpp_source_l00156}{156}} du fichier \mbox{\hyperlink{_main_menu_state_8cpp_source}{Main\+Menu\+State.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_main_menu_state_8cpp_source_l00190}{190}} du fichier \mbox{\hyperlink{_main_menu_state_8cpp_source}{Main\+Menu\+State.\+cpp}}.
 
 \mbox{\Hypertarget{class_main_menu_state_af30b0d74b670cdde52f3f5be4d31f6d7}\label{class_main_menu_state_af30b0d74b670cdde52f3f5be4d31f6d7}} 
 \index{MainMenuState@{MainMenuState}!update@{update}}
@@ -97,7 +99,7 @@ Implémente \mbox{\hyperlink{class_state_a15d17b8c28e7c800578816be9661fab3}{Stat
 
 
 
-Définition à la ligne \mbox{\hyperlink{_main_menu_state_8cpp_source_l00148}{148}} du fichier \mbox{\hyperlink{_main_menu_state_8cpp_source}{Main\+Menu\+State.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_main_menu_state_8cpp_source_l00182}{182}} du fichier \mbox{\hyperlink{_main_menu_state_8cpp_source}{Main\+Menu\+State.\+cpp}}.
 
 \mbox{\Hypertarget{class_main_menu_state_a814fcf755b02804447b0460a57e25833}\label{class_main_menu_state_a814fcf755b02804447b0460a57e25833}} 
 \index{MainMenuState@{MainMenuState}!updateButtons@{updateButtons}}
@@ -107,7 +109,7 @@ Définition à la ligne \mbox{\hyperlink{_main_menu_state_8cpp_source_l00148}{14
 
 
 
-Définition à la ligne \mbox{\hyperlink{_main_menu_state_8cpp_source_l00114}{114}} du fichier \mbox{\hyperlink{_main_menu_state_8cpp_source}{Main\+Menu\+State.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_main_menu_state_8cpp_source_l00142}{142}} du fichier \mbox{\hyperlink{_main_menu_state_8cpp_source}{Main\+Menu\+State.\+cpp}}.
 
 \mbox{\Hypertarget{class_main_menu_state_ad1bb8199b0e05cee38637cb28ffe278b}\label{class_main_menu_state_ad1bb8199b0e05cee38637cb28ffe278b}} 
 \index{MainMenuState@{MainMenuState}!updateInput@{updateInput}}
@@ -121,11 +123,25 @@ Implémente \mbox{\hyperlink{class_state_ace2914fa0071bbfaea22fa28bbec5146}{Stat
 
 
 
-Définition à la ligne \mbox{\hyperlink{_main_menu_state_8cpp_source_l00108}{108}} du fichier \mbox{\hyperlink{_main_menu_state_8cpp_source}{Main\+Menu\+State.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_main_menu_state_8cpp_source_l00127}{127}} du fichier \mbox{\hyperlink{_main_menu_state_8cpp_source}{Main\+Menu\+State.\+cpp}}.
+
+\mbox{\Hypertarget{class_main_menu_state_a65bcc18f86712685e80aa103bdfefabe}\label{class_main_menu_state_a65bcc18f86712685e80aa103bdfefabe}} 
+\index{MainMenuState@{MainMenuState}!updateSFMLEvents@{updateSFMLEvents}}
+\index{updateSFMLEvents@{updateSFMLEvents}!MainMenuState@{MainMenuState}}
+\doxysubsubsection{\texorpdfstring{updateSFMLEvents()}{updateSFMLEvents()}}
+{\footnotesize\ttfamily void Main\+Menu\+State\+::update\+SFMLEvents (\begin{DoxyParamCaption}\item[{const sf\+::\+Event \&}]{sf\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_state_afaf85cda415136f1288da41e98f9fecd}{State}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_main_menu_state_8cpp_source_l00134}{134}} du fichier \mbox{\hyperlink{_main_menu_state_8cpp_source}{Main\+Menu\+State.\+cpp}}.
 
 
 
 La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{_main_menu_state_8hpp}{Main\+Menu\+State.\+hpp}}\item 
-include/\mbox{\hyperlink{_main_menu_state_8cpp}{Main\+Menu\+State.\+cpp}}\end{DoxyCompactItemize}
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_main_menu_state_8hpp}{Main\+Menu\+State.\+hpp}}\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_main_menu_state_8cpp}{Main\+Menu\+State.\+cpp}}\end{DoxyCompactItemize}

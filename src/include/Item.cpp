@@ -8,7 +8,9 @@
 Item::Item(std::string_view const& imageSpritePath, ItemsCategories categorie) :
 	NotMovableGameObject(imageSpritePath),
 	categorie(categorie)
-{}
+{
+	this->value = 10;
+}
 
 Item::~Item()
 {}

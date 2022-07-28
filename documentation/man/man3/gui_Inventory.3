@@ -1,0 +1,74 @@
+.TH "gui::Inventory" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gui::Inventory
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Gui\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBInventory\fP (sf::Font const &font)"
+.br
+.ti -1c
+.RI "\fB~Inventory\fP ()"
+.br
+.ti -1c
+.RI "bool \fBaddItem\fP (const \fBItem\fP *item, \fBgame::inventory_items_types\fP type)"
+.br
+.ti -1c
+.RI "bool \fBremoveItem\fP (int index, \fBgame::inventory_items_types\fP type)"
+.br
+.ti -1c
+.RI "void \fBupdateMousePosWindow\fP (sf::Vector2i mousePosWindow)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBrender\fP (sf::RenderTarget &target)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB171\fP du fichier \fBGui\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "Inventory::Inventory (sf::Font const & font)"
+
+.PP
+Définition à la ligne \fB475\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "Inventory::~Inventory ()"
+
+.PP
+Définition à la ligne \fB483\fP du fichier \fBGui\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "bool Inventory::addItem (const \fBItem\fP * item, \fBgame::inventory_items_types\fP type)"
+
+.PP
+Définition à la ligne \fB498\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "bool Inventory::removeItem (int index, \fBgame::inventory_items_types\fP type)"
+
+.PP
+Définition à la ligne \fB562\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "void Inventory::render (sf::RenderTarget & target)"
+
+.PP
+Définition à la ligne \fB589\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "void Inventory::update ()"
+
+.PP
+Définition à la ligne \fB586\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "void Inventory::updateMousePosWindow (sf::Vector2i mousePosWindow)"
+
+.PP
+Définition à la ligne \fB574\fP du fichier \fBGui\&.cpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

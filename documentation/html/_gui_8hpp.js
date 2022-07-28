@@ -1,7 +1,9 @@
 var _gui_8hpp =
 [
     [ "gui::Button", "classgui_1_1_button.html", "classgui_1_1_button" ],
-    [ "__GUI_HPP__", "_gui_8hpp.html#a080710b45b38bfa4dff2946beadfec1e", null ],
+    [ "gui::ProgressBar", "classgui_1_1_progress_bar.html", "classgui_1_1_progress_bar" ],
+    [ "gui::InventoryButton", "classgui_1_1_inventory_button.html", "classgui_1_1_inventory_button" ],
+    [ "gui::Inventory", "classgui_1_1_inventory.html", "classgui_1_1_inventory" ],
     [ "button_states", "_gui_8hpp.html#a11a6094191da43b6b4568e7736fb89ba", [
       [ "BTN_IDLE", "_gui_8hpp.html#a11a6094191da43b6b4568e7736fb89baab07455a5cba7480564ccdf0225f8d082", null ],
       [ "BTN_HOVER", "_gui_8hpp.html#a11a6094191da43b6b4568e7736fb89baad6fdb8a1568b56acfc5a2870feef75aa", null ],

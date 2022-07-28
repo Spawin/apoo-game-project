@@ -1,0 +1,139 @@
+\hypertarget{class_animation_component}{}\doxysection{Référence de la classe Animation\+Component}
+\label{class_animation_component}\index{AnimationComponent@{AnimationComponent}}
+
+
+{\ttfamily \#include $<$Animation\+Component.\+hpp$>$}
+
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_animation_component_a9fb7cf41c3901b7efc8c2034ca95c2b7}{Animation\+Component}} (sf\+::\+Sprite \&sprite, sf\+::\+Texture \&texture\+Sheet)
+\item 
+\mbox{\hyperlink{class_animation_component_ad35cdc747a5578fdea681486f063f515}{$\sim$\+Animation\+Component}} ()
+\item 
+const bool \& \mbox{\hyperlink{class_animation_component_a82e956ffa6989bfbade3447c58f413a6}{is\+Done}} (const std\+::string key)
+\item 
+void \mbox{\hyperlink{class_animation_component_a899286fbfe73040577a674467275fbd3}{add\+Animation}} (int priority, const std\+::string animation, float animation\+Timer, int start\+\_\+x, int start\+\_\+y, int end\+\_\+x, int end\+\_\+y, int width, int height, bool fix\+Last\+Frame=false)
+\item 
+bool \mbox{\hyperlink{class_animation_component_a6d21f017db5d731ac068921c28187429}{can\+Play}} (const std\+::string \&animation\+Key, bool allow\+Similar=false)
+\begin{DoxyCompactList}\small\item\em Vérifie si cette animation peut etre lancée (on va comparer les priorité) Retourne vrai si la dernière animation est finie ou si la nouvelle animation est prioritaire. \end{DoxyCompactList}\item 
+const bool \& \mbox{\hyperlink{class_animation_component_aebd4155a58d405bbeaf9a60fe641181e}{play}} (const std\+::string \&animation\+Key, const float \&deltatime)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+
+
+Définition à la ligne \mbox{\hyperlink{_animation_component_8hpp_source_l00006}{6}} du fichier \mbox{\hyperlink{_animation_component_8hpp_source}{Animation\+Component.\+hpp}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_animation_component_a9fb7cf41c3901b7efc8c2034ca95c2b7}\label{class_animation_component_a9fb7cf41c3901b7efc8c2034ca95c2b7}} 
+\index{AnimationComponent@{AnimationComponent}!AnimationComponent@{AnimationComponent}}
+\index{AnimationComponent@{AnimationComponent}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{AnimationComponent()}{AnimationComponent()}}
+{\footnotesize\ttfamily Animation\+Component\+::\+Animation\+Component (\begin{DoxyParamCaption}\item[{sf\+::\+Sprite \&}]{sprite,  }\item[{sf\+::\+Texture \&}]{texture\+Sheet }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_animation_component_8cpp_source_l00012}{12}} du fichier \mbox{\hyperlink{_animation_component_8cpp_source}{Animation\+Component.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_component_ad35cdc747a5578fdea681486f063f515}\label{class_animation_component_ad35cdc747a5578fdea681486f063f515}} 
+\index{AnimationComponent@{AnimationComponent}!````~AnimationComponent@{$\sim$AnimationComponent}}
+\index{````~AnimationComponent@{$\sim$AnimationComponent}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{$\sim$AnimationComponent()}{~AnimationComponent()}}
+{\footnotesize\ttfamily Animation\+Component\+::$\sim$\+Animation\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_animation_component_8cpp_source_l00021}{21}} du fichier \mbox{\hyperlink{_animation_component_8cpp_source}{Animation\+Component.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_animation_component_a899286fbfe73040577a674467275fbd3}\label{class_animation_component_a899286fbfe73040577a674467275fbd3}} 
+\index{AnimationComponent@{AnimationComponent}!addAnimation@{addAnimation}}
+\index{addAnimation@{addAnimation}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{addAnimation()}{addAnimation()}}
+{\footnotesize\ttfamily void Animation\+Component\+::add\+Animation (\begin{DoxyParamCaption}\item[{int}]{priority,  }\item[{const std\+::string}]{animation,  }\item[{float}]{animation\+Timer,  }\item[{int}]{start\+\_\+x,  }\item[{int}]{start\+\_\+y,  }\item[{int}]{end\+\_\+x,  }\item[{int}]{end\+\_\+y,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{bool}]{fix\+Last\+Frame = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em priority} & \\
+\hline
+{\em animation} & \\
+\hline
+{\em animation\+Timer} & \\
+\hline
+{\em start\+\_\+x} & \\
+\hline
+{\em start\+\_\+y} & \\
+\hline
+{\em end\+\_\+x} & \\
+\hline
+{\em end\+\_\+y} & \\
+\hline
+{\em width} & \\
+\hline
+{\em height} & \\
+\hline
+{\em fix\+Last\+Frame} & indique si l\textquotesingle{}animation une fois arrivée à la dernière frame ne dois pas recommencer de zéro (si bien sur c\textquotesingle{}est elle qui à la priorité) \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \mbox{\hyperlink{_animation_component_8cpp_source_l00040}{40}} du fichier \mbox{\hyperlink{_animation_component_8cpp_source}{Animation\+Component.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_component_a6d21f017db5d731ac068921c28187429}\label{class_animation_component_a6d21f017db5d731ac068921c28187429}} 
+\index{AnimationComponent@{AnimationComponent}!canPlay@{canPlay}}
+\index{canPlay@{canPlay}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{canPlay()}{canPlay()}}
+{\footnotesize\ttfamily bool Animation\+Component\+::can\+Play (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{animation\+Key,  }\item[{bool}]{allow\+Similar = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Vérifie si cette animation peut etre lancée (on va comparer les priorité) Retourne vrai si la dernière animation est finie ou si la nouvelle animation est prioritaire. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em animation\+Key} & \\
+\hline
+{\em allow\+Similar} & renvera true si c\textquotesingle{}est la même animation qui est en cours \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_animation_component_8cpp_source_l00045}{45}} du fichier \mbox{\hyperlink{_animation_component_8cpp_source}{Animation\+Component.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_component_a82e956ffa6989bfbade3447c58f413a6}\label{class_animation_component_a82e956ffa6989bfbade3447c58f413a6}} 
+\index{AnimationComponent@{AnimationComponent}!isDone@{isDone}}
+\index{isDone@{isDone}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{isDone()}{isDone()}}
+{\footnotesize\ttfamily const bool \& Animation\+Component\+::is\+Done (\begin{DoxyParamCaption}\item[{const std\+::string}]{key }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_animation_component_8cpp_source_l00035}{35}} du fichier \mbox{\hyperlink{_animation_component_8cpp_source}{Animation\+Component.\+cpp}}.
+
+\mbox{\Hypertarget{class_animation_component_aebd4155a58d405bbeaf9a60fe641181e}\label{class_animation_component_aebd4155a58d405bbeaf9a60fe641181e}} 
+\index{AnimationComponent@{AnimationComponent}!play@{play}}
+\index{play@{play}!AnimationComponent@{AnimationComponent}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily const bool \& Animation\+Component\+::play (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{animation\+Key,  }\item[{const float \&}]{deltatime }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_animation_component_8cpp_source_l00061}{61}} du fichier \mbox{\hyperlink{_animation_component_8cpp_source}{Animation\+Component.\+cpp}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_animation_component_8hpp}{Animation\+Component.\+hpp}}\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_animation_component_8cpp}{Animation\+Component.\+cpp}}\end{DoxyCompactItemize}

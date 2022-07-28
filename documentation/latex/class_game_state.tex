@@ -17,9 +17,13 @@ Graphe d\textquotesingle{}héritage de Game\+State\+:\begin{figure}[H]
 \item 
 virtual \mbox{\hyperlink{class_game_state_ae623df5042cd0c17daa3394fdcb397b3}{$\sim$\+Game\+State}} ()
 \item 
-void \mbox{\hyperlink{class_game_state_a47b539f3bbad01019e5fdad0e82c3fda}{end\+State}} () override
+bool \mbox{\hyperlink{class_game_state_ab305504819239f663c290c754a0c9d3d}{get\+Key\+Time}} () override
+\item 
+virtual void \mbox{\hyperlink{class_game_state_a785b6e0683b08b0dca93c108a5495413}{update\+SFMLEvents}} (const sf\+::\+Event \&sf\+Event) override
 \item 
 void \mbox{\hyperlink{class_game_state_a879974629713034e25dd515dae008c78}{update\+Input}} (const float \&delta\+Time) override
+\item 
+void \mbox{\hyperlink{class_game_state_ad2a47f94bfffccc635b680d996144e0e}{update\+Pause\+Menu\+Buttons}} ()
 \item 
 void \mbox{\hyperlink{class_game_state_a775a7d0cf422aec17e5846852f3c997d}{update}} (const float \&delta\+Time) override
 \item 
@@ -31,7 +35,7 @@ void \mbox{\hyperlink{class_game_state_ab50a5f29dacea5b56158b45ae4129b51}{render
 \doxysubsection{Description détaillée}
 
 
-Définition à la ligne \mbox{\hyperlink{_game_state_8hpp_source_l00006}{6}} du fichier \mbox{\hyperlink{_game_state_8hpp_source}{Game\+State.\+hpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_state_8hpp_source_l00010}{10}} du fichier \mbox{\hyperlink{_game_state_8hpp_source}{Game\+State.\+hpp}}.
 
 
 
@@ -44,7 +48,7 @@ Définition à la ligne \mbox{\hyperlink{_game_state_8hpp_source_l00006}{6}} du 
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_state_8cpp_source_l00015}{15}} du fichier \mbox{\hyperlink{_game_state_8cpp_source}{Game\+State.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_state_8cpp_source_l00114}{114}} du fichier \mbox{\hyperlink{_game_state_8cpp_source}{Game\+State.\+cpp}}.
 
 \mbox{\Hypertarget{class_game_state_ae623df5042cd0c17daa3394fdcb397b3}\label{class_game_state_ae623df5042cd0c17daa3394fdcb397b3}} 
 \index{GameState@{GameState}!````~GameState@{$\sim$GameState}}
@@ -54,24 +58,24 @@ Définition à la ligne \mbox{\hyperlink{_game_state_8cpp_source_l00015}{15}} du
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_state_8cpp_source_l00021}{21}} du fichier \mbox{\hyperlink{_game_state_8cpp_source}{Game\+State.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_state_8cpp_source_l00136}{136}} du fichier \mbox{\hyperlink{_game_state_8cpp_source}{Game\+State.\+cpp}}.
 
 
 
 \doxysubsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_game_state_a47b539f3bbad01019e5fdad0e82c3fda}\label{class_game_state_a47b539f3bbad01019e5fdad0e82c3fda}} 
-\index{GameState@{GameState}!endState@{endState}}
-\index{endState@{endState}!GameState@{GameState}}
-\doxysubsubsection{\texorpdfstring{endState()}{endState()}}
-{\footnotesize\ttfamily void Game\+State\+::end\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+\mbox{\Hypertarget{class_game_state_ab305504819239f663c290c754a0c9d3d}\label{class_game_state_ab305504819239f663c290c754a0c9d3d}} 
+\index{GameState@{GameState}!getKeyTime@{getKeyTime}}
+\index{getKeyTime@{getKeyTime}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{getKeyTime()}{getKeyTime()}}
+{\footnotesize\ttfamily bool Game\+State\+::get\+Key\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-Réimplémentée à partir de \mbox{\hyperlink{class_state_a27907b80e927649f92e4dc6a845a9213}{State}}.
+Réimplémentée à partir de \mbox{\hyperlink{class_state_a2f65792d58af6faa5d070aae211f6320}{State}}.
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_state_8cpp_source_l00027}{27}} du fichier \mbox{\hyperlink{_game_state_8cpp_source}{Game\+State.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_state_8cpp_source_l00155}{155}} du fichier \mbox{\hyperlink{_game_state_8cpp_source}{Game\+State.\+cpp}}.
 
 \mbox{\Hypertarget{class_game_state_ab50a5f29dacea5b56158b45ae4129b51}\label{class_game_state_ab50a5f29dacea5b56158b45ae4129b51}} 
 \index{GameState@{GameState}!render@{render}}
@@ -85,7 +89,7 @@ Implémente \mbox{\hyperlink{class_state_aa1f36587befc2c03c4033366e5000d2c}{Stat
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_state_8cpp_source_l00053}{53}} du fichier \mbox{\hyperlink{_game_state_8cpp_source}{Game\+State.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_state_8cpp_source_l00232}{232}} du fichier \mbox{\hyperlink{_game_state_8cpp_source}{Game\+State.\+cpp}}.
 
 \mbox{\Hypertarget{class_game_state_a775a7d0cf422aec17e5846852f3c997d}\label{class_game_state_a775a7d0cf422aec17e5846852f3c997d}} 
 \index{GameState@{GameState}!update@{update}}
@@ -99,7 +103,7 @@ Implémente \mbox{\hyperlink{class_state_a15d17b8c28e7c800578816be9661fab3}{Stat
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_state_8cpp_source_l00045}{45}} du fichier \mbox{\hyperlink{_game_state_8cpp_source}{Game\+State.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_state_8cpp_source_l00208}{208}} du fichier \mbox{\hyperlink{_game_state_8cpp_source}{Game\+State.\+cpp}}.
 
 \mbox{\Hypertarget{class_game_state_a879974629713034e25dd515dae008c78}\label{class_game_state_a879974629713034e25dd515dae008c78}} 
 \index{GameState@{GameState}!updateInput@{updateInput}}
@@ -113,11 +117,35 @@ Implémente \mbox{\hyperlink{class_state_ace2914fa0071bbfaea22fa28bbec5146}{Stat
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_state_8cpp_source_l00032}{32}} du fichier \mbox{\hyperlink{_game_state_8cpp_source}{Game\+State.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_state_8cpp_source_l00184}{184}} du fichier \mbox{\hyperlink{_game_state_8cpp_source}{Game\+State.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_state_ad2a47f94bfffccc635b680d996144e0e}\label{class_game_state_ad2a47f94bfffccc635b680d996144e0e}} 
+\index{GameState@{GameState}!updatePauseMenuButtons@{updatePauseMenuButtons}}
+\index{updatePauseMenuButtons@{updatePauseMenuButtons}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{updatePauseMenuButtons()}{updatePauseMenuButtons()}}
+{\footnotesize\ttfamily void Game\+State\+::update\+Pause\+Menu\+Buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_game_state_8cpp_source_l00202}{202}} du fichier \mbox{\hyperlink{_game_state_8cpp_source}{Game\+State.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_state_a785b6e0683b08b0dca93c108a5495413}\label{class_game_state_a785b6e0683b08b0dca93c108a5495413}} 
+\index{GameState@{GameState}!updateSFMLEvents@{updateSFMLEvents}}
+\index{updateSFMLEvents@{updateSFMLEvents}!GameState@{GameState}}
+\doxysubsubsection{\texorpdfstring{updateSFMLEvents()}{updateSFMLEvents()}}
+{\footnotesize\ttfamily void Game\+State\+::update\+SFMLEvents (\begin{DoxyParamCaption}\item[{const sf\+::\+Event \&}]{sf\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_state_afaf85cda415136f1288da41e98f9fecd}{State}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_game_state_8cpp_source_l00166}{166}} du fichier \mbox{\hyperlink{_game_state_8cpp_source}{Game\+State.\+cpp}}.
 
 
 
 La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{_game_state_8hpp}{Game\+State.\+hpp}}\item 
-include/\mbox{\hyperlink{_game_state_8cpp}{Game\+State.\+cpp}}\end{DoxyCompactItemize}
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_game_state_8hpp}{Game\+State.\+hpp}}\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_game_state_8cpp}{Game\+State.\+cpp}}\end{DoxyCompactItemize}

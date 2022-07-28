@@ -1,0 +1,70 @@
+.TH "Sword" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Sword
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Sword\&.hpp>\fP
+.PP
+Est dérivée de \fBArmory\fP\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBSword\fP ()"
+.br
+.ti -1c
+.RI "\fB~Sword\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBonCollisionEnter\fP (\fBCollision\fP const &collision) const override"
+.br
+.RI "émit quand il entre en contacte avec un autre élément "
+.ti -1c
+.RI "virtual void \fBupdate\fP () override"
+.br
+.in -1c
+.SS "Membres hérités additionnels"
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB8\fP du fichier \fBSword\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "Sword::Sword ()"
+
+.PP
+Définition à la ligne \fB8\fP du fichier \fBSword\&.cpp\fP\&.
+.SS "Sword::~Sword ()"
+
+.PP
+Définition à la ligne \fB16\fP du fichier \fBSword\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void Sword::onCollisionEnter (\fBCollision\fP const & collision) const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+émit quand il entre en contacte avec un autre élément 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIcollision\fP 
+.RE
+.PP
+
+.PP
+Implémente \fBItem\fP\&.
+.PP
+Définition à la ligne \fB21\fP du fichier \fBSword\&.cpp\fP\&.
+.SS "void Sword::update ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implémente \fBItem\fP\&.
+.PP
+Définition à la ligne \fB26\fP du fichier \fBSword\&.cpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

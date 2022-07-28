@@ -1,4 +1,5 @@
 #include "include/GameMaster.hpp"
+#include "include/MainMenuState.hpp"
 
 using namespace std;
 

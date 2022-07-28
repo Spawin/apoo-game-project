@@ -1,0 +1,174 @@
+.TH "NotMovableGameObject" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NotMovableGameObject \- Represente les objets imobiles\&. NOTE - Certains de ces Object Peuvent être déplacée ou transporté par un Personnage par exemple\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <NotMovableGameObject\&.hpp>\fP
+.PP
+Est dérivée de \fBGameObject\fP\&.
+.PP
+Dérivée par \fBBag\fP, et \fBItem\fP\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBNotMovableGameObject\fP (std::string_view const &imageSpritePath)"
+.br
+.ti -1c
+.RI "\fB~NotMovableGameObject\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBaddToHall\fP (\fBHall\fP *\fBhall\fP)"
+.br
+.RI "Déplacer un objet vers une salle est virtuel pour permettre de récrire la fonction et spécifier peut être des conditions de déplacement\&. NOTE - Cet déplacement ne concerne pas le chagement des cordonnes mais juste l'éta d'appartenance\&. Néanmoins c'est à partir d'elle qu'on informe l'object des nouvelles limites de mouvement\&. "
+.ti -1c
+.RI "virtual void \fBshow\fP (sf::RenderTarget &window)"
+.br
+.RI "Pour dessiner l'élement dans la fenêtre\&. "
+.ti -1c
+.RI "virtual void \fBonCollisionEnter\fP (\fBCollision\fP const &collision) const =0"
+.br
+.RI "émit quand il entre en contacte avec un autre élément "
+.ti -1c
+.RI "virtual void \fBupdate\fP ()=0"
+.br
+.in -1c
+.SS "Fonctions membres protégées"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBinitPosition\fP (float posX, float posY) override"
+.br
+.ti -1c
+.RI "virtual void \fBsetPositionMovementLimit\fP (const \fBHall\fP *\fBhall\fP)"
+.br
+.RI "Met à jour les nouvelle limite de déplacement\&. "
+.ti -1c
+.RI "virtual void \fBupdatePosition\fP (float posX, float posY)=0"
+.br
+.RI "Permet de mettre à jour la position actuelle\&. "
+.in -1c
+.SS "Attributs protégés"
+
+.in +1c
+.ti -1c
+.RI "const \fBHall\fP * \fBhall\fP"
+.br
+.RI "Initialiser animationComponent et les animations\&. "
+.in -1c
+.SS "Membres hérités additionnels"
+.SH "Description détaillée"
+.PP 
+Represente les objets imobiles\&. NOTE - Certains de ces Object Peuvent être déplacée ou transporté par un Personnage par exemple\&. 
+.PP
+Définition à la ligne \fB21\fP du fichier \fBNotMovableGameObject\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "NotMovableGameObject::NotMovableGameObject (std::string_view const & imageSpritePath)"
+
+.PP
+Définition à la ligne \fB13\fP du fichier \fBNotMovableGameObject\&.cpp\fP\&.
+.SS "NotMovableGameObject::~NotMovableGameObject ()"
+
+.PP
+Définition à la ligne \fB19\fP du fichier \fBNotMovableGameObject\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "bool NotMovableGameObject::addToHall (\fBHall\fP * hall)\fC [virtual]\fP"
+
+.PP
+Déplacer un objet vers une salle est virtuel pour permettre de récrire la fonction et spécifier peut être des conditions de déplacement\&. NOTE - Cet déplacement ne concerne pas le chagement des cordonnes mais juste l'éta d'appartenance\&. Néanmoins c'est à partir d'elle qu'on informe l'object des nouvelles limites de mouvement\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIhall\fP 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+true Si le déplacement s'est effectué avec succès 
+.PP
+false Si le déplacement n'a pas eu lieu 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB37\fP du fichier \fBNotMovableGameObject\&.cpp\fP\&.
+.SS "void NotMovableGameObject::initPosition (float posX, float posY)\fC [override]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Implémente \fBGameObject\fP\&.
+.PP
+Définition à la ligne \fB6\fP du fichier \fBNotMovableGameObject\&.cpp\fP\&.
+.SS "virtual void NotMovableGameObject::onCollisionEnter (\fBCollision\fP const & collision) const\fC [pure virtual]\fP"
+
+.PP
+émit quand il entre en contacte avec un autre élément 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIcollision\fP 
+.RE
+.PP
+
+.PP
+Implémente \fBGameObject\fP\&.
+.PP
+Implémenté dans \fBItem\fP, \fBBag\fP, \fBMoney\fP, \fBShield\fP, \fBSword\fP, et \fBVial\fP\&.
+.SS "void NotMovableGameObject::setPositionMovementLimit (const \fBHall\fP * hall)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Met à jour les nouvelle limite de déplacement\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIhall\fP 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB49\fP du fichier \fBNotMovableGameObject\&.cpp\fP\&.
+.SS "void NotMovableGameObject::show (sf::RenderTarget & window)\fC [virtual]\fP"
+
+.PP
+Pour dessiner l'élement dans la fenêtre\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIwindow\fP 
+.RE
+.PP
+
+.PP
+Réimplémentée à partir de \fBGameObject\fP\&.
+.PP
+Définition à la ligne \fB44\fP du fichier \fBNotMovableGameObject\&.cpp\fP\&.
+.SS "virtual void NotMovableGameObject::update ()\fC [pure virtual]\fP"
+
+.PP
+Implémente \fBGameObject\fP\&.
+.PP
+Implémenté dans \fBBag\fP, \fBMoney\fP, \fBShield\fP, \fBSword\fP, \fBVial\fP, et \fBItem\fP\&.
+.SS "virtual void NotMovableGameObject::updatePosition (float posX, float posY)\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+Permet de mettre à jour la position actuelle\&. 
+.PP
+Implémenté dans \fBItem\fP\&.
+.SH "Documentation des données membres"
+.PP 
+.SS "const \fBHall\fP* NotMovableGameObject::hall\fC [protected]\fP"
+
+.PP
+Initialiser animationComponent et les animations\&. Ce pointeur ne doit pas être supprimé à ce niveau 
+.PP
+Définition à la ligne \fB67\fP du fichier \fBNotMovableGameObject\&.hpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

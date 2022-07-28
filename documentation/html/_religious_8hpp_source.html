@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Jeu POA:  Fichier source de include/Religious.hpp</title>
+<title>Jeu POA:  Fichier source de C:/programs_sc/CIC/MITST06/jeu/src/include/Religious.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -96,22 +96,35 @@ $(document).ready(function(){initNavTree('_religious_8hpp_source.html',''); init
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_function" href="class_religious.html#affb894a6e1b8abfdf90061483a370e44">Religious</a>();</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_function" href="class_religious.html#a83cf211e716fe096c1233dae97939598">~Religious</a>();</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">void</span> init();</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>};</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#endif </span><span class="comment">// __RELIGIOUS_HPP__</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_religious.html#a924be748e4e719d91732d6a6d9bd04dd">   12</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_religious.html#a924be748e4e719d91732d6a6d9bd04dd">simpleAttack</a>(<a class="code hl_class" href="class_personage.html">Personage</a>&amp; target) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_religious.html#a9cb05467175db65c3dca56d5c4d6d460">   13</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_religious.html#a9cb05467175db65c3dca56d5c4d6d460">specialAttack</a>(<a class="code hl_class" href="class_personage.html">Personage</a>&amp; target) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">virtual</span> <span class="keywordtype">unsigned</span> <a class="code hl_function" href="class_religious.html#a815920536856368c1a008652701e4705">receiveHealthDamage</a>(<span class="keywordtype">int</span> value) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">virtual</span> <span class="keywordtype">unsigned</span> <a class="code hl_function" href="class_religious.html#a92ca5f1c15a0919f8116787427417fd2">receiveExpDamage</a>(<span class="keywordtype">int</span> value) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">virtual</span> <span class="keywordtype">unsigned</span> <a class="code hl_function" href="class_religious.html#a777feb03645e5eccab512a16747e2c02">receiveHealthCare</a>(<span class="keywordtype">int</span> value) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">virtual</span> <span class="keywordtype">unsigned</span> <a class="code hl_function" href="class_religious.html#afa9468ba625191fb0b296c704ddf89f1">receiveExpCare</a>(<span class="keywordtype">int</span> value) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> init();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#endif </span><span class="comment">// __RELIGIOUS_HPP__</span></div>
 <div class="ttc" id="a_personage_8hpp_html"><div class="ttname"><a href="_personage_8hpp.html">Personage.hpp</a></div></div>
-<div class="ttc" id="aclass_personage_html"><div class="ttname"><a href="class_personage.html">Personage</a></div><div class="ttdef"><b>Definition:</b> <a href="_personage_8hpp_source.html#l00007">Personage.hpp:8</a></div></div>
+<div class="ttc" id="aclass_personage_html"><div class="ttname"><a href="class_personage.html">Personage</a></div><div class="ttdef"><b>Definition:</b> <a href="_personage_8hpp_source.html#l00013">Personage.hpp:14</a></div></div>
 <div class="ttc" id="aclass_religious_html"><div class="ttname"><a href="class_religious.html">Religious</a></div><div class="ttdef"><b>Definition:</b> <a href="_religious_8hpp_source.html#l00006">Religious.hpp:7</a></div></div>
-<div class="ttc" id="aclass_religious_html_a83cf211e716fe096c1233dae97939598"><div class="ttname"><a href="class_religious.html#a83cf211e716fe096c1233dae97939598">Religious::~Religious</a></div><div class="ttdeci">~Religious()</div><div class="ttdef"><b>Definition:</b> <a href="_religious_8cpp_source.html#l00014">Religious.cpp:14</a></div></div>
-<div class="ttc" id="aclass_religious_html_affb894a6e1b8abfdf90061483a370e44"><div class="ttname"><a href="class_religious.html#affb894a6e1b8abfdf90061483a370e44">Religious::Religious</a></div><div class="ttdeci">Religious()</div><div class="ttdef"><b>Definition:</b> <a href="_religious_8cpp_source.html#l00010">Religious.cpp:10</a></div></div>
+<div class="ttc" id="aclass_religious_html_a777feb03645e5eccab512a16747e2c02"><div class="ttname"><a href="class_religious.html#a777feb03645e5eccab512a16747e2c02">Religious::receiveHealthCare</a></div><div class="ttdeci">virtual unsigned receiveHealthCare(int value) override</div><div class="ttdoc">pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise u...</div><div class="ttdef"><b>Definition:</b> <a href="_religious_8cpp_source.html#l00030">Religious.cpp:30</a></div></div>
+<div class="ttc" id="aclass_religious_html_a815920536856368c1a008652701e4705"><div class="ttname"><a href="class_religious.html#a815920536856368c1a008652701e4705">Religious::receiveHealthDamage</a></div><div class="ttdeci">virtual unsigned receiveHealthDamage(int value) override</div><div class="ttdoc">pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utili...</div><div class="ttdef"><b>Definition:</b> <a href="_religious_8cpp_source.html#l00026">Religious.cpp:26</a></div></div>
+<div class="ttc" id="aclass_religious_html_a83cf211e716fe096c1233dae97939598"><div class="ttname"><a href="class_religious.html#a83cf211e716fe096c1233dae97939598">Religious::~Religious</a></div><div class="ttdeci">~Religious()</div><div class="ttdef"><b>Definition:</b> <a href="_religious_8cpp_source.html#l00020">Religious.cpp:20</a></div></div>
+<div class="ttc" id="aclass_religious_html_a924be748e4e719d91732d6a6d9bd04dd"><div class="ttname"><a href="class_religious.html#a924be748e4e719d91732d6a6d9bd04dd">Religious::simpleAttack</a></div><div class="ttdeci">virtual void simpleAttack(Personage &amp;target) override</div></div>
+<div class="ttc" id="aclass_religious_html_a92ca5f1c15a0919f8116787427417fd2"><div class="ttname"><a href="class_religious.html#a92ca5f1c15a0919f8116787427417fd2">Religious::receiveExpDamage</a></div><div class="ttdeci">virtual unsigned receiveExpDamage(int value) override</div><div class="ttdoc">pour recevoir les dégats d'exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise ...</div><div class="ttdef"><b>Definition:</b> <a href="_religious_8cpp_source.html#l00028">Religious.cpp:28</a></div></div>
+<div class="ttc" id="aclass_religious_html_a9cb05467175db65c3dca56d5c4d6d460"><div class="ttname"><a href="class_religious.html#a9cb05467175db65c3dca56d5c4d6d460">Religious::specialAttack</a></div><div class="ttdeci">virtual void specialAttack(Personage &amp;target) override</div></div>
+<div class="ttc" id="aclass_religious_html_afa9468ba625191fb0b296c704ddf89f1"><div class="ttname"><a href="class_religious.html#afa9468ba625191fb0b296c704ddf89f1">Religious::receiveExpCare</a></div><div class="ttdeci">virtual unsigned receiveExpCare(int value) override</div><div class="ttdoc">pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un ...</div><div class="ttdef"><b>Definition:</b> <a href="_religious_8cpp_source.html#l00032">Religious.cpp:32</a></div></div>
+<div class="ttc" id="aclass_religious_html_affb894a6e1b8abfdf90061483a370e44"><div class="ttname"><a href="class_religious.html#affb894a6e1b8abfdf90061483a370e44">Religious::Religious</a></div><div class="ttdeci">Religious()</div><div class="ttdef"><b>Definition:</b> <a href="_religious_8cpp_source.html#l00015">Religious.cpp:15</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_religious_8hpp.html">Religious.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="_religious_8hpp.html">Religious.hpp</a></li>
     <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>

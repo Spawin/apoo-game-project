@@ -7,17 +7,13 @@
 Graphe d\textquotesingle{}héritage de Game\+Object\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.000000cm]{class_game_object}
+\includegraphics[height=6.242038cm]{class_game_object}
 \end{center}
 \end{figure}
 \doxysubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}{Game\+Object}} ()
-\item 
 \mbox{\hyperlink{class_game_object_abcc6c98f8a45808760930dc5911da2e8}{Game\+Object}} (std\+::string\+\_\+view const \&image\+Sprite\+Path)
-\begin{DoxyCompactList}\small\item\em Construct a new Game Oject object. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_game_object_a89dbbcdbdb0d867e9d7baf0d0fced05d}{Game\+Object}} (float posX, float posY, std\+::string\+\_\+view const \&image\+Sprite\+Path=\char`\"{}\char`\"{})
 \begin{DoxyCompactList}\small\item\em Construct a new Game Object object. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_game_object_ab82dfdb656f9051c0587e6593b2dda97}{$\sim$\+Game\+Object}} ()
 \item 
@@ -27,7 +23,9 @@ virtual void \mbox{\hyperlink{class_game_object_ae83128d0e0efef691417779605ee037
 \item 
 int \mbox{\hyperlink{class_game_object_a7bc5db5459f66fad48f88c7d8e1863b6}{get\+Game\+Object\+Id}} () const
 \item 
-\mbox{\hyperlink{class_position}{Position}} const \& \mbox{\hyperlink{class_game_object_a8c97fc15be278b8c42d138517e0a05bb}{get\+Position}} () const
+const \mbox{\hyperlink{class_position}{Position}} $\ast$ \mbox{\hyperlink{class_game_object_a5f5f8870bb5d7e1496c2e565f5dd8bbd}{get\+Position}} () const
+\item 
+\mbox{\hyperlink{class_position}{Position}} $\ast$ \mbox{\hyperlink{class_game_object_a1d7e99dbc0f116d7a20b0229180397db}{get\+Non\+Const\+Position}} ()
 \item 
 std\+::string \mbox{\hyperlink{class_game_object_a800f7c8a8df0bd57aca9f8de170d7906}{get\+Game\+Object\+Name}} () const
 \item 
@@ -40,8 +38,6 @@ bool \mbox{\hyperlink{class_game_object_a383ef4aec2bddf99d2255b7625c2e88a}{is\+A
 void \mbox{\hyperlink{class_game_object_a923eb7f3030e15e3e5cc2da08417b57c}{from\+Collider\+To\+Rigid\+Body}} () const
 \begin{DoxyCompactList}\small\item\em Quand un collider détect une collision, il envoi l\textquotesingle{}information au rigid\+Body. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_collider}{Collider}} const \& \mbox{\hyperlink{class_game_object_a509ced81c976fc9f230e501cd1f146e1}{get\+Collider}} () const
-\item 
-virtual void \mbox{\hyperlink{class_game_object_a5845033077a9f7669e3e7479dae824c0}{move}} (\mbox{\hyperlink{struct_my_vector}{My\+Vector}} \&speed)=0
 \end{DoxyCompactItemize}
 \doxysubsection*{Fonctions membres publiques statiques}
 \begin{DoxyCompactItemize}
@@ -53,8 +49,8 @@ static void \mbox{\hyperlink{class_game_object_a5f826d1945fc978181c713da7fd7ccb9
 \item 
 void \mbox{\hyperlink{class_game_object_a9b565e5ec63bef28e5c860f724d2de7c}{init}} ()
 \begin{DoxyCompactList}\small\item\em Pour initialiser les valeur par défaut du \mbox{\hyperlink{class_game_object}{Game\+Object}}. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{class_game_object_a370e2175ad8b4017ff2aa095e11e955b}{update\+Position}} (\mbox{\hyperlink{class_position}{Position}} \&position)=0
-\begin{DoxyCompactList}\small\item\em Permet de mettre à jour la position actuelle. Cette position sera déterminé par l\textquotesingle{}évenement reçu au préalable. Aussi il s\textquotesingle{}agit dans ce cas d\textquotesingle{}une accélération uniforme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual void \mbox{\hyperlink{class_game_object_ad860b401fa64188046b2b7019e006283}{init\+Position}} (float posX, float posY)=0
+\end{DoxyCompactItemize}
 \doxysubsection*{Fonctions membres protégées statiques}
 \begin{DoxyCompactItemize}
 \item 
@@ -71,17 +67,13 @@ sf\+::\+Texture \mbox{\hyperlink{class_game_object_ab0ed65316ecb25733ecc0f23aa35
 \item 
 sf\+::\+Sprite \mbox{\hyperlink{class_game_object_ab9f3598767553b274e98b2df36122bbd}{m\+\_\+body}} \{\}
 \item 
-\mbox{\hyperlink{class_position}{Position}} \mbox{\hyperlink{class_game_object_af4c79eddbc8c9c8203aab26a58dd4d93}{m\+\_\+position}} \{\}
+\mbox{\hyperlink{class_position}{Position}} $\ast$ \mbox{\hyperlink{class_game_object_a13cde9cf52cf7e4d6771eee5ccdaa5d7}{m\+\_\+position}}
 \item 
 \mbox{\hyperlink{struct_my_vector}{My\+Vector}} \mbox{\hyperlink{class_game_object_afd991cb0689c710bc0ca0a50fdb6cf9e}{m\+\_\+speed}} \{ 0.f, 0.f \}
 \item 
 \mbox{\hyperlink{class_collider}{Collider}} $\ast$ \mbox{\hyperlink{class_game_object_a75715d74bf69ee24626c26308e4a8bd4}{m\+\_\+collider}} \{ nullptr \}
-\item 
+\begin{DoxyCompactList}\small\item\em Permet de mettre à jour la position actuelle. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_rigidbody}{Rigidbody}} $\ast$ \mbox{\hyperlink{class_game_object_ac358cb5bc96418e4c11f3a75be24810a}{m\+\_\+rigidbody}} \{ nullptr \}
-\item 
-int \mbox{\hyperlink{class_game_object_ad3db171c5f799cd17f386672bd80a188}{m\+\_\+width}} \{ 100 \}
-\item 
-int \mbox{\hyperlink{class_game_object_a4dd86983a7dc829e7b6b625bf5f59658}{m\+\_\+height}} \{ 100 \}
 \end{DoxyCompactItemize}
 \doxysubsection*{Attributs protégés statiques}
 \begin{DoxyCompactItemize}
@@ -105,40 +97,11 @@ Définition à la ligne \mbox{\hyperlink{_game_object_8hpp_source_l00015}{15}} d
 
 
 \doxysubsection{Documentation des constructeurs et destructeur}
-\mbox{\Hypertarget{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}\label{class_game_object_a0348e3ee2e83d56eafca7a3547f432c4}} 
-\index{GameObject@{GameObject}!GameObject@{GameObject}}
-\index{GameObject@{GameObject}!GameObject@{GameObject}}
-\doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
-
-
-Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00039}{39}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
-
 \mbox{\Hypertarget{class_game_object_abcc6c98f8a45808760930dc5911da2e8}\label{class_game_object_abcc6c98f8a45808760930dc5911da2e8}} 
 \index{GameObject@{GameObject}!GameObject@{GameObject}}
 \index{GameObject@{GameObject}!GameObject@{GameObject}}
-\doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}}
 {\footnotesize\ttfamily Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view const \&}]{image\+Sprite\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
-
-
-Construct a new Game Oject object. 
-
-
-\begin{DoxyParams}{Paramètres}
-{\em image\+Sprite\+Path} & le chemin de l\textquotesingle{}image de l\textquotesingle{}objet \\
-\hline
-\end{DoxyParams}
-
-
-Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00045}{45}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
-
-\mbox{\Hypertarget{class_game_object_a89dbbcdbdb0d867e9d7baf0d0fced05d}\label{class_game_object_a89dbbcdbdb0d867e9d7baf0d0fced05d}} 
-\index{GameObject@{GameObject}!GameObject@{GameObject}}
-\index{GameObject@{GameObject}!GameObject@{GameObject}}
-\doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{std\+::string\+\_\+view const \&}]{image\+Sprite\+Path = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 
 
@@ -153,7 +116,7 @@ Construct a new Game Object object.
 \end{DoxyParams}
 
 
-Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00061}{61}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00036}{36}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
 
 \mbox{\Hypertarget{class_game_object_ab82dfdb656f9051c0587e6593b2dda97}\label{class_game_object_ab82dfdb656f9051c0587e6593b2dda97}} 
 \index{GameObject@{GameObject}!````~GameObject@{$\sim$GameObject}}
@@ -163,7 +126,7 @@ Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00061}{61}} d
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00079}{79}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00050}{50}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
 
 
 
@@ -180,7 +143,7 @@ Quand un collider détect une collision, il envoi l\textquotesingle{}information
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00134}{134}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00110}{110}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
 
 \mbox{\Hypertarget{class_game_object_a509ced81c976fc9f230e501cd1f146e1}\label{class_game_object_a509ced81c976fc9f230e501cd1f146e1}} 
 \index{GameObject@{GameObject}!getCollider@{getCollider}}
@@ -190,7 +153,7 @@ Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00134}{134}} 
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00142}{142}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00118}{118}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
 
 \mbox{\Hypertarget{class_game_object_a7bc5db5459f66fad48f88c7d8e1863b6}\label{class_game_object_a7bc5db5459f66fad48f88c7d8e1863b6}} 
 \index{GameObject@{GameObject}!getGameObjectId@{getGameObjectId}}
@@ -200,7 +163,7 @@ Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00142}{142}} 
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00100}{100}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00071}{71}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
 
 \mbox{\Hypertarget{class_game_object_a800f7c8a8df0bd57aca9f8de170d7906}\label{class_game_object_a800f7c8a8df0bd57aca9f8de170d7906}} 
 \index{GameObject@{GameObject}!getGameObjectName@{getGameObjectName}}
@@ -210,17 +173,27 @@ Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00100}{100}} 
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00110}{110}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00086}{86}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
 
-\mbox{\Hypertarget{class_game_object_a8c97fc15be278b8c42d138517e0a05bb}\label{class_game_object_a8c97fc15be278b8c42d138517e0a05bb}} 
+\mbox{\Hypertarget{class_game_object_a1d7e99dbc0f116d7a20b0229180397db}\label{class_game_object_a1d7e99dbc0f116d7a20b0229180397db}} 
+\index{GameObject@{GameObject}!getNonConstPosition@{getNonConstPosition}}
+\index{getNonConstPosition@{getNonConstPosition}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{getNonConstPosition()}{getNonConstPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_position}{Position}} $\ast$ Game\+Object\+::get\+Non\+Const\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00081}{81}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
+
+\mbox{\Hypertarget{class_game_object_a5f5f8870bb5d7e1496c2e565f5dd8bbd}\label{class_game_object_a5f5f8870bb5d7e1496c2e565f5dd8bbd}} 
 \index{GameObject@{GameObject}!getPosition@{getPosition}}
 \index{getPosition@{getPosition}!GameObject@{GameObject}}
 \doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_position}{Position}} const  \& Game\+Object\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_position}{Position}} $\ast$ Game\+Object\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00105}{105}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00076}{76}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
 
 \mbox{\Hypertarget{class_game_object_a60bcdbbdaa9d1de7d265d404071d3c4d}\label{class_game_object_a60bcdbbdaa9d1de7d265d404071d3c4d}} 
 \index{GameObject@{GameObject}!getSprite@{getSprite}}
@@ -230,7 +203,7 @@ Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00105}{105}} 
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00121}{121}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00097}{97}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
 
 \mbox{\Hypertarget{class_game_object_a4b73684e5c01134509c61fc7bab43484}\label{class_game_object_a4b73684e5c01134509c61fc7bab43484}} 
 \index{GameObject@{GameObject}!incrementCount@{incrementCount}}
@@ -256,6 +229,16 @@ Pour initialiser les valeur par défaut du \mbox{\hyperlink{class_game_object}{G
 
 Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00013}{13}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
 
+\mbox{\Hypertarget{class_game_object_ad860b401fa64188046b2b7019e006283}\label{class_game_object_ad860b401fa64188046b2b7019e006283}} 
+\index{GameObject@{GameObject}!initPosition@{initPosition}}
+\index{initPosition@{initPosition}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{initPosition()}{initPosition()}}
+{\footnotesize\ttfamily virtual void Game\+Object\+::init\+Position (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implémenté dans \mbox{\hyperlink{class_movable_game_object_a0e0909f577c773a6fd5c4b7f0661228c}{Movable\+Game\+Object}}, et \mbox{\hyperlink{class_not_movable_game_object_aca3c2dfcd7875f888650bb06d549bd2e}{Not\+Movable\+Game\+Object}}.
+
 \mbox{\Hypertarget{class_game_object_a383ef4aec2bddf99d2255b7625c2e88a}\label{class_game_object_a383ef4aec2bddf99d2255b7625c2e88a}} 
 \index{GameObject@{GameObject}!isArigidBody@{isArigidBody}}
 \index{isArigidBody@{isArigidBody}!GameObject@{GameObject}}
@@ -273,17 +256,7 @@ false
 \end{DoxyReturn}
 
 
-Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00129}{129}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
-
-\mbox{\Hypertarget{class_game_object_a5845033077a9f7669e3e7479dae824c0}\label{class_game_object_a5845033077a9f7669e3e7479dae824c0}} 
-\index{GameObject@{GameObject}!move@{move}}
-\index{move@{move}!GameObject@{GameObject}}
-\doxysubsubsection{\texorpdfstring{move()}{move()}}
-{\footnotesize\ttfamily virtual void Game\+Object\+::move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_my_vector}{My\+Vector}} \&}]{speed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
-
-
-
-Implémenté dans \mbox{\hyperlink{class_personage_acecd31422b51e2d0755c6d2de94d9510}{Personage}}.
+Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00105}{105}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
 
 \mbox{\Hypertarget{class_game_object_a394309d681a8e5eb59656029a32881de}\label{class_game_object_a394309d681a8e5eb59656029a32881de}} 
 \index{GameObject@{GameObject}!onCollisionEnter@{onCollisionEnter}}
@@ -302,7 +275,7 @@ Implémenté dans \mbox{\hyperlink{class_personage_acecd31422b51e2d0755c6d2de94d
 \end{DoxyParams}
 
 
-Implémenté dans \mbox{\hyperlink{class_personage_ac0e67cb98d13d11d49395bcaa9a8f6dd}{Personage}}.
+Implémenté dans \mbox{\hyperlink{class_item_ab2a2e5e2b20b61602e8edf0e4e573599}{Item}}, \mbox{\hyperlink{class_movable_game_object_a65c649a0cf69aa86032cb3fc63e9da01}{Movable\+Game\+Object}}, \mbox{\hyperlink{class_not_movable_game_object_a4954c3c803930ca5faf48bab88fb19bd}{Not\+Movable\+Game\+Object}}, \mbox{\hyperlink{class_bag_a0b6b0d7335ce631d81b785c63c959e1e}{Bag}}, \mbox{\hyperlink{class_money_af14a2e8f1f215da2cda5c833f25818e5}{Money}}, \mbox{\hyperlink{class_personage_ac0e67cb98d13d11d49395bcaa9a8f6dd}{Personage}}, \mbox{\hyperlink{class_shield_af82912a68032d931aba13f28004568fd}{Shield}}, \mbox{\hyperlink{class_sword_a6484ea989954570c9ece11d9843e72d1}{Sword}}, et \mbox{\hyperlink{class_vial_ace9277c2d5c91183ed1357eff154cc1b}{Vial}}.
 
 \mbox{\Hypertarget{class_game_object_a5f826d1945fc978181c713da7fd7ccb9}\label{class_game_object_a5f826d1945fc978181c713da7fd7ccb9}} 
 \index{GameObject@{GameObject}!SetTime@{SetTime}}
@@ -321,7 +294,7 @@ Set the Time object.
 \end{DoxyParams}
 
 
-Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00095}{95}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00066}{66}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
 
 \mbox{\Hypertarget{class_game_object_a3f7a674006e1cce96ccb6c60f0ff9aaf}\label{class_game_object_a3f7a674006e1cce96ccb6c60f0ff9aaf}} 
 \index{GameObject@{GameObject}!show@{show}}
@@ -340,11 +313,11 @@ Pour dessiner l\textquotesingle{}élement dans la fenêtre.
 \end{DoxyParams}
 
 
-Réimplémentée dans \mbox{\hyperlink{class_personage_a5519958ec983d06abd2ff81902dc49ac}{Personage}}, et \mbox{\hyperlink{class_soldier_a6b61c53708ea3325f9e6d36ea7d1cd64}{Soldier}}.
+Réimplémentée dans \mbox{\hyperlink{class_personage_a01b776643850ebcc55ba806e2fa8085e}{Personage}}, \mbox{\hyperlink{class_movable_game_object_a642733a3472829a5526280e44bfd27e5}{Movable\+Game\+Object}}, et \mbox{\hyperlink{class_not_movable_game_object_a203fd11b9476996adcd1345b9d8a8d61}{Not\+Movable\+Game\+Object}}.
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00087}{87}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00058}{58}} du fichier \mbox{\hyperlink{_game_object_8cpp_source}{Game\+Object.\+cpp}}.
 
 \mbox{\Hypertarget{class_game_object_ae83128d0e0efef691417779605ee037c}\label{class_game_object_ae83128d0e0efef691417779605ee037c}} 
 \index{GameObject@{GameObject}!update@{update}}
@@ -354,21 +327,7 @@ Définition à la ligne \mbox{\hyperlink{_game_object_8cpp_source_l00087}{87}} d
 
 
 
-Implémenté dans \mbox{\hyperlink{class_personage_a492d4164bc6c439d43cc44fefcbd6468}{Personage}}.
-
-\mbox{\Hypertarget{class_game_object_a370e2175ad8b4017ff2aa095e11e955b}\label{class_game_object_a370e2175ad8b4017ff2aa095e11e955b}} 
-\index{GameObject@{GameObject}!updatePosition@{updatePosition}}
-\index{updatePosition@{updatePosition}!GameObject@{GameObject}}
-\doxysubsubsection{\texorpdfstring{updatePosition()}{updatePosition()}}
-{\footnotesize\ttfamily virtual void Game\+Object\+::update\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_position}{Position}} \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
-
-
-
-Permet de mettre à jour la position actuelle. Cette position sera déterminé par l\textquotesingle{}évenement reçu au préalable. Aussi il s\textquotesingle{}agit dans ce cas d\textquotesingle{}une accélération uniforme. 
-
-
-
-Implémenté dans \mbox{\hyperlink{class_personage_a37baf30f19be05e97e839ace9fde91b8}{Personage}}.
+Implémenté dans \mbox{\hyperlink{class_bag_a790dadd6a2d45469cccd653ff5dd2317}{Bag}}, \mbox{\hyperlink{class_money_a9914e11ab0b3630f54b3711b3ef8cad8}{Money}}, \mbox{\hyperlink{class_personage_a492d4164bc6c439d43cc44fefcbd6468}{Personage}}, \mbox{\hyperlink{class_shield_a22cfa66fa754653dd24c00bd13678b18}{Shield}}, \mbox{\hyperlink{class_sword_a4b650c68af5552a2f0d995b5fe3af3fc}{Sword}}, \mbox{\hyperlink{class_vial_ad00a07bd850ba8cec2ee0cb2164fe820}{Vial}}, \mbox{\hyperlink{class_item_a5e7b6054dbde86c485f1be747cb9926c}{Item}}, \mbox{\hyperlink{class_movable_game_object_a07e44e5e7fd45ea5eb50fb86983473f1}{Movable\+Game\+Object}}, et \mbox{\hyperlink{class_not_movable_game_object_aafd50ee8f5e31bd1f4dfb4bd95053267}{Not\+Movable\+Game\+Object}}.
 
 
 
@@ -404,7 +363,11 @@ Définition à la ligne \mbox{\hyperlink{_game_object_8hpp_source_l00106}{106}} 
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_object_8hpp_source_l00127}{127}} du fichier \mbox{\hyperlink{_game_object_8hpp_source}{Game\+Object.\+hpp}}.
+Permet de mettre à jour la position actuelle. 
+
+REVIEW 
+
+Définition à la ligne \mbox{\hyperlink{_game_object_8hpp_source_l00126}{126}} du fichier \mbox{\hyperlink{_game_object_8hpp_source}{Game\+Object.\+hpp}}.
 
 \mbox{\Hypertarget{class_game_object_a9c0e2d6826099f2d8a5680ac67f01eab}\label{class_game_object_a9c0e2d6826099f2d8a5680ac67f01eab}} 
 \index{GameObject@{GameObject}!m\_count@{m\_count}}
@@ -426,16 +389,6 @@ Définition à la ligne \mbox{\hyperlink{_game_object_8hpp_source_l00100}{100}} 
 
 Définition à la ligne \mbox{\hyperlink{_game_object_8hpp_source_l00098}{98}} du fichier \mbox{\hyperlink{_game_object_8hpp_source}{Game\+Object.\+hpp}}.
 
-\mbox{\Hypertarget{class_game_object_a4dd86983a7dc829e7b6b625bf5f59658}\label{class_game_object_a4dd86983a7dc829e7b6b625bf5f59658}} 
-\index{GameObject@{GameObject}!m\_height@{m\_height}}
-\index{m\_height@{m\_height}!GameObject@{GameObject}}
-\doxysubsubsection{\texorpdfstring{m\_height}{m\_height}}
-{\footnotesize\ttfamily int Game\+Object\+::m\+\_\+height \{ 100 \}\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Définition à la ligne \mbox{\hyperlink{_game_object_8hpp_source_l00131}{131}} du fichier \mbox{\hyperlink{_game_object_8hpp_source}{Game\+Object.\+hpp}}.
-
 \mbox{\Hypertarget{class_game_object_a8e26cde3f70b648288f6e07855ec03f5}\label{class_game_object_a8e26cde3f70b648288f6e07855ec03f5}} 
 \index{GameObject@{GameObject}!m\_id@{m\_id}}
 \index{m\_id@{m\_id}!GameObject@{GameObject}}
@@ -446,11 +399,11 @@ Définition à la ligne \mbox{\hyperlink{_game_object_8hpp_source_l00131}{131}} 
 
 Définition à la ligne \mbox{\hyperlink{_game_object_8hpp_source_l00096}{96}} du fichier \mbox{\hyperlink{_game_object_8hpp_source}{Game\+Object.\+hpp}}.
 
-\mbox{\Hypertarget{class_game_object_af4c79eddbc8c9c8203aab26a58dd4d93}\label{class_game_object_af4c79eddbc8c9c8203aab26a58dd4d93}} 
+\mbox{\Hypertarget{class_game_object_a13cde9cf52cf7e4d6771eee5ccdaa5d7}\label{class_game_object_a13cde9cf52cf7e4d6771eee5ccdaa5d7}} 
 \index{GameObject@{GameObject}!m\_position@{m\_position}}
 \index{m\_position@{m\_position}!GameObject@{GameObject}}
 \doxysubsubsection{\texorpdfstring{m\_position}{m\_position}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_position}{Position}} Game\+Object\+::m\+\_\+position \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_position}{Position}}$\ast$ Game\+Object\+::m\+\_\+position\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -464,7 +417,7 @@ Définition à la ligne \mbox{\hyperlink{_game_object_8hpp_source_l00108}{108}} 
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_object_8hpp_source_l00128}{128}} du fichier \mbox{\hyperlink{_game_object_8hpp_source}{Game\+Object.\+hpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_object_8hpp_source_l00127}{127}} du fichier \mbox{\hyperlink{_game_object_8hpp_source}{Game\+Object.\+hpp}}.
 
 \mbox{\Hypertarget{class_game_object_afd991cb0689c710bc0ca0a50fdb6cf9e}\label{class_game_object_afd991cb0689c710bc0ca0a50fdb6cf9e}} 
 \index{GameObject@{GameObject}!m\_speed@{m\_speed}}
@@ -496,19 +449,9 @@ Définition à la ligne \mbox{\hyperlink{_game_object_8hpp_source_l00104}{104}} 
 
 Définition à la ligne \mbox{\hyperlink{_game_object_8hpp_source_l00113}{113}} du fichier \mbox{\hyperlink{_game_object_8hpp_source}{Game\+Object.\+hpp}}.
 
-\mbox{\Hypertarget{class_game_object_ad3db171c5f799cd17f386672bd80a188}\label{class_game_object_ad3db171c5f799cd17f386672bd80a188}} 
-\index{GameObject@{GameObject}!m\_width@{m\_width}}
-\index{m\_width@{m\_width}!GameObject@{GameObject}}
-\doxysubsubsection{\texorpdfstring{m\_width}{m\_width}}
-{\footnotesize\ttfamily int Game\+Object\+::m\+\_\+width \{ 100 \}\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Définition à la ligne \mbox{\hyperlink{_game_object_8hpp_source_l00130}{130}} du fichier \mbox{\hyperlink{_game_object_8hpp_source}{Game\+Object.\+hpp}}.
-
 
 
 La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{_game_object_8hpp}{Game\+Object.\+hpp}}\item 
-include/\mbox{\hyperlink{_game_object_8cpp}{Game\+Object.\+cpp}}\end{DoxyCompactItemize}
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_game_object_8hpp}{Game\+Object.\+hpp}}\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_game_object_8cpp}{Game\+Object.\+cpp}}\end{DoxyCompactItemize}

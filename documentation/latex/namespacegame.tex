@@ -1,5 +1,27 @@
 \hypertarget{namespacegame}{}\doxysection{Référence de l\textquotesingle{}espace de nommage game}
 \label{namespacegame}\index{game@{game}}
+\doxysubsection*{Énumérations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacegame_aaa1c0491864f6f8110948f609545c945}{movement\+\_\+states}} \{ \newline
+\mbox{\hyperlink{namespacegame_aaa1c0491864f6f8110948f609545c945a3222c48e2124279ca78ce26c8e90e428}{IDLE}} = 0
+, \mbox{\hyperlink{namespacegame_aaa1c0491864f6f8110948f609545c945aba31ca34fc5eceeaee71de8c13f346ce}{MOVING}}
+, \mbox{\hyperlink{namespacegame_aaa1c0491864f6f8110948f609545c945a2ab81c99a5178319bb7c7239b702624d}{MOVING\+\_\+\+LEFT}}
+, \mbox{\hyperlink{namespacegame_aaa1c0491864f6f8110948f609545c945acd2fe7676a4ec4f941aef4c63d5b1cfd}{MOVING\+\_\+\+RIGHT}}
+, \newline
+\mbox{\hyperlink{namespacegame_aaa1c0491864f6f8110948f609545c945af103a29e75eab52c0816696b75e845e5}{MOVING\+\_\+\+UP}}
+, \mbox{\hyperlink{namespacegame_aaa1c0491864f6f8110948f609545c945ad621cf8e78236eaca174a3ce3a1d893d}{MOVING\+\_\+\+DOWN}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{inventory\+\_\+items\+\_\+types}} \{ \newline
+\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0ade2b8abe881dd8e4494afd39e979ebf8}{DEFAULT}} = -\/1
+, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a0783b29ef2cd9d2229b08af1093f5f0f}{VIAL}} = 0
+, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a2b602b3377438010ebb120c46572f3c7}{ARMORY}}
+, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a166de762fd24b8c7c9624d8b42d4cfab}{TELEPORTKEY}}
+, \newline
+\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a73e510979d35b3bfb3c02215c02139a3}{MONEY}}
+ \}
+\end{DoxyCompactItemize}
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
@@ -8,8 +30,109 @@ std\+::string const \& \mbox{\hyperlink{namespacegame_ae06dcf0f83792737e9567f33c
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-constexpr float \mbox{\hyperlink{namespacegame_ad60933589116204d8fea5cc921815b4c}{PERSONAGE\+\_\+\+MOVE\+\_\+\+VELOCITY}} = 200.f
+constexpr int \mbox{\hyperlink{namespacegame_a8024671adc6f9b0fe39789a8ea5a357a}{WINDOW\+\_\+\+WIDTH}} = 1200
+\item 
+constexpr int \mbox{\hyperlink{namespacegame_a7e5a6e190446686addab44689f99a89b}{WINDOW\+\_\+\+HEIGHT}} = 675
+\item 
+constexpr float \mbox{\hyperlink{namespacegame_ad60933589116204d8fea5cc921815b4c}{PERSONAGE\+\_\+\+MOVE\+\_\+\+VELOCITY}} = 300.f
+\item 
+constexpr int \mbox{\hyperlink{namespacegame_a31101344334dbbe88a0c2fd3313f697a}{GAME\+\_\+\+BLOCKS\+\_\+\+WIDTH}} = 200
+\item 
+constexpr float \mbox{\hyperlink{namespacegame_a569131e688ab3c4c2d185faa530d1d8b}{GAME\+\_\+\+MAP\+\_\+\+WIDTH}} = \mbox{\hyperlink{namespacegame_a31101344334dbbe88a0c2fd3313f697a}{game\+::\+GAME\+\_\+\+BLOCKS\+\_\+\+WIDTH}} $\ast$ 40
+\item 
+constexpr float \mbox{\hyperlink{namespacegame_a51a3c9d790289cade9a6609af14f9d1e}{GAME\+\_\+\+MAP\+\_\+\+HEIGHT}} = \mbox{\hyperlink{namespacegame_a31101344334dbbe88a0c2fd3313f697a}{game\+::\+GAME\+\_\+\+BLOCKS\+\_\+\+WIDTH}} $\ast$ 80
+\item 
+constexpr int \mbox{\hyperlink{namespacegame_a3e3f7a016b6727db463a1dde32c9c65c}{HOUSE\+\_\+\+TILES\+\_\+\+NUMBER}} = 40 $\ast$ 80
+\item 
+constexpr int \mbox{\hyperlink{namespacegame_a0a7ab0e3e54d4d110ad489f223d91f14}{WALL\+\_\+\+WIDTH}} = 120
+\item 
+constexpr int \mbox{\hyperlink{namespacegame_a856fac7c03d1453ffaf4a9c0c649722c}{WALL\+\_\+\+HEIGHT}} = 32
+\item 
+constexpr int \mbox{\hyperlink{namespacegame_a183b92f3cf97b370d5420a30ead1615d}{DISTANCE\+\_\+\+MIN\+\_\+\+BETWEEN\+\_\+\+OBJECTS}} = 10
+\item 
+constexpr int \mbox{\hyperlink{namespacegame_ac43c16accadfed526bd5731515b8991f}{DEFAULT\+\_\+\+DETECTABILITY\+\_\+\+RADIUS}} = 16
+\item 
+constexpr int \mbox{\hyperlink{namespacegame_a8dc8e2b0032cd0aa80f18625c2af7a50}{PERSONNAGE\+\_\+\+DETECTABILITY\+\_\+\+RADIUS}} = 16
+\item 
+constexpr int \mbox{\hyperlink{namespacegame_ab43b1ee77948fb60b4bf11469c925d98}{PERSONNAGE\+\_\+\+WIDTH}} = 32
+\item 
+constexpr int \mbox{\hyperlink{namespacegame_a170cbd165f05ad7fd18066f9892b4a58}{PERSONNAGE\+\_\+\+MAX\+\_\+\+HEALTH}} = 100
+\item 
+constexpr int \mbox{\hyperlink{namespacegame_a152e426c092a87b10c433230c2fff193}{PERSONNAGE\+\_\+\+MAX\+\_\+\+SPECIALITY}} = 100
+\item 
+constexpr int \mbox{\hyperlink{namespacegame_aee7ec3c00c3424386587b3f2f5bdf437}{INVENTORY\+\_\+\+BLOCK\+\_\+\+WIDTH}} = 80
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation du type de l\textquotesingle{}énumération}
+\mbox{\Hypertarget{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}\label{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}} 
+\index{game@{game}!inventory\_items\_types@{inventory\_items\_types}}
+\index{inventory\_items\_types@{inventory\_items\_types}!game@{game}}
+\doxysubsubsection{\texorpdfstring{inventory\_items\_types}{inventory\_items\_types}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}}}
+
+\begin{DoxyEnumFields}{Valeurs énumérées}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEFAULT@{DEFAULT}!game@{game}}\index{game@{game}!DEFAULT@{DEFAULT}}}\mbox{\Hypertarget{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0ade2b8abe881dd8e4494afd39e979ebf8}\label{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0ade2b8abe881dd8e4494afd39e979ebf8}} 
+DEFAULT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VIAL@{VIAL}!game@{game}}\index{game@{game}!VIAL@{VIAL}}}\mbox{\Hypertarget{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a0783b29ef2cd9d2229b08af1093f5f0f}\label{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a0783b29ef2cd9d2229b08af1093f5f0f}} 
+VIAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ARMORY@{ARMORY}!game@{game}}\index{game@{game}!ARMORY@{ARMORY}}}\mbox{\Hypertarget{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a2b602b3377438010ebb120c46572f3c7}\label{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a2b602b3377438010ebb120c46572f3c7}} 
+ARMORY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TELEPORTKEY@{TELEPORTKEY}!game@{game}}\index{game@{game}!TELEPORTKEY@{TELEPORTKEY}}}\mbox{\Hypertarget{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a166de762fd24b8c7c9624d8b42d4cfab}\label{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a166de762fd24b8c7c9624d8b42d4cfab}} 
+TELEPORTKEY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MONEY@{MONEY}!game@{game}}\index{game@{game}!MONEY@{MONEY}}}\mbox{\Hypertarget{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a73e510979d35b3bfb3c02215c02139a3}\label{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a73e510979d35b3bfb3c02215c02139a3}} 
+MONEY&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00063}{63}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
+
+\mbox{\Hypertarget{namespacegame_aaa1c0491864f6f8110948f609545c945}\label{namespacegame_aaa1c0491864f6f8110948f609545c945}} 
+\index{game@{game}!movement\_states@{movement\_states}}
+\index{movement\_states@{movement\_states}!game@{game}}
+\doxysubsubsection{\texorpdfstring{movement\_states}{movement\_states}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacegame_aaa1c0491864f6f8110948f609545c945}{game\+::movement\+\_\+states}}}
+
+\begin{DoxyEnumFields}{Valeurs énumérées}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IDLE@{IDLE}!game@{game}}\index{game@{game}!IDLE@{IDLE}}}\mbox{\Hypertarget{namespacegame_aaa1c0491864f6f8110948f609545c945a3222c48e2124279ca78ce26c8e90e428}\label{namespacegame_aaa1c0491864f6f8110948f609545c945a3222c48e2124279ca78ce26c8e90e428}} 
+IDLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOVING@{MOVING}!game@{game}}\index{game@{game}!MOVING@{MOVING}}}\mbox{\Hypertarget{namespacegame_aaa1c0491864f6f8110948f609545c945aba31ca34fc5eceeaee71de8c13f346ce}\label{namespacegame_aaa1c0491864f6f8110948f609545c945aba31ca34fc5eceeaee71de8c13f346ce}} 
+MOVING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOVING\_LEFT@{MOVING\_LEFT}!game@{game}}\index{game@{game}!MOVING\_LEFT@{MOVING\_LEFT}}}\mbox{\Hypertarget{namespacegame_aaa1c0491864f6f8110948f609545c945a2ab81c99a5178319bb7c7239b702624d}\label{namespacegame_aaa1c0491864f6f8110948f609545c945a2ab81c99a5178319bb7c7239b702624d}} 
+MOVING\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOVING\_RIGHT@{MOVING\_RIGHT}!game@{game}}\index{game@{game}!MOVING\_RIGHT@{MOVING\_RIGHT}}}\mbox{\Hypertarget{namespacegame_aaa1c0491864f6f8110948f609545c945acd2fe7676a4ec4f941aef4c63d5b1cfd}\label{namespacegame_aaa1c0491864f6f8110948f609545c945acd2fe7676a4ec4f941aef4c63d5b1cfd}} 
+MOVING\+\_\+\+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOVING\_UP@{MOVING\_UP}!game@{game}}\index{game@{game}!MOVING\_UP@{MOVING\_UP}}}\mbox{\Hypertarget{namespacegame_aaa1c0491864f6f8110948f609545c945af103a29e75eab52c0816696b75e845e5}\label{namespacegame_aaa1c0491864f6f8110948f609545c945af103a29e75eab52c0816696b75e845e5}} 
+MOVING\+\_\+\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOVING\_DOWN@{MOVING\_DOWN}!game@{game}}\index{game@{game}!MOVING\_DOWN@{MOVING\_DOWN}}}\mbox{\Hypertarget{namespacegame_aaa1c0491864f6f8110948f609545c945ad621cf8e78236eaca174a3ce3a1d893d}\label{namespacegame_aaa1c0491864f6f8110948f609545c945ad621cf8e78236eaca174a3ce3a1d893d}} 
+MOVING\+\_\+\+DOWN&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00053}{53}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
+
 
 
 \doxysubsection{Documentation des fonctions}
@@ -21,18 +144,168 @@ constexpr float \mbox{\hyperlink{namespacegame_ad60933589116204d8fea5cc921815b4c
 
 
 
-Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00046}{46}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
+Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00079}{79}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
 
 
 
 \doxysubsection{Documentation des variables}
+\mbox{\Hypertarget{namespacegame_ac43c16accadfed526bd5731515b8991f}\label{namespacegame_ac43c16accadfed526bd5731515b8991f}} 
+\index{game@{game}!DEFAULT\_DETECTABILITY\_RADIUS@{DEFAULT\_DETECTABILITY\_RADIUS}}
+\index{DEFAULT\_DETECTABILITY\_RADIUS@{DEFAULT\_DETECTABILITY\_RADIUS}!game@{game}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_DETECTABILITY\_RADIUS}{DEFAULT\_DETECTABILITY\_RADIUS}}
+{\footnotesize\ttfamily constexpr int game\+::\+DEFAULT\+\_\+\+DETECTABILITY\+\_\+\+RADIUS = 16\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00040}{40}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
+
+\mbox{\Hypertarget{namespacegame_a183b92f3cf97b370d5420a30ead1615d}\label{namespacegame_a183b92f3cf97b370d5420a30ead1615d}} 
+\index{game@{game}!DISTANCE\_MIN\_BETWEEN\_OBJECTS@{DISTANCE\_MIN\_BETWEEN\_OBJECTS}}
+\index{DISTANCE\_MIN\_BETWEEN\_OBJECTS@{DISTANCE\_MIN\_BETWEEN\_OBJECTS}!game@{game}}
+\doxysubsubsection{\texorpdfstring{DISTANCE\_MIN\_BETWEEN\_OBJECTS}{DISTANCE\_MIN\_BETWEEN\_OBJECTS}}
+{\footnotesize\ttfamily constexpr int game\+::\+DISTANCE\+\_\+\+MIN\+\_\+\+BETWEEN\+\_\+\+OBJECTS = 10\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00037}{37}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
+
+\mbox{\Hypertarget{namespacegame_a31101344334dbbe88a0c2fd3313f697a}\label{namespacegame_a31101344334dbbe88a0c2fd3313f697a}} 
+\index{game@{game}!GAME\_BLOCKS\_WIDTH@{GAME\_BLOCKS\_WIDTH}}
+\index{GAME\_BLOCKS\_WIDTH@{GAME\_BLOCKS\_WIDTH}!game@{game}}
+\doxysubsubsection{\texorpdfstring{GAME\_BLOCKS\_WIDTH}{GAME\_BLOCKS\_WIDTH}}
+{\footnotesize\ttfamily constexpr int game\+::\+GAME\+\_\+\+BLOCKS\+\_\+\+WIDTH = 200\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00026}{26}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
+
+\mbox{\Hypertarget{namespacegame_a51a3c9d790289cade9a6609af14f9d1e}\label{namespacegame_a51a3c9d790289cade9a6609af14f9d1e}} 
+\index{game@{game}!GAME\_MAP\_HEIGHT@{GAME\_MAP\_HEIGHT}}
+\index{GAME\_MAP\_HEIGHT@{GAME\_MAP\_HEIGHT}!game@{game}}
+\doxysubsubsection{\texorpdfstring{GAME\_MAP\_HEIGHT}{GAME\_MAP\_HEIGHT}}
+{\footnotesize\ttfamily constexpr float game\+::\+GAME\+\_\+\+MAP\+\_\+\+HEIGHT = \mbox{\hyperlink{namespacegame_a31101344334dbbe88a0c2fd3313f697a}{game\+::\+GAME\+\_\+\+BLOCKS\+\_\+\+WIDTH}} $\ast$ 80\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00029}{29}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
+
+\mbox{\Hypertarget{namespacegame_a569131e688ab3c4c2d185faa530d1d8b}\label{namespacegame_a569131e688ab3c4c2d185faa530d1d8b}} 
+\index{game@{game}!GAME\_MAP\_WIDTH@{GAME\_MAP\_WIDTH}}
+\index{GAME\_MAP\_WIDTH@{GAME\_MAP\_WIDTH}!game@{game}}
+\doxysubsubsection{\texorpdfstring{GAME\_MAP\_WIDTH}{GAME\_MAP\_WIDTH}}
+{\footnotesize\ttfamily constexpr float game\+::\+GAME\+\_\+\+MAP\+\_\+\+WIDTH = \mbox{\hyperlink{namespacegame_a31101344334dbbe88a0c2fd3313f697a}{game\+::\+GAME\+\_\+\+BLOCKS\+\_\+\+WIDTH}} $\ast$ 40\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00028}{28}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
+
+\mbox{\Hypertarget{namespacegame_a3e3f7a016b6727db463a1dde32c9c65c}\label{namespacegame_a3e3f7a016b6727db463a1dde32c9c65c}} 
+\index{game@{game}!HOUSE\_TILES\_NUMBER@{HOUSE\_TILES\_NUMBER}}
+\index{HOUSE\_TILES\_NUMBER@{HOUSE\_TILES\_NUMBER}!game@{game}}
+\doxysubsubsection{\texorpdfstring{HOUSE\_TILES\_NUMBER}{HOUSE\_TILES\_NUMBER}}
+{\footnotesize\ttfamily constexpr int game\+::\+HOUSE\+\_\+\+TILES\+\_\+\+NUMBER = 40 $\ast$ 80\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00030}{30}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
+
+\mbox{\Hypertarget{namespacegame_aee7ec3c00c3424386587b3f2f5bdf437}\label{namespacegame_aee7ec3c00c3424386587b3f2f5bdf437}} 
+\index{game@{game}!INVENTORY\_BLOCK\_WIDTH@{INVENTORY\_BLOCK\_WIDTH}}
+\index{INVENTORY\_BLOCK\_WIDTH@{INVENTORY\_BLOCK\_WIDTH}!game@{game}}
+\doxysubsubsection{\texorpdfstring{INVENTORY\_BLOCK\_WIDTH}{INVENTORY\_BLOCK\_WIDTH}}
+{\footnotesize\ttfamily constexpr int game\+::\+INVENTORY\+\_\+\+BLOCK\+\_\+\+WIDTH = 80\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00049}{49}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
+
 \mbox{\Hypertarget{namespacegame_ad60933589116204d8fea5cc921815b4c}\label{namespacegame_ad60933589116204d8fea5cc921815b4c}} 
 \index{game@{game}!PERSONAGE\_MOVE\_VELOCITY@{PERSONAGE\_MOVE\_VELOCITY}}
 \index{PERSONAGE\_MOVE\_VELOCITY@{PERSONAGE\_MOVE\_VELOCITY}!game@{game}}
 \doxysubsubsection{\texorpdfstring{PERSONAGE\_MOVE\_VELOCITY}{PERSONAGE\_MOVE\_VELOCITY}}
-{\footnotesize\ttfamily constexpr float game\+::\+PERSONAGE\+\_\+\+MOVE\+\_\+\+VELOCITY = 200.f\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily constexpr float game\+::\+PERSONAGE\+\_\+\+MOVE\+\_\+\+VELOCITY = 300.f\hspace{0.3cm}{\ttfamily [constexpr]}}
 
 
 
-Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00043}{43}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
+Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00023}{23}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
+
+\mbox{\Hypertarget{namespacegame_a8dc8e2b0032cd0aa80f18625c2af7a50}\label{namespacegame_a8dc8e2b0032cd0aa80f18625c2af7a50}} 
+\index{game@{game}!PERSONNAGE\_DETECTABILITY\_RADIUS@{PERSONNAGE\_DETECTABILITY\_RADIUS}}
+\index{PERSONNAGE\_DETECTABILITY\_RADIUS@{PERSONNAGE\_DETECTABILITY\_RADIUS}!game@{game}}
+\doxysubsubsection{\texorpdfstring{PERSONNAGE\_DETECTABILITY\_RADIUS}{PERSONNAGE\_DETECTABILITY\_RADIUS}}
+{\footnotesize\ttfamily constexpr int game\+::\+PERSONNAGE\+\_\+\+DETECTABILITY\+\_\+\+RADIUS = 16\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00042}{42}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
+
+\mbox{\Hypertarget{namespacegame_a170cbd165f05ad7fd18066f9892b4a58}\label{namespacegame_a170cbd165f05ad7fd18066f9892b4a58}} 
+\index{game@{game}!PERSONNAGE\_MAX\_HEALTH@{PERSONNAGE\_MAX\_HEALTH}}
+\index{PERSONNAGE\_MAX\_HEALTH@{PERSONNAGE\_MAX\_HEALTH}!game@{game}}
+\doxysubsubsection{\texorpdfstring{PERSONNAGE\_MAX\_HEALTH}{PERSONNAGE\_MAX\_HEALTH}}
+{\footnotesize\ttfamily constexpr int game\+::\+PERSONNAGE\+\_\+\+MAX\+\_\+\+HEALTH = 100\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00046}{46}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
+
+\mbox{\Hypertarget{namespacegame_a152e426c092a87b10c433230c2fff193}\label{namespacegame_a152e426c092a87b10c433230c2fff193}} 
+\index{game@{game}!PERSONNAGE\_MAX\_SPECIALITY@{PERSONNAGE\_MAX\_SPECIALITY}}
+\index{PERSONNAGE\_MAX\_SPECIALITY@{PERSONNAGE\_MAX\_SPECIALITY}!game@{game}}
+\doxysubsubsection{\texorpdfstring{PERSONNAGE\_MAX\_SPECIALITY}{PERSONNAGE\_MAX\_SPECIALITY}}
+{\footnotesize\ttfamily constexpr int game\+::\+PERSONNAGE\+\_\+\+MAX\+\_\+\+SPECIALITY = 100\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00047}{47}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
+
+\mbox{\Hypertarget{namespacegame_ab43b1ee77948fb60b4bf11469c925d98}\label{namespacegame_ab43b1ee77948fb60b4bf11469c925d98}} 
+\index{game@{game}!PERSONNAGE\_WIDTH@{PERSONNAGE\_WIDTH}}
+\index{PERSONNAGE\_WIDTH@{PERSONNAGE\_WIDTH}!game@{game}}
+\doxysubsubsection{\texorpdfstring{PERSONNAGE\_WIDTH}{PERSONNAGE\_WIDTH}}
+{\footnotesize\ttfamily constexpr int game\+::\+PERSONNAGE\+\_\+\+WIDTH = 32\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00044}{44}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
+
+\mbox{\Hypertarget{namespacegame_a856fac7c03d1453ffaf4a9c0c649722c}\label{namespacegame_a856fac7c03d1453ffaf4a9c0c649722c}} 
+\index{game@{game}!WALL\_HEIGHT@{WALL\_HEIGHT}}
+\index{WALL\_HEIGHT@{WALL\_HEIGHT}!game@{game}}
+\doxysubsubsection{\texorpdfstring{WALL\_HEIGHT}{WALL\_HEIGHT}}
+{\footnotesize\ttfamily constexpr int game\+::\+WALL\+\_\+\+HEIGHT = 32\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00034}{34}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
+
+\mbox{\Hypertarget{namespacegame_a0a7ab0e3e54d4d110ad489f223d91f14}\label{namespacegame_a0a7ab0e3e54d4d110ad489f223d91f14}} 
+\index{game@{game}!WALL\_WIDTH@{WALL\_WIDTH}}
+\index{WALL\_WIDTH@{WALL\_WIDTH}!game@{game}}
+\doxysubsubsection{\texorpdfstring{WALL\_WIDTH}{WALL\_WIDTH}}
+{\footnotesize\ttfamily constexpr int game\+::\+WALL\+\_\+\+WIDTH = 120\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00032}{32}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
+
+\mbox{\Hypertarget{namespacegame_a7e5a6e190446686addab44689f99a89b}\label{namespacegame_a7e5a6e190446686addab44689f99a89b}} 
+\index{game@{game}!WINDOW\_HEIGHT@{WINDOW\_HEIGHT}}
+\index{WINDOW\_HEIGHT@{WINDOW\_HEIGHT}!game@{game}}
+\doxysubsubsection{\texorpdfstring{WINDOW\_HEIGHT}{WINDOW\_HEIGHT}}
+{\footnotesize\ttfamily constexpr int game\+::\+WINDOW\+\_\+\+HEIGHT = 675\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00022}{22}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
+
+\mbox{\Hypertarget{namespacegame_a8024671adc6f9b0fe39789a8ea5a357a}\label{namespacegame_a8024671adc6f9b0fe39789a8ea5a357a}} 
+\index{game@{game}!WINDOW\_WIDTH@{WINDOW\_WIDTH}}
+\index{WINDOW\_WIDTH@{WINDOW\_WIDTH}!game@{game}}
+\doxysubsubsection{\texorpdfstring{WINDOW\_WIDTH}{WINDOW\_WIDTH}}
+{\footnotesize\ttfamily constexpr int game\+::\+WINDOW\+\_\+\+WIDTH = 1200\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{consts_8hpp_source_l00021}{21}} du fichier \mbox{\hyperlink{consts_8hpp_source}{consts.\+hpp}}.
 

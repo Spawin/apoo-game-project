@@ -17,16 +17,11 @@ Graphe d\textquotesingle{}héritage de Game\+Map\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_game_map_a85d51ef20c2d27f11c739ff02d5717c3}{$\sim$\+Game\+Map}} ()
 \item 
+virtual const int $\ast$ \mbox{\hyperlink{class_game_map_a9236c099519fb97babcceb6f1923c2af}{get\+Disposition}} () const =0
+\item 
 bool \mbox{\hyperlink{class_game_map_a574501859cc67c40fe14a722633ca4e2}{load}} (const std\+::string \&tileset, sf\+::\+Vector2u tile\+Size, const int $\ast$tiles, unsigned int width, unsigned int height)
-\item 
+\begin{DoxyCompactList}\small\item\em Remove after. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_game_map_afa00d7a664494a7b8cb3e96f86ff3fc2}{load}} (const std\+::string \&tileset, sf\+::\+Vector2u $\ast$tile\+Size, sf\+::\+Vector2u $\ast$tiles\+Start, const int $\ast$tiles, unsigned int width, unsigned int height, int count)
-\end{DoxyCompactItemize}
-\doxysubsection*{Fonctions membres publiques statiques}
-\begin{DoxyCompactItemize}
-\item 
-static float \mbox{\hyperlink{class_game_map_ababbd90ae6aef61967528cd04bd91e83}{get\+GAME\+\_\+\+MAP\+\_\+\+WIDTH}} ()
-\item 
-static float \mbox{\hyperlink{class_game_map_a8a00f063b5d3ed56f4eb3e8d76a95028}{get\+GAME\+\_\+\+MAP\+\_\+\+HEIGHT}} ()
 \end{DoxyCompactItemize}
 
 
@@ -46,7 +41,7 @@ Définition à la ligne \mbox{\hyperlink{_game_map_8hpp_source_l00004}{4}} du fi
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_map_8cpp_source_l00006}{6}} du fichier \mbox{\hyperlink{_game_map_8cpp_source}{Game\+Map.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_map_8cpp_source_l00005}{5}} du fichier \mbox{\hyperlink{_game_map_8cpp_source}{Game\+Map.\+cpp}}.
 
 \mbox{\Hypertarget{class_game_map_a85d51ef20c2d27f11c739ff02d5717c3}\label{class_game_map_a85d51ef20c2d27f11c739ff02d5717c3}} 
 \index{GameMap@{GameMap}!````~GameMap@{$\sim$GameMap}}
@@ -56,30 +51,20 @@ Définition à la ligne \mbox{\hyperlink{_game_map_8cpp_source_l00006}{6}} du fi
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_map_8cpp_source_l00010}{10}} du fichier \mbox{\hyperlink{_game_map_8cpp_source}{Game\+Map.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_map_8cpp_source_l00009}{9}} du fichier \mbox{\hyperlink{_game_map_8cpp_source}{Game\+Map.\+cpp}}.
 
 
 
 \doxysubsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_game_map_a8a00f063b5d3ed56f4eb3e8d76a95028}\label{class_game_map_a8a00f063b5d3ed56f4eb3e8d76a95028}} 
-\index{GameMap@{GameMap}!getGAME\_MAP\_HEIGHT@{getGAME\_MAP\_HEIGHT}}
-\index{getGAME\_MAP\_HEIGHT@{getGAME\_MAP\_HEIGHT}!GameMap@{GameMap}}
-\doxysubsubsection{\texorpdfstring{getGAME\_MAP\_HEIGHT()}{getGAME\_MAP\_HEIGHT()}}
-{\footnotesize\ttfamily float Game\+Map\+::get\+GAME\+\_\+\+MAP\+\_\+\+HEIGHT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\mbox{\Hypertarget{class_game_map_a9236c099519fb97babcceb6f1923c2af}\label{class_game_map_a9236c099519fb97babcceb6f1923c2af}} 
+\index{GameMap@{GameMap}!getDisposition@{getDisposition}}
+\index{getDisposition@{getDisposition}!GameMap@{GameMap}}
+\doxysubsubsection{\texorpdfstring{getDisposition()}{getDisposition()}}
+{\footnotesize\ttfamily virtual const int $\ast$ Game\+Map\+::get\+Disposition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_map_8cpp_source_l00018}{18}} du fichier \mbox{\hyperlink{_game_map_8cpp_source}{Game\+Map.\+cpp}}.
-
-\mbox{\Hypertarget{class_game_map_ababbd90ae6aef61967528cd04bd91e83}\label{class_game_map_ababbd90ae6aef61967528cd04bd91e83}} 
-\index{GameMap@{GameMap}!getGAME\_MAP\_WIDTH@{getGAME\_MAP\_WIDTH}}
-\index{getGAME\_MAP\_WIDTH@{getGAME\_MAP\_WIDTH}!GameMap@{GameMap}}
-\doxysubsubsection{\texorpdfstring{getGAME\_MAP\_WIDTH()}{getGAME\_MAP\_WIDTH()}}
-{\footnotesize\ttfamily float Game\+Map\+::get\+GAME\+\_\+\+MAP\+\_\+\+WIDTH (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Définition à la ligne \mbox{\hyperlink{_game_map_8cpp_source_l00014}{14}} du fichier \mbox{\hyperlink{_game_map_8cpp_source}{Game\+Map.\+cpp}}.
+Implémenté dans \mbox{\hyperlink{class_house_aacc9378d5bccdbafce72925e569bfe24}{House}}.
 
 \mbox{\Hypertarget{class_game_map_afa00d7a664494a7b8cb3e96f86ff3fc2}\label{class_game_map_afa00d7a664494a7b8cb3e96f86ff3fc2}} 
 \index{GameMap@{GameMap}!load@{load}}
@@ -111,7 +96,7 @@ false
 \end{DoxyReturn}
 
 
-Définition à la ligne \mbox{\hyperlink{_game_map_8cpp_source_l00067}{67}} du fichier \mbox{\hyperlink{_game_map_8cpp_source}{Game\+Map.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_game_map_8cpp_source_l00058}{58}} du fichier \mbox{\hyperlink{_game_map_8cpp_source}{Game\+Map.\+cpp}}.
 
 \mbox{\Hypertarget{class_game_map_a574501859cc67c40fe14a722633ca4e2}\label{class_game_map_a574501859cc67c40fe14a722633ca4e2}} 
 \index{GameMap@{GameMap}!load@{load}}
@@ -121,11 +106,20 @@ Définition à la ligne \mbox{\hyperlink{_game_map_8cpp_source_l00067}{67}} du f
 
 
 
-Définition à la ligne \mbox{\hyperlink{_game_map_8cpp_source_l00023}{23}} du fichier \mbox{\hyperlink{_game_map_8cpp_source}{Game\+Map.\+cpp}}.
+Remove after. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em height,float} & const\& screen\+Scaling\+Factor \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \mbox{\hyperlink{_game_map_8cpp_source_l00014}{14}} du fichier \mbox{\hyperlink{_game_map_8cpp_source}{Game\+Map.\+cpp}}.
 
 
 
 La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{_game_map_8hpp}{Game\+Map.\+hpp}}\item 
-include/\mbox{\hyperlink{_game_map_8cpp}{Game\+Map.\+cpp}}\end{DoxyCompactItemize}
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_game_map_8hpp}{Game\+Map.\+hpp}}\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_game_map_8cpp}{Game\+Map.\+cpp}}\end{DoxyCompactItemize}

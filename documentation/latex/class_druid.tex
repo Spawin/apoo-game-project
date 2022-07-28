@@ -7,7 +7,7 @@
 Graphe d\textquotesingle{}héritage de Druid\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.000000cm]{class_druid}
+\includegraphics[height=4.000000cm]{class_druid}
 \end{center}
 \end{figure}
 \doxysubsection*{Fonctions membres publiques}
@@ -16,7 +16,19 @@ Graphe d\textquotesingle{}héritage de Druid\+:\begin{figure}[H]
 \mbox{\hyperlink{class_druid_ac8f9ce302f72833350283f6e02e77264}{Druid}} ()
 \item 
 \mbox{\hyperlink{class_druid_a905a2d595511f879c404b69e862129c0}{$\sim$\+Druid}} ()
-\end{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_druid_a3cb1c28741c04842a3921aba312c090e}{simple\+Attack}} (\mbox{\hyperlink{class_personage}{Personage}} \&target) override
+\item 
+virtual void \mbox{\hyperlink{class_druid_ae2aa55867c1f8954659636a373f873e7}{special\+Attack}} (\mbox{\hyperlink{class_personage}{Personage}} \&target) override
+\item 
+virtual unsigned \mbox{\hyperlink{class_druid_af5bd046f411f27d58e3ad4cf57189177}{receive\+Health\+Damage}} (int value) override
+\begin{DoxyCompactList}\small\item\em pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) \end{DoxyCompactList}\item 
+virtual unsigned \mbox{\hyperlink{class_druid_aa7cfac7dabbcbd554967aa4533daca0f}{receive\+Exp\+Damage}} (int value) override
+\begin{DoxyCompactList}\small\item\em pour recevoir les dégats d\textquotesingle{}exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) \end{DoxyCompactList}\item 
+virtual unsigned \mbox{\hyperlink{class_druid_a134363b5cacc53bc4a73dc57612c97f7}{receive\+Health\+Care}} (int value) override
+\begin{DoxyCompactList}\small\item\em pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) \end{DoxyCompactList}\item 
+virtual unsigned \mbox{\hyperlink{class_druid_a3d9802ec7808c417c264f08270a41e36}{receive\+Exp\+Care}} (int value) override
+\begin{DoxyCompactList}\small\item\em pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Membres hérités additionnels}
 
 
@@ -36,7 +48,7 @@ Définition à la ligne \mbox{\hyperlink{_druid_8hpp_source_l00006}{6}} du fichi
 
 
 
-Définition à la ligne \mbox{\hyperlink{_druid_8cpp_source_l00009}{9}} du fichier \mbox{\hyperlink{_druid_8cpp_source}{Druid.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_druid_8cpp_source_l00014}{14}} du fichier \mbox{\hyperlink{_druid_8cpp_source}{Druid.\+cpp}}.
 
 \mbox{\Hypertarget{class_druid_a905a2d595511f879c404b69e862129c0}\label{class_druid_a905a2d595511f879c404b69e862129c0}} 
 \index{Druid@{Druid}!````~Druid@{$\sim$Druid}}
@@ -46,11 +58,138 @@ Définition à la ligne \mbox{\hyperlink{_druid_8cpp_source_l00009}{9}} du fichi
 
 
 
-Définition à la ligne \mbox{\hyperlink{_druid_8cpp_source_l00013}{13}} du fichier \mbox{\hyperlink{_druid_8cpp_source}{Druid.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_druid_8cpp_source_l00019}{19}} du fichier \mbox{\hyperlink{_druid_8cpp_source}{Druid.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_druid_a3d9802ec7808c417c264f08270a41e36}\label{class_druid_a3d9802ec7808c417c264f08270a41e36}} 
+\index{Druid@{Druid}!receiveExpCare@{receiveExpCare}}
+\index{receiveExpCare@{receiveExpCare}!Druid@{Druid}}
+\doxysubsubsection{\texorpdfstring{receiveExpCare()}{receiveExpCare()}}
+{\footnotesize\ttfamily unsigned Druid\+::receive\+Exp\+Care (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+unsigned 
+\end{DoxyReturn}
+
+
+Implémente \mbox{\hyperlink{class_personage_a5e247c0fc009659808e3be549cbb54e7}{Personage}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_druid_8cpp_source_l00030}{30}} du fichier \mbox{\hyperlink{_druid_8cpp_source}{Druid.\+cpp}}.
+
+\mbox{\Hypertarget{class_druid_aa7cfac7dabbcbd554967aa4533daca0f}\label{class_druid_aa7cfac7dabbcbd554967aa4533daca0f}} 
+\index{Druid@{Druid}!receiveExpDamage@{receiveExpDamage}}
+\index{receiveExpDamage@{receiveExpDamage}!Druid@{Druid}}
+\doxysubsubsection{\texorpdfstring{receiveExpDamage()}{receiveExpDamage()}}
+{\footnotesize\ttfamily unsigned Druid\+::receive\+Exp\+Damage (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+pour recevoir les dégats d\textquotesingle{}exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+unsigned 
+\end{DoxyReturn}
+
+
+Implémente \mbox{\hyperlink{class_personage_a74a713ccc0ab68213086699330abeadc}{Personage}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_druid_8cpp_source_l00026}{26}} du fichier \mbox{\hyperlink{_druid_8cpp_source}{Druid.\+cpp}}.
+
+\mbox{\Hypertarget{class_druid_a134363b5cacc53bc4a73dc57612c97f7}\label{class_druid_a134363b5cacc53bc4a73dc57612c97f7}} 
+\index{Druid@{Druid}!receiveHealthCare@{receiveHealthCare}}
+\index{receiveHealthCare@{receiveHealthCare}!Druid@{Druid}}
+\doxysubsubsection{\texorpdfstring{receiveHealthCare()}{receiveHealthCare()}}
+{\footnotesize\ttfamily unsigned Druid\+::receive\+Health\+Care (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+unsigned 
+\end{DoxyReturn}
+
+
+Implémente \mbox{\hyperlink{class_personage_a6e442afbcc6eb7fc843478cbd66ad21b}{Personage}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_druid_8cpp_source_l00028}{28}} du fichier \mbox{\hyperlink{_druid_8cpp_source}{Druid.\+cpp}}.
+
+\mbox{\Hypertarget{class_druid_af5bd046f411f27d58e3ad4cf57189177}\label{class_druid_af5bd046f411f27d58e3ad4cf57189177}} 
+\index{Druid@{Druid}!receiveHealthDamage@{receiveHealthDamage}}
+\index{receiveHealthDamage@{receiveHealthDamage}!Druid@{Druid}}
+\doxysubsubsection{\texorpdfstring{receiveHealthDamage()}{receiveHealthDamage()}}
+{\footnotesize\ttfamily unsigned Druid\+::receive\+Health\+Damage (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+unsigned 
+\end{DoxyReturn}
+
+
+Implémente \mbox{\hyperlink{class_personage_a5a60566d579586450b87ac815d270f3c}{Personage}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_druid_8cpp_source_l00024}{24}} du fichier \mbox{\hyperlink{_druid_8cpp_source}{Druid.\+cpp}}.
+
+\mbox{\Hypertarget{class_druid_a3cb1c28741c04842a3921aba312c090e}\label{class_druid_a3cb1c28741c04842a3921aba312c090e}} 
+\index{Druid@{Druid}!simpleAttack@{simpleAttack}}
+\index{simpleAttack@{simpleAttack}!Druid@{Druid}}
+\doxysubsubsection{\texorpdfstring{simpleAttack()}{simpleAttack()}}
+{\footnotesize\ttfamily virtual void Druid\+::simple\+Attack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_personage}{Personage}} \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_personage_a1dade2c8ec548dd2df7791252719fe1d}{Personage}}.
+
+\mbox{\Hypertarget{class_druid_ae2aa55867c1f8954659636a373f873e7}\label{class_druid_ae2aa55867c1f8954659636a373f873e7}} 
+\index{Druid@{Druid}!specialAttack@{specialAttack}}
+\index{specialAttack@{specialAttack}!Druid@{Druid}}
+\doxysubsubsection{\texorpdfstring{specialAttack()}{specialAttack()}}
+{\footnotesize\ttfamily virtual void Druid\+::special\+Attack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_personage}{Personage}} \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_personage_a71f84a092284e295db1de628af4e918d}{Personage}}.
 
 
 
 La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{_druid_8hpp}{Druid.\+hpp}}\item 
-include/\mbox{\hyperlink{_druid_8cpp}{Druid.\+cpp}}\end{DoxyCompactItemize}
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_druid_8hpp}{Druid.\+hpp}}\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_druid_8cpp}{Druid.\+cpp}}\end{DoxyCompactItemize}

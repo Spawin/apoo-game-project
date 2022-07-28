@@ -1,0 +1,234 @@
+\hypertarget{class_not_movable_game_object}{}\doxysection{Référence de la classe Not\+Movable\+Game\+Object}
+\label{class_not_movable_game_object}\index{NotMovableGameObject@{NotMovableGameObject}}
+
+
+Represente les objets imobiles. NOTE -\/ Certains de ces Object Peuvent être déplacée ou transporté par un Personnage par exemple.  
+
+
+
+
+{\ttfamily \#include $<$Not\+Movable\+Game\+Object.\+hpp$>$}
+
+Graphe d\textquotesingle{}héritage de Not\+Movable\+Game\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.566879cm]{class_not_movable_game_object}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_not_movable_game_object_ac0342d254de36c3f555c34247bcb26b3}{Not\+Movable\+Game\+Object}} (std\+::string\+\_\+view const \&image\+Sprite\+Path)
+\item 
+\mbox{\hyperlink{class_not_movable_game_object_a46259bb4d181146b66bf1aa787a71222}{$\sim$\+Not\+Movable\+Game\+Object}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_not_movable_game_object_aa788f5bb11af921baaa8c12b2b69b4b6}{add\+To\+Hall}} (\mbox{\hyperlink{class_hall}{Hall}} $\ast$\mbox{\hyperlink{class_not_movable_game_object_a91a3d24f39bf2f96b4092fc1573e525a}{hall}})
+\begin{DoxyCompactList}\small\item\em Déplacer un objet vers une salle est virtuel pour permettre de récrire la fonction et spécifier peut être des conditions de déplacement. NOTE -\/ Cet déplacement ne concerne pas le chagement des cordonnes mais juste l\textquotesingle{}éta d\textquotesingle{}appartenance. Néanmoins c\textquotesingle{}est à partir d\textquotesingle{}elle qu\textquotesingle{}on informe l\textquotesingle{}object des nouvelles limites de mouvement. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_not_movable_game_object_a203fd11b9476996adcd1345b9d8a8d61}{show}} (sf\+::\+Render\+Target \&window)
+\begin{DoxyCompactList}\small\item\em Pour dessiner l\textquotesingle{}élement dans la fenêtre. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_not_movable_game_object_a4954c3c803930ca5faf48bab88fb19bd}{on\+Collision\+Enter}} (\mbox{\hyperlink{class_collision}{Collision}} const \&collision) const =0
+\begin{DoxyCompactList}\small\item\em émit quand il entre en contacte avec un autre élément \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_not_movable_game_object_aafd50ee8f5e31bd1f4dfb4bd95053267}{update}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_not_movable_game_object_aca3c2dfcd7875f888650bb06d549bd2e}{init\+Position}} (float posX, float posY) override
+\item 
+virtual void \mbox{\hyperlink{class_not_movable_game_object_ad1d21edd47d563f733223b390bbdd969}{set\+Position\+Movement\+Limit}} (const \mbox{\hyperlink{class_hall}{Hall}} $\ast$\mbox{\hyperlink{class_not_movable_game_object_a91a3d24f39bf2f96b4092fc1573e525a}{hall}})
+\begin{DoxyCompactList}\small\item\em Met à jour les nouvelle limite de déplacement. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_not_movable_game_object_a1ae6701a400e4455cb28936d4f1cd30d}{update\+Position}} (float posX, float posY)=0
+\begin{DoxyCompactList}\small\item\em Permet de mettre à jour la position actuelle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{class_hall}{Hall}} $\ast$ \mbox{\hyperlink{class_not_movable_game_object_a91a3d24f39bf2f96b4092fc1573e525a}{hall}}
+\begin{DoxyCompactList}\small\item\em Initialiser animation\+Component et les animations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Membres hérités additionnels}
+
+
+\doxysubsection{Description détaillée}
+Represente les objets imobiles. NOTE -\/ Certains de ces Object Peuvent être déplacée ou transporté par un Personnage par exemple. 
+
+Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8hpp_source_l00021}{21}} du fichier \mbox{\hyperlink{_not_movable_game_object_8hpp_source}{Not\+Movable\+Game\+Object.\+hpp}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_not_movable_game_object_ac0342d254de36c3f555c34247bcb26b3}\label{class_not_movable_game_object_ac0342d254de36c3f555c34247bcb26b3}} 
+\index{NotMovableGameObject@{NotMovableGameObject}!NotMovableGameObject@{NotMovableGameObject}}
+\index{NotMovableGameObject@{NotMovableGameObject}!NotMovableGameObject@{NotMovableGameObject}}
+\doxysubsubsection{\texorpdfstring{NotMovableGameObject()}{NotMovableGameObject()}}
+{\footnotesize\ttfamily Not\+Movable\+Game\+Object\+::\+Not\+Movable\+Game\+Object (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view const \&}]{image\+Sprite\+Path }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8cpp_source_l00013}{13}} du fichier \mbox{\hyperlink{_not_movable_game_object_8cpp_source}{Not\+Movable\+Game\+Object.\+cpp}}.
+
+\mbox{\Hypertarget{class_not_movable_game_object_a46259bb4d181146b66bf1aa787a71222}\label{class_not_movable_game_object_a46259bb4d181146b66bf1aa787a71222}} 
+\index{NotMovableGameObject@{NotMovableGameObject}!````~NotMovableGameObject@{$\sim$NotMovableGameObject}}
+\index{````~NotMovableGameObject@{$\sim$NotMovableGameObject}!NotMovableGameObject@{NotMovableGameObject}}
+\doxysubsubsection{\texorpdfstring{$\sim$NotMovableGameObject()}{~NotMovableGameObject()}}
+{\footnotesize\ttfamily Not\+Movable\+Game\+Object\+::$\sim$\+Not\+Movable\+Game\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8cpp_source_l00019}{19}} du fichier \mbox{\hyperlink{_not_movable_game_object_8cpp_source}{Not\+Movable\+Game\+Object.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_not_movable_game_object_aa788f5bb11af921baaa8c12b2b69b4b6}\label{class_not_movable_game_object_aa788f5bb11af921baaa8c12b2b69b4b6}} 
+\index{NotMovableGameObject@{NotMovableGameObject}!addToHall@{addToHall}}
+\index{addToHall@{addToHall}!NotMovableGameObject@{NotMovableGameObject}}
+\doxysubsubsection{\texorpdfstring{addToHall()}{addToHall()}}
+{\footnotesize\ttfamily bool Not\+Movable\+Game\+Object\+::add\+To\+Hall (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hall}{Hall}} $\ast$}]{hall }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Déplacer un objet vers une salle est virtuel pour permettre de récrire la fonction et spécifier peut être des conditions de déplacement. NOTE -\/ Cet déplacement ne concerne pas le chagement des cordonnes mais juste l\textquotesingle{}éta d\textquotesingle{}appartenance. Néanmoins c\textquotesingle{}est à partir d\textquotesingle{}elle qu\textquotesingle{}on informe l\textquotesingle{}object des nouvelles limites de mouvement. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em hall} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true Si le déplacement s\textquotesingle{}est effectué avec succès 
+
+false Si le déplacement n\textquotesingle{}a pas eu lieu 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8cpp_source_l00037}{37}} du fichier \mbox{\hyperlink{_not_movable_game_object_8cpp_source}{Not\+Movable\+Game\+Object.\+cpp}}.
+
+\mbox{\Hypertarget{class_not_movable_game_object_aca3c2dfcd7875f888650bb06d549bd2e}\label{class_not_movable_game_object_aca3c2dfcd7875f888650bb06d549bd2e}} 
+\index{NotMovableGameObject@{NotMovableGameObject}!initPosition@{initPosition}}
+\index{initPosition@{initPosition}!NotMovableGameObject@{NotMovableGameObject}}
+\doxysubsubsection{\texorpdfstring{initPosition()}{initPosition()}}
+{\footnotesize\ttfamily void Not\+Movable\+Game\+Object\+::init\+Position (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_game_object_ad860b401fa64188046b2b7019e006283}{Game\+Object}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8cpp_source_l00006}{6}} du fichier \mbox{\hyperlink{_not_movable_game_object_8cpp_source}{Not\+Movable\+Game\+Object.\+cpp}}.
+
+\mbox{\Hypertarget{class_not_movable_game_object_a4954c3c803930ca5faf48bab88fb19bd}\label{class_not_movable_game_object_a4954c3c803930ca5faf48bab88fb19bd}} 
+\index{NotMovableGameObject@{NotMovableGameObject}!onCollisionEnter@{onCollisionEnter}}
+\index{onCollisionEnter@{onCollisionEnter}!NotMovableGameObject@{NotMovableGameObject}}
+\doxysubsubsection{\texorpdfstring{onCollisionEnter()}{onCollisionEnter()}}
+{\footnotesize\ttfamily virtual void Not\+Movable\+Game\+Object\+::on\+Collision\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collision}{Collision}} const \&}]{collision }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+émit quand il entre en contacte avec un autre élément 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em collision} & \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \mbox{\hyperlink{class_game_object_a394309d681a8e5eb59656029a32881de}{Game\+Object}}.
+
+
+
+Implémenté dans \mbox{\hyperlink{class_item_ab2a2e5e2b20b61602e8edf0e4e573599}{Item}}, \mbox{\hyperlink{class_bag_a0b6b0d7335ce631d81b785c63c959e1e}{Bag}}, \mbox{\hyperlink{class_money_af14a2e8f1f215da2cda5c833f25818e5}{Money}}, \mbox{\hyperlink{class_shield_af82912a68032d931aba13f28004568fd}{Shield}}, \mbox{\hyperlink{class_sword_a6484ea989954570c9ece11d9843e72d1}{Sword}}, et \mbox{\hyperlink{class_vial_ace9277c2d5c91183ed1357eff154cc1b}{Vial}}.
+
+\mbox{\Hypertarget{class_not_movable_game_object_ad1d21edd47d563f733223b390bbdd969}\label{class_not_movable_game_object_ad1d21edd47d563f733223b390bbdd969}} 
+\index{NotMovableGameObject@{NotMovableGameObject}!setPositionMovementLimit@{setPositionMovementLimit}}
+\index{setPositionMovementLimit@{setPositionMovementLimit}!NotMovableGameObject@{NotMovableGameObject}}
+\doxysubsubsection{\texorpdfstring{setPositionMovementLimit()}{setPositionMovementLimit()}}
+{\footnotesize\ttfamily void Not\+Movable\+Game\+Object\+::set\+Position\+Movement\+Limit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hall}{Hall}} $\ast$}]{hall }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Met à jour les nouvelle limite de déplacement. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em hall} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8cpp_source_l00049}{49}} du fichier \mbox{\hyperlink{_not_movable_game_object_8cpp_source}{Not\+Movable\+Game\+Object.\+cpp}}.
+
+\mbox{\Hypertarget{class_not_movable_game_object_a203fd11b9476996adcd1345b9d8a8d61}\label{class_not_movable_game_object_a203fd11b9476996adcd1345b9d8a8d61}} 
+\index{NotMovableGameObject@{NotMovableGameObject}!show@{show}}
+\index{show@{show}!NotMovableGameObject@{NotMovableGameObject}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily void Not\+Movable\+Game\+Object\+::show (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pour dessiner l\textquotesingle{}élement dans la fenêtre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Réimplémentée à partir de \mbox{\hyperlink{class_game_object_a3f7a674006e1cce96ccb6c60f0ff9aaf}{Game\+Object}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8cpp_source_l00044}{44}} du fichier \mbox{\hyperlink{_not_movable_game_object_8cpp_source}{Not\+Movable\+Game\+Object.\+cpp}}.
+
+\mbox{\Hypertarget{class_not_movable_game_object_aafd50ee8f5e31bd1f4dfb4bd95053267}\label{class_not_movable_game_object_aafd50ee8f5e31bd1f4dfb4bd95053267}} 
+\index{NotMovableGameObject@{NotMovableGameObject}!update@{update}}
+\index{update@{update}!NotMovableGameObject@{NotMovableGameObject}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void Not\+Movable\+Game\+Object\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_game_object_ae83128d0e0efef691417779605ee037c}{Game\+Object}}.
+
+
+
+Implémenté dans \mbox{\hyperlink{class_bag_a790dadd6a2d45469cccd653ff5dd2317}{Bag}}, \mbox{\hyperlink{class_money_a9914e11ab0b3630f54b3711b3ef8cad8}{Money}}, \mbox{\hyperlink{class_shield_a22cfa66fa754653dd24c00bd13678b18}{Shield}}, \mbox{\hyperlink{class_sword_a4b650c68af5552a2f0d995b5fe3af3fc}{Sword}}, \mbox{\hyperlink{class_vial_ad00a07bd850ba8cec2ee0cb2164fe820}{Vial}}, et \mbox{\hyperlink{class_item_a5e7b6054dbde86c485f1be747cb9926c}{Item}}.
+
+\mbox{\Hypertarget{class_not_movable_game_object_a1ae6701a400e4455cb28936d4f1cd30d}\label{class_not_movable_game_object_a1ae6701a400e4455cb28936d4f1cd30d}} 
+\index{NotMovableGameObject@{NotMovableGameObject}!updatePosition@{updatePosition}}
+\index{updatePosition@{updatePosition}!NotMovableGameObject@{NotMovableGameObject}}
+\doxysubsubsection{\texorpdfstring{updatePosition()}{updatePosition()}}
+{\footnotesize\ttfamily virtual void Not\+Movable\+Game\+Object\+::update\+Position (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Permet de mettre à jour la position actuelle. 
+
+
+
+Implémenté dans \mbox{\hyperlink{class_item_a4b98f05632e3641263c3d8f6fe26e58e}{Item}}.
+
+
+
+\doxysubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_not_movable_game_object_a91a3d24f39bf2f96b4092fc1573e525a}\label{class_not_movable_game_object_a91a3d24f39bf2f96b4092fc1573e525a}} 
+\index{NotMovableGameObject@{NotMovableGameObject}!hall@{hall}}
+\index{hall@{hall}!NotMovableGameObject@{NotMovableGameObject}}
+\doxysubsubsection{\texorpdfstring{hall}{hall}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_hall}{Hall}}$\ast$ Not\+Movable\+Game\+Object\+::hall\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Initialiser animation\+Component et les animations. 
+
+Ce pointeur ne doit pas être supprimé à ce niveau 
+
+Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8hpp_source_l00067}{67}} du fichier \mbox{\hyperlink{_not_movable_game_object_8hpp_source}{Not\+Movable\+Game\+Object.\+hpp}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_not_movable_game_object_8hpp}{Not\+Movable\+Game\+Object.\+hpp}}\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_not_movable_game_object_8cpp}{Not\+Movable\+Game\+Object.\+cpp}}\end{DoxyCompactItemize}

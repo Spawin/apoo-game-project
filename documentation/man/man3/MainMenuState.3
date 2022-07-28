@@ -1,0 +1,92 @@
+.TH "MainMenuState" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MainMenuState
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MainMenuState\&.hpp>\fP
+.PP
+Est dérivée de \fBState\fP\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBMainMenuState\fP (\fBStateData\fP *\fBstateData\fP)"
+.br
+.ti -1c
+.RI "\fB~MainMenuState\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBupdateSFMLEvents\fP (const sf::Event &sfEvent) override"
+.br
+.ti -1c
+.RI "void \fBupdateInput\fP (const float &deltaTime) override"
+.br
+.ti -1c
+.RI "void \fBupdateButtons\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (const float &deltaTime) override"
+.br
+.ti -1c
+.RI "void \fBrenderButtons\fP (sf::RenderTarget &target)"
+.br
+.ti -1c
+.RI "void \fBrender\fP (sf::RenderTarget *target=nullptr) override"
+.br
+.in -1c
+.SS "Membres hérités additionnels"
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB7\fP du fichier \fBMainMenuState\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "MainMenuState::MainMenuState (\fBStateData\fP * stateData)"
+
+.PP
+Définition à la ligne \fB101\fP du fichier \fBMainMenuState\&.cpp\fP\&.
+.SS "MainMenuState::~MainMenuState ()"
+
+.PP
+Définition à la ligne \fB111\fP du fichier \fBMainMenuState\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void MainMenuState::render (sf::RenderTarget * target = \fCnullptr\fP)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implémente \fBState\fP\&.
+.PP
+Définition à la ligne \fB198\fP du fichier \fBMainMenuState\&.cpp\fP\&.
+.SS "void MainMenuState::renderButtons (sf::RenderTarget & target)"
+
+.PP
+Définition à la ligne \fB190\fP du fichier \fBMainMenuState\&.cpp\fP\&.
+.SS "void MainMenuState::update (const float & deltaTime)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implémente \fBState\fP\&.
+.PP
+Définition à la ligne \fB182\fP du fichier \fBMainMenuState\&.cpp\fP\&.
+.SS "void MainMenuState::updateButtons ()"
+
+.PP
+Définition à la ligne \fB142\fP du fichier \fBMainMenuState\&.cpp\fP\&.
+.SS "void MainMenuState::updateInput (const float & deltaTime)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implémente \fBState\fP\&.
+.PP
+Définition à la ligne \fB127\fP du fichier \fBMainMenuState\&.cpp\fP\&.
+.SS "void MainMenuState::updateSFMLEvents (const sf::Event & sfEvent)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implémente \fBState\fP\&.
+.PP
+Définition à la ligne \fB134\fP du fichier \fBMainMenuState\&.cpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

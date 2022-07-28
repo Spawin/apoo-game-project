@@ -1,0 +1,110 @@
+.TH "MyVector" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MyVector
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MyVector\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "void \fBoperator+=\fP (\fBMyVector\fP const &v)"
+.br
+.ti -1c
+.RI "void \fBoperator\-=\fP (\fBMyVector\fP const &v)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (\fBMyVector\fP const &v)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (sf::Vector2f const &v)"
+.br
+.ti -1c
+.RI "\fBMyVector\fP \fBoperator*\fP (float coefficient) const"
+.br
+.ti -1c
+.RI "sf::Vector2f \fBtoVector2f\fP ()"
+.br
+.in -1c
+.SS "Fonctions membres publiques statiques"
+
+.in +1c
+.ti -1c
+.RI "static \fBMyVector\fP \fBcreateFromAngle\fP (float simpleSize, float angleInDegree)"
+.br
+.in -1c
+.SS "Attributs publics"
+
+.in +1c
+.ti -1c
+.RI "float \fBx\fP { 0\&.f }"
+.br
+.ti -1c
+.RI "float \fBy\fP { 0\&.f }"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB8\fP du fichier \fBMyVector\&.hpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "\fBMyVector\fP MyVector::createFromAngle (float simpleSize, float angleInDegree)\fC [static]\fP"
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fIsimpleSize\fP taille 
+.br
+\fIangleInDegree\fP angle en degrée 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+\fBMyVector\fP 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB30\fP du fichier \fBMyVector\&.cpp\fP\&.
+.SS "bool MyVector::operator!= (sf::Vector2f const & v)"
+
+.PP
+Définition à la ligne \fB20\fP du fichier \fBMyVector\&.cpp\fP\&.
+.SS "\fBMyVector\fP MyVector::operator* (float coefficient) const"
+
+.PP
+Définition à la ligne \fB25\fP du fichier \fBMyVector\&.cpp\fP\&.
+.SS "void MyVector::operator+= (\fBMyVector\fP const & v)"
+
+.PP
+Définition à la ligne \fB3\fP du fichier \fBMyVector\&.cpp\fP\&.
+.SS "void MyVector::operator\-= (\fBMyVector\fP const & v)"
+
+.PP
+Définition à la ligne \fB9\fP du fichier \fBMyVector\&.cpp\fP\&.
+.SS "bool MyVector::operator== (\fBMyVector\fP const & v)"
+
+.PP
+Définition à la ligne \fB15\fP du fichier \fBMyVector\&.cpp\fP\&.
+.SS "sf::Vector2f MyVector::toVector2f ()"
+
+.PP
+Définition à la ligne \fB36\fP du fichier \fBMyVector\&.cpp\fP\&.
+.SH "Documentation des données membres"
+.PP 
+.SS "float MyVector::x { 0\&.f }"
+
+.PP
+Définition à la ligne \fB23\fP du fichier \fBMyVector\&.hpp\fP\&.
+.SS "float MyVector::y { 0\&.f }"
+
+.PP
+Définition à la ligne \fB24\fP du fichier \fBMyVector\&.hpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

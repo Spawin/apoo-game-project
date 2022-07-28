@@ -7,7 +7,7 @@
 Graphe d\textquotesingle{}héritage de Religious\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.000000cm]{class_religious}
+\includegraphics[height=4.000000cm]{class_religious}
 \end{center}
 \end{figure}
 \doxysubsection*{Fonctions membres publiques}
@@ -16,7 +16,19 @@ Graphe d\textquotesingle{}héritage de Religious\+:\begin{figure}[H]
 \mbox{\hyperlink{class_religious_affb894a6e1b8abfdf90061483a370e44}{Religious}} ()
 \item 
 \mbox{\hyperlink{class_religious_a83cf211e716fe096c1233dae97939598}{$\sim$\+Religious}} ()
-\end{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_religious_a924be748e4e719d91732d6a6d9bd04dd}{simple\+Attack}} (\mbox{\hyperlink{class_personage}{Personage}} \&target) override
+\item 
+virtual void \mbox{\hyperlink{class_religious_a9cb05467175db65c3dca56d5c4d6d460}{special\+Attack}} (\mbox{\hyperlink{class_personage}{Personage}} \&target) override
+\item 
+virtual unsigned \mbox{\hyperlink{class_religious_a815920536856368c1a008652701e4705}{receive\+Health\+Damage}} (int value) override
+\begin{DoxyCompactList}\small\item\em pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) \end{DoxyCompactList}\item 
+virtual unsigned \mbox{\hyperlink{class_religious_a92ca5f1c15a0919f8116787427417fd2}{receive\+Exp\+Damage}} (int value) override
+\begin{DoxyCompactList}\small\item\em pour recevoir les dégats d\textquotesingle{}exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) \end{DoxyCompactList}\item 
+virtual unsigned \mbox{\hyperlink{class_religious_a777feb03645e5eccab512a16747e2c02}{receive\+Health\+Care}} (int value) override
+\begin{DoxyCompactList}\small\item\em pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) \end{DoxyCompactList}\item 
+virtual unsigned \mbox{\hyperlink{class_religious_afa9468ba625191fb0b296c704ddf89f1}{receive\+Exp\+Care}} (int value) override
+\begin{DoxyCompactList}\small\item\em pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Membres hérités additionnels}
 
 
@@ -36,7 +48,7 @@ Définition à la ligne \mbox{\hyperlink{_religious_8hpp_source_l00006}{6}} du f
 
 
 
-Définition à la ligne \mbox{\hyperlink{_religious_8cpp_source_l00010}{10}} du fichier \mbox{\hyperlink{_religious_8cpp_source}{Religious.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_religious_8cpp_source_l00015}{15}} du fichier \mbox{\hyperlink{_religious_8cpp_source}{Religious.\+cpp}}.
 
 \mbox{\Hypertarget{class_religious_a83cf211e716fe096c1233dae97939598}\label{class_religious_a83cf211e716fe096c1233dae97939598}} 
 \index{Religious@{Religious}!````~Religious@{$\sim$Religious}}
@@ -46,11 +58,138 @@ Définition à la ligne \mbox{\hyperlink{_religious_8cpp_source_l00010}{10}} du 
 
 
 
-Définition à la ligne \mbox{\hyperlink{_religious_8cpp_source_l00014}{14}} du fichier \mbox{\hyperlink{_religious_8cpp_source}{Religious.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_religious_8cpp_source_l00020}{20}} du fichier \mbox{\hyperlink{_religious_8cpp_source}{Religious.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_religious_afa9468ba625191fb0b296c704ddf89f1}\label{class_religious_afa9468ba625191fb0b296c704ddf89f1}} 
+\index{Religious@{Religious}!receiveExpCare@{receiveExpCare}}
+\index{receiveExpCare@{receiveExpCare}!Religious@{Religious}}
+\doxysubsubsection{\texorpdfstring{receiveExpCare()}{receiveExpCare()}}
+{\footnotesize\ttfamily unsigned Religious\+::receive\+Exp\+Care (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+unsigned 
+\end{DoxyReturn}
+
+
+Implémente \mbox{\hyperlink{class_personage_a5e247c0fc009659808e3be549cbb54e7}{Personage}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_religious_8cpp_source_l00032}{32}} du fichier \mbox{\hyperlink{_religious_8cpp_source}{Religious.\+cpp}}.
+
+\mbox{\Hypertarget{class_religious_a92ca5f1c15a0919f8116787427417fd2}\label{class_religious_a92ca5f1c15a0919f8116787427417fd2}} 
+\index{Religious@{Religious}!receiveExpDamage@{receiveExpDamage}}
+\index{receiveExpDamage@{receiveExpDamage}!Religious@{Religious}}
+\doxysubsubsection{\texorpdfstring{receiveExpDamage()}{receiveExpDamage()}}
+{\footnotesize\ttfamily unsigned Religious\+::receive\+Exp\+Damage (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+pour recevoir les dégats d\textquotesingle{}exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+unsigned 
+\end{DoxyReturn}
+
+
+Implémente \mbox{\hyperlink{class_personage_a74a713ccc0ab68213086699330abeadc}{Personage}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_religious_8cpp_source_l00028}{28}} du fichier \mbox{\hyperlink{_religious_8cpp_source}{Religious.\+cpp}}.
+
+\mbox{\Hypertarget{class_religious_a777feb03645e5eccab512a16747e2c02}\label{class_religious_a777feb03645e5eccab512a16747e2c02}} 
+\index{Religious@{Religious}!receiveHealthCare@{receiveHealthCare}}
+\index{receiveHealthCare@{receiveHealthCare}!Religious@{Religious}}
+\doxysubsubsection{\texorpdfstring{receiveHealthCare()}{receiveHealthCare()}}
+{\footnotesize\ttfamily unsigned Religious\+::receive\+Health\+Care (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+unsigned 
+\end{DoxyReturn}
+
+
+Implémente \mbox{\hyperlink{class_personage_a6e442afbcc6eb7fc843478cbd66ad21b}{Personage}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_religious_8cpp_source_l00030}{30}} du fichier \mbox{\hyperlink{_religious_8cpp_source}{Religious.\+cpp}}.
+
+\mbox{\Hypertarget{class_religious_a815920536856368c1a008652701e4705}\label{class_religious_a815920536856368c1a008652701e4705}} 
+\index{Religious@{Religious}!receiveHealthDamage@{receiveHealthDamage}}
+\index{receiveHealthDamage@{receiveHealthDamage}!Religious@{Religious}}
+\doxysubsubsection{\texorpdfstring{receiveHealthDamage()}{receiveHealthDamage()}}
+{\footnotesize\ttfamily unsigned Religious\+::receive\+Health\+Damage (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+unsigned 
+\end{DoxyReturn}
+
+
+Implémente \mbox{\hyperlink{class_personage_a5a60566d579586450b87ac815d270f3c}{Personage}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_religious_8cpp_source_l00026}{26}} du fichier \mbox{\hyperlink{_religious_8cpp_source}{Religious.\+cpp}}.
+
+\mbox{\Hypertarget{class_religious_a924be748e4e719d91732d6a6d9bd04dd}\label{class_religious_a924be748e4e719d91732d6a6d9bd04dd}} 
+\index{Religious@{Religious}!simpleAttack@{simpleAttack}}
+\index{simpleAttack@{simpleAttack}!Religious@{Religious}}
+\doxysubsubsection{\texorpdfstring{simpleAttack()}{simpleAttack()}}
+{\footnotesize\ttfamily virtual void Religious\+::simple\+Attack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_personage}{Personage}} \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_personage_a1dade2c8ec548dd2df7791252719fe1d}{Personage}}.
+
+\mbox{\Hypertarget{class_religious_a9cb05467175db65c3dca56d5c4d6d460}\label{class_religious_a9cb05467175db65c3dca56d5c4d6d460}} 
+\index{Religious@{Religious}!specialAttack@{specialAttack}}
+\index{specialAttack@{specialAttack}!Religious@{Religious}}
+\doxysubsubsection{\texorpdfstring{specialAttack()}{specialAttack()}}
+{\footnotesize\ttfamily virtual void Religious\+::special\+Attack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_personage}{Personage}} \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_personage_a71f84a092284e295db1de628af4e918d}{Personage}}.
 
 
 
 La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{_religious_8hpp}{Religious.\+hpp}}\item 
-include/\mbox{\hyperlink{_religious_8cpp}{Religious.\+cpp}}\end{DoxyCompactItemize}
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_religious_8hpp}{Religious.\+hpp}}\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_religious_8cpp}{Religious.\+cpp}}\end{DoxyCompactItemize}

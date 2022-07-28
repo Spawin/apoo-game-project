@@ -1,7 +1,7 @@
 #if !defined(__RIGID_BODY_HPP__)
 	#define __RIGID_BODY_HPP__
 
-	#include "include/Position.hpp"
+	// #include "include/Position.hpp"
 	#include "include/GameObject.hpp"
 
 class GameObject;

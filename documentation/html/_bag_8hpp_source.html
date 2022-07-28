@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jeu POA:  Fichier source de C:/programs_sc/CIC/MITST06/jeu/src/include/Bag.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Jeu POA
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_bag_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Bag.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_bag_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#if !defined(__BAG_HPP__)</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">    #define __BAG_HPP__</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">    #include &quot;<a class="code" href="_not_movable_game_object_8hpp.html">include/NotMovableGameObject.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">    #include &quot;<a class="code" href="_inventory_8hpp.html">include/Inventory.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">    #include &quot;<a class="code" href="_item_8hpp.html">include/Item.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">    #include &quot;<a class="code" href="consts_8hpp.html">include/consts.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_bag.html">    9</a></span><span class="keyword">class </span><a class="code hl_class" href="class_bag.html">Bag</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_not_movable_game_object.html">NotMovableGameObject</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">// Constructeurs/Destructeur</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_function" href="class_bag.html#ae0593c22c7dd8b32cab469af92fb200c">Bag</a>();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_function" href="class_bag.html#a5fd787cdb2fde600f589cbaa4777f5b3">~Bag</a>();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">// Fonctions/Méthodes</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_bag.html#ad00edb64d5225b5a5b92ecdb38b4e719">addItem</a>(<a class="code hl_class" href="class_item.html">Item</a>* item, <a class="code hl_enumeration" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0">game::inventory_items_types</a> type);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_bag.html#a627b9fd47761691dbc4f96be7dad35f5">moveItem</a>(<a class="code hl_class" href="class_item.html">Item</a>* item, <a class="code hl_enumeration" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0">game::inventory_items_types</a> type, <a class="code hl_class" href="class_inventory.html">Inventory</a>* to_inventory);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_bag.html#ae1902348311f9d34bc2c8226ab30f0f2">removeItem</a>(<a class="code hl_class" href="class_item.html">Item</a>* item, <a class="code hl_enumeration" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0">game::inventory_items_types</a> type);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_class" href="class_inventory.html">Inventory</a>* <a class="code hl_function" href="class_bag.html#a5c8e365a36667f800eec30c4148500a6">getInventory</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_bag.html#a0b6b0d7335ce631d81b785c63c959e1e">onCollisionEnter</a>(<a class="code hl_class" href="class_collision.html">Collision</a> <span class="keyword">const</span>&amp; collision) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_bag.html#a790dadd6a2d45469cccd653ff5dd2317">update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bag.html#a81528b3dffe4e4542f31fab596d9daf4">renderInventory</a>(sf::RenderTarget&amp; target);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// Variables</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_class" href="class_inventory.html">Inventory</a>* inventory;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">// Fonctions d&#39;initialisation</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">void</span> initInventory();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">// void initAnimations() override;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> updatePosition(<span class="keywordtype">float</span> posX, <span class="keywordtype">float</span> posY);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif </span><span class="comment">// __BAG_HPP__</span></div>
+<div class="ttc" id="a_inventory_8hpp_html"><div class="ttname"><a href="_inventory_8hpp.html">Inventory.hpp</a></div></div>
+<div class="ttc" id="a_item_8hpp_html"><div class="ttname"><a href="_item_8hpp.html">Item.hpp</a></div></div>
+<div class="ttc" id="a_not_movable_game_object_8hpp_html"><div class="ttname"><a href="_not_movable_game_object_8hpp.html">NotMovableGameObject.hpp</a></div></div>
+<div class="ttc" id="aclass_bag_html"><div class="ttname"><a href="class_bag.html">Bag</a></div><div class="ttdef"><b>Definition:</b> <a href="_bag_8hpp_source.html#l00009">Bag.hpp:10</a></div></div>
+<div class="ttc" id="aclass_bag_html_a0b6b0d7335ce631d81b785c63c959e1e"><div class="ttname"><a href="class_bag.html#a0b6b0d7335ce631d81b785c63c959e1e">Bag::onCollisionEnter</a></div><div class="ttdeci">virtual void onCollisionEnter(Collision const &amp;collision) const override</div><div class="ttdoc">émit quand il entre en contacte avec un autre élément</div><div class="ttdef"><b>Definition:</b> <a href="_bag_8cpp_source.html#l00052">Bag.cpp:52</a></div></div>
+<div class="ttc" id="aclass_bag_html_a5c8e365a36667f800eec30c4148500a6"><div class="ttname"><a href="class_bag.html#a5c8e365a36667f800eec30c4148500a6">Bag::getInventory</a></div><div class="ttdeci">Inventory * getInventory()</div><div class="ttdef"><b>Definition:</b> <a href="_bag_8cpp_source.html#l00047">Bag.cpp:47</a></div></div>
+<div class="ttc" id="aclass_bag_html_a5fd787cdb2fde600f589cbaa4777f5b3"><div class="ttname"><a href="class_bag.html#a5fd787cdb2fde600f589cbaa4777f5b3">Bag::~Bag</a></div><div class="ttdeci">~Bag()</div><div class="ttdef"><b>Definition:</b> <a href="_bag_8cpp_source.html#l00026">Bag.cpp:26</a></div></div>
+<div class="ttc" id="aclass_bag_html_a627b9fd47761691dbc4f96be7dad35f5"><div class="ttname"><a href="class_bag.html#a627b9fd47761691dbc4f96be7dad35f5">Bag::moveItem</a></div><div class="ttdeci">bool moveItem(Item *item, game::inventory_items_types type, Inventory *to_inventory)</div><div class="ttdef"><b>Definition:</b> <a href="_bag_8cpp_source.html#l00037">Bag.cpp:37</a></div></div>
+<div class="ttc" id="aclass_bag_html_a790dadd6a2d45469cccd653ff5dd2317"><div class="ttname"><a href="class_bag.html#a790dadd6a2d45469cccd653ff5dd2317">Bag::update</a></div><div class="ttdeci">virtual void update() override</div><div class="ttdef"><b>Definition:</b> <a href="_bag_8cpp_source.html#l00057">Bag.cpp:57</a></div></div>
+<div class="ttc" id="aclass_bag_html_a81528b3dffe4e4542f31fab596d9daf4"><div class="ttname"><a href="class_bag.html#a81528b3dffe4e4542f31fab596d9daf4">Bag::renderInventory</a></div><div class="ttdeci">void renderInventory(sf::RenderTarget &amp;target)</div><div class="ttdef"><b>Definition:</b> <a href="_bag_8cpp_source.html#l00062">Bag.cpp:62</a></div></div>
+<div class="ttc" id="aclass_bag_html_ad00edb64d5225b5a5b92ecdb38b4e719"><div class="ttname"><a href="class_bag.html#ad00edb64d5225b5a5b92ecdb38b4e719">Bag::addItem</a></div><div class="ttdeci">bool addItem(Item *item, game::inventory_items_types type)</div><div class="ttdef"><b>Definition:</b> <a href="_bag_8cpp_source.html#l00032">Bag.cpp:32</a></div></div>
+<div class="ttc" id="aclass_bag_html_ae0593c22c7dd8b32cab469af92fb200c"><div class="ttname"><a href="class_bag.html#ae0593c22c7dd8b32cab469af92fb200c">Bag::Bag</a></div><div class="ttdeci">Bag()</div><div class="ttdef"><b>Definition:</b> <a href="_bag_8cpp_source.html#l00019">Bag.cpp:19</a></div></div>
+<div class="ttc" id="aclass_bag_html_ae1902348311f9d34bc2c8226ab30f0f2"><div class="ttname"><a href="class_bag.html#ae1902348311f9d34bc2c8226ab30f0f2">Bag::removeItem</a></div><div class="ttdeci">bool removeItem(Item *item, game::inventory_items_types type)</div><div class="ttdef"><b>Definition:</b> <a href="_bag_8cpp_source.html#l00042">Bag.cpp:42</a></div></div>
+<div class="ttc" id="aclass_collision_html"><div class="ttname"><a href="class_collision.html">Collision</a></div><div class="ttdef"><b>Definition:</b> <a href="_collision_8hpp_source.html#l00009">Collision.hpp:10</a></div></div>
+<div class="ttc" id="aclass_inventory_html"><div class="ttname"><a href="class_inventory.html">Inventory</a></div><div class="ttdef"><b>Definition:</b> <a href="_inventory_8hpp_source.html#l00022">Inventory.hpp:23</a></div></div>
+<div class="ttc" id="aclass_item_html"><div class="ttname"><a href="class_item.html">Item</a></div><div class="ttdoc">Représente éssentiellement les object que pourra manipuler les personnages.</div><div class="ttdef"><b>Definition:</b> <a href="_item_8hpp_source.html#l00035">Item.hpp:36</a></div></div>
+<div class="ttc" id="aclass_not_movable_game_object_html"><div class="ttname"><a href="class_not_movable_game_object.html">NotMovableGameObject</a></div><div class="ttdoc">Represente les objets imobiles. NOTE - Certains de ces Object Peuvent être déplacée ou transporté par...</div><div class="ttdef"><b>Definition:</b> <a href="_not_movable_game_object_8hpp_source.html#l00021">NotMovableGameObject.hpp:22</a></div></div>
+<div class="ttc" id="aconsts_8hpp_html"><div class="ttname"><a href="consts_8hpp.html">consts.hpp</a></div><div class="ttdoc">Ensemble des constantes du jeux.</div></div>
+<div class="ttc" id="anamespacegame_html_a214a8f8fb832eaaa8cae6f1be423a2b0"><div class="ttname"><a href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0">game::inventory_items_types</a></div><div class="ttdeci">inventory_items_types</div><div class="ttdef"><b>Definition:</b> <a href="consts_8hpp_source.html#l00063">consts.hpp:64</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="_bag_8hpp.html">Bag.hpp</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
+  </ul>
+</div>
+</body>
+</html>

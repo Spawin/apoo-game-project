@@ -1,0 +1,67 @@
+.TH "Animation" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Animation
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Animation\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBAnimation\fP (int priority, sf::Sprite &sprite, sf::Texture &textureSheet, float animationTimer, int start_x, int start_y, int end_x, int end_y, int width, int height, bool fixLastFrame=false)"
+.br
+.ti -1c
+.RI "\fB~Animation\fP ()"
+.br
+.ti -1c
+.RI "const bool & \fBisDone\fP () const"
+.br
+.ti -1c
+.RI "const bool & \fBplay\fP (const float &deltatime)"
+.br
+.ti -1c
+.RI "void \fBreset\fP ()"
+.br
+.ti -1c
+.RI "const int & \fBgetPriority\fP () const"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB7\fP du fichier \fBAnimation\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "Animation::Animation (int priority, sf::Sprite & sprite, sf::Texture & textureSheet, float animationTimer, int start_x, int start_y, int end_x, int end_y, int width, int height, bool fixLastFrame = \fCfalse\fP)"
+
+.PP
+Définition à la ligne \fB8\fP du fichier \fBAnimation\&.cpp\fP\&.
+.SS "Animation::~Animation ()"
+
+.PP
+Définition à la ligne \fB25\fP du fichier \fBAnimation\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "const int & Animation::getPriority () const"
+
+.PP
+Définition à la ligne \fB76\fP du fichier \fBAnimation\&.cpp\fP\&.
+.SS "const bool & Animation::isDone () const"
+
+.PP
+Définition à la ligne \fB30\fP du fichier \fBAnimation\&.cpp\fP\&.
+.SS "const bool & Animation::play (const float & deltatime)"
+
+.PP
+Définition à la ligne \fB35\fP du fichier \fBAnimation\&.cpp\fP\&.
+.SS "void Animation::reset ()"
+
+.PP
+Définition à la ligne \fB67\fP du fichier \fBAnimation\&.cpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

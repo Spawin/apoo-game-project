@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Jeu POA:  Fichier source de include/GameMap.hpp</title>
+<title>Jeu POA:  Fichier source de C:/programs_sc/CIC/MITST06/jeu/src/include/GameMap.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -94,35 +94,30 @@ $(document).ready(function(){initNavTree('_game_map_8hpp_source.html',''); initR
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_function" href="class_game_map.html#aae71e5694cf19612fcaa4c1e21b03b71">GameMap</a>();</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_function" href="class_game_map.html#a85d51ef20c2d27f11c739ff02d5717c3">~GameMap</a>();</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code hl_function" href="class_game_map.html#ababbd90ae6aef61967528cd04bd91e83">getGAME_MAP_WIDTH</a>();</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code hl_function" href="class_game_map.html#a8a00f063b5d3ed56f4eb3e8d76a95028">getGAME_MAP_HEIGHT</a>();</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_game_map.html#a574501859cc67c40fe14a722633ca4e2">load</a>(<span class="keyword">const</span> std::string&amp; tileset, sf::Vector2u tileSize, <span class="keyword">const</span> <span class="keywordtype">int</span>* tiles, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> width, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> height);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_game_map.html#a574501859cc67c40fe14a722633ca4e2">load</a>(<span class="keyword">const</span> std::string&amp; tileset, sf::Vector2u* tileSize, sf::Vector2u* tilesStart, <span class="keyword">const</span> <span class="keywordtype">int</span>* tiles, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> width, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> height, <span class="keywordtype">int</span> count);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> GAME_MAP_WIDTH;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> GAME_MAP_HEIGHT;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> draw(sf::RenderTarget&amp; target, sf::RenderStates states) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_game_map.html#a9236c099519fb97babcceb6f1923c2af">   10</a></span>    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">int</span>* <a class="code hl_function" href="class_game_map.html#a9236c099519fb97babcceb6f1923c2af">getDisposition</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_game_map.html#a574501859cc67c40fe14a722633ca4e2">load</a>(<span class="keyword">const</span> std::string&amp; tileset, sf::Vector2u tileSize, <span class="keyword">const</span> <span class="keywordtype">int</span>* tiles, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> width, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> height );</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_game_map.html#a574501859cc67c40fe14a722633ca4e2">load</a>(<span class="keyword">const</span> std::string&amp; tileset, sf::Vector2u* tileSize, sf::Vector2u* tilesStart, <span class="keyword">const</span> <span class="keywordtype">int</span>* tiles, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> width, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> height, <span class="keywordtype">int</span> count);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> draw(sf::RenderTarget&amp; target, sf::RenderStates states) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    sf::VertexArray m_vertices;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    sf::Texture m_tileset;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>};</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    sf::VertexArray m_vertices;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    sf::Texture m_tileset;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>};</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#endif </span><span class="comment">// __GAME_MAP_HPP__</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#endif </span><span class="comment">// __GAME_MAP_HPP__</span></div>
 <div class="ttc" id="aclass_game_map_html"><div class="ttname"><a href="class_game_map.html">GameMap</a></div><div class="ttdef"><b>Definition:</b> <a href="_game_map_8hpp_source.html#l00004">GameMap.hpp:5</a></div></div>
-<div class="ttc" id="aclass_game_map_html_a574501859cc67c40fe14a722633ca4e2"><div class="ttname"><a href="class_game_map.html#a574501859cc67c40fe14a722633ca4e2">GameMap::load</a></div><div class="ttdeci">bool load(const std::string &amp;tileset, sf::Vector2u tileSize, const int *tiles, unsigned int width, unsigned int height)</div><div class="ttdef"><b>Definition:</b> <a href="_game_map_8cpp_source.html#l00023">GameMap.cpp:23</a></div></div>
-<div class="ttc" id="aclass_game_map_html_a85d51ef20c2d27f11c739ff02d5717c3"><div class="ttname"><a href="class_game_map.html#a85d51ef20c2d27f11c739ff02d5717c3">GameMap::~GameMap</a></div><div class="ttdeci">~GameMap()</div><div class="ttdef"><b>Definition:</b> <a href="_game_map_8cpp_source.html#l00010">GameMap.cpp:10</a></div></div>
-<div class="ttc" id="aclass_game_map_html_a8a00f063b5d3ed56f4eb3e8d76a95028"><div class="ttname"><a href="class_game_map.html#a8a00f063b5d3ed56f4eb3e8d76a95028">GameMap::getGAME_MAP_HEIGHT</a></div><div class="ttdeci">static float getGAME_MAP_HEIGHT()</div><div class="ttdef"><b>Definition:</b> <a href="_game_map_8cpp_source.html#l00018">GameMap.cpp:18</a></div></div>
-<div class="ttc" id="aclass_game_map_html_aae71e5694cf19612fcaa4c1e21b03b71"><div class="ttname"><a href="class_game_map.html#aae71e5694cf19612fcaa4c1e21b03b71">GameMap::GameMap</a></div><div class="ttdeci">GameMap()</div><div class="ttdef"><b>Definition:</b> <a href="_game_map_8cpp_source.html#l00006">GameMap.cpp:6</a></div></div>
-<div class="ttc" id="aclass_game_map_html_ababbd90ae6aef61967528cd04bd91e83"><div class="ttname"><a href="class_game_map.html#ababbd90ae6aef61967528cd04bd91e83">GameMap::getGAME_MAP_WIDTH</a></div><div class="ttdeci">static float getGAME_MAP_WIDTH()</div><div class="ttdef"><b>Definition:</b> <a href="_game_map_8cpp_source.html#l00014">GameMap.cpp:14</a></div></div>
+<div class="ttc" id="aclass_game_map_html_a574501859cc67c40fe14a722633ca4e2"><div class="ttname"><a href="class_game_map.html#a574501859cc67c40fe14a722633ca4e2">GameMap::load</a></div><div class="ttdeci">bool load(const std::string &amp;tileset, sf::Vector2u tileSize, const int *tiles, unsigned int width, unsigned int height)</div><div class="ttdoc">Remove after.</div><div class="ttdef"><b>Definition:</b> <a href="_game_map_8cpp_source.html#l00014">GameMap.cpp:14</a></div></div>
+<div class="ttc" id="aclass_game_map_html_a85d51ef20c2d27f11c739ff02d5717c3"><div class="ttname"><a href="class_game_map.html#a85d51ef20c2d27f11c739ff02d5717c3">GameMap::~GameMap</a></div><div class="ttdeci">~GameMap()</div><div class="ttdef"><b>Definition:</b> <a href="_game_map_8cpp_source.html#l00009">GameMap.cpp:9</a></div></div>
+<div class="ttc" id="aclass_game_map_html_a9236c099519fb97babcceb6f1923c2af"><div class="ttname"><a href="class_game_map.html#a9236c099519fb97babcceb6f1923c2af">GameMap::getDisposition</a></div><div class="ttdeci">virtual const int * getDisposition() const =0</div></div>
+<div class="ttc" id="aclass_game_map_html_aae71e5694cf19612fcaa4c1e21b03b71"><div class="ttname"><a href="class_game_map.html#aae71e5694cf19612fcaa4c1e21b03b71">GameMap::GameMap</a></div><div class="ttdeci">GameMap()</div><div class="ttdef"><b>Definition:</b> <a href="_game_map_8cpp_source.html#l00005">GameMap.cpp:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_game_map_8hpp.html">GameMap.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="_game_map_8hpp.html">GameMap.hpp</a></li>
     <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>

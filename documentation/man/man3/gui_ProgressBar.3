@@ -1,0 +1,60 @@
+.TH "gui::ProgressBar" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gui::ProgressBar
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Gui\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBProgressBar\fP (float x, float y, float width, float height, sf::Color inner_color, unsigned character_size, sf::VideoMode &vm, sf::Font *font=NULL, bool text_bold=false)"
+.br
+.ti -1c
+.RI "\fB~ProgressBar\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetPosition\fP (sf::Vector2f const &position, sf::VideoMode &vm)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (int current_value, int max_value)"
+.br
+.ti -1c
+.RI "void \fBrender\fP (sf::RenderTarget &target)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB87\fP du fichier \fBGui\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "gui::ProgressBar::ProgressBar (float x, float y, float width, float height, sf::Color inner_color, unsigned character_size, sf::VideoMode & vm, sf::Font * font = \fCNULL\fP, bool text_bold = \fCfalse\fP)"
+
+.PP
+Définition à la ligne \fB206\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "gui::ProgressBar::~ProgressBar ()"
+
+.PP
+Définition à la ligne \fB241\fP du fichier \fBGui\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void gui::ProgressBar::render (sf::RenderTarget & target)"
+
+.PP
+Définition à la ligne \fB275\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "void gui::ProgressBar::setPosition (sf::Vector2f const & position, sf::VideoMode & vm)"
+
+.PP
+Définition à la ligne \fB246\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "void gui::ProgressBar::update (int current_value, int max_value)"
+
+.PP
+Définition à la ligne \fB258\fP du fichier \fBGui\&.cpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

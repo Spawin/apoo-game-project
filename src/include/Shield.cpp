@@ -26,6 +26,11 @@ void Shield::onCollisionEnter(Collision const& collision) const
 void Shield::update()
 {}
 
+void Shield::useOn(Personage& personage)
+{
+	personage.receiveShieldboost(this->value);
+}
+
 void Shield::updatePosition(float posX, float posY)
 {
 	m_position->setPosition(posX, posY);

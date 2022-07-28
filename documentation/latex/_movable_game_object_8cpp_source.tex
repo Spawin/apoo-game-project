@@ -1,0 +1,58 @@
+\hypertarget{_movable_game_object_8cpp_source}{}\doxysection{Movable\+Game\+Object.\+cpp}
+\label{_movable_game_object_8cpp_source}\index{C:/programs\_sc/CIC/MITST06/jeu/src/include/MovableGameObject.cpp@{C:/programs\_sc/CIC/MITST06/jeu/src/include/MovableGameObject.cpp}}
+\mbox{\hyperlink{_movable_game_object_8cpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_movable_game_object_8hpp}{include/MovableGameObject.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00003}00003 \textcolor{comment}{// Fonction static}}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00005}00005 \textcolor{comment}{// Fonctions d'initialisation}}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00006}\mbox{\hyperlink{class_movable_game_object_a0e0909f577c773a6fd5c4b7f0661228c}{00006}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_movable_game_object_a0e0909f577c773a6fd5c4b7f0661228c}{MovableGameObject::initPosition}}(\textcolor{keywordtype}{float} posX, \textcolor{keywordtype}{float} posY)}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00007}00007 \{}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00008}00008     \mbox{\hyperlink{class_game_object_a13cde9cf52cf7e4d6771eee5ccdaa5d7}{m\_position}} = \textcolor{keyword}{new} \mbox{\hyperlink{class_position}{Position}}(posX, posY);}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00009}00009     \mbox{\hyperlink{class_game_object_ab9f3598767553b274e98b2df36122bbd}{m\_body}}.setPosition(\mbox{\hyperlink{class_game_object_a13cde9cf52cf7e4d6771eee5ccdaa5d7}{m\_position}}-\/>\mbox{\hyperlink{class_position_af409de5592dd7da6fb0ccb8d1681bb19}{getPosition}}().\mbox{\hyperlink{struct_my_vector_ada641074b59d610778cdf2ec7c144905}{toVector2f}}());}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00010}00010 \}}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00012}00012 \textcolor{comment}{// Constructeurs/Destructeur}}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00013}\mbox{\hyperlink{class_movable_game_object_a786b4b88e7a155f561593313432c06f9}{00013}} \mbox{\hyperlink{class_movable_game_object_a786b4b88e7a155f561593313432c06f9}{MovableGameObject::MovableGameObject}}(std::string\_view \textcolor{keyword}{const}\& imageSpritePath) :}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00014}00014     \mbox{\hyperlink{class_game_object}{GameObject}}(imageSpritePath)}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00015}00015 \{}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00016}00016     this-\/>\mbox{\hyperlink{class_movable_game_object_a0e0909f577c773a6fd5c4b7f0661228c}{initPosition}}(200 * 4.f, 200 * 70.f);}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00017}00017 \}}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00019}\mbox{\hyperlink{class_movable_game_object_ab86ce333c409ff3cec75db7040d264d5}{00019}} \mbox{\hyperlink{class_movable_game_object_ab86ce333c409ff3cec75db7040d264d5}{MovableGameObject::\string~MovableGameObject}}()}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00020}00020 \{}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00021}00021     \textcolor{keyword}{delete} this-\/>\mbox{\hyperlink{class_movable_game_object_a655f3cc2f2a8b00c30ed90cd8c7b712e}{animationComponent}};}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00022}00022     \textcolor{keyword}{delete} \mbox{\hyperlink{class_game_object_a13cde9cf52cf7e4d6771eee5ccdaa5d7}{m\_position}};}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00023}00023     \mbox{\hyperlink{class_game_object_a13cde9cf52cf7e4d6771eee5ccdaa5d7}{m\_position}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00024}00024 \}}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00026}00026 \textcolor{comment}{// Fonctions/Méthodes}}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00027}\mbox{\hyperlink{class_movable_game_object_a2e91f66b167c69682916b93cc5d900ae}{00027}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_movable_game_object_a2e91f66b167c69682916b93cc5d900ae}{MovableGameObject::createAnimationComponent}}(sf::Texture\& texture)}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00028}00028 \{}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00029}00029     this-\/>\mbox{\hyperlink{class_movable_game_object_a655f3cc2f2a8b00c30ed90cd8c7b712e}{animationComponent}} = \textcolor{keyword}{new} \mbox{\hyperlink{class_animation_component}{AnimationComponent}}(\mbox{\hyperlink{class_game_object_ab9f3598767553b274e98b2df36122bbd}{m\_body}}, texture);}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00030}00030 \}}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00032}\mbox{\hyperlink{class_movable_game_object_ad3b241b18227ac3eacee79069af64fc7}{00032}} \mbox{\hyperlink{class_animation_component}{AnimationComponent}}* \mbox{\hyperlink{class_movable_game_object_ad3b241b18227ac3eacee79069af64fc7}{MovableGameObject::getAnimationComponent}}()}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00033}00033 \{}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00034}00034     \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{class_movable_game_object_a655f3cc2f2a8b00c30ed90cd8c7b712e}{animationComponent}};}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00035}00035 \}}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00037}\mbox{\hyperlink{class_movable_game_object_ac3ca02b727df6802b66bc7cd677b0504}{00037}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_movable_game_object_ac3ca02b727df6802b66bc7cd677b0504}{MovableGameObject::addToHall}}(\mbox{\hyperlink{class_hall}{Hall}}* hall)}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00038}00038 \{}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00039}00039     this-\/>hall = \mbox{\hyperlink{class_movable_game_object_a82a572bd2815eb23cf9b752dbc70784e}{hall}};}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00040}00040     this-\/>\mbox{\hyperlink{class_movable_game_object_a3c21e1f1df5715b09a286255999d04b1}{setPositionMovementLimit}}(this-\/>hall);}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00041}00041     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00042}00042 \}}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00044}\mbox{\hyperlink{class_movable_game_object_a642733a3472829a5526280e44bfd27e5}{00044}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_movable_game_object_a642733a3472829a5526280e44bfd27e5}{MovableGameObject::show}}(sf::RenderTarget\& window)}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00045}00045 \{}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00046}00046     \mbox{\hyperlink{class_game_object_a3f7a674006e1cce96ccb6c60f0ff9aaf}{GameObject::show}}(window);}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00047}00047 \}}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00049}\mbox{\hyperlink{class_movable_game_object_a3c21e1f1df5715b09a286255999d04b1}{00049}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_movable_game_object_a3c21e1f1df5715b09a286255999d04b1}{MovableGameObject::setPositionMovementLimit}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hall}{Hall}}* hall)}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00050}00050 \{}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00051}00051     this-\/>\mbox{\hyperlink{class_game_object_a13cde9cf52cf7e4d6771eee5ccdaa5d7}{m\_position}}-\/>\mbox{\hyperlink{class_position_a7a4256cdf1c47f24a5ee67194ddd8d68}{setPositionMovementLimit}}(hall-\/>\mbox{\hyperlink{class_hall_ae8b24a02bbc5c17bf1e557cb3d98a76d}{getIntRect}}());}
+\DoxyCodeLine{\Hypertarget{_movable_game_object_8cpp_source_l00052}00052 \}}
+
+\end{DoxyCode}

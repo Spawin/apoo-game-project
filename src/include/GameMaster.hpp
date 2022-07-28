@@ -2,7 +2,7 @@
 	#define __GAME_MASTER__
 
 	#include "include/GameState.hpp"
-	#include "include/MainMenuState.hpp"
+	// #include "include/MainMenuState.hpp"
 	#include "include/consts.hpp"
 
 class GameMaster

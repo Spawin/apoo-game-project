@@ -62,6 +62,28 @@ void Vial::onCollisionEnter(Collision const& collision) const
 void Vial::update()
 {}
 
+void Vial::useOn(Personage& personage)
+{
+	switch (this->categorie)
+	{
+		case ItemsCategories::VIAL_EXP:
+			personage.receiveExpCare(this->value);
+			break;
+		case ItemsCategories::VIAL_HEALTH:
+			personage.receiveHealthCare(this->value);
+			break;
+		case ItemsCategories::VIAL_ATTACK_EXP:
+			personage.receiveExpDamage(this->value);
+			break;
+		case ItemsCategories::VIAL_ATTACK_HEALTH:
+			personage.receiveHealthDamage(this->value);
+			break;
+
+		default:
+			break;
+	}
+}
+
 void Vial::updatePosition(float posX, float posY)
 {
 	m_position->setPosition(posX, posY);

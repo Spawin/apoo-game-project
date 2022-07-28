@@ -2,8 +2,10 @@
 	#define __ITEM_HPP__
 
 	#include "include/NotMovableGameObject.hpp"
+	#include "include/Personage.hpp"
 
 class NotMovableGameObject;
+class Personage;
 
 /**
  * @brief Représente les catégories d'items.
@@ -47,8 +49,25 @@ public:
 	virtual void onCollisionEnter(Collision const& collision) const = 0;
 	virtual void update() = 0;
 
+	/**
+	 * @brief Utiliser l'item sur le personnage indiqué
+	 *
+	 * @param personage
+	 */
+	virtual void useOn(Personage& personage) = 0;
+
 protected:
 	// Variables
+	/**
+	 * @brief Valeur de l'item à l'utilisation...
+	 *
+	 */
+	unsigned value;
+	/**
+	 * @brief Représente les categories d'item.
+	 * utilis pour définir les éffets...
+	 *
+	 */
 	const ItemsCategories categorie;
 
 	// Fonctions d'initialisation

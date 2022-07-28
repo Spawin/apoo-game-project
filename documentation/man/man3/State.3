@@ -1,0 +1,206 @@
+.TH "State" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+State
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <State\&.hpp>\fP
+.PP
+Dérivée par \fBGameState\fP, et \fBMainMenuState\fP\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBState\fP (\fBStateData\fP *\fBstateData\fP)"
+.br
+.ti -1c
+.RI "virtual \fB~State\fP ()"
+.br
+.ti -1c
+.RI "const bool & \fBgetQuit\fP () const"
+.br
+.ti -1c
+.RI "virtual bool \fBgetKeyTime\fP ()"
+.br
+.ti -1c
+.RI "float const & \fBscScF\fP ()"
+.br
+.RI "Retourne le <screenScalingFactor> fournit par le stateData\&.\&.\&. "
+.ti -1c
+.RI "virtual void \fBupdateSFMLEvents\fP (const sf::Event &sfEvent)=0"
+.br
+.ti -1c
+.RI "virtual void \fBendState\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBupdateMousePositions\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBupdateKeytime\fP (const float &deltaTime)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateInput\fP (const float &deltaTime)=0"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP (const float &deltaTime)=0"
+.br
+.ti -1c
+.RI "virtual void \fBrender\fP (sf::RenderTarget *target=nullptr)=0"
+.br
+.in -1c
+.SS "Attributs protégés"
+
+.in +1c
+.ti -1c
+.RI "\fBStateData\fP * \fBstateData\fP"
+.br
+.ti -1c
+.RI "std::stack< \fBState\fP * > * \fBstates\fP"
+.br
+.ti -1c
+.RI "sf::RenderWindow * \fBwindow\fP"
+.br
+.ti -1c
+.RI "bool \fBquit\fP"
+.br
+.ti -1c
+.RI "bool \fBpaused\fP"
+.br
+.ti -1c
+.RI "float \fBkeytime\fP"
+.br
+.ti -1c
+.RI "float \fBkeytimeMax\fP"
+.br
+.ti -1c
+.RI "sf::Vector2i \fBmousePosScreen\fP"
+.br
+.ti -1c
+.RI "sf::Vector2i \fBmousePosWindow\fP"
+.br
+.ti -1c
+.RI "sf::Vector2f \fBmousePosView\fP"
+.br
+.ti -1c
+.RI "std::map< std::string, sf::Texture > \fBtextures\fP"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB35\fP du fichier \fBState\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "State::State (\fBStateData\fP * stateData)"
+
+.PP
+Définition à la ligne \fB7\fP du fichier \fBState\&.cpp\fP\&.
+.SS "State::~State ()\fC [virtual]\fP"
+
+.PP
+Définition à la ligne \fB16\fP du fichier \fBState\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void State::endState ()\fC [virtual]\fP"
+
+.PP
+Définition à la ligne \fB50\fP du fichier \fBState\&.cpp\fP\&.
+.SS "bool State::getKeyTime ()\fC [virtual]\fP"
+
+.PP
+Réimplémentée dans \fBGameState\fP\&.
+.PP
+Définition à la ligne \fB34\fP du fichier \fBState\&.cpp\fP\&.
+.SS "const bool & State::getQuit () const"
+
+.PP
+Définition à la ligne \fB20\fP du fichier \fBState\&.cpp\fP\&.
+.SS "virtual void State::render (sf::RenderTarget * target = \fCnullptr\fP)\fC [pure virtual]\fP"
+
+.PP
+Implémenté dans \fBGameState\fP, et \fBMainMenuState\fP\&.
+.SS "float const  & State::scScF ()"
+
+.PP
+Retourne le <screenScalingFactor> fournit par le stateData\&.\&.\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+float const& 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB45\fP du fichier \fBState\&.cpp\fP\&.
+.SS "virtual void State::update (const float & deltaTime)\fC [pure virtual]\fP"
+
+.PP
+Implémenté dans \fBGameState\fP, et \fBMainMenuState\fP\&.
+.SS "virtual void State::updateInput (const float & deltaTime)\fC [pure virtual]\fP"
+
+.PP
+Implémenté dans \fBGameState\fP, et \fBMainMenuState\fP\&.
+.SS "void State::updateKeytime (const float & deltaTime)\fC [virtual]\fP"
+
+.PP
+Définition à la ligne \fB62\fP du fichier \fBState\&.cpp\fP\&.
+.SS "void State::updateMousePositions ()\fC [virtual]\fP"
+
+.PP
+Définition à la ligne \fB55\fP du fichier \fBState\&.cpp\fP\&.
+.SS "virtual void State::updateSFMLEvents (const sf::Event & sfEvent)\fC [pure virtual]\fP"
+
+.PP
+Implémenté dans \fBGameState\fP, et \fBMainMenuState\fP\&.
+.SH "Documentation des données membres"
+.PP 
+.SS "float State::keytime\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB72\fP du fichier \fBState\&.hpp\fP\&.
+.SS "float State::keytimeMax\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB73\fP du fichier \fBState\&.hpp\fP\&.
+.SS "sf::Vector2i State::mousePosScreen\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB75\fP du fichier \fBState\&.hpp\fP\&.
+.SS "sf::Vector2f State::mousePosView\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB77\fP du fichier \fBState\&.hpp\fP\&.
+.SS "sf::Vector2i State::mousePosWindow\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB76\fP du fichier \fBState\&.hpp\fP\&.
+.SS "bool State::paused\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB71\fP du fichier \fBState\&.hpp\fP\&.
+.SS "bool State::quit\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB70\fP du fichier \fBState\&.hpp\fP\&.
+.SS "\fBStateData\fP* State::stateData\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB64\fP du fichier \fBState\&.hpp\fP\&.
+.SS "std::stack<\fBState\fP*>* State::states\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB65\fP du fichier \fBState\&.hpp\fP\&.
+.SS "std::map<std::string, sf::Texture> State::textures\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB79\fP du fichier \fBState\&.hpp\fP\&.
+.SS "sf::RenderWindow* State::window\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB66\fP du fichier \fBState\&.hpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

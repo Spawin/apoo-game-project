@@ -7,7 +7,7 @@
 Graphe d\textquotesingle{}héritage de Worker\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.000000cm]{class_worker}
+\includegraphics[height=4.000000cm]{class_worker}
 \end{center}
 \end{figure}
 \doxysubsection*{Fonctions membres publiques}
@@ -16,7 +16,19 @@ Graphe d\textquotesingle{}héritage de Worker\+:\begin{figure}[H]
 \mbox{\hyperlink{class_worker_a3754817df06ffe220f7f0d903c78ccac}{Worker}} ()
 \item 
 \mbox{\hyperlink{class_worker_aa8e4543ef1e93fd9d884269ba30c5bfe}{$\sim$\+Worker}} ()
-\end{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_worker_aeca8465f8d57b446e3a90690d4420d5b}{simple\+Attack}} (\mbox{\hyperlink{class_personage}{Personage}} \&target) override
+\item 
+virtual void \mbox{\hyperlink{class_worker_a45c0f20484a018b7aa1b3a39081d601a}{special\+Attack}} (\mbox{\hyperlink{class_personage}{Personage}} \&target) override
+\item 
+virtual unsigned \mbox{\hyperlink{class_worker_a94bb4bf6d58ada08dd1b035e255dfae7}{receive\+Health\+Damage}} (int value) override
+\begin{DoxyCompactList}\small\item\em pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) \end{DoxyCompactList}\item 
+virtual unsigned \mbox{\hyperlink{class_worker_a8ac3ac378bc7f3153f0dd0df0f19d358}{receive\+Exp\+Damage}} (int value) override
+\begin{DoxyCompactList}\small\item\em pour recevoir les dégats d\textquotesingle{}exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) \end{DoxyCompactList}\item 
+virtual unsigned \mbox{\hyperlink{class_worker_a28557977add6a0726d53be410027c657}{receive\+Health\+Care}} (int value) override
+\begin{DoxyCompactList}\small\item\em pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) \end{DoxyCompactList}\item 
+virtual unsigned \mbox{\hyperlink{class_worker_a2c49aa970c7e20cfe847ce1efa794573}{receive\+Exp\+Care}} (int value) override
+\begin{DoxyCompactList}\small\item\em pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Membres hérités additionnels}
 
 
@@ -36,7 +48,7 @@ Définition à la ligne \mbox{\hyperlink{_worker_8hpp_source_l00006}{6}} du fich
 
 
 
-Définition à la ligne \mbox{\hyperlink{_worker_8cpp_source_l00010}{10}} du fichier \mbox{\hyperlink{_worker_8cpp_source}{Worker.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_worker_8cpp_source_l00015}{15}} du fichier \mbox{\hyperlink{_worker_8cpp_source}{Worker.\+cpp}}.
 
 \mbox{\Hypertarget{class_worker_aa8e4543ef1e93fd9d884269ba30c5bfe}\label{class_worker_aa8e4543ef1e93fd9d884269ba30c5bfe}} 
 \index{Worker@{Worker}!````~Worker@{$\sim$Worker}}
@@ -46,11 +58,138 @@ Définition à la ligne \mbox{\hyperlink{_worker_8cpp_source_l00010}{10}} du fic
 
 
 
-Définition à la ligne \mbox{\hyperlink{_worker_8cpp_source_l00014}{14}} du fichier \mbox{\hyperlink{_worker_8cpp_source}{Worker.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_worker_8cpp_source_l00020}{20}} du fichier \mbox{\hyperlink{_worker_8cpp_source}{Worker.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_worker_a2c49aa970c7e20cfe847ce1efa794573}\label{class_worker_a2c49aa970c7e20cfe847ce1efa794573}} 
+\index{Worker@{Worker}!receiveExpCare@{receiveExpCare}}
+\index{receiveExpCare@{receiveExpCare}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{receiveExpCare()}{receiveExpCare()}}
+{\footnotesize\ttfamily unsigned Worker\+::receive\+Exp\+Care (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+unsigned 
+\end{DoxyReturn}
+
+
+Implémente \mbox{\hyperlink{class_personage_a5e247c0fc009659808e3be549cbb54e7}{Personage}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_worker_8cpp_source_l00031}{31}} du fichier \mbox{\hyperlink{_worker_8cpp_source}{Worker.\+cpp}}.
+
+\mbox{\Hypertarget{class_worker_a8ac3ac378bc7f3153f0dd0df0f19d358}\label{class_worker_a8ac3ac378bc7f3153f0dd0df0f19d358}} 
+\index{Worker@{Worker}!receiveExpDamage@{receiveExpDamage}}
+\index{receiveExpDamage@{receiveExpDamage}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{receiveExpDamage()}{receiveExpDamage()}}
+{\footnotesize\ttfamily unsigned Worker\+::receive\+Exp\+Damage (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+pour recevoir les dégats d\textquotesingle{}exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+unsigned 
+\end{DoxyReturn}
+
+
+Implémente \mbox{\hyperlink{class_personage_a74a713ccc0ab68213086699330abeadc}{Personage}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_worker_8cpp_source_l00027}{27}} du fichier \mbox{\hyperlink{_worker_8cpp_source}{Worker.\+cpp}}.
+
+\mbox{\Hypertarget{class_worker_a28557977add6a0726d53be410027c657}\label{class_worker_a28557977add6a0726d53be410027c657}} 
+\index{Worker@{Worker}!receiveHealthCare@{receiveHealthCare}}
+\index{receiveHealthCare@{receiveHealthCare}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{receiveHealthCare()}{receiveHealthCare()}}
+{\footnotesize\ttfamily unsigned Worker\+::receive\+Health\+Care (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+unsigned 
+\end{DoxyReturn}
+
+
+Implémente \mbox{\hyperlink{class_personage_a6e442afbcc6eb7fc843478cbd66ad21b}{Personage}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_worker_8cpp_source_l00029}{29}} du fichier \mbox{\hyperlink{_worker_8cpp_source}{Worker.\+cpp}}.
+
+\mbox{\Hypertarget{class_worker_a94bb4bf6d58ada08dd1b035e255dfae7}\label{class_worker_a94bb4bf6d58ada08dd1b035e255dfae7}} 
+\index{Worker@{Worker}!receiveHealthDamage@{receiveHealthDamage}}
+\index{receiveHealthDamage@{receiveHealthDamage}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{receiveHealthDamage()}{receiveHealthDamage()}}
+{\footnotesize\ttfamily unsigned Worker\+::receive\+Health\+Damage (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+unsigned 
+\end{DoxyReturn}
+
+
+Implémente \mbox{\hyperlink{class_personage_a5a60566d579586450b87ac815d270f3c}{Personage}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_worker_8cpp_source_l00025}{25}} du fichier \mbox{\hyperlink{_worker_8cpp_source}{Worker.\+cpp}}.
+
+\mbox{\Hypertarget{class_worker_aeca8465f8d57b446e3a90690d4420d5b}\label{class_worker_aeca8465f8d57b446e3a90690d4420d5b}} 
+\index{Worker@{Worker}!simpleAttack@{simpleAttack}}
+\index{simpleAttack@{simpleAttack}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{simpleAttack()}{simpleAttack()}}
+{\footnotesize\ttfamily virtual void Worker\+::simple\+Attack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_personage}{Personage}} \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_personage_a1dade2c8ec548dd2df7791252719fe1d}{Personage}}.
+
+\mbox{\Hypertarget{class_worker_a45c0f20484a018b7aa1b3a39081d601a}\label{class_worker_a45c0f20484a018b7aa1b3a39081d601a}} 
+\index{Worker@{Worker}!specialAttack@{specialAttack}}
+\index{specialAttack@{specialAttack}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{specialAttack()}{specialAttack()}}
+{\footnotesize\ttfamily virtual void Worker\+::special\+Attack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_personage}{Personage}} \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_personage_a71f84a092284e295db1de628af4e918d}{Personage}}.
 
 
 
 La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{_worker_8hpp}{Worker.\+hpp}}\item 
-include/\mbox{\hyperlink{_worker_8cpp}{Worker.\+cpp}}\end{DoxyCompactItemize}
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_worker_8hpp}{Worker.\+hpp}}\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_worker_8cpp}{Worker.\+cpp}}\end{DoxyCompactItemize}

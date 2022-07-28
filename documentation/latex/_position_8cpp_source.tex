@@ -1,5 +1,5 @@
 \hypertarget{_position_8cpp_source}{}\doxysection{Position.\+cpp}
-\label{_position_8cpp_source}\index{include/Position.cpp@{include/Position.cpp}}
+\label{_position_8cpp_source}\index{C:/programs\_sc/CIC/MITST06/jeu/src/include/Position.cpp@{C:/programs\_sc/CIC/MITST06/jeu/src/include/Position.cpp}}
 \mbox{\hyperlink{_position_8cpp}{Aller à la documentation de ce fichier.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_position_8hpp}{include/Position.hpp}}"{}}}
@@ -16,256 +16,282 @@
 \DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00012}00012 \textcolor{keywordtype}{int} Position::m\_spaceWidth \{ 0 \};}
 \DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00013}00013 \textcolor{keywordtype}{int} Position::m\_spaceHeight \{ 0 \};}
 \DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00014}00014 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00015}00015 \textcolor{comment}{// Constructeur factultatif mais ici on envoie un message d’erreur si une coordonnée est créée avant l’initialisation de l’espace}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00016}\mbox{\hyperlink{class_position_a5174f59a8b42cb5520823922ee486c4b}{00016}} \mbox{\hyperlink{class_position_a5174f59a8b42cb5520823922ee486c4b}{Position::Position}}(\textcolor{keywordtype}{float} detectabilityRadius) :}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00017}00017     DETECTABILITY\_RADIUS(detectabilityRadius)}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00018}00018 \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00019}00019     \textcolor{keywordflow}{if} (m\_spaceWidth == 0 || m\_spaceHeight == 0)}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00020}00020     \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00021}00021         std::cerr << \textcolor{stringliteral}{"{}Attention : une coordonnée a été créée avant l’initialisation de l’espace !"{}} << std::endl;}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00022}00022     \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00023}00023     setPreviousPosition(m\_x, m\_y);}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00024}00024     recalculate();}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00025}00025 \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00026}00026 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00027}\mbox{\hyperlink{class_position_a6e1818dd1a616f07379175b9f292650a}{00027}} \mbox{\hyperlink{class_position_a5174f59a8b42cb5520823922ee486c4b}{Position::Position}}(\textcolor{keywordtype}{float} px, \textcolor{keywordtype}{float} py, \textcolor{keywordtype}{float} detectabilityRadius) :}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00028}00028     m\_x(px),}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00029}00029     m\_y(py),}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00030}00030     DETECTABILITY\_RADIUS(detectabilityRadius)}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00031}00031 \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00032}00032     \textcolor{keywordflow}{if} (m\_spaceWidth == 0 || m\_spaceHeight == 0)}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00033}00033     \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00034}00034         std::cerr << \textcolor{stringliteral}{"{}Attention : une coordonnée a été créée avant l’initialisation de l’espace !"{}} << std::endl;}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00035}00035     \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00036}00036     setPreviousPosition(m\_x, m\_y);}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00037}00037     recalculate();}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00038}00038 \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00039}00039 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00040}\mbox{\hyperlink{class_position_abe83df4cab7af756636b4e39e4378f4a}{00040}} \mbox{\hyperlink{class_position_abe83df4cab7af756636b4e39e4378f4a}{Position::\string~Position}}()}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00041}00041 \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00042}00042 \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00043}00043 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00044}00044 \textcolor{comment}{//}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00045}00045 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00046}\mbox{\hyperlink{class_position_a508061dd3d4ebddcf2d58679d6c4df11}{00046}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_position_a508061dd3d4ebddcf2d58679d6c4df11}{Position::getSpaceWidth}}()\textcolor{keyword}{ const}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00047}00047 \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00048}00048     \textcolor{keywordflow}{return} m\_spaceWidth;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00015}00015 \textcolor{keywordtype}{void} Position::init()}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00016}00016 \{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00017}00017     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00018}00018 \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00020}00020 \textcolor{comment}{// Constructeur factultatif mais ici on envoie un message d’erreur si une coordonnée est créée avant l’initialisation de l’espace}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00021}00021 \textcolor{comment}{// Position::Position(float detectabilityRadius) :}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00022}00022 \textcolor{comment}{//  DETECTABILITY\_RADIUS(detectabilityRadius)}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00023}00023 \textcolor{comment}{// \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00024}00024 \textcolor{comment}{//  if (m\_spaceWidth == 0 || m\_spaceHeight == 0)}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00025}00025 \textcolor{comment}{//  \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00026}00026 \textcolor{comment}{//      std::cerr << "{}Attention : une coordonnée a été créée avant l’initialisation de l’espace !"{} << std::endl;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00027}00027 \textcolor{comment}{//  \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00028}00028 \textcolor{comment}{//  setPreviousPosition(m\_x, m\_y);}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00029}00029 \textcolor{comment}{//  recalculate();}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00030}00030 \textcolor{comment}{// \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00032}\mbox{\hyperlink{class_position_a34610cc3e60f5aa55ba2559743b132f7}{00032}} \mbox{\hyperlink{class_position_a34610cc3e60f5aa55ba2559743b132f7}{Position::Position}}(\textcolor{keywordtype}{float} px, \textcolor{keywordtype}{float} py, \textcolor{keywordtype}{bool} forMovableObject, \textcolor{keywordtype}{float} detectabilityRadius) :}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00033}00033     m\_x(px),}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00034}00034     m\_y(py),}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00035}00035     forMovableObject(forMovableObject),}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00036}00036     DETECTABILITY\_RADIUS(detectabilityRadius)}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00037}00037 \{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00038}00038     \textcolor{keywordflow}{if} (m\_spaceWidth == 0 || m\_spaceHeight == 0)}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00039}00039     \{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00040}00040         std::cerr << \textcolor{stringliteral}{"{}Attention : une coordonnée a été créée avant l’initialisation de l’espace !"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00041}00041     \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00042}00042     m\_thereIsARigidBody = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00043}00043     setPreviousPosition(m\_x, m\_y);}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00044}00044     recalculate();}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00045}00045 \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00047}\mbox{\hyperlink{class_position_abe83df4cab7af756636b4e39e4378f4a}{00047}} \mbox{\hyperlink{class_position_abe83df4cab7af756636b4e39e4378f4a}{Position::\string~Position}}()}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00048}00048 \{}
 \DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00049}00049 \}}
 \DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00050}00050 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00051}\mbox{\hyperlink{class_position_ada8f3a2ea417b19569c095ab0601b0b3}{00051}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_position_ada8f3a2ea417b19569c095ab0601b0b3}{Position::getSpaceHeight}}()\textcolor{keyword}{ const}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00052}00052 \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00053}00053     \textcolor{keywordflow}{return} m\_spaceHeight;}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00054}00054 \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00055}00055 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00056}\mbox{\hyperlink{class_position_a252efaf275c7276a6f35338d198de7ee}{00056}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_position_a252efaf275c7276a6f35338d198de7ee}{Position::getX}}()\textcolor{keyword}{ const}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00057}00057 \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00058}00058     \textcolor{keywordflow}{return} m\_x;}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00059}00059 \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00060}00060 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00061}\mbox{\hyperlink{class_position_a53ad8ec2f8383db4d615b3fc4e888f77}{00061}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_position_a53ad8ec2f8383db4d615b3fc4e888f77}{Position::getY}}()\textcolor{keyword}{ const}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00062}00062 \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00063}00063     \textcolor{keywordflow}{return} m\_y;}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00064}00064 \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00065}00065 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00066}00066 \textcolor{comment}{// L’opérateur += ajoute déjà le vecteur en paramètre puis ajoute ou retire la taille de l’espace sur les composantes x,y si besoin}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00067}\mbox{\hyperlink{class_position_ab5438e7590e0a9bff42748b810ca109a}{00067}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_position_ab5438e7590e0a9bff42748b810ca109a}{Position::operator+=}}(\mbox{\hyperlink{struct_my_vector}{MyVector}} \textcolor{keyword}{const}\& v)}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00068}00068 \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00069}00069     setPreviousPosition(m\_x, m\_y);}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00070}00070     m\_x += v.\mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}};}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00071}00071     m\_y += v.\mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}};}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00072}00072     recalculate();}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00073}00073 \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00074}00074 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00075}\mbox{\hyperlink{class_position_a6674b6c7cbf33bf73dfa4daed319a8f4}{00075}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_position_a6674b6c7cbf33bf73dfa4daed319a8f4}{Position::operator=}}(\mbox{\hyperlink{class_position}{Position}} \textcolor{keyword}{const}\& p)}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00076}00076 \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00077}00077     setPreviousPosition(m\_x, m\_y);}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00078}00078     m\_x = p.\mbox{\hyperlink{class_position_a252efaf275c7276a6f35338d198de7ee}{getX}}();}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00079}00079     m\_y = p.\mbox{\hyperlink{class_position_a53ad8ec2f8383db4d615b3fc4e888f77}{getY}}();}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00080}00080     recalculate();}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00081}00081 \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00082}00082 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00083}\mbox{\hyperlink{class_position_a05ae23b24acbddfc067c554402e59997}{00083}} std::ostream\& \mbox{\hyperlink{_position_8cpp_a05ae23b24acbddfc067c554402e59997}{operator<<}}(std::ostream\& out, \mbox{\hyperlink{class_position}{Position}} \textcolor{keyword}{const}\& p)}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00084}00084 \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00085}00085     out << \textcolor{stringliteral}{"{}[ x="{}} << p.\mbox{\hyperlink{class_position_a252efaf275c7276a6f35338d198de7ee}{getX}}() << \textcolor{stringliteral}{"{} , y="{}} << p.\mbox{\hyperlink{class_position_a53ad8ec2f8383db4d615b3fc4e888f77}{getY}}() << \textcolor{stringliteral}{"{} ]"{}};}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00086}00086     out << \textcolor{stringliteral}{"{} Block [ x="{}} << ceil(p.\mbox{\hyperlink{class_position_a252efaf275c7276a6f35338d198de7ee}{getX}}() / (\textcolor{keywordtype}{float})\mbox{\hyperlink{consts_8hpp_a380a7e9f541ce122b8a0196adc3c1c1f}{GAME\_BLOCKS\_WIDTH}}) << \textcolor{stringliteral}{"{} , y="{}} << ceil(p.\mbox{\hyperlink{class_position_a53ad8ec2f8383db4d615b3fc4e888f77}{getY}}() / (\textcolor{keywordtype}{float})\mbox{\hyperlink{consts_8hpp_a380a7e9f541ce122b8a0196adc3c1c1f}{GAME\_BLOCKS\_WIDTH}}) << \textcolor{stringliteral}{"{} ]"{}};}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00087}00087     \textcolor{keywordflow}{return} out;}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00088}00088 \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00089}00089 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00090}\mbox{\hyperlink{class_position_a0302c02c82ed30325e54bbe00bd5aee3}{00090}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_position_a0302c02c82ed30325e54bbe00bd5aee3}{Position::initSpace}}(\textcolor{keywordtype}{int} width, \textcolor{keywordtype}{int} height)}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00091}00091 \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00092}00092     \textcolor{comment}{// on envoie un message d’erreur si l’espace était déjà initialisé}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00093}00093     \textcolor{keywordflow}{if} (m\_spaceWidth != 0 || m\_spaceHeight != 0)}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00094}00094     \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00095}00095         std::cerr << \textcolor{stringliteral}{"{}Attention : l’espace était déjà initialisé !"{}} << std::endl;}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00096}00096     \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00097}00097     m\_spaceWidth = width;}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00098}00098     m\_spaceHeight = height;}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00099}00099 \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00100}00100 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00101}00101 \textcolor{keywordtype}{void} Position::recalculate()}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00102}00102 \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00103}00103 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00104}00104     \mbox{\hyperlink{class_collider_a765cffbef5d5e713672cea46c563dc67}{Collider::update}}(); \textcolor{comment}{// REVIEW -\/ On peut l'enlever mait il faudrait augmenter les points de contact.}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00105}00105 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00106}00106     \textcolor{keywordflow}{if} (!canMove() || m\_thereIsARigidBody)}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00107}00107     \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00108}00108         \textcolor{keywordflow}{if} (m\_x != m\_previousPosition.\mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}})}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00109}00109         \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00110}00110             m\_x = m\_previousPosition.\mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}};}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00111}00111         \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00112}00112         \textcolor{keywordflow}{if} (m\_y != m\_previousPosition.\mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}})}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00113}00113         \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00114}00114             m\_y = m\_previousPosition.\mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}};}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00115}00115         \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00116}00116         m\_thereIsARigidBody = \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00117}00117     \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00118}00118     \textcolor{comment}{//* Pour replacer dans la zone autorisé : méthode pas ouf}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00119}00119     \textcolor{comment}{/*}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00120}00120 \textcolor{comment}{    if (!canMove())}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00121}00121 \textcolor{comment}{    \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00122}00122 \textcolor{comment}{        // TODO -\/}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00123}00123 \textcolor{comment}{        // REVIEW -\/ Pour le cas du lounge, les dimensions ont changés}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00124}00124 \textcolor{comment}{        // On replace m\_y}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00125}00125 \textcolor{comment}{        if (m\_y < WALL\_WIDTH + DETECTABILITY\_RADIUS)}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00126}00126 \textcolor{comment}{        \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00127}00127 \textcolor{comment}{            m\_y = WALL\_WIDTH + DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00128}00128 \textcolor{comment}{        \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00129}00129 \textcolor{comment}{        if (m\_y > (int)GameMap::getGAME\_MAP\_HEIGHT -\/ WALL\_WIDTH -\/ DETECTABILITY\_RADIUS)}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00130}00130 \textcolor{comment}{        \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00131}00131 \textcolor{comment}{            m\_y = (int)GameMap::getGAME\_MAP\_HEIGHT -\/ WALL\_WIDTH -\/ DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00132}00132 \textcolor{comment}{        \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00133}00133 \textcolor{comment}{        if (isBetween(m\_y, (int)Hall::getMIN\_HEIGHT -\/ WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS, (int)Hall::getMIN\_HEIGHT))}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00134}00134 \textcolor{comment}{        \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00135}00135 \textcolor{comment}{            m\_y = (int)Hall::getMIN\_HEIGHT -\/ WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00136}00136 \textcolor{comment}{        \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00137}00137 \textcolor{comment}{        if (isBetween(m\_y, (int)Hall::getMIN\_HEIGHT, (int)Hall::getMIN\_HEIGHT + WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS))}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00138}00138 \textcolor{comment}{        \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00139}00139 \textcolor{comment}{            m\_y = (int)Hall::getMIN\_HEIGHT + WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00140}00140 \textcolor{comment}{        \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00141}00141 \textcolor{comment}{        if (isBetween(m\_y, 2 * (int)Hall::getMIN\_HEIGHT -\/ WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS, 2 * (int)Hall::getMIN\_HEIGHT))}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00142}00142 \textcolor{comment}{        \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00143}00143 \textcolor{comment}{            m\_y = 2 * (int)Hall::getMIN\_HEIGHT -\/ WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00144}00144 \textcolor{comment}{        \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00145}00145 \textcolor{comment}{        if (isBetween(m\_y, 2 * (int)Hall::getMIN\_HEIGHT, 2 * (int)Hall::getMIN\_HEIGHT + WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS))}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00146}00146 \textcolor{comment}{        \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00147}00147 \textcolor{comment}{            m\_y = 2 * (int)Hall::getMIN\_HEIGHT + WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00148}00148 \textcolor{comment}{        \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00149}00149 \textcolor{comment}{        if (isBetween(m\_y, 3 * (int)Hall::getMIN\_HEIGHT -\/ WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS, 3 * (int)Hall::getMIN\_HEIGHT))}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00150}00150 \textcolor{comment}{        \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00151}00151 \textcolor{comment}{            m\_y = 3 * (int)Hall::getMIN\_HEIGHT -\/ WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00152}00152 \textcolor{comment}{        \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00153}00153 \textcolor{comment}{        if (isBetween(m\_y, 3 * (int)Hall::getMIN\_HEIGHT, 3 * (int)Hall::getMIN\_HEIGHT + WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS))}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00154}00154 \textcolor{comment}{        \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00155}00155 \textcolor{comment}{            m\_y = 3 * (int)Hall::getMIN\_HEIGHT + WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00156}00156 \textcolor{comment}{        \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00157}00157 \textcolor{comment}{        if (isBetween(m\_y, 4 * (int)Hall::getMIN\_HEIGHT -\/ WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS, 4 * (int)Hall::getMIN\_HEIGHT))}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00158}00158 \textcolor{comment}{        \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00159}00159 \textcolor{comment}{            m\_y = 4 * (int)Hall::getMIN\_HEIGHT -\/ WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00160}00160 \textcolor{comment}{        \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00161}00161 \textcolor{comment}{        if (isBetween(m\_y, 4 * (int)Hall::getMIN\_HEIGHT, 4 * (int)Hall::getMIN\_HEIGHT + WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS))}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00162}00162 \textcolor{comment}{        \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00163}00163 \textcolor{comment}{            m\_y = 4 * (int)Hall::getMIN\_HEIGHT + WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00164}00164 \textcolor{comment}{        \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00165}00165 \textcolor{comment}{        if (isBetween(m\_y, 5 * (int)Hall::getMIN\_HEIGHT -\/ WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS, 5 * (int)Hall::getMIN\_HEIGHT))}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00166}00166 \textcolor{comment}{        \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00167}00167 \textcolor{comment}{            m\_y = 5 * (int)Hall::getMIN\_HEIGHT -\/ WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00168}00168 \textcolor{comment}{        \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00169}00169 \textcolor{comment}{        if (isBetween(m\_y, 5 * (int)Hall::getMIN\_HEIGHT, 5 * (int)Hall::getMIN\_HEIGHT + WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS))}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00170}00170 \textcolor{comment}{        \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00171}00171 \textcolor{comment}{            m\_y = 5 * (int)Hall::getMIN\_HEIGHT + WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00172}00172 \textcolor{comment}{        \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00173}00173 \textcolor{comment}{        if (isBetween(m\_y, 6 * (int)Hall::getMIN\_HEIGHT -\/ WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS, 6 * (int)Hall::getMIN\_HEIGHT))}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00174}00174 \textcolor{comment}{        \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00175}00175 \textcolor{comment}{            m\_y = 6 * (int)Hall::getMIN\_HEIGHT -\/ WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00176}00176 \textcolor{comment}{        \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00177}00177 \textcolor{comment}{        if (isBetween(m\_y, 6 * (int)Hall::getMIN\_HEIGHT, 6 * (int)Hall::getMIN\_HEIGHT + WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS))}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00178}00178 \textcolor{comment}{        \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00179}00179 \textcolor{comment}{            m\_y = 6 * (int)Hall::getMIN\_HEIGHT + WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00180}00180 \textcolor{comment}{        \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00181}00181 \textcolor{comment}{        // On replace m\_x}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00182}00182 \textcolor{comment}{        if (m\_x < WALL\_WIDTH + DETECTABILITY\_RADIUS)}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00183}00183 \textcolor{comment}{        \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00184}00184 \textcolor{comment}{            m\_x = WALL\_WIDTH + DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00185}00185 \textcolor{comment}{        \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00186}00186 \textcolor{comment}{        if (m\_x > (int)GameMap::getGAME\_MAP\_WIDTH -\/ WALL\_WIDTH -\/ DETECTABILITY\_RADIUS)}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00187}00187 \textcolor{comment}{        \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00188}00188 \textcolor{comment}{            m\_x = (int)GameMap::getGAME\_MAP\_WIDTH -\/ WALL\_WIDTH -\/ DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00189}00189 \textcolor{comment}{        \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00190}00190 \textcolor{comment}{        if (m\_y < 6 * (int)Hall::getMIN\_HEIGHT)}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00191}00191 \textcolor{comment}{        \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00192}00192 \textcolor{comment}{            if (isBetween(m\_x, (int)Hall::getMIN\_WIDTH -\/ WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS, (int)Hall::getMIN\_WIDTH))}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00193}00193 \textcolor{comment}{            \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00194}00194 \textcolor{comment}{                m\_x = (int)Hall::getMIN\_WIDTH -\/ WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00195}00195 \textcolor{comment}{            \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00196}00196 \textcolor{comment}{            if (isBetween(m\_x, (int)Hall::getMIN\_WIDTH, (int)Hall::getMIN\_WIDTH + WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS))}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00197}00197 \textcolor{comment}{            \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00198}00198 \textcolor{comment}{                m\_x = (int)Hall::getMIN\_WIDTH + WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00199}00199 \textcolor{comment}{            \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00200}00200 \textcolor{comment}{            if (isBetween(m\_x, (int)Hall::getMIN\_WIDTH + (int)Hall::getMIN\_HEIGHT -\/ WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS, (int)Hall::getMIN\_WIDTH + (int)Hall::getMIN\_HEIGHT))}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00201}00201 \textcolor{comment}{            \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00202}00202 \textcolor{comment}{                m\_x = (int)Hall::getMIN\_WIDTH + (int)Hall::getMIN\_HEIGHT -\/ WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00203}00203 \textcolor{comment}{            \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00204}00204 \textcolor{comment}{            if (isBetween(m\_x, (int)Hall::getMIN\_WIDTH + (int)Hall::getMIN\_HEIGHT, (int)Hall::getMIN\_WIDTH + (int)Hall::getMIN\_HEIGHT + WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS))}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00205}00205 \textcolor{comment}{            \{}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00206}00206 \textcolor{comment}{                m\_x = (int)Hall::getMIN\_WIDTH + (int)Hall::getMIN\_HEIGHT + WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS;}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00207}00207 \textcolor{comment}{            \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00208}00208 \textcolor{comment}{        \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00209}00209 \textcolor{comment}{    \}}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00210}00210 \textcolor{comment}{    //*/}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00211}00211 \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00212}00212 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00213}\mbox{\hyperlink{class_position_aafccfd0fdf3662f2ce3a9648374f6ccb}{00213}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_position_aafccfd0fdf3662f2ce3a9648374f6ccb}{Position::getDistanceWith}}(\mbox{\hyperlink{class_position}{Position}} \textcolor{keyword}{const}\& autre)\textcolor{keyword}{ const}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00214}00214 \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00215}00215     \textcolor{keyword}{auto} delta = \mbox{\hyperlink{struct_my_vector}{MyVector}} \{ std::min(\{ abs(m\_x -\/ autre.m\_x), abs(m\_x -\/ autre.m\_x -\/ m\_spaceWidth), abs(m\_x -\/ autre.m\_x + m\_spaceWidth) \}), std::min(\{ abs(m\_y -\/ autre.m\_y), abs(m\_y -\/ autre.m\_y -\/ m\_spaceHeight), abs(m\_y -\/ autre.m\_y + m\_spaceHeight) \}) \};}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00216}00216     \textcolor{keywordflow}{return} sqrt(delta.m\_x * delta.m\_x + delta.m\_y * delta.m\_y);}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00217}00217 \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00218}00218 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00219}\mbox{\hyperlink{class_position_a44364e1b27dac50ec6d0e9e4d7d1b2c1}{00219}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_position_a44364e1b27dac50ec6d0e9e4d7d1b2c1}{Position::setPosition}}(\textcolor{keywordtype}{float} posX, \textcolor{keywordtype}{float} posY)}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00220}00220 \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00221}00221     setPreviousPosition(m\_x, m\_y);}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00222}00222     m\_x = posX;}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00223}00223     m\_y = posY;}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00224}00224     recalculate();}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00051}00051 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00052}\mbox{\hyperlink{class_position_a508061dd3d4ebddcf2d58679d6c4df11}{00052}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_position_a508061dd3d4ebddcf2d58679d6c4df11}{Position::getSpaceWidth}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00053}00053 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00054}00054     \textcolor{keywordflow}{return} m\_spaceWidth;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00055}00055 \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00057}\mbox{\hyperlink{class_position_ada8f3a2ea417b19569c095ab0601b0b3}{00057}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_position_ada8f3a2ea417b19569c095ab0601b0b3}{Position::getSpaceHeight}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00058}00058 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00059}00059     \textcolor{keywordflow}{return} m\_spaceHeight;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00060}00060 \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00062}\mbox{\hyperlink{class_position_a252efaf275c7276a6f35338d198de7ee}{00062}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_position_a252efaf275c7276a6f35338d198de7ee}{Position::getX}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00063}00063 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00064}00064     \textcolor{keywordflow}{return} m\_x;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00065}00065 \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00067}\mbox{\hyperlink{class_position_a53ad8ec2f8383db4d615b3fc4e888f77}{00067}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_position_a53ad8ec2f8383db4d615b3fc4e888f77}{Position::getY}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00068}00068 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00069}00069     \textcolor{keywordflow}{return} m\_y;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00070}00070 \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00072}00072 \textcolor{comment}{// L’opérateur += ajoute déjà le vecteur en paramètre puis ajoute ou retire la taille de l’espace sur les composantes x,y si besoin}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00073}\mbox{\hyperlink{class_position_ab5438e7590e0a9bff42748b810ca109a}{00073}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_position_ab5438e7590e0a9bff42748b810ca109a}{Position::operator+=}}(\mbox{\hyperlink{struct_my_vector}{MyVector}} \textcolor{keyword}{const}\& v)}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00074}00074 \{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00075}00075     setPreviousPosition(m\_x, m\_y);}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00076}00076     m\_x += v.\mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}};}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00077}00077     m\_y += v.\mbox{\hyperlink{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}{y}};}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00078}00078     recalculate();}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00079}00079 \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00081}\mbox{\hyperlink{class_position_a6674b6c7cbf33bf73dfa4daed319a8f4}{00081}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_position_a6674b6c7cbf33bf73dfa4daed319a8f4}{Position::operator=}}(\mbox{\hyperlink{class_position}{Position}} \textcolor{keyword}{const}\& p)}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00082}00082 \{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00083}00083     setPreviousPosition(m\_x, m\_y);}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00084}00084     m\_x = p.\mbox{\hyperlink{class_position_a252efaf275c7276a6f35338d198de7ee}{getX}}();}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00085}00085     m\_y = p.\mbox{\hyperlink{class_position_a53ad8ec2f8383db4d615b3fc4e888f77}{getY}}();}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00086}00086     recalculate();}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00087}00087 \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00089}\mbox{\hyperlink{class_position_a05ae23b24acbddfc067c554402e59997}{00089}} std::ostream\& \mbox{\hyperlink{_position_8cpp_a05ae23b24acbddfc067c554402e59997}{operator<<}}(std::ostream\& out, \mbox{\hyperlink{class_position}{Position}} \textcolor{keyword}{const}\& p)}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00090}00090 \{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00091}00091     out << \textcolor{stringliteral}{"{}[ x="{}} << p.\mbox{\hyperlink{class_position_a252efaf275c7276a6f35338d198de7ee}{getX}}() << \textcolor{stringliteral}{"{} , y="{}} << p.\mbox{\hyperlink{class_position_a53ad8ec2f8383db4d615b3fc4e888f77}{getY}}() << \textcolor{stringliteral}{"{} ]"{}};}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00092}00092     out << \textcolor{stringliteral}{"{} Block [ x="{}} << ceil(p.\mbox{\hyperlink{class_position_a252efaf275c7276a6f35338d198de7ee}{getX}}() / (\textcolor{keywordtype}{float})\mbox{\hyperlink{namespacegame_a31101344334dbbe88a0c2fd3313f697a}{game::GAME\_BLOCKS\_WIDTH}}) << \textcolor{stringliteral}{"{} , y="{}} << ceil(p.\mbox{\hyperlink{class_position_a53ad8ec2f8383db4d615b3fc4e888f77}{getY}}() / (\textcolor{keywordtype}{float})\mbox{\hyperlink{namespacegame_a31101344334dbbe88a0c2fd3313f697a}{game::GAME\_BLOCKS\_WIDTH}}) << \textcolor{stringliteral}{"{} ]"{}};}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00093}00093     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00094}00094 \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00096}\mbox{\hyperlink{class_position_a0302c02c82ed30325e54bbe00bd5aee3}{00096}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_position_a0302c02c82ed30325e54bbe00bd5aee3}{Position::initSpace}}(\textcolor{keywordtype}{int} width, \textcolor{keywordtype}{int} height)}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00097}00097 \{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00098}00098     \textcolor{comment}{// on envoie un message d’erreur si l’espace était déjà initialisé}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00099}00099     \textcolor{keywordflow}{if} (m\_spaceWidth != 0 || m\_spaceHeight != 0)}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00100}00100     \{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00101}00101         std::cerr << \textcolor{stringliteral}{"{}Attention : l’espace était déjà initialisé !"{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00102}00102     \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00103}00103     m\_spaceWidth = width;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00104}00104     m\_spaceHeight = height;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00105}00105 \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00107}00107 \textcolor{keywordtype}{void} Position::recalculate()}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00108}00108 \{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00110}00110     \mbox{\hyperlink{class_collider_a765cffbef5d5e713672cea46c563dc67}{Collider::update}}(); \textcolor{comment}{// REVIEW -\/ On peut l'enlever mait il faudrait augmenter les points de contact.}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00112}00112     \textcolor{keywordflow}{if} (!this-\/>forMovableObject)}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00113}00113     \{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00114}00114         \textcolor{comment}{// REVIEW -\/ Un truc pour indiquer si le truc se trouve à la même position qu'un rigidBody}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00116}00116         \textcolor{comment}{// On ne recalcul pas si c'est}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00117}00117         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00118}00118     \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00120}00120     \textcolor{keywordflow}{if} (!canMove() || m\_thereIsARigidBody)}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00121}00121     \{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00122}00122         \textcolor{keywordflow}{if} (m\_x != m\_previousPosition.\mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}})}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00123}00123         \{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00124}00124             m\_x = m\_previousPosition.\mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}};}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00125}00125         \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00126}00126         \textcolor{keywordflow}{if} (m\_y != m\_previousPosition.\mbox{\hyperlink{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}{y}})}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00127}00127         \{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00128}00128             m\_y = m\_previousPosition.\mbox{\hyperlink{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}{y}};}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00129}00129         \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00130}00130         m\_thereIsARigidBody = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00131}00131     \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00132}00132     \textcolor{comment}{//* Pour replacer dans la zone autorisé : méthode pas ouf}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00133}00133     \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00134}00134 \textcolor{comment}{    if (!canMove())}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00135}00135 \textcolor{comment}{    \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00136}00136 \textcolor{comment}{        // TODO -\/}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00137}00137 \textcolor{comment}{        // REVIEW -\/ Pour le cas du lounge, les dimensions ont changés}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00138}00138 \textcolor{comment}{        // On replace m\_y}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00139}00139 \textcolor{comment}{        if (m\_y < game::WALL\_WIDTH + DETECTABILITY\_RADIUS)}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00140}00140 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00141}00141 \textcolor{comment}{            m\_y = game::WALL\_WIDTH + DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00142}00142 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00143}00143 \textcolor{comment}{        if (m\_y > (int)GameMap::getGAME\_MAP\_HEIGHT -\/ game::WALL\_WIDTH -\/ DETECTABILITY\_RADIUS)}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00144}00144 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00145}00145 \textcolor{comment}{            m\_y = (int)GameMap::getGAME\_MAP\_HEIGHT -\/ game::WALL\_WIDTH -\/ DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00146}00146 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00147}00147 \textcolor{comment}{        if (isBetween(m\_y, (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS, (int)Hall::getMIN\_HEIGHT))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00148}00148 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00149}00149 \textcolor{comment}{            m\_y = (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00150}00150 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00151}00151 \textcolor{comment}{        if (isBetween(m\_y, (int)Hall::getMIN\_HEIGHT, (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00152}00152 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00153}00153 \textcolor{comment}{            m\_y = (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00154}00154 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00155}00155 \textcolor{comment}{        if (isBetween(m\_y, 2 * (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS, 2 * (int)Hall::getMIN\_HEIGHT))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00156}00156 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00157}00157 \textcolor{comment}{            m\_y = 2 * (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00158}00158 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00159}00159 \textcolor{comment}{        if (isBetween(m\_y, 2 * (int)Hall::getMIN\_HEIGHT, 2 * (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00160}00160 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00161}00161 \textcolor{comment}{            m\_y = 2 * (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00162}00162 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00163}00163 \textcolor{comment}{        if (isBetween(m\_y, 3 * (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS, 3 * (int)Hall::getMIN\_HEIGHT))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00164}00164 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00165}00165 \textcolor{comment}{            m\_y = 3 * (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00166}00166 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00167}00167 \textcolor{comment}{        if (isBetween(m\_y, 3 * (int)Hall::getMIN\_HEIGHT, 3 * (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00168}00168 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00169}00169 \textcolor{comment}{            m\_y = 3 * (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00170}00170 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00171}00171 \textcolor{comment}{        if (isBetween(m\_y, 4 * (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS, 4 * (int)Hall::getMIN\_HEIGHT))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00172}00172 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00173}00173 \textcolor{comment}{            m\_y = 4 * (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00174}00174 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00175}00175 \textcolor{comment}{        if (isBetween(m\_y, 4 * (int)Hall::getMIN\_HEIGHT, 4 * (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00176}00176 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00177}00177 \textcolor{comment}{            m\_y = 4 * (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00178}00178 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00179}00179 \textcolor{comment}{        if (isBetween(m\_y, 5 * (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS, 5 * (int)Hall::getMIN\_HEIGHT))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00180}00180 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00181}00181 \textcolor{comment}{            m\_y = 5 * (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00182}00182 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00183}00183 \textcolor{comment}{        if (isBetween(m\_y, 5 * (int)Hall::getMIN\_HEIGHT, 5 * (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00184}00184 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00185}00185 \textcolor{comment}{            m\_y = 5 * (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00186}00186 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00187}00187 \textcolor{comment}{        if (isBetween(m\_y, 6 * (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS, 6 * (int)Hall::getMIN\_HEIGHT))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00188}00188 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00189}00189 \textcolor{comment}{            m\_y = 6 * (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00190}00190 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00191}00191 \textcolor{comment}{        if (isBetween(m\_y, 6 * (int)Hall::getMIN\_HEIGHT, 6 * (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00192}00192 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00193}00193 \textcolor{comment}{            m\_y = 6 * (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00194}00194 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00195}00195 \textcolor{comment}{        // On replace m\_x}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00196}00196 \textcolor{comment}{        if (m\_x < game::WALL\_WIDTH + DETECTABILITY\_RADIUS)}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00197}00197 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00198}00198 \textcolor{comment}{            m\_x = game::WALL\_WIDTH + DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00199}00199 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00200}00200 \textcolor{comment}{        if (m\_x > (int)GameMap::getGAME\_MAP\_WIDTH -\/ game::WALL\_WIDTH -\/ DETECTABILITY\_RADIUS)}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00201}00201 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00202}00202 \textcolor{comment}{            m\_x = (int)GameMap::getGAME\_MAP\_WIDTH -\/ game::WALL\_WIDTH -\/ DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00203}00203 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00204}00204 \textcolor{comment}{        if (m\_y < 6 * (int)Hall::getMIN\_HEIGHT)}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00205}00205 \textcolor{comment}{        \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00206}00206 \textcolor{comment}{            if (isBetween(m\_x, (int)Hall::getMIN\_WIDTH -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS, (int)Hall::getMIN\_WIDTH))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00207}00207 \textcolor{comment}{            \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00208}00208 \textcolor{comment}{                m\_x = (int)Hall::getMIN\_WIDTH -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00209}00209 \textcolor{comment}{            \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00210}00210 \textcolor{comment}{            if (isBetween(m\_x, (int)Hall::getMIN\_WIDTH, (int)Hall::getMIN\_WIDTH + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00211}00211 \textcolor{comment}{            \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00212}00212 \textcolor{comment}{                m\_x = (int)Hall::getMIN\_WIDTH + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00213}00213 \textcolor{comment}{            \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00214}00214 \textcolor{comment}{            if (isBetween(m\_x, (int)Hall::getMIN\_WIDTH + (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS, (int)Hall::getMIN\_WIDTH + (int)Hall::getMIN\_HEIGHT))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00215}00215 \textcolor{comment}{            \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00216}00216 \textcolor{comment}{                m\_x = (int)Hall::getMIN\_WIDTH + (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00217}00217 \textcolor{comment}{            \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00218}00218 \textcolor{comment}{            if (isBetween(m\_x, (int)Hall::getMIN\_WIDTH + (int)Hall::getMIN\_HEIGHT, (int)Hall::getMIN\_WIDTH + (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00219}00219 \textcolor{comment}{            \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00220}00220 \textcolor{comment}{                m\_x = (int)Hall::getMIN\_WIDTH + (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00221}00221 \textcolor{comment}{            \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00222}00222 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00223}00223 \textcolor{comment}{    \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00224}00224 \textcolor{comment}{    //*/}}
 \DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00225}00225 \}}
 \DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00226}00226 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00227}\mbox{\hyperlink{class_position_af409de5592dd7da6fb0ccb8d1681bb19}{00227}} \mbox{\hyperlink{struct_my_vector}{MyVector}} \mbox{\hyperlink{class_position_af409de5592dd7da6fb0ccb8d1681bb19}{Position::getPosition}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00227}\mbox{\hyperlink{class_position_aafccfd0fdf3662f2ce3a9648374f6ccb}{00227}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_position_aafccfd0fdf3662f2ce3a9648374f6ccb}{Position::getDistanceWith}}(\mbox{\hyperlink{class_position}{Position}} \textcolor{keyword}{const}\& autre)\textcolor{keyword}{ const}}
 \DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00228}00228 \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00229}00229     \textcolor{keywordflow}{return} \mbox{\hyperlink{struct_my_vector}{MyVector}} \{ m\_x, m\_y \};}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00230}00230 \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00231}00231 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00232}00232 \textcolor{keywordtype}{void} Position::setPreviousPosition(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y)}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00233}00233 \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00234}00234     m\_previousPosition.\mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}} = x;}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00235}00235     m\_previousPosition.\mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}} = y;}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00236}00236 \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00237}00237 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00238}00238 \textcolor{keywordtype}{void} Position::setPreviousPosition(\mbox{\hyperlink{struct_my_vector}{MyVector}} v)}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00239}00239 \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00240}00240     m\_previousPosition = v;}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00241}00241 \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00242}00242 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00243}00243 \textcolor{keywordtype}{bool} Position::canMove()}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00244}00244 \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00245}00245     \textcolor{keywordtype}{bool} canMove(0);}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00246}00246     \textcolor{comment}{// On va repousser la zone de non mouvement d'un facteur}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00247}00247     \textcolor{comment}{// pour qu'il n'y ai pas de conflit avec la zone de redéploiment avec la fonction recalculate d'un corps qui ne doit pas bouger.}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00248}00248     \textcolor{keywordtype}{int} fac(0);}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00249}00249     \textcolor{keywordflow}{if} (\mbox{\hyperlink{utils_8cpp_a9d2d450f900eb992511c37b55c0bf07d}{isBetween}}(m\_y, 6 * (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_hall_af9feadcc489d1a980f43cf7833e6e255}{Hall::getMIN\_HEIGHT}} + \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} / 2 + DETECTABILITY\_RADIUS -\/ fac, (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_game_map_a8a00f063b5d3ed56f4eb3e8d76a95028}{GameMap::getGAME\_MAP\_HEIGHT}} -\/ \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} -\/ DETECTABILITY\_RADIUS + fac))}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00250}00250     \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00251}00251         \textcolor{keywordflow}{if} (\mbox{\hyperlink{utils_8cpp_a9d2d450f900eb992511c37b55c0bf07d}{isBetween}}(m\_x, \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} + DETECTABILITY\_RADIUS -\/ fac, (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_game_map_ababbd90ae6aef61967528cd04bd91e83}{GameMap::getGAME\_MAP\_WIDTH}} -\/ \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} -\/ DETECTABILITY\_RADIUS + fac))}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00252}00252         \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00253}00253             canMove = \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00254}00254         \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00255}00255     \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00256}00256     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{utils_8cpp_a9d2d450f900eb992511c37b55c0bf07d}{isBetween}}(m\_y, \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} + DETECTABILITY\_RADIUS -\/ fac, (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_hall_af9feadcc489d1a980f43cf7833e6e255}{Hall::getMIN\_HEIGHT}} -\/ \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} / 2 -\/ DETECTABILITY\_RADIUS + fac) || \mbox{\hyperlink{utils_8cpp_a9d2d450f900eb992511c37b55c0bf07d}{isBetween}}(m\_y, (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_hall_af9feadcc489d1a980f43cf7833e6e255}{Hall::getMIN\_HEIGHT}} + \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} / 2 + DETECTABILITY\_RADIUS -\/ fac, 2 * (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_hall_af9feadcc489d1a980f43cf7833e6e255}{Hall::getMIN\_HEIGHT}} -\/ \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} / 2 -\/ DETECTABILITY\_RADIUS + fac) || \mbox{\hyperlink{utils_8cpp_a9d2d450f900eb992511c37b55c0bf07d}{isBetween}}(m\_y, 2 * (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_hall_af9feadcc489d1a980f43cf7833e6e255}{Hall::getMIN\_HEIGHT}} + \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} / 2 + DETECTABILITY\_RADIUS -\/ fac, 3 * (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_hall_af9feadcc489d1a980f43cf7833e6e255}{Hall::getMIN\_HEIGHT}} -\/ \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} / 2 -\/ DETECTABILITY\_RADIUS + fac) || \mbox{\hyperlink{utils_8cpp_a9d2d450f900eb992511c37b55c0bf07d}{isBetween}}(m\_y, 3 * (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_hall_af9feadcc489d1a980f43cf7833e6e255}{Hall::getMIN\_HEIGHT}} + \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} / 2 + DETECTABILITY\_RADIUS -\/ fac, 4 * (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_hall_af9feadcc489d1a980f43cf7833e6e255}{Hall::getMIN\_HEIGHT}} -\/ \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} / 2 -\/ DETECTABILITY\_RADIUS + fac) || \mbox{\hyperlink{utils_8cpp_a9d2d450f900eb992511c37b55c0bf07d}{isBetween}}(m\_y, 4 * (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_hall_af9feadcc489d1a980f43cf7833e6e255}{Hall::getMIN\_HEIGHT}} + \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} / 2 + DETECTABILITY\_RADIUS -\/ fac, 5 * (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_hall_af9feadcc489d1a980f43cf7833e6e255}{Hall::getMIN\_HEIGHT}} -\/ \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} / 2 -\/ DETECTABILITY\_RADIUS + fac) || \mbox{\hyperlink{utils_8cpp_a9d2d450f900eb992511c37b55c0bf07d}{isBetween}}(m\_y, 5 * (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_hall_af9feadcc489d1a980f43cf7833e6e255}{Hall::getMIN\_HEIGHT}} + \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} / 2 + DETECTABILITY\_RADIUS -\/ fac, 6 * (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_hall_af9feadcc489d1a980f43cf7833e6e255}{Hall::getMIN\_HEIGHT}} -\/ \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} / 2 -\/ DETECTABILITY\_RADIUS + fac))}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00257}00257     \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00258}00258         \textcolor{keywordflow}{if} (\mbox{\hyperlink{utils_8cpp_a9d2d450f900eb992511c37b55c0bf07d}{isBetween}}(m\_x, \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} + DETECTABILITY\_RADIUS -\/ fac, (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_hall_a3ea4361fbacb1f52beca20d6e8553b70}{Hall::getMIN\_WIDTH}} -\/ \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} / 2 -\/ DETECTABILITY\_RADIUS + fac) || \mbox{\hyperlink{utils_8cpp_a9d2d450f900eb992511c37b55c0bf07d}{isBetween}}(m\_x, (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_hall_a3ea4361fbacb1f52beca20d6e8553b70}{Hall::getMIN\_WIDTH}} + \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} / 2 + DETECTABILITY\_RADIUS -\/ fac, (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_hall_a3ea4361fbacb1f52beca20d6e8553b70}{Hall::getMIN\_WIDTH}} + (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_hall_af9feadcc489d1a980f43cf7833e6e255}{Hall::getMIN\_HEIGHT}} -\/ \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} / 2 -\/ DETECTABILITY\_RADIUS + fac) || \mbox{\hyperlink{utils_8cpp_a9d2d450f900eb992511c37b55c0bf07d}{isBetween}}(m\_x, (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_hall_a3ea4361fbacb1f52beca20d6e8553b70}{Hall::getMIN\_WIDTH}} + (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_hall_af9feadcc489d1a980f43cf7833e6e255}{Hall::getMIN\_HEIGHT}} + \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} / 2 + DETECTABILITY\_RADIUS -\/ fac, (\textcolor{keywordtype}{int})\mbox{\hyperlink{class_game_map_ababbd90ae6aef61967528cd04bd91e83}{GameMap::getGAME\_MAP\_WIDTH}} -\/ \mbox{\hyperlink{consts_8hpp_ac5e5046fabb50b3d89c179d32661cc7f}{WALL\_WIDTH}} -\/ DETECTABILITY\_RADIUS + fac))}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00259}00259         \{}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00260}00260             canMove = \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00261}00261         \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00262}00262     \}}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00263}00263 }
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00264}00264     \textcolor{keywordflow}{return} canMove;}
-\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00265}00265 \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00229}00229     \textcolor{keyword}{auto} delta = \mbox{\hyperlink{struct_my_vector}{MyVector}} \{ std::min(\{ abs(m\_x -\/ autre.m\_x), abs(m\_x -\/ autre.m\_x -\/ m\_spaceWidth), abs(m\_x -\/ autre.m\_x + m\_spaceWidth) \}), std::min(\{ abs(m\_y -\/ autre.m\_y), abs(m\_y -\/ autre.m\_y -\/ m\_spaceHeight), abs(m\_y -\/ autre.m\_y + m\_spaceHeight) \}) \};}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00230}00230     \textcolor{keywordflow}{return} sqrt(delta.x * delta.x + delta.y * delta.y);}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00231}00231 \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00232}00232 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00233}\mbox{\hyperlink{class_position_a44364e1b27dac50ec6d0e9e4d7d1b2c1}{00233}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_position_a44364e1b27dac50ec6d0e9e4d7d1b2c1}{Position::setPosition}}(\textcolor{keywordtype}{float} posX, \textcolor{keywordtype}{float} posY)}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00234}00234 \{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00235}00235     setPreviousPosition(m\_x, m\_y);}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00236}00236     m\_x = posX;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00237}00237     m\_y = posY;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00238}00238     recalculate();}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00239}00239 \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00240}00240 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00241}\mbox{\hyperlink{class_position_af409de5592dd7da6fb0ccb8d1681bb19}{00241}} \mbox{\hyperlink{struct_my_vector}{MyVector}} \mbox{\hyperlink{class_position_af409de5592dd7da6fb0ccb8d1681bb19}{Position::getPosition}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00242}00242 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00243}00243     \textcolor{keywordflow}{return} \mbox{\hyperlink{struct_my_vector}{MyVector}} \{ m\_x, m\_y \};}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00244}00244 \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00245}00245 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00246}\mbox{\hyperlink{class_position_a7a4256cdf1c47f24a5ee67194ddd8d68}{00246}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_position_a7a4256cdf1c47f24a5ee67194ddd8d68}{Position::setPositionMovementLimit}}(sf::IntRect \textcolor{keyword}{const}\& hall)}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00247}00247 \{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00248}00248     this-\/>hall.top = hall.top;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00249}00249     this-\/>hall.left = hall.left;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00250}00250     this-\/>hall.width = hall.width;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00251}00251     this-\/>hall.height = hall.height;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00252}00252 \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00253}00253 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00254}00254 \textcolor{keywordtype}{void} Position::setPreviousPosition(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y)}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00255}00255 \{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00256}00256     m\_previousPosition.\mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}} = x;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00257}00257     m\_previousPosition.\mbox{\hyperlink{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}{y}} = y;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00258}00258 \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00259}00259 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00260}00260 \textcolor{keywordtype}{void} Position::setPreviousPosition(\mbox{\hyperlink{struct_my_vector}{MyVector}} v)}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00261}00261 \{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00262}00262     m\_previousPosition = v;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00263}00263 \}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00264}00264 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00265}00265 \textcolor{keywordtype}{bool} Position::canMove()}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00266}00266 \{}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00267}00267     \textcolor{comment}{// REVIEW -\/}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00268}00268     \textcolor{keywordflow}{return} this-\/>hall.contains(this-\/>\mbox{\hyperlink{class_position_a252efaf275c7276a6f35338d198de7ee}{getX}}(), this-\/>\mbox{\hyperlink{class_position_a53ad8ec2f8383db4d615b3fc4e888f77}{getY}}());}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00269}00269     \textcolor{comment}{// return true;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00270}00270 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00271}00271     \textcolor{keywordtype}{bool} canMove(0);}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00272}00272     \textcolor{comment}{// On va repousser la zone de non mouvement d'un facteur}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00273}00273     \textcolor{comment}{// pour qu'il n'y ai pas de conflit avec la zone de redéploiment avec la fonction recalculate d'un corps qui ne doit pas bouger.}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00274}00274     \textcolor{comment}{// int fac(0);}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00275}00275     \textcolor{comment}{// if (isBetween(m\_y, 6 * (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS -\/ fac, (int)game::GAME\_MAP\_HEIGHT -\/ game::WALL\_WIDTH -\/ DETECTABILITY\_RADIUS + fac))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00276}00276     \textcolor{comment}{// \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00277}00277     \textcolor{comment}{//  if (isBetween(m\_x, game::WALL\_WIDTH + DETECTABILITY\_RADIUS -\/ fac, (int)game::GAME\_MAP\_WIDTH -\/ game::WALL\_WIDTH -\/ DETECTABILITY\_RADIUS + fac))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00278}00278     \textcolor{comment}{//  \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00279}00279     \textcolor{comment}{//      canMove = true;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00280}00280     \textcolor{comment}{//  \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00281}00281     \textcolor{comment}{// \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00282}00282     \textcolor{comment}{// else if (isBetween(m\_y, game::WALL\_WIDTH + DETECTABILITY\_RADIUS -\/ fac, (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS + fac) || isBetween(m\_y, (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS -\/ fac, 2 * (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS + fac) || isBetween(m\_y, 2 * (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS -\/ fac, 3 * (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS + fac) || isBetween(m\_y, 3 * (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS -\/ fac, 4 * (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS + fac) || isBetween(m\_y, 4 * (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS -\/ fac, 5 * (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS + fac) || isBetween(m\_y, 5 * (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS -\/ fac, 6 * (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS + fac))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00283}00283     \textcolor{comment}{// \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00284}00284     \textcolor{comment}{//  if (isBetween(m\_x, game::WALL\_WIDTH + DETECTABILITY\_RADIUS -\/ fac, (int)Hall::getMIN\_WIDTH -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS + fac) || isBetween(m\_x, (int)Hall::getMIN\_WIDTH + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS -\/ fac, (int)Hall::getMIN\_WIDTH + (int)Hall::getMIN\_HEIGHT -\/ game::WALL\_WIDTH / 2 -\/ DETECTABILITY\_RADIUS + fac) || isBetween(m\_x, (int)Hall::getMIN\_WIDTH + (int)Hall::getMIN\_HEIGHT + game::WALL\_WIDTH / 2 + DETECTABILITY\_RADIUS -\/ fac, (int)game::GAME\_MAP\_WIDTH -\/ game::WALL\_WIDTH -\/ DETECTABILITY\_RADIUS + fac))}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00285}00285     \textcolor{comment}{//  \{}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00286}00286     \textcolor{comment}{//      canMove = true;}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00287}00287     \textcolor{comment}{//  \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00288}00288     \textcolor{comment}{// \}}}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00289}00289 }
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00290}00290     \textcolor{keywordflow}{return} canMove;}
+\DoxyCodeLine{\Hypertarget{_position_8cpp_source_l00291}00291 \}}
 
 \end{DoxyCode}

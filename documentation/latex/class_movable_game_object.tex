@@ -1,0 +1,297 @@
+\hypertarget{class_movable_game_object}{}\doxysection{Référence de la classe Movable\+Game\+Object}
+\label{class_movable_game_object}\index{MovableGameObject@{MovableGameObject}}
+
+
+{\ttfamily \#include $<$Movable\+Game\+Object.\+hpp$>$}
+
+Graphe d\textquotesingle{}héritage de Movable\+Game\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_movable_game_object}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_movable_game_object_a786b4b88e7a155f561593313432c06f9}{Movable\+Game\+Object}} (std\+::string\+\_\+view const \&image\+Sprite\+Path)
+\item 
+\mbox{\hyperlink{class_movable_game_object_ab86ce333c409ff3cec75db7040d264d5}{$\sim$\+Movable\+Game\+Object}} ()
+\item 
+virtual void \mbox{\hyperlink{class_movable_game_object_af5ac80937d289f9c159ea5c93dccfbba}{move}} (\mbox{\hyperlink{struct_my_vector}{My\+Vector}} \&speed)=0
+\item 
+\mbox{\hyperlink{class_animation_component}{Animation\+Component}} $\ast$ \mbox{\hyperlink{class_movable_game_object_ad3b241b18227ac3eacee79069af64fc7}{get\+Animation\+Component}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_movable_game_object_ac3ca02b727df6802b66bc7cd677b0504}{add\+To\+Hall}} (\mbox{\hyperlink{class_hall}{Hall}} $\ast$\mbox{\hyperlink{class_movable_game_object_a82a572bd2815eb23cf9b752dbc70784e}{hall}})
+\begin{DoxyCompactList}\small\item\em Déplacer un objet vers une salle est virtuel pour permettre de récrire la fonction et spécifier peut être des conditions de déplacement. NOTE -\/ Cet déplacement ne concerne pas le chagement des cordonnes mais juste l\textquotesingle{}éta d\textquotesingle{}appartenance. Néanmoins c\textquotesingle{}est à partir d\textquotesingle{}elle qu\textquotesingle{}on informe l\textquotesingle{}object des nouvelles limites de mouvement. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_movable_game_object_a642733a3472829a5526280e44bfd27e5}{show}} (sf\+::\+Render\+Target \&window)
+\begin{DoxyCompactList}\small\item\em Pour dessiner l\textquotesingle{}élement dans la fenêtre. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_movable_game_object_a65c649a0cf69aa86032cb3fc63e9da01}{on\+Collision\+Enter}} (\mbox{\hyperlink{class_collision}{Collision}} const \&collision) const =0
+\begin{DoxyCompactList}\small\item\em émit quand il entre en contacte avec un autre élément \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_movable_game_object_a07e44e5e7fd45ea5eb50fb86983473f1}{update}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_movable_game_object_a2e91f66b167c69682916b93cc5d900ae}{create\+Animation\+Component}} (sf\+::\+Texture \&texture)
+\item 
+virtual void \mbox{\hyperlink{class_movable_game_object_a0e0909f577c773a6fd5c4b7f0661228c}{init\+Position}} (float posX, float posY) override
+\item 
+virtual void \mbox{\hyperlink{class_movable_game_object_a14ce6a7878ca03a4c451a64a0eb88555}{init\+Animations}} ()=0
+\begin{DoxyCompactList}\small\item\em Initialiser animation\+Component et les animations. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_movable_game_object_a3c21e1f1df5715b09a286255999d04b1}{set\+Position\+Movement\+Limit}} (const \mbox{\hyperlink{class_hall}{Hall}} $\ast$\mbox{\hyperlink{class_movable_game_object_a82a572bd2815eb23cf9b752dbc70784e}{hall}})
+\begin{DoxyCompactList}\small\item\em Met à jour les nouvelle limite de déplacement. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_movable_game_object_ae9fedc4f3a11d0a2fcc339324b01430a}{update\+Position}} (float posX, float posY)=0
+\begin{DoxyCompactList}\small\item\em Permet de mettre à jour la position actuelle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_animation_component}{Animation\+Component}} $\ast$ \mbox{\hyperlink{class_movable_game_object_a655f3cc2f2a8b00c30ed90cd8c7b712e}{animation\+Component}}
+\item 
+const \mbox{\hyperlink{class_hall}{Hall}} $\ast$ \mbox{\hyperlink{class_movable_game_object_a82a572bd2815eb23cf9b752dbc70784e}{hall}}
+\begin{DoxyCompactList}\small\item\em Ce pointeur ne doit pas être supprimé à ce niveau. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Membres hérités additionnels}
+
+
+\doxysubsection{Description détaillée}
+
+
+Définition à la ligne \mbox{\hyperlink{_movable_game_object_8hpp_source_l00016}{16}} du fichier \mbox{\hyperlink{_movable_game_object_8hpp_source}{Movable\+Game\+Object.\+hpp}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_movable_game_object_a786b4b88e7a155f561593313432c06f9}\label{class_movable_game_object_a786b4b88e7a155f561593313432c06f9}} 
+\index{MovableGameObject@{MovableGameObject}!MovableGameObject@{MovableGameObject}}
+\index{MovableGameObject@{MovableGameObject}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{MovableGameObject()}{MovableGameObject()}}
+{\footnotesize\ttfamily Movable\+Game\+Object\+::\+Movable\+Game\+Object (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view const \&}]{image\+Sprite\+Path }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_movable_game_object_8cpp_source_l00013}{13}} du fichier \mbox{\hyperlink{_movable_game_object_8cpp_source}{Movable\+Game\+Object.\+cpp}}.
+
+\mbox{\Hypertarget{class_movable_game_object_ab86ce333c409ff3cec75db7040d264d5}\label{class_movable_game_object_ab86ce333c409ff3cec75db7040d264d5}} 
+\index{MovableGameObject@{MovableGameObject}!````~MovableGameObject@{$\sim$MovableGameObject}}
+\index{````~MovableGameObject@{$\sim$MovableGameObject}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{$\sim$MovableGameObject()}{~MovableGameObject()}}
+{\footnotesize\ttfamily Movable\+Game\+Object\+::$\sim$\+Movable\+Game\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_movable_game_object_8cpp_source_l00019}{19}} du fichier \mbox{\hyperlink{_movable_game_object_8cpp_source}{Movable\+Game\+Object.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_movable_game_object_ac3ca02b727df6802b66bc7cd677b0504}\label{class_movable_game_object_ac3ca02b727df6802b66bc7cd677b0504}} 
+\index{MovableGameObject@{MovableGameObject}!addToHall@{addToHall}}
+\index{addToHall@{addToHall}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{addToHall()}{addToHall()}}
+{\footnotesize\ttfamily bool Movable\+Game\+Object\+::add\+To\+Hall (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hall}{Hall}} $\ast$}]{hall }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Déplacer un objet vers une salle est virtuel pour permettre de récrire la fonction et spécifier peut être des conditions de déplacement. NOTE -\/ Cet déplacement ne concerne pas le chagement des cordonnes mais juste l\textquotesingle{}éta d\textquotesingle{}appartenance. Néanmoins c\textquotesingle{}est à partir d\textquotesingle{}elle qu\textquotesingle{}on informe l\textquotesingle{}object des nouvelles limites de mouvement. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em hall} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true Si le déplacement s\textquotesingle{}est effectué avec succès 
+
+false Si le déplacement n\textquotesingle{}a pas eu lieu 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_movable_game_object_8cpp_source_l00037}{37}} du fichier \mbox{\hyperlink{_movable_game_object_8cpp_source}{Movable\+Game\+Object.\+cpp}}.
+
+\mbox{\Hypertarget{class_movable_game_object_a2e91f66b167c69682916b93cc5d900ae}\label{class_movable_game_object_a2e91f66b167c69682916b93cc5d900ae}} 
+\index{MovableGameObject@{MovableGameObject}!createAnimationComponent@{createAnimationComponent}}
+\index{createAnimationComponent@{createAnimationComponent}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{createAnimationComponent()}{createAnimationComponent()}}
+{\footnotesize\ttfamily void Movable\+Game\+Object\+::create\+Animation\+Component (\begin{DoxyParamCaption}\item[{sf\+::\+Texture \&}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_movable_game_object_8cpp_source_l00027}{27}} du fichier \mbox{\hyperlink{_movable_game_object_8cpp_source}{Movable\+Game\+Object.\+cpp}}.
+
+\mbox{\Hypertarget{class_movable_game_object_ad3b241b18227ac3eacee79069af64fc7}\label{class_movable_game_object_ad3b241b18227ac3eacee79069af64fc7}} 
+\index{MovableGameObject@{MovableGameObject}!getAnimationComponent@{getAnimationComponent}}
+\index{getAnimationComponent@{getAnimationComponent}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{getAnimationComponent()}{getAnimationComponent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_animation_component}{Animation\+Component}} $\ast$ Movable\+Game\+Object\+::get\+Animation\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_movable_game_object_8cpp_source_l00032}{32}} du fichier \mbox{\hyperlink{_movable_game_object_8cpp_source}{Movable\+Game\+Object.\+cpp}}.
+
+\mbox{\Hypertarget{class_movable_game_object_a14ce6a7878ca03a4c451a64a0eb88555}\label{class_movable_game_object_a14ce6a7878ca03a4c451a64a0eb88555}} 
+\index{MovableGameObject@{MovableGameObject}!initAnimations@{initAnimations}}
+\index{initAnimations@{initAnimations}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{initAnimations()}{initAnimations()}}
+{\footnotesize\ttfamily virtual void Movable\+Game\+Object\+::init\+Animations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Initialiser animation\+Component et les animations. 
+
+
+
+Implémenté dans \mbox{\hyperlink{class_personage_a8ed3bc3b47bd9830238fc92ff8ff7cfd}{Personage}}.
+
+\mbox{\Hypertarget{class_movable_game_object_a0e0909f577c773a6fd5c4b7f0661228c}\label{class_movable_game_object_a0e0909f577c773a6fd5c4b7f0661228c}} 
+\index{MovableGameObject@{MovableGameObject}!initPosition@{initPosition}}
+\index{initPosition@{initPosition}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{initPosition()}{initPosition()}}
+{\footnotesize\ttfamily void Movable\+Game\+Object\+::init\+Position (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_game_object_ad860b401fa64188046b2b7019e006283}{Game\+Object}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_movable_game_object_8cpp_source_l00006}{6}} du fichier \mbox{\hyperlink{_movable_game_object_8cpp_source}{Movable\+Game\+Object.\+cpp}}.
+
+\mbox{\Hypertarget{class_movable_game_object_af5ac80937d289f9c159ea5c93dccfbba}\label{class_movable_game_object_af5ac80937d289f9c159ea5c93dccfbba}} 
+\index{MovableGameObject@{MovableGameObject}!move@{move}}
+\index{move@{move}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily virtual void Movable\+Game\+Object\+::move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_my_vector}{My\+Vector}} \&}]{speed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implémenté dans \mbox{\hyperlink{class_personage_acecd31422b51e2d0755c6d2de94d9510}{Personage}}.
+
+\mbox{\Hypertarget{class_movable_game_object_a65c649a0cf69aa86032cb3fc63e9da01}\label{class_movable_game_object_a65c649a0cf69aa86032cb3fc63e9da01}} 
+\index{MovableGameObject@{MovableGameObject}!onCollisionEnter@{onCollisionEnter}}
+\index{onCollisionEnter@{onCollisionEnter}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{onCollisionEnter()}{onCollisionEnter()}}
+{\footnotesize\ttfamily virtual void Movable\+Game\+Object\+::on\+Collision\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collision}{Collision}} const \&}]{collision }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+émit quand il entre en contacte avec un autre élément 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em collision} & \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \mbox{\hyperlink{class_game_object_a394309d681a8e5eb59656029a32881de}{Game\+Object}}.
+
+
+
+Implémenté dans \mbox{\hyperlink{class_personage_ac0e67cb98d13d11d49395bcaa9a8f6dd}{Personage}}.
+
+\mbox{\Hypertarget{class_movable_game_object_a3c21e1f1df5715b09a286255999d04b1}\label{class_movable_game_object_a3c21e1f1df5715b09a286255999d04b1}} 
+\index{MovableGameObject@{MovableGameObject}!setPositionMovementLimit@{setPositionMovementLimit}}
+\index{setPositionMovementLimit@{setPositionMovementLimit}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{setPositionMovementLimit()}{setPositionMovementLimit()}}
+{\footnotesize\ttfamily void Movable\+Game\+Object\+::set\+Position\+Movement\+Limit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hall}{Hall}} $\ast$}]{hall }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Met à jour les nouvelle limite de déplacement. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em hall} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \mbox{\hyperlink{_movable_game_object_8cpp_source_l00049}{49}} du fichier \mbox{\hyperlink{_movable_game_object_8cpp_source}{Movable\+Game\+Object.\+cpp}}.
+
+\mbox{\Hypertarget{class_movable_game_object_a642733a3472829a5526280e44bfd27e5}\label{class_movable_game_object_a642733a3472829a5526280e44bfd27e5}} 
+\index{MovableGameObject@{MovableGameObject}!show@{show}}
+\index{show@{show}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily void Movable\+Game\+Object\+::show (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pour dessiner l\textquotesingle{}élement dans la fenêtre. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em window} & \\
+\hline
+\end{DoxyParams}
+
+
+Réimplémentée à partir de \mbox{\hyperlink{class_game_object_a3f7a674006e1cce96ccb6c60f0ff9aaf}{Game\+Object}}.
+
+
+
+Réimplémentée dans \mbox{\hyperlink{class_personage_a01b776643850ebcc55ba806e2fa8085e}{Personage}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_movable_game_object_8cpp_source_l00044}{44}} du fichier \mbox{\hyperlink{_movable_game_object_8cpp_source}{Movable\+Game\+Object.\+cpp}}.
+
+\mbox{\Hypertarget{class_movable_game_object_a07e44e5e7fd45ea5eb50fb86983473f1}\label{class_movable_game_object_a07e44e5e7fd45ea5eb50fb86983473f1}} 
+\index{MovableGameObject@{MovableGameObject}!update@{update}}
+\index{update@{update}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void Movable\+Game\+Object\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_game_object_ae83128d0e0efef691417779605ee037c}{Game\+Object}}.
+
+
+
+Implémenté dans \mbox{\hyperlink{class_personage_a492d4164bc6c439d43cc44fefcbd6468}{Personage}}.
+
+\mbox{\Hypertarget{class_movable_game_object_ae9fedc4f3a11d0a2fcc339324b01430a}\label{class_movable_game_object_ae9fedc4f3a11d0a2fcc339324b01430a}} 
+\index{MovableGameObject@{MovableGameObject}!updatePosition@{updatePosition}}
+\index{updatePosition@{updatePosition}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{updatePosition()}{updatePosition()}}
+{\footnotesize\ttfamily virtual void Movable\+Game\+Object\+::update\+Position (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Permet de mettre à jour la position actuelle. 
+
+
+
+Implémenté dans \mbox{\hyperlink{class_personage_a3994eb488c9212770b697ff73c2d153b}{Personage}}.
+
+
+
+\doxysubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_movable_game_object_a655f3cc2f2a8b00c30ed90cd8c7b712e}\label{class_movable_game_object_a655f3cc2f2a8b00c30ed90cd8c7b712e}} 
+\index{MovableGameObject@{MovableGameObject}!animationComponent@{animationComponent}}
+\index{animationComponent@{animationComponent}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{animationComponent}{animationComponent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_animation_component}{Animation\+Component}}$\ast$ Movable\+Game\+Object\+::animation\+Component\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_movable_game_object_8hpp_source_l00054}{54}} du fichier \mbox{\hyperlink{_movable_game_object_8hpp_source}{Movable\+Game\+Object.\+hpp}}.
+
+\mbox{\Hypertarget{class_movable_game_object_a82a572bd2815eb23cf9b752dbc70784e}\label{class_movable_game_object_a82a572bd2815eb23cf9b752dbc70784e}} 
+\index{MovableGameObject@{MovableGameObject}!hall@{hall}}
+\index{hall@{hall}!MovableGameObject@{MovableGameObject}}
+\doxysubsubsection{\texorpdfstring{hall}{hall}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_hall}{Hall}}$\ast$ Movable\+Game\+Object\+::hall\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Ce pointeur ne doit pas être supprimé à ce niveau. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{_movable_game_object_8hpp_source_l00058}{58}} du fichier \mbox{\hyperlink{_movable_game_object_8hpp_source}{Movable\+Game\+Object.\+hpp}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_movable_game_object_8hpp}{Movable\+Game\+Object.\+hpp}}\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_movable_game_object_8cpp}{Movable\+Game\+Object.\+cpp}}\end{DoxyCompactItemize}

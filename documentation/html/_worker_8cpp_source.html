@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Jeu POA:  Fichier source de include/Worker.cpp</title>
+<title>Jeu POA:  Fichier source de C:/programs_sc/CIC/MITST06/jeu/src/include/Worker.cpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,28 +89,49 @@ $(document).ready(function(){initNavTree('_worker_8cpp_source.html',''); initRes
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using namespace </span>std;</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keywordtype">void</span> Worker::init()</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_variable" href="class_personage.html#a2e14c7228a3a5a6b6531c7b1077baa7f">m_specialtyName</a> = <span class="stringliteral">&quot;Oups&quot;</span>; <span class="comment">// REVIEW -</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>}</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_worker.html#a3754817df06ffe220f7f0d903c78ccac">   10</a></span><a class="code hl_function" href="class_worker.html#a3754817df06ffe220f7f0d903c78ccac">Worker::Worker</a>()</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// Fonction static</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// Fonctions d&#39;initialisation</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keywordtype">void</span> Worker::init()</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_variable" href="class_game_object.html#a1d82b32440a549f17b38660591896bb0">m_gameObjectName</a> = <span class="stringliteral">&quot;Worker&quot;</span>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_variable" href="class_personage.html#a2e14c7228a3a5a6b6531c7b1077baa7f">m_specialtyName</a> = <span class="stringliteral">&quot;Velocity&quot;</span>; <span class="comment">// REVIEW -</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_worker.html#aa8e4543ef1e93fd9d884269ba30c5bfe">   14</a></span><a class="code hl_function" href="class_worker.html#aa8e4543ef1e93fd9d884269ba30c5bfe">Worker::~Worker</a>()</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// Constructeurs/Destructeur</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_worker.html#a3754817df06ffe220f7f0d903c78ccac">   15</a></span><a class="code hl_function" href="class_worker.html#a3754817df06ffe220f7f0d903c78ccac">Worker::Worker</a>()</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    this-&gt;init();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_worker.html#aa8e4543ef1e93fd9d884269ba30c5bfe">   20</a></span><a class="code hl_function" href="class_worker.html#aa8e4543ef1e93fd9d884269ba30c5bfe">Worker::~Worker</a>()</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// Fonctions/Méthodes</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_worker.html#a94bb4bf6d58ada08dd1b035e255dfae7">   25</a></span><span class="keywordtype">unsigned</span> <a class="code hl_function" href="class_worker.html#a94bb4bf6d58ada08dd1b035e255dfae7">Worker::receiveHealthDamage</a>(<span class="keywordtype">int</span> value)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{}</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_worker.html#a8ac3ac378bc7f3153f0dd0df0f19d358">   27</a></span><span class="keywordtype">unsigned</span> <a class="code hl_function" href="class_worker.html#a8ac3ac378bc7f3153f0dd0df0f19d358">Worker::receiveExpDamage</a>(<span class="keywordtype">int</span> value)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{}</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_worker.html#a28557977add6a0726d53be410027c657">   29</a></span><span class="keywordtype">unsigned</span> <a class="code hl_function" href="class_worker.html#a28557977add6a0726d53be410027c657">Worker::receiveHealthCare</a>(<span class="keywordtype">int</span> value)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{}</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_worker.html#a2c49aa970c7e20cfe847ce1efa794573">   31</a></span><span class="keywordtype">unsigned</span> <a class="code hl_function" href="class_worker.html#a2c49aa970c7e20cfe847ce1efa794573">Worker::receiveExpCare</a>(<span class="keywordtype">int</span> value)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{}</div>
 <div class="ttc" id="a_worker_8hpp_html"><div class="ttname"><a href="_worker_8hpp.html">Worker.hpp</a></div></div>
-<div class="ttc" id="aclass_personage_html_a2e14c7228a3a5a6b6531c7b1077baa7f"><div class="ttname"><a href="class_personage.html#a2e14c7228a3a5a6b6531c7b1077baa7f">Personage::m_specialtyName</a></div><div class="ttdeci">std::string m_specialtyName</div><div class="ttdef"><b>Definition:</b> <a href="_personage_8hpp_source.html#l00061">Personage.hpp:61</a></div></div>
-<div class="ttc" id="aclass_worker_html_a3754817df06ffe220f7f0d903c78ccac"><div class="ttname"><a href="class_worker.html#a3754817df06ffe220f7f0d903c78ccac">Worker::Worker</a></div><div class="ttdeci">Worker()</div><div class="ttdef"><b>Definition:</b> <a href="_worker_8cpp_source.html#l00010">Worker.cpp:10</a></div></div>
-<div class="ttc" id="aclass_worker_html_aa8e4543ef1e93fd9d884269ba30c5bfe"><div class="ttname"><a href="class_worker.html#aa8e4543ef1e93fd9d884269ba30c5bfe">Worker::~Worker</a></div><div class="ttdeci">~Worker()</div><div class="ttdef"><b>Definition:</b> <a href="_worker_8cpp_source.html#l00014">Worker.cpp:14</a></div></div>
+<div class="ttc" id="aclass_game_object_html_a1d82b32440a549f17b38660591896bb0"><div class="ttname"><a href="class_game_object.html#a1d82b32440a549f17b38660591896bb0">GameObject::m_gameObjectName</a></div><div class="ttdeci">std::string m_gameObjectName</div><div class="ttdef"><b>Definition:</b> <a href="_game_object_8hpp_source.html#l00098">GameObject.hpp:98</a></div></div>
+<div class="ttc" id="aclass_personage_html_a2e14c7228a3a5a6b6531c7b1077baa7f"><div class="ttname"><a href="class_personage.html#a2e14c7228a3a5a6b6531c7b1077baa7f">Personage::m_specialtyName</a></div><div class="ttdeci">std::string m_specialtyName</div><div class="ttdef"><b>Definition:</b> <a href="_personage_8hpp_source.html#l00125">Personage.hpp:125</a></div></div>
+<div class="ttc" id="aclass_worker_html_a28557977add6a0726d53be410027c657"><div class="ttname"><a href="class_worker.html#a28557977add6a0726d53be410027c657">Worker::receiveHealthCare</a></div><div class="ttdeci">virtual unsigned receiveHealthCare(int value) override</div><div class="ttdoc">pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise u...</div><div class="ttdef"><b>Definition:</b> <a href="_worker_8cpp_source.html#l00029">Worker.cpp:29</a></div></div>
+<div class="ttc" id="aclass_worker_html_a2c49aa970c7e20cfe847ce1efa794573"><div class="ttname"><a href="class_worker.html#a2c49aa970c7e20cfe847ce1efa794573">Worker::receiveExpCare</a></div><div class="ttdeci">virtual unsigned receiveExpCare(int value) override</div><div class="ttdoc">pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un ...</div><div class="ttdef"><b>Definition:</b> <a href="_worker_8cpp_source.html#l00031">Worker.cpp:31</a></div></div>
+<div class="ttc" id="aclass_worker_html_a3754817df06ffe220f7f0d903c78ccac"><div class="ttname"><a href="class_worker.html#a3754817df06ffe220f7f0d903c78ccac">Worker::Worker</a></div><div class="ttdeci">Worker()</div><div class="ttdef"><b>Definition:</b> <a href="_worker_8cpp_source.html#l00015">Worker.cpp:15</a></div></div>
+<div class="ttc" id="aclass_worker_html_a8ac3ac378bc7f3153f0dd0df0f19d358"><div class="ttname"><a href="class_worker.html#a8ac3ac378bc7f3153f0dd0df0f19d358">Worker::receiveExpDamage</a></div><div class="ttdeci">virtual unsigned receiveExpDamage(int value) override</div><div class="ttdoc">pour recevoir les dégats d'exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise ...</div><div class="ttdef"><b>Definition:</b> <a href="_worker_8cpp_source.html#l00027">Worker.cpp:27</a></div></div>
+<div class="ttc" id="aclass_worker_html_a94bb4bf6d58ada08dd1b035e255dfae7"><div class="ttname"><a href="class_worker.html#a94bb4bf6d58ada08dd1b035e255dfae7">Worker::receiveHealthDamage</a></div><div class="ttdeci">virtual unsigned receiveHealthDamage(int value) override</div><div class="ttdoc">pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utili...</div><div class="ttdef"><b>Definition:</b> <a href="_worker_8cpp_source.html#l00025">Worker.cpp:25</a></div></div>
+<div class="ttc" id="aclass_worker_html_aa8e4543ef1e93fd9d884269ba30c5bfe"><div class="ttname"><a href="class_worker.html#aa8e4543ef1e93fd9d884269ba30c5bfe">Worker::~Worker</a></div><div class="ttdeci">~Worker()</div><div class="ttdef"><b>Definition:</b> <a href="_worker_8cpp_source.html#l00020">Worker.cpp:20</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_worker_8cpp.html">Worker.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="_worker_8cpp.html">Worker.cpp</a></li>
     <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>

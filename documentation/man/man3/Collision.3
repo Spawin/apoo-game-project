@@ -1,0 +1,61 @@
+.TH "Collision" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Collision
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Collision\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBCollision\fP (\fBGameObject\fP const &gameObject)"
+.br
+.ti -1c
+.RI "\fB~Collision\fP ()"
+.br
+.ti -1c
+.RI "std::shared_ptr< \fBGameObject\fP > \fBgetGameObject\fP () const"
+.br
+.RI "Get the Game Object object\&. "
+.ti -1c
+.RI "void \fBtest\fP () const"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB9\fP du fichier \fBCollision\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "Collision::Collision (\fBGameObject\fP const & gameObject)\fC [explicit]\fP"
+
+.PP
+Définition à la ligne \fB6\fP du fichier \fBCollision\&.cpp\fP\&.
+.SS "Collision::~Collision ()"
+
+.PP
+Définition à la ligne \fB14\fP du fichier \fBCollision\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "std::shared_ptr< \fBGameObject\fP > Collision::getGameObject () const"
+
+.PP
+Get the Game Object object\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+std::shared_ptr<GameObject> 
+.RE
+.PP
+
+.SS "void Collision::test () const\fC [inline]\fP"
+
+.PP
+Définition à la ligne \fB23\fP du fichier \fBCollision\&.hpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

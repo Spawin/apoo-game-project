@@ -1,0 +1,47 @@
+\hypertarget{_animation_8hpp_source}{}\doxysection{Animation.\+hpp}
+\label{_animation_8hpp_source}\index{C:/programs\_sc/CIC/MITST06/jeu/src/include/Animation.hpp@{C:/programs\_sc/CIC/MITST06/jeu/src/include/Animation.hpp}}
+\mbox{\hyperlink{_animation_8hpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#if !defined(\_\_ANIMATION\_HPP\_\_)}}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00002}00002 \textcolor{preprocessor}{    \#define \_\_ANIMATION\_HPP\_\_}}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00004}00004 \textcolor{preprocessor}{    \#include <map>}}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00005}00005 \textcolor{preprocessor}{    \#include <string>}}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00007}\mbox{\hyperlink{class_animation}{00007}} \textcolor{keyword}{class }\mbox{\hyperlink{class_animation}{Animation}}}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00009}00009 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00010}00010     \textcolor{comment}{// Constructeurs/Destructeur}}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00011}00011     \mbox{\hyperlink{class_animation_a0c15d8c4bd8de9b9cc8fe813f376379b}{Animation}}(\textcolor{keywordtype}{int} priority, sf::Sprite\& sprite, sf::Texture\& textureSheet, \textcolor{keywordtype}{float} animationTimer, \textcolor{keywordtype}{int} start\_x, \textcolor{keywordtype}{int} start\_y, \textcolor{keywordtype}{int} end\_x, \textcolor{keywordtype}{int} end\_y, \textcolor{keywordtype}{int} width, \textcolor{keywordtype}{int} height, \textcolor{keywordtype}{bool} fixLastFrame = \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00012}00012     \mbox{\hyperlink{class_animation_a401b68793d4fbf48d481c030ee4b2a16}{\string~Animation}}();}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00014}00014     \textcolor{comment}{// Fonctions/Méthodes}}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00015}00015     \textcolor{keyword}{const} \textcolor{keywordtype}{bool}\& \mbox{\hyperlink{class_animation_a01b69a109c36cddacea8b292cf928e95}{isDone}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00016}00016     \textcolor{keyword}{const} \textcolor{keywordtype}{bool}\& \mbox{\hyperlink{class_animation_a6b5ba7138aaf81af0609dd51092bfe53}{play}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltatime);}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00017}00017     \textcolor{comment}{// void pause();}}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00018}00018     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_animation_a903eb4b61b8c7bc72bbedbdba4cbb501}{reset}}();}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00019}00019     \textcolor{comment}{// Retourne la priorité de l'animation}}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00020}00020     \textcolor{keyword}{const} \textcolor{keywordtype}{int}\& \mbox{\hyperlink{class_animation_ad8260ef1b6af2ca01a06a14de7436450}{getPriority}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00022}00022 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00023}00023     \textcolor{comment}{// Variables}}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00024}00024     \textcolor{comment}{// La priorité d'une animation (Haute priorité : 0)}}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00025}00025     \textcolor{keywordtype}{int} priority;}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00026}00026     sf::Sprite\& sprite;}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00027}00027     sf::Texture\& textureSheet;}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00028}00028     \textcolor{keywordtype}{float} animationTimer;}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00029}00029     \textcolor{keywordtype}{float} timer;}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00030}00030     \textcolor{keywordtype}{bool} done;}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00031}00031     \textcolor{keywordtype}{int} width;}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00032}00032     \textcolor{keywordtype}{int} height;}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00033}00033     \textcolor{keywordtype}{bool} fixLastFrame;}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00034}00034     sf::IntRect startRect;}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00035}00035     sf::IntRect currentRect;}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00036}00036     sf::IntRect endRect;}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00038}00038     \textcolor{comment}{// Fonctions d'initialisation}}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00039}00039 \};}
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_animation_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_ANIMATION\_HPP\_\_}}
+
+\end{DoxyCode}

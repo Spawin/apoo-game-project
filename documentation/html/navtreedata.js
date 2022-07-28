@@ -30,7 +30,9 @@ var NAVTREE =
       [ "Membres de l'espace de nommage", "namespacemembers.html", [
         [ "Tout", "namespacemembers.html", null ],
         [ "Fonctions", "namespacemembers_func.html", null ],
-        [ "Variables", "namespacemembers_vars.html", null ]
+        [ "Variables", "namespacemembers_vars.html", null ],
+        [ "Énumérations", "namespacemembers_enum.html", null ],
+        [ "Valeurs énumérées", "namespacemembers_eval.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -39,7 +41,7 @@ var NAVTREE =
       [ "Hiérarchie des classes", "hierarchy.html", "hierarchy" ],
       [ "Membres de classe", "functions.html", [
         [ "Tout", "functions.html", "functions_dup" ],
-        [ "Fonctions", "functions_func.html", null ],
+        [ "Fonctions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
         [ "Fonctions associées", "functions_rela.html", null ]
       ] ]
@@ -60,8 +62,10 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_box_collider_8cpp.html",
-"class_player.html#aa14422c8d3c3950584dcd307172741b7"
+"_animation_8cpp.html",
+"class_collider.html#a564acde9860f875a32a6638c573d87be",
+"class_rigidbody.html",
+"namespacegame.html#a31101344334dbbe88a0c2fd3313f697a"
 ];
 
 var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';

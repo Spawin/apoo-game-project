@@ -1,0 +1,100 @@
+.TH "GameMap" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GameMap
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <GameMap\&.hpp>\fP
+.PP
+Est dérivée de sf::Drawable, et sf::Transformable\&.
+.PP
+Dérivée par \fBHouse\fP\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBGameMap\fP ()"
+.br
+.ti -1c
+.RI "\fB~GameMap\fP ()"
+.br
+.ti -1c
+.RI "virtual const int * \fBgetDisposition\fP () const =0"
+.br
+.ti -1c
+.RI "bool \fBload\fP (const std::string &tileset, sf::Vector2u tileSize, const int *tiles, unsigned int width, unsigned int height)"
+.br
+.RI "Remove after\&. "
+.ti -1c
+.RI "bool \fBload\fP (const std::string &tileset, sf::Vector2u *tileSize, sf::Vector2u *tilesStart, const int *tiles, unsigned int width, unsigned int height, int count)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB4\fP du fichier \fBGameMap\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "GameMap::GameMap ()"
+
+.PP
+Définition à la ligne \fB5\fP du fichier \fBGameMap\&.cpp\fP\&.
+.SS "GameMap::~GameMap ()"
+
+.PP
+Définition à la ligne \fB9\fP du fichier \fBGameMap\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "virtual const int * GameMap::getDisposition () const\fC [pure virtual]\fP"
+
+.PP
+Implémenté dans \fBHouse\fP\&.
+.SS "bool GameMap::load (const std::string & tileset, sf::Vector2u * tileSize, sf::Vector2u * tilesStart, const int * tiles, unsigned int width, unsigned int height, int count)"
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fItileset\fP la ressource 
+.br
+\fItileSize\fP les dimenssion du dessin voulut 
+.br
+\fItilesStart\fP les ccordonnes du premier point dsz chaque tiles 
+.br
+\fItiles\fP la matrice de la disposition 
+.br
+\fIwidth\fP nombre d'élément en ligne 
+.br
+\fIheight\fP le nombre d'élément en colonne 
+.br
+\fIcount\fP la taille des tableau 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+true 
+.PP
+false 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB58\fP du fichier \fBGameMap\&.cpp\fP\&.
+.SS "bool GameMap::load (const std::string & tileset, sf::Vector2u tileSize, const int * tiles, unsigned int width, unsigned int height)"
+
+.PP
+Remove after\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIheight,float\fP const& screenScalingFactor 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB14\fP du fichier \fBGameMap\&.cpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

@@ -1,0 +1,316 @@
+.TH "GameObject" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GameObject
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <GameObject\&.hpp>\fP
+.PP
+Dérivée par \fBMovableGameObject\fP, et \fBNotMovableGameObject\fP\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBGameObject\fP (std::string_view const &imageSpritePath)"
+.br
+.RI "Construct a new Game Object object\&. "
+.ti -1c
+.RI "virtual \fB~GameObject\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBshow\fP (sf::RenderTarget &window)"
+.br
+.RI "Pour dessiner l'élement dans la fenêtre\&. "
+.ti -1c
+.RI "virtual void \fBupdate\fP ()=0"
+.br
+.ti -1c
+.RI "int \fBgetGameObjectId\fP () const"
+.br
+.ti -1c
+.RI "const \fBPosition\fP * \fBgetPosition\fP () const"
+.br
+.ti -1c
+.RI "\fBPosition\fP * \fBgetNonConstPosition\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBgetGameObjectName\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBonCollisionEnter\fP (\fBCollision\fP const &collision) const =0"
+.br
+.RI "émit quand il entre en contacte avec un autre élément "
+.ti -1c
+.RI "sf::Sprite const & \fBgetSprite\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisArigidBody\fP () const"
+.br
+.RI "Vérifie si 'objet est un corps rigid\&. (On ne peut pas passer à travers un corps rigid) "
+.ti -1c
+.RI "void \fBfromColliderToRigidBody\fP () const"
+.br
+.RI "Quand un collider détect une collision, il envoi l'information au rigidBody\&. "
+.ti -1c
+.RI "\fBCollider\fP const & \fBgetCollider\fP () const"
+.br
+.in -1c
+.SS "Fonctions membres publiques statiques"
+
+.in +1c
+.ti -1c
+.RI "static void \fBSetTime\fP (float t)"
+.br
+.RI "Set the Time object\&. "
+.in -1c
+.SS "Fonctions membres protégées"
+
+.in +1c
+.ti -1c
+.RI "void \fBinit\fP ()"
+.br
+.RI "Pour initialiser les valeur par défaut du \fBGameObject\fP\&. "
+.ti -1c
+.RI "virtual void \fBinitPosition\fP (float posX, float posY)=0"
+.br
+.in -1c
+.SS "Fonctions membres protégées statiques"
+
+.in +1c
+.ti -1c
+.RI "static void \fBincrementCount\fP ()"
+.br
+.in -1c
+.SS "Attributs protégés"
+
+.in +1c
+.ti -1c
+.RI "const int \fBm_id\fP { \fBGameObject::m_count\fP + 1 }"
+.br
+.ti -1c
+.RI "std::string \fBm_gameObjectName\fP { 'GameObject' }"
+.br
+.ti -1c
+.RI "sf::Texture \fBm_texture\fP {}"
+.br
+.ti -1c
+.RI "sf::Sprite \fBm_body\fP {}"
+.br
+.ti -1c
+.RI "\fBPosition\fP * \fBm_position\fP"
+.br
+.ti -1c
+.RI "\fBMyVector\fP \fBm_speed\fP { 0\&.f, 0\&.f }"
+.br
+.ti -1c
+.RI "\fBCollider\fP * \fBm_collider\fP { nullptr }"
+.br
+.RI "Permet de mettre à jour la position actuelle\&. "
+.ti -1c
+.RI "\fBRigidbody\fP * \fBm_rigidbody\fP { nullptr }"
+.br
+.in -1c
+.SS "Attributs protégés statiques"
+
+.in +1c
+.ti -1c
+.RI "static int \fBm_count\fP = 0"
+.br
+.ti -1c
+.RI "static float \fBm_time\fP = 0\&.f"
+.br
+.in -1c
+.SS "Amis"
+
+.in +1c
+.ti -1c
+.RI "class \fBRigidbody\fP"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB15\fP du fichier \fBGameObject\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "GameObject::GameObject (std::string_view const & imageSpritePath)\fC [explicit]\fP"
+
+.PP
+Construct a new Game Object object\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIposX\fP la position x de l'objet 
+.br
+\fIposY\fP la position y de l'objet 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB36\fP du fichier \fBGameObject\&.cpp\fP\&.
+.SS "GameObject::~GameObject ()\fC [virtual]\fP"
+
+.PP
+Définition à la ligne \fB50\fP du fichier \fBGameObject\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void GameObject::fromColliderToRigidBody () const"
+
+.PP
+Quand un collider détect une collision, il envoi l'information au rigidBody\&. 
+.PP
+Définition à la ligne \fB110\fP du fichier \fBGameObject\&.cpp\fP\&.
+.SS "\fBCollider\fP const  & GameObject::getCollider () const"
+
+.PP
+Définition à la ligne \fB118\fP du fichier \fBGameObject\&.cpp\fP\&.
+.SS "int GameObject::getGameObjectId () const"
+
+.PP
+Définition à la ligne \fB71\fP du fichier \fBGameObject\&.cpp\fP\&.
+.SS "std::string GameObject::getGameObjectName () const"
+
+.PP
+Définition à la ligne \fB86\fP du fichier \fBGameObject\&.cpp\fP\&.
+.SS "\fBPosition\fP * GameObject::getNonConstPosition ()"
+
+.PP
+Définition à la ligne \fB81\fP du fichier \fBGameObject\&.cpp\fP\&.
+.SS "const \fBPosition\fP * GameObject::getPosition () const"
+
+.PP
+Définition à la ligne \fB76\fP du fichier \fBGameObject\&.cpp\fP\&.
+.SS "sf::Sprite const  & GameObject::getSprite () const"
+
+.PP
+Définition à la ligne \fB97\fP du fichier \fBGameObject\&.cpp\fP\&.
+.SS "void GameObject::incrementCount ()\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB8\fP du fichier \fBGameObject\&.cpp\fP\&.
+.SS "void GameObject::init ()\fC [protected]\fP"
+
+.PP
+Pour initialiser les valeur par défaut du \fBGameObject\fP\&. 
+.PP
+Définition à la ligne \fB13\fP du fichier \fBGameObject\&.cpp\fP\&.
+.SS "virtual void GameObject::initPosition (float posX, float posY)\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+Implémenté dans \fBMovableGameObject\fP, et \fBNotMovableGameObject\fP\&.
+.SS "bool GameObject::isArigidBody () const"
+
+.PP
+Vérifie si 'objet est un corps rigid\&. (On ne peut pas passer à travers un corps rigid) 
+.PP
+\fBRenvoie\fP
+.RS 4
+true 
+.PP
+false 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB105\fP du fichier \fBGameObject\&.cpp\fP\&.
+.SS "virtual void GameObject::onCollisionEnter (\fBCollision\fP const & collision) const\fC [pure virtual]\fP"
+
+.PP
+émit quand il entre en contacte avec un autre élément 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIcollision\fP 
+.RE
+.PP
+
+.PP
+Implémenté dans \fBItem\fP, \fBMovableGameObject\fP, \fBNotMovableGameObject\fP, \fBBag\fP, \fBMoney\fP, \fBPersonage\fP, \fBShield\fP, \fBSword\fP, et \fBVial\fP\&.
+.SS "void GameObject::SetTime (float t)\fC [static]\fP"
+
+.PP
+Set the Time object\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIt\fP 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB66\fP du fichier \fBGameObject\&.cpp\fP\&.
+.SS "void GameObject::show (sf::RenderTarget & window)\fC [virtual]\fP"
+
+.PP
+Pour dessiner l'élement dans la fenêtre\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIwindow\fP 
+.RE
+.PP
+
+.PP
+Réimplémentée dans \fBPersonage\fP, \fBMovableGameObject\fP, et \fBNotMovableGameObject\fP\&.
+.PP
+Définition à la ligne \fB58\fP du fichier \fBGameObject\&.cpp\fP\&.
+.SS "virtual void GameObject::update ()\fC [pure virtual]\fP"
+
+.PP
+Implémenté dans \fBBag\fP, \fBMoney\fP, \fBPersonage\fP, \fBShield\fP, \fBSword\fP, \fBVial\fP, \fBItem\fP, \fBMovableGameObject\fP, et \fBNotMovableGameObject\fP\&.
+.SH "Documentation des fonctions amies et associées"
+.PP 
+.SS "friend class \fBRigidbody\fP\fC [friend]\fP"
+
+.PP
+Définition à la ligne \fB115\fP du fichier \fBGameObject\&.hpp\fP\&.
+.SH "Documentation des données membres"
+.PP 
+.SS "sf::Sprite GameObject::m_body {}\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB106\fP du fichier \fBGameObject\&.hpp\fP\&.
+.SS "\fBCollider\fP* GameObject::m_collider { nullptr }\fC [protected]\fP"
+
+.PP
+Permet de mettre à jour la position actuelle\&. REVIEW 
+.PP
+Définition à la ligne \fB126\fP du fichier \fBGameObject\&.hpp\fP\&.
+.SS "int GameObject::m_count = 0\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB100\fP du fichier \fBGameObject\&.hpp\fP\&.
+.SS "std::string GameObject::m_gameObjectName { 'GameObject' }\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB98\fP du fichier \fBGameObject\&.hpp\fP\&.
+.SS "const int GameObject::m_id { \fBGameObject::m_count\fP + 1 }\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB96\fP du fichier \fBGameObject\&.hpp\fP\&.
+.SS "\fBPosition\fP* GameObject::m_position\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB108\fP du fichier \fBGameObject\&.hpp\fP\&.
+.SS "\fBRigidbody\fP* GameObject::m_rigidbody { nullptr }\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB127\fP du fichier \fBGameObject\&.hpp\fP\&.
+.SS "\fBMyVector\fP GameObject::m_speed { 0\&.f, 0\&.f }\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB110\fP du fichier \fBGameObject\&.hpp\fP\&.
+.SS "sf::Texture GameObject::m_texture {}\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB104\fP du fichier \fBGameObject\&.hpp\fP\&.
+.SS "float GameObject::m_time = 0\&.f\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB113\fP du fichier \fBGameObject\&.hpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

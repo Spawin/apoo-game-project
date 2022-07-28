@@ -5,7 +5,7 @@
 // #include "include/Rigidbody.hpp"
 #include "include/consts.hpp"
 
-class RigidRigidbody;
+// class RigidRigidbody;
 
 class Position
 {

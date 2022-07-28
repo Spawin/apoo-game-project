@@ -1,0 +1,111 @@
+.TH "GraphicsSettings" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GraphicsSettings
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <GraphicsSettings\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBGraphicsSettings\fP ()"
+.br
+.ti -1c
+.RI "float const & \fBscScF\fP ()"
+.br
+.RI "Retourne <screenScalingFactor> "
+.ti -1c
+.RI "void \fBsetScreenScalingFactor\fP (float \fBscScF\fP)"
+.br
+.ti -1c
+.RI "void \fBloadFromFile\fP (const std::string path)"
+.br
+.in -1c
+.SS "Attributs publics"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBtitle\fP"
+.br
+.ti -1c
+.RI "sf::VideoMode \fBresolution\fP"
+.br
+.ti -1c
+.RI "bool \fBfullscreen\fP"
+.br
+.ti -1c
+.RI "bool \fBverticalSync\fP"
+.br
+.ti -1c
+.RI "unsigned \fBframeRateLimit\fP"
+.br
+.ti -1c
+.RI "std::vector< sf::VideoMode > \fBvideoModes\fP"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB5\fP du fichier \fBGraphicsSettings\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "GraphicsSettings::GraphicsSettings ()"
+
+.PP
+Définition à la ligne \fB3\fP du fichier \fBGraphicsSettings\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void GraphicsSettings::loadFromFile (const std::string path)"
+
+.PP
+Définition à la ligne \fB27\fP du fichier \fBGraphicsSettings\&.cpp\fP\&.
+.SS "float const  & GraphicsSettings::scScF ()"
+
+.PP
+Retourne <screenScalingFactor> 
+.PP
+\fBRenvoie\fP
+.RS 4
+float const& 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB17\fP du fichier \fBGraphicsSettings\&.cpp\fP\&.
+.SS "void GraphicsSettings::setScreenScalingFactor (float scScF)"
+
+.PP
+Définition à la ligne \fB22\fP du fichier \fBGraphicsSettings\&.cpp\fP\&.
+.SH "Documentation des données membres"
+.PP 
+.SS "unsigned GraphicsSettings::frameRateLimit"
+
+.PP
+Définition à la ligne \fB15\fP du fichier \fBGraphicsSettings\&.hpp\fP\&.
+.SS "bool GraphicsSettings::fullscreen"
+
+.PP
+Définition à la ligne \fB13\fP du fichier \fBGraphicsSettings\&.hpp\fP\&.
+.SS "sf::VideoMode GraphicsSettings::resolution"
+
+.PP
+Définition à la ligne \fB12\fP du fichier \fBGraphicsSettings\&.hpp\fP\&.
+.SS "std::string GraphicsSettings::title"
+
+.PP
+Définition à la ligne \fB11\fP du fichier \fBGraphicsSettings\&.hpp\fP\&.
+.SS "bool GraphicsSettings::verticalSync"
+
+.PP
+Définition à la ligne \fB14\fP du fichier \fBGraphicsSettings\&.hpp\fP\&.
+.SS "std::vector<sf::VideoMode> GraphicsSettings::videoModes"
+
+.PP
+Définition à la ligne \fB17\fP du fichier \fBGraphicsSettings\&.hpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

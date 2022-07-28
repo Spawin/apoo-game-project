@@ -1,5 +1,5 @@
 \hypertarget{_box_collider_8cpp_source}{}\doxysection{Box\+Collider.\+cpp}
-\label{_box_collider_8cpp_source}\index{include/BoxCollider.cpp@{include/BoxCollider.cpp}}
+\label{_box_collider_8cpp_source}\index{C:/programs\_sc/CIC/MITST06/jeu/src/include/BoxCollider.cpp@{C:/programs\_sc/CIC/MITST06/jeu/src/include/BoxCollider.cpp}}
 \mbox{\hyperlink{_box_collider_8cpp}{Aller à la documentation de ce fichier.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_box_collider_8hpp}{include/BoxCollider.hpp}}"{}}}
@@ -48,18 +48,18 @@
 \DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00044}00044     \textcolor{comment}{// REVIEW -\/  On va considérer que c'est un box collider}}
 \DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00045}00045 }
 \DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00046}00046     \textcolor{comment}{// Comparaison de la proximité de tous les points}}
-\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00047}00047     \mbox{\hyperlink{struct_my_vector}{MyVector}} c1 = (*this).parent.getPosition().getPosition();}
-\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00048}00048     \mbox{\hyperlink{struct_my_vector}{MyVector}} c2 = collider.\mbox{\hyperlink{class_collider_ac5e78bcb91de52d8202beea5c4b3a5f8}{getParent}}().\mbox{\hyperlink{class_game_object_a8c97fc15be278b8c42d138517e0a05bb}{getPosition}}().\mbox{\hyperlink{class_position_af409de5592dd7da6fb0ccb8d1681bb19}{getPosition}}();}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00047}00047     \mbox{\hyperlink{struct_my_vector}{MyVector}} c1 = this-\/>\mbox{\hyperlink{class_collider_a937ddad2dd8d4d6a67370334d447210b}{parent}}.\mbox{\hyperlink{class_game_object_a5f5f8870bb5d7e1496c2e565f5dd8bbd}{getPosition}}()-\/>\mbox{\hyperlink{class_position_af409de5592dd7da6fb0ccb8d1681bb19}{getPosition}}();}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00048}00048     \mbox{\hyperlink{struct_my_vector}{MyVector}} c2 = collider.\mbox{\hyperlink{class_collider_ac5e78bcb91de52d8202beea5c4b3a5f8}{getParent}}().\mbox{\hyperlink{class_game_object_a5f5f8870bb5d7e1496c2e565f5dd8bbd}{getPosition}}()-\/>\mbox{\hyperlink{class_position_af409de5592dd7da6fb0ccb8d1681bb19}{getPosition}}();}
 \DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00049}00049     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} j = 0; j < collider.\mbox{\hyperlink{class_collider_a97506e7e7a75b63c3358eb898194b866}{getContactPoints}}().size(); j++)}
 \DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00050}00050     \{}
 \DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00051}00051         sf::Vector2f p2 = collider.\mbox{\hyperlink{class_collider_a97506e7e7a75b63c3358eb898194b866}{getContactPoints}}()[j];}
-\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00052}00052         p2.x += c2.\mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}};}
-\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00053}00053         p2.y += c2.\mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}};}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00052}00052         p2.x += c2.\mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}};}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00053}00053         p2.y += c2.\mbox{\hyperlink{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}{y}};}
 \DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00054}00054 }
 \DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00055}00055         \textcolor{comment}{// sf::Vector2f point = collider.getContactPoints()[j];}}
-\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00056}00056         \textcolor{keywordflow}{if} ((m\_leftTopPoint.x + c1.\mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}}) < p2.x \&\& p2.x < (m\_leftTopPoint.x + c1.\mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}} + m\_width))}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00056}00056         \textcolor{keywordflow}{if} ((m\_leftTopPoint.x + c1.\mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}}) < p2.x \&\& p2.x < (m\_leftTopPoint.x + c1.\mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}} + m\_width))}
 \DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00057}00057         \{}
-\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00058}00058             \textcolor{keywordflow}{if} ((m\_leftTopPoint.y + c1.\mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}} -\/ m\_height) < p2.y \&\& p2.y < (m\_leftTopPoint.y + c1.\mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}}))}
+\DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00058}00058             \textcolor{keywordflow}{if} ((m\_leftTopPoint.y + c1.\mbox{\hyperlink{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}{y}} -\/ m\_height) < p2.y \&\& p2.y < (m\_leftTopPoint.y + c1.\mbox{\hyperlink{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}{y}}))}
 \DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00059}00059             \{}
 \DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00060}00060                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{_box_collider_8cpp_source_l00061}00061             \}}

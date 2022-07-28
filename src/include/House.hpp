@@ -4,6 +4,8 @@
 	#include "include/GameMap.hpp"
 	#include "include/consts.hpp"
 
+class GameMap;
+
 class House : public GameMap
 {
 public:

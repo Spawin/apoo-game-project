@@ -1,0 +1,175 @@
+\hypertarget{class_item}{}\doxysection{Référence de la classe Item}
+\label{class_item}\index{Item@{Item}}
+
+
+Représente éssentiellement les object que pourra manipuler les personnages.  
+
+
+
+
+{\ttfamily \#include $<$Item.\+hpp$>$}
+
+Graphe d\textquotesingle{}héritage de Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.566879cm]{class_item}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_item_ae819a092279f2c4432a163893d88905d}{Item}} (std\+::string\+\_\+view const \&image\+Sprite\+Path, \mbox{\hyperlink{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705fa}{Items\+Categories}} \mbox{\hyperlink{class_item_aaa167cf26678cc807e34f87ef6fa2f54}{categorie}})
+\item 
+\mbox{\hyperlink{class_item_a11663c84075b78c3ae5e30fdfcd7c458}{$\sim$\+Item}} ()
+\item 
+virtual void \mbox{\hyperlink{class_item_ab2a2e5e2b20b61602e8edf0e4e573599}{on\+Collision\+Enter}} (\mbox{\hyperlink{class_collision}{Collision}} const \&collision) const =0
+\begin{DoxyCompactList}\small\item\em émit quand il entre en contacte avec un autre élément \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_item_a5e7b6054dbde86c485f1be747cb9926c}{update}} ()=0
+\item 
+virtual \mbox{\hyperlink{class_item_a180ec610ac1bfdec38466457f53ad3b7}{use\+On}} (\mbox{\hyperlink{class_personage}{Personage}} \&personage)=0
+\begin{DoxyCompactList}\small\item\em Utiliser l\textquotesingle{}item sur le personnage indiqué \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_item_a4b98f05632e3641263c3d8f6fe26e58e}{update\+Position}} (float posX, float posY)=0
+\begin{DoxyCompactList}\small\item\em Permet de mettre à jour la position actuelle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Attributs protégés}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \mbox{\hyperlink{class_item_ae7cf6de790b69baa614a1456d54bbd9e}{value}}
+\begin{DoxyCompactList}\small\item\em Valeur de l\textquotesingle{}item à l\textquotesingle{}utilisation... \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705fa}{Items\+Categories}} \mbox{\hyperlink{class_item_aaa167cf26678cc807e34f87ef6fa2f54}{categorie}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Membres hérités additionnels}
+
+
+\doxysubsection{Description détaillée}
+Représente éssentiellement les object que pourra manipuler les personnages. 
+
+Définition à la ligne \mbox{\hyperlink{_item_8hpp_source_l00035}{35}} du fichier \mbox{\hyperlink{_item_8hpp_source}{Item.\+hpp}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_item_ae819a092279f2c4432a163893d88905d}\label{class_item_ae819a092279f2c4432a163893d88905d}} 
+\index{Item@{Item}!Item@{Item}}
+\index{Item@{Item}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{Item()}{Item()}}
+{\footnotesize\ttfamily Item\+::\+Item (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view const \&}]{image\+Sprite\+Path,  }\item[{\mbox{\hyperlink{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705fa}{Items\+Categories}}}]{categorie }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_item_8cpp_source_l00008}{8}} du fichier \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+\mbox{\Hypertarget{class_item_a11663c84075b78c3ae5e30fdfcd7c458}\label{class_item_a11663c84075b78c3ae5e30fdfcd7c458}} 
+\index{Item@{Item}!````~Item@{$\sim$Item}}
+\index{````~Item@{$\sim$Item}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{$\sim$Item()}{~Item()}}
+{\footnotesize\ttfamily Item\+::$\sim$\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_item_8cpp_source_l00015}{15}} du fichier \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_item_ab2a2e5e2b20b61602e8edf0e4e573599}\label{class_item_ab2a2e5e2b20b61602e8edf0e4e573599}} 
+\index{Item@{Item}!onCollisionEnter@{onCollisionEnter}}
+\index{onCollisionEnter@{onCollisionEnter}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{onCollisionEnter()}{onCollisionEnter()}}
+{\footnotesize\ttfamily virtual void Item\+::on\+Collision\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collision}{Collision}} const \&}]{collision }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+émit quand il entre en contacte avec un autre élément 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em collision} & \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \mbox{\hyperlink{class_not_movable_game_object_a4954c3c803930ca5faf48bab88fb19bd}{Not\+Movable\+Game\+Object}}.
+
+
+
+Implémenté dans \mbox{\hyperlink{class_money_af14a2e8f1f215da2cda5c833f25818e5}{Money}}, \mbox{\hyperlink{class_shield_af82912a68032d931aba13f28004568fd}{Shield}}, \mbox{\hyperlink{class_sword_a6484ea989954570c9ece11d9843e72d1}{Sword}}, et \mbox{\hyperlink{class_vial_ace9277c2d5c91183ed1357eff154cc1b}{Vial}}.
+
+\mbox{\Hypertarget{class_item_a5e7b6054dbde86c485f1be747cb9926c}\label{class_item_a5e7b6054dbde86c485f1be747cb9926c}} 
+\index{Item@{Item}!update@{update}}
+\index{update@{update}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void Item\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_not_movable_game_object_aafd50ee8f5e31bd1f4dfb4bd95053267}{Not\+Movable\+Game\+Object}}.
+
+
+
+Implémenté dans \mbox{\hyperlink{class_money_a9914e11ab0b3630f54b3711b3ef8cad8}{Money}}, \mbox{\hyperlink{class_shield_a22cfa66fa754653dd24c00bd13678b18}{Shield}}, \mbox{\hyperlink{class_sword_a4b650c68af5552a2f0d995b5fe3af3fc}{Sword}}, et \mbox{\hyperlink{class_vial_ad00a07bd850ba8cec2ee0cb2164fe820}{Vial}}.
+
+\mbox{\Hypertarget{class_item_a4b98f05632e3641263c3d8f6fe26e58e}\label{class_item_a4b98f05632e3641263c3d8f6fe26e58e}} 
+\index{Item@{Item}!updatePosition@{updatePosition}}
+\index{updatePosition@{updatePosition}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{updatePosition()}{updatePosition()}}
+{\footnotesize\ttfamily virtual void Item\+::update\+Position (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Permet de mettre à jour la position actuelle. 
+
+
+
+Implémente \mbox{\hyperlink{class_not_movable_game_object_a1ae6701a400e4455cb28936d4f1cd30d}{Not\+Movable\+Game\+Object}}.
+
+\mbox{\Hypertarget{class_item_a180ec610ac1bfdec38466457f53ad3b7}\label{class_item_a180ec610ac1bfdec38466457f53ad3b7}} 
+\index{Item@{Item}!useOn@{useOn}}
+\index{useOn@{useOn}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{useOn()}{useOn()}}
+{\footnotesize\ttfamily virtual Item\+::use\+On (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_personage}{Personage}} \&}]{personage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Utiliser l\textquotesingle{}item sur le personnage indiqué 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em personage} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_item_aaa167cf26678cc807e34f87ef6fa2f54}\label{class_item_aaa167cf26678cc807e34f87ef6fa2f54}} 
+\index{Item@{Item}!categorie@{categorie}}
+\index{categorie@{categorie}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{categorie}{categorie}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705fa}{Items\+Categories}} Item\+::categorie\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_item_8hpp_source_l00066}{66}} du fichier \mbox{\hyperlink{_item_8hpp_source}{Item.\+hpp}}.
+
+\mbox{\Hypertarget{class_item_ae7cf6de790b69baa614a1456d54bbd9e}\label{class_item_ae7cf6de790b69baa614a1456d54bbd9e}} 
+\index{Item@{Item}!value@{value}}
+\index{value@{value}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily unsigned Item\+::value\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Valeur de l\textquotesingle{}item à l\textquotesingle{}utilisation... 
+
+
+
+Définition à la ligne \mbox{\hyperlink{_item_8hpp_source_l00065}{65}} du fichier \mbox{\hyperlink{_item_8hpp_source}{Item.\+hpp}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_item_8hpp}{Item.\+hpp}}\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_item_8cpp}{Item.\+cpp}}\end{DoxyCompactItemize}

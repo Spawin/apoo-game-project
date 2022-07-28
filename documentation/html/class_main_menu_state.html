@@ -106,6 +106,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:a4203159ff9f6dac008cfddac3df67ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8af4d586b93c315a1a15b5fe83ec0760"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_state.html#a8af4d586b93c315a1a15b5fe83ec0760">~MainMenuState</a> ()</td></tr>
 <tr class="separator:a8af4d586b93c315a1a15b5fe83ec0760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65bcc18f86712685e80aa103bdfefabe"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_state.html#a65bcc18f86712685e80aa103bdfefabe">updateSFMLEvents</a> (const sf::Event &amp;sfEvent) override</td></tr>
+<tr class="separator:a65bcc18f86712685e80aa103bdfefabe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1bb8199b0e05cee38637cb28ffe278b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_state.html#ad1bb8199b0e05cee38637cb28ffe278b">updateInput</a> (const float &amp;deltaTime) override</td></tr>
 <tr class="separator:ad1bb8199b0e05cee38637cb28ffe278b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a814fcf755b02804447b0460a57e25833"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_menu_state.html#a814fcf755b02804447b0460a57e25833">updateButtons</a> ()</td></tr>
@@ -123,10 +125,19 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:afab438d92b90dc18d194dbd9c9c8bab3 inherit pub_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18c3b970753bab2937141803644aaf24 inherit pub_methods_class_state"><td class="memItemLeft" align="right" valign="top">const bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a18c3b970753bab2937141803644aaf24">getQuit</a> () const</td></tr>
 <tr class="separator:a18c3b970753bab2937141803644aaf24 inherit pub_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f65792d58af6faa5d070aae211f6320 inherit pub_methods_class_state"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a2f65792d58af6faa5d070aae211f6320">getKeyTime</a> ()</td></tr>
+<tr class="separator:a2f65792d58af6faa5d070aae211f6320 inherit pub_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a128abd7dbf7eefe004d380f0967fea46 inherit pub_methods_class_state"><td class="memItemLeft" align="right" valign="top">float const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a128abd7dbf7eefe004d380f0967fea46">scScF</a> ()</td></tr>
+<tr class="memdesc:a128abd7dbf7eefe004d380f0967fea46 inherit pub_methods_class_state"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le &lt;screenScalingFactor&gt; fournit par le stateData...  <a href="class_state.html#a128abd7dbf7eefe004d380f0967fea46">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a128abd7dbf7eefe004d380f0967fea46 inherit pub_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaf85cda415136f1288da41e98f9fecd inherit pub_methods_class_state"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#afaf85cda415136f1288da41e98f9fecd">updateSFMLEvents</a> (const sf::Event &amp;sfEvent)=0</td></tr>
+<tr class="separator:afaf85cda415136f1288da41e98f9fecd inherit pub_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27907b80e927649f92e4dc6a845a9213 inherit pub_methods_class_state"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a27907b80e927649f92e4dc6a845a9213">endState</a> ()</td></tr>
 <tr class="separator:a27907b80e927649f92e4dc6a845a9213 inherit pub_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55cd17e1b46e2a7345f3b98f01c123b8 inherit pub_methods_class_state"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a55cd17e1b46e2a7345f3b98f01c123b8">updateMousePositions</a> ()</td></tr>
 <tr class="separator:a55cd17e1b46e2a7345f3b98f01c123b8 inherit pub_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8168ad555fb324fbc0c7aef1fe035301 inherit pub_methods_class_state"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a8168ad555fb324fbc0c7aef1fe035301">updateKeytime</a> (const float &amp;deltaTime)</td></tr>
+<tr class="separator:a8168ad555fb324fbc0c7aef1fe035301 inherit pub_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace2914fa0071bbfaea22fa28bbec5146 inherit pub_methods_class_state"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#ace2914fa0071bbfaea22fa28bbec5146">updateInput</a> (const float &amp;deltaTime)=0</td></tr>
 <tr class="separator:ace2914fa0071bbfaea22fa28bbec5146 inherit pub_methods_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15d17b8c28e7c800578816be9661fab3 inherit pub_methods_class_state"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a15d17b8c28e7c800578816be9661fab3">update</a> (const float &amp;deltaTime)=0</td></tr>
@@ -147,6 +158,10 @@ Membres hérités additionnels</h2></td></tr>
 <tr class="separator:a67102294962f79cfb8fa952a113a351d inherit pro_attribs_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f1d7cdbac7fcc935b81eedae466c7f3 inherit pro_attribs_class_state"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a6f1d7cdbac7fcc935b81eedae466c7f3">paused</a></td></tr>
 <tr class="separator:a6f1d7cdbac7fcc935b81eedae466c7f3 inherit pro_attribs_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bcc2cbae013efbdd1b3b5db08895132 inherit pro_attribs_class_state"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#a2bcc2cbae013efbdd1b3b5db08895132">keytime</a></td></tr>
+<tr class="separator:a2bcc2cbae013efbdd1b3b5db08895132 inherit pro_attribs_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeddd7ca36c1b3dfd002038b666c57816 inherit pro_attribs_class_state"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#aeddd7ca36c1b3dfd002038b666c57816">keytimeMax</a></td></tr>
+<tr class="separator:aeddd7ca36c1b3dfd002038b666c57816 inherit pro_attribs_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae55b0beb4bfe6bb44a9fc1fc05d8b90c inherit pro_attribs_class_state"><td class="memItemLeft" align="right" valign="top">sf::Vector2i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#ae55b0beb4bfe6bb44a9fc1fc05d8b90c">mousePosScreen</a></td></tr>
 <tr class="separator:ae55b0beb4bfe6bb44a9fc1fc05d8b90c inherit pro_attribs_class_state"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae19be9c58de5545c8cd162f11969d6ee inherit pro_attribs_class_state"><td class="memItemLeft" align="right" valign="top">sf::Vector2i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_state.html#ae19be9c58de5545c8cd162f11969d6ee">mousePosWindow</a></td></tr>
@@ -176,7 +191,7 @@ Membres hérités additionnels</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_main_menu_state_8cpp_source.html#l00083">83</a> du fichier <a class="el" href="_main_menu_state_8cpp_source.html">MainMenuState.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_main_menu_state_8cpp_source.html#l00101">101</a> du fichier <a class="el" href="_main_menu_state_8cpp_source.html">MainMenuState.cpp</a>.</p>
 
 </div>
 </div>
@@ -195,7 +210,7 @@ Membres hérités additionnels</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_main_menu_state_8cpp_source.html#l00093">93</a> du fichier <a class="el" href="_main_menu_state_8cpp_source.html">MainMenuState.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_main_menu_state_8cpp_source.html#l00111">111</a> du fichier <a class="el" href="_main_menu_state_8cpp_source.html">MainMenuState.cpp</a>.</p>
 
 </div>
 </div>
@@ -226,7 +241,7 @@ Membres hérités additionnels</h2></td></tr>
 
 <p>Implémente <a class="el" href="class_state.html#aa1f36587befc2c03c4033366e5000d2c">State</a>.</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_main_menu_state_8cpp_source.html#l00164">164</a> du fichier <a class="el" href="_main_menu_state_8cpp_source.html">MainMenuState.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_main_menu_state_8cpp_source.html#l00198">198</a> du fichier <a class="el" href="_main_menu_state_8cpp_source.html">MainMenuState.cpp</a>.</p>
 
 </div>
 </div>
@@ -246,7 +261,7 @@ Membres hérités additionnels</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_main_menu_state_8cpp_source.html#l00156">156</a> du fichier <a class="el" href="_main_menu_state_8cpp_source.html">MainMenuState.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_main_menu_state_8cpp_source.html#l00190">190</a> du fichier <a class="el" href="_main_menu_state_8cpp_source.html">MainMenuState.cpp</a>.</p>
 
 </div>
 </div>
@@ -276,7 +291,7 @@ Membres hérités additionnels</h2></td></tr>
 
 <p>Implémente <a class="el" href="class_state.html#a15d17b8c28e7c800578816be9661fab3">State</a>.</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_main_menu_state_8cpp_source.html#l00148">148</a> du fichier <a class="el" href="_main_menu_state_8cpp_source.html">MainMenuState.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_main_menu_state_8cpp_source.html#l00182">182</a> du fichier <a class="el" href="_main_menu_state_8cpp_source.html">MainMenuState.cpp</a>.</p>
 
 </div>
 </div>
@@ -295,7 +310,7 @@ Membres hérités additionnels</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_main_menu_state_8cpp_source.html#l00114">114</a> du fichier <a class="el" href="_main_menu_state_8cpp_source.html">MainMenuState.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_main_menu_state_8cpp_source.html#l00142">142</a> du fichier <a class="el" href="_main_menu_state_8cpp_source.html">MainMenuState.cpp</a>.</p>
 
 </div>
 </div>
@@ -325,13 +340,43 @@ Membres hérités additionnels</h2></td></tr>
 
 <p>Implémente <a class="el" href="class_state.html#ace2914fa0071bbfaea22fa28bbec5146">State</a>.</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_main_menu_state_8cpp_source.html#l00108">108</a> du fichier <a class="el" href="_main_menu_state_8cpp_source.html">MainMenuState.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_main_menu_state_8cpp_source.html#l00127">127</a> du fichier <a class="el" href="_main_menu_state_8cpp_source.html">MainMenuState.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a65bcc18f86712685e80aa103bdfefabe" name="a65bcc18f86712685e80aa103bdfefabe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65bcc18f86712685e80aa103bdfefabe">&#9670;&nbsp;</a></span>updateSFMLEvents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainMenuState::updateSFMLEvents </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Event &amp;&#160;</td>
+          <td class="paramname"><em>sfEvent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implémente <a class="el" href="class_state.html#afaf85cda415136f1288da41e98f9fecd">State</a>.</p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_main_menu_state_8cpp_source.html#l00134">134</a> du fichier <a class="el" href="_main_menu_state_8cpp_source.html">MainMenuState.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
-<li>include/<a class="el" href="_main_menu_state_8hpp_source.html">MainMenuState.hpp</a></li>
-<li>include/<a class="el" href="_main_menu_state_8cpp_source.html">MainMenuState.cpp</a></li>
+<li>C:/programs_sc/CIC/MITST06/jeu/src/include/<a class="el" href="_main_menu_state_8hpp_source.html">MainMenuState.hpp</a></li>
+<li>C:/programs_sc/CIC/MITST06/jeu/src/include/<a class="el" href="_main_menu_state_8cpp_source.html">MainMenuState.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

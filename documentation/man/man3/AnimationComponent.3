@@ -1,0 +1,111 @@
+.TH "AnimationComponent" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AnimationComponent
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <AnimationComponent\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBAnimationComponent\fP (sf::Sprite &sprite, sf::Texture &textureSheet)"
+.br
+.ti -1c
+.RI "\fB~AnimationComponent\fP ()"
+.br
+.ti -1c
+.RI "const bool & \fBisDone\fP (const std::string key)"
+.br
+.ti -1c
+.RI "void \fBaddAnimation\fP (int priority, const std::string animation, float animationTimer, int start_x, int start_y, int end_x, int end_y, int width, int height, bool fixLastFrame=false)"
+.br
+.ti -1c
+.RI "bool \fBcanPlay\fP (const std::string &animationKey, bool allowSimilar=false)"
+.br
+.RI "Vérifie si cette animation peut etre lancée (on va comparer les priorité) Retourne vrai si la dernière animation est finie ou si la nouvelle animation est prioritaire\&. "
+.ti -1c
+.RI "const bool & \fBplay\fP (const std::string &animationKey, const float &deltatime)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB6\fP du fichier \fBAnimationComponent\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "AnimationComponent::AnimationComponent (sf::Sprite & sprite, sf::Texture & textureSheet)"
+
+.PP
+Définition à la ligne \fB12\fP du fichier \fBAnimationComponent\&.cpp\fP\&.
+.SS "AnimationComponent::~AnimationComponent ()"
+
+.PP
+Définition à la ligne \fB21\fP du fichier \fBAnimationComponent\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void AnimationComponent::addAnimation (int priority, const std::string animation, float animationTimer, int start_x, int start_y, int end_x, int end_y, int width, int height, bool fixLastFrame = \fCfalse\fP)"
+
+.PP
+\fBParamètres\fP
+.RS 4
+\fIpriority\fP 
+.br
+\fIanimation\fP 
+.br
+\fIanimationTimer\fP 
+.br
+\fIstart_x\fP 
+.br
+\fIstart_y\fP 
+.br
+\fIend_x\fP 
+.br
+\fIend_y\fP 
+.br
+\fIwidth\fP 
+.br
+\fIheight\fP 
+.br
+\fIfixLastFrame\fP indique si l'animation une fois arrivée à la dernière frame ne dois pas recommencer de zéro (si bien sur c'est elle qui à la priorité) 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB40\fP du fichier \fBAnimationComponent\&.cpp\fP\&.
+.SS "bool AnimationComponent::canPlay (const std::string & animationKey, bool allowSimilar = \fCfalse\fP)"
+
+.PP
+Vérifie si cette animation peut etre lancée (on va comparer les priorité) Retourne vrai si la dernière animation est finie ou si la nouvelle animation est prioritaire\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIanimationKey\fP 
+.br
+\fIallowSimilar\fP renvera true si c'est la même animation qui est en cours 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+true 
+.PP
+false 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB45\fP du fichier \fBAnimationComponent\&.cpp\fP\&.
+.SS "const bool & AnimationComponent::isDone (const std::string key)"
+
+.PP
+Définition à la ligne \fB35\fP du fichier \fBAnimationComponent\&.cpp\fP\&.
+.SS "const bool & AnimationComponent::play (const std::string & animationKey, const float & deltatime)"
+
+.PP
+Définition à la ligne \fB61\fP du fichier \fBAnimationComponent\&.cpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

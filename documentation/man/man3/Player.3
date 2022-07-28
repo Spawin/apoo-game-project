@@ -1,0 +1,81 @@
+.TH "Player" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Player
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Player\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBPlayer\fP (\fBPersonage\fP *personage)"
+.br
+.ti -1c
+.RI "\fB~Player\fP ()"
+.br
+.ti -1c
+.RI "sf::Vector2f \fBgetPosition\fP () const"
+.br
+.ti -1c
+.RI "\fBPersonage\fP * \fBgetPersonage\fP ()"
+.br
+.ti -1c
+.RI "void \fBmanageMove\fP (const float &deltaTime)"
+.br
+.ti -1c
+.RI "void \fBupdateMousePosWindow\fP (sf::Vector2i mousePosWindow)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (const float &deltaTime)"
+.br
+.ti -1c
+.RI "void \fBrender\fP (sf::RenderTarget &target)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB6\fP du fichier \fBPlayer\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "Player::Player (\fBPersonage\fP * personage)"
+
+.PP
+Définition à la ligne \fB8\fP du fichier \fBPlayer\&.cpp\fP\&.
+.SS "Player::~Player ()"
+
+.PP
+Définition à la ligne \fB14\fP du fichier \fBPlayer\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "\fBPersonage\fP * Player::getPersonage ()"
+
+.PP
+Définition à la ligne \fB25\fP du fichier \fBPlayer\&.cpp\fP\&.
+.SS "sf::Vector2f Player::getPosition () const"
+
+.PP
+Définition à la ligne \fB20\fP du fichier \fBPlayer\&.cpp\fP\&.
+.SS "void Player::manageMove (const float & deltaTime)"
+
+.PP
+Définition à la ligne \fB30\fP du fichier \fBPlayer\&.cpp\fP\&.
+.SS "void Player::render (sf::RenderTarget & target)"
+
+.PP
+Définition à la ligne \fB215\fP du fichier \fBPlayer\&.cpp\fP\&.
+.SS "void Player::update (const float & deltaTime)"
+
+.PP
+Définition à la ligne \fB208\fP du fichier \fBPlayer\&.cpp\fP\&.
+.SS "void Player::updateMousePosWindow (sf::Vector2i mousePosWindow)"
+
+.PP
+Définition à la ligne \fB203\fP du fichier \fBPlayer\&.cpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

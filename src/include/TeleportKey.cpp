@@ -8,6 +8,7 @@
 TeleportKey::TeleportKey() :
 	Item("content/gameObjects/teleportKey.png", ItemsCategories::TELEPORTKEY)
 {
+	m_body.setScale((float)game::INVENTORY_BLOCK_WIDTH / (float)m_texture.getSize().x, (float)game::INVENTORY_BLOCK_WIDTH / (float)m_texture.getSize().y);
 }
 
 TeleportKey::~TeleportKey()
@@ -15,3 +16,24 @@ TeleportKey::~TeleportKey()
 }
 
 // Fonctions/Méthodes
+void TeleportKey::onCollisionEnter(Collision const& collision) const
+{
+	collision.test(); // REVIEW -
+}
+
+void TeleportKey::update()
+{}
+
+void TeleportKey::useOn(Personage& personage)
+{
+	std::cerr << "Utilisation de la clé de téléportation sur " << personage.getGameObjectName() << std::endl;
+}
+
+void TeleportKey::updatePosition(float posX, float posY)
+{
+	m_position->setPosition(posX, posY);
+	// On replace le body
+	m_body.setPosition(m_position->getPosition().toVector2f());
+
+	std::cout << "Position du " << m_gameObjectName << " : " << m_position << " => " << (*m_position) << std::endl;
+}

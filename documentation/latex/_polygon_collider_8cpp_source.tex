@@ -1,5 +1,5 @@
 \hypertarget{_polygon_collider_8cpp_source}{}\doxysection{Polygon\+Collider.\+cpp}
-\label{_polygon_collider_8cpp_source}\index{include/PolygonCollider.cpp@{include/PolygonCollider.cpp}}
+\label{_polygon_collider_8cpp_source}\index{C:/programs\_sc/CIC/MITST06/jeu/src/include/PolygonCollider.cpp@{C:/programs\_sc/CIC/MITST06/jeu/src/include/PolygonCollider.cpp}}
 \mbox{\hyperlink{_polygon_collider_8cpp}{Aller à la documentation de ce fichier.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_polygon_collider_8hpp}{include/PolygonCollider.hpp}}"{}}}
@@ -39,27 +39,27 @@
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00035}00035 \textcolor{keyword}{}\{}
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00036}00036     \textcolor{comment}{// REVIEW pour le cas du box collider}}
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00037}00037     \textcolor{comment}{// Comparaison de la proximité de tous les points}}
-\DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00038}00038     \mbox{\hyperlink{struct_my_vector}{MyVector}} c1 = (*this).parent.getPosition().getPosition();}
-\DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00039}00039     \mbox{\hyperlink{struct_my_vector}{MyVector}} c2 = collider.\mbox{\hyperlink{class_collider_ac5e78bcb91de52d8202beea5c4b3a5f8}{getParent}}().\mbox{\hyperlink{class_game_object_a8c97fc15be278b8c42d138517e0a05bb}{getPosition}}().\mbox{\hyperlink{class_position_af409de5592dd7da6fb0ccb8d1681bb19}{getPosition}}();}
+\DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00038}00038     \mbox{\hyperlink{struct_my_vector}{MyVector}} c1 = (*this).parent.getPosition()-\/>getPosition();}
+\DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00039}00039     \mbox{\hyperlink{struct_my_vector}{MyVector}} c2 = collider.\mbox{\hyperlink{class_collider_ac5e78bcb91de52d8202beea5c4b3a5f8}{getParent}}().\mbox{\hyperlink{class_game_object_a5f5f8870bb5d7e1496c2e565f5dd8bbd}{getPosition}}()-\/>\mbox{\hyperlink{class_position_af409de5592dd7da6fb0ccb8d1681bb19}{getPosition}}();}
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00040}00040     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < (*this).m\_contactPoints.size(); i++)}
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00041}00041     \{}
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00042}00042         sf::Vector2f v1 = (*this).m\_contactPoints[i];}
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00043}00043         \textcolor{comment}{// MyVector c1 = (*this).parent.getPosition().getPosition();}}
-\DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00044}00044         v1.x += c1.\mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}};}
-\DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00045}00045         v1.y += c1.\mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}};}
+\DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00044}00044         v1.\mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}} += c1.\mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}};}
+\DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00045}00045         v1.y += c1.\mbox{\hyperlink{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}{y}};}
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00046}00046         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} j = 0; j < collider.\mbox{\hyperlink{class_collider_a97506e7e7a75b63c3358eb898194b866}{getContactPoints}}().size(); j++)}
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00047}00047         \{}
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00048}00048             sf::Vector2f v2 = collider.\mbox{\hyperlink{class_collider_a97506e7e7a75b63c3358eb898194b866}{getContactPoints}}()[j];}
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00049}00049             \textcolor{comment}{// MyVector c2 = collider.getParent().getPosition().getPosition();}}
-\DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00050}00050             v2.x += c2.\mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\_x}};}
-\DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00051}00051             v2.y += c2.\mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\_y}};}
+\DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00050}00050             v2.x += c2.\mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}};}
+\DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00051}00051             v2.y += c2.\mbox{\hyperlink{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}{y}};}
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00052}00052 }
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00053}00053             \textcolor{comment}{// auto delta = MyVector \{ min(\{ abs(v1.x -\/ v2.x), abs(v1.x -\/ v2.x -\/ (int)GameMap::getGAME\_MAP\_WIDTH), abs(v1.x -\/ v2.x + (int)GameMap::getGAME\_MAP\_WIDTH) \}), min(\{ abs(v1.y -\/ v2.y), abs(v1.y -\/ v2.y -\/ (int)GameMap::getGAME\_MAP\_HEIGHT), abs(v1.y -\/ v2.y + (int)GameMap::getGAME\_MAP\_HEIGHT) \}) \};}}
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00054}00054             \textcolor{comment}{// return 0 < sqrt(delta.m\_x * delta.m\_x + delta.m\_y * delta.m\_y);}}
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00055}00055             \textcolor{keywordtype}{float} deltat = sqrt(pow((v1.x -\/ v2.x), 2) + pow((v1.y -\/ v2.y), 2));}
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00056}00056             \textcolor{comment}{// cout << "{}distance entre A("{} << v1.x << "{};"{} << v1.y;}}
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00057}00057             \textcolor{comment}{// cout << "{}) et B("{} << v2.x << "{};"{} << v2.y << "{}) est : "{} << deltat << endl;}}
-\DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00058}00058             \textcolor{keywordflow}{return} deltat < (float)\mbox{\hyperlink{consts_8hpp_afb515af395568ee4252070ae1dd100b0}{DISTANCE\_MIN\_BETWEEN\_OBJECTS}};}
+\DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00058}00058             \textcolor{keywordflow}{return} deltat < (float)\mbox{\hyperlink{namespacegame_a183b92f3cf97b370d5420a30ead1615d}{game::DISTANCE\_MIN\_BETWEEN\_OBJECTS}};}
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00059}00059         \}}
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00060}00060     \}}
 \DoxyCodeLine{\Hypertarget{_polygon_collider_8cpp_source_l00061}00061     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}

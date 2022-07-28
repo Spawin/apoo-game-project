@@ -1,0 +1,104 @@
+.TH "gui::InventoryButton" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gui::InventoryButton
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Gui\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBInventoryButton\fP (float x, float y, sf::Sprite const &sprite, sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor, sf::Color text_idle_color=sf::Color::Transparent, sf::Color text_hover_color=sf::Color::Transparent, sf::Color text_active_color=sf::Color::Transparent, sf::Color outline_idle_color=sf::Color::Transparent, sf::Color outline_hover_color=sf::Color::Transparent, sf::Color outline_active_color=sf::Color::Transparent, short unsigned id=0)"
+.br
+.ti -1c
+.RI "\fB~InventoryButton\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisPressed\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPosition\fP (float x, float y, float addX, float addY)"
+.br
+.RI "Set the \fBPosition\fP object\&. "
+.ti -1c
+.RI "const sf::Vector2f & \fBgetPosition\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetText\fP (const std::string text)"
+.br
+.ti -1c
+.RI "const std::string \fBgetText\fP () const"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (const sf::Vector2i &mousePosWindow)"
+.br
+.ti -1c
+.RI "void \fBrender\fP (sf::RenderTarget &target)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB114\fP du fichier \fBGui\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "gui::InventoryButton::InventoryButton (float x, float y, sf::Sprite const & sprite, sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor, sf::Color text_idle_color = \fCsf::Color::Transparent\fP, sf::Color text_hover_color = \fCsf::Color::Transparent\fP, sf::Color text_active_color = \fCsf::Color::Transparent\fP, sf::Color outline_idle_color = \fCsf::Color::Transparent\fP, sf::Color outline_hover_color = \fCsf::Color::Transparent\fP, sf::Color outline_active_color = \fCsf::Color::Transparent\fP, short unsigned id = \fC0\fP)"
+
+.PP
+Définition à la ligne \fB289\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "gui::InventoryButton::~InventoryButton ()"
+
+.PP
+Définition à la ligne \fB339\fP du fichier \fBGui\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "const sf::Vector2f & gui::InventoryButton::getPosition () const"
+
+.PP
+Définition à la ligne \fB361\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "const std::string gui::InventoryButton::getText () const"
+
+.PP
+Définition à la ligne \fB348\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "bool gui::InventoryButton::isPressed () const"
+
+.PP
+Définition à la ligne \fB353\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "void gui::InventoryButton::render (sf::RenderTarget & target)"
+
+.PP
+Définition à la ligne \fB431\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "void gui::InventoryButton::setPosition (float x, float y, float addX, float addY)"
+
+.PP
+Set the \fBPosition\fP object\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIx\fP 
+.br
+\fIy\fP 
+.br
+\fIaddX\fP Décalage sur l'axe des x 
+.br
+\fIaddY\fP Décalage sur l'axe des y 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB366\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "void gui::InventoryButton::setText (const std::string text)"
+
+.PP
+Définition à la ligne \fB343\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "void gui::InventoryButton::update (const sf::Vector2i & mousePosWindow)"
+
+.PP
+Définition à la ligne \fB383\fP du fichier \fBGui\&.cpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

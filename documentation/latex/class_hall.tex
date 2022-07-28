@@ -4,76 +4,115 @@
 
 {\ttfamily \#include $<$Hall.\+hpp$>$}
 
+Graphe d\textquotesingle{}héritage de Hall\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_hall}
+\end{center}
+\end{figure}
 \doxysubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_hall_a122ed8085be305339c89cadb3e360b86}{Hall}} ()
+\mbox{\hyperlink{class_hall_a895ca541045c940874bc7572059f8652}{Hall}} (sf\+::\+Vector2i top\+Left\+Point, int width, int height)
 \item 
-\mbox{\hyperlink{class_hall_a28d5f4ed9d21684b7359dc980eacb8a0}{$\sim$\+Hall}} ()
-\end{DoxyCompactItemize}
-\doxysubsection*{Fonctions membres publiques statiques}
-\begin{DoxyCompactItemize}
+virtual \mbox{\hyperlink{class_hall_a28d5f4ed9d21684b7359dc980eacb8a0}{$\sim$\+Hall}} ()
 \item 
-static float \mbox{\hyperlink{class_hall_a3ea4361fbacb1f52beca20d6e8553b70}{get\+MIN\+\_\+\+WIDTH}} ()
+virtual bool \mbox{\hyperlink{class_hall_a0c346daee6b9e4d03d2ef3d858826904}{add\+Movable\+Game\+Object}} (\mbox{\hyperlink{class_movable_game_object}{Movable\+Game\+Object}} $\ast$movable\+Game\+Object)
 \item 
-static float \mbox{\hyperlink{class_hall_af9feadcc489d1a980f43cf7833e6e255}{get\+MIN\+\_\+\+HEIGHT}} ()
+bool \mbox{\hyperlink{class_hall_ae2a6f4440f87c17bfdbb292c542e542a}{is\+In}} (\mbox{\hyperlink{struct_my_vector}{My\+Vector}} const \&coordinates) const
+\item 
+bool \mbox{\hyperlink{class_hall_a5cf17f386a894b3c7062a85a3d802802}{is\+In}} (sf\+::\+Vector2f const \&coordinates) const
+\item 
+const sf\+::\+Int\+Rect \& \mbox{\hyperlink{class_hall_ae8b24a02bbc5c17bf1e557cb3d98a76d}{get\+Int\+Rect}} () const
+\item 
+virtual void \mbox{\hyperlink{class_hall_a20c1d21909f6909956f8546db9d5e039}{render}} (sf\+::\+Render\+Target \&target)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
 
 
-Définition à la ligne \mbox{\hyperlink{_hall_8hpp_source_l00004}{4}} du fichier \mbox{\hyperlink{_hall_8hpp_source}{Hall.\+hpp}}.
+Définition à la ligne \mbox{\hyperlink{_hall_8hpp_source_l00011}{11}} du fichier \mbox{\hyperlink{_hall_8hpp_source}{Hall.\+hpp}}.
 
 
 
 \doxysubsection{Documentation des constructeurs et destructeur}
-\mbox{\Hypertarget{class_hall_a122ed8085be305339c89cadb3e360b86}\label{class_hall_a122ed8085be305339c89cadb3e360b86}} 
+\mbox{\Hypertarget{class_hall_a895ca541045c940874bc7572059f8652}\label{class_hall_a895ca541045c940874bc7572059f8652}} 
 \index{Hall@{Hall}!Hall@{Hall}}
 \index{Hall@{Hall}!Hall@{Hall}}
 \doxysubsubsection{\texorpdfstring{Hall()}{Hall()}}
-{\footnotesize\ttfamily Hall\+::\+Hall (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Hall\+::\+Hall (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2i}]{top\+Left\+Point,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
 
 
 
-Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00006}{6}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00008}{8}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
 
 \mbox{\Hypertarget{class_hall_a28d5f4ed9d21684b7359dc980eacb8a0}\label{class_hall_a28d5f4ed9d21684b7359dc980eacb8a0}} 
 \index{Hall@{Hall}!````~Hall@{$\sim$Hall}}
 \index{````~Hall@{$\sim$Hall}!Hall@{Hall}}
 \doxysubsubsection{\texorpdfstring{$\sim$Hall()}{~Hall()}}
-{\footnotesize\ttfamily Hall\+::$\sim$\+Hall (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Hall\+::$\sim$\+Hall (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00010}{10}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00024}{24}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
 
 
 
 \doxysubsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_hall_af9feadcc489d1a980f43cf7833e6e255}\label{class_hall_af9feadcc489d1a980f43cf7833e6e255}} 
-\index{Hall@{Hall}!getMIN\_HEIGHT@{getMIN\_HEIGHT}}
-\index{getMIN\_HEIGHT@{getMIN\_HEIGHT}!Hall@{Hall}}
-\doxysubsubsection{\texorpdfstring{getMIN\_HEIGHT()}{getMIN\_HEIGHT()}}
-{\footnotesize\ttfamily float Hall\+::get\+MIN\+\_\+\+HEIGHT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\mbox{\Hypertarget{class_hall_a0c346daee6b9e4d03d2ef3d858826904}\label{class_hall_a0c346daee6b9e4d03d2ef3d858826904}} 
+\index{Hall@{Hall}!addMovableGameObject@{addMovableGameObject}}
+\index{addMovableGameObject@{addMovableGameObject}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{addMovableGameObject()}{addMovableGameObject()}}
+{\footnotesize\ttfamily bool Hall\+::add\+Movable\+Game\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_movable_game_object}{Movable\+Game\+Object}} $\ast$}]{movable\+Game\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00019}{19}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00029}{29}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
 
-\mbox{\Hypertarget{class_hall_a3ea4361fbacb1f52beca20d6e8553b70}\label{class_hall_a3ea4361fbacb1f52beca20d6e8553b70}} 
-\index{Hall@{Hall}!getMIN\_WIDTH@{getMIN\_WIDTH}}
-\index{getMIN\_WIDTH@{getMIN\_WIDTH}!Hall@{Hall}}
-\doxysubsubsection{\texorpdfstring{getMIN\_WIDTH()}{getMIN\_WIDTH()}}
-{\footnotesize\ttfamily float Hall\+::get\+MIN\+\_\+\+WIDTH (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\mbox{\Hypertarget{class_hall_ae8b24a02bbc5c17bf1e557cb3d98a76d}\label{class_hall_ae8b24a02bbc5c17bf1e557cb3d98a76d}} 
+\index{Hall@{Hall}!getIntRect@{getIntRect}}
+\index{getIntRect@{getIntRect}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{getIntRect()}{getIntRect()}}
+{\footnotesize\ttfamily const sf\+::\+Int\+Rect \& Hall\+::get\+Int\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
-Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00014}{14}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00060}{60}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
+
+\mbox{\Hypertarget{class_hall_ae2a6f4440f87c17bfdbb292c542e542a}\label{class_hall_ae2a6f4440f87c17bfdbb292c542e542a}} 
+\index{Hall@{Hall}!isIn@{isIn}}
+\index{isIn@{isIn}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{isIn()}{isIn()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Hall\+::is\+In (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_my_vector}{My\+Vector}} const \&}]{coordinates }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00035}{35}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
+
+\mbox{\Hypertarget{class_hall_a5cf17f386a894b3c7062a85a3d802802}\label{class_hall_a5cf17f386a894b3c7062a85a3d802802}} 
+\index{Hall@{Hall}!isIn@{isIn}}
+\index{isIn@{isIn}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{isIn()}{isIn()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Hall\+::is\+In (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f const \&}]{coordinates }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00047}{47}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
+
+\mbox{\Hypertarget{class_hall_a20c1d21909f6909956f8546db9d5e039}\label{class_hall_a20c1d21909f6909956f8546db9d5e039}} 
+\index{Hall@{Hall}!render@{render}}
+\index{render@{render}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Hall\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00065}{65}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
 
 
 
 La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{_hall_8hpp}{Hall.\+hpp}}\item 
-include/\mbox{\hyperlink{_hall_8cpp}{Hall.\+cpp}}\end{DoxyCompactItemize}
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_hall_8hpp}{Hall.\+hpp}}\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_hall_8cpp}{Hall.\+cpp}}\end{DoxyCompactItemize}

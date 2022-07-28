@@ -7,8 +7,12 @@
 #include "include/consts.hpp"
 #include <string>
 
-class MovableGameObject;
 class Bag;
+class MovableGameObject;
+namespace gui
+{
+class ProgressBar;
+}
 
 class Personage : public MovableGameObject
 {
@@ -33,9 +37,9 @@ public:
 		return m_healthLevel;
 	}
 
-	const int& getSpecialityLevel() const
+	const int& getExperienceLevel() const
 	{
-		return m_specialityLevel;
+		return m_experienceLevel;
 	}
 
 	//
@@ -57,11 +61,52 @@ public:
 
 	void onCollisionEnter(Collision const& collision) const override;
 
-	virtual void simpleAttack(Personage& target) = 0;
-	virtual void specialAttack(Personage& target) = 0;
 	virtual void move(MyVector& speed) override;
 
 	void renderBagInventory(sf::RenderTarget& target);
+
+	virtual void simpleAttack(Personage& target) = 0;
+	virtual void specialAttack(Personage& target) = 0;
+
+	/**
+	 * @brief pour recevoir les dégats de santé
+	 * Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)
+	 *
+	 * @param value
+	 * @return unsigned
+	 */
+	virtual unsigned receiveHealthDamage(int value);
+	/**
+	 * @brief pour recevoir les dégats d'exp
+	 * Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)
+	 *
+	 * @param value
+	 * @return unsigned
+	 */
+	virtual unsigned receiveExpDamage(int value);
+	/**
+	 * @brief pour recevoir les soins santé
+	 * Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)
+	 *
+	 * @param value
+	 * @return unsigned
+	 */
+	virtual unsigned receiveHealthCare(int value);
+	/**
+	 * @brief pour recevoir les soins Exp
+	 * Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)
+	 *
+	 * @param value
+	 * @return unsigned
+	 */
+	virtual unsigned receiveExpCare(int value);
+	/**
+	 * @brief Pour activer la protection du bouclier.
+	 * Il faut noter que son activation est temporaire et protège la santé en diminuant l'ataque
+	 *
+	 * @param value
+	 */
+	virtual void receiveShieldboost(int value);
 
 protected:
 	Bag* bag;
@@ -82,11 +127,48 @@ protected:
 
 	sf::Vector2f calculateProgressBarsPosition();
 
+	/**
+	 * @brief Augmenter la santé
+	 *
+	 * @param value
+	 */
+	void increaseHealth(int value);
+	/**
+	 * @brief Augmenter l'expérience
+	 *
+	 * @param value
+	 */
+	void increaseExp(int value);
+	/**
+	 * @brief Diminuer la santé
+	 *
+	 * @param value
+	 */
+	void decreaseHealth(int value);
+	/**
+	 * @brief Diminuer l'expériance
+	 *
+	 * @param value
+	 */
+	void decreaseExp(int value);
+
 	// La quantité de vie du personnage
 	int m_healthLevel { 100 };
 
-	// La quantité de ça spécialité
-	int m_specialityLevel { 50 };
+	// int m_specialityLevel { 50 };
+	/**
+	 * @brief La quantité de ça spécialité.
+	 * NOTE -
+	 *
+	 */
+	int m_experienceLevel { 50 };
+
+	/**
+	 * @brief représente la valeur de protection offerte par le bouclié.
+	 * NOTE - Meme si la valeur n'est pas nulle, tant que le bouclié n'est pas activé, cette dernière n'est pas concidérée
+	 *
+	 */
+	int m_shieldBoost { 0 };
 
 	// Le nom de la spécialité
 	std::string m_specialtyName;
@@ -100,6 +182,8 @@ protected:
 	// probabilité d'attaque réussi (entre 0 et 1) mais évitons le zéro
 	float m_probabilitySuccessAttack { .5f };
 
+	float m_probabilityDodge { .1 };
+
 	// variation de l'attaque (valeur de l'attaque +/- cette valeur)
 	int m_attackVariation { 5 };
 
@@ -109,11 +193,12 @@ protected:
 	// sf::Texture m_specialityBarTexture;
 	sf::Sprite m_specialityBarSprite;
 
-	// sf::Texture m_
+	/**
+	 * @brief Représente la tenue du personage.
+	 * REVIEW
+	 *
+	 */
 	sf::Sprite m_suit;
-
-	// Valeur de l'accélération du déplacement (accélération uniforme)
-	// const float m_MOVE_SPEED { 200.f };
 
 	const bool m_isPlayer;
 

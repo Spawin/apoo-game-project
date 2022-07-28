@@ -1,0 +1,105 @@
+.TH "Bag" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Bag
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Bag\&.hpp>\fP
+.PP
+Est dérivée de \fBNotMovableGameObject\fP\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBBag\fP ()"
+.br
+.ti -1c
+.RI "\fB~Bag\fP ()"
+.br
+.ti -1c
+.RI "bool \fBaddItem\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type)"
+.br
+.ti -1c
+.RI "bool \fBmoveItem\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type, \fBInventory\fP *to_inventory)"
+.br
+.ti -1c
+.RI "bool \fBremoveItem\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type)"
+.br
+.ti -1c
+.RI "\fBInventory\fP * \fBgetInventory\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBonCollisionEnter\fP (\fBCollision\fP const &collision) const override"
+.br
+.RI "émit quand il entre en contacte avec un autre élément "
+.ti -1c
+.RI "virtual void \fBupdate\fP () override"
+.br
+.ti -1c
+.RI "void \fBrenderInventory\fP (sf::RenderTarget &target)"
+.br
+.in -1c
+.SS "Membres hérités additionnels"
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB9\fP du fichier \fBBag\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "Bag::Bag ()"
+
+.PP
+Définition à la ligne \fB19\fP du fichier \fBBag\&.cpp\fP\&.
+.SS "Bag::~Bag ()"
+
+.PP
+Définition à la ligne \fB26\fP du fichier \fBBag\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "bool Bag::addItem (\fBItem\fP * item, \fBgame::inventory_items_types\fP type)"
+
+.PP
+Définition à la ligne \fB32\fP du fichier \fBBag\&.cpp\fP\&.
+.SS "\fBInventory\fP * Bag::getInventory ()"
+
+.PP
+Définition à la ligne \fB47\fP du fichier \fBBag\&.cpp\fP\&.
+.SS "bool Bag::moveItem (\fBItem\fP * item, \fBgame::inventory_items_types\fP type, \fBInventory\fP * to_inventory)"
+
+.PP
+Définition à la ligne \fB37\fP du fichier \fBBag\&.cpp\fP\&.
+.SS "void Bag::onCollisionEnter (\fBCollision\fP const & collision) const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+émit quand il entre en contacte avec un autre élément 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIcollision\fP 
+.RE
+.PP
+
+.PP
+Implémente \fBNotMovableGameObject\fP\&.
+.PP
+Définition à la ligne \fB52\fP du fichier \fBBag\&.cpp\fP\&.
+.SS "bool Bag::removeItem (\fBItem\fP * item, \fBgame::inventory_items_types\fP type)"
+
+.PP
+Définition à la ligne \fB42\fP du fichier \fBBag\&.cpp\fP\&.
+.SS "void Bag::renderInventory (sf::RenderTarget & target)"
+
+.PP
+Définition à la ligne \fB62\fP du fichier \fBBag\&.cpp\fP\&.
+.SS "void Bag::update ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implémente \fBNotMovableGameObject\fP\&.
+.PP
+Définition à la ligne \fB57\fP du fichier \fBBag\&.cpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

@@ -1,0 +1,78 @@
+.TH "C:/programs_sc/CIC/MITST06/jeu/src/include/Gui.hpp" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/programs_sc/CIC/MITST06/jeu/src/include/Gui.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'include/Item\&.hpp'\fP
+.br
+\fC#include <map>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include 'include/consts\&.hpp'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBgui::Button\fP"
+.br
+.ti -1c
+.RI "class \fBgui::ProgressBar\fP"
+.br
+.ti -1c
+.RI "class \fBgui::InventoryButton\fP"
+.br
+.ti -1c
+.RI "class \fBgui::Inventory\fP"
+.br
+.in -1c
+.SS "Espaces de nommage"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBgui\fP"
+.br
+.in -1c
+.SS "Énumérations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBbutton_states\fP { \fBBTN_IDLE\fP = 0, \fBBTN_HOVER\fP, \fBBTN_ACTIVE\fP }"
+.br
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "float \fBgui::p2pX\fP (const float perc, const sf::VideoMode &vm)"
+.br
+.ti -1c
+.RI "float \fBgui::p2pY\fP (const float perc, const sf::VideoMode &vm)"
+.br
+.ti -1c
+.RI "unsigned \fBgui::calcCharSize\fP (const sf::VideoMode &vm, const unsigned modifier=60)"
+.br
+.in -1c
+.SH "Documentation du type de l'énumération"
+.PP 
+.SS "enum \fBbutton_states\fP"
+
+.PP
+\fBValeurs énumérées\fP
+.in +1c
+.TP
+\fB\fIBTN_IDLE \fP\fP
+.TP
+\fB\fIBTN_HOVER \fP\fP
+.TP
+\fB\fIBTN_ACTIVE \fP\fP
+.PP
+Définition à la ligne \fB13\fP du fichier \fBGui\&.hpp\fP\&.
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

@@ -1,0 +1,130 @@
+\hypertarget{_pause_menu_8cpp_source}{}\doxysection{Pause\+Menu.\+cpp}
+\label{_pause_menu_8cpp_source}\index{C:/programs\_sc/CIC/MITST06/jeu/src/include/PauseMenu.cpp@{C:/programs\_sc/CIC/MITST06/jeu/src/include/PauseMenu.cpp}}
+\mbox{\hyperlink{_pause_menu_8cpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_pause_menu_8hpp}{include/PauseMenu.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00002}00002 \textcolor{comment}{// Fonction static}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00004}00004 \textcolor{comment}{// Fonctions d'initialisation}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00006}00006 \textcolor{comment}{// Constructeurs/Destructeur}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00007}\mbox{\hyperlink{class_pause_menu_afc2f75ba9c95fd25134ad3bcf968fee7}{00007}} \mbox{\hyperlink{class_pause_menu_afc2f75ba9c95fd25134ad3bcf968fee7}{PauseMenu::PauseMenu}}(sf::VideoMode\& vm, sf::Font\& font) :}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00008}00008     font(font)}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00009}00009 \{}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00010}00010     std::cout << \textcolor{stringliteral}{"{}Pause menu / Inventaire : w="{}} << vm.width << \textcolor{stringliteral}{"{} h="{}} << vm.height << std::endl;}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00012}00012     \textcolor{comment}{//Init background}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00013}00013     this-\/>background.setSize(}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00014}00014         sf::Vector2f(}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00015}00015             \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(vm.width),}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00016}00016             \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(vm.height)));}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00017}00017     this-\/>background.setFillColor(sf::Color(20, 20, 20, 100));}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00018}00018     \textcolor{comment}{// this-\/>background.setFillColor(sf::Color(255, 255, 255, 100));}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00020}00020     \textcolor{comment}{//Init container}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00021}00021     this-\/>container.setSize(}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00022}00022         sf::Vector2f(}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00023}00023             \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(vm.width) / 4.f,}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00024}00024             \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(vm.height) -\/ \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(9.3f, vm)));}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00025}00025     this-\/>container.setFillColor(sf::Color(20, 20, 20, 200));}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00026}00026     this-\/>container.setPosition(}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00027}00027         \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(vm.width) / 2.f -\/ this-\/>container.getSize().x / 2.f,}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00028}00028         30.f);}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00030}00030     \textcolor{comment}{//Init text}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00031}00031     this-\/>menuText.setFont(font);}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00032}00032     this-\/>menuText.setFillColor(sf::Color(255, 255, 255, 200));}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00033}00033     this-\/>menuText.setCharacterSize(\mbox{\hyperlink{namespacegui_a4e55941333524a17e5ab3e09d5fe89b7}{gui::calcCharSize}}(vm));}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00034}00034     this-\/>menuText.setString(\textcolor{stringliteral}{"{}PAUSED"{}});}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00035}00035     this-\/>menuText.setPosition(}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00036}00036         this-\/>container.getPosition().x + this-\/>container.getSize().x / 2.f -\/ this-\/>menuText.getGlobalBounds().width / 2.f,}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00037}00037         this-\/>container.getPosition().y + \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(4.f, vm));}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00038}00038 \}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00040}\mbox{\hyperlink{class_pause_menu_af30f0b8f5f59c6779434295a731b0e35}{00040}} \mbox{\hyperlink{class_pause_menu_af30f0b8f5f59c6779434295a731b0e35}{PauseMenu::\string~PauseMenu}}()}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00041}00041 \{}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00042}00042     \textcolor{keyword}{auto} it = this-\/>buttons.begin();}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00043}00043     \textcolor{keywordflow}{for} (it = this-\/>buttons.begin(); it != this-\/>buttons.end(); ++it)}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00044}00044     \{}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00045}00045         \textcolor{keyword}{delete} it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00046}00046     \}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00047}00047 \}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00049}00049 \textcolor{comment}{// Fonctions/Méthodes}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00051}\mbox{\hyperlink{class_pause_menu_ae8ac6eedc01f968dbdd6a4034ded596e}{00051}} std::map<std::string, gui::Button*>\& \mbox{\hyperlink{class_pause_menu_ae8ac6eedc01f968dbdd6a4034ded596e}{PauseMenu::getButtons}}()}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00052}00052 \{}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00053}00053     \textcolor{keywordflow}{return} this-\/>buttons;}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00054}00054 \}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00056}\mbox{\hyperlink{class_pause_menu_aca0a96996b575a4292c8e2d6e8b5e089}{00056}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_pause_menu_aca0a96996b575a4292c8e2d6e8b5e089}{PauseMenu::isButtonPressed}}(\textcolor{keyword}{const} std::string key)}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00057}00057 \{}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00058}00058     \textcolor{keywordflow}{return} this-\/>buttons[key]-\/>isPressed();}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00059}00059 \}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00061}\mbox{\hyperlink{class_pause_menu_a95e70d20e136d13d0b5b78000693f0bb}{00061}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_pause_menu_a95e70d20e136d13d0b5b78000693f0bb}{PauseMenu::addButton}}(}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00062}00062     \textcolor{keyword}{const} std::string key,}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00063}00063     \textcolor{keyword}{const} \textcolor{keywordtype}{float} y,}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00064}00064     \textcolor{keyword}{const} \textcolor{keywordtype}{float} width,}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00065}00065     \textcolor{keyword}{const} \textcolor{keywordtype}{float} height,}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00066}00066     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} char\_size,}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00067}00067     \textcolor{keyword}{const} std::string text)}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00068}00068 \{}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00069}00069     \textcolor{keywordtype}{float} x = this-\/>container.getPosition().x + this-\/>container.getSize().x / 2.f -\/ width / 2.f;}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00071}00071     this-\/>buttons[key] = \textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_button}{gui::Button}}(}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00072}00072         x, y, width, height, \&this-\/>font, text, char\_size, sf::Color(70, 70, 70, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50), sf::Color(70, 70, 70, 0), sf::Color(150, 150, 150, 0), sf::Color(20, 20, 20, 0));}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00073}00073 \}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00075}\mbox{\hyperlink{class_pause_menu_af7d98d3fce8433baee1cfbd2445472d0}{00075}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_pause_menu_af7d98d3fce8433baee1cfbd2445472d0}{PauseMenu::update}}(\textcolor{keyword}{const} sf::Vector2i\& mousePosView)}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00076}00076 \{}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00077}00077     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& i : this-\/>buttons)}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00078}00078     \{}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00079}00079         i.second-\/>update(mousePosView);}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00080}00080     \}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00081}00081 \}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00083}\mbox{\hyperlink{class_pause_menu_ab52735e20aa287ea7a17783e9005e2a8}{00083}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_pause_menu_ab52735e20aa287ea7a17783e9005e2a8}{PauseMenu::render}}(sf::RenderTarget\& target)}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00084}00084 \{}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00085}00085     this-\/>setGraphicsElementPosition(target.getView());}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00086}00086     \textcolor{comment}{// std::cout << "{}view center : x="{} << target.getView().getCenter().x << "{} y="{} << target.getView().getCenter().y << std::endl;}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00087}00087     \textcolor{comment}{// std::cout << "{}view size : x="{} << target.getView().getSize().x << "{} y="{} << target.getView().getSize().y << std::endl;}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00088}00088     \textcolor{comment}{// std::cout << "{}background center : x="{} << this-\/>background.getPosition().x << "{} y="{} << this-\/>background.getPosition().y << std::endl;}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00089}00089     \textcolor{comment}{// std::cout << "{}container center : x="{} << this-\/>container.getPosition().x << "{} y="{} << this-\/>container.getPosition().y << std::endl;}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00091}00091     target.draw(this-\/>background);}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00092}00092     target.draw(this-\/>container);}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00094}00094     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& i : this-\/>buttons)}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00095}00095     \{}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00096}00096         i.second-\/>render(target);}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00097}00097     \}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00099}00099     target.draw(this-\/>menuText);}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00100}00100 \}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00102}00102 \textcolor{keywordtype}{void} PauseMenu::setGraphicsElementPosition(sf::View \textcolor{keyword}{const}\& view)}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00103}00103 \{}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00104}00104     sf::Vector2f v(view.getCenter());}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00105}00105     sf::Vector2f s(view.getSize());}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00107}00107     \textcolor{comment}{// On calcul le décallage du centre de la vue}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00108}00108     \textcolor{keywordtype}{float} addX(v.x -\/ s.x / 2.f);}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00109}00109     \textcolor{keywordtype}{float} addY(v.y -\/ s.y / 2.f);}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00111}00111     \textcolor{comment}{// On ajoute aux positions initiales (quand le centre de la vue est0:0) anciennement calculé dans le constructeur}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00112}00112     this-\/>background.setPosition(0.f + addX, 0.f + addY);}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00113}00113     this-\/>container.setPosition(s.x * 3.f / 8.f + addX, 30.f + addY);}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00114}00114     this-\/>menuText.setPosition(}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00115}00115         this-\/>container.getPosition().x + this-\/>container.getSize().x / 2.f -\/ this-\/>menuText.getGlobalBounds().width / 2.f,}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00116}00116         this-\/>container.getPosition().y + std::floor(s.y * (4.f / 100.f)));}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00118}00118     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& i : this-\/>buttons)}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00119}00119     \{}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00120}00120         \textcolor{comment}{// i.second-\/>setPosition(i.second-\/>getPosition().x + addX, i.second-\/>getPosition().y + addY);}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00121}00121         \textcolor{comment}{// REVIEW -\/ ce sera problèmatique pour plusieurs bouttons car on a uniquement concidéré le premier}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00122}00122         i.second-\/>setPosition((this-\/>container.getPosition().x + this-\/>container.getSize().x / 2.f -\/ std::floor(s.x * (13.f / 100.f)) / 2.f), std::floor(s.y * (84.f / 100.f)) + addY, addX, addY);}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00123}00123     \}}
+\DoxyCodeLine{\Hypertarget{_pause_menu_8cpp_source_l00124}00124 \}}
+
+\end{DoxyCode}

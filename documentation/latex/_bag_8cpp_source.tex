@@ -1,0 +1,80 @@
+\hypertarget{_bag_8cpp_source}{}\doxysection{Bag.\+cpp}
+\label{_bag_8cpp_source}\index{C:/programs\_sc/CIC/MITST06/jeu/src/include/Bag.cpp@{C:/programs\_sc/CIC/MITST06/jeu/src/include/Bag.cpp}}
+\mbox{\hyperlink{_bag_8cpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_bag_8hpp}{include/Bag.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{consts_8hpp}{include/consts.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00004}00004 \textcolor{comment}{// Fonction static}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00006}00006 \textcolor{comment}{// Fonctions d'initialisation}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00007}00007 \textcolor{keywordtype}{void} Bag::initInventory()}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00009}00009     this-\/>inventory = \textcolor{keyword}{new} \mbox{\hyperlink{class_inventory}{Inventory}}();}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00010}00010 \}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00012}00012 \textcolor{comment}{// void Bag::initAnimations()}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00013}00013 \textcolor{comment}{// \{}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00014}00014 \textcolor{comment}{//  this-\/>createAnimationComponent(m\_texture);}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00015}00015 \textcolor{comment}{//  this-\/>animationComponent-\/>addAnimation(0, "{}NOPE"{}, 10.f, 0, 0, 0, 0, 80, 80);}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00016}00016 \textcolor{comment}{// \}}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00018}00018 \textcolor{comment}{// Constructeurs/Destructeur}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00019}\mbox{\hyperlink{class_bag_ae0593c22c7dd8b32cab469af92fb200c}{00019}} \mbox{\hyperlink{class_bag_ae0593c22c7dd8b32cab469af92fb200c}{Bag::Bag}}() :}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00020}00020     \mbox{\hyperlink{class_not_movable_game_object}{NotMovableGameObject}}(\textcolor{stringliteral}{"{}content/gameObjects/bag.png"{}})}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00021}00021 \{}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00022}00022     this-\/>initInventory();}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00023}00023     \mbox{\hyperlink{class_game_object_a1d82b32440a549f17b38660591896bb0}{m\_gameObjectName}} = \textcolor{stringliteral}{"{}Bag"{}};}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00024}00024 \}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00026}\mbox{\hyperlink{class_bag_a5fd787cdb2fde600f589cbaa4777f5b3}{00026}} \mbox{\hyperlink{class_bag_a5fd787cdb2fde600f589cbaa4777f5b3}{Bag::\string~Bag}}()}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00027}00027 \{}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00028}00028     \textcolor{keyword}{delete} this-\/>inventory;}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00029}00029 \}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00031}00031 \textcolor{comment}{// Fonctions/Méthodes}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00032}\mbox{\hyperlink{class_bag_ad00edb64d5225b5a5b92ecdb38b4e719}{00032}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_bag_ad00edb64d5225b5a5b92ecdb38b4e719}{Bag::addItem}}(\mbox{\hyperlink{class_item}{Item}}* item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game::inventory\_items\_types}} type)}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00033}00033 \{}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00034}00034     \textcolor{keywordflow}{return} this-\/>inventory-\/>\mbox{\hyperlink{class_inventory_a07d89fcb8469e7a2ee8e5dcc17e3931c}{add}}(item, type);}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00035}00035 \}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00037}\mbox{\hyperlink{class_bag_a627b9fd47761691dbc4f96be7dad35f5}{00037}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_bag_a627b9fd47761691dbc4f96be7dad35f5}{Bag::moveItem}}(\mbox{\hyperlink{class_item}{Item}}* item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game::inventory\_items\_types}} type, \mbox{\hyperlink{class_inventory}{Inventory}}* to\_inventory)}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00038}00038 \{}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00039}00039     \textcolor{keywordflow}{return} this-\/>inventory-\/>\mbox{\hyperlink{class_inventory_a91d5c19993a18c877f5c867e42020bc3}{move}}(item, type, to\_inventory);}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00040}00040 \}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00042}\mbox{\hyperlink{class_bag_ae1902348311f9d34bc2c8226ab30f0f2}{00042}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_bag_ae1902348311f9d34bc2c8226ab30f0f2}{Bag::removeItem}}(\mbox{\hyperlink{class_item}{Item}}* item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game::inventory\_items\_types}} type)}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00043}00043 \{}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00044}00044     \textcolor{keywordflow}{return} this-\/>inventory-\/>\mbox{\hyperlink{class_inventory_a376aed955014cbc28e74d5f380ab5365}{remove}}(item, type);}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00045}00045 \}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00047}\mbox{\hyperlink{class_bag_a5c8e365a36667f800eec30c4148500a6}{00047}} \mbox{\hyperlink{class_inventory}{Inventory}}* \mbox{\hyperlink{class_bag_a5c8e365a36667f800eec30c4148500a6}{Bag::getInventory}}()}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00048}00048 \{}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00049}00049     \textcolor{keywordflow}{return} this-\/>inventory;}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00050}00050 \}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00052}\mbox{\hyperlink{class_bag_a0b6b0d7335ce631d81b785c63c959e1e}{00052}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_bag_a0b6b0d7335ce631d81b785c63c959e1e}{Bag::onCollisionEnter}}(\mbox{\hyperlink{class_collision}{Collision}} \textcolor{keyword}{const}\& collision)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00053}00053 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00054}00054     collision.\mbox{\hyperlink{class_collision_a8593db55ec453c4a041e68f70b345794}{test}}();}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00055}00055 \}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00057}\mbox{\hyperlink{class_bag_a790dadd6a2d45469cccd653ff5dd2317}{00057}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_bag_a790dadd6a2d45469cccd653ff5dd2317}{Bag::update}}()}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00058}00058 \{}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00059}00059     \textcolor{comment}{// this-\/>inventory-\/}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00060}00060 \}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00062}\mbox{\hyperlink{class_bag_a81528b3dffe4e4542f31fab596d9daf4}{00062}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_bag_a81528b3dffe4e4542f31fab596d9daf4}{Bag::renderInventory}}(sf::RenderTarget\& target)}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00063}00063 \{}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00064}00064     this-\/>inventory-\/>\mbox{\hyperlink{class_inventory_adb0cf453e653bc719cdb207b906dbc56}{getGui}}()-\/>\mbox{\hyperlink{classgui_1_1_inventory_a20a0ed58d1b1bdfe941ba86ffc9091dc}{render}}(target);}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00065}00065 \}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00067}00067 \textcolor{keywordtype}{void} Bag::updatePosition(\textcolor{keywordtype}{float} posX, \textcolor{keywordtype}{float} posY)}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00068}00068 \{}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00069}00069     \mbox{\hyperlink{class_game_object_a13cde9cf52cf7e4d6771eee5ccdaa5d7}{m\_position}}-\/>\mbox{\hyperlink{class_position_a44364e1b27dac50ec6d0e9e4d7d1b2c1}{setPosition}}(posX, posY);}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00070}00070     \textcolor{comment}{// On replace le body}}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00071}00071     \mbox{\hyperlink{class_game_object_ab9f3598767553b274e98b2df36122bbd}{m\_body}}.setPosition(\mbox{\hyperlink{class_game_object_a13cde9cf52cf7e4d6771eee5ccdaa5d7}{m\_position}}-\/>\mbox{\hyperlink{class_position_af409de5592dd7da6fb0ccb8d1681bb19}{getPosition}}().\mbox{\hyperlink{struct_my_vector_ada641074b59d610778cdf2ec7c144905}{toVector2f}}());}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00073}00073     std::cout << \textcolor{stringliteral}{"{}Position du "{}} << \mbox{\hyperlink{class_game_object_a1d82b32440a549f17b38660591896bb0}{m\_gameObjectName}} << \textcolor{stringliteral}{"{} : "{}} << \mbox{\hyperlink{class_game_object_a13cde9cf52cf7e4d6771eee5ccdaa5d7}{m\_position}} << \textcolor{stringliteral}{"{} => "{}} << (*m\_position) << std::endl;}
+\DoxyCodeLine{\Hypertarget{_bag_8cpp_source_l00074}00074 \}}
+
+\end{DoxyCode}

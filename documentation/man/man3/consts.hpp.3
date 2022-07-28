@@ -1,0 +1,117 @@
+.TH "C:/programs_sc/CIC/MITST06/jeu/src/include/consts.hpp" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/programs_sc/CIC/MITST06/jeu/src/include/consts.hpp \- Ensemble des constantes du jeux\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Espaces de nommage"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBgame\fP"
+.br
+.in -1c
+.SS "Énumérations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBgame::movement_states\fP { \fBgame::IDLE\fP = 0, \fBgame::MOVING\fP, \fBgame::MOVING_LEFT\fP, \fBgame::MOVING_RIGHT\fP, \fBgame::MOVING_UP\fP, \fBgame::MOVING_DOWN\fP }"
+.br
+.ti -1c
+.RI "enum \fBgame::inventory_items_types\fP { \fBgame::DEFAULT\fP = -1, \fBgame::VIAL\fP = 0, \fBgame::ARMORY\fP, \fBgame::TELEPORTKEY\fP, \fBgame::MONEY\fP }"
+.br
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "std::string const & \fBgame::GAME_NAME\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "constexpr int \fBgame::WINDOW_WIDTH\fP = 1200"
+.br
+.ti -1c
+.RI "constexpr int \fBgame::WINDOW_HEIGHT\fP = 675"
+.br
+.ti -1c
+.RI "constexpr float \fBgame::PERSONAGE_MOVE_VELOCITY\fP = 300\&.f"
+.br
+.ti -1c
+.RI "constexpr int \fBgame::GAME_BLOCKS_WIDTH\fP = 200"
+.br
+.ti -1c
+.RI "constexpr float \fBgame::GAME_MAP_WIDTH\fP = \fBgame::GAME_BLOCKS_WIDTH\fP * 40"
+.br
+.ti -1c
+.RI "constexpr float \fBgame::GAME_MAP_HEIGHT\fP = \fBgame::GAME_BLOCKS_WIDTH\fP * 80"
+.br
+.ti -1c
+.RI "constexpr int \fBgame::HOUSE_TILES_NUMBER\fP = 40 * 80"
+.br
+.ti -1c
+.RI "constexpr int \fBgame::WALL_WIDTH\fP = 120"
+.br
+.ti -1c
+.RI "constexpr int \fBgame::WALL_HEIGHT\fP = 32"
+.br
+.ti -1c
+.RI "constexpr int \fBgame::DISTANCE_MIN_BETWEEN_OBJECTS\fP = 10"
+.br
+.ti -1c
+.RI "constexpr int \fBgame::DEFAULT_DETECTABILITY_RADIUS\fP = 16"
+.br
+.ti -1c
+.RI "constexpr int \fBgame::PERSONNAGE_DETECTABILITY_RADIUS\fP = 16"
+.br
+.ti -1c
+.RI "constexpr int \fBgame::PERSONNAGE_WIDTH\fP = 32"
+.br
+.ti -1c
+.RI "constexpr int \fBgame::PERSONNAGE_MAX_HEALTH\fP = 100"
+.br
+.ti -1c
+.RI "constexpr int \fBgame::PERSONNAGE_MAX_SPECIALITY\fP = 100"
+.br
+.ti -1c
+.RI "constexpr int \fBgame::INVENTORY_BLOCK_WIDTH\fP = 80"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Ensemble des constantes du jeux\&. 
+
+
+.PP
+\fBAuteur\fP
+.RS 4
+B AND D 
+.RE
+.PP
+\fBVersion\fP
+.RS 4
+0\&.1 
+.RE
+.PP
+\fBDate\fP
+.RS 4
+2022-07-12
+.RE
+.PP
+\fBCopyright\fP
+.RS 4
+Copyright (c) 2022 
+.RE
+.PP
+
+.PP
+Définition dans le fichier \fBconsts\&.hpp\fP\&.
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

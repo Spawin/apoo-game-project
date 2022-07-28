@@ -1,5 +1,5 @@
 \hypertarget{_state_8hpp_source}{}\doxysection{State.\+hpp}
-\label{_state_8hpp_source}\index{include/State.hpp@{include/State.hpp}}
+\label{_state_8hpp_source}\index{C:/programs\_sc/CIC/MITST06/jeu/src/include/State.hpp@{C:/programs\_sc/CIC/MITST06/jeu/src/include/State.hpp}}
 \mbox{\hyperlink{_state_8hpp}{Aller à la documentation de ce fichier.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#if !defined(\_\_STATE\_HPP\_\_)}}
@@ -19,55 +19,66 @@
 \DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00015}00015 \textcolor{preprocessor}{    \#include "{}\mbox{\hyperlink{_collider_8hpp}{include/Collider.hpp}}"{}}}
 \DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00016}00016 \textcolor{preprocessor}{    \#include "{}\mbox{\hyperlink{_player_8hpp}{include/Player.hpp}}"{}}}
 \DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00017}00017 \textcolor{preprocessor}{    \#include "{}\mbox{\hyperlink{_personage_8hpp}{include/Personage.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00018}00018 \textcolor{preprocessor}{    \#include <stack>}}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00019}00019 \textcolor{preprocessor}{    \#include <map>}}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00020}00020 }
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00021}00021 \textcolor{keyword}{class }\mbox{\hyperlink{class_state}{State}};}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00022}00022 }
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00023}\mbox{\hyperlink{struct_state_data}{00023}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_state_data}{StateData}}}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00024}00024 \{}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00025}\mbox{\hyperlink{struct_state_data_a7e10698db8bad87998119e468c567374}{00025}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_state_data_a7e10698db8bad87998119e468c567374}{gridSize}};}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00026}\mbox{\hyperlink{struct_state_data_a07974705606e19f59185a4b34895eef0}{00026}}     sf::RenderWindow* \mbox{\hyperlink{struct_state_data_a07974705606e19f59185a4b34895eef0}{window}};}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00027}00027     \textcolor{comment}{// GraphicsSettings* gfxSettings;}}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00028}00028     \textcolor{comment}{// std::map<std::string, int>* supportedKeys;}}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00029}\mbox{\hyperlink{struct_state_data_af7e8fb0c57ed292d0d8cf319643baebf}{00029}}     std::stack<State*>* \mbox{\hyperlink{struct_state_data_af7e8fb0c57ed292d0d8cf319643baebf}{states}};}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00030}00030 \};}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00031}00031 }
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00032}\mbox{\hyperlink{class_state}{00032}} \textcolor{keyword}{class }\mbox{\hyperlink{class_state}{State}}}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00033}00033 \{}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00034}00034 \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00035}00035     \textcolor{comment}{// Constructeurs/Destructeur}}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00036}00036     \mbox{\hyperlink{class_state_a7c7da67402bc6116b7a3015aefe31761}{State}}(\mbox{\hyperlink{struct_state_data}{StateData}}* \mbox{\hyperlink{class_state_a9c55cdba6e8a4a7b8a6a83fa51311514}{stateData}});}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00037}00037     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_state_afab438d92b90dc18d194dbd9c9c8bab3}{\string~State}}();}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00038}00038     \textcolor{comment}{// Fonctions/Méthodes}}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00039}00039     \textcolor{keyword}{const} \textcolor{keywordtype}{bool}\& \mbox{\hyperlink{class_state_a18c3b970753bab2937141803644aaf24}{getQuit}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00040}00040 }
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00041}00041     \textcolor{comment}{// virtual void checkForQuit();}}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00042}00042 }
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00043}00043     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_a27907b80e927649f92e4dc6a845a9213}{endState}}();}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00044}00044     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_a55cd17e1b46e2a7345f3b98f01c123b8}{updateMousePositions}}();}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00045}\mbox{\hyperlink{class_state_ace2914fa0071bbfaea22fa28bbec5146}{00045}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_ace2914fa0071bbfaea22fa28bbec5146}{updateInput}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime) = 0;}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00046}\mbox{\hyperlink{class_state_a15d17b8c28e7c800578816be9661fab3}{00046}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_a15d17b8c28e7c800578816be9661fab3}{update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime) = 0;}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00047}\mbox{\hyperlink{class_state_aa1f36587befc2c03c4033366e5000d2c}{00047}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_aa1f36587befc2c03c4033366e5000d2c}{render}}(sf::RenderTarget* target = \textcolor{keyword}{nullptr}) = 0;}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00048}00048 }
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00049}00049 \textcolor{keyword}{protected}:}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00050}00050     \textcolor{comment}{// Variables}}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00051}\mbox{\hyperlink{class_state_a9c55cdba6e8a4a7b8a6a83fa51311514}{00051}}     \mbox{\hyperlink{struct_state_data}{StateData}}* \mbox{\hyperlink{class_state_a9c55cdba6e8a4a7b8a6a83fa51311514}{stateData}};}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00052}\mbox{\hyperlink{class_state_a5692fac721147048fe1d2656f8a7a687}{00052}}     std::stack<State*>* \mbox{\hyperlink{class_state_a5692fac721147048fe1d2656f8a7a687}{states}};}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00053}\mbox{\hyperlink{class_state_ae6259a383c98ae7496266a76a9daf478}{00053}}     sf::RenderWindow* \mbox{\hyperlink{class_state_ae6259a383c98ae7496266a76a9daf478}{window}};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00018}00018 \textcolor{preprocessor}{    \#include "{}\mbox{\hyperlink{_graphics_settings_8hpp}{include/GraphicsSettings.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00019}00019 \textcolor{preprocessor}{    \#include <stack>}}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00020}00020 \textcolor{preprocessor}{    \#include <map>}}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00022}00022 \textcolor{keyword}{class }\mbox{\hyperlink{class_state}{State}};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00024}\mbox{\hyperlink{struct_state_data}{00024}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_state_data}{StateData}}}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00025}00025 \{}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00026}\mbox{\hyperlink{struct_state_data_a7e10698db8bad87998119e468c567374}{00026}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_state_data_a7e10698db8bad87998119e468c567374}{gridSize}};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00027}\mbox{\hyperlink{struct_state_data_a07974705606e19f59185a4b34895eef0}{00027}}     sf::RenderWindow* \mbox{\hyperlink{struct_state_data_a07974705606e19f59185a4b34895eef0}{window}};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00028}\mbox{\hyperlink{struct_state_data_a82caf8eb1620cee49701ac8bb8343140}{00028}}     \mbox{\hyperlink{class_graphics_settings}{GraphicsSettings}}* \mbox{\hyperlink{struct_state_data_a82caf8eb1620cee49701ac8bb8343140}{graphicsSettings}};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00029}00029     \textcolor{comment}{// std::map<std::string, int>* supportedKeys;}}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00030}\mbox{\hyperlink{struct_state_data_af7e8fb0c57ed292d0d8cf319643baebf}{00030}}     std::stack<State*>* \mbox{\hyperlink{struct_state_data_af7e8fb0c57ed292d0d8cf319643baebf}{states}};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00031}00031     \textcolor{comment}{// Dosis-\/Light.ttf}}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00032}\mbox{\hyperlink{struct_state_data_a938fbaec7a6f5cea0353b1c0335f4d59}{00032}}     sf::Font \mbox{\hyperlink{struct_state_data_a938fbaec7a6f5cea0353b1c0335f4d59}{defaultFont}};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00033}00033 \};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00035}\mbox{\hyperlink{class_state}{00035}} \textcolor{keyword}{class }\mbox{\hyperlink{class_state}{State}}}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00036}00036 \{}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00037}00037 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00038}00038     \textcolor{comment}{// Constructeurs/Destructeur}}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00039}00039     \mbox{\hyperlink{class_state_a7c7da67402bc6116b7a3015aefe31761}{State}}(\mbox{\hyperlink{struct_state_data}{StateData}}* \mbox{\hyperlink{class_state_a9c55cdba6e8a4a7b8a6a83fa51311514}{stateData}});}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00040}00040     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_state_afab438d92b90dc18d194dbd9c9c8bab3}{\string~State}}();}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00041}00041     \textcolor{comment}{// Fonctions/Méthodes}}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00042}00042     \textcolor{keyword}{const} \textcolor{keywordtype}{bool}\& \mbox{\hyperlink{class_state_a18c3b970753bab2937141803644aaf24}{getQuit}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00043}00043     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_state_a2f65792d58af6faa5d070aae211f6320}{getKeyTime}}();}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00050}00050     \textcolor{keywordtype}{float} \textcolor{keyword}{const}\& \mbox{\hyperlink{class_state_a128abd7dbf7eefe004d380f0967fea46}{scScF}}();}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00052}00052     \textcolor{comment}{// virtual void checkForQuit();}}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00053}\mbox{\hyperlink{class_state_afaf85cda415136f1288da41e98f9fecd}{00053}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_afaf85cda415136f1288da41e98f9fecd}{updateSFMLEvents}}(\textcolor{keyword}{const} sf::Event\& sfEvent) = 0;}
 \DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00054}00054 }
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00055}\mbox{\hyperlink{class_state_a67102294962f79cfb8fa952a113a351d}{00055}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_state_a67102294962f79cfb8fa952a113a351d}{quit}};}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00056}\mbox{\hyperlink{class_state_a6f1d7cdbac7fcc935b81eedae466c7f3}{00056}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_state_a6f1d7cdbac7fcc935b81eedae466c7f3}{paused}};}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00057}00057 }
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00058}\mbox{\hyperlink{class_state_ae55b0beb4bfe6bb44a9fc1fc05d8b90c}{00058}}     sf::Vector2i \mbox{\hyperlink{class_state_ae55b0beb4bfe6bb44a9fc1fc05d8b90c}{mousePosScreen}};}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00059}\mbox{\hyperlink{class_state_ae19be9c58de5545c8cd162f11969d6ee}{00059}}     sf::Vector2i \mbox{\hyperlink{class_state_ae19be9c58de5545c8cd162f11969d6ee}{mousePosWindow}};}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00060}\mbox{\hyperlink{class_state_a9f930912be370fcd0ecae58e17e0c35e}{00060}}     sf::Vector2f \mbox{\hyperlink{class_state_a9f930912be370fcd0ecae58e17e0c35e}{mousePosView}};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00055}00055     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_a27907b80e927649f92e4dc6a845a9213}{endState}}();}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00056}00056     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_a55cd17e1b46e2a7345f3b98f01c123b8}{updateMousePositions}}();}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00057}00057     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_a8168ad555fb324fbc0c7aef1fe035301}{updateKeytime}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime);}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00058}\mbox{\hyperlink{class_state_ace2914fa0071bbfaea22fa28bbec5146}{00058}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_ace2914fa0071bbfaea22fa28bbec5146}{updateInput}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime) = 0;}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00059}\mbox{\hyperlink{class_state_a15d17b8c28e7c800578816be9661fab3}{00059}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_a15d17b8c28e7c800578816be9661fab3}{update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime) = 0;}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00060}\mbox{\hyperlink{class_state_aa1f36587befc2c03c4033366e5000d2c}{00060}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_state_aa1f36587befc2c03c4033366e5000d2c}{render}}(sf::RenderTarget* target = \textcolor{keyword}{nullptr}) = 0;}
 \DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00061}00061 }
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00062}\mbox{\hyperlink{class_state_af747b588cad4683d34c38a03c2f8d046}{00062}}     std::map<std::string, sf::Texture> \mbox{\hyperlink{class_state_af747b588cad4683d34c38a03c2f8d046}{textures}};}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00063}00063 }
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00064}00064     \textcolor{comment}{// Fonctions d'initialisation}}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00065}00065 \};}
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00066}00066 }
-\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00067}00067 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_STATE\_HPP\_\_}}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00062}00062 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00063}00063     \textcolor{comment}{// Variables}}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00064}\mbox{\hyperlink{class_state_a9c55cdba6e8a4a7b8a6a83fa51311514}{00064}}     \mbox{\hyperlink{struct_state_data}{StateData}}* \mbox{\hyperlink{class_state_a9c55cdba6e8a4a7b8a6a83fa51311514}{stateData}};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00065}\mbox{\hyperlink{class_state_a5692fac721147048fe1d2656f8a7a687}{00065}}     std::stack<State*>* \mbox{\hyperlink{class_state_a5692fac721147048fe1d2656f8a7a687}{states}};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00066}\mbox{\hyperlink{class_state_ae6259a383c98ae7496266a76a9daf478}{00066}}     sf::RenderWindow* \mbox{\hyperlink{class_state_ae6259a383c98ae7496266a76a9daf478}{window}};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00068}00068     \textcolor{comment}{// sf::Event sfEvent;}}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00070}\mbox{\hyperlink{class_state_a67102294962f79cfb8fa952a113a351d}{00070}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_state_a67102294962f79cfb8fa952a113a351d}{quit}};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00071}\mbox{\hyperlink{class_state_a6f1d7cdbac7fcc935b81eedae466c7f3}{00071}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_state_a6f1d7cdbac7fcc935b81eedae466c7f3}{paused}};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00072}\mbox{\hyperlink{class_state_a2bcc2cbae013efbdd1b3b5db08895132}{00072}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_state_a2bcc2cbae013efbdd1b3b5db08895132}{keytime}};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00073}\mbox{\hyperlink{class_state_aeddd7ca36c1b3dfd002038b666c57816}{00073}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_state_aeddd7ca36c1b3dfd002038b666c57816}{keytimeMax}};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00075}\mbox{\hyperlink{class_state_ae55b0beb4bfe6bb44a9fc1fc05d8b90c}{00075}}     sf::Vector2i \mbox{\hyperlink{class_state_ae55b0beb4bfe6bb44a9fc1fc05d8b90c}{mousePosScreen}};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00076}\mbox{\hyperlink{class_state_ae19be9c58de5545c8cd162f11969d6ee}{00076}}     sf::Vector2i \mbox{\hyperlink{class_state_ae19be9c58de5545c8cd162f11969d6ee}{mousePosWindow}};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00077}\mbox{\hyperlink{class_state_a9f930912be370fcd0ecae58e17e0c35e}{00077}}     sf::Vector2f \mbox{\hyperlink{class_state_a9f930912be370fcd0ecae58e17e0c35e}{mousePosView}};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00079}\mbox{\hyperlink{class_state_af747b588cad4683d34c38a03c2f8d046}{00079}}     std::map<std::string, sf::Texture> \mbox{\hyperlink{class_state_af747b588cad4683d34c38a03c2f8d046}{textures}};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00081}00081     \textcolor{comment}{// Fonctions d'initialisation}}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00082}00082 \};}
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{_state_8hpp_source_l00084}00084 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_STATE\_HPP\_\_}}
 
 \end{DoxyCode}

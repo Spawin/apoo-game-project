@@ -16,6 +16,8 @@ bool \mbox{\hyperlink{struct_my_vector_a23593df906d074cc73ccd33190e218a9}{operat
 bool \mbox{\hyperlink{struct_my_vector_acdf772e37c629e2804577fa2c01f61ce}{operator!=}} (sf\+::\+Vector2f const \&v)
 \item 
 \mbox{\hyperlink{struct_my_vector}{My\+Vector}} \mbox{\hyperlink{struct_my_vector_a77ee2e575060848a59d542feccebde4c}{operator$\ast$}} (float coefficient) const
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{struct_my_vector_ada641074b59d610778cdf2ec7c144905}{to\+Vector2f}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Fonctions membres publiques statiques}
 \begin{DoxyCompactItemize}
@@ -25,16 +27,16 @@ static \mbox{\hyperlink{struct_my_vector}{My\+Vector}} \mbox{\hyperlink{struct_m
 \doxysubsection*{Attributs publics}
 \begin{DoxyCompactItemize}
 \item 
-float \mbox{\hyperlink{struct_my_vector_a842621522b5df390095fd48febfbdbf7}{m\+\_\+x}} \{ 0.f \}
+float \mbox{\hyperlink{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}{x}} \{ 0.f \}
 \item 
-float \mbox{\hyperlink{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}{m\+\_\+y}} \{ 0.f \}
+float \mbox{\hyperlink{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}{y}} \{ 0.f \}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
 
 
-Définition à la ligne \mbox{\hyperlink{_my_vector_8hpp_source_l00006}{6}} du fichier \mbox{\hyperlink{_my_vector_8hpp_source}{My\+Vector.\+hpp}}.
+Définition à la ligne \mbox{\hyperlink{_my_vector_8hpp_source_l00008}{8}} du fichier \mbox{\hyperlink{_my_vector_8hpp_source}{My\+Vector.\+hpp}}.
 
 
 
@@ -57,7 +59,7 @@ Définition à la ligne \mbox{\hyperlink{_my_vector_8hpp_source_l00006}{6}} du f
 \end{DoxyReturn}
 
 
-Définition à la ligne \mbox{\hyperlink{_my_vector_8cpp_source_l00032}{32}} du fichier \mbox{\hyperlink{_my_vector_8cpp_source}{My\+Vector.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_my_vector_8cpp_source_l00030}{30}} du fichier \mbox{\hyperlink{_my_vector_8cpp_source}{My\+Vector.\+cpp}}.
 
 \mbox{\Hypertarget{struct_my_vector_acdf772e37c629e2804577fa2c01f61ce}\label{struct_my_vector_acdf772e37c629e2804577fa2c01f61ce}} 
 \index{MyVector@{MyVector}!operator"!=@{operator"!=}}
@@ -67,7 +69,7 @@ Définition à la ligne \mbox{\hyperlink{_my_vector_8cpp_source_l00032}{32}} du 
 
 
 
-Définition à la ligne \mbox{\hyperlink{_my_vector_8cpp_source_l00022}{22}} du fichier \mbox{\hyperlink{_my_vector_8cpp_source}{My\+Vector.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_my_vector_8cpp_source_l00020}{20}} du fichier \mbox{\hyperlink{_my_vector_8cpp_source}{My\+Vector.\+cpp}}.
 
 \mbox{\Hypertarget{struct_my_vector_a77ee2e575060848a59d542feccebde4c}\label{struct_my_vector_a77ee2e575060848a59d542feccebde4c}} 
 \index{MyVector@{MyVector}!operator$\ast$@{operator$\ast$}}
@@ -77,7 +79,7 @@ Définition à la ligne \mbox{\hyperlink{_my_vector_8cpp_source_l00022}{22}} du 
 
 
 
-Définition à la ligne \mbox{\hyperlink{_my_vector_8cpp_source_l00027}{27}} du fichier \mbox{\hyperlink{_my_vector_8cpp_source}{My\+Vector.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_my_vector_8cpp_source_l00025}{25}} du fichier \mbox{\hyperlink{_my_vector_8cpp_source}{My\+Vector.\+cpp}}.
 
 \mbox{\Hypertarget{struct_my_vector_a073a8917f42cdfd70078cb2c2c16c871}\label{struct_my_vector_a073a8917f42cdfd70078cb2c2c16c871}} 
 \index{MyVector@{MyVector}!operator+=@{operator+=}}
@@ -87,7 +89,7 @@ Définition à la ligne \mbox{\hyperlink{_my_vector_8cpp_source_l00027}{27}} du 
 
 
 
-Définition à la ligne \mbox{\hyperlink{_my_vector_8cpp_source_l00005}{5}} du fichier \mbox{\hyperlink{_my_vector_8cpp_source}{My\+Vector.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_my_vector_8cpp_source_l00003}{3}} du fichier \mbox{\hyperlink{_my_vector_8cpp_source}{My\+Vector.\+cpp}}.
 
 \mbox{\Hypertarget{struct_my_vector_a4928582b63c2a7214dfab04cc0d0001b}\label{struct_my_vector_a4928582b63c2a7214dfab04cc0d0001b}} 
 \index{MyVector@{MyVector}!operator-\/=@{operator-\/=}}
@@ -97,7 +99,7 @@ Définition à la ligne \mbox{\hyperlink{_my_vector_8cpp_source_l00005}{5}} du f
 
 
 
-Définition à la ligne \mbox{\hyperlink{_my_vector_8cpp_source_l00011}{11}} du fichier \mbox{\hyperlink{_my_vector_8cpp_source}{My\+Vector.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_my_vector_8cpp_source_l00009}{9}} du fichier \mbox{\hyperlink{_my_vector_8cpp_source}{My\+Vector.\+cpp}}.
 
 \mbox{\Hypertarget{struct_my_vector_a23593df906d074cc73ccd33190e218a9}\label{struct_my_vector_a23593df906d074cc73ccd33190e218a9}} 
 \index{MyVector@{MyVector}!operator==@{operator==}}
@@ -107,34 +109,44 @@ Définition à la ligne \mbox{\hyperlink{_my_vector_8cpp_source_l00011}{11}} du 
 
 
 
-Définition à la ligne \mbox{\hyperlink{_my_vector_8cpp_source_l00017}{17}} du fichier \mbox{\hyperlink{_my_vector_8cpp_source}{My\+Vector.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_my_vector_8cpp_source_l00015}{15}} du fichier \mbox{\hyperlink{_my_vector_8cpp_source}{My\+Vector.\+cpp}}.
+
+\mbox{\Hypertarget{struct_my_vector_ada641074b59d610778cdf2ec7c144905}\label{struct_my_vector_ada641074b59d610778cdf2ec7c144905}} 
+\index{MyVector@{MyVector}!toVector2f@{toVector2f}}
+\index{toVector2f@{toVector2f}!MyVector@{MyVector}}
+\doxysubsubsection{\texorpdfstring{toVector2f()}{toVector2f()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f My\+Vector\+::to\+Vector2f (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_my_vector_8cpp_source_l00036}{36}} du fichier \mbox{\hyperlink{_my_vector_8cpp_source}{My\+Vector.\+cpp}}.
 
 
 
 \doxysubsection{Documentation des données membres}
-\mbox{\Hypertarget{struct_my_vector_a842621522b5df390095fd48febfbdbf7}\label{struct_my_vector_a842621522b5df390095fd48febfbdbf7}} 
-\index{MyVector@{MyVector}!m\_x@{m\_x}}
-\index{m\_x@{m\_x}!MyVector@{MyVector}}
-\doxysubsubsection{\texorpdfstring{m\_x}{m\_x}}
-{\footnotesize\ttfamily float My\+Vector\+::m\+\_\+x \{ 0.f \}}
+\mbox{\Hypertarget{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}\label{struct_my_vector_a86b2a0f3257a5d91a412b1d1511a1b36}} 
+\index{MyVector@{MyVector}!x@{x}}
+\index{x@{x}!MyVector@{MyVector}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily float My\+Vector\+::x \{ 0.f \}}
 
 
 
-Définition à la ligne \mbox{\hyperlink{_my_vector_8hpp_source_l00021}{21}} du fichier \mbox{\hyperlink{_my_vector_8hpp_source}{My\+Vector.\+hpp}}.
+Définition à la ligne \mbox{\hyperlink{_my_vector_8hpp_source_l00023}{23}} du fichier \mbox{\hyperlink{_my_vector_8hpp_source}{My\+Vector.\+hpp}}.
 
-\mbox{\Hypertarget{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}\label{struct_my_vector_a60cbe639cece1a212668fc2272f7b3d0}} 
-\index{MyVector@{MyVector}!m\_y@{m\_y}}
-\index{m\_y@{m\_y}!MyVector@{MyVector}}
-\doxysubsubsection{\texorpdfstring{m\_y}{m\_y}}
-{\footnotesize\ttfamily float My\+Vector\+::m\+\_\+y \{ 0.f \}}
+\mbox{\Hypertarget{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}\label{struct_my_vector_a907df32d5f5cab87aa2e948f5af2efe2}} 
+\index{MyVector@{MyVector}!y@{y}}
+\index{y@{y}!MyVector@{MyVector}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily float My\+Vector\+::y \{ 0.f \}}
 
 
 
-Définition à la ligne \mbox{\hyperlink{_my_vector_8hpp_source_l00022}{22}} du fichier \mbox{\hyperlink{_my_vector_8hpp_source}{My\+Vector.\+hpp}}.
+Définition à la ligne \mbox{\hyperlink{_my_vector_8hpp_source_l00024}{24}} du fichier \mbox{\hyperlink{_my_vector_8hpp_source}{My\+Vector.\+hpp}}.
 
 
 
 La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{_my_vector_8hpp}{My\+Vector.\+hpp}}\item 
-include/\mbox{\hyperlink{_my_vector_8cpp}{My\+Vector.\+cpp}}\end{DoxyCompactItemize}
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_my_vector_8hpp}{My\+Vector.\+hpp}}\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_my_vector_8cpp}{My\+Vector.\+cpp}}\end{DoxyCompactItemize}

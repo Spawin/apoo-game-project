@@ -26,6 +26,11 @@ void Sword::onCollisionEnter(Collision const& collision) const
 void Sword::update()
 {}
 
+void Sword::useOn(Personage& personage)
+{
+	personage.receiveHealthDamage(this->value);
+}
+
 void Sword::updatePosition(float posX, float posY)
 {
 	m_position->setPosition(posX, posY);

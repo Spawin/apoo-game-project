@@ -2,6 +2,10 @@
 #define __POLYGON_COLLIDER_HPP__
 
 #include "include/Collider.hpp"
+#include "include/GameObject.hpp" // REVIEW -
+
+class collider;
+class GameObject;
 
 class PolygonCollider : public Collider
 {

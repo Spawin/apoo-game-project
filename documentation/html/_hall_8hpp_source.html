@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Jeu POA:  Fichier source de include/Hall.hpp</title>
+<title>Jeu POA:  Fichier source de C:/programs_sc/CIC/MITST06/jeu/src/include/Hall.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -88,32 +88,63 @@ $(document).ready(function(){initNavTree('_hall_8hpp_source.html',''); initResiz
 <a href="_hall_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#if !defined(__HALL_HPP__)</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">    #define __HALL_HPP__</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="class_hall.html">    4</a></span><span class="keyword">class </span><a class="code hl_class" href="class_hall.html">Hall</a></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_function" href="class_hall.html#a122ed8085be305339c89cadb3e360b86">Hall</a>();</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <a class="code hl_function" href="class_hall.html#a28d5f4ed9d21684b7359dc980eacb8a0">~Hall</a>();</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code hl_function" href="class_hall.html#a3ea4361fbacb1f52beca20d6e8553b70">getMIN_WIDTH</a>();</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code hl_function" href="class_hall.html#af9feadcc489d1a980f43cf7833e6e255">getMIN_HEIGHT</a>();</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> MIN_WIDTH;  <span class="comment">// REVIEW - Mais faire attention avec l&#39;utilisation dans Position</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">float</span> MIN_HEIGHT; <span class="comment">// REVIEW -</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>};</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">    #include &quot;<a class="code" href="_my_vector_8hpp.html">include/MyVector.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">    #include &quot;<a class="code" href="_movable_game_object_8hpp.html">include/MovableGameObject.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">    #include &lt;map&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">    #include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span><a class="code hl_class" href="class_movable_game_object.html">MovableGameObject</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_hall.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="class_hall.html">Hall</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">// Constructeurs/Destructeur</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_function" href="class_hall.html#a895ca541045c940874bc7572059f8652">Hall</a>(sf::Vector2i topLeftPoint, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_hall.html#a28d5f4ed9d21684b7359dc980eacb8a0">~Hall</a>();</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#endif </span><span class="comment">// __HALL_HPP__</span></div>
-<div class="ttc" id="aclass_hall_html"><div class="ttname"><a href="class_hall.html">Hall</a></div><div class="ttdef"><b>Definition:</b> <a href="_hall_8hpp_source.html#l00004">Hall.hpp:5</a></div></div>
-<div class="ttc" id="aclass_hall_html_a122ed8085be305339c89cadb3e360b86"><div class="ttname"><a href="class_hall.html#a122ed8085be305339c89cadb3e360b86">Hall::Hall</a></div><div class="ttdeci">Hall()</div><div class="ttdef"><b>Definition:</b> <a href="_hall_8cpp_source.html#l00006">Hall.cpp:6</a></div></div>
-<div class="ttc" id="aclass_hall_html_a28d5f4ed9d21684b7359dc980eacb8a0"><div class="ttname"><a href="class_hall.html#a28d5f4ed9d21684b7359dc980eacb8a0">Hall::~Hall</a></div><div class="ttdeci">~Hall()</div><div class="ttdef"><b>Definition:</b> <a href="_hall_8cpp_source.html#l00010">Hall.cpp:10</a></div></div>
-<div class="ttc" id="aclass_hall_html_a3ea4361fbacb1f52beca20d6e8553b70"><div class="ttname"><a href="class_hall.html#a3ea4361fbacb1f52beca20d6e8553b70">Hall::getMIN_WIDTH</a></div><div class="ttdeci">static float getMIN_WIDTH()</div><div class="ttdef"><b>Definition:</b> <a href="_hall_8cpp_source.html#l00014">Hall.cpp:14</a></div></div>
-<div class="ttc" id="aclass_hall_html_af9feadcc489d1a980f43cf7833e6e255"><div class="ttname"><a href="class_hall.html#af9feadcc489d1a980f43cf7833e6e255">Hall::getMIN_HEIGHT</a></div><div class="ttdeci">static float getMIN_HEIGHT()</div><div class="ttdef"><b>Definition:</b> <a href="_hall_8cpp_source.html#l00019">Hall.cpp:19</a></div></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">// Fonctions/Méthodes</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_hall.html#a0c346daee6b9e4d03d2ef3d858826904">addMovableGameObject</a>(<a class="code hl_class" href="class_movable_game_object.html">MovableGameObject</a>* movableGameObject);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_hall.html#ae2a6f4440f87c17bfdbb292c542e542a">isIn</a>(<a class="code hl_struct" href="struct_my_vector.html">MyVector</a> <span class="keyword">const</span>&amp; coordinates) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_hall.html#ae2a6f4440f87c17bfdbb292c542e542a">isIn</a>(sf::Vector2f <span class="keyword">const</span>&amp; coordinates) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">const</span> sf::IntRect&amp; <a class="code hl_function" href="class_hall.html#ae8b24a02bbc5c17bf1e557cb3d98a76d">getIntRect</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_hall.html#a20c1d21909f6909956f8546db9d5e039">render</a>(sf::RenderTarget&amp; target);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// Variables</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// Représente le quandrilatère qui représente les dimension de la salle</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    sf::Vector2i topLeftPoint;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">int</span> width;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">int</span> height;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    sf::IntRect intRect;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    std::vector&lt;const MovableGameObject*&gt; hallMovablesGameObjects;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">// #if defined(_DEBUG)</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    sf::RectangleShape debug_shape;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">// #endif</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">// Fonctions d&#39;initialisation</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#endif </span><span class="comment">// __HALL_HPP__</span></div>
+<div class="ttc" id="a_movable_game_object_8hpp_html"><div class="ttname"><a href="_movable_game_object_8hpp.html">MovableGameObject.hpp</a></div></div>
+<div class="ttc" id="a_my_vector_8hpp_html"><div class="ttname"><a href="_my_vector_8hpp.html">MyVector.hpp</a></div></div>
+<div class="ttc" id="aclass_hall_html"><div class="ttname"><a href="class_hall.html">Hall</a></div><div class="ttdef"><b>Definition:</b> <a href="_hall_8hpp_source.html#l00011">Hall.hpp:12</a></div></div>
+<div class="ttc" id="aclass_hall_html_a0c346daee6b9e4d03d2ef3d858826904"><div class="ttname"><a href="class_hall.html#a0c346daee6b9e4d03d2ef3d858826904">Hall::addMovableGameObject</a></div><div class="ttdeci">virtual bool addMovableGameObject(MovableGameObject *movableGameObject)</div><div class="ttdef"><b>Definition:</b> <a href="_hall_8cpp_source.html#l00029">Hall.cpp:29</a></div></div>
+<div class="ttc" id="aclass_hall_html_a20c1d21909f6909956f8546db9d5e039"><div class="ttname"><a href="class_hall.html#a20c1d21909f6909956f8546db9d5e039">Hall::render</a></div><div class="ttdeci">virtual void render(sf::RenderTarget &amp;target)</div><div class="ttdef"><b>Definition:</b> <a href="_hall_8cpp_source.html#l00065">Hall.cpp:65</a></div></div>
+<div class="ttc" id="aclass_hall_html_a28d5f4ed9d21684b7359dc980eacb8a0"><div class="ttname"><a href="class_hall.html#a28d5f4ed9d21684b7359dc980eacb8a0">Hall::~Hall</a></div><div class="ttdeci">virtual ~Hall()</div><div class="ttdef"><b>Definition:</b> <a href="_hall_8cpp_source.html#l00024">Hall.cpp:24</a></div></div>
+<div class="ttc" id="aclass_hall_html_a895ca541045c940874bc7572059f8652"><div class="ttname"><a href="class_hall.html#a895ca541045c940874bc7572059f8652">Hall::Hall</a></div><div class="ttdeci">Hall(sf::Vector2i topLeftPoint, int width, int height)</div><div class="ttdef"><b>Definition:</b> <a href="_hall_8cpp_source.html#l00008">Hall.cpp:8</a></div></div>
+<div class="ttc" id="aclass_hall_html_ae2a6f4440f87c17bfdbb292c542e542a"><div class="ttname"><a href="class_hall.html#ae2a6f4440f87c17bfdbb292c542e542a">Hall::isIn</a></div><div class="ttdeci">bool isIn(MyVector const &amp;coordinates) const</div><div class="ttdef"><b>Definition:</b> <a href="_hall_8cpp_source.html#l00035">Hall.cpp:35</a></div></div>
+<div class="ttc" id="aclass_hall_html_ae8b24a02bbc5c17bf1e557cb3d98a76d"><div class="ttname"><a href="class_hall.html#ae8b24a02bbc5c17bf1e557cb3d98a76d">Hall::getIntRect</a></div><div class="ttdeci">const sf::IntRect &amp; getIntRect() const</div><div class="ttdef"><b>Definition:</b> <a href="_hall_8cpp_source.html#l00060">Hall.cpp:60</a></div></div>
+<div class="ttc" id="aclass_movable_game_object_html"><div class="ttname"><a href="class_movable_game_object.html">MovableGameObject</a></div><div class="ttdef"><b>Definition:</b> <a href="_movable_game_object_8hpp_source.html#l00016">MovableGameObject.hpp:17</a></div></div>
+<div class="ttc" id="astruct_my_vector_html"><div class="ttname"><a href="struct_my_vector.html">MyVector</a></div><div class="ttdef"><b>Definition:</b> <a href="_my_vector_8hpp_source.html#l00008">MyVector.hpp:9</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="_hall_8hpp.html">Hall.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="_hall_8hpp.html">Hall.hpp</a></li>
     <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>

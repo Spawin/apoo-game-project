@@ -1,0 +1,96 @@
+.TH "BoxCollider" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BoxCollider
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <BoxCollider\&.hpp>\fP
+.PP
+Est dérivée de \fBCollider\fP\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBBoxCollider\fP (\fBGameObject\fP const &\fBparent\fP, float width, float height, sf::Vector2f leftTopPoint)"
+.br
+.RI "Construct a new Box \fBCollider\fP object\&. "
+.ti -1c
+.RI "\fB~BoxCollider\fP ()"
+.br
+.ti -1c
+.RI "std::vector< sf::Vector2f > \fBgetContactPoints\fP () const override"
+.br
+.ti -1c
+.RI "bool \fBtouchEachOther\fP (\fBCollider\fP const &collider) const override"
+.br
+.in -1c
+.SS "Fonctions membres publiques statiques"
+
+.in +1c
+.ti -1c
+.RI "static const std::string \fBgetName\fP ()"
+.br
+.in -1c
+.SS "Membres hérités additionnels"
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB7\fP du fichier \fBBoxCollider\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "BoxCollider::BoxCollider (\fBGameObject\fP const & parent, float width, float height, sf::Vector2f leftTopPoint)\fC [explicit]\fP"
+
+.PP
+Construct a new Box \fBCollider\fP object\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIparent\fP 
+.br
+\fIcontactPoints\fP Ne doit pas dépasser
+.RE
+.PP
+Construct a new Box \fBCollider\fP object ! Les cordonnée du leftTopPoint sont données en fonction du centre de l'objet 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIparent\fP 
+.br
+\fIwidth\fP 
+.br
+\fIheight\fP 
+.br
+\fIleftTopPoint\fP 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB14\fP du fichier \fBBoxCollider\&.cpp\fP\&.
+.SS "BoxCollider::~BoxCollider ()"
+
+.PP
+Définition à la ligne \fB21\fP du fichier \fBBoxCollider\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "std::vector< sf::Vector2f > BoxCollider::getContactPoints () const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implémente \fBCollider\fP\&.
+.PP
+Définition à la ligne \fB32\fP du fichier \fBBoxCollider\&.cpp\fP\&.
+.SS "const std::string BoxCollider::getName ()\fC [static]\fP"
+
+.PP
+Définition à la ligne \fB27\fP du fichier \fBBoxCollider\&.cpp\fP\&.
+.SS "bool BoxCollider::touchEachOther (\fBCollider\fP const & collider) const\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Implémente \fBCollider\fP\&.
+.PP
+Définition à la ligne \fB42\fP du fichier \fBBoxCollider\&.cpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

@@ -1,0 +1,187 @@
+.TH "Position" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Position
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Position\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBPosition\fP (float px, float py, bool forMovableObject=true, float detectabilityRadius=\fBgame::DEFAULT_DETECTABILITY_RADIUS\fP)"
+.br
+.ti -1c
+.RI "virtual \fB~Position\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetSpaceWidth\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetSpaceHeight\fP () const"
+.br
+.ti -1c
+.RI "float \fBgetX\fP () const"
+.br
+.ti -1c
+.RI "float \fBgetY\fP () const"
+.br
+.ti -1c
+.RI "float \fBgetDistanceWith\fP (\fBPosition\fP const &autre) const"
+.br
+.RI "Get the Distance With object\&. "
+.ti -1c
+.RI "void \fBsetPosition\fP (float posX, float posY)"
+.br
+.RI "Set the \fBPosition\fP object\&. "
+.ti -1c
+.RI "\fBMyVector\fP \fBgetPosition\fP () const"
+.br
+.RI "Get the \fBPosition\fP object\&. "
+.ti -1c
+.RI "virtual void \fBsetPositionMovementLimit\fP (sf::IntRect const &hall)"
+.br
+.RI "Met à jour les nouvelle limite de déplacement\&. "
+.ti -1c
+.RI "void \fBoperator+=\fP (\fBMyVector\fP const &v)"
+.br
+.ti -1c
+.RI "void \fBoperator=\fP (\fBPosition\fP const &p)"
+.br
+.in -1c
+.SS "Fonctions membres publiques statiques"
+
+.in +1c
+.ti -1c
+.RI "static void \fBinitSpace\fP (int width, int height)"
+.br
+.in -1c
+.SS "Amis"
+
+.in +1c
+.ti -1c
+.RI "class \fBRigidbody\fP"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &out, \fBPosition\fP const &p)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB10\fP du fichier \fBPosition\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "Position::Position (float px, float py, bool forMovableObject = \fCtrue\fP, float detectabilityRadius = \fC\fBgame::DEFAULT_DETECTABILITY_RADIUS\fP\fP)\fC [explicit]\fP"
+
+.PP
+Définition à la ligne \fB32\fP du fichier \fBPosition\&.cpp\fP\&.
+.SS "Position::~Position ()\fC [virtual]\fP"
+
+.PP
+Définition à la ligne \fB47\fP du fichier \fBPosition\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "float Position::getDistanceWith (\fBPosition\fP const & autre) const"
+
+.PP
+Get the Distance With object\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIautre\fP 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+float 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB227\fP du fichier \fBPosition\&.cpp\fP\&.
+.SS "\fBMyVector\fP Position::getPosition () const"
+
+.PP
+Get the \fBPosition\fP object\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+\fBMyVector\fP 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB241\fP du fichier \fBPosition\&.cpp\fP\&.
+.SS "int Position::getSpaceHeight () const"
+
+.PP
+Définition à la ligne \fB57\fP du fichier \fBPosition\&.cpp\fP\&.
+.SS "int Position::getSpaceWidth () const"
+
+.PP
+Définition à la ligne \fB52\fP du fichier \fBPosition\&.cpp\fP\&.
+.SS "float Position::getX () const"
+
+.PP
+Définition à la ligne \fB62\fP du fichier \fBPosition\&.cpp\fP\&.
+.SS "float Position::getY () const"
+
+.PP
+Définition à la ligne \fB67\fP du fichier \fBPosition\&.cpp\fP\&.
+.SS "void Position::initSpace (int width, int height)\fC [static]\fP"
+
+.PP
+Définition à la ligne \fB96\fP du fichier \fBPosition\&.cpp\fP\&.
+.SS "void Position::operator+= (\fBMyVector\fP const & v)"
+
+.PP
+Définition à la ligne \fB73\fP du fichier \fBPosition\&.cpp\fP\&.
+.SS "void Position::operator= (\fBPosition\fP const & p)"
+
+.PP
+Définition à la ligne \fB81\fP du fichier \fBPosition\&.cpp\fP\&.
+.SS "void Position::setPosition (float posX, float posY)"
+
+.PP
+Set the \fBPosition\fP object\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIposX\fP 
+.br
+\fIposY\fP 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB233\fP du fichier \fBPosition\&.cpp\fP\&.
+.SS "void Position::setPositionMovementLimit (sf::IntRect const & hall)\fC [virtual]\fP"
+
+.PP
+Met à jour les nouvelle limite de déplacement\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIhall\fP 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB246\fP du fichier \fBPosition\&.cpp\fP\&.
+.SH "Documentation des fonctions amies et associées"
+.PP 
+.SS "std::ostream & operator<< (std::ostream & out, \fBPosition\fP const & p)\fC [friend]\fP"
+
+.PP
+Définition à la ligne \fB89\fP du fichier \fBPosition\&.cpp\fP\&.
+.SS "friend class \fBRigidbody\fP\fC [friend]\fP"
+
+.PP
+Définition à la ligne \fB83\fP du fichier \fBPosition\&.hpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

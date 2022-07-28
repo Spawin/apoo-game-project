@@ -1,0 +1,60 @@
+.TH "util::IPlatform" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+util::IPlatform
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IPlatform\&.hpp>\fP
+.PP
+Dérivée par \fButil::LinuxPlatform\fP, \fButil::MacOSPlatform\fP, et \fButil::WindowsPlatform\fP\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~IPlatform\fP ()=default"
+.br
+.ti -1c
+.RI "virtual void \fBsetIcon\fP (const sf::WindowHandle &inHandle)=0"
+.br
+.ti -1c
+.RI "virtual void \fBtoggleFullscreen\fP (const sf::WindowHandle &inHandle, const sf::Uint32 inStyle, const bool inWindowed, const sf::Vector2u &inResolution)=0"
+.br
+.ti -1c
+.RI "virtual int \fBgetRefreshRate\fP (const sf::WindowHandle &inHandle)=0"
+.br
+.ti -1c
+.RI "virtual float \fBgetScreenScalingFactor\fP (const sf::WindowHandle &inHandle)=0"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB6\fP du fichier \fBIPlatform\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "virtual util::IPlatform::~IPlatform ()\fC [virtual]\fP, \fC [default]\fP"
+
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "virtual int util::IPlatform::getRefreshRate (const sf::WindowHandle & inHandle)\fC [pure virtual]\fP"
+
+.PP
+Implémenté dans \fButil::MacOSPlatform\fP, \fButil::LinuxPlatform\fP, et \fButil::WindowsPlatform\fP\&.
+.SS "virtual float util::IPlatform::getScreenScalingFactor (const sf::WindowHandle & inHandle)\fC [pure virtual]\fP"
+
+.PP
+Implémenté dans \fButil::MacOSPlatform\fP, \fButil::LinuxPlatform\fP, et \fButil::WindowsPlatform\fP\&.
+.SS "virtual void util::IPlatform::setIcon (const sf::WindowHandle & inHandle)\fC [pure virtual]\fP"
+
+.PP
+Implémenté dans \fButil::MacOSPlatform\fP, \fButil::LinuxPlatform\fP, et \fButil::WindowsPlatform\fP\&.
+.SS "virtual void util::IPlatform::toggleFullscreen (const sf::WindowHandle & inHandle, const sf::Uint32 inStyle, const bool inWindowed, const sf::Vector2u & inResolution)\fC [pure virtual]\fP"
+
+.PP
+Implémenté dans \fButil::MacOSPlatform\fP, \fButil::LinuxPlatform\fP, et \fButil::WindowsPlatform\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

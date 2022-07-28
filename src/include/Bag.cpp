@@ -1,5 +1,4 @@
 #include "include/Bag.hpp"
-#include "include/consts.hpp"
 
 // Fonction static
 

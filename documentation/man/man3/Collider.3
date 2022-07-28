@@ -1,0 +1,114 @@
+.TH "Collider" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Collider
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Collider\&.hpp>\fP
+.PP
+Dérivée par \fBBoxCollider\fP, et \fBPolygonCollider\fP\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBCollider\fP (\fBGameObject\fP const &\fBparent\fP, std::string typeOfCollider)"
+.br
+.ti -1c
+.RI "virtual \fB~Collider\fP ()"
+.br
+.ti -1c
+.RI "\fBGameObject\fP const & \fBgetParent\fP () const"
+.br
+.ti -1c
+.RI "virtual std::vector< sf::Vector2f > \fBgetContactPoints\fP () const =0"
+.br
+.ti -1c
+.RI "virtual bool \fBtouchEachOther\fP (\fBCollider\fP const &collider) const =0"
+.br
+.in -1c
+.SS "Fonctions membres publiques statiques"
+
+.in +1c
+.ti -1c
+.RI "static void \fBupdate\fP ()"
+.br
+.RI "C'est à ce niveau qu'on gère la détection de collisions\&. "
+.in -1c
+.SS "Attributs protégés"
+
+.in +1c
+.ti -1c
+.RI "\fBGameObject\fP const  & \fBparent\fP"
+.br
+.ti -1c
+.RI "std::string \fBm_colliderType\fP"
+.br
+.in -1c
+.SS "Attributs protégés statiques"
+
+.in +1c
+.ti -1c
+.RI "static GameObjectMap \fBm_objects\fP"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB13\fP du fichier \fBCollider\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "Collider::Collider (\fBGameObject\fP const & parent, std::string typeOfCollider)\fC [explicit]\fP"
+
+.PP
+Définition à la ligne \fB25\fP du fichier \fBCollider\&.cpp\fP\&.
+.SS "Collider::~Collider ()\fC [virtual]\fP"
+
+.PP
+Définition à la ligne \fB44\fP du fichier \fBCollider\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "virtual std::vector< sf::Vector2f > Collider::getContactPoints () const\fC [pure virtual]\fP"
+
+.PP
+Implémenté dans \fBBoxCollider\fP, et \fBPolygonCollider\fP\&.
+.SS "\fBGameObject\fP const  & Collider::getParent () const"
+
+.PP
+Définition à la ligne \fB49\fP du fichier \fBCollider\&.cpp\fP\&.
+.SS "virtual bool Collider::touchEachOther (\fBCollider\fP const & collider) const\fC [pure virtual]\fP"
+
+.PP
+Implémenté dans \fBBoxCollider\fP, et \fBPolygonCollider\fP\&.
+.SS "void Collider::update ()\fC [static]\fP"
+
+.PP
+C'est à ce niveau qu'on gère la détection de collisions\&. 
+.PP
+Définition à la ligne \fB59\fP du fichier \fBCollider\&.cpp\fP\&.
+.SH "Documentation des données membres"
+.PP 
+.SS "std::string Collider::m_colliderType\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB36\fP du fichier \fBCollider\&.hpp\fP\&.
+.SS "Collider::GameObjectMap Collider::m_objects\fC [static]\fP, \fC [protected]\fP"
+\fBValeur initiale :\fP
+.PP
+.nf
+= [] {
+    GameObjectMap ret;
+    return ret;
+}()
+.fi
+.PP
+Définition à la ligne \fB37\fP du fichier \fBCollider\&.hpp\fP\&.
+.SS "\fBGameObject\fP const& Collider::parent\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB35\fP du fichier \fBCollider\&.hpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

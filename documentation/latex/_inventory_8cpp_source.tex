@@ -1,0 +1,135 @@
+\hypertarget{_inventory_8cpp_source}{}\doxysection{Inventory.\+cpp}
+\label{_inventory_8cpp_source}\index{C:/programs\_sc/CIC/MITST06/jeu/src/include/Inventory.cpp@{C:/programs\_sc/CIC/MITST06/jeu/src/include/Inventory.cpp}}
+\mbox{\hyperlink{_inventory_8cpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_inventory_8hpp}{include/Inventory.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_game_master_8hpp}{include/GameMaster.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_vial_8hpp}{include/Vial.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00005}00005 \textcolor{comment}{// Fonction static}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00007}00007 \textcolor{comment}{// Fonctions d'initialisation}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00008}00008 \textcolor{keywordtype}{void} Inventory::initLimitPerType(\textcolor{keywordtype}{unsigned} vial\_capacity, \textcolor{keywordtype}{unsigned} armory\_capacity, \textcolor{keywordtype}{unsigned} teleportKey\_capacity, \textcolor{keywordtype}{unsigned} money\_capacity)}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00009}00009 \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00010}00010     this-\/>limitPerType[\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0ade2b8abe881dd8e4494afd39e979ebf8}{game::inventory\_items\_types::DEFAULT}}] = 0; \textcolor{comment}{// REVIEW -\/}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00011}00011     this-\/>limitPerType[\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a0783b29ef2cd9d2229b08af1093f5f0f}{game::inventory\_items\_types::VIAL}}] = vial\_capacity;}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00012}00012     this-\/>limitPerType[\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a2b602b3377438010ebb120c46572f3c7}{game::inventory\_items\_types::ARMORY}}] = armory\_capacity;}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00013}00013     this-\/>limitPerType[game::inventory\_items\_types::TELEPORTKEY] = teleportKey\_capacity;}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00014}00014     this-\/>limitPerType[game::inventory\_items\_types::MONEY] = money\_capacity;}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00015}00015 \}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00017}00017 \textcolor{keywordtype}{void} Inventory::initItemsMapStructure()}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00018}00018 \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00019}00019     \textcolor{comment}{// this-\/>items[game::inventory\_items\_types::DEFAULT];}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00020}00020     \textcolor{comment}{// this-\/>items[game::inventory\_items\_types::VIAL] = std::vector<Vial*, std::allocator<Item*>>();}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00021}00021     \textcolor{comment}{// this-\/>items[game::inventory\_items\_types::ARMORY];}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00022}00022     \textcolor{comment}{// this-\/>items[game::inventory\_items\_types::TELEPORTKEY];}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00023}00023     \textcolor{comment}{// this-\/>items[game::inventory\_items\_types::MONEY];}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00024}00024 \}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00026}00026 \textcolor{keywordtype}{void} Inventory::iniInventorytGui()}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00027}00027 \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00028}00028     this-\/>inventoryGui = \textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_inventory}{gui::Inventory}}(\mbox{\hyperlink{class_game_master_af7ff109051deeded5e09a450f29399ea}{GameMaster::STATE\_DATA}}()-\/>defaultFont);}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00029}00029 \}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00031}00031 \textcolor{comment}{// Constructeurs/Destructeur}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00032}\mbox{\hyperlink{class_inventory_a1f0675a5a25807989b5ee8aeba691824}{00032}} \mbox{\hyperlink{class_inventory_a1f0675a5a25807989b5ee8aeba691824}{Inventory::Inventory}}(\textcolor{keywordtype}{unsigned} vial\_capacity, \textcolor{keywordtype}{unsigned} armory\_capacity, \textcolor{keywordtype}{unsigned} teleportKey\_capacity, \textcolor{keywordtype}{unsigned} money\_capacity)}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00033}00033 \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00034}00034     this-\/>initLimitPerType(vial\_capacity, armory\_capacity, teleportKey\_capacity, money\_capacity);}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00035}00035     this-\/>initItemsMapStructure();}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00036}00036     this-\/>iniInventorytGui();}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00037}00037 \}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00039}\mbox{\hyperlink{class_inventory_a6c6dfcb6d977c74a7abf46809e892e3d}{00039}} \mbox{\hyperlink{class_inventory_a6c6dfcb6d977c74a7abf46809e892e3d}{Inventory::\string~Inventory}}()}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00040}00040 \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00041}00041     \textcolor{keywordflow}{for} (ItemMap::iterator it1 = this-\/>items.begin(); it1 != this-\/>items.end(); it1++)}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00042}00042     \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00043}00043         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < it1-\/>second.size(); i++)}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00044}00044         \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00045}00045             \textcolor{keyword}{delete} it1-\/>second[i];}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00046}00046         \}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00048}00048         it1-\/>second.clear();}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00049}00049     \}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00051}00051     \textcolor{keyword}{delete} this-\/>inventoryGui;}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00052}00052 \}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00054}00054 \textcolor{comment}{// Fonctions/Méthodes}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00055}\mbox{\hyperlink{class_inventory_a07d89fcb8469e7a2ee8e5dcc17e3931c}{00055}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_inventory_a07d89fcb8469e7a2ee8e5dcc17e3931c}{Inventory::add}}(\mbox{\hyperlink{class_item}{Item}}* item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game::inventory\_items\_types}} type)}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00056}00056 \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00057}00057     \textcolor{comment}{// REVIEW -\/ Cas des doublons}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00058}00058     \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{int})(this-\/>items[type].size()) >= this-\/>limitPerType[type])}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00059}00059     \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00060}00060         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00061}00061     \}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00063}00063     this-\/>items[type].push\_back(item);}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00065}00065     \textcolor{keywordflow}{return} this-\/>inventoryGui-\/>\mbox{\hyperlink{classgui_1_1_inventory_a4b5b31eebd9beeee352b8a8f84cd5bd5}{addItem}}(item, type);}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00066}00066 \}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00068}\mbox{\hyperlink{class_inventory_a91d5c19993a18c877f5c867e42020bc3}{00068}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_inventory_a91d5c19993a18c877f5c867e42020bc3}{Inventory::move}}(\mbox{\hyperlink{class_item}{Item}}* item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game::inventory\_items\_types}} type, \mbox{\hyperlink{class_inventory}{Inventory}}* to\_inventory)}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00069}00069 \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00070}00070     \textcolor{comment}{// REVIEW -\/ des vérification pour voir si l'object existe réelement}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00072}00072     \textcolor{comment}{// On enlève l'objet de l'inventaire actuel}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00073}00073     this-\/>items[type].erase(this-\/>getItemIterator(item, type));}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00074}00074     \textcolor{comment}{// On ajoute l'objet à l'inventaire actuel}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00075}00075     to\_inventory-\/>\mbox{\hyperlink{class_inventory_a07d89fcb8469e7a2ee8e5dcc17e3931c}{add}}(item, type);}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00077}00077     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00078}00078 \}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00080}\mbox{\hyperlink{class_inventory_a376aed955014cbc28e74d5f380ab5365}{00080}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_inventory_a376aed955014cbc28e74d5f380ab5365}{Inventory::remove}}(\mbox{\hyperlink{class_item}{Item}}* item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game::inventory\_items\_types}} type)}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00081}00081 \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00082}00082     \textcolor{comment}{// TODO -\/ Vérifications et try catch}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00083}00083     \textcolor{keyword}{delete} this-\/>items[type][this-\/>getItemIndex(item, type)];}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00084}00084     this-\/>items[type].erase(this-\/>getItemIterator(item, type));}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00086}00086     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00087}00087 \}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00089}\mbox{\hyperlink{class_inventory_a1bf036d4a5089fad46dccf36684bf98f}{00089}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_inventory_a1bf036d4a5089fad46dccf36684bf98f}{Inventory::getTypeLimit}}(\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game::inventory\_items\_types}} type)}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00090}00090 \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00091}00091     \textcolor{keywordflow}{return} this-\/>limitPerType[type];}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00092}00092 \}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00094}\mbox{\hyperlink{class_inventory_a0c51a9678241da5fa2062183cc0afd6c}{00094}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_inventory_a0c51a9678241da5fa2062183cc0afd6c}{Inventory::getFreePlace}}(\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game::inventory\_items\_types}} type)}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00095}00095 \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00096}00096     \textcolor{keywordflow}{return} this-\/>limitPerType[type] -\/ this-\/>items[type].size();}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00097}00097 \}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00099}\mbox{\hyperlink{class_inventory_adb0cf453e653bc719cdb207b906dbc56}{00099}} \mbox{\hyperlink{classgui_1_1_inventory}{gui::Inventory}}* \mbox{\hyperlink{class_inventory_adb0cf453e653bc719cdb207b906dbc56}{Inventory::getGui}}()}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00100}00100 \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00101}00101     \textcolor{keywordflow}{return} this-\/>inventoryGui;}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00102}00102 \}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00104}00104 \textcolor{keywordtype}{unsigned} Inventory::getItemIndex(\mbox{\hyperlink{class_item}{Item}}* item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game::inventory\_items\_types}} type)}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00105}00105 \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00106}00106     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < this-\/>items[type].size(); i++)}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00107}00107     \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00108}00108         \textcolor{keywordflow}{if} (this-\/>items[type][i] == item)}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00109}00109         \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00110}00110             \textcolor{keywordflow}{return} i;}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00111}00111         \}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00112}00112     \}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00114}00114     \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00115}00115 \}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00116}00116 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00117}00117 std::vector<Item*>::iterator Inventory::getItemIterator(\mbox{\hyperlink{class_item}{Item}}* item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game::inventory\_items\_types}} type)}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00118}00118 \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00119}00119     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>items[type].begin(); it != this-\/>items[type].end(); it++)}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00120}00120     \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00122}00122         \textcolor{keywordflow}{if} ((*it) == item)}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00123}00123         \{}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00124}00124             \textcolor{keywordflow}{return} it;}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00125}00125         \}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00126}00126     \}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00128}00128     \textcolor{keywordflow}{return} std::vector<Item*>::iterator(); \textcolor{comment}{// REVIEW -\/}}
+\DoxyCodeLine{\Hypertarget{_inventory_8cpp_source_l00129}00129 \}}
+
+\end{DoxyCode}

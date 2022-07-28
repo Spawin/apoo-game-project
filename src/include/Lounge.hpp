@@ -3,6 +3,8 @@
 
 	#include "include/Hall.hpp"
 
+class Hall;
+
 class Lounge : public Hall
 {
 public:

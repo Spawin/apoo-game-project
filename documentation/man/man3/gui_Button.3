@@ -1,0 +1,118 @@
+.TH "gui::Button" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gui::Button
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Gui\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBButton\fP (float x, float y, float width, float height, sf::Font *font, std::string text, unsigned characterSize, sf::Color text_idle_color, sf::Color text_hover_color, sf::Color text_active_color, sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor, sf::Color outline_idle_color=sf::Color::Transparent, sf::Color outline_hover_color=sf::Color::Transparent, sf::Color outline_active_color=sf::Color::Transparent, short unsigned id=0)"
+.br
+.ti -1c
+.RI "\fB~Button\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisPressed\fP () const"
+.br
+.ti -1c
+.RI "const std::string \fBgetText\fP () const"
+.br
+.ti -1c
+.RI "const short unsigned & \fBgetId\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetText\fP (const std::string text)"
+.br
+.ti -1c
+.RI "void \fBsetId\fP (const short unsigned id)"
+.br
+.ti -1c
+.RI "const sf::Vector2f & \fBgetPosition\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPosition\fP (float x, float y, float addX, float addY)"
+.br
+.RI "Set the \fBPosition\fP object\&. "
+.ti -1c
+.RI "void \fBupdate\fP (const sf::Vector2i &mousePosWindow)"
+.br
+.ti -1c
+.RI "void \fBrender\fP (sf::RenderTarget &target)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB26\fP du fichier \fBGui\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "gui::Button::Button (float x, float y, float width, float height, sf::Font * font, std::string text, unsigned characterSize, sf::Color text_idle_color, sf::Color text_hover_color, sf::Color text_active_color, sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor, sf::Color outline_idle_color = \fCsf::Color::Transparent\fP, sf::Color outline_hover_color = \fCsf::Color::Transparent\fP, sf::Color outline_active_color = \fCsf::Color::Transparent\fP, short unsigned id = \fC0\fP)"
+
+.PP
+Définition à la ligne \fB58\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "gui::Button::~Button ()"
+
+.PP
+Définition à la ligne \fB98\fP du fichier \fBGui\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "const short unsigned & gui::Button::getId () const"
+
+.PP
+Définition à la ligne \fB116\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "const sf::Vector2f & gui::Button::getPosition () const"
+
+.PP
+Définition à la ligne \fB131\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "const std::string gui::Button::getText () const"
+
+.PP
+Définition à la ligne \fB111\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "bool gui::Button::isPressed () const"
+
+.PP
+Définition à la ligne \fB103\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "void gui::Button::render (sf::RenderTarget & target)"
+
+.PP
+Définition à la ligne \fB197\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "void gui::Button::setId (const short unsigned id)"
+
+.PP
+Définition à la ligne \fB126\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "void gui::Button::setPosition (float x, float y, float addX, float addY)"
+
+.PP
+Set the \fBPosition\fP object\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIx\fP 
+.br
+\fIy\fP 
+.br
+\fIaddX\fP Décalage sur l'axe des x 
+.br
+\fIaddY\fP Décalage sur l'axe des y 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB136\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "void gui::Button::setText (const std::string text)"
+
+.PP
+Définition à la ligne \fB121\fP du fichier \fBGui\&.cpp\fP\&.
+.SS "void gui::Button::update (const sf::Vector2i & mousePosWindow)"
+
+.PP
+Définition à la ligne \fB149\fP du fichier \fBGui\&.cpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

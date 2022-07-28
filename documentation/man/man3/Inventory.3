@@ -1,0 +1,81 @@
+.TH "Inventory" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Inventory
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Inventory\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBInventory\fP (unsigned vial_capacity=6, unsigned armory_capacity=4, unsigned teleportKey_capacity=3, unsigned money_capacity=9999999)"
+.br
+.ti -1c
+.RI "\fB~Inventory\fP ()"
+.br
+.ti -1c
+.RI "bool \fBadd\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type)"
+.br
+.ti -1c
+.RI "bool \fBmove\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type, \fBInventory\fP *to_inventory)"
+.br
+.ti -1c
+.RI "bool \fBremove\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type)"
+.br
+.ti -1c
+.RI "int \fBgetTypeLimit\fP (\fBgame::inventory_items_types\fP type)"
+.br
+.ti -1c
+.RI "int \fBgetFreePlace\fP (\fBgame::inventory_items_types\fP type)"
+.br
+.ti -1c
+.RI "\fBgui::Inventory\fP * \fBgetGui\fP ()"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB22\fP du fichier \fBInventory\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "Inventory::Inventory (unsigned vial_capacity = \fC6\fP, unsigned armory_capacity = \fC4\fP, unsigned teleportKey_capacity = \fC3\fP, unsigned money_capacity = \fC9999999\fP)"
+
+.PP
+Définition à la ligne \fB32\fP du fichier \fBInventory\&.cpp\fP\&.
+.SS "Inventory::~Inventory ()"
+
+.PP
+Définition à la ligne \fB39\fP du fichier \fBInventory\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "bool Inventory::add (\fBItem\fP * item, \fBgame::inventory_items_types\fP type)"
+
+.PP
+Définition à la ligne \fB55\fP du fichier \fBInventory\&.cpp\fP\&.
+.SS "int Inventory::getFreePlace (\fBgame::inventory_items_types\fP type)"
+
+.PP
+Définition à la ligne \fB94\fP du fichier \fBInventory\&.cpp\fP\&.
+.SS "\fBgui::Inventory\fP * Inventory::getGui ()"
+
+.PP
+Définition à la ligne \fB99\fP du fichier \fBInventory\&.cpp\fP\&.
+.SS "int Inventory::getTypeLimit (\fBgame::inventory_items_types\fP type)"
+
+.PP
+Définition à la ligne \fB89\fP du fichier \fBInventory\&.cpp\fP\&.
+.SS "bool Inventory::move (\fBItem\fP * item, \fBgame::inventory_items_types\fP type, \fBInventory\fP * to_inventory)"
+
+.PP
+Définition à la ligne \fB68\fP du fichier \fBInventory\&.cpp\fP\&.
+.SS "bool Inventory::remove (\fBItem\fP * item, \fBgame::inventory_items_types\fP type)"
+
+.PP
+Définition à la ligne \fB80\fP du fichier \fBInventory\&.cpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

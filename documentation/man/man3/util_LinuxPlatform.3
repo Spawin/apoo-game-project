@@ -1,0 +1,60 @@
+.TH "util::LinuxPlatform" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+util::LinuxPlatform
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <LinuxPlatform\&.hpp>\fP
+.PP
+Est dérivée de \fButil::IPlatform\fP\&.
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBLinuxPlatform\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetIcon\fP (const sf::WindowHandle &inHandle) final"
+.br
+.ti -1c
+.RI "void \fBtoggleFullscreen\fP (const sf::WindowHandle &inHandle, const sf::Uint32 inStyle, const bool inWindowed, const sf::Vector2u &inResolution) final"
+.br
+.ti -1c
+.RI "float \fBgetScreenScalingFactor\fP (const sf::WindowHandle &inHandle) final"
+.br
+.ti -1c
+.RI "int \fBgetRefreshRate\fP (const sf::WindowHandle &inHandle) final"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB8\fP du fichier \fBLinuxPlatform\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "util::LinuxPlatform::LinuxPlatform ()"
+
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "int util::LinuxPlatform::getRefreshRate (const sf::WindowHandle & inHandle)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Implémente \fButil::IPlatform\fP\&.
+.SS "float util::LinuxPlatform::getScreenScalingFactor (const sf::WindowHandle & inHandle)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Implémente \fButil::IPlatform\fP\&.
+.SS "void util::LinuxPlatform::setIcon (const sf::WindowHandle & inHandle)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Implémente \fButil::IPlatform\fP\&.
+.SS "void util::LinuxPlatform::toggleFullscreen (const sf::WindowHandle & inHandle, const sf::Uint32 inStyle, const bool inWindowed, const sf::Vector2u & inResolution)\fC [final]\fP, \fC [virtual]\fP"
+
+.PP
+Implémente \fButil::IPlatform\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

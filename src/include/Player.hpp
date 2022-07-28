@@ -3,6 +3,8 @@
 
 #include "include/Personage.hpp"
 
+class Personage;
+
 class Player
 {
 public:

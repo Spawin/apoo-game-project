@@ -1,0 +1,112 @@
+\hypertarget{class_pause_menu}{}\doxysection{Référence de la classe Pause\+Menu}
+\label{class_pause_menu}\index{PauseMenu@{PauseMenu}}
+
+
+{\ttfamily \#include $<$Pause\+Menu.\+hpp$>$}
+
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pause_menu_afc2f75ba9c95fd25134ad3bcf968fee7}{Pause\+Menu}} (sf\+::\+Video\+Mode \&vm, sf\+::\+Font \&font)
+\item 
+virtual \mbox{\hyperlink{class_pause_menu_af30f0b8f5f59c6779434295a731b0e35}{$\sim$\+Pause\+Menu}} ()
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{classgui_1_1_button}{gui\+::\+Button}} $\ast$ $>$ \& \mbox{\hyperlink{class_pause_menu_ae8ac6eedc01f968dbdd6a4034ded596e}{get\+Buttons}} ()
+\item 
+bool \mbox{\hyperlink{class_pause_menu_aca0a96996b575a4292c8e2d6e8b5e089}{is\+Button\+Pressed}} (const std\+::string key)
+\item 
+void \mbox{\hyperlink{class_pause_menu_a95e70d20e136d13d0b5b78000693f0bb}{add\+Button}} (const std\+::string key, const float y, const float width, const float height, const unsigned char\+\_\+size, const std\+::string text)
+\item 
+void \mbox{\hyperlink{class_pause_menu_af7d98d3fce8433baee1cfbd2445472d0}{update}} (const sf\+::\+Vector2i \&mouse\+Pos\+View)
+\item 
+void \mbox{\hyperlink{class_pause_menu_ab52735e20aa287ea7a17783e9005e2a8}{render}} (sf\+::\+Render\+Target \&target)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+
+
+Définition à la ligne \mbox{\hyperlink{_pause_menu_8hpp_source_l00008}{8}} du fichier \mbox{\hyperlink{_pause_menu_8hpp_source}{Pause\+Menu.\+hpp}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_pause_menu_afc2f75ba9c95fd25134ad3bcf968fee7}\label{class_pause_menu_afc2f75ba9c95fd25134ad3bcf968fee7}} 
+\index{PauseMenu@{PauseMenu}!PauseMenu@{PauseMenu}}
+\index{PauseMenu@{PauseMenu}!PauseMenu@{PauseMenu}}
+\doxysubsubsection{\texorpdfstring{PauseMenu()}{PauseMenu()}}
+{\footnotesize\ttfamily Pause\+Menu\+::\+Pause\+Menu (\begin{DoxyParamCaption}\item[{sf\+::\+Video\+Mode \&}]{vm,  }\item[{sf\+::\+Font \&}]{font }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_pause_menu_8cpp_source_l00007}{7}} du fichier \mbox{\hyperlink{_pause_menu_8cpp_source}{Pause\+Menu.\+cpp}}.
+
+\mbox{\Hypertarget{class_pause_menu_af30f0b8f5f59c6779434295a731b0e35}\label{class_pause_menu_af30f0b8f5f59c6779434295a731b0e35}} 
+\index{PauseMenu@{PauseMenu}!````~PauseMenu@{$\sim$PauseMenu}}
+\index{````~PauseMenu@{$\sim$PauseMenu}!PauseMenu@{PauseMenu}}
+\doxysubsubsection{\texorpdfstring{$\sim$PauseMenu()}{~PauseMenu()}}
+{\footnotesize\ttfamily Pause\+Menu\+::$\sim$\+Pause\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_pause_menu_8cpp_source_l00040}{40}} du fichier \mbox{\hyperlink{_pause_menu_8cpp_source}{Pause\+Menu.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_pause_menu_a95e70d20e136d13d0b5b78000693f0bb}\label{class_pause_menu_a95e70d20e136d13d0b5b78000693f0bb}} 
+\index{PauseMenu@{PauseMenu}!addButton@{addButton}}
+\index{addButton@{addButton}!PauseMenu@{PauseMenu}}
+\doxysubsubsection{\texorpdfstring{addButton()}{addButton()}}
+{\footnotesize\ttfamily void Pause\+Menu\+::add\+Button (\begin{DoxyParamCaption}\item[{const std\+::string}]{key,  }\item[{const float}]{y,  }\item[{const float}]{width,  }\item[{const float}]{height,  }\item[{const unsigned}]{char\+\_\+size,  }\item[{const std\+::string}]{text }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_pause_menu_8cpp_source_l00061}{61}} du fichier \mbox{\hyperlink{_pause_menu_8cpp_source}{Pause\+Menu.\+cpp}}.
+
+\mbox{\Hypertarget{class_pause_menu_ae8ac6eedc01f968dbdd6a4034ded596e}\label{class_pause_menu_ae8ac6eedc01f968dbdd6a4034ded596e}} 
+\index{PauseMenu@{PauseMenu}!getButtons@{getButtons}}
+\index{getButtons@{getButtons}!PauseMenu@{PauseMenu}}
+\doxysubsubsection{\texorpdfstring{getButtons()}{getButtons()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, \mbox{\hyperlink{classgui_1_1_button}{gui\+::\+Button}} $\ast$ $>$ \& Pause\+Menu\+::get\+Buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_pause_menu_8cpp_source_l00051}{51}} du fichier \mbox{\hyperlink{_pause_menu_8cpp_source}{Pause\+Menu.\+cpp}}.
+
+\mbox{\Hypertarget{class_pause_menu_aca0a96996b575a4292c8e2d6e8b5e089}\label{class_pause_menu_aca0a96996b575a4292c8e2d6e8b5e089}} 
+\index{PauseMenu@{PauseMenu}!isButtonPressed@{isButtonPressed}}
+\index{isButtonPressed@{isButtonPressed}!PauseMenu@{PauseMenu}}
+\doxysubsubsection{\texorpdfstring{isButtonPressed()}{isButtonPressed()}}
+{\footnotesize\ttfamily bool Pause\+Menu\+::is\+Button\+Pressed (\begin{DoxyParamCaption}\item[{const std\+::string}]{key }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_pause_menu_8cpp_source_l00056}{56}} du fichier \mbox{\hyperlink{_pause_menu_8cpp_source}{Pause\+Menu.\+cpp}}.
+
+\mbox{\Hypertarget{class_pause_menu_ab52735e20aa287ea7a17783e9005e2a8}\label{class_pause_menu_ab52735e20aa287ea7a17783e9005e2a8}} 
+\index{PauseMenu@{PauseMenu}!render@{render}}
+\index{render@{render}!PauseMenu@{PauseMenu}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Pause\+Menu\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_pause_menu_8cpp_source_l00083}{83}} du fichier \mbox{\hyperlink{_pause_menu_8cpp_source}{Pause\+Menu.\+cpp}}.
+
+\mbox{\Hypertarget{class_pause_menu_af7d98d3fce8433baee1cfbd2445472d0}\label{class_pause_menu_af7d98d3fce8433baee1cfbd2445472d0}} 
+\index{PauseMenu@{PauseMenu}!update@{update}}
+\index{update@{update}!PauseMenu@{PauseMenu}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Pause\+Menu\+::update (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2i \&}]{mouse\+Pos\+View }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_pause_menu_8cpp_source_l00075}{75}} du fichier \mbox{\hyperlink{_pause_menu_8cpp_source}{Pause\+Menu.\+cpp}}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_pause_menu_8hpp}{Pause\+Menu.\+hpp}}\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_pause_menu_8cpp}{Pause\+Menu.\+cpp}}\end{DoxyCompactItemize}
