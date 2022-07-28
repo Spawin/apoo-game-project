@@ -62,7 +62,7 @@ bool Inventory::add(Item* item, game::inventory_items_types type)
 
 	this->items[type].push_back(item);
 
-	return true;
+	return this->inventoryGui->addItem(item, type);
 }
 
 bool Inventory::move(Item* item, game::inventory_items_types type, Inventory* to_inventory)

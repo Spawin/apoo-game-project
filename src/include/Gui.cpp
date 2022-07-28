@@ -293,10 +293,12 @@ gui::InventoryButton::InventoryButton(float x, float y, sf::Sprite const& sprite
 	this->id = id;
 
 	this->shape.setPosition(sf::Vector2f(x, y));
-	this->shape.setSize(sf::Vector2f(this->sprite.getTexture()->getSize().x, this->sprite.getTexture()->getSize().y));
+	this->shape.setSize(sf::Vector2f(this->sprite.getTexture()->getSize().x * this->sprite.getScale().x, this->sprite.getTexture()->getSize().y * this->sprite.getScale().y));
 	this->shape.setFillColor(idleColor);
 	this->shape.setOutlineThickness(1.f);
 	this->shape.setOutlineColor(outline_idle_color);
+
+	this->sprite.setPosition(sf::Vector2f(x, y)); // TODO - envoyer la texture au lieux du sprite
 
 	this->idleColor = idleColor;
 	this->hoverColor = hoverColor;
@@ -388,14 +390,15 @@ void gui::InventoryButton::update(const sf::Vector2i& mousePosWindow)
 
 void gui::InventoryButton::render(sf::RenderTarget& target)
 {
-	target.draw(this->sprite);
 	target.draw(this->shape);
+	target.draw(this->sprite);
 }
 
 // ********************************* End InventoryButton
 
 // ********************************* Inventory
 // Fonction static
+// sf::Vector2i gui::Inventory::mousePosWindow(0, 0);
 
 // Fonctions d'initialisation
 void gui::Inventory::initBackground()
@@ -462,7 +465,8 @@ bool gui::Inventory::addItem(const Item* item, game::inventory_items_types type)
 		case game::inventory_items_types::ARMORY: {
 			float x = 80.f + 80.f * 4.f + 80.f * (this->inventoryButtons[type].size() % 2);
 			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
-			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50)));
+			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));
+			// this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 0), sf::Color(250, 250, 250, 0), sf::Color(20, 20, 20, 0)));
 			return true;
 		}
 		break;
@@ -475,7 +479,7 @@ bool gui::Inventory::addItem(const Item* item, game::inventory_items_types type)
 		case game::inventory_items_types::VIAL: {
 			float x = 80.f + 80.f + 80.f * (this->inventoryButtons[type].size() % 2);
 			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
-			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50)));
+			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 0), sf::Color(250, 250, 250, 10), sf::Color(20, 20, 20, 50)));
 			return true;
 		}
 		break;
@@ -499,17 +503,20 @@ bool gui::Inventory::removeItem(int index /*, sf::Sprite const& itemSprite*/, ga
 	return true;
 }
 
-void gui::Inventory::update(const sf::Vector2i& mousePosView)
+void gui::Inventory::updateMousePosWindow(sf::Vector2i mousePosWindow)
 {
 	// Hover
 	for (auto&& inventoryButtonVectorPair : this->inventoryButtons)
 	{
 		for (size_t i = 0; i < inventoryButtonVectorPair.second.size(); i++)
 		{
-			inventoryButtonVectorPair.second[i]->update(mousePosView);
+			inventoryButtonVectorPair.second[i]->update(mousePosWindow);
 		}
 	}
 }
+
+void gui::Inventory::update(/*const sf::Vector2i& mousePosView*/) // REVIEW -
+{}
 
 void gui::Inventory::render(sf::RenderTarget& target)
 {

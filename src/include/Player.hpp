@@ -15,6 +15,8 @@ public:
 
 	void manageMove(const float& deltaTime);
 	// void updateAnimation(const float& deltaTime);
+
+	void updateMousePosWindow(sf::Vector2i mousePosWindow);
 	void update(const float& deltaTime);
 	void render(sf::RenderTarget& target);
 

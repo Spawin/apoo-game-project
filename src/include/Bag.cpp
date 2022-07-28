@@ -1,4 +1,5 @@
 #include "include/Bag.hpp"
+#include "include/consts.hpp"
 
 // Fonction static
 
@@ -28,6 +29,21 @@ Bag::~Bag()
 }
 
 // Fonctions/Méthodes
+bool Bag::addItem(Item* item, game::inventory_items_types type)
+{
+	return this->inventory->add(item, type);
+}
+
+bool Bag::moveItem(Item* item, game::inventory_items_types type, Inventory* to_inventory)
+{
+	return this->inventory->move(item, type, to_inventory);
+}
+
+bool Bag::removeItem(Item* item, game::inventory_items_types type)
+{
+	return this->inventory->remove(item, type);
+}
+
 Inventory* Bag::getInventory()
 {
 	return this->inventory;
@@ -53,4 +69,6 @@ void Bag::updatePosition(float posX, float posY)
 	m_position->setPosition(posX, posY);
 	// On replace le body
 	m_body.setPosition(m_position->getPosition().toVector2f());
+
+	std::cout << "Position du " << m_gameObjectName << " : " << m_position << " => " << (*m_position) << std::endl;
 }

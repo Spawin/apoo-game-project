@@ -1,4 +1,5 @@
 #include "include/GameState.hpp"
+#include "include/Gui.hpp"
 #include "include/Lounge.hpp"
 #include "include/MovableGameObject.hpp"
 #include "include/Room.hpp"
@@ -222,7 +223,10 @@ void GameState::update(const float& deltaTime)
 		// cout << "En pause\n";
 		this->pauseMenu->update(this->mousePosWindow);
 		this->updatePauseMenuButtons();
+		this->player->updateMousePosWindow(this->mousePosWindow);
 	}
+
+	// gui::Inventory::updateMousePosWindow(this->mousePosWindow);
 }
 
 void GameState::render(sf::RenderTarget* target)

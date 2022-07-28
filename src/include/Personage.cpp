@@ -7,6 +7,7 @@
 #include <string>
 
 #include "include/GameMaster.hpp"
+#include "include/Sword.hpp"
 #include "include/consts.hpp"
 
 using namespace std;
@@ -98,6 +99,10 @@ void Personage::initHPBar()
 void Personage::initBag()
 {
 	this->bag = new Bag();
+
+	this->bag->addItem(new Sword(), game::inventory_items_types::ARMORY);
+	this->bag->addItem(new Sword(), game::inventory_items_types::ARMORY);
+	this->bag->addItem(new Sword(), game::inventory_items_types::ARMORY);
 }
 
 Personage::Personage(bool isPlayer) :
@@ -159,6 +164,13 @@ void Personage::update()
 {
 	this->updateEXPBar();
 	this->updateHPBar();
+
+	this->bag->getInventory()->getGui()->update();
+}
+
+void Personage::updateMousePosWindow(sf::Vector2i mousePosWindow)
+{
+	this->bag->getInventory()->getGui()->updateMousePosWindow(mousePosWindow);
 }
 
 void Personage::setGameObjectName(string name)
@@ -178,81 +190,6 @@ void Personage::onCollisionEnter(Collision const& collision) const
 
 void Personage::updatePosition(float posX, float posY)
 {
-	/*
-	if (m_isPlayer)
-	{
-		// Gestion du déplacement du joueur.
-		bool anyDirectionalKeyIsPressed(false);
-		// TODO - Additionner les angles avant de l'associer à la vitesse; on enlevera le temps
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-		{
-			// m_speed.x = MOVE_SPEED * m_time;
-			// m_speed2 = MyVector::createFromAngle(MOVE_SPEED * m_time, m_body.getRotation());
-			m_speed = MyVector::createFromAngle(m_MOVE_SPEED * m_time, 0.f);
-			anyDirectionalKeyIsPressed = true;
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-		{
-			// m_speed.x = -MOVE_SPEED * m_time;
-			// m_speed2 = MyVector::createFromAngle(MOVE_SPEED * m_time, m_body.getRotation());
-			m_speed = MyVector::createFromAngle(m_MOVE_SPEED * m_time, 180.f);
-			anyDirectionalKeyIsPressed = true;
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-		{
-			// m_speed.y = -MOVE_SPEED * m_time;
-			// m_speed2 = MyVector::createFromAngle(MOVE_SPEED * m_time, m_body.getRotation());
-			m_speed = MyVector::createFromAngle(m_MOVE_SPEED * m_time, 270.f);
-			anyDirectionalKeyIsPressed = true;
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-		{
-			// m_speed.y = MOVE_SPEED * m_time;
-			// m_speed2 = MyVector::createFromAngle(MOVE_SPEED * m_time, m_body.getRotation());
-			m_speed = MyVector::createFromAngle(m_MOVE_SPEED * m_time, 90.f);
-			anyDirectionalKeyIsPressed = true;
-		}
-
-		// if (event.type == sf::Event::KeyReleased)
-		if (!anyDirectionalKeyIsPressed)
-		{
-			// m_speed.x = 0;
-			// m_speed.y = 0;
-
-			m_speed.m_x = 0;
-			m_speed.m_y = 0;
-		}
-
-		// m_body.move(m_speed);
-		// m_body.move(m_speed2.m_x, m_speed2.m_y);
-		// MyVector mv{0.f,0.f};
-		// mv += m_position.getPosition();
-		// mv += m_speed
-
-		// On applique des modification si la position à changé
-		// REVIEW - (ceci n'est pas encore fait) Ou si le centre de la vue est différent de la position du joueur
-		// if ( m_position.getPosition() != m_body.getPosition())
-		// || m_body.getPosition() != m_window->getView().getCenter()
-		if (m_speed != sf::Vector2f(0.f, 0.f))
-		{
-			m_position += m_speed; // * m_time;
-			// On replace le body
-			m_body.setPosition(m_position.getX(), m_position.getY());
-			cout << "Position du joueur " << m_position << endl;
-
-			// On replace la vue
-			if (m_window != 0)
-			{
-				// cout << "On replace la vue" << endl;
-				sf::View player_view(m_window->getView());
-				player_view.setCenter(m_position.getX(), m_position.getY());
-				m_window->setView(player_view);
-			}
-		}
-		// cout << "pose x=" << m_position.getX() << " y=" << m_position.getY() << endl;
-	}
-	//*/
-
 	m_position->setPosition(posX, posY);
 	// On replace le body
 	m_body.setPosition(m_position->getPosition().toVector2f());

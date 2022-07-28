@@ -138,7 +138,7 @@ public:
 
 private:
 	// Variables
-	sf::Sprite const& sprite;
+	sf::Sprite sprite;
 
 	short unsigned buttonState;
 	short unsigned id;
@@ -170,7 +170,9 @@ public:
 	bool addItem(const Item* item, game::inventory_items_types type);
 	bool removeItem(int index /*, sf::Sprite const& itemSprite*/, game::inventory_items_types type);
 
-	void update(const sf::Vector2i& mousePosView);
+	void updateMousePosWindow(sf::Vector2i mousePosWindow);
+
+	void update(/*const sf::Vector2i& mousePosView*/);
 	void render(sf::RenderTarget& target);
 
 private:
@@ -184,6 +186,8 @@ private:
 	// sf::Sprite inventoryItemSprite;
 	// std::map<int, std::vector<sf::Sprite const&>> inventoryItemSprites;
 	std::map<int, std::vector<gui::InventoryButton*>> inventoryButtons;
+
+	// static sf::Vector2i mousePosWindow;
 
 	// Fonctions d'initialisation
 	void initBackground();

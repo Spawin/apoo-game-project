@@ -200,6 +200,10 @@ void Player::updateAnimation(const float& deltaTime)
 	}
 }
 // */
+void Player::updateMousePosWindow(sf::Vector2i mousePosWindow)
+{
+	this->personage->updateMousePosWindow(mousePosWindow);
+}
 
 void Player::update(const float& deltaTime)
 {

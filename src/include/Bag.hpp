@@ -14,7 +14,10 @@ public:
 	~Bag();
 
 	// Fonctions/Méthodes
-	// void
+	bool addItem(Item* item, game::inventory_items_types type);
+	bool moveItem(Item* item, game::inventory_items_types type, Inventory* to_inventory);
+	bool removeItem(Item* item, game::inventory_items_types type);
+
 	Inventory* getInventory();
 	/**
 	 * @brief émit quand il entre en contacte avec un autre élément

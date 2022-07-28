@@ -17,13 +17,25 @@ public:
 	// Constructeurs/Destructeur
 
 	// Fonctions/Méthodes
-	// sf::Texture const& get
-	// bool use();
+
+	/**
+	 * @brief émit quand il entre en contacte avec un autre élément
+	 *
+	 * @param collision
+	 */
+	virtual void onCollisionEnter(Collision const& collision) const = 0;
+	virtual void update() = 0;
 
 protected:
 	// Variables
 
 	// Fonctions d'initialisation
+
+	/**
+	 * @brief Permet de mettre à jour la position actuelle.
+	 *
+	 */
+	virtual void updatePosition(float posX, float posY) = 0;
 };
 
 #endif // __ITEM_HPP__
