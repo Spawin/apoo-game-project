@@ -53,6 +53,10 @@ GameObject::~GameObject()
 	m_collider = nullptr;
 	delete m_rigidbody;
 	m_rigidbody = nullptr;
+
+	Collider::removeObjects(this->m_id);
+
+	// if(GameObject::)
 }
 
 void GameObject::show(sf::RenderTarget& window)

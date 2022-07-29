@@ -50,7 +50,7 @@ private:
 
 	Player* player;
 
-	Enemy* testEnemy;
+	// Enemy* testEnemy;
 	EnemyManager* enemyManager;
 
 	PauseMenu* pauseMenu;

@@ -2,9 +2,11 @@
 	#define __ENEMY_MANAGER_HPP__
 
 	#include "include/Enemy.hpp"
+	#include "include/Hall.hpp"
 	#include <vector>
 
 class Enemy;
+class Hall;
 
 struct EnemyData
 {
@@ -20,7 +22,7 @@ class EnemyManager
 {
 public:
 	// Constructeurs/Destructeur
-	EnemyManager();
+	EnemyManager(std::vector<Hall*>& halls);
 	~EnemyManager();
 
 	// Fonctions/Méthodes
@@ -39,6 +41,8 @@ public:
 private:
 	// Variables
 	std::vector<EnemyData> enemies;
+
+	std::vector<Hall*>& halls;
 
 	// Fonctions d'initialisation
 };

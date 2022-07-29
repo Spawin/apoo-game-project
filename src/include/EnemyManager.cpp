@@ -1,11 +1,17 @@
 #include "include/EnemyManager.hpp"
 
+#include "include/Druid.hpp"
+#include "include/Religious.hpp"
+#include "include/Soldier.hpp"
+#include "include/Worker.hpp"
+
 // Fonction static
 
 // Fonctions d'initialisation
 
 // Constructeurs/Destructeur
-EnemyManager::EnemyManager()
+EnemyManager::EnemyManager(std::vector<Hall*>& halls) :
+	halls(halls)
 {
 }
 
@@ -19,7 +25,17 @@ EnemyManager::~EnemyManager()
 
 // Fonctions/Méthodes
 void EnemyManager::createEnemy()
-{}
+{
+	this->enemies.push_back({
+		false,
+		new Enemy(new Soldier()),
+	});
+
+	this->halls[0]->addMovableGameObject(this->enemies.back().enemy->getPersonage());
+	this->enemies.back().enemy->getPersonage()->addToHall(this->halls[0]);
+	MyVector v { game::GAME_BLOCKS_WIDTH * 4, game::GAME_BLOCKS_WIDTH * 76 };
+	this->enemies.back().enemy->getPersonage()->move(v);
+}
 
 void EnemyManager::removeEnemy(const int index)
 {

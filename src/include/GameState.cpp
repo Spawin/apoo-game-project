@@ -113,17 +113,18 @@ void GameState::initPlayer()
 	// On place le joueur dans la salle de départ!
 	this->player->getPersonage()->getNonConstPosition()->setPosition(game::GAME_BLOCKS_WIDTH * 4, game::GAME_BLOCKS_WIDTH * 78);
 
-	this->testEnemy = new Enemy(new Soldier());
-	this->halls[0]->addMovableGameObject(this->testEnemy->getPersonage());
-	this->testEnemy->getPersonage()->addToHall(this->halls[0]);
-	// this->testEnemy->getNonConstPosition()->setPosition(game::GAME_BLOCKS_WIDTH * 4, game::GAME_BLOCKS_WIDTH * 78); // REVIEW -
-	MyVector v { game::GAME_BLOCKS_WIDTH * 4, game::GAME_BLOCKS_WIDTH * 76 };
-	this->testEnemy->getPersonage()->move(v); // REVIEW -
+	// this->testEnemy = new Enemy(new Soldier());
+	// this->halls[0]->addMovableGameObject(this->testEnemy->getPersonage());
+	// this->testEnemy->getPersonage()->addToHall(this->halls[0]);
+	// // this->testEnemy->getNonConstPosition()->setPosition(game::GAME_BLOCKS_WIDTH * 4, game::GAME_BLOCKS_WIDTH * 78); // REVIEW -
+	// MyVector v { game::GAME_BLOCKS_WIDTH * 4, game::GAME_BLOCKS_WIDTH * 76 };
+	// this->testEnemy->getPersonage()->move(v); // REVIEW -
 }
 
 void GameState::initEnemyManager()
 {
-	this->enemyManager = new EnemyManager();
+	this->enemyManager = new EnemyManager(this->halls);
+	this->enemyManager->createEnemy();
 }
 
 // Constructeurs/Destructeur
@@ -161,7 +162,7 @@ GameState::~GameState()
 	}
 	this->halls.clear();
 
-	delete this->testEnemy;
+	// delete this->testEnemy;
 	delete this->enemyManager;
 }
 
@@ -236,7 +237,8 @@ void GameState::update(const float& deltaTime)
 		//* Le jeu n'est pas en pause
 		this->player->update(deltaTime);
 
-		this->testEnemy->update(deltaTime);
+		// this->testEnemy->update(deltaTime);
+		this->enemyManager->updateEnemiesState(this->player->getPosition());
 		this->enemyManager->update(deltaTime);
 	}
 	else
@@ -278,7 +280,7 @@ void GameState::render(sf::RenderTarget* target)
 	// this->player->render((*target));
 	this->player->render(this->renderTexture);
 
-	this->testEnemy->render(this->renderTexture);
+	// this->testEnemy->render(this->renderTexture);
 	this->enemyManager->render(this->renderTexture);
 
 	if (this->paused) //Pause menu render

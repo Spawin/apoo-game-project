@@ -23,6 +23,11 @@ public:
 	 *
 	 */
 	static void update();
+	/**
+	 * @brief Appelé à la destruction d'un objet pour l'enlever de la liste
+	 *
+	 */
+	static void removeObjects(int gameObjectId);
 
 	GameObject const& getParent() const;
 

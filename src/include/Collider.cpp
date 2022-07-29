@@ -95,6 +95,11 @@ void Collider::update()
 	}
 }
 
+void Collider::removeObjects(int gameObjectId)
+{
+	Collider::m_objects.erase(to_string(gameObjectId));
+}
+
 // void Collider::update()
 // {
 
