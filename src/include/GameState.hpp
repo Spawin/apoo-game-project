@@ -7,10 +7,15 @@
 	#include "include/Hall.hpp"
 	#include <vector>
 
+	#include "include/Enemy.hpp"
+	#include "include/EnemyManager.hpp"
+
 class State;
 class PauseMenu;
 class GameMap;
 class Hall;
+class Enemy;
+class EnemyManager;
 
 class GameState : public State
 {
@@ -45,6 +50,9 @@ private:
 
 	Player* player;
 
+	Enemy* testEnemy;
+	EnemyManager* enemyManager;
+
 	PauseMenu* pauseMenu;
 
 	GameMap* gameMap;
@@ -58,8 +66,9 @@ private:
 	void initKeyTime();
 
 	void initGameMap();
-	void initPlayer();
 	void initHalls();
+	void initPlayer();
+	void initEnemyManager();
 };
 
 #endif // __GAME_STATE_HPP__

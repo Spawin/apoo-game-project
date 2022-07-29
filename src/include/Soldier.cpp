@@ -4,7 +4,8 @@ using namespace std;
 
 void Soldier::init()
 {
-	m_gameObjectName = "Soldier";
+	// m_gameObjectName = "";
+	this->setGameObjectName("Soldier");
 	m_specialtyName = "Rage";
 }
 

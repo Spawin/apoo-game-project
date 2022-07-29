@@ -6,7 +6,8 @@ using namespace std;
 // Fonctions d'initialisation
 void Druid::init()
 {
-	m_gameObjectName = "Druid";
+	// m_gameObjectName = "Druid";
+	this->setGameObjectName("Druid");
 	m_specialtyName = "Mana";
 }
 

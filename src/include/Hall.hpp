@@ -17,7 +17,21 @@ public:
 
 	// Fonctions/Méthodes
 	virtual bool addMovableGameObject(MovableGameObject* movableGameObject);
+	/**
+	 * @brief Vérifier si les coordonnées de position données se trouve dans la pièce
+	 *
+	 * @param coordinates
+	 * @return true
+	 * @return false
+	 */
 	bool isIn(MyVector const& coordinates) const;
+	/**
+	 * @brief Vérifier si les coordonnées de position données se trouve dans la pièce
+	 *
+	 * @param coordinates
+	 * @return true
+	 * @return false
+	 */
 	bool isIn(sf::Vector2f const& coordinates) const;
 	const sf::IntRect& getIntRect() const;
 

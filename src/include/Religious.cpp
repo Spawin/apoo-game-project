@@ -7,7 +7,8 @@ using namespace std;
 // Fonctions d'initialisation
 void Religious::init()
 {
-	m_gameObjectName = "Religious";
+	// m_gameObjectName = "";
+	this->setGameObjectName("Religious");
 	m_specialtyName = "Blessing";
 }
 

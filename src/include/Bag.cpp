@@ -19,7 +19,8 @@ Bag::Bag() :
 	NotMovableGameObject("content/gameObjects/bag.png")
 {
 	this->initInventory();
-	m_gameObjectName = "Bag";
+	// m_gameObjectName = "Bag";
+	this->setGameObjectName("Bag");
 }
 
 Bag::~Bag()

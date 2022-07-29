@@ -88,6 +88,11 @@ std::string GameObject::getGameObjectName() const
 	return m_gameObjectName;
 }
 
+void GameObject::setGameObjectName(std::string name)
+{
+	m_gameObjectName = name + "_" + m_gameObjectName;
+}
+
 // void GameObject::onCollisionEnter(Collision const& collision) const
 // {
 // 	collision.test(); // REVIEW

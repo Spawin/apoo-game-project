@@ -13,7 +13,7 @@ void MovableGameObject::initPosition(float posX, float posY)
 MovableGameObject::MovableGameObject(std::string_view const& imageSpritePath) :
 	GameObject(imageSpritePath)
 {
-	this->initPosition(200 * 4.f, 200 * 70.f);
+	this->initPosition(200 * 4.f, 200 * 75.f);
 }
 
 MovableGameObject::~MovableGameObject()
@@ -39,6 +39,11 @@ bool MovableGameObject::addToHall(Hall* hall)
 	this->hall = hall;
 	this->setPositionMovementLimit(this->hall);
 	return true;
+}
+
+const Hall* MovableGameObject::getActualHall() const
+{
+	return this->hall;
 }
 
 void MovableGameObject::show(sf::RenderTarget& window)

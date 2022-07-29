@@ -1,24 +1,24 @@
-#ifndef __PLAYER_HPP__
-#define __PLAYER_HPP__
+#if !defined(__ENEMY_HPP__)
+	#define __ENEMY_HPP__
 
-#include "include/Personage.hpp"
+	#include "include/Personage.hpp"
 
 class Personage;
 
-class Player
+class Enemy
 {
 public:
-	Player(Personage* personage);
-	~Player();
+	// Constructeurs/Destructeur
+	Enemy(Personage* personage);
+	~Enemy();
 
 	// Fonctions/Méthodes
 	sf::Vector2f getPosition() const;
 	Personage* getPersonage();
 
 	void manageMove(const float& deltaTime);
-	// void updateAnimation(const float& deltaTime);
 
-	void updateMousePosWindow(sf::Vector2i mousePosWindow);
+	// void updateMousePosWindow(sf::Vector2i mousePosWindow);
 	void update(const float& deltaTime);
 	void render(sf::RenderTarget& target);
 
@@ -32,9 +32,7 @@ private:
 	 */
 	bool lastSideIsRight;
 
-	// float waitAnimationEnd;
-
 	// Fonctions d'initialisation
 };
 
-#endif // __PLAYER_HPP__
+#endif // __ENEMY_HPP__

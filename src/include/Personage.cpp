@@ -1,6 +1,6 @@
 #include "include/Personage.hpp"
+#include "include/BoxCollider.hpp"
 #include "include/MyVector.hpp"
-#include "include/PolygonCollider.hpp"
 #include "include/Rigidbody.hpp"
 
 #include <iostream>
@@ -21,7 +21,8 @@ void Personage::init()
 	// m_width = 32;
 	// m_height = 50;
 
-	m_gameObjectName = "Personage";
+	// m_gameObjectName = "";
+	this->setGameObjectName("Personage");
 
 	// m_texture.setSmooth(true);
 
@@ -36,6 +37,7 @@ void Personage::init()
 	// m_collider = new PolygonCollider((*this), { sf::Vector2f(18.f - m_body.getOrigin().x, 5.f - m_body.getOrigin().y), sf::Vector2f(22.f - m_body.getOrigin().x, 12.f - m_body.getOrigin().y), sf::Vector2f(22.f - m_body.getOrigin().x, 20.f - m_body.getOrigin().y), sf::Vector2f(18.f - m_body.getOrigin().x, 27.f - m_body.getOrigin().y), sf::Vector2f(11.f - m_body.getOrigin().x, 22.f - m_body.getOrigin().y), sf::Vector2f(11.f - m_body.getOrigin().x, 12.f - m_body.getOrigin().y) });
 
 	m_rigidbody = new Rigidbody((*this));
+	m_collider = new BoxCollider((*this), 45.f, 95.f, sf::Vector2f(75.f - 45.f / 2.f, 115.f - 95.f));
 
 	// int w(32);
 	// int h(32);
@@ -234,18 +236,19 @@ void Personage::updateMousePosWindow(sf::Vector2i mousePosWindow)
 	this->bag->getInventory()->getGui()->updateMousePosWindow(mousePosWindow);
 }
 
-void Personage::setGameObjectName(string name)
-{
-	m_gameObjectName = name;
-}
+// void Personage::setGameObjectName(string name)
+// {
+// 	m_gameObjectName = name;
+// }
 
 void Personage::onCollisionEnter(Collision const& collision) const
 {
+	cout << "COLLISION !!!!!\n";
 	collision.test(); // REVIEW
 	if (m_isPlayer)
 	{
-		// cout << "Collision de " << m_gameObjectName << " avec "
-		// 	 << "collision.getGameObject()->getGameObjectName()" << endl;
+		cout << "Collision de " << m_gameObjectName << " avec "
+			 << collision.getGameObject().getGameObjectName() << endl;
 	}
 }
 

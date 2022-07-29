@@ -7,7 +7,8 @@ using namespace std;
 // Fonctions d'initialisation
 void Worker::init()
 {
-	m_gameObjectName = "Worker";
+	// m_gameObjectName = "";
+	this->setGameObjectName("Worker");
 	m_specialtyName = "Velocity"; // REVIEW -
 }
 

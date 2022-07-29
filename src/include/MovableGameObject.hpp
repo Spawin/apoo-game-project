@@ -33,7 +33,13 @@ public:
 	 * @return true Si le déplacement s'est effectué avec succès
 	 * @return false Si le déplacement n'a pas eu lieu
 	 */
-	virtual bool addToHall(Hall* hall);
+	virtual bool addToHall(Hall* hall); // REVIEW - on va informer le hall de l'ajout par ici ou soit on ajout un const
+	/**
+	 * @brief Get the Actual Hall object
+	 *
+	 * @return const Hall*
+	 */
+	virtual const Hall* getActualHall() const;
 
 	/**
 	 * @brief Pour dessiner l'élement dans la fenêtre.

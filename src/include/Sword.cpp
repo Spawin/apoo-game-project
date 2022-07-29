@@ -8,7 +8,8 @@
 Sword::Sword() :
 	Armory("content/gameObjects/sword.png", ItemsCategories::ATTACK_BODY_TO_BODY)
 {
-	m_gameObjectName = "Sword";
+	// m_gameObjectName = "";
+	this->setGameObjectName("Sword");
 
 	m_body.setScale((float)game::INVENTORY_BLOCK_WIDTH / (float)m_texture.getSize().x, (float)game::INVENTORY_BLOCK_WIDTH / (float)m_texture.getSize().y);
 }

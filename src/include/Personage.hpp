@@ -57,7 +57,7 @@ public:
 
 	void updateMousePosWindow(sf::Vector2i mousePosWindow);
 
-	void setGameObjectName(std::string name);
+	// void setGameObjectName(std::string name);
 
 	void onCollisionEnter(Collision const& collision) const override;
 

@@ -6,6 +6,7 @@
 #include "include/MyVector.hpp"
 #include "include/Position.hpp"
 #include "include/Rigidbody.hpp"
+#include <string>
 
 class Collision;
 class Collider;
@@ -57,6 +58,7 @@ public:
 	Position* getNonConstPosition();
 
 	std::string getGameObjectName() const;
+	void setGameObjectName(std::string name);
 
 	/**
 	 * @brief émit quand il entre en contacte avec un autre élément

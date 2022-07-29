@@ -1,40 +1,42 @@
-#include "include/Player.hpp"
+#include "include/Enemy.hpp"
 
 // Fonction static
 
 // Fonctions d'initialisation
 
 // Constructeurs/Destructeur
-Player::Player(Personage* personage) :
+Enemy::Enemy(Personage* personage) :
 	personage(personage)
 {
 	this->lastSideIsRight = true;
 
-	this->personage->setGameObjectName("Player");
+	this->personage->setGameObjectName("Enemy");
 }
 
-Player::~Player()
+Enemy::~Enemy()
 {
 	delete this->personage;
 }
 
 // Fonctions/Méthodes
-sf::Vector2f Player::getPosition() const
+sf::Vector2f Enemy::getPosition() const
 {
 	return this->personage->getPosition()->getPosition().toVector2f();
 }
 
-Personage* Player::getPersonage()
+Personage* Enemy::getPersonage()
 {
 	return this->personage;
 }
 
-void Player::manageMove(const float& deltaTime)
+void Enemy::manageMove(const float& deltaTime)
 {
+	this->personage->getAnimationComponent()->play("LEFT_IDLE", deltaTime);
+	return; // TODO - Sera géré par une ia
+
 	// On ne fait pas de mouvement quand on est mort...
 	if (this->personage->isDied())
 	{
-		// REVIEW - Il faudrait animer ça mort jusqu'au bout
 		return;
 	}
 
@@ -125,8 +127,6 @@ void Player::manageMove(const float& deltaTime)
 		//* On applique des modification si la vitesse à changé
 		if (speed != sf::Vector2f(0.f, 0.f))
 		{
-			// std::cout << "\t X" << speed.m_x << " Y" << speed.m_y << std::endl;
-
 			// Animation
 			if (speed.x < 0.0f)
 			{
@@ -167,54 +167,19 @@ void Player::manageMove(const float& deltaTime)
 	}
 }
 
-/*
+// void Enemy::updateMousePosWindow(sf::Vector2i mousePosWindow)
+// {
+// 	this->personage->updateMousePosWindow(mousePosWindow);
+// }
 
-void Player::updateAnimation(const float& deltaTime)
-{
-	//! A enlever. Juste pour les tests
-	// HURT
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::H))
-	{
-		std::string animationName = "HURT";
-		if (this->lastSideIsRight)
-		{
-			animationName = "RIGHT_" + animationName;
-		}
-		else
-		{
-			animationName = "LEFT_" + animationName;
-		}
-		this->personage->getAnimationComponent()->play(animationName, deltaTime);
-	}
-	// DIE
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
-	{
-		std::string animationName = "DIE";
-		if (this->lastSideIsRight)
-		{
-			animationName = "RIGHT_" + animationName;
-		}
-		else
-		{
-			animationName = "LEFT_" + animationName;
-		}
-		this->personage->getAnimationComponent()->play(animationName, deltaTime);
-	}
-}
-// */
-void Player::updateMousePosWindow(sf::Vector2i mousePosWindow)
-{
-	this->personage->updateMousePosWindow(mousePosWindow);
-}
-
-void Player::update(const float& deltaTime)
+void Enemy::update(const float& deltaTime)
 {
 	this->manageMove(deltaTime);
 
 	this->personage->update();
 }
 
-void Player::render(sf::RenderTarget& target)
+void Enemy::render(sf::RenderTarget& target)
 {
 	personage->show(target);
 }

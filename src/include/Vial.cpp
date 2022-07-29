@@ -9,26 +9,31 @@
 Vial::Vial(/*std::string_view const& imageSpritePath, */ ItemsCategories categorie) :
 	Item("content/gameObjects/health_vial.png", categorie)
 {
+	this->setGameObjectName("Vial");
 	std::string_view texturePath("content/gameObjects/health_vial.png");
 	switch (categorie)
 	{
 		case ItemsCategories::VIAL_EXP:
-			m_gameObjectName = "Vial";
+
+			this->setGameObjectName("VExp");
 
 			texturePath = "content/gameObjects/exp_vial.png";
 			break;
 		case ItemsCategories::VIAL_HEALTH:
-			m_gameObjectName = "Vial";
+
+			this->setGameObjectName("VHealth");
 
 			texturePath = "content/gameObjects/health_vial.png";
 			break;
 		case ItemsCategories::VIAL_ATTACK_EXP:
-			m_gameObjectName = "Vial";
+
+			this->setGameObjectName("VPoisonExp");
 
 			texturePath = "content/gameObjects/poison_vial.png";
 			break;
 		case ItemsCategories::VIAL_ATTACK_HEALTH:
-			m_gameObjectName = "Vial";
+
+			this->setGameObjectName("VPoisonHealth");
 
 			texturePath = "content/gameObjects/poison_vial.png";
 			break;
@@ -45,7 +50,6 @@ Vial::Vial(/*std::string_view const& imageSpritePath, */ ItemsCategories categor
 
 	m_body.setTexture(m_texture);
 
-	// m_gameObjectName = "Vial"; // REVIEW -
 	m_body.setScale((float)game::INVENTORY_BLOCK_WIDTH / (float)m_texture.getSize().x, (float)game::INVENTORY_BLOCK_WIDTH / (float)m_texture.getSize().y);
 }
 

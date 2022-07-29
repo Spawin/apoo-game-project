@@ -513,7 +513,7 @@ bool gui::Inventory::addItem(const Item* item, game::inventory_items_types type)
 		}
 		break;
 		case game::inventory_items_types::MONEY: {
-			std::cout << "Affichage monaie\n";
+			// std::cout << "Affichage monaie\n";
 			// On affichera une seule fois le truc de la monaie
 			if (this->inventoryButtons[type].size() >= 1)
 			{

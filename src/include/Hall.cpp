@@ -65,4 +65,9 @@ const sf::IntRect& Hall::getIntRect() const
 void Hall::render(sf::RenderTarget& target)
 {
 	target.draw(this->debug_shape);
+
+	// for (auto&& mGameObject : this->hallMovablesGameObjects)
+	// {
+	// 	// mGameObject.
+	// }
 }
