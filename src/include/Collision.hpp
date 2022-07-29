@@ -18,7 +18,8 @@ public:
 	 *
 	 * @return std::shared_ptr<GameObject>
 	 */
-	std::shared_ptr<GameObject> getGameObject() const;
+	// std::shared_ptr<GameObject> getGameObject() const;
+	GameObject const& getGameObject() const;
 
 	inline void test() const {}; // TODO - Remove this after
 

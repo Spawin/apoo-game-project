@@ -15,3 +15,8 @@ Collision::~Collision()
 {
 	// delete m_gameObject;
 }
+
+GameObject const& Collision::getGameObject() const
+{
+	return m_gameObject;
+}
