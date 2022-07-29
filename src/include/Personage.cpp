@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 
+#include "include/BoxingGloves.hpp"
 #include "include/GameMaster.hpp"
 #include "include/Money.hpp"
 #include "include/Shield.hpp"
@@ -114,7 +115,7 @@ void Personage::initBag()
 
 	// Start Armoies
 	this->bag->addItem(new Shield(), game::inventory_items_types::ARMORY);
-	// this->bag->addItem(new Sword(), game::inventory_items_types::ARMORY);
+	this->bag->addItem(new BoxingGloves(), game::inventory_items_types::ARMORY);
 	this->bag->addItem(new Sword(), game::inventory_items_types::ARMORY);
 
 	// Start teleportkey
