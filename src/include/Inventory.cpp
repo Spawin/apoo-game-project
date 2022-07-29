@@ -86,6 +86,23 @@ bool Inventory::remove(Item* item, game::inventory_items_types type)
 	return true;
 }
 
+bool Inventory::haveThisItem(ItemsCategories const& categorie) const
+{
+
+	for (auto&& v : this->items)
+	{
+		for (size_t i = 0; i < v.second.size(); i++)
+		{
+			if (v.second[i]->getCategorie() == categorie)
+			{
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+
 int Inventory::getTypeLimit(game::inventory_items_types type)
 {
 	return this->limitPerType[type];

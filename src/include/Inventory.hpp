@@ -9,6 +9,7 @@
 	#include "include/consts.hpp"
 
 class Item;
+enum class ItemsCategories;
 namespace gui
 {
 class Inventory;
@@ -34,6 +35,8 @@ public:
 	bool add(Item* item, game::inventory_items_types type);
 	bool move(Item* item, game::inventory_items_types type, Inventory* to_inventory);
 	bool remove(Item* item, game::inventory_items_types type);
+
+	bool haveThisItem(ItemsCategories const& categorie) const;
 
 	int getTypeLimit(game::inventory_items_types type);
 	int getFreePlace(game::inventory_items_types type);

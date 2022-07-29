@@ -44,6 +44,11 @@ bool Bag::removeItem(Item* item, game::inventory_items_types type)
 	return this->inventory->remove(item, type);
 }
 
+bool Bag::haveThisItem(ItemsCategories const& categorie) const
+{
+	return this->inventory->haveThisItem(categorie);
+}
+
 Inventory* Bag::getInventory()
 {
 	return this->inventory;

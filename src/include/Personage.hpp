@@ -3,6 +3,7 @@
 
 #include "include/Bag.hpp"
 #include "include/Gui.hpp"
+#include "include/Item.hpp"
 #include "include/MovableGameObject.hpp"
 #include "include/consts.hpp"
 #include <string>
@@ -13,6 +14,7 @@ namespace gui
 {
 class ProgressBar;
 }
+enum class ItemsCategories;
 
 class Personage : public MovableGameObject
 {
@@ -31,6 +33,7 @@ public:
 	virtual ~Personage();
 
 	// Fonctions/Méthodes
+	bool haveThisItem(ItemsCategories const& categorie) const;
 	// Getters
 	const int& getHealthLevel() const
 	{

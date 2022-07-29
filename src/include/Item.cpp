@@ -16,3 +16,7 @@ Item::~Item()
 {}
 
 // Fonctions/Méthodes
+ItemsCategories const& Item::getCategorie() const
+{
+	return this->categorie;
+}

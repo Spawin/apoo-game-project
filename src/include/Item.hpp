@@ -18,7 +18,8 @@ enum class ItemsCategories
 	TELEPORTKEY, //
 	//
 	DEFEND,
-	ATTACK_BODY_TO_BODY,
+	ATTACK_BODY_TO_BODY,  // Boxing gloves
+	ATTACK_SEMI_DISTANCE, // Sword
 	ATTACK_DISTANCE,
 	// HEALTH_RESTORE,
 	// EXP_RESTORE,
@@ -40,6 +41,12 @@ public:
 	~Item();
 
 	// Fonctions/Méthodes
+	/**
+	 * @brief Get the Categorie object
+	 *
+	 * @return ItemsCategories&
+	 */
+	ItemsCategories const& getCategorie() const;
 
 	/**
 	 * @brief émit quand il entre en contacte avec un autre élément
@@ -56,6 +63,20 @@ public:
 	 */
 	virtual void useOn(Personage& personage) = 0;
 
+	/**
+	 * @brief Returne la valeur de l'effet de cet arme
+	 *
+	 * @return unsigned const&
+	 */
+	unsigned const& getValue() const
+	{
+		return value;
+	}
+	float const& getRangeOfAction() const
+	{
+		return rangeOfAction;
+	}
+
 protected:
 	// Variables
 	/**
@@ -63,6 +84,11 @@ protected:
 	 *
 	 */
 	unsigned value;
+	/**
+	 * @brief rayon d'action de l'item
+	 *
+	 */
+	float rangeOfAction;
 	/**
 	 * @brief Représente les categories d'item.
 	 * utilis pour définir les éffets...

@@ -35,6 +35,8 @@ private:
 	// float waitAnimationEnd;
 
 	// Fonctions d'initialisation
+
+	bool haveThisItem(ItemsCategories const& categorie) const;
 };
 
 #endif // __PLAYER_HPP__

@@ -1,4 +1,5 @@
 #include "include/Player.hpp"
+#include "include/Item.hpp"
 
 // Fonction static
 
@@ -39,7 +40,7 @@ void Player::manageMove(const float& deltaTime)
 	}
 
 	//* ATTACK_BOXING_GLOVES
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::B))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::B) && this->haveThisItem(ItemsCategories::ATTACK_BODY_TO_BODY))
 	{
 		if (this->personage->getAnimationComponent()->canPlay("RIGHT_ATTACK_BOXING_GLOVES"))
 		{
@@ -57,7 +58,7 @@ void Player::manageMove(const float& deltaTime)
 		}
 	}
 	//* ATTACK_SWORD
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && this->haveThisItem(ItemsCategories::ATTACK_SEMI_DISTANCE))
 	{
 		if (this->personage->getAnimationComponent()->canPlay("RIGHT_ATTACK_SWORD"))
 		{
@@ -75,7 +76,7 @@ void Player::manageMove(const float& deltaTime)
 		}
 	}
 	//* DEFEND_SHIELD
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && this->haveThisItem(ItemsCategories::DEFEND))
 	{
 		if (this->personage->getAnimationComponent()->canPlay("RIGHT_DEFEND_SHIELD"))
 		{
@@ -167,41 +168,6 @@ void Player::manageMove(const float& deltaTime)
 	}
 }
 
-/*
-
-void Player::updateAnimation(const float& deltaTime)
-{
-	//! A enlever. Juste pour les tests
-	// HURT
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::H))
-	{
-		std::string animationName = "HURT";
-		if (this->lastSideIsRight)
-		{
-			animationName = "RIGHT_" + animationName;
-		}
-		else
-		{
-			animationName = "LEFT_" + animationName;
-		}
-		this->personage->getAnimationComponent()->play(animationName, deltaTime);
-	}
-	// DIE
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
-	{
-		std::string animationName = "DIE";
-		if (this->lastSideIsRight)
-		{
-			animationName = "RIGHT_" + animationName;
-		}
-		else
-		{
-			animationName = "LEFT_" + animationName;
-		}
-		this->personage->getAnimationComponent()->play(animationName, deltaTime);
-	}
-}
-// */
 void Player::updateMousePosWindow(sf::Vector2i mousePosWindow)
 {
 	this->personage->updateMousePosWindow(mousePosWindow);
@@ -217,4 +183,9 @@ void Player::update(const float& deltaTime)
 void Player::render(sf::RenderTarget& target)
 {
 	personage->show(target);
+}
+
+bool Player::haveThisItem(ItemsCategories const& categorie) const
+{
+	return this->personage->haveThisItem(categorie);
 }

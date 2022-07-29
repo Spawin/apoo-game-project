@@ -114,9 +114,9 @@ void Personage::initBag()
 	this->bag->addItem(new Vial(ItemsCategories::VIAL_ATTACK_EXP), game::inventory_items_types::VIAL);
 
 	// Start Armoies
-	this->bag->addItem(new Shield(), game::inventory_items_types::ARMORY);
+	// this->bag->addItem(new Shield(), game::inventory_items_types::ARMORY);
 	this->bag->addItem(new BoxingGloves(), game::inventory_items_types::ARMORY);
-	this->bag->addItem(new Sword(), game::inventory_items_types::ARMORY);
+	// this->bag->addItem(new Sword(), game::inventory_items_types::ARMORY);
 
 	// Start teleportkey
 	this->bag->addItem(new TeleportKey(), game::inventory_items_types::ARMORY);
@@ -162,6 +162,11 @@ Personage::~Personage()
 }
 
 //
+bool Personage::haveThisItem(ItemsCategories const& categorie) const
+{
+	return this->bag->haveThisItem(categorie);
+}
+
 sf::Vector2f Personage::calculateProgressBarsPosition()
 {
 	return sf::Vector2f(this->getPosition()->getPosition().x, this->getPosition()->getPosition().y - 150.f);

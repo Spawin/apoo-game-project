@@ -9,6 +9,7 @@
 class NotMovableGameObject;
 class Inventory;
 class Item;
+enum class ItemsCategories;
 class Collision;
 
 class Bag : public NotMovableGameObject
@@ -22,6 +23,8 @@ public:
 	bool addItem(Item* item, game::inventory_items_types type);
 	bool moveItem(Item* item, game::inventory_items_types type, Inventory* to_inventory);
 	bool removeItem(Item* item, game::inventory_items_types type);
+
+	bool haveThisItem(ItemsCategories const& categorie) const;
 
 	Inventory* getInventory();
 	/**

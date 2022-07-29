@@ -6,7 +6,7 @@
 
 // Constructeurs/Destructeur
 Sword::Sword() :
-	Armory("content/gameObjects/sword.png", ItemsCategories::ATTACK_BODY_TO_BODY)
+	Armory("content/gameObjects/sword.png", ItemsCategories::ATTACK_SEMI_DISTANCE)
 {
 	// m_gameObjectName = "";
 	this->setGameObjectName("Sword");
