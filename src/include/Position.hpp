@@ -31,6 +31,7 @@ public:
 	 * @return float
 	 */
 	float getDistanceWith(Position const& autre) const;
+	float getDistanceWith(float const& x, float const& y) const;
 
 	/**
 	 * @brief Set the Position object

@@ -1,4 +1,5 @@
 #include "include/Player.hpp"
+#include "include/GameObject.hpp"
 #include "include/Item.hpp"
 
 // Fonction static
@@ -10,6 +11,7 @@ Player::Player(Personage* personage) :
 	personage(personage)
 {
 	this->lastSideIsRight = true;
+	this->attackSateInformations.attacking = false;
 
 	this->personage->setGameObjectName("Player");
 }
@@ -30,6 +32,40 @@ Personage* Player::getPersonage()
 	return this->personage;
 }
 
+void Player::manageActionToOtherPersonage(/*game::ItemsCategories categorie*/)
+{
+	if (this->attackSateInformations.attacking && this->attackSateInformations.waitingForActionToOtherPersonageEnd <= 0)
+	{
+		// REVIEW - Fouiller les énemies qui sont dans le hall directement...
+		for (auto&& value : Personage::getPersonages())
+		{
+			if (value.second->getGameObjectName().find("Enemy") != std::string::npos)
+			{
+				short& side = this->attackSateInformations.side;
+				Item const* item = this->getFirstItemMatch(game::ItemsCategories::ATTACK_BODY_TO_BODY);
+
+				std::cout << std::endl;
+				std::cout << "Position du joueur " << this->personage->getGameObjectName() << (*this->personage->getPosition()) << std::endl;
+				std::cout << "Position du joueur " << value.second->getGameObjectName() << (*value.second->getPosition()) << std::endl;
+				std::cout << "Endroit de l'attaque : x=" << this->personage->getPosition()->getX() + side * item->getRangeOfAction() << " y=" << this->personage->getPosition()->getY() << std::endl;
+				std::cout << "Distance entre les deux " << value.second->getPosition()->getDistanceWith(this->personage->getPosition()->getX() + side * item->getRangeOfAction(), this->personage->getPosition()->getY()) << std::endl;
+				// Sur x on ajoute une valeur de décalage (négative pour gauche et positive pour droite) pour indiquer la zone d'action de l'item
+				if (value.second->getPosition()->getDistanceWith(this->personage->getPosition()->getX() + side * item->getRangeOfAction(), this->personage->getPosition()->getY()) < item->getRangeOfAction())
+				{
+					// On gère l'attaque
+					std::cout << "On le touche mal mal\n";
+					value.second->receiveItemAction(item->getValue(), item->getCategorie());
+				}
+			}
+		}
+
+		this->attackSateInformations.attacking = false;
+		this->attackSateInformations.waitingForActionToOtherPersonageEnd = 0.0f;
+		this->attackSateInformations.itemCategorie = game::ItemsCategories::NONE;
+		this->attackSateInformations.side = 0;
+	}
+}
+
 void Player::manageMove(const float& deltaTime)
 {
 	// On ne fait pas de mouvement quand on est mort...
@@ -40,10 +76,16 @@ void Player::manageMove(const float& deltaTime)
 	}
 
 	//* ATTACK_BOXING_GLOVES
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::B) && this->haveThisItem(ItemsCategories::ATTACK_BODY_TO_BODY))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::B) && this->haveThisItem(game::ItemsCategories::ATTACK_BODY_TO_BODY))
 	{
 		if (this->personage->getAnimationComponent()->canPlay("RIGHT_ATTACK_BOXING_GLOVES"))
 		{
+			this->attackSateInformations.attacking = true;
+			this->attackSateInformations.waitingForActionToOtherPersonageEnd = this->getFirstItemMatch(game::ItemsCategories::ATTACK_BODY_TO_BODY)->getWaitingTimeForAction();
+			this->attackSateInformations.itemCategorie = game::ItemsCategories::ATTACK_BODY_TO_BODY;
+			this->attackSateInformations.side = this->lastSideIsRight ? 1 : -1;
+			this->manageActionToOtherPersonage(); //
+
 			std::string animationName = "ATTACK_BOXING_GLOVES";
 			if (this->lastSideIsRight)
 			{
@@ -58,7 +100,7 @@ void Player::manageMove(const float& deltaTime)
 		}
 	}
 	//* ATTACK_SWORD
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && this->haveThisItem(ItemsCategories::ATTACK_SEMI_DISTANCE))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && this->haveThisItem(game::ItemsCategories::ATTACK_SEMI_DISTANCE))
 	{
 		if (this->personage->getAnimationComponent()->canPlay("RIGHT_ATTACK_SWORD"))
 		{
@@ -76,7 +118,7 @@ void Player::manageMove(const float& deltaTime)
 		}
 	}
 	//* DEFEND_SHIELD
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && this->haveThisItem(ItemsCategories::DEFEND))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && this->haveThisItem(game::ItemsCategories::DEFEND))
 	{
 		if (this->personage->getAnimationComponent()->canPlay("RIGHT_DEFEND_SHIELD"))
 		{
@@ -175,6 +217,14 @@ void Player::updateMousePosWindow(sf::Vector2i mousePosWindow)
 
 void Player::update(const float& deltaTime)
 {
+	if (this->attackSateInformations.attacking)
+	{
+		// On met à jour le décompte pour l'attaque
+		this->attackSateInformations.waitingForActionToOtherPersonageEnd -= deltaTime;
+
+		this->manageActionToOtherPersonage();
+	}
+
 	this->manageMove(deltaTime);
 
 	this->personage->update();
@@ -185,7 +235,12 @@ void Player::render(sf::RenderTarget& target)
 	personage->show(target);
 }
 
-bool Player::haveThisItem(ItemsCategories const& categorie) const
+bool Player::haveThisItem(game::ItemsCategories const& categorie) const
 {
 	return this->personage->haveThisItem(categorie);
+}
+
+Item const* Player::getFirstItemMatch(game::ItemsCategories const& categorie) const
+{
+	return this->personage->getFirstItemMatch(categorie);
 }

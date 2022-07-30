@@ -5,7 +5,7 @@
 // Fonctions d'initialisation
 
 // Constructeurs/Destructeur
-Armory::Armory(std::string_view const& imageSpritePath, ItemsCategories categorie) :
+Armory::Armory(std::string_view const& imageSpritePath, game::ItemsCategories categorie) :
 	Item(imageSpritePath, categorie)
 {
 }

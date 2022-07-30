@@ -6,7 +6,7 @@
 
 // Constructeurs/Destructeur
 Money::Money() :
-	Item("content/gameObjects/gold_coin.png", ItemsCategories::MONEY)
+	Item("content/gameObjects/gold_coin.png", game::ItemsCategories::MONEY)
 {
 	m_body.setScale((float)game::INVENTORY_BLOCK_WIDTH / (float)m_texture.getSize().x, (float)game::INVENTORY_BLOCK_WIDTH / (float)m_texture.getSize().y);
 }
@@ -24,10 +24,10 @@ void Money::onCollisionEnter(Collision const& collision) const
 void Money::update()
 {}
 
-void Money::useOn(Personage& personage)
-{
-	std::cerr << "!!! Utilisation de l'argent sur " << personage.getGameObjectName() << std::endl;
-}
+// void Money::useOn(Personage& personage)
+// {
+// 	std::cerr << "!!! Utilisation de l'argent sur " << personage.getGameObjectName() << std::endl;
+// }
 
 void Money::updatePosition(float posX, float posY)
 {

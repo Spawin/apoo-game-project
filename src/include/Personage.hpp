@@ -6,6 +6,7 @@
 #include "include/Item.hpp"
 #include "include/MovableGameObject.hpp"
 #include "include/consts.hpp"
+#include <map>
 #include <string>
 
 class Bag;
@@ -14,10 +15,13 @@ namespace gui
 {
 class ProgressBar;
 }
-enum class ItemsCategories;
+// enum class ItemsCategories;
+class Item;
 
 class Personage : public MovableGameObject
 {
+	using PersonageMap = std::map<std::string, Personage*>;
+
 public:
 	explicit Personage(bool isPlayer = false);
 	// NOTE -  Pour empêcher la copie de la classe lors de l'initialisati d...
@@ -33,7 +37,8 @@ public:
 	virtual ~Personage();
 
 	// Fonctions/Méthodes
-	bool haveThisItem(ItemsCategories const& categorie) const;
+	bool haveThisItem(game::ItemsCategories const& categorie) const;
+	Item const* getFirstItemMatch(game::ItemsCategories const& categorie) const;
 	// Getters
 	const int& getHealthLevel() const
 	{
@@ -71,47 +76,15 @@ public:
 	virtual void simpleAttack(Personage& target) = 0;
 	virtual void specialAttack(Personage& target) = 0;
 
-	/**
-	 * @brief pour recevoir les dégats de santé
-	 * Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)
-	 *
-	 * @param value
-	 * @return unsigned
-	 */
-	virtual unsigned receiveHealthDamage(int value);
-	/**
-	 * @brief pour recevoir les dégats d'exp
-	 * Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)
-	 *
-	 * @param value
-	 * @return unsigned
-	 */
-	virtual unsigned receiveExpDamage(int value);
-	/**
-	 * @brief pour recevoir les soins santé
-	 * Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)
-	 *
-	 * @param value
-	 * @return unsigned
-	 */
-	virtual unsigned receiveHealthCare(int value);
-	/**
-	 * @brief pour recevoir les soins Exp
-	 * Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)
-	 *
-	 * @param value
-	 * @return unsigned
-	 */
-	virtual unsigned receiveExpCare(int value);
-	/**
-	 * @brief Pour activer la protection du bouclier.
-	 * Il faut noter que son activation est temporaire et protège la santé en diminuant l'ataque
-	 *
-	 * @param value
-	 */
-	virtual void receiveShieldboost(int value);
+	virtual unsigned receiveItemAction(int value, game::ItemsCategories categorie);
+
+	static PersonageMap getPersonages()
+	{
+		return personages;
+	}
 
 protected:
+	static PersonageMap personages;
 	Bag* bag;
 	// REVIEW - Faire les initialisation dans le cpp
 	/**
@@ -219,6 +192,46 @@ protected:
 	 * Aussi il s'agit dans ce cas d'une accélération uniforme.
 	 */
 	virtual void updatePosition(float posX, float posY) override;
+
+	/**
+	 * @brief pour recevoir les dégats de santé
+	 * Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)
+	 *
+	 * @param value
+	 * @return unsigned
+	 */
+	virtual unsigned receiveHealthDamage(int value);
+	/**
+	 * @brief pour recevoir les dégats d'exp
+	 * Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)
+	 *
+	 * @param value
+	 * @return unsigned
+	 */
+	virtual unsigned receiveExpDamage(int value);
+	/**
+	 * @brief pour recevoir les soins santé
+	 * Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)
+	 *
+	 * @param value
+	 * @return unsigned
+	 */
+	virtual unsigned receiveHealthCare(int value);
+	/**
+	 * @brief pour recevoir les soins Exp
+	 * Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)
+	 *
+	 * @param value
+	 * @return unsigned
+	 */
+	virtual unsigned receiveExpCare(int value);
+	/**
+	 * @brief Pour activer la protection du bouclier.
+	 * Il faut noter que son activation est temporaire et protège la santé en diminuant l'ataque
+	 *
+	 * @param value
+	 */
+	virtual void receiveShieldboost(int value);
 
 	void updateEXPBar();
 	void updateHPBar();

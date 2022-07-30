@@ -230,6 +230,12 @@ float Position::getDistanceWith(Position const& autre) const
 	return sqrt(delta.x * delta.x + delta.y * delta.y);
 }
 
+float Position::getDistanceWith(float const& x, float const& y) const
+{
+	auto delta = MyVector { std::min({ abs(m_x - x), abs(m_x - x - m_spaceWidth), abs(m_x - x + m_spaceWidth) }), std::min({ abs(m_y - y), abs(m_y - y - m_spaceHeight), abs(m_y - y + m_spaceHeight) }) };
+	return sqrt(delta.x * delta.x + delta.y * delta.y);
+}
+
 void Position::setPosition(float posX, float posY)
 {
 	setPreviousPosition(m_x, m_y);

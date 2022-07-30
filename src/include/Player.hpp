@@ -3,7 +3,11 @@
 
 #include "include/Personage.hpp"
 
+#include "include/Item.hpp"
+#include "include/consts.hpp"
+
 class Personage;
+class item;
 
 class Player
 {
@@ -15,6 +19,7 @@ public:
 	sf::Vector2f getPosition() const;
 	Personage* getPersonage();
 
+	void manageActionToOtherPersonage(/*game::ItemsCategories categorie*/); // REVIEW - Private?
 	void manageMove(const float& deltaTime);
 	// void updateAnimation(const float& deltaTime);
 
@@ -34,9 +39,12 @@ private:
 
 	// float waitAnimationEnd;
 
+	game::AttackSateInformations attackSateInformations;
+
 	// Fonctions d'initialisation
 
-	bool haveThisItem(ItemsCategories const& categorie) const;
+	bool haveThisItem(game::ItemsCategories const& categorie) const;
+	Item const* getFirstItemMatch(game::ItemsCategories const& categorie) const;
 };
 
 #endif // __PLAYER_HPP__

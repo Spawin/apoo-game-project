@@ -5,18 +5,20 @@
 // Fonctions d'initialisation
 
 // Constructeurs/Destructeur
-Item::Item(std::string_view const& imageSpritePath, ItemsCategories categorie) :
+Item::Item(std::string_view const& imageSpritePath, game::ItemsCategories categorie) :
 	NotMovableGameObject(imageSpritePath),
 	categorie(categorie)
 {
 	this->value = 10;
+	this->rangeOfAction = 30.f;
+	this->waitingTimeForAction = 1.f;
 }
 
 Item::~Item()
 {}
 
 // Fonctions/Méthodes
-ItemsCategories const& Item::getCategorie() const
+game::ItemsCategories const& Item::getCategorie() const
 {
 	return this->categorie;
 }

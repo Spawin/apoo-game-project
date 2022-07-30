@@ -6,32 +6,32 @@
 
 // Constructeurs/Destructeur
 // Vial::Vial(VialCategorie vialCategoriel, std::string_view const& imageSpritePath):
-Vial::Vial(/*std::string_view const& imageSpritePath, */ ItemsCategories categorie) :
+Vial::Vial(/*std::string_view const& imageSpritePath, */ game::ItemsCategories categorie) :
 	Item("content/gameObjects/health_vial.png", categorie)
 {
 	this->setGameObjectName("Vial");
 	std::string_view texturePath("content/gameObjects/health_vial.png");
 	switch (categorie)
 	{
-		case ItemsCategories::VIAL_EXP:
+		case game::ItemsCategories::VIAL_EXP:
 
 			this->setGameObjectName("VExp");
 
 			texturePath = "content/gameObjects/exp_vial.png";
 			break;
-		case ItemsCategories::VIAL_HEALTH:
+		case game::ItemsCategories::VIAL_HEALTH:
 
 			this->setGameObjectName("VHealth");
 
 			texturePath = "content/gameObjects/health_vial.png";
 			break;
-		case ItemsCategories::VIAL_ATTACK_EXP:
+		case game::ItemsCategories::VIAL_ATTACK_EXP:
 
 			this->setGameObjectName("VPoisonExp");
 
 			texturePath = "content/gameObjects/poison_vial.png";
 			break;
-		case ItemsCategories::VIAL_ATTACK_HEALTH:
+		case game::ItemsCategories::VIAL_ATTACK_HEALTH:
 
 			this->setGameObjectName("VPoisonHealth");
 
@@ -66,27 +66,27 @@ void Vial::onCollisionEnter(Collision const& collision) const
 void Vial::update()
 {}
 
-void Vial::useOn(Personage& personage)
-{
-	switch (this->categorie)
-	{
-		case ItemsCategories::VIAL_EXP:
-			personage.receiveExpCare(this->value);
-			break;
-		case ItemsCategories::VIAL_HEALTH:
-			personage.receiveHealthCare(this->value);
-			break;
-		case ItemsCategories::VIAL_ATTACK_EXP:
-			personage.receiveExpDamage(this->value);
-			break;
-		case ItemsCategories::VIAL_ATTACK_HEALTH:
-			personage.receiveHealthDamage(this->value);
-			break;
+// void Vial::useOn(Personage& personage)
+// {
+// 	switch (this->categorie)
+// 	{
+// 		case game::ItemsCategories::VIAL_EXP:
+// 			personage.receiveExpCare(this->value);
+// 			break;
+// 		case game::ItemsCategories::VIAL_HEALTH:
+// 			personage.receiveHealthCare(this->value);
+// 			break;
+// 		case game::ItemsCategories::VIAL_ATTACK_EXP:
+// 			personage.receiveExpDamage(this->value);
+// 			break;
+// 		case game::ItemsCategories::VIAL_ATTACK_HEALTH:
+// 			personage.receiveHealthDamage(this->value);
+// 			break;
 
-		default:
-			break;
-	}
-}
+// 		default:
+// 			break;
+// 	}
+// }
 
 void Vial::updatePosition(float posX, float posY)
 {

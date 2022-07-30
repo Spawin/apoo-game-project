@@ -6,7 +6,7 @@
 
 // Constructeurs/Destructeur
 Sword::Sword() :
-	Armory("content/gameObjects/sword.png", ItemsCategories::ATTACK_SEMI_DISTANCE)
+	Armory("content/gameObjects/sword.png", game::ItemsCategories::ATTACK_SEMI_DISTANCE)
 {
 	// m_gameObjectName = "";
 	this->setGameObjectName("Sword");
@@ -27,10 +27,10 @@ void Sword::onCollisionEnter(Collision const& collision) const
 void Sword::update()
 {}
 
-void Sword::useOn(Personage& personage)
-{
-	personage.receiveHealthDamage(this->value);
-}
+// void Sword::useOn(Personage& personage)
+// {
+// 	personage.receiveHealthDamage(this->value);
+// }
 
 void Sword::updatePosition(float posX, float posY)
 {

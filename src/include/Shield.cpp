@@ -6,7 +6,7 @@
 
 // Constructeurs/Destructeur
 Shield::Shield() :
-	Armory("content/gameObjects/iron_shield.png", ItemsCategories::DEFEND)
+	Armory("content/gameObjects/iron_shield.png", game::ItemsCategories::DEFEND)
 {
 	// m_gameObjectName = "";
 	this->setGameObjectName("Sword");
@@ -27,10 +27,10 @@ void Shield::onCollisionEnter(Collision const& collision) const
 void Shield::update()
 {}
 
-void Shield::useOn(Personage& personage)
-{
-	personage.receiveShieldboost(this->value);
-}
+// void Shield::useOn(Personage& personage)
+// {
+// 	personage.receiveShieldboost(this->value);
+// }
 
 void Shield::updatePosition(float posX, float posY)
 {

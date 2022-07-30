@@ -86,7 +86,7 @@ bool Inventory::remove(Item* item, game::inventory_items_types type)
 	return true;
 }
 
-bool Inventory::haveThisItem(ItemsCategories const& categorie) const
+bool Inventory::haveThisItem(game::ItemsCategories const& categorie) const
 {
 
 	for (auto&& v : this->items)
@@ -101,6 +101,22 @@ bool Inventory::haveThisItem(ItemsCategories const& categorie) const
 	}
 
 	return false;
+}
+
+Item const* Inventory::getFirstItemMatch(game::ItemsCategories const& categorie) const
+{
+	for (auto&& v : this->items)
+	{
+		for (size_t i = 0; i < v.second.size(); i++)
+		{
+			if (v.second[i]->getCategorie() == categorie)
+			{
+				return v.second[i];
+			}
+		}
+	}
+
+	return nullptr; // REVIEW - !!!
 }
 
 int Inventory::getTypeLimit(game::inventory_items_types type)

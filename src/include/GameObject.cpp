@@ -1,9 +1,16 @@
 #include "include/GameObject.hpp"
 #include "include/consts.hpp"
 #include <iostream>
+#include <string>
 
 float GameObject::m_time = 0.f;
 int GameObject::m_count = 0;
+
+// Initialisation à vide de la liste de game objects
+GameObject::GameObjectMap GameObject::gameObjects = [] {
+	GameObjectMap ret;
+	return ret;
+}();
 
 void GameObject::incrementCount()
 {
@@ -14,6 +21,8 @@ void GameObject::init()
 {
 	// On incrémente le compteur
 	GameObject::incrementCount();
+
+	GameObject::gameObjects.insert({ std::to_string(this->getGameObjectId()), this });
 }
 
 // GameObject::GameObject()
@@ -57,6 +66,7 @@ GameObject::~GameObject()
 	Collider::removeObjects(this->m_id);
 
 	// if(GameObject::)
+	GameObject::gameObjects.erase(std::to_string(this->getGameObjectId()));
 }
 
 void GameObject::show(sf::RenderTarget& window)

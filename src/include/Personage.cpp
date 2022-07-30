@@ -17,6 +17,12 @@
 
 using namespace std;
 
+// Initialisation à vide de la liste de personages
+Personage::PersonageMap Personage::personages = [] {
+	PersonageMap ret;
+	return ret;
+}();
+
 void Personage::init()
 {
 	// m_width = 32;
@@ -108,15 +114,15 @@ void Personage::initBag()
 	this->bag = new Bag();
 
 	// Satrt Vials
-	this->bag->addItem(new Vial(ItemsCategories::VIAL_HEALTH), game::inventory_items_types::VIAL);
-	this->bag->addItem(new Vial(ItemsCategories::VIAL_EXP), game::inventory_items_types::VIAL);
-	this->bag->addItem(new Vial(ItemsCategories::VIAL_ATTACK_HEALTH), game::inventory_items_types::VIAL);
-	this->bag->addItem(new Vial(ItemsCategories::VIAL_ATTACK_EXP), game::inventory_items_types::VIAL);
+	this->bag->addItem(new Vial(game::ItemsCategories::VIAL_HEALTH), game::inventory_items_types::VIAL);
+	this->bag->addItem(new Vial(game::ItemsCategories::VIAL_EXP), game::inventory_items_types::VIAL);
+	this->bag->addItem(new Vial(game::ItemsCategories::VIAL_ATTACK_HEALTH), game::inventory_items_types::VIAL);
+	this->bag->addItem(new Vial(game::ItemsCategories::VIAL_ATTACK_EXP), game::inventory_items_types::VIAL);
 
 	// Start Armoies
-	// this->bag->addItem(new Shield(), game::inventory_items_types::ARMORY);
+	this->bag->addItem(new Shield(), game::inventory_items_types::ARMORY);
 	this->bag->addItem(new BoxingGloves(), game::inventory_items_types::ARMORY);
-	// this->bag->addItem(new Sword(), game::inventory_items_types::ARMORY);
+	this->bag->addItem(new Sword(), game::inventory_items_types::ARMORY);
 
 	// Start teleportkey
 	this->bag->addItem(new TeleportKey(), game::inventory_items_types::ARMORY);
@@ -136,6 +142,8 @@ Personage::Personage(bool isPlayer) :
 	this->initEXPBar();
 	this->initHPBar();
 	this->initBag();
+
+	Personage::personages.insert({ std::to_string(this->getGameObjectId()), this });
 }
 
 // Personage::Personage(std::string_view const& imageSpritePath, bool isPlayer) :
@@ -159,12 +167,19 @@ Personage::~Personage()
 	delete this->hpBar;
 	delete this->expBar;
 	delete this->bag;
+
+	Personage::personages.erase(std::to_string(this->getGameObjectId()));
 }
 
 //
-bool Personage::haveThisItem(ItemsCategories const& categorie) const
+bool Personage::haveThisItem(game::ItemsCategories const& categorie) const
 {
 	return this->bag->haveThisItem(categorie);
+}
+
+Item const* Personage::getFirstItemMatch(game::ItemsCategories const& categorie) const
+{
+	return this->bag->getFirstItemMatch(categorie);
 }
 
 sf::Vector2f Personage::calculateProgressBarsPosition()
@@ -195,12 +210,27 @@ void Personage::increaseExp(int value)
 
 void Personage::decreaseHealth(int value)
 {
+	if (m_healthLevel == 0)
+	{
+		return;
+	}
+
 	m_healthLevel -= value;
 
 	if (m_healthLevel < 0)
 	{
 		m_healthLevel = 0;
 		// TODO - Méthode die et tous ce qui va avec
+		std::string animationName = "RIGHT_DIE";
+		// 	if (this->lastSideIsRight)
+		// 	{
+		// 		animationName = "RIGHT_" + animationName;
+		// 	}
+		// 	else
+		// 	{
+		// 		animationName = "LEFT_" + animationName;
+		// 	}
+		this->getAnimationComponent()->play(animationName, 0.f);
 	}
 }
 
@@ -293,6 +323,40 @@ void Personage::renderBagInventory(sf::RenderTarget& target)
 }
 
 //* ----------------------------  Gestion des effets d'item (interne externe)
+unsigned Personage::receiveItemAction(int value, game::ItemsCategories categorie)
+{
+	switch (categorie)
+	{
+		case game::ItemsCategories::DEFEND:
+
+			break;
+		case game::ItemsCategories::ATTACK_BODY_TO_BODY:
+			this->receiveHealthDamage(value);
+			break;
+		case game::ItemsCategories::ATTACK_SEMI_DISTANCE:
+
+			break;
+		case game::ItemsCategories::ATTACK_DISTANCE:
+
+			break;
+		case game::ItemsCategories::VIAL_EXP:
+
+			break;
+		case game::ItemsCategories::VIAL_HEALTH:
+
+			break;
+		case game::ItemsCategories::VIAL_ATTACK_EXP:
+
+			break;
+		case game::ItemsCategories::VIAL_ATTACK_HEALTH:
+
+			break;
+
+		default:
+			break;
+	}
+	return 0;
+}
 // TODO - Utiliser tous les systèmesde complexification de combat
 unsigned Personage::receiveHealthDamage(int value)
 {

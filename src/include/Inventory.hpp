@@ -9,7 +9,7 @@
 	#include "include/consts.hpp"
 
 class Item;
-enum class ItemsCategories;
+// enum class ItemsCategories;
 namespace gui
 {
 class Inventory;
@@ -36,7 +36,17 @@ public:
 	bool move(Item* item, game::inventory_items_types type, Inventory* to_inventory);
 	bool remove(Item* item, game::inventory_items_types type);
 
-	bool haveThisItem(ItemsCategories const& categorie) const;
+	bool haveThisItem(game::ItemsCategories const& categorie) const;
+
+	/**
+	 * @brief Retourne le premier item qui vérifie le paramètre.
+	 * NOTE - S'assurer d'appeler haveThisItem avant pour vérifier la disponibilité de l'objet recherché.
+	 * Si l'item n'est pas trouvé un retour null_ptr est envoyé.
+	 *
+	 * @param categorie
+	 * @return Item const*
+	 */
+	Item const* getFirstItemMatch(game::ItemsCategories const& categorie) const;
 
 	int getTypeLimit(game::inventory_items_types type);
 	int getFreePlace(game::inventory_items_types type);

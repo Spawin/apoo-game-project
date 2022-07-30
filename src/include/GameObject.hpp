@@ -6,6 +6,7 @@
 #include "include/MyVector.hpp"
 #include "include/Position.hpp"
 #include "include/Rigidbody.hpp"
+#include <map>
 #include <string>
 
 class Collision;
@@ -15,6 +16,8 @@ class Position;
 
 class GameObject
 {
+	using GameObjectMap = std::map<std::string, GameObject*>;
+
 public:
 	// explicit GameObject();
 	// /**
@@ -87,12 +90,19 @@ public:
 
 	Collider const& getCollider() const;
 
+	static GameObjectMap getGameobjects()
+	{
+		return gameObjects;
+	}
+
 protected:
+	static GameObjectMap gameObjects;
 	/**
 	 * @brief Pour initialiser les valeur par défaut du GameObject
 	 *
 	 */
 	void init();
+
 	virtual void initPosition(float posX, float posY) = 0;
 	// identifiant unique du game Object
 	const int m_id { GameObject::m_count + 1 };

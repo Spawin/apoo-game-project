@@ -69,6 +69,30 @@ enum inventory_items_types
 	MONEY
 };
 
+/**
+ * @brief Représente les catégories d'items.
+ * TODO - Compléter....
+ * Va surtout aider dans l'utilisation de l'item et son comportement
+ */
+enum class ItemsCategories
+{
+	NONE, //! N'est pas un item..
+	//
+	MONEY,
+	TELEPORTKEY, //
+	//
+	DEFEND,
+	ATTACK_BODY_TO_BODY,  // Boxing gloves
+	ATTACK_SEMI_DISTANCE, // Sword
+	ATTACK_DISTANCE,
+	// HEALTH_RESTORE,
+	// EXP_RESTORE,
+	VIAL_EXP,
+	VIAL_HEALTH,
+	VIAL_ATTACK_EXP,
+	VIAL_ATTACK_HEALTH,
+};
+
 //* ------------------- Variables
 // static float SCREEN_SCALING_FACTOR = 1.f;
 // sf::VideoMode* vm = nullptr;
@@ -81,6 +105,20 @@ inline std::string const& GAME_NAME()
 	static std::string ret = "---";
 	return ret;
 }
+
+struct AttackSateInformations
+{
+	/**
+	 * @brief Le temps d'attente pour que l'ataque soit éffective.
+	 * C'est après cette attente qu'on envois les dégats
+	 *
+	 */
+	float waitingForActionToOtherPersonageEnd;
+	bool attacking;
+	game::ItemsCategories itemCategorie;
+	// -1 pour gauche, 1 pour doite  et zéro pour neutre
+	short int side;
+};
 
 } // namespace gui
 

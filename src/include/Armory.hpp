@@ -10,7 +10,7 @@ class Armory : public Item
 {
 public:
 	// Constructeurs/Destructeur
-	Armory(std::string_view const& imageSpritePath, ItemsCategories categorie);
+	Armory(std::string_view const& imageSpritePath, game::ItemsCategories categorie);
 	~Armory();
 
 	// Fonctions/Méthodes

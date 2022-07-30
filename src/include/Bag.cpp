@@ -44,9 +44,14 @@ bool Bag::removeItem(Item* item, game::inventory_items_types type)
 	return this->inventory->remove(item, type);
 }
 
-bool Bag::haveThisItem(ItemsCategories const& categorie) const
+bool Bag::haveThisItem(game::ItemsCategories const& categorie) const
 {
 	return this->inventory->haveThisItem(categorie);
+}
+
+Item const* Bag::getFirstItemMatch(game::ItemsCategories const& categorie) const
+{
+	return this->inventory->getFirstItemMatch(categorie);
 }
 
 Inventory* Bag::getInventory()

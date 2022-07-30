@@ -6,7 +6,7 @@
 
 // Constructeurs/Destructeur
 BoxingGloves::BoxingGloves() :
-	Armory("content/gameObjects/boxing_gloves.png", ItemsCategories::ATTACK_BODY_TO_BODY)
+	Armory("content/gameObjects/boxing_gloves.png", game::ItemsCategories::ATTACK_BODY_TO_BODY)
 {
 	// m_gameObjectName = "";
 	this->setGameObjectName("BoxingGloves");
@@ -27,10 +27,10 @@ void BoxingGloves::onCollisionEnter(Collision const& collision) const
 void BoxingGloves::update()
 {}
 
-void BoxingGloves::useOn(Personage& personage)
-{
-	personage.receiveHealthDamage(this->value);
-}
+// void BoxingGloves::useOn(Personage& personage)
+// {
+// 	personage.receiveHealthDamage(this->value);
+// }
 
 void BoxingGloves::updatePosition(float posX, float posY)
 {

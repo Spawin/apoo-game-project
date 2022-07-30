@@ -6,7 +6,7 @@
 
 // Constructeurs/Destructeur
 TeleportKey::TeleportKey() :
-	Item("content/gameObjects/teleportKey.png", ItemsCategories::TELEPORTKEY)
+	Item("content/gameObjects/teleportKey.png", game::ItemsCategories::TELEPORTKEY)
 {
 	m_body.setScale((float)game::INVENTORY_BLOCK_WIDTH / (float)m_texture.getSize().x, (float)game::INVENTORY_BLOCK_WIDTH / (float)m_texture.getSize().y);
 }
@@ -24,10 +24,10 @@ void TeleportKey::onCollisionEnter(Collision const& collision) const
 void TeleportKey::update()
 {}
 
-void TeleportKey::useOn(Personage& personage)
-{
-	std::cerr << "Utilisation de la clé de téléportation sur " << personage.getGameObjectName() << std::endl;
-}
+// void TeleportKey::useOn(Personage& personage)
+// {
+// 	std::cerr << "Utilisation de la clé de téléportation sur " << personage.getGameObjectName() << std::endl;
+// }
 
 void TeleportKey::updatePosition(float posX, float posY)
 {
