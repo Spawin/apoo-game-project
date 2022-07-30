@@ -93,6 +93,12 @@ enum class ItemsCategories
 	VIAL_ATTACK_HEALTH,
 };
 
+enum AnimationSide
+{
+	LEFT,
+	RIGHT
+};
+
 //* ------------------- Variables
 // static float SCREEN_SCALING_FACTOR = 1.f;
 // sf::VideoMode* vm = nullptr;

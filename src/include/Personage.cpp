@@ -222,17 +222,16 @@ void Personage::decreaseHealth(int value)
 	{
 		m_healthLevel = 0;
 		// TODO - Méthode die et tous ce qui va avec
-		std::string animationName = "RIGHT_DIE";
-		// 	if (this->lastSideIsRight)
-		// 	{
-		// 		animationName = "RIGHT_" + animationName;
-		// 	}
-		// 	else
-		// 	{
-		// 		animationName = "LEFT_" + animationName;
-		// 	}
+		std::string animationName = "DIE";
+		if (this->isLastAnimationSideRight())
+		{
+			animationName = "RIGHT_" + animationName;
+		}
+		else
+		{
+			animationName = "LEFT_" + animationName;
+		}
 		this->getAnimationComponent()->play(animationName, 0.016417f);
-		// this->getAnimationComponent()->play("RIGHT_DIE", 0.016417f);
 	}
 }
 
@@ -243,6 +242,23 @@ void Personage::decreaseExp(int value)
 	if (m_experienceLevel < 0)
 	{
 		m_experienceLevel = 0;
+	}
+}
+
+bool Personage::isLastAnimationSideRight()
+{
+	return this->getLastAnimationSide() == game::AnimationSide::RIGHT;
+}
+
+void Personage::playCorrectSideHurtAnimation()
+{
+	if (this->isLastAnimationSideRight())
+	{
+		this->getAnimationComponent()->play("RIGHT_HURT", 0.016417f);
+	}
+	else
+	{
+		this->getAnimationComponent()->play("LEFT_HURT", 0.016417f);
 	}
 }
 
@@ -334,7 +350,7 @@ unsigned Personage::receiveItemAction(int value, game::ItemsCategories categorie
 			break;
 		case game::ItemsCategories::ATTACK_BODY_TO_BODY:
 			this->receiveHealthDamage(value);
-			this->getAnimationComponent()->play("LEFT_HURT", 0.016417f);
+			this->playCorrectSideHurtanimation();
 			break;
 		case game::ItemsCategories::ATTACK_SEMI_DISTANCE:
 

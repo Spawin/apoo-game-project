@@ -10,7 +10,8 @@
 Player::Player(Personage* personage) :
 	personage(personage)
 {
-	this->lastSideIsRight = true;
+	// this->lastSideIsRight = true;
+	this->personage->setLastAnimationSide(game::AnimationSide::RIGHT);
 	this->attackSateInformations.attacking = false;
 
 	this->personage->setGameObjectName("Player");
@@ -87,11 +88,11 @@ void Player::manageMove(const float& deltaTime)
 				this->attackSateInformations.attacking = true;
 				this->attackSateInformations.waitingForActionToOtherPersonageEnd = this->getFirstItemMatch(game::ItemsCategories::ATTACK_BODY_TO_BODY)->getWaitingTimeForAction();
 				this->attackSateInformations.itemCategorie = game::ItemsCategories::ATTACK_BODY_TO_BODY;
-				this->attackSateInformations.side = this->lastSideIsRight ? 1 : -1;
+				this->attackSateInformations.side = this->isLastAnimationSideRight() ? 1 : -1;
 				this->manageActionToOtherPersonage(); //
 
 				std::string animationName = "ATTACK_BOXING_GLOVES";
-				if (this->lastSideIsRight)
+				if (this->isLastAnimationSideRight())
 				{
 					animationName = "RIGHT_" + animationName;
 				}
@@ -109,7 +110,8 @@ void Player::manageMove(const float& deltaTime)
 			if (this->personage->getAnimationComponent()->canPlay("RIGHT_ATTACK_SWORD"))
 			{
 				std::string animationName = "ATTACK_SWORD";
-				if (this->lastSideIsRight)
+				// if (this->lastSideIsRight)
+				if (this->isLastAnimationSideRight())
 				{
 					animationName = "RIGHT_" + animationName;
 				}
@@ -127,7 +129,8 @@ void Player::manageMove(const float& deltaTime)
 			if (this->personage->getAnimationComponent()->canPlay("RIGHT_DEFEND_SHIELD"))
 			{
 				std::string animationName = "DEFEND_SHIELD";
-				if (this->lastSideIsRight)
+				// if (this->lastSideIsRight)
+				if (this->isLastAnimationSideRight())
 				{
 					animationName = "RIGHT_" + animationName;
 				}
@@ -183,7 +186,8 @@ void Player::manageMove(const float& deltaTime)
 						this->personage->getAnimationComponent()->play("LEFT_WALK", deltaTime);
 					}
 
-					this->lastSideIsRight = false;
+					// this->lastSideIsRight = false;
+					this->personage->setLastAnimationSide(game::AnimationSide::LEFT);
 				}
 				else
 				{
@@ -193,7 +197,8 @@ void Player::manageMove(const float& deltaTime)
 						this->personage->getAnimationComponent()->play("RIGHT_WALK", deltaTime);
 					}
 
-					this->lastSideIsRight = true;
+					// this->lastSideIsRight = true;
+					this->personage->setLastAnimationSide(game::AnimationSide::RIGHT);
 				}
 
 				speed.x *= deltaTime * game::PERSONAGE_MOVE_VELOCITY;
@@ -205,7 +210,8 @@ void Player::manageMove(const float& deltaTime)
 	}
 
 	// Mouvement par défaut (souvent de faible priorité)
-	if (this->lastSideIsRight)
+	// if (this->lastSideIsRight)
+	if (this->isLastAnimationSideRight())
 	{
 		this->personage->getAnimationComponent()->play("RIGHT_IDLE", deltaTime);
 	}
@@ -248,4 +254,14 @@ bool Player::haveThisItem(game::ItemsCategories const& categorie) const
 Item const* Player::getFirstItemMatch(game::ItemsCategories const& categorie) const
 {
 	return this->personage->getFirstItemMatch(categorie);
+}
+
+game::AnimationSide Player::getLastAnimationSide()
+{
+	return this->personage->getLastAnimationSide();
+}
+
+bool Player::isLastAnimationSideRight()
+{
+	return this->getLastAnimationSide() == game::AnimationSide::RIGHT;
 }

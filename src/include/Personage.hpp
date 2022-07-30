@@ -78,6 +78,21 @@ public:
 
 	virtual unsigned receiveItemAction(int value, game::ItemsCategories categorie);
 
+	/**
+	 * @brief Get the Last Animation Side
+	 *
+	 * @return game::AnimationSide
+	 */
+	game::AnimationSide const& getLastAnimationSide()
+	{
+		return lastAnimationSide;
+	}
+
+	void setLastAnimationSide(game::AnimationSide side)
+	{
+		lastAnimationSide = side;
+	}
+
 	static PersonageMap getPersonages()
 	{
 		return personages;
@@ -85,6 +100,11 @@ public:
 
 protected:
 	static PersonageMap personages;
+	/**
+	 * @brief Permet de controler de quelque coté diriger une animation (gauche ou droite)
+	 *
+	 */
+	game::AnimationSide lastAnimationSide;
 	Bag* bag;
 	// REVIEW - Faire les initialisation dans le cpp
 	/**
@@ -127,6 +147,12 @@ protected:
 	 * @param value
 	 */
 	void decreaseExp(int value);
+	bool isLastAnimationSideRight();
+	/**
+	 * @brief Pour l'animation HURT en tenant compte du coté vers lequel est dirigé le personage
+	 *
+	 */
+	void playCorrectSideHurtAnimation();
 
 	// La quantité de vie du personnage
 	int m_healthLevel { 100 };

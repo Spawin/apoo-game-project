@@ -25,14 +25,11 @@ public:
 private:
 	// Variables
 	Personage* personage;
-	/**
-	 * @brief Permet de controler de quelque coté diriger une animation (gauche ou droite)
-	 * TODO - Placer cela dans l'animation!
-	 *
-	 */
-	bool lastSideIsRight;
 
 	// Fonctions d'initialisation
+
+	game::AnimationSide getLastAnimationSide();
+	bool isLastAnimationSideRight();
 };
 
 #endif // __ENEMY_HPP__

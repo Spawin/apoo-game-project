@@ -35,7 +35,7 @@ private:
 	 * TODO - Placer cela dans l'animation!
 	 *
 	 */
-	bool lastSideIsRight;
+	// bool lastSideIsRight;
 
 	// float waitAnimationEnd;
 
@@ -45,6 +45,8 @@ private:
 
 	bool haveThisItem(game::ItemsCategories const& categorie) const;
 	Item const* getFirstItemMatch(game::ItemsCategories const& categorie) const;
+	game::AnimationSide getLastAnimationSide();
+	bool isLastAnimationSideRight();
 };
 
 #endif // __PLAYER_HPP__
