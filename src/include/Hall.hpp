@@ -11,7 +11,7 @@
 // #include "include/NotMovableGameObject.hpp"
 
 class MovableGameObject;
-// class NotMovableGameObject;
+class NotMovableGameObject;
 // class Inventory;
 // class Item;
 

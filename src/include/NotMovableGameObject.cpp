@@ -34,12 +34,12 @@ NotMovableGameObject::~NotMovableGameObject()
 // 	return this->animationComponent;
 // }
 
-bool NotMovableGameObject::addToHall(Hall* hall)
-{
-	this->hall = hall;
-	this->setPositionMovementLimit(this->hall);
-	return true;
-}
+// bool NotMovableGameObject::addToHall(Hall* hall)
+// {
+// 	this->hall = hall;
+// 	// this->setPositionMovementLimit(this->hall);
+// 	return true;
+// }
 
 void NotMovableGameObject::show(sf::RenderTarget& window)
 {
@@ -53,7 +53,8 @@ void NotMovableGameObject::setPosition(sf::Vector2f const& coordinates)
 	this->updatePosition(coordinates.x, coordinates.y);
 }
 
-void NotMovableGameObject::setPositionMovementLimit(const Hall* hall)
-{
-	this->m_position->setPositionMovementLimit(hall->getIntRect());
-}
+// void NotMovableGameObject::setPositionMovementLimit(sf::IntRect const& hall)
+// {
+// 	// this->m_position->setPositionMovementLimit(hall->getIntRect());
+// 	this->m_position->setPositionMovementLimit(hall);
+// }

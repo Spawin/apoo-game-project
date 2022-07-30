@@ -2,7 +2,7 @@
 	#define __NOT_MOVABLE_GAME_OBJECT_HPP__
 
 	#include "include/GameObject.hpp"
-	#include "include/Hall.hpp"
+	// #include "include/Hall.hpp"
 	#include "include/Position.hpp"
 	#include "include/MyVector.hpp"
 	#include "include/Collision.hpp"
@@ -10,7 +10,7 @@
 // #include "include/AnimationComponent.hpp"
 
 class GameObject;
-class Hall;
+// class Hall;
 class Position;
 struct MyVector;
 class Collision;
@@ -40,7 +40,7 @@ public:
 	 * @return true Si le déplacement s'est effectué avec succès
 	 * @return false Si le déplacement n'a pas eu lieu
 	 */
-	virtual bool addToHall(Hall* hall);
+	// virtual bool addToHall(Hall* hall);
 
 	/**
 	 * @brief Pour dessiner l'élement dans la fenêtre.
@@ -62,7 +62,7 @@ protected:
 	// Variables
 	// Represente la salle dans laquelle se trouve actuellement le joueur
 	//! Ce pointeur ne doit pas être supprimé à ce niveau
-	const Hall* hall;
+	// const Hall* hall;
 
 	// Fonctions d'initialisation
 	virtual void initPosition(float posX, float posY) override;
@@ -73,7 +73,8 @@ protected:
 	 *
 	 * @param hall
 	 */
-	virtual void setPositionMovementLimit(const Hall* hall);
+	// virtual void setPositionMovementLimit(const Hall* hall);
+	// virtual void setPositionMovementLimit(sf::IntRect const& hall);
 
 	/**
 	 * @brief Permet de mettre à jour la position actuelle.
