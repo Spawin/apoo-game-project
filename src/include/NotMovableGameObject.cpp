@@ -46,6 +46,13 @@ void NotMovableGameObject::show(sf::RenderTarget& window)
 	GameObject::show(window);
 }
 
+void NotMovableGameObject::setPosition(sf::Vector2f const& coordinates)
+{
+	// m_position->setPosition(coordinates.x, coordinates.y);
+	// REVIEW -
+	this->updatePosition(coordinates.x, coordinates.y);
+}
+
 void NotMovableGameObject::setPositionMovementLimit(const Hall* hall)
 {
 	this->m_position->setPositionMovementLimit(hall->getIntRect());

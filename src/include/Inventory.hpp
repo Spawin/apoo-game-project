@@ -32,11 +32,18 @@ public:
 	~Inventory();
 
 	// Fonctions/Méthodes
-	bool add(Item* item, game::inventory_items_types type);
-	bool move(Item* item, game::inventory_items_types type, Inventory* to_inventory);
+	bool add(Item* item, game::inventory_items_types type, sf::Vector2f const& coordinates);
+	bool move(Item* item, game::inventory_items_types type, Inventory* to_inventory, sf::Vector2f const& coordinates);
 	bool remove(Item* item, game::inventory_items_types type);
 
 	bool haveThisItem(game::ItemsCategories const& categorie) const;
+	/**
+	 * @brief Retourne le type de l'inventaire de l'item
+	 *
+	 * @param item
+	 * @return game::inventory_items_types const&
+	 */
+	game::inventory_items_types const& getInventoryItemType(Item const* item) const;
 
 	/**
 	 * @brief Retourne le premier item qui vérifie le paramètre.
@@ -47,6 +54,7 @@ public:
 	 * @return Item const*
 	 */
 	Item const* getFirstItemMatch(game::ItemsCategories const& categorie) const;
+	Item* getFirstItemMatchNonConst(game::ItemsCategories const& categorie);
 
 	int getTypeLimit(game::inventory_items_types type);
 	int getFreePlace(game::inventory_items_types type);
@@ -54,7 +62,8 @@ public:
 	gui::Inventory* getGui();
 
 private:
-	using ItemMap = std::map<int, std::vector<Item*>>;
+	// using ItemMap = std::map<int, std::vector<Item*>>;
+	using ItemMap = std::map<game::inventory_items_types, std::vector<Item*>>;
 	// Variables
 	ItemMap items;
 	std::map<int, int> limitPerType;
@@ -68,6 +77,8 @@ private:
 	std::vector<Item*>::iterator getItemIterator(Item* item, game::inventory_items_types type);
 
 	gui::Inventory* inventoryGui;
+
+	const game::inventory_items_types defaultInventoryItemType;
 };
 
 #endif // __INVENTORY_HPP__

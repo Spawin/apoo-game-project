@@ -91,6 +91,16 @@ public:
 	{
 		return waitingTimeForAction;
 	}
+	/**
+	 * @brief Indique si l'item est à usage unique
+	 *
+	 * @return true
+	 * @return false
+	 */
+	bool const& isOneUse() const
+	{
+		return oneUse;
+	}
 
 protected:
 	// Variables
@@ -115,6 +125,11 @@ protected:
 	 *
 	 */
 	const game::ItemsCategories categorie;
+	/**
+	 * @brief Indique si l'item ne peut etre utilisé qu'une seule fois.
+	 *
+	 */
+	bool oneUse;
 
 	// Fonctions d'initialisation
 

@@ -114,23 +114,23 @@ void Personage::initBag()
 	this->bag = new Bag();
 
 	// Satrt Vials
-	this->bag->addItem(new Vial(game::ItemsCategories::VIAL_HEALTH), game::inventory_items_types::VIAL);
-	this->bag->addItem(new Vial(game::ItemsCategories::VIAL_EXP), game::inventory_items_types::VIAL);
-	this->bag->addItem(new Vial(game::ItemsCategories::VIAL_ATTACK_HEALTH), game::inventory_items_types::VIAL);
-	this->bag->addItem(new Vial(game::ItemsCategories::VIAL_ATTACK_EXP), game::inventory_items_types::VIAL);
+	this->bag->addItem(new Vial(game::ItemsCategories::VIAL_HEALTH), game::inventory_items_types::VIAL, sf::Vector2f());
+	this->bag->addItem(new Vial(game::ItemsCategories::VIAL_EXP), game::inventory_items_types::VIAL, sf::Vector2f());
+	this->bag->addItem(new Vial(game::ItemsCategories::VIAL_ATTACK_HEALTH), game::inventory_items_types::VIAL, sf::Vector2f());
+	this->bag->addItem(new Vial(game::ItemsCategories::VIAL_ATTACK_EXP), game::inventory_items_types::VIAL, sf::Vector2f());
 
 	// Start Armoies
-	this->bag->addItem(new Shield(), game::inventory_items_types::ARMORY);
-	this->bag->addItem(new BoxingGloves(), game::inventory_items_types::ARMORY);
-	this->bag->addItem(new Sword(), game::inventory_items_types::ARMORY);
+	this->bag->addItem(new Shield(), game::inventory_items_types::ARMORY, sf::Vector2f());
+	this->bag->addItem(new BoxingGloves(), game::inventory_items_types::ARMORY, sf::Vector2f());
+	this->bag->addItem(new Sword(), game::inventory_items_types::ARMORY, sf::Vector2f());
 
 	// Start teleportkey
-	this->bag->addItem(new TeleportKey(), game::inventory_items_types::ARMORY);
+	this->bag->addItem(new TeleportKey(), game::inventory_items_types::ARMORY, sf::Vector2f());
 
 	// Start money "3"
-	this->bag->addItem(new Money(), game::inventory_items_types::MONEY);
-	this->bag->addItem(new Money(), game::inventory_items_types::MONEY);
-	this->bag->addItem(new Money(), game::inventory_items_types::MONEY);
+	this->bag->addItem(new Money(), game::inventory_items_types::MONEY, sf::Vector2f());
+	this->bag->addItem(new Money(), game::inventory_items_types::MONEY, sf::Vector2f());
+	this->bag->addItem(new Money(), game::inventory_items_types::MONEY, sf::Vector2f());
 }
 
 Personage::Personage(bool isPlayer) :
@@ -172,14 +172,39 @@ Personage::~Personage()
 }
 
 //
+bool Personage::addItem(Item* item, game::inventory_items_types type, sf::Vector2f const& coordinates)
+{
+	return this->bag->addItem(item, type, coordinates);
+}
+
+bool Personage::moveItem(Item* item, game::inventory_items_types type, Inventory* to_inventory, sf::Vector2f const& coordinates)
+{
+	return this->bag->moveItem(item, type, to_inventory, coordinates);
+}
+
+bool Personage::removeItem(Item* item, game::inventory_items_types type)
+{
+	return this->bag->removeItem(item, type);
+}
+
 bool Personage::haveThisItem(game::ItemsCategories const& categorie) const
 {
 	return this->bag->haveThisItem(categorie);
 }
 
+game::inventory_items_types const& Personage::getInventoryItemType(Item const* item) const
+{
+	return this->bag->getInventoryItemType(item);
+}
+
 Item const* Personage::getFirstItemMatch(game::ItemsCategories const& categorie) const
 {
 	return this->bag->getFirstItemMatch(categorie);
+}
+
+Item* Personage::getFirstItemMatchNonConst(game::ItemsCategories const& categorie)
+{
+	return this->bag->getFirstItemMatchNonConst(categorie);
 }
 
 sf::Vector2f Personage::calculateProgressBarsPosition()

@@ -12,6 +12,7 @@ Item::Item(std::string_view const& imageSpritePath, game::ItemsCategories catego
 	this->value = 10;
 	this->rangeOfAction = 30.f;
 	this->waitingTimeForAction = 1.f;
+	this->oneUse = false;
 }
 
 Item::~Item()

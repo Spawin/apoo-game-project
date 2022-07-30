@@ -53,6 +53,7 @@ private:
 
 	bool haveThisItem(game::ItemsCategories const& categorie) const;
 	Item const* getFirstItemMatch(game::ItemsCategories const& categorie) const;
+	Item* getFirstItemMatchNonConst(game::ItemsCategories const& categorie);
 	game::AnimationSide getLastAnimationSide();
 	bool isLastAnimationSideRight();
 	/**

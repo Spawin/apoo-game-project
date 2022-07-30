@@ -29,14 +29,14 @@ Bag::~Bag()
 }
 
 // Fonctions/Méthodes
-bool Bag::addItem(Item* item, game::inventory_items_types type)
+bool Bag::addItem(Item* item, game::inventory_items_types type, sf::Vector2f const& coordinates)
 {
-	return this->inventory->add(item, type);
+	return this->inventory->add(item, type, coordinates);
 }
 
-bool Bag::moveItem(Item* item, game::inventory_items_types type, Inventory* to_inventory)
+bool Bag::moveItem(Item* item, game::inventory_items_types type, Inventory* to_inventory, sf::Vector2f const& coordinates)
 {
-	return this->inventory->move(item, type, to_inventory);
+	return this->inventory->move(item, type, to_inventory, coordinates);
 }
 
 bool Bag::removeItem(Item* item, game::inventory_items_types type)
@@ -49,9 +49,19 @@ bool Bag::haveThisItem(game::ItemsCategories const& categorie) const
 	return this->inventory->haveThisItem(categorie);
 }
 
+game::inventory_items_types const& Bag::getInventoryItemType(Item const* item) const
+{
+	return this->inventory->getInventoryItemType(item);
+}
+
 Item const* Bag::getFirstItemMatch(game::ItemsCategories const& categorie) const
 {
 	return this->inventory->getFirstItemMatch(categorie);
+}
+
+Item* Bag::getFirstItemMatchNonConst(game::ItemsCategories const& categorie)
+{
+	return this->inventory->getFirstItemMatchNonConst(categorie);
 }
 
 Inventory* Bag::getInventory()

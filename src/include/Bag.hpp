@@ -20,12 +20,14 @@ public:
 	~Bag();
 
 	// Fonctions/Méthodes
-	bool addItem(Item* item, game::inventory_items_types type);
-	bool moveItem(Item* item, game::inventory_items_types type, Inventory* to_inventory);
+	bool addItem(Item* item, game::inventory_items_types type, sf::Vector2f const& coordinates);
+	bool moveItem(Item* item, game::inventory_items_types type, Inventory* to_inventory, sf::Vector2f const& coordinates);
 	bool removeItem(Item* item, game::inventory_items_types type);
 
 	bool haveThisItem(game::ItemsCategories const& categorie) const;
+	game::inventory_items_types const& getInventoryItemType(Item const* item) const;
 	Item const* getFirstItemMatch(game::ItemsCategories const& categorie) const;
+	Item* getFirstItemMatchNonConst(game::ItemsCategories const& categorie);
 
 	Inventory* getInventory();
 	/**

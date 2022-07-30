@@ -29,7 +29,8 @@ void Inventory::iniInventorytGui()
 }
 
 // Constructeurs/Destructeur
-Inventory::Inventory(unsigned vial_capacity, unsigned armory_capacity, unsigned teleportKey_capacity, unsigned money_capacity)
+Inventory::Inventory(unsigned vial_capacity, unsigned armory_capacity, unsigned teleportKey_capacity, unsigned money_capacity) :
+	defaultInventoryItemType(game::inventory_items_types::DEFAULT)
 {
 	this->initLimitPerType(vial_capacity, armory_capacity, teleportKey_capacity, money_capacity);
 	this->initItemsMapStructure();
@@ -52,29 +53,36 @@ Inventory::~Inventory()
 }
 
 // Fonctions/Méthodes
-bool Inventory::add(Item* item, game::inventory_items_types type)
+bool Inventory::add(Item* item, game::inventory_items_types type, sf::Vector2f const& coordinates)
 {
-	// REVIEW - Cas des doublons
+	// REVIEW - Cas des doublons (même pointeur ajouté..) (utiliser l'id du game object)
 	if ((int)(this->items[type].size()) >= this->limitPerType[type])
 	{
 		return false;
 	}
+
+	// On met à jour la position de l'item (utile surtout si c'est l'inventaire d'un hall)
+	item->setPosition(coordinates);
 
 	this->items[type].push_back(item);
 
 	return this->inventoryGui->addItem(item, type);
 }
 
-bool Inventory::move(Item* item, game::inventory_items_types type, Inventory* to_inventory)
+bool Inventory::move(Item* item, game::inventory_items_types type, Inventory* to_inventory, sf::Vector2f const& coordinates)
 {
 	// REVIEW - des vérification pour voir si l'object existe réelement
 
-	// On enlève l'objet de l'inventaire actuel
-	this->items[type].erase(this->getItemIterator(item, type));
-	// On ajoute l'objet à l'inventaire actuel
-	to_inventory->add(item, type);
+	// On ajoute l'objet à l'inventaire de destination
+	if (to_inventory->add(item, type, coordinates))
+	{
+		// On enlève l'objet de l'inventaire actuel
+		this->items[type].erase(this->getItemIterator(item, type));
+		return true;
+	}
 
-	return true;
+	// TODO - Cas du false
+	return false;
 }
 
 bool Inventory::remove(Item* item, game::inventory_items_types type)
@@ -103,7 +111,39 @@ bool Inventory::haveThisItem(game::ItemsCategories const& categorie) const
 	return false;
 }
 
+game::inventory_items_types const& Inventory::getInventoryItemType(Item const* item) const
+{
+	for (auto&& v : this->items)
+	{
+		for (size_t i = 0; i < v.second.size(); i++)
+		{
+			if (v.second[i] == item)
+			{
+				return v.first;
+			}
+		}
+	}
+
+	return this->defaultInventoryItemType;
+}
+
 Item const* Inventory::getFirstItemMatch(game::ItemsCategories const& categorie) const
+{
+	for (auto&& v : this->items)
+	{
+		for (size_t i = 0; i < v.second.size(); i++)
+		{
+			if (v.second[i]->getCategorie() == categorie)
+			{
+				return v.second[i];
+			}
+		}
+	}
+
+	return nullptr; // REVIEW - !!!
+}
+
+Item* Inventory::getFirstItemMatchNonConst(game::ItemsCategories const& categorie)
 {
 	for (auto&& v : this->items)
 	{

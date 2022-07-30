@@ -68,12 +68,23 @@ void Player::manageActionToOtherPersonage(/*game::ItemsCategories categorie*/)
 						this->playerStats.enemyKilled++;
 					}
 
-					// On réitialise les informations et résultats d'attaque
+					// On supprime l'item de l'inventaire s'il est à usage unique
+					if (item->isOneUse())
+					{
+						if (this->getPersonage()->removeItem(this->getFirstItemMatchNonConst(this->attackSateInformations.itemCategorie), this->personage->getInventoryItemType(item)))
+						{
+							// REVIEW -
+						}
+					}
+
+					// On réitialise le résultat d'attaque
 					this->resetLastItemActionResult();
-					this->resetAttackSateInformations();
 				}
 			}
 		}
+
+		// On réitnitialise les informations de l'attaque
+		this->resetAttackSateInformations();
 	}
 }
 
@@ -90,6 +101,55 @@ void Player::manageMove(const float& deltaTime)
 	// bool& isAttaking = this->attackSateInformations.attacking;
 	if (!this->attackSateInformations.attacking)
 	{
+		//* VIAL
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::V))
+		{
+			//* SOINS SANTE
+			if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num1) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad1)) && this->haveThisItem(game::ItemsCategories::VIAL_HEALTH))
+			{
+				this->attackSateInformations.attacking = true; //
+				this->attackSateInformations.waitingForActionToOtherPersonageEnd = this->getFirstItemMatch(game::ItemsCategories::VIAL_HEALTH)->getWaitingTimeForAction();
+				this->attackSateInformations.itemCategorie = game::ItemsCategories::VIAL_HEALTH;
+				this->attackSateInformations.side = this->isLastAnimationSideRight() ? 1 : -1;
+				this->manageActionToOtherPersonage(); //
+
+				return;
+			}
+			//* SOINS EXP
+			if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num2) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad2)) && this->haveThisItem(game::ItemsCategories::VIAL_EXP))
+			{
+				this->attackSateInformations.attacking = true; //
+				this->attackSateInformations.waitingForActionToOtherPersonageEnd = this->getFirstItemMatch(game::ItemsCategories::VIAL_EXP)->getWaitingTimeForAction();
+				this->attackSateInformations.itemCategorie = game::ItemsCategories::VIAL_EXP;
+				this->attackSateInformations.side = this->isLastAnimationSideRight() ? 1 : -1;
+				this->manageActionToOtherPersonage(); //
+
+				return;
+			}
+			//* DIMINUE SANTE
+			if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num7) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad7)) && this->haveThisItem(game::ItemsCategories::VIAL_ATTACK_HEALTH))
+			{
+				this->attackSateInformations.attacking = true; //
+				this->attackSateInformations.waitingForActionToOtherPersonageEnd = this->getFirstItemMatch(game::ItemsCategories::VIAL_ATTACK_HEALTH)->getWaitingTimeForAction();
+				this->attackSateInformations.itemCategorie = game::ItemsCategories::VIAL_ATTACK_HEALTH;
+				this->attackSateInformations.side = this->isLastAnimationSideRight() ? 1 : -1;
+				this->manageActionToOtherPersonage(); //
+
+				return;
+			}
+			//* DIMINUE EXP
+			if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num8) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad8)) && this->haveThisItem(game::ItemsCategories::VIAL_ATTACK_EXP))
+			{
+				this->attackSateInformations.attacking = true; //
+				this->attackSateInformations.waitingForActionToOtherPersonageEnd = this->getFirstItemMatch(game::ItemsCategories::VIAL_ATTACK_EXP)->getWaitingTimeForAction();
+				this->attackSateInformations.itemCategorie = game::ItemsCategories::VIAL_ATTACK_EXP;
+				this->attackSateInformations.side = this->isLastAnimationSideRight() ? 1 : -1;
+				this->manageActionToOtherPersonage(); //
+
+				return;
+			}
+		}
+
 		//* ATTACK_BOXING_GLOVES
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::B) && this->haveThisItem(game::ItemsCategories::ATTACK_BODY_TO_BODY))
 		{
@@ -276,6 +336,11 @@ bool Player::haveThisItem(game::ItemsCategories const& categorie) const
 Item const* Player::getFirstItemMatch(game::ItemsCategories const& categorie) const
 {
 	return this->personage->getFirstItemMatch(categorie);
+}
+
+Item* Player::getFirstItemMatchNonConst(game::ItemsCategories const& categorie)
+{
+	return this->personage->getFirstItemMatchNonConst(categorie);
 }
 
 game::AnimationSide Player::getLastAnimationSide()

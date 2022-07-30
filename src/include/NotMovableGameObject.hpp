@@ -53,6 +53,8 @@ public:
 	virtual void onCollisionEnter(Collision const& collision) const = 0;
 	virtual void update() = 0;
 
+	virtual void setPosition(sf::Vector2f const& coordinates);
+
 protected:
 	// Variables
 	// AnimationComponent* animationComponent;
