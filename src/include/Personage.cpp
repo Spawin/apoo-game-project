@@ -350,7 +350,7 @@ unsigned Personage::receiveItemAction(int value, game::ItemsCategories categorie
 			break;
 		case game::ItemsCategories::ATTACK_BODY_TO_BODY:
 			this->receiveHealthDamage(value);
-			this->playCorrectSideHurtanimation();
+			this->playCorrectSideHurtAnimation();
 			break;
 		case game::ItemsCategories::ATTACK_SEMI_DISTANCE:
 
