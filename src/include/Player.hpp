@@ -1,9 +1,8 @@
 #ifndef __PLAYER_HPP__
 #define __PLAYER_HPP__
 
-#include "include/Personage.hpp"
-
 #include "include/Item.hpp"
+#include "include/Personage.hpp"
 #include "include/consts.hpp"
 
 class Personage;

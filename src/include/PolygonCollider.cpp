@@ -7,6 +7,9 @@
 #include <iostream>
 #include <math.h>
 
+class GameMap;
+struct MyVector;
+
 using namespace std;
 
 const string PolygonCollider::m_name("PolygonCollider");

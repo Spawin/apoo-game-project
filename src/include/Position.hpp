@@ -2,10 +2,10 @@
 #define __POSITION_HPP__
 
 #include "include/MyVector.hpp"
-// #include "include/Rigidbody.hpp"
+#include "include/Rigidbody.hpp" //
 #include "include/consts.hpp"
 
-// class RigidRigidbody;
+class Rigidbody;
 
 class Position
 {

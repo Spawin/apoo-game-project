@@ -1,5 +1,6 @@
 #include "include/Collider.hpp"
 #include "include/Collision.hpp"
+#include "include/Personage.hpp"
 #include "include/Position.hpp"
 #include "include/consts.hpp"
 #include <algorithm>
@@ -9,7 +10,9 @@
 #include <utility> // std::pair
 #include <vector>
 
-#include "include/Personage.hpp"
+class Collision;
+class Personage;
+class Position;
 
 using namespace std;
 

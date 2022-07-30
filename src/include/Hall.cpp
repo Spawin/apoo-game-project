@@ -3,6 +3,10 @@
 // Fonction static
 
 // Fonctions d'initialisation
+void Hall::initInventory()
+{
+	// this->inventory = new Inventory();
+}
 
 // Constructeurs/Destructeur
 Hall::Hall(sf::Vector2i topLeftPoint, int width, int height) :
@@ -11,6 +15,7 @@ Hall::Hall(sf::Vector2i topLeftPoint, int width, int height) :
 	height(height),
 	intRect(topLeftPoint, sf::Vector2i(width, height))
 {
+	this->initInventory();
 	// #if defined(_DEBUG)
 	// std::cout << "Initialisation Hall x" << topLeftPoint.x << " y" << topLeftPoint.y << std::endl;
 	this->debug_shape.setPosition(topLeftPoint.x, topLeftPoint.y);
@@ -23,9 +28,25 @@ Hall::Hall(sf::Vector2i topLeftPoint, int width, int height) :
 
 Hall::~Hall()
 {
+	// delete this->inventory;
 }
 
 // Fonctions/Méthodes
+// bool Hall::addItem(Item* item, game::inventory_items_types type, sf::Vector2f const& coordinates)
+// {
+// 	return this->inventory->add(item, type, coordinates);
+// }
+
+// bool Hall::moveItem(Item* item, game::inventory_items_types type, Inventory* to_inventory, sf::Vector2f const& coordinates)
+// {
+// 	return this->inventory->move(item, type, to_inventory, coordinates);
+// }
+
+// bool Hall::removeItem(Item* item, game::inventory_items_types type)
+// {
+// 	return this->inventory->remove(item, type);
+// }
+
 bool Hall::addMovableGameObject(MovableGameObject* movableGameObject)
 {
 	this->hallMovablesGameObjects.push_back(movableGameObject);
@@ -64,10 +85,22 @@ const sf::IntRect& Hall::getIntRect() const
 
 void Hall::render(sf::RenderTarget& target)
 {
-	target.draw(this->debug_shape);
+	// this->renderInventory(target);
 
-	// for (auto&& mGameObject : this->hallMovablesGameObjects)
-	// {
-	// 	// mGameObject.
-	// }
+#if defined(_DEBUG)
+	// On affiche les bords des pièces
+	target.draw(this->debug_shape);
+#endif
 }
+
+// void Hall::renderInventory(sf::RenderTarget& target)
+// {
+// 	// std::map<game::inventory_items_types, std::vector<Item*>> const* items = this->inventory->getItems();
+// 	// for (auto&& item : (*items))
+// 	// {
+// 	// 	for (size_t i = 0; i < item.second.size(); i++)
+// 	// 	{
+// 	// 		item.second[i]->show(target);
+// 	// 	}
+// 	// }
+// }

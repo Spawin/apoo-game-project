@@ -3,6 +3,8 @@
 
 	#include "include/Animation.hpp"
 
+class Animation;
+
 class AnimationComponent
 {
 public:

@@ -1,12 +1,19 @@
 #if !defined(__HALL_HPP__)
 	#define __HALL_HPP__
 
-	#include "include/MyVector.hpp"
-	#include "include/MovableGameObject.hpp"
 	#include <map>
 	#include <vector>
+	// #include "include/Inventory.hpp"
+	// #include "include/Item.hpp"
+	#include "include/consts.hpp"
+	#include "include/MyVector.hpp"
+	#include "include/MovableGameObject.hpp"
+// #include "include/NotMovableGameObject.hpp"
 
 class MovableGameObject;
+// class NotMovableGameObject;
+// class Inventory;
+// class Item;
 
 class Hall
 {
@@ -16,6 +23,10 @@ public:
 	virtual ~Hall();
 
 	// Fonctions/Méthodes
+	// bool addItem(Item* item, game::inventory_items_types type, sf::Vector2f const& coordinates);
+	// bool moveItem(Item* item, game::inventory_items_types type, Inventory* to_inventory, sf::Vector2f const& coordinates);
+	// bool removeItem(Item* item, game::inventory_items_types type);
+
 	virtual bool addMovableGameObject(MovableGameObject* movableGameObject);
 	/**
 	 * @brief Vérifier si les coordonnées de position données se trouve dans la pièce
@@ -39,6 +50,7 @@ public:
 
 private:
 	// Variables
+	// Inventory* inventory;
 	// Représente le quandrilatère qui représente les dimension de la salle
 	sf::Vector2i topLeftPoint;
 	int width;
@@ -52,6 +64,9 @@ private:
 	// #endif
 
 	// Fonctions d'initialisation
+	void initInventory();
+
+	// void renderInventory(sf::RenderTarget& target);
 };
 
 #endif // __HALL_HPP__

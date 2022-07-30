@@ -7,8 +7,8 @@ float GameObject::m_time = 0.f;
 int GameObject::m_count = 0;
 
 // Initialisation à vide de la liste de game objects
-GameObject::GameObjectMap GameObject::gameObjects = [] {
-	GameObjectMap ret;
+std::map<std::string, GameObject*> GameObject::gameObjects = [] {
+	std::map<std::string, GameObject*> ret;
 	return ret;
 }();
 
@@ -68,7 +68,7 @@ GameObject::~GameObject()
 	// if(GameObject::)
 	GameObject::gameObjects.erase(std::to_string(this->getGameObjectId()));
 
-	std::cout << "\nGameObject " << this->getGameObjectName() << "Détruit!\n\n";
+	std::cout << "\n\t => GameObject << " << this->getGameObjectName() << " >> détruit!\n\n";
 }
 
 void GameObject::show(sf::RenderTarget& window)
@@ -139,6 +139,11 @@ void GameObject::fromColliderToRigidBody() const
 Collider const& GameObject::getCollider() const
 {
 	return *m_collider;
+}
+
+std::map<std::string, GameObject*> GameObject::getGameobjects()
+{
+	return gameObjects;
 }
 
 // void GameObject::sendEvent(sf::Event const& event)

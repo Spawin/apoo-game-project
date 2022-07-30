@@ -2,9 +2,9 @@
 	#define __TELEPORT_KEY_HPP__
 
 	#include "include/Item.hpp"
+	#include "include/Collision.hpp"
 
 class Item;
-class Personage;
 class collision;
 
 class TeleportKey : public Item
@@ -23,8 +23,6 @@ public:
 	 */
 	virtual void onCollisionEnter(Collision const& collision) const override;
 	virtual void update() override;
-
-	// virtual void useOn(Personage& personage) override;
 
 private:
 	// Variables

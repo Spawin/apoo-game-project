@@ -508,7 +508,7 @@ bool gui::Inventory::addItem(const Item* item, game::inventory_items_types type)
 		case game::inventory_items_types::ARMORY: {
 			float x = 80.f + 80.f * 4.f + 80.f * (this->inventoryButtons[type].size() % 2);
 			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
-			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));
+			this->inventoryButtons[type].push_back(new gui::InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));
 
 			this->inventoryItemDatas.push_back({ item, short(this->inventoryButtons[type].size() - 1) });
 			return true;
@@ -536,7 +536,7 @@ bool gui::Inventory::addItem(const Item* item, game::inventory_items_types type)
 			}
 			float x = 80.f + 80.f * 10.f + 80.f * (this->inventoryButtons[type].size() % 2);
 			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
-			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50), sf::Color(255, 255, 255, 255), sf::Color(255, 255, 255, 255), sf::Color(20, 20, 20, 50)));
+			this->inventoryButtons[type].push_back(new gui::InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50), sf::Color(255, 255, 255, 255), sf::Color(255, 255, 255, 255), sf::Color(20, 20, 20, 50)));
 
 			this->inventoryItemDatas.push_back({ item, short(this->inventoryButtons[type].size() - 1) });
 			return true;
@@ -545,7 +545,7 @@ bool gui::Inventory::addItem(const Item* item, game::inventory_items_types type)
 		case game::inventory_items_types::TELEPORTKEY: {
 			float x = 80.f + 80.f * 7.f + 80.f * (this->inventoryButtons[type].size() % 2);
 			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
-			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));
+			this->inventoryButtons[type].push_back(new gui::InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));
 
 			this->inventoryItemDatas.push_back({ item, short(this->inventoryButtons[type].size() - 1) });
 			return true;
@@ -554,7 +554,7 @@ bool gui::Inventory::addItem(const Item* item, game::inventory_items_types type)
 		case game::inventory_items_types::VIAL: {
 			float x = 80.f + 80.f + 80.f * (this->inventoryButtons[type].size() % 2);
 			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
-			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));
+			this->inventoryButtons[type].push_back(new gui::InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));
 
 			this->inventoryItemDatas.push_back({ item, short(this->inventoryButtons[type].size() - 1) });
 			return true;

@@ -2,8 +2,14 @@
 	#define __ENEMY_HPP__
 
 	#include "include/Personage.hpp"
+	#include "include/consts.hpp"
 
 class Personage;
+
+namespace game
+{
+enum AnimationSide;
+} // namespace game
 
 class Enemy
 {

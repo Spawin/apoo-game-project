@@ -1,6 +1,7 @@
 #include "include/Player.hpp"
 #include "include/GameObject.hpp"
-#include "include/Item.hpp"
+
+class GameObject;
 
 // Fonction static
 

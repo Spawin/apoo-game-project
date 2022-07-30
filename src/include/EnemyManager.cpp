@@ -1,9 +1,14 @@
 #include "include/EnemyManager.hpp"
-
 #include "include/Druid.hpp"
 #include "include/Religious.hpp"
 #include "include/Soldier.hpp"
 #include "include/Worker.hpp"
+#include "include/consts.hpp"
+
+class Druid;
+class Religious;
+class Soldier;
+class Worker;
 
 // Fonction static
 

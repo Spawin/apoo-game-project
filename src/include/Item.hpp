@@ -1,34 +1,19 @@
 #if !defined(__ITEM_HPP__)
 	#define __ITEM_HPP__
 
-	#include "include/NotMovableGameObject.hpp"
 	#include "include/Personage.hpp"
 	#include "include/consts.hpp"
+	#include "include/Collision.hpp"
+	#include "include/NotMovableGameObject.hpp"
 
 class NotMovableGameObject;
 class Personage;
+class Collision;
 
-// /**
-//  * @brief Représente les catégories d'items.
-//  * TODO - Compléter....
-//  * Va surtout aider dans l'utilisation de l'item et son comportement
-//  */
-// enum class ItemsCategories
-// {
-// 	MONEY,
-// 	TELEPORTKEY, //
-// 	//
-// 	DEFEND,
-// 	ATTACK_BODY_TO_BODY,  // Boxing gloves
-// 	ATTACK_SEMI_DISTANCE, // Sword
-// 	ATTACK_DISTANCE,
-// 	// HEALTH_RESTORE,
-// 	// EXP_RESTORE,
-// 	VIAL_EXP,
-// 	VIAL_HEALTH,
-// 	VIAL_ATTACK_EXP,
-// 	VIAL_ATTACK_HEALTH,
-// };
+namespace game
+{
+enum class ItemsCategories;
+} // namespace game
 
 /**
  * @brief Représente éssentiellement les object que pourra manipuler les personnages
@@ -69,38 +54,26 @@ public:
 	 *
 	 * @return unsigned const&
 	 */
-	unsigned const& getValue() const
-	{
-		return value;
-	}
+	unsigned const& getValue() const;
 	/**
 	 * @brief Retourne le rayon d'action de l'item
 	 *
 	 * @return float const&
 	 */
-	float const& getRangeOfAction() const
-	{
-		return rangeOfAction;
-	}
+	float const& getRangeOfAction() const;
 	/**
 	 * @brief Retourne le temps d'attente pour que l'action soit faite
 	 *
 	 * @return float const&
 	 */
-	float const& getWaitingTimeForAction() const
-	{
-		return waitingTimeForAction;
-	}
+	float const& getWaitingTimeForAction() const;
 	/**
 	 * @brief Indique si l'item est à usage unique
 	 *
 	 * @return true
 	 * @return false
 	 */
-	bool const& isOneUse() const
-	{
-		return oneUse;
-	}
+	bool const& isOneUse() const;
 
 protected:
 	// Variables

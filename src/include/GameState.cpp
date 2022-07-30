@@ -1,15 +1,26 @@
 #include "include/GameState.hpp"
 #include "include/Gui.hpp"
+#include "include/House.hpp"
 #include "include/Lounge.hpp"
 #include "include/MovableGameObject.hpp"
 #include "include/Room.hpp"
+#include "include/Soldier.hpp"
 #include "include/consts.hpp"
 
 using namespace std;
 
+class House;
 class Lounge;
 class MovableGameObject;
 class Room;
+class Soldier;
+
+// REVIEW -
+namespace gui
+{
+// float p2pX(const float perc, const sf::VideoMode& vm);
+// float p2pY(const float perc, const sf::VideoMode& vm);
+} // namespace gui
 
 // Fonction static
 
@@ -266,8 +277,7 @@ void GameState::render(sf::RenderTarget* target)
 	// this->gameMap->render(this->renderTexture, this->player->getPosition());
 	renderTexture.draw(*this->gameMap);
 
-#if defined(_DEBUG)
-	// On affiche les bords des pièces
+	// On dessine la piece actuelle ou le joueur se trouve ( ici c'est juste les élément à l'intérieur et autre )
 	for (auto&& hall : this->halls)
 	{
 		if (hall->isIn(this->player->getPosition()))
@@ -275,7 +285,6 @@ void GameState::render(sf::RenderTarget* target)
 			hall->render(renderTexture);
 		}
 	}
-#endif
 
 	// this->player->render((*target));
 	this->player->render(this->renderTexture);

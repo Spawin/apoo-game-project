@@ -22,4 +22,4 @@ private:
 	std::vector<sf::Vector2f> m_contactPoints;
 };
 
-#endif // __BOX_COLLIDER_HPP__
+#endif // __POLYGON_COLLIDER_HPP__

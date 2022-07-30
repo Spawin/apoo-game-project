@@ -1,5 +1,6 @@
 #include "include/MainMenuState.hpp"
 #include "include/GameState.hpp"
+
 class GameState;
 
 using namespace std;

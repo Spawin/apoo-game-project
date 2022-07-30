@@ -2,7 +2,10 @@
 #define __BOX_COLLIDER_HPP__
 
 #include "include/Collider.hpp"
-#include "include/PolygonCollider.hpp"
+#include "include/GameObject.hpp"
+
+class Collider;
+class GameObject;
 
 class BoxCollider : public Collider
 {

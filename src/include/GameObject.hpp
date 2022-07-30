@@ -8,16 +8,16 @@
 #include "include/Rigidbody.hpp"
 #include <map>
 #include <string>
+#include <string_view>
 
 class Collision;
 class Collider;
 class Rigidbody;
 class Position;
+struct MyVector;
 
 class GameObject
 {
-	using GameObjectMap = std::map<std::string, GameObject*>;
-
 public:
 	// explicit GameObject();
 	// /**
@@ -90,13 +90,10 @@ public:
 
 	Collider const& getCollider() const;
 
-	static GameObjectMap getGameobjects()
-	{
-		return gameObjects;
-	}
+	static std::map<std::string, GameObject*> getGameobjects();
 
 protected:
-	static GameObjectMap gameObjects;
+	static std::map<std::string, GameObject*> gameObjects;
 	/**
 	 * @brief Pour initialiser les valeur par défaut du GameObject
 	 *

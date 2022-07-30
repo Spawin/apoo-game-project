@@ -1,24 +1,18 @@
 #if !defined(__VIAL_HPP__)
 	#define __VIAL_HPP__
 
+	#include "include/Collision.hpp"
 	#include "include/Item.hpp"
 
 class Item;
-class Personage;
+// class Personage;
 class Collision;
-
-// enum class VialCategorie {
-// 	MEDECINE_HEALTH, // Augmente la santé
-// 	MEDECINE_EXP,// Augmente l'exp
-// 	POISON_HEALTH,// Diminue la santé
-// 	POISON_EXP,// Diminue l'exp
-// };
 
 class Vial : public Item
 {
 public:
 	// Constructeurs/Destructeur
-	Vial(/*std::string_view const& imageSpritePath, */ game::ItemsCategories categorie);
+	Vial(game::ItemsCategories categorie);
 	~Vial();
 
 	// Fonctions/Méthodes

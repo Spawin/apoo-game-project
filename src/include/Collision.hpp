@@ -21,7 +21,7 @@ public:
 	// std::shared_ptr<GameObject> getGameObject() const;
 	GameObject const& getGameObject() const;
 
-	inline void test() const {}; // TODO - Remove this after
+	void test() const; // TODO - Remove this after
 
 private:
 	GameObject const& m_gameObject;

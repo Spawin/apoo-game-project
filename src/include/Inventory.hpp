@@ -15,15 +15,6 @@ namespace gui
 class Inventory;
 }
 
-// enum inventory_items_types
-// {
-// 	DEFAULT = -1,
-// 	VIAL = 0,
-// 	ARMORY,
-// 	TELEPORTKEY,
-// 	MONEY
-// };
-
 class Inventory
 {
 public:
@@ -60,6 +51,8 @@ public:
 	int getFreePlace(game::inventory_items_types type);
 
 	gui::Inventory* getGui();
+
+	// std::map<game::inventory_items_types, std::vector<Item*>> const* getItems();
 
 private:
 	// using ItemMap = std::map<int, std::vector<Item*>>;

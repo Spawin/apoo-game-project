@@ -1,5 +1,11 @@
 #include "include/GameMaster.hpp"
+#include "include/Collider.hpp"
 #include "include/MainMenuState.hpp"
+#include "include/Position.hpp"
+
+class Collider;
+class MainMenuState;
+class Position;
 
 using namespace std;
 

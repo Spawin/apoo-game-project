@@ -1,10 +1,10 @@
 #if !defined(__SHIELD_HPP__)
 	#define __SHIELD_HPP__
 
+	#include "include/Collision.hpp"
 	#include "include/Armory.hpp"
 
 class Armory;
-class Personage;
 class Collision;
 
 class Shield : public Armory
@@ -23,8 +23,6 @@ public:
 	 */
 	virtual void onCollisionEnter(Collision const& collision) const override;
 	virtual void update() override;
-
-	// virtual void useOn(Personage& personage) override;
 
 private:
 	// Variables

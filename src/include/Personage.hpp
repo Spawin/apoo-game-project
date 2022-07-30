@@ -2,6 +2,7 @@
 #define __PERSONGE_HPP__
 
 #include "include/Bag.hpp"
+#include "include/Collision.hpp"
 #include "include/Gui.hpp"
 #include "include/Inventory.hpp"
 #include "include/Item.hpp"
@@ -11,14 +12,16 @@
 #include <string>
 
 class Bag;
+class Collision;
 class MovableGameObject;
-class Inventory;
 namespace gui
 {
 class ProgressBar;
 }
+class Inventory;
 // enum class ItemsCategories;
 class Item;
+class MovableGameObject;
 
 class Personage : public MovableGameObject
 {
@@ -48,15 +51,9 @@ public:
 	Item const* getFirstItemMatch(game::ItemsCategories const& categorie) const;
 	Item* getFirstItemMatchNonConst(game::ItemsCategories const& categorie);
 	// Getters
-	const int& getHealthLevel() const
-	{
-		return m_healthLevel;
-	}
+	const int& getHealthLevel() const;
 
-	const int& getExperienceLevel() const
-	{
-		return m_experienceLevel;
-	}
+	const int& getExperienceLevel() const;
 
 	//
 	bool isDied() const;
@@ -91,20 +88,11 @@ public:
 	 *
 	 * @return game::AnimationSide
 	 */
-	game::AnimationSide const& getLastAnimationSide()
-	{
-		return lastAnimationSide;
-	}
+	game::AnimationSide const& getLastAnimationSide();
 
-	void setLastAnimationSide(game::AnimationSide side)
-	{
-		lastAnimationSide = side;
-	}
+	void setLastAnimationSide(game::AnimationSide side);
 
-	static PersonageMap getPersonages()
-	{
-		return personages;
-	}
+	static PersonageMap getPersonages(); // REVIEW - Retourner un pointeur pluto
 
 protected:
 	static PersonageMap personages;

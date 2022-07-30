@@ -6,9 +6,9 @@
 	#include "include/GameMap.hpp"
 	#include "include/Hall.hpp"
 	#include <vector>
-
 	#include "include/Enemy.hpp"
 	#include "include/EnemyManager.hpp"
+	#include "include/Player.hpp"
 
 class State;
 class PauseMenu;
@@ -16,6 +16,9 @@ class GameMap;
 class Hall;
 class Enemy;
 class EnemyManager;
+class Player;
+
+struct StateData;
 
 class GameState : public State
 {

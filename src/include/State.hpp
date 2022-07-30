@@ -2,24 +2,25 @@
 	#define __STATE_HPP__
 
 	#include "Platform/Platform.hpp"
-	#include "include/Position.hpp"
-	#include "include/GameMap.hpp"
-	#include "include/consts.hpp"
-	#include "include/MyVector.hpp"
 	#include <memory>
 	#include <vector>
 	#include <fstream>
 	#include <sstream>
-	#include "include/House.hpp"
-	#include "include/Soldier.hpp"
-	#include "include/Collider.hpp"
-	#include "include/Player.hpp"
-	#include "include/Personage.hpp"
 	#include "include/GraphicsSettings.hpp"
 	#include <stack>
 	#include <map>
+// #include "include/Position.hpp"
+// #include "include/GameMap.hpp"
+// #include "include/consts.hpp"
+// #include "include/MyVector.hpp"
+// #include "include/House.hpp"
+// #include "include/Soldier.hpp"
+// #include "include/Collider.hpp"
+// #include "include/Player.hpp"
+// #include "include/Personage.hpp"
 
 class State;
+class GraphicsSettings;
 
 struct StateData
 {

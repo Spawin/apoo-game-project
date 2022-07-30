@@ -20,3 +20,6 @@ GameObject const& Collision::getGameObject() const
 {
 	return m_gameObject;
 }
+
+void Collision::test() const
+{}

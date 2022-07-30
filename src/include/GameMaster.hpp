@@ -1,9 +1,17 @@
-#if !defined(__GAME_MASTER__)
-	#define __GAME_MASTER__
+#if !defined(__GAME_MASTER_HPP__)
+	#define __GAME_MASTER_HPP__
 
+	#include "include/State.hpp"
 	#include "include/GameState.hpp"
-	// #include "include/MainMenuState.hpp"
+	#include "include/GraphicsSettings.hpp"
 	#include "include/consts.hpp"
+// #include "include/MainMenuState.hpp"
+
+class State;
+class GameState;
+class GraphicsSettings;
+
+struct StateData;
 
 class GameMaster
 {
@@ -78,4 +86,4 @@ private:
 	sf::Texture m_gameTexture;
 };
 
-#endif // __GAME_MASTER__
+#endif // __GAME_MASTER_HPP__

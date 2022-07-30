@@ -3,6 +3,11 @@
 
 	#include "include/Gui.hpp"
 
+namespace gui
+{
+class Button;
+} // namespace gui
+
 class PauseMenu
 {
 public:

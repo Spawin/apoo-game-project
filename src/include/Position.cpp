@@ -9,6 +9,10 @@
 #include <iostream>
 #include <math.h>
 
+class Collider;
+class GameMap;
+class Hall;
+
 int Position::m_spaceWidth { 0 };
 int Position::m_spaceHeight { 0 };
 

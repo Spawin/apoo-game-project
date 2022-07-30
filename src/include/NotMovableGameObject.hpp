@@ -2,16 +2,19 @@
 	#define __NOT_MOVABLE_GAME_OBJECT_HPP__
 
 	#include "include/GameObject.hpp"
-	#include "include/AnimationComponent.hpp"
 	#include "include/Hall.hpp"
 	#include "include/Position.hpp"
 	#include "include/MyVector.hpp"
 	#include "include/Collision.hpp"
+	#include <string_view>
+// #include "include/AnimationComponent.hpp"
 
-class Collision;
+class GameObject;
 class Hall;
 class Position;
-class GameObject;
+struct MyVector;
+class Collision;
+// class Item;
 
 /**
  * @brief Represente les objets imobiles.
@@ -57,13 +60,6 @@ public:
 
 protected:
 	// Variables
-	// AnimationComponent* animationComponent;
-	// void createAnimationComponent(sf::Texture& texture);
-	/**
-	 * @brief Initialiser animationComponent et les animations
-	 *
-	 */
-	// virtual void initAnimations() = 0;
 	// Represente la salle dans laquelle se trouve actuellement le joueur
 	//! Ce pointeur ne doit pas être supprimé à ce niveau
 	const Hall* hall;

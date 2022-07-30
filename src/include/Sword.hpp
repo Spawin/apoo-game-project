@@ -2,9 +2,10 @@
 	#define __SWORD__HPP__
 
 	#include "include/Armory.hpp"
+	#include "include/Collision.hpp"
+	#include "include/consts.hpp"
 
 class Armory;
-class Personage;
 class Collision;
 
 class Sword : public Armory
@@ -23,8 +24,6 @@ public:
 	 */
 	virtual void onCollisionEnter(Collision const& collision) const override;
 	virtual void update() override;
-
-	// virtual void useOn(Personage& personage) override;
 
 private:
 	// Variables

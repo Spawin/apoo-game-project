@@ -1,4 +1,5 @@
 #include "include/Druid.hpp"
+
 using namespace std;
 
 // Fonction static

@@ -1,4 +1,5 @@
 #include "include/Money.hpp"
+#include "include/consts.hpp"
 
 // Fonction static
 

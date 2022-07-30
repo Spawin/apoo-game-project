@@ -2,9 +2,10 @@
 	#define __MONEY_HPP__
 
 	#include "include/Item.hpp"
+	#include "include/Collision.hpp"
 
 class Item;
-class Personage;
+class Collision;
 
 class Money : public Item
 {
@@ -20,8 +21,6 @@ public:
 	 */
 	virtual void onCollisionEnter(Collision const& collision) const override;
 	virtual void update() override;
-
-	// virtual void useOn(Personage& personage) override;
 
 private:
 	// Variables

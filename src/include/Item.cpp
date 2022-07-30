@@ -23,3 +23,23 @@ game::ItemsCategories const& Item::getCategorie() const
 {
 	return this->categorie;
 }
+
+unsigned const& Item::getValue() const
+{
+	return this->value;
+}
+
+float const& Item::getRangeOfAction() const
+{
+	return this->rangeOfAction;
+}
+
+float const& Item::getWaitingTimeForAction() const
+{
+	return this->waitingTimeForAction;
+}
+
+bool const& Item::isOneUse() const
+{
+	return this->oneUse;
+}

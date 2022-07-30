@@ -5,6 +5,10 @@
 	#include "include/Gui.hpp"
 
 class State;
+namespace gui
+{
+class Button;
+} // namespace gui
 
 class MainMenuState : public State
 {

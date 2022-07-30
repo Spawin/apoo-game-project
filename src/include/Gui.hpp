@@ -1,7 +1,6 @@
 #if !defined(__GUI_HPP__)
 	#define __GUI_HPP__
 
-	// #include "include/Inventory.hpp"
 	#include "include/Item.hpp"
 	#include <map>
 	#include <vector>

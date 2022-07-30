@@ -1,19 +1,29 @@
 #include "include/Personage.hpp"
 #include "include/BoxCollider.hpp"
-#include "include/MyVector.hpp"
-#include "include/Rigidbody.hpp"
-
-#include <iostream>
-#include <string>
-
 #include "include/BoxingGloves.hpp"
 #include "include/GameMaster.hpp"
 #include "include/Money.hpp"
+#include "include/MyVector.hpp"
+#include "include/Rigidbody.hpp"
 #include "include/Shield.hpp"
 #include "include/Sword.hpp"
 #include "include/TeleportKey.hpp"
 #include "include/Vial.hpp"
 #include "include/consts.hpp"
+#include <iostream>
+#include <string>
+
+class Personage;
+class BoxCollider;
+class BoxingGloves;
+class GameMaster;
+class Money;
+struct MyVector;
+class Rigidbody;
+class Shield;
+class Sword;
+class TeleportKey;
+class Vial;
 
 using namespace std;
 
@@ -162,12 +172,16 @@ Personage::Personage(bool isPlayer) :
 
 Personage::~Personage()
 {
+	// On vide le sac vers la salle actuelle
+	// TODO -
+
 	// delete m_collider; // Déjà fait au niveau du GameObject.
 	m_window = nullptr;
 	delete this->hpBar;
 	delete this->expBar;
 	delete this->bag;
 
+	// On supprime cet personage de la liste static des personnages
 	Personage::personages.erase(std::to_string(this->getGameObjectId()));
 }
 
@@ -205,6 +219,16 @@ Item const* Personage::getFirstItemMatch(game::ItemsCategories const& categorie)
 Item* Personage::getFirstItemMatchNonConst(game::ItemsCategories const& categorie)
 {
 	return this->bag->getFirstItemMatchNonConst(categorie);
+}
+
+const int& Personage::getHealthLevel() const
+{
+	return m_healthLevel;
+}
+
+const int& Personage::getExperienceLevel() const
+{
+	return m_experienceLevel;
 }
 
 sf::Vector2f Personage::calculateProgressBarsPosition()
@@ -363,6 +387,21 @@ void Personage::move(MyVector& speed)
 void Personage::renderBagInventory(sf::RenderTarget& target)
 {
 	this->bag->renderInventory(target);
+}
+
+game::AnimationSide const& Personage::getLastAnimationSide()
+{
+	return this->lastAnimationSide;
+}
+
+void Personage::setLastAnimationSide(game::AnimationSide side)
+{
+	this->lastAnimationSide = side;
+}
+
+Personage::PersonageMap Personage::getPersonages()
+{
+	return Personage::personages;
 }
 
 //* ----------------------------  Gestion des effets d'item (interne externe)

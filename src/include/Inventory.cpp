@@ -178,6 +178,11 @@ gui::Inventory* Inventory::getGui()
 	return this->inventoryGui;
 }
 
+// std::map<game::inventory_items_types, std::vector<Item*>> const* Inventory::getItems()
+// {
+// 	return &items;
+// }
+
 unsigned Inventory::getItemIndex(Item* item, game::inventory_items_types type)
 {
 	for (size_t i = 0; i < this->items[type].size(); i++)

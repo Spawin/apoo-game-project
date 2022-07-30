@@ -8,6 +8,7 @@
 	#include "include/MyVector.hpp"
 	#include "include/Collision.hpp"
 
+class AnimationComponent;
 class Collision;
 class Hall;
 class Position;

@@ -1,4 +1,5 @@
 #include "include/BoxingGloves.hpp"
+#include "include/consts.hpp"
 
 // Fonction static
 
