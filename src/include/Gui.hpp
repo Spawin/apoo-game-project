@@ -168,6 +168,12 @@ private:
 	// Fonctions d'initialisation
 };
 
+struct InventoryItemData
+{
+	const Item* item;
+	const short Index;
+};
+
 class Inventory
 {
 public:
@@ -177,7 +183,7 @@ public:
 
 	// Fonctions/Méthodes
 	bool addItem(const Item* item, game::inventory_items_types type);
-	bool removeItem(int index /*, sf::Sprite const& itemSprite*/, game::inventory_items_types type);
+	bool removeItem(const Item* item /*, sf::Sprite const& itemSprite*/, game::inventory_items_types type);
 
 	void updateMousePosWindow(sf::Vector2i mousePosWindow);
 
@@ -195,6 +201,8 @@ private:
 	// sf::Sprite inventoryItemSprite;
 	// std::map<int, std::vector<sf::Sprite const&>> inventoryItemSprites;
 	std::map<int, std::vector<gui::InventoryButton*>> inventoryButtons;
+
+	std::vector<gui::InventoryItemData> inventoryItemDatas;
 
 	// static sf::Vector2i mousePosWindow;
 

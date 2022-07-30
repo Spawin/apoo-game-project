@@ -509,6 +509,8 @@ bool gui::Inventory::addItem(const Item* item, game::inventory_items_types type)
 			float x = 80.f + 80.f * 4.f + 80.f * (this->inventoryButtons[type].size() % 2);
 			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
 			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));
+
+			this->inventoryItemDatas.push_back({ item, short(this->inventoryButtons[type].size() - 1) });
 			return true;
 		}
 		break;
@@ -529,11 +531,14 @@ bool gui::Inventory::addItem(const Item* item, game::inventory_items_types type)
 					// TODO -
 				}
 
+				this->inventoryItemDatas.push_back({ item, short(this->inventoryButtons[type].size() - 1) });
 				return true;
 			}
 			float x = 80.f + 80.f * 10.f + 80.f * (this->inventoryButtons[type].size() % 2);
 			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
 			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50), sf::Color(255, 255, 255, 255), sf::Color(255, 255, 255, 255), sf::Color(20, 20, 20, 50)));
+
+			this->inventoryItemDatas.push_back({ item, short(this->inventoryButtons[type].size() - 1) });
 			return true;
 		}
 		break;
@@ -541,6 +546,8 @@ bool gui::Inventory::addItem(const Item* item, game::inventory_items_types type)
 			float x = 80.f + 80.f * 7.f + 80.f * (this->inventoryButtons[type].size() % 2);
 			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
 			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));
+
+			this->inventoryItemDatas.push_back({ item, short(this->inventoryButtons[type].size() - 1) });
 			return true;
 		}
 		break;
@@ -548,6 +555,8 @@ bool gui::Inventory::addItem(const Item* item, game::inventory_items_types type)
 			float x = 80.f + 80.f + 80.f * (this->inventoryButtons[type].size() % 2);
 			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
 			this->inventoryButtons[type].push_back(new InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));
+
+			this->inventoryItemDatas.push_back({ item, short(this->inventoryButtons[type].size() - 1) });
 			return true;
 		}
 		break;
@@ -559,16 +568,24 @@ bool gui::Inventory::addItem(const Item* item, game::inventory_items_types type)
 	return false;
 }
 
-bool gui::Inventory::removeItem(int index /*, sf::Sprite const& itemSprite*/, game::inventory_items_types type)
+bool gui::Inventory::removeItem(const Item* item /*, sf::Sprite const& itemSprite*/, game::inventory_items_types type)
 {
-	// REVIEW -
-	// vec.erase(std::remove(vec.begin(), vec.end(), value), vec.end());
-	// this->inventoryItemSprites[type].erase(std::remove(this->inventoryItemSprites[type].begin(), this->inventoryItemSprites[type].end(), itemSprite), this->inventoryItemSprites[type].end());
-	delete this->inventoryButtons[type][index];
-	this->inventoryButtons[type].erase(std::remove(this->inventoryButtons[type].begin(), this->inventoryButtons[type].end(), this->inventoryButtons[type][index]), this->inventoryButtons[type].end());
-	//
+	for (size_t i = 0; i < this->inventoryItemDatas.size(); i++)
+	{
+		if (this->inventoryItemDatas[i].item == item)
+		{
 
-	return true;
+			// REVIEW -
+			// vec.erase(std::remove(vec.begin(), vec.end(), value), vec.end());
+			// this->inventoryItemSprites[type].erase(std::remove(this->inventoryItemSprites[type].begin(), this->inventoryItemSprites[type].end(), itemSprite), this->inventoryItemSprites[type].end());
+			delete this->inventoryButtons[type][this->inventoryItemDatas[i].Index];
+			this->inventoryButtons[type].erase(std::remove(this->inventoryButtons[type].begin(), this->inventoryButtons[type].end(), this->inventoryButtons[type][this->inventoryItemDatas[i].Index]), this->inventoryButtons[type].end());
+			//
+			return true;
+		}
+	}
+
+	return false;
 }
 
 void gui::Inventory::updateMousePosWindow(sf::Vector2i mousePosWindow)

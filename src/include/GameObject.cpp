@@ -67,6 +67,8 @@ GameObject::~GameObject()
 
 	// if(GameObject::)
 	GameObject::gameObjects.erase(std::to_string(this->getGameObjectId()));
+
+	std::cout << "\nGameObject " << this->getGameObjectName() << "Détruit!\n\n";
 }
 
 void GameObject::show(sf::RenderTarget& window)

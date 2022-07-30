@@ -88,6 +88,10 @@ bool Inventory::move(Item* item, game::inventory_items_types type, Inventory* to
 bool Inventory::remove(Item* item, game::inventory_items_types type)
 {
 	// TODO - Vérifications et try catch
+
+	// ON retire de l'aperçu
+	this->inventoryGui->removeItem(item, type);
+
 	delete this->items[type][this->getItemIndex(item, type)];
 	this->items[type].erase(this->getItemIterator(item, type));
 
