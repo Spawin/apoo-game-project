@@ -93,14 +93,34 @@ $(document).ready(function(){initNavTree('class_religious.html',''); initResizab
 <div class="dynheader">
 Graphe d'héritage de Religious:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_religious.png" usemap="#Religious_map" alt=""/>
-  <map id="Religious_map" name="Religious_map">
-<area href="class_personage.html" alt="Personage" shape="rect" coords="0,112,130,136"/>
-<area href="class_movable_game_object.html" alt="MovableGameObject" shape="rect" coords="0,56,130,80"/>
-<area href="class_game_object.html" alt="GameObject" shape="rect" coords="0,0,130,24"/>
-  </map>
-</div></div>
+<div class="center"><img src="class_religious__inherit__graph.png" border="0" usemap="#a_religious_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_religious_inherit__map" id="a_religious_inherit__map">
+<area shape="rect" title=" " alt="" coords="24,2405,211,2556"/>
+<area shape="rect" href="class_personage.html" title=" " alt="" coords="9,1371,226,2357"/>
+<area shape="rect" href="class_movable_game_object.html" title=" " alt="" coords="8,805,227,1323"/>
+<area shape="rect" href="class_game_object.html" title=" " alt="" coords="5,5,229,757"/>
+</map>
+</div>
+<div class="dynheader">
+Graphe de collaboration de Religious:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_religious__coll__graph.png" border="0" usemap="#a_religious_coll__map" alt="Collaboration graph"/></div>
+<map name="a_religious_coll__map" id="a_religious_coll__map">
+<area shape="rect" title=" " alt="" coords="237,3627,424,3777"/>
+<area shape="rect" href="class_personage.html" title=" " alt="" coords="222,2503,439,3577"/>
+<area shape="rect" href="class_movable_game_object.html" title=" " alt="" coords="5,1327,224,1815"/>
+<area shape="rect" href="class_game_object.html" title=" " alt="" coords="483,571,707,1264"/>
+<area shape="rect" href="class_collider.html" title=" " alt="" coords="750,1415,943,1727"/>
+<area shape="rect" href="class_rigidbody.html" title=" " alt="" coords="485,1510,726,1631"/>
+<area shape="rect" href="class_not_movable_game_object.html" title="Represente les objets imobiles. NOTE &#45; Certains de ces Object Peuvent être déplacée ou transporté par..." alt="" coords="249,1378,461,1763"/>
+<area shape="rect" href="class_position.html" title=" " alt="" coords="285,5,616,508"/>
+<area shape="rect" href="struct_my_vector.html" title=" " alt="" coords="641,115,837,398"/>
+<area shape="rect" href="class_animation_component.html" title=" " alt="" coords="15,747,215,1088"/>
+<area shape="rect" href="class_hall.html" title=" " alt="" coords="245,681,448,1154"/>
+<area shape="rect" href="class_bag.html" title=" " alt="" coords="222,1864,439,2425"/>
+<area shape="rect" href="classgui_1_1_progress_bar.html" title=" " alt="" coords="463,2011,710,2279"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -108,22 +128,10 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:affb894a6e1b8abfdf90061483a370e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83cf211e716fe096c1233dae97939598"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_religious.html#a83cf211e716fe096c1233dae97939598">~Religious</a> ()</td></tr>
 <tr class="separator:a83cf211e716fe096c1233dae97939598"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a924be748e4e719d91732d6a6d9bd04dd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_religious.html#a924be748e4e719d91732d6a6d9bd04dd">simpleAttack</a> (<a class="el" href="class_personage.html">Personage</a> &amp;target) override</td></tr>
-<tr class="separator:a924be748e4e719d91732d6a6d9bd04dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cb05467175db65c3dca56d5c4d6d460"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_religious.html#a9cb05467175db65c3dca56d5c4d6d460">specialAttack</a> (<a class="el" href="class_personage.html">Personage</a> &amp;target) override</td></tr>
-<tr class="separator:a9cb05467175db65c3dca56d5c4d6d460"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a815920536856368c1a008652701e4705"><td class="memItemLeft" align="right" valign="top">virtual unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_religious.html#a815920536856368c1a008652701e4705">receiveHealthDamage</a> (int value) override</td></tr>
-<tr class="memdesc:a815920536856368c1a008652701e4705"><td class="mdescLeft">&#160;</td><td class="mdescRight">pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)  <a href="class_religious.html#a815920536856368c1a008652701e4705">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a815920536856368c1a008652701e4705"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92ca5f1c15a0919f8116787427417fd2"><td class="memItemLeft" align="right" valign="top">virtual unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_religious.html#a92ca5f1c15a0919f8116787427417fd2">receiveExpDamage</a> (int value) override</td></tr>
-<tr class="memdesc:a92ca5f1c15a0919f8116787427417fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">pour recevoir les dégats d'exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)  <a href="class_religious.html#a92ca5f1c15a0919f8116787427417fd2">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a92ca5f1c15a0919f8116787427417fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a777feb03645e5eccab512a16747e2c02"><td class="memItemLeft" align="right" valign="top">virtual unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_religious.html#a777feb03645e5eccab512a16747e2c02">receiveHealthCare</a> (int value) override</td></tr>
-<tr class="memdesc:a777feb03645e5eccab512a16747e2c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)  <a href="class_religious.html#a777feb03645e5eccab512a16747e2c02">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a777feb03645e5eccab512a16747e2c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa9468ba625191fb0b296c704ddf89f1"><td class="memItemLeft" align="right" valign="top">virtual unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_religious.html#afa9468ba625191fb0b296c704ddf89f1">receiveExpCare</a> (int value) override</td></tr>
-<tr class="memdesc:afa9468ba625191fb0b296c704ddf89f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)  <a href="class_religious.html#afa9468ba625191fb0b296c704ddf89f1">Plus de détails...</a><br /></td></tr>
-<tr class="separator:afa9468ba625191fb0b296c704ddf89f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64ca2f182b11beb1aeb3a6c68104dacc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_religious.html#a64ca2f182b11beb1aeb3a6c68104dacc">simpleAttack</a> (<a class="el" href="class_personage.html">Personage</a> &amp;target) override</td></tr>
+<tr class="separator:a64ca2f182b11beb1aeb3a6c68104dacc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31ed6ef50b6e4f5ed50b763e5c4ff11a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_religious.html#a31ed6ef50b6e4f5ed50b763e5c4ff11a">specialAttack</a> (<a class="el" href="class_personage.html">Personage</a> &amp;target) override</td></tr>
+<tr class="separator:a31ed6ef50b6e4f5ed50b763e5c4ff11a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_personage"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_personage')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="class_personage.html">Personage</a></td></tr>
 <tr class="memitem:a53b3b6c7865b2eb80de7c6edab217944 inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a53b3b6c7865b2eb80de7c6edab217944">Personage</a> (bool isPlayer=false)</td></tr>
 <tr class="separator:a53b3b6c7865b2eb80de7c6edab217944 inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,10 +139,24 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:a9ff0d64c3568a81517b84fdce5478820 inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1767f263a4d3681ce02ef14f9b2afae8 inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a1767f263a4d3681ce02ef14f9b2afae8">~Personage</a> ()</td></tr>
 <tr class="separator:a1767f263a4d3681ce02ef14f9b2afae8 inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa995d729f1d7ac21b9c9423556f7a17e inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#aa995d729f1d7ac21b9c9423556f7a17e">addItem</a> (<a class="el" href="class_item.html">Item</a> *item, <a class="el" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0">game::inventory_items_types</a> type, sf::Vector2f const &amp;coordinates)</td></tr>
+<tr class="separator:aa995d729f1d7ac21b9c9423556f7a17e inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a905c0a8340b7f13513b6166807a6e0c6 inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a905c0a8340b7f13513b6166807a6e0c6">moveItem</a> (<a class="el" href="class_item.html">Item</a> *item, <a class="el" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0">game::inventory_items_types</a> type, <a class="el" href="class_inventory.html">Inventory</a> *to_inventory, sf::Vector2f const &amp;coordinates)</td></tr>
+<tr class="separator:a905c0a8340b7f13513b6166807a6e0c6 inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27255cf1214312c1bdc5c77796378bbd inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a27255cf1214312c1bdc5c77796378bbd">removeItem</a> (<a class="el" href="class_item.html">Item</a> *item, <a class="el" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0">game::inventory_items_types</a> type)</td></tr>
+<tr class="separator:a27255cf1214312c1bdc5c77796378bbd inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a532ee7e1899f0620fa6f22ebd55635d6 inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a532ee7e1899f0620fa6f22ebd55635d6">haveThisItem</a> (<a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">game::ItemsCategories</a> const &amp;categorie) const</td></tr>
+<tr class="separator:a532ee7e1899f0620fa6f22ebd55635d6 inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af938fe6b2fefb437d0c2b91bef48ed21 inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0">game::inventory_items_types</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#af938fe6b2fefb437d0c2b91bef48ed21">getInventoryItemType</a> (<a class="el" href="class_item.html">Item</a> const *item) const</td></tr>
+<tr class="separator:af938fe6b2fefb437d0c2b91bef48ed21 inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bb4f6a7e3151bc99390fad379b41cc1 inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_item.html">Item</a> const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a2bb4f6a7e3151bc99390fad379b41cc1">getFirstItemMatch</a> (<a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">game::ItemsCategories</a> const &amp;categorie) const</td></tr>
+<tr class="separator:a2bb4f6a7e3151bc99390fad379b41cc1 inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d99d3f14e517394a159798dba2000be inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_item.html">Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a1d99d3f14e517394a159798dba2000be">getFirstItemMatchNonConst</a> (<a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">game::ItemsCategories</a> const &amp;categorie)</td></tr>
+<tr class="separator:a1d99d3f14e517394a159798dba2000be inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81af0984599ce6981a4b6c4ded2b2b8a inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">const int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a81af0984599ce6981a4b6c4ded2b2b8a">getHealthLevel</a> () const</td></tr>
 <tr class="separator:a81af0984599ce6981a4b6c4ded2b2b8a inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab373b15697442211943f0b3f630e9be6 inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">const int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#ab373b15697442211943f0b3f630e9be6">getSpecialityLevel</a> () const</td></tr>
-<tr class="separator:ab373b15697442211943f0b3f630e9be6 inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac93ee3156d7d9b1a5bae68603ab24ca2 inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">const int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#ac93ee3156d7d9b1a5bae68603ab24ca2">getExperienceLevel</a> () const</td></tr>
+<tr class="separator:ac93ee3156d7d9b1a5bae68603ab24ca2 inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9f5f4c71cf2113a83f1e8f401020ba0 inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#af9f5f4c71cf2113a83f1e8f401020ba0">isDied</a> () const</td></tr>
 <tr class="separator:af9f5f4c71cf2113a83f1e8f401020ba0 inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01b776643850ebcc55ba806e2fa8085e inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a01b776643850ebcc55ba806e2fa8085e">show</a> (sf::RenderTarget &amp;target) override</td></tr>
@@ -144,8 +166,6 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:a492d4164bc6c439d43cc44fefcbd6468 inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a938d215023e4594db6e6eb4341101767 inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a938d215023e4594db6e6eb4341101767">updateMousePosWindow</a> (sf::Vector2i mousePosWindow)</td></tr>
 <tr class="separator:a938d215023e4594db6e6eb4341101767 inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f8afca1fd73cff32ab7f6d2df048c6d inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a3f8afca1fd73cff32ab7f6d2df048c6d">setGameObjectName</a> (std::string name)</td></tr>
-<tr class="separator:a3f8afca1fd73cff32ab7f6d2df048c6d inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0e67cb98d13d11d49395bcaa9a8f6dd inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#ac0e67cb98d13d11d49395bcaa9a8f6dd">onCollisionEnter</a> (<a class="el" href="class_collision.html">Collision</a> const &amp;collision) const override</td></tr>
 <tr class="memdesc:ac0e67cb98d13d11d49395bcaa9a8f6dd inherit pub_methods_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">émit quand il entre en contacte avec un autre élément  <a href="class_personage.html#ac0e67cb98d13d11d49395bcaa9a8f6dd">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac0e67cb98d13d11d49395bcaa9a8f6dd inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,18 +177,13 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:a1dade2c8ec548dd2df7791252719fe1d inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71f84a092284e295db1de628af4e918d inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a71f84a092284e295db1de628af4e918d">specialAttack</a> (<a class="el" href="class_personage.html">Personage</a> &amp;target)=0</td></tr>
 <tr class="separator:a71f84a092284e295db1de628af4e918d inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a60566d579586450b87ac815d270f3c inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">virtual unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a5a60566d579586450b87ac815d270f3c">receiveHealthDamage</a> (int value)=0</td></tr>
-<tr class="memdesc:a5a60566d579586450b87ac815d270f3c inherit pub_methods_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)  <a href="class_personage.html#a5a60566d579586450b87ac815d270f3c">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a5a60566d579586450b87ac815d270f3c inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74a713ccc0ab68213086699330abeadc inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">virtual unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a74a713ccc0ab68213086699330abeadc">receiveExpDamage</a> (int value)=0</td></tr>
-<tr class="memdesc:a74a713ccc0ab68213086699330abeadc inherit pub_methods_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">pour recevoir les dégats d'exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)  <a href="class_personage.html#a74a713ccc0ab68213086699330abeadc">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a74a713ccc0ab68213086699330abeadc inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e442afbcc6eb7fc843478cbd66ad21b inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">virtual unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a6e442afbcc6eb7fc843478cbd66ad21b">receiveHealthCare</a> (int value)=0</td></tr>
-<tr class="memdesc:a6e442afbcc6eb7fc843478cbd66ad21b inherit pub_methods_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)  <a href="class_personage.html#a6e442afbcc6eb7fc843478cbd66ad21b">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a6e442afbcc6eb7fc843478cbd66ad21b inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e247c0fc009659808e3be549cbb54e7 inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">virtual unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a5e247c0fc009659808e3be549cbb54e7">receiveExpCare</a> (int value)=0</td></tr>
-<tr class="memdesc:a5e247c0fc009659808e3be549cbb54e7 inherit pub_methods_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)  <a href="class_personage.html#a5e247c0fc009659808e3be549cbb54e7">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a5e247c0fc009659808e3be549cbb54e7 inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45dcefc883e2db0a6562d0d8239dca6c inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structgame_1_1_item_action_result.html">game::ItemActionResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a45dcefc883e2db0a6562d0d8239dca6c">receiveItemAction</a> (int value, <a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">game::ItemsCategories</a> categorie)</td></tr>
+<tr class="separator:a45dcefc883e2db0a6562d0d8239dca6c inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a885fd718ea73b82ecd6775667bc5aeeb inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacegame.html#ab3f078339ac2192dd0568f5a1491a513">game::AnimationSide</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a885fd718ea73b82ecd6775667bc5aeeb">getLastAnimationSide</a> ()</td></tr>
+<tr class="memdesc:a885fd718ea73b82ecd6775667bc5aeeb inherit pub_methods_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Last <a class="el" href="class_animation.html">Animation</a> Side.  <a href="class_personage.html#a885fd718ea73b82ecd6775667bc5aeeb">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a885fd718ea73b82ecd6775667bc5aeeb inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af96d090c870bfcc8ce3bbc8cda06b6d0 inherit pub_methods_class_personage"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#af96d090c870bfcc8ce3bbc8cda06b6d0">setLastAnimationSide</a> (<a class="el" href="namespacegame.html#ab3f078339ac2192dd0568f5a1491a513">game::AnimationSide</a> side)</td></tr>
+<tr class="separator:af96d090c870bfcc8ce3bbc8cda06b6d0 inherit pub_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_movable_game_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_movable_game_object')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="class_movable_game_object.html">MovableGameObject</a></td></tr>
 <tr class="memitem:a786b4b88e7a155f561593313432c06f9 inherit pub_methods_class_movable_game_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#a786b4b88e7a155f561593313432c06f9">MovableGameObject</a> (std::string_view const &amp;imageSpritePath)</td></tr>
 <tr class="separator:a786b4b88e7a155f561593313432c06f9 inherit pub_methods_class_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,6 +196,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:ac3ca02b727df6802b66bc7cd677b0504 inherit pub_methods_class_movable_game_object"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#ac3ca02b727df6802b66bc7cd677b0504">addToHall</a> (<a class="el" href="class_hall.html">Hall</a> *<a class="el" href="class_movable_game_object.html#a82a572bd2815eb23cf9b752dbc70784e">hall</a>)</td></tr>
 <tr class="memdesc:ac3ca02b727df6802b66bc7cd677b0504 inherit pub_methods_class_movable_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déplacer un objet vers une salle est virtuel pour permettre de récrire la fonction et spécifier peut être des conditions de déplacement. NOTE - Cet déplacement ne concerne pas le chagement des cordonnes mais juste l'éta d'appartenance. Néanmoins c'est à partir d'elle qu'on informe l'object des nouvelles limites de mouvement.  <a href="class_movable_game_object.html#ac3ca02b727df6802b66bc7cd677b0504">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac3ca02b727df6802b66bc7cd677b0504 inherit pub_methods_class_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36de4dc55f1cb184386777f668ae34a8 inherit pub_methods_class_movable_game_object"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="class_hall.html">Hall</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#a36de4dc55f1cb184386777f668ae34a8">getActualHall</a> () const</td></tr>
+<tr class="memdesc:a36de4dc55f1cb184386777f668ae34a8 inherit pub_methods_class_movable_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Actual <a class="el" href="class_hall.html">Hall</a> object.  <a href="class_movable_game_object.html#a36de4dc55f1cb184386777f668ae34a8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a36de4dc55f1cb184386777f668ae34a8 inherit pub_methods_class_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a642733a3472829a5526280e44bfd27e5 inherit pub_methods_class_movable_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#a642733a3472829a5526280e44bfd27e5">show</a> (sf::RenderTarget &amp;window)</td></tr>
 <tr class="memdesc:a642733a3472829a5526280e44bfd27e5 inherit pub_methods_class_movable_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour dessiner l'élement dans la fenêtre.  <a href="class_movable_game_object.html#a642733a3472829a5526280e44bfd27e5">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a642733a3472829a5526280e44bfd27e5 inherit pub_methods_class_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -208,6 +226,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:a1d7e99dbc0f116d7a20b0229180397db inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a800f7c8a8df0bd57aca9f8de170d7906 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a800f7c8a8df0bd57aca9f8de170d7906">getGameObjectName</a> () const</td></tr>
 <tr class="separator:a800f7c8a8df0bd57aca9f8de170d7906 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad03571b58d55ca1de607cdf96e8207a inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#aad03571b58d55ca1de607cdf96e8207a">setGameObjectName</a> (std::string name)</td></tr>
+<tr class="separator:aad03571b58d55ca1de607cdf96e8207a inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a394309d681a8e5eb59656029a32881de inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a394309d681a8e5eb59656029a32881de">onCollisionEnter</a> (<a class="el" href="class_collision.html">Collision</a> const &amp;collision) const =0</td></tr>
 <tr class="memdesc:a394309d681a8e5eb59656029a32881de inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">émit quand il entre en contacte avec un autre élément  <a href="class_game_object.html#a394309d681a8e5eb59656029a32881de">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a394309d681a8e5eb59656029a32881de inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -224,10 +244,15 @@ Fonctions membres publiques</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Membres hérités additionnels</h2></td></tr>
+<tr class="inherit_header pub_static_methods_class_personage"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_personage')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques statiques hérités de <a class="el" href="class_personage.html">Personage</a></td></tr>
+<tr class="memitem:ae84a56d4a69b18dadd7bd1f5b1cea398 inherit pub_static_methods_class_personage"><td class="memItemLeft" align="right" valign="top">static PersonageMap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#ae84a56d4a69b18dadd7bd1f5b1cea398">getPersonages</a> ()</td></tr>
+<tr class="separator:ae84a56d4a69b18dadd7bd1f5b1cea398 inherit pub_static_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_class_game_object')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques statiques hérités de <a class="el" href="class_game_object.html">GameObject</a></td></tr>
 <tr class="memitem:a5f826d1945fc978181c713da7fd7ccb9 inherit pub_static_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a5f826d1945fc978181c713da7fd7ccb9">SetTime</a> (float t)</td></tr>
 <tr class="memdesc:a5f826d1945fc978181c713da7fd7ccb9 inherit pub_static_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Time object.  <a href="class_game_object.html#a5f826d1945fc978181c713da7fd7ccb9">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5f826d1945fc978181c713da7fd7ccb9 inherit pub_static_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19b84dec4e9ab4daccad16a0ac7a68f7 inherit pub_static_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, <a class="el" href="class_game_object.html">GameObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a19b84dec4e9ab4daccad16a0ac7a68f7">getGameobjects</a> ()</td></tr>
+<tr class="separator:a19b84dec4e9ab4daccad16a0ac7a68f7 inherit pub_static_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_personage"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_personage')"><img src="closed.png" alt="-"/>&#160;Fonctions membres protégées hérités de <a class="el" href="class_personage.html">Personage</a></td></tr>
 <tr class="memitem:a26d96b1af8f4a482b60a56e18629e14b inherit pro_methods_class_personage"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a26d96b1af8f4a482b60a56e18629e14b">init</a> ()</td></tr>
 <tr class="memdesc:a26d96b1af8f4a482b60a56e18629e14b inherit pro_methods_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour initialiser les valeur par défaut du <a class="el" href="class_game_object.html">GameObject</a>.  <a href="class_personage.html#a26d96b1af8f4a482b60a56e18629e14b">Plus de détails...</a><br /></td></tr>
@@ -243,9 +268,41 @@ Membres hérités additionnels</h2></td></tr>
 <tr class="separator:a9670b4adc4283e6741f13289baf84387 inherit pro_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cca40cc77abdb95354998264a4f7229 inherit pro_methods_class_personage"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a0cca40cc77abdb95354998264a4f7229">calculateProgressBarsPosition</a> ()</td></tr>
 <tr class="separator:a0cca40cc77abdb95354998264a4f7229 inherit pro_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abefaa25c4898b1d986814381c7b4c52b inherit pro_methods_class_personage"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#abefaa25c4898b1d986814381c7b4c52b">increaseHealth</a> (int value)</td></tr>
+<tr class="memdesc:abefaa25c4898b1d986814381c7b4c52b inherit pro_methods_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Augmenter la santé  <a href="class_personage.html#abefaa25c4898b1d986814381c7b4c52b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:abefaa25c4898b1d986814381c7b4c52b inherit pro_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae40ec2da520a710bed7ea22e9f99bbbb inherit pro_methods_class_personage"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#ae40ec2da520a710bed7ea22e9f99bbbb">increaseExp</a> (int value)</td></tr>
+<tr class="memdesc:ae40ec2da520a710bed7ea22e9f99bbbb inherit pro_methods_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Augmenter l'expérience.  <a href="class_personage.html#ae40ec2da520a710bed7ea22e9f99bbbb">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae40ec2da520a710bed7ea22e9f99bbbb inherit pro_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a863a2c17aa860a54c8aeab5a62e68e56 inherit pro_methods_class_personage"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a863a2c17aa860a54c8aeab5a62e68e56">decreaseHealth</a> (int value)</td></tr>
+<tr class="memdesc:a863a2c17aa860a54c8aeab5a62e68e56 inherit pro_methods_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diminuer la santé  <a href="class_personage.html#a863a2c17aa860a54c8aeab5a62e68e56">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a863a2c17aa860a54c8aeab5a62e68e56 inherit pro_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a398fa99a74e21944108447fb817e8781 inherit pro_methods_class_personage"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a398fa99a74e21944108447fb817e8781">decreaseExp</a> (int value)</td></tr>
+<tr class="memdesc:a398fa99a74e21944108447fb817e8781 inherit pro_methods_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diminuer l'expériance.  <a href="class_personage.html#a398fa99a74e21944108447fb817e8781">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a398fa99a74e21944108447fb817e8781 inherit pro_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f9047cde214e63d4f8dcc3c9265b0a1 inherit pro_methods_class_personage"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a1f9047cde214e63d4f8dcc3c9265b0a1">isLastAnimationSideRight</a> ()</td></tr>
+<tr class="separator:a1f9047cde214e63d4f8dcc3c9265b0a1 inherit pro_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50ed1fa7ee7a90061c51fdbe02ece37d inherit pro_methods_class_personage"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a50ed1fa7ee7a90061c51fdbe02ece37d">playCorrectSideHurtAnimation</a> ()</td></tr>
+<tr class="memdesc:a50ed1fa7ee7a90061c51fdbe02ece37d inherit pro_methods_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour l'animation HURT en tenant compte du coté vers lequel est dirigé le personage.  <a href="class_personage.html#a50ed1fa7ee7a90061c51fdbe02ece37d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a50ed1fa7ee7a90061c51fdbe02ece37d inherit pro_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3994eb488c9212770b697ff73c2d153b inherit pro_methods_class_personage"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a3994eb488c9212770b697ff73c2d153b">updatePosition</a> (float posX, float posY) override</td></tr>
 <tr class="memdesc:a3994eb488c9212770b697ff73c2d153b inherit pro_methods_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de mettre à jour la position actuelle. Cette position sera déterminé par l'évenement reçu au préalable. Aussi il s'agit dans ce cas d'une accélération uniforme.  <a href="class_personage.html#a3994eb488c9212770b697ff73c2d153b">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a3994eb488c9212770b697ff73c2d153b inherit pro_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa386a912ca8945c0a4941542e24e4e7d inherit pro_methods_class_personage"><td class="memItemLeft" align="right" valign="top">virtual unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#aa386a912ca8945c0a4941542e24e4e7d">receiveHealthDamage</a> (int value)</td></tr>
+<tr class="memdesc:aa386a912ca8945c0a4941542e24e4e7d inherit pro_methods_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)  <a href="class_personage.html#aa386a912ca8945c0a4941542e24e4e7d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa386a912ca8945c0a4941542e24e4e7d inherit pro_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc69b2c0c2e2a35e2100a3d4584661c3 inherit pro_methods_class_personage"><td class="memItemLeft" align="right" valign="top">virtual unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#acc69b2c0c2e2a35e2100a3d4584661c3">receiveExpDamage</a> (int value)</td></tr>
+<tr class="memdesc:acc69b2c0c2e2a35e2100a3d4584661c3 inherit pro_methods_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">pour recevoir les dégats d'exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)  <a href="class_personage.html#acc69b2c0c2e2a35e2100a3d4584661c3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acc69b2c0c2e2a35e2100a3d4584661c3 inherit pro_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8ff8ae7e14c4b0bdccaf152c2081e7f inherit pro_methods_class_personage"><td class="memItemLeft" align="right" valign="top">virtual unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#ac8ff8ae7e14c4b0bdccaf152c2081e7f">receiveHealthCare</a> (int value)</td></tr>
+<tr class="memdesc:ac8ff8ae7e14c4b0bdccaf152c2081e7f inherit pro_methods_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)  <a href="class_personage.html#ac8ff8ae7e14c4b0bdccaf152c2081e7f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac8ff8ae7e14c4b0bdccaf152c2081e7f inherit pro_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20ae5b420dc7d3f2715c111467a78e7c inherit pro_methods_class_personage"><td class="memItemLeft" align="right" valign="top">virtual unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a20ae5b420dc7d3f2715c111467a78e7c">receiveExpCare</a> (int value)</td></tr>
+<tr class="memdesc:a20ae5b420dc7d3f2715c111467a78e7c inherit pro_methods_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...)  <a href="class_personage.html#a20ae5b420dc7d3f2715c111467a78e7c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a20ae5b420dc7d3f2715c111467a78e7c inherit pro_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65517421b026b5b50bc8fb407406792e inherit pro_methods_class_personage"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a65517421b026b5b50bc8fb407406792e">receiveShieldboost</a> (int value)</td></tr>
+<tr class="memdesc:a65517421b026b5b50bc8fb407406792e inherit pro_methods_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour activer la protection du bouclier. Il faut noter que son activation est temporaire et protège la santé en diminuant l'ataque.  <a href="class_personage.html#a65517421b026b5b50bc8fb407406792e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a65517421b026b5b50bc8fb407406792e inherit pro_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae81af6eab1894c26eb89fead2d82ed0d inherit pro_methods_class_personage"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#ae81af6eab1894c26eb89fead2d82ed0d">updateEXPBar</a> ()</td></tr>
 <tr class="separator:ae81af6eab1894c26eb89fead2d82ed0d inherit pro_methods_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b99762efecc865705da453c73ddf45d inherit pro_methods_class_personage"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a2b99762efecc865705da453c73ddf45d">updateHPBar</a> ()</td></tr>
@@ -278,12 +335,19 @@ Membres hérités additionnels</h2></td></tr>
 <tr class="memitem:a4b73684e5c01134509c61fc7bab43484 inherit pro_static_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a4b73684e5c01134509c61fc7bab43484">incrementCount</a> ()</td></tr>
 <tr class="separator:a4b73684e5c01134509c61fc7bab43484 inherit pro_static_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_personage"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_personage')"><img src="closed.png" alt="-"/>&#160;Attributs protégés hérités de <a class="el" href="class_personage.html">Personage</a></td></tr>
+<tr class="memitem:af212abde7c9d97369a7132f45e2feec8 inherit pro_attribs_class_personage"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacegame.html#ab3f078339ac2192dd0568f5a1491a513">game::AnimationSide</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#af212abde7c9d97369a7132f45e2feec8">lastAnimationSide</a></td></tr>
+<tr class="memdesc:af212abde7c9d97369a7132f45e2feec8 inherit pro_attribs_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de controler de quelque coté diriger une animation (gauche ou droite)  <a href="class_personage.html#af212abde7c9d97369a7132f45e2feec8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af212abde7c9d97369a7132f45e2feec8 inherit pro_attribs_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0c020906dbb600cdb2aeb620e419e7f inherit pro_attribs_class_personage"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_bag.html">Bag</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#ab0c020906dbb600cdb2aeb620e419e7f">bag</a></td></tr>
 <tr class="separator:ab0c020906dbb600cdb2aeb620e419e7f inherit pro_attribs_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adefd5be77df90ae0d9c9c24a86545771 inherit pro_attribs_class_personage"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#adefd5be77df90ae0d9c9c24a86545771">m_healthLevel</a> { 100 }</td></tr>
 <tr class="separator:adefd5be77df90ae0d9c9c24a86545771 inherit pro_attribs_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1349843a464cb4c468394f18b9c2311d inherit pro_attribs_class_personage"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a1349843a464cb4c468394f18b9c2311d">m_specialityLevel</a> { 50 }</td></tr>
-<tr class="separator:a1349843a464cb4c468394f18b9c2311d inherit pro_attribs_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e400a6657e23a1a859b0d91e7c2f62b inherit pro_attribs_class_personage"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a2e400a6657e23a1a859b0d91e7c2f62b">m_experienceLevel</a> { 50 }</td></tr>
+<tr class="memdesc:a2e400a6657e23a1a859b0d91e7c2f62b inherit pro_attribs_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">La quantité de ça spécialité. NOTE -.  <a href="class_personage.html#a2e400a6657e23a1a859b0d91e7c2f62b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2e400a6657e23a1a859b0d91e7c2f62b inherit pro_attribs_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29f9af8e7b66658aca70d68adf8fa7cb inherit pro_attribs_class_personage"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a29f9af8e7b66658aca70d68adf8fa7cb">m_shieldBoost</a> { 0 }</td></tr>
+<tr class="memdesc:a29f9af8e7b66658aca70d68adf8fa7cb inherit pro_attribs_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">représente la valeur de protection offerte par le bouclié. NOTE - Meme si la valeur n'est pas nulle, tant que le bouclié n'est pas activé, cette dernière n'est pas concidérée  <a href="class_personage.html#a29f9af8e7b66658aca70d68adf8fa7cb">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a29f9af8e7b66658aca70d68adf8fa7cb inherit pro_attribs_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e14c7228a3a5a6b6531c7b1077baa7f inherit pro_attribs_class_personage"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a2e14c7228a3a5a6b6531c7b1077baa7f">m_specialtyName</a></td></tr>
 <tr class="separator:a2e14c7228a3a5a6b6531c7b1077baa7f inherit pro_attribs_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab894906ea503da5bc523baf2198fb038 inherit pro_attribs_class_personage"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#ab894906ea503da5bc523baf2198fb038">m_simpleAttackValue</a> { 10 }</td></tr>
@@ -292,6 +356,8 @@ Membres hérités additionnels</h2></td></tr>
 <tr class="separator:ae6d43eebc4cdebd9006c879f92998c1c inherit pro_attribs_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9dffcf73f47fcb193f0f267fefcb810 inherit pro_attribs_class_personage"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#aa9dffcf73f47fcb193f0f267fefcb810">m_probabilitySuccessAttack</a> { .5f }</td></tr>
 <tr class="separator:aa9dffcf73f47fcb193f0f267fefcb810 inherit pro_attribs_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa568c0af075b70a5af072834f9c9730 inherit pro_attribs_class_personage"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#aaa568c0af075b70a5af072834f9c9730">m_probabilityDodge</a> { .1 }</td></tr>
+<tr class="separator:aaa568c0af075b70a5af072834f9c9730 inherit pro_attribs_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef777eeaca1c30390140764d7c965555 inherit pro_attribs_class_personage"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#aef777eeaca1c30390140764d7c965555">m_attackVariation</a> { 5 }</td></tr>
 <tr class="separator:aef777eeaca1c30390140764d7c965555 inherit pro_attribs_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b2858ea1da06025a640a0151f6834dd inherit pro_attribs_class_personage"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a9b2858ea1da06025a640a0151f6834dd">m_healthBarSprite</a></td></tr>
@@ -299,6 +365,7 @@ Membres hérités additionnels</h2></td></tr>
 <tr class="memitem:a11d7f7c3126f55b6e2a9826c03987c64 inherit pro_attribs_class_personage"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a11d7f7c3126f55b6e2a9826c03987c64">m_specialityBarSprite</a></td></tr>
 <tr class="separator:a11d7f7c3126f55b6e2a9826c03987c64 inherit pro_attribs_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a446643fca11a76d0cd1ed94e234612da inherit pro_attribs_class_personage"><td class="memItemLeft" align="right" valign="top">sf::Sprite&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a446643fca11a76d0cd1ed94e234612da">m_suit</a></td></tr>
+<tr class="memdesc:a446643fca11a76d0cd1ed94e234612da inherit pro_attribs_class_personage"><td class="mdescLeft">&#160;</td><td class="mdescRight">Représente la tenue du personage. REVIEW.  <a href="class_personage.html#a446643fca11a76d0cd1ed94e234612da">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a446643fca11a76d0cd1ed94e234612da inherit pro_attribs_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee1579f7f20f7d3ce28dc50b4b888259 inherit pro_attribs_class_personage"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#aee1579f7f20f7d3ce28dc50b4b888259">m_isPlayer</a></td></tr>
 <tr class="separator:aee1579f7f20f7d3ce28dc50b4b888259 inherit pro_attribs_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -332,7 +399,12 @@ Membres hérités additionnels</h2></td></tr>
 <tr class="separator:a75715d74bf69ee24626c26308e4a8bd4 inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac358cb5bc96418e4c11f3a75be24810a inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rigidbody.html">Rigidbody</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#ac358cb5bc96418e4c11f3a75be24810a">m_rigidbody</a> { nullptr }</td></tr>
 <tr class="separator:ac358cb5bc96418e4c11f3a75be24810a inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_static_attribs_class_personage"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_class_personage')"><img src="closed.png" alt="-"/>&#160;Attributs protégés statiques hérités de <a class="el" href="class_personage.html">Personage</a></td></tr>
+<tr class="memitem:a09a2af55d00d2fb7f90934e2fd450cef inherit pro_static_attribs_class_personage"><td class="memItemLeft" align="right" valign="top">static PersonageMap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_personage.html#a09a2af55d00d2fb7f90934e2fd450cef">personages</a></td></tr>
+<tr class="separator:a09a2af55d00d2fb7f90934e2fd450cef inherit pro_static_attribs_class_personage"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_static_attribs_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_class_game_object')"><img src="closed.png" alt="-"/>&#160;Attributs protégés statiques hérités de <a class="el" href="class_game_object.html">GameObject</a></td></tr>
+<tr class="memitem:ae37236cecf990bd88e5e012ca950bbb3 inherit pro_static_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, <a class="el" href="class_game_object.html">GameObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#ae37236cecf990bd88e5e012ca950bbb3">gameObjects</a></td></tr>
+<tr class="separator:ae37236cecf990bd88e5e012ca950bbb3 inherit pro_static_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c0e2d6826099f2d8a5680ac67f01eab inherit pro_static_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a9c0e2d6826099f2d8a5680ac67f01eab">m_count</a> = 0</td></tr>
 <tr class="separator:a9c0e2d6826099f2d8a5680ac67f01eab inherit pro_static_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d27884636bd454b9858f179dc99e132 inherit pro_static_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a8d27884636bd454b9858f179dc99e132">m_time</a> = 0.f</td></tr>
@@ -357,7 +429,7 @@ Membres hérités additionnels</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_religious_8cpp_source.html#l00015">15</a> du fichier <a class="el" href="_religious_8cpp_source.html">Religious.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_religious_8cpp_source.html#l00016">16</a> du fichier <a class="el" href="_religious_8cpp_source.html">Religious.cpp</a>.</p>
 
 </div>
 </div>
@@ -376,13 +448,13 @@ Membres hérités additionnels</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_religious_8cpp_source.html#l00020">20</a> du fichier <a class="el" href="_religious_8cpp_source.html">Religious.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_religious_8cpp_source.html#l00021">21</a> du fichier <a class="el" href="_religious_8cpp_source.html">Religious.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
-<a id="afa9468ba625191fb0b296c704ddf89f1" name="afa9468ba625191fb0b296c704ddf89f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa9468ba625191fb0b296c704ddf89f1">&#9670;&nbsp;</a></span>receiveExpCare()</h2>
+<a id="a64ca2f182b11beb1aeb3a6c68104dacc" name="a64ca2f182b11beb1aeb3a6c68104dacc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64ca2f182b11beb1aeb3a6c68104dacc">&#9670;&nbsp;</a></span>simpleAttack()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -391,163 +463,7 @@ Membres hérités additionnels</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned Religious::receiveExpCare </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>unsigned </dd></dl>
-
-<p>Implémente <a class="el" href="class_personage.html#a5e247c0fc009659808e3be549cbb54e7">Personage</a>.</p>
-
-<p class="definition">Définition à la ligne <a class="el" href="_religious_8cpp_source.html#l00032">32</a> du fichier <a class="el" href="_religious_8cpp_source.html">Religious.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a92ca5f1c15a0919f8116787427417fd2" name="a92ca5f1c15a0919f8116787427417fd2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92ca5f1c15a0919f8116787427417fd2">&#9670;&nbsp;</a></span>receiveExpDamage()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned Religious::receiveExpDamage </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>pour recevoir les dégats d'exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>unsigned </dd></dl>
-
-<p>Implémente <a class="el" href="class_personage.html#a74a713ccc0ab68213086699330abeadc">Personage</a>.</p>
-
-<p class="definition">Définition à la ligne <a class="el" href="_religious_8cpp_source.html#l00028">28</a> du fichier <a class="el" href="_religious_8cpp_source.html">Religious.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a777feb03645e5eccab512a16747e2c02" name="a777feb03645e5eccab512a16747e2c02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a777feb03645e5eccab512a16747e2c02">&#9670;&nbsp;</a></span>receiveHealthCare()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned Religious::receiveHealthCare </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>unsigned </dd></dl>
-
-<p>Implémente <a class="el" href="class_personage.html#a6e442afbcc6eb7fc843478cbd66ad21b">Personage</a>.</p>
-
-<p class="definition">Définition à la ligne <a class="el" href="_religious_8cpp_source.html#l00030">30</a> du fichier <a class="el" href="_religious_8cpp_source.html">Religious.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a815920536856368c1a008652701e4705" name="a815920536856368c1a008652701e4705"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a815920536856368c1a008652701e4705">&#9670;&nbsp;</a></span>receiveHealthDamage()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned Religious::receiveHealthDamage </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>unsigned </dd></dl>
-
-<p>Implémente <a class="el" href="class_personage.html#a5a60566d579586450b87ac815d270f3c">Personage</a>.</p>
-
-<p class="definition">Définition à la ligne <a class="el" href="_religious_8cpp_source.html#l00026">26</a> du fichier <a class="el" href="_religious_8cpp_source.html">Religious.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a924be748e4e719d91732d6a6d9bd04dd" name="a924be748e4e719d91732d6a6d9bd04dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a924be748e4e719d91732d6a6d9bd04dd">&#9670;&nbsp;</a></span>simpleAttack()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void Religious::simpleAttack </td>
+          <td class="memname">void Religious::simpleAttack </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_personage.html">Personage</a> &amp;&#160;</td>
           <td class="paramname"><em>target</em></td><td>)</td>
@@ -563,10 +479,21 @@ Membres hérités additionnels</h2></td></tr>
 
 <p>Implémente <a class="el" href="class_personage.html#a1dade2c8ec548dd2df7791252719fe1d">Personage</a>.</p>
 
+<p class="definition">Définition à la ligne <a class="el" href="_religious_8cpp_source.html#l00026">26</a> du fichier <a class="el" href="_religious_8cpp_source.html">Religious.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_religious_a64ca2f182b11beb1aeb3a6c68104dacc_cgraph.png" border="0" usemap="#aclass_religious_a64ca2f182b11beb1aeb3a6c68104dacc_cgraph" alt=""/></div>
+<map name="aclass_religious_a64ca2f182b11beb1aeb3a6c68104dacc_cgraph" id="aclass_religious_a64ca2f182b11beb1aeb3a6c68104dacc_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,164,32"/>
+<area shape="rect" href="class_game_object.html#a800f7c8a8df0bd57aca9f8de170d7906" title=" " alt="" coords="212,5,440,32"/>
+</map>
+</div>
+
 </div>
 </div>
-<a id="a9cb05467175db65c3dca56d5c4d6d460" name="a9cb05467175db65c3dca56d5c4d6d460"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cb05467175db65c3dca56d5c4d6d460">&#9670;&nbsp;</a></span>specialAttack()</h2>
+<a id="a31ed6ef50b6e4f5ed50b763e5c4ff11a" name="a31ed6ef50b6e4f5ed50b763e5c4ff11a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31ed6ef50b6e4f5ed50b763e5c4ff11a">&#9670;&nbsp;</a></span>specialAttack()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -575,7 +502,7 @@ Membres hérités additionnels</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void Religious::specialAttack </td>
+          <td class="memname">void Religious::specialAttack </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_personage.html">Personage</a> &amp;&#160;</td>
           <td class="paramname"><em>target</em></td><td>)</td>
@@ -590,6 +517,17 @@ Membres hérités additionnels</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implémente <a class="el" href="class_personage.html#a71f84a092284e295db1de628af4e918d">Personage</a>.</p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_religious_8cpp_source.html#l00031">31</a> du fichier <a class="el" href="_religious_8cpp_source.html">Religious.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_religious_a31ed6ef50b6e4f5ed50b763e5c4ff11a_cgraph.png" border="0" usemap="#aclass_religious_a31ed6ef50b6e4f5ed50b763e5c4ff11a_cgraph" alt=""/></div>
+<map name="aclass_religious_a31ed6ef50b6e4f5ed50b763e5c4ff11a_cgraph" id="aclass_religious_a31ed6ef50b6e4f5ed50b763e5c4ff11a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,168,32"/>
+<area shape="rect" href="class_game_object.html#a800f7c8a8df0bd57aca9f8de170d7906" title=" " alt="" coords="216,5,444,32"/>
+</map>
+</div>
 
 </div>
 </div>

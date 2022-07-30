@@ -1,0 +1,12 @@
+<map id="Inventory::getGui" name="Inventory::getGui">
+<area shape="rect" id="node1" title=" " alt="" coords="692,67,811,93"/>
+<area shape="rect" id="node2" href="$class_bag.html#a81528b3dffe4e4542f31fab596d9daf4" title=" " alt="" coords="477,11,617,37"/>
+<area shape="rect" id="node5" href="$class_personage.html#a492d4164bc6c439d43cc44fefcbd6468" title=" " alt="" coords="482,67,613,93"/>
+<area shape="rect" id="node9" href="$class_personage.html#a938d215023e4594db6e6eb4341101767" title=" " alt="" coords="451,129,644,170"/>
+<area shape="rect" id="node3" href="$class_personage.html#a71c0f3d9e3412c24050afd31c836872f" title=" " alt="" coords="194,5,397,32"/>
+<area shape="rect" id="node4" href="$class_game_state.html#ab50a5f29dacea5b56158b45ae4129b51" title=" " alt="" coords="7,5,139,32"/>
+<area shape="rect" id="node6" href="$class_enemy.html#af405531fd6d410c2216bd9fbe21c83ea" title=" " alt="" coords="240,56,351,83"/>
+<area shape="rect" id="node7" href="$class_player.html#ad6867e0c7bc18e82a1da4be7bf156d97" title=" " alt="" coords="242,107,349,133"/>
+<area shape="rect" id="node8" href="$class_game_state.html#a775a7d0cf422aec17e5846852f3c997d" title=" " alt="" coords="5,132,140,159"/>
+<area shape="rect" id="node10" href="$class_player.html#abb3973b6cb17358b70363ca01b085463" title=" " alt="" coords="188,157,403,184"/>
+</map>

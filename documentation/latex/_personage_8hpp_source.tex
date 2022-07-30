@@ -6,130 +6,166 @@
 \DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#define \_\_PERSONGE\_HPP\_\_}}
 \DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00003}00003 }
 \DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_bag_8hpp}{include/Bag.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_gui_8hpp}{include/Gui.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_movable_game_object_8hpp}{include/MovableGameObject.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{consts_8hpp}{include/consts.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00009}00009 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00010}00010 \textcolor{keyword}{class }\mbox{\hyperlink{class_movable_game_object}{MovableGameObject}};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00011}00011 \textcolor{keyword}{class }\mbox{\hyperlink{class_bag}{Bag}};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00012}00012 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00013}\mbox{\hyperlink{class_personage}{00013}} \textcolor{keyword}{class }\mbox{\hyperlink{class_personage}{Personage}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_movable_game_object}{MovableGameObject}}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00014}00014 \{}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00015}00015 \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00016}00016     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_personage_a53b3b6c7865b2eb80de7c6edab217944}{Personage}}(\textcolor{keywordtype}{bool} isPlayer = \textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00017}00017     \textcolor{comment}{// NOTE -\/  Pour empêcher la copie de la classe lors de l'initialisati d...}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00018}\mbox{\hyperlink{class_personage_a9ff0d64c3568a81517b84fdce5478820}{00018}}     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_personage_a9ff0d64c3568a81517b84fdce5478820}{Personage}}(\mbox{\hyperlink{class_personage}{Personage}} \textcolor{keyword}{const}\& p) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00019}00019     \textcolor{comment}{// explicit Personage(std::string\_view const\& imageSpritePath, bool isPlayer = false);}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00020}00020     \textcolor{comment}{// /**}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00021}00021     \textcolor{comment}{//  * @brief Construct a new Personage object}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00022}00022     \textcolor{comment}{//  *}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00023}00023     \textcolor{comment}{//  * @param posX la position x de l'objet}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00024}00024     \textcolor{comment}{//  * @param posY la position y de l'objet}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00025}00025     \textcolor{comment}{//  */}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00026}00026     \textcolor{comment}{// explicit Personage(float posX, float posY, bool isPlayer = false);}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00027}00027     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_personage_a1767f263a4d3681ce02ef14f9b2afae8}{\string~Personage}}();}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00028}00028 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00029}00029     \textcolor{comment}{// Fonctions/Méthodes}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00030}00030     \textcolor{comment}{// Getters}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00031}\mbox{\hyperlink{class_personage_a81af0984599ce6981a4b6c4ded2b2b8a}{00031}}     \textcolor{keyword}{const} \textcolor{keywordtype}{int}\& \mbox{\hyperlink{class_personage_a81af0984599ce6981a4b6c4ded2b2b8a}{getHealthLevel}}()\textcolor{keyword}{ const}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00032}00032 \textcolor{keyword}{    }\{}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00033}00033         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_personage_adefd5be77df90ae0d9c9c24a86545771}{m\_healthLevel}};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00034}00034     \}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00035}00035 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00036}\mbox{\hyperlink{class_personage_ab373b15697442211943f0b3f630e9be6}{00036}}     \textcolor{keyword}{const} \textcolor{keywordtype}{int}\& \mbox{\hyperlink{class_personage_ab373b15697442211943f0b3f630e9be6}{getSpecialityLevel}}()\textcolor{keyword}{ const}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00037}00037 \textcolor{keyword}{    }\{}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00038}00038         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_personage_a1349843a464cb4c468394f18b9c2311d}{m\_specialityLevel}};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00039}00039     \}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00040}00040 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00041}00041     \textcolor{comment}{//}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00042}00042     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_personage_af9f5f4c71cf2113a83f1e8f401020ba0}{isDied}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_collision_8hpp}{include/Collision.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_gui_8hpp}{include/Gui.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_inventory_8hpp}{include/Inventory.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00008}00008 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_item_8hpp}{include/Item.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00009}00009 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_movable_game_object_8hpp}{include/MovableGameObject.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00010}00010 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{consts_8hpp}{include/consts.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00011}00011 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00012}00012 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00014}00014 \textcolor{keyword}{class }\mbox{\hyperlink{class_bag}{Bag}};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00015}00015 \textcolor{keyword}{class }\mbox{\hyperlink{class_collision}{Collision}};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00016}00016 \textcolor{keyword}{class }\mbox{\hyperlink{class_movable_game_object}{MovableGameObject}};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00017}00017 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacegui}{gui}}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00018}00018 \{}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00019}00019 \textcolor{keyword}{class }ProgressBar;}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00020}00020 \}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00021}00021 \textcolor{keyword}{class }\mbox{\hyperlink{class_inventory}{Inventory}};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00022}00022 \textcolor{comment}{// enum class ItemsCategories;}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00023}00023 \textcolor{keyword}{class }\mbox{\hyperlink{class_item}{Item}};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00024}00024 \textcolor{keyword}{class }\mbox{\hyperlink{class_movable_game_object}{MovableGameObject}};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00026}\mbox{\hyperlink{class_personage}{00026}} \textcolor{keyword}{class }\mbox{\hyperlink{class_personage}{Personage}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_movable_game_object}{MovableGameObject}}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00027}00027 \{}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00028}00028     \textcolor{keyword}{using }PersonageMap = std::map<std::string, Personage*>;}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00030}00030 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00031}00031     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_personage_a53b3b6c7865b2eb80de7c6edab217944}{Personage}}(\textcolor{keywordtype}{bool} isPlayer = \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00032}00032     \textcolor{comment}{// NOTE -\/  Pour empêcher la copie de la classe lors de l'initialisati d...}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00033}\mbox{\hyperlink{class_personage_a9ff0d64c3568a81517b84fdce5478820}{00033}}     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_personage_a9ff0d64c3568a81517b84fdce5478820}{Personage}}(\mbox{\hyperlink{class_personage}{Personage}} \textcolor{keyword}{const}\& p) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00034}00034     \textcolor{comment}{// explicit Personage(std::string\_view const\& imageSpritePath, bool isPlayer = false);}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00035}00035     \textcolor{comment}{// /**}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00036}00036     \textcolor{comment}{//  * @brief Construct a new Personage object}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00037}00037     \textcolor{comment}{//  *}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00038}00038     \textcolor{comment}{//  * @param posX la position x de l'objet}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00039}00039     \textcolor{comment}{//  * @param posY la position y de l'objet}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00040}00040     \textcolor{comment}{//  */}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00041}00041     \textcolor{comment}{// explicit Personage(float posX, float posY, bool isPlayer = false);}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00042}00042     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_personage_a1767f263a4d3681ce02ef14f9b2afae8}{\string~Personage}}();}
 \DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00043}00043 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00049}00049     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a01b776643850ebcc55ba806e2fa8085e}{show}}(sf::RenderTarget\& target) \textcolor{keyword}{override};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00050}00050 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00051}00051     \textcolor{comment}{//Sera appelé à chaque frame...}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00052}00052     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a492d4164bc6c439d43cc44fefcbd6468}{update}}() \textcolor{keyword}{override};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00053}00053 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00054}00054     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a938d215023e4594db6e6eb4341101767}{updateMousePosWindow}}(sf::Vector2i mousePosWindow);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00044}00044     \textcolor{comment}{// Fonctions/Méthodes}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00045}00045     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_personage_aa995d729f1d7ac21b9c9423556f7a17e}{addItem}}(\mbox{\hyperlink{class_item}{Item}}* item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game::inventory\_items\_types}} type, sf::Vector2f \textcolor{keyword}{const}\& coordinates);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00046}00046     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_personage_a905c0a8340b7f13513b6166807a6e0c6}{moveItem}}(\mbox{\hyperlink{class_item}{Item}}* item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game::inventory\_items\_types}} type, \mbox{\hyperlink{class_inventory}{Inventory}}* to\_inventory, sf::Vector2f \textcolor{keyword}{const}\& coordinates);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00047}00047     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_personage_a27255cf1214312c1bdc5c77796378bbd}{removeItem}}(\mbox{\hyperlink{class_item}{Item}}* item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game::inventory\_items\_types}} type);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00049}00049     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_personage_a532ee7e1899f0620fa6f22ebd55635d6}{haveThisItem}}(\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game::ItemsCategories}} \textcolor{keyword}{const}\& categorie) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00050}00050     \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game::inventory\_items\_types}} \textcolor{keyword}{const}\& \mbox{\hyperlink{class_personage_af938fe6b2fefb437d0c2b91bef48ed21}{getInventoryItemType}}(\mbox{\hyperlink{class_item}{Item}} \textcolor{keyword}{const}* item) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00051}00051     \mbox{\hyperlink{class_item}{Item}} \textcolor{keyword}{const}* \mbox{\hyperlink{class_personage_a2bb4f6a7e3151bc99390fad379b41cc1}{getFirstItemMatch}}(\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game::ItemsCategories}} \textcolor{keyword}{const}\& categorie) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00052}00052     \mbox{\hyperlink{class_item}{Item}}* \mbox{\hyperlink{class_personage_a1d99d3f14e517394a159798dba2000be}{getFirstItemMatchNonConst}}(\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game::ItemsCategories}} \textcolor{keyword}{const}\& categorie);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00053}00053     \textcolor{comment}{// Getters}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00054}00054     \textcolor{keyword}{const} \textcolor{keywordtype}{int}\& \mbox{\hyperlink{class_personage_a81af0984599ce6981a4b6c4ded2b2b8a}{getHealthLevel}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00055}00055 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00056}00056     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a3f8afca1fd73cff32ab7f6d2df048c6d}{setGameObjectName}}(std::string name);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00056}00056     \textcolor{keyword}{const} \textcolor{keywordtype}{int}\& \mbox{\hyperlink{class_personage_ac93ee3156d7d9b1a5bae68603ab24ca2}{getExperienceLevel}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00057}00057 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00058}00058     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_ac0e67cb98d13d11d49395bcaa9a8f6dd}{onCollisionEnter}}(\mbox{\hyperlink{class_collision}{Collision}} \textcolor{keyword}{const}\& collision) \textcolor{keyword}{const override};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00059}00059 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00060}00060     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_acecd31422b51e2d0755c6d2de94d9510}{move}}(\mbox{\hyperlink{struct_my_vector}{MyVector}}\& speed) \textcolor{keyword}{override};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00061}00061 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00062}00062     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a71c0f3d9e3412c24050afd31c836872f}{renderBagInventory}}(sf::RenderTarget\& target);}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00063}00063 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00064}\mbox{\hyperlink{class_personage_a1dade2c8ec548dd2df7791252719fe1d}{00064}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a1dade2c8ec548dd2df7791252719fe1d}{simpleAttack}}(\mbox{\hyperlink{class_personage}{Personage}}\& target) = 0;}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00065}\mbox{\hyperlink{class_personage_a71f84a092284e295db1de628af4e918d}{00065}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a71f84a092284e295db1de628af4e918d}{specialAttack}}(\mbox{\hyperlink{class_personage}{Personage}}\& target) = 0;}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00073}\mbox{\hyperlink{class_personage_a5a60566d579586450b87ac815d270f3c}{00073}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_personage_a5a60566d579586450b87ac815d270f3c}{receiveHealthDamage}}(\textcolor{keywordtype}{int} value) = 0;}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00081}\mbox{\hyperlink{class_personage_a74a713ccc0ab68213086699330abeadc}{00081}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_personage_a74a713ccc0ab68213086699330abeadc}{receiveExpDamage}}(\textcolor{keywordtype}{int} value) = 0;}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00089}\mbox{\hyperlink{class_personage_a6e442afbcc6eb7fc843478cbd66ad21b}{00089}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_personage_a6e442afbcc6eb7fc843478cbd66ad21b}{receiveHealthCare}}(\textcolor{keywordtype}{int} value) = 0;}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00097}\mbox{\hyperlink{class_personage_a5e247c0fc009659808e3be549cbb54e7}{00097}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_personage_a5e247c0fc009659808e3be549cbb54e7}{receiveExpCare}}(\textcolor{keywordtype}{int} value) = 0;}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00098}00098 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00099}00099 \textcolor{keyword}{protected}:}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00100}\mbox{\hyperlink{class_personage_ab0c020906dbb600cdb2aeb620e419e7f}{00100}}     \mbox{\hyperlink{class_bag}{Bag}}* \mbox{\hyperlink{class_personage_ab0c020906dbb600cdb2aeb620e419e7f}{bag}};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00101}00101     \textcolor{comment}{// REVIEW -\/ Faire les initialisation dans le cpp}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00106}00106 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a26d96b1af8f4a482b60a56e18629e14b}{init}}();}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00111}00111     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a8ed3bc3b47bd9830238fc92ff8ff7cfd}{initAnimations}}() \textcolor{keyword}{override};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00112}00112     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_ac03bba7d28058936fad17e76b8418811}{initEXPBar}}();}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00113}00113     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a2bc14851a9625f02a5fa04eed5d1af27}{initHPBar}}();}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00114}00114     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a9670b4adc4283e6741f13289baf84387}{initBag}}();}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00115}00115 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00116}00116     sf::Vector2f \mbox{\hyperlink{class_personage_a0cca40cc77abdb95354998264a4f7229}{calculateProgressBarsPosition}}();}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00117}00117 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00118}00118     \textcolor{comment}{// La quantité de vie du personnage}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00119}\mbox{\hyperlink{class_personage_adefd5be77df90ae0d9c9c24a86545771}{00119}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_personage_adefd5be77df90ae0d9c9c24a86545771}{m\_healthLevel}} \{ 100 \};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00120}00120 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00121}00121     \textcolor{comment}{// La quantité de ça spécialité}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00122}\mbox{\hyperlink{class_personage_a1349843a464cb4c468394f18b9c2311d}{00122}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_personage_a1349843a464cb4c468394f18b9c2311d}{m\_specialityLevel}} \{ 50 \};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00123}00123 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00124}00124     \textcolor{comment}{// Le nom de la spécialité}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00125}\mbox{\hyperlink{class_personage_a2e14c7228a3a5a6b6531c7b1077baa7f}{00125}}     std::string \mbox{\hyperlink{class_personage_a2e14c7228a3a5a6b6531c7b1077baa7f}{m\_specialtyName}};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00126}00126 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00127}00127     \textcolor{comment}{// Valeur de l'attaque}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00128}\mbox{\hyperlink{class_personage_ab894906ea503da5bc523baf2198fb038}{00128}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_personage_ab894906ea503da5bc523baf2198fb038}{m\_simpleAttackValue}} \{ 10 \};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00129}00129 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00130}00130     \textcolor{comment}{// Valeur de l'attaque}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00131}\mbox{\hyperlink{class_personage_ae6d43eebc4cdebd9006c879f92998c1c}{00131}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_personage_ae6d43eebc4cdebd9006c879f92998c1c}{m\_specialAttackValue}} \{ 25 \};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00132}00132 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00133}00133     \textcolor{comment}{// probabilité d'attaque réussi (entre 0 et 1) mais évitons le zéro}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00134}\mbox{\hyperlink{class_personage_aa9dffcf73f47fcb193f0f267fefcb810}{00134}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_personage_aa9dffcf73f47fcb193f0f267fefcb810}{m\_probabilitySuccessAttack}} \{ .5f \};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00135}00135 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00136}00136     \textcolor{comment}{// variation de l'attaque (valeur de l'attaque +/-\/ cette valeur)}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00137}\mbox{\hyperlink{class_personage_aef777eeaca1c30390140764d7c965555}{00137}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_personage_aef777eeaca1c30390140764d7c965555}{m\_attackVariation}} \{ 5 \};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00138}00138 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00139}00139     \textcolor{comment}{// sf::Texture m\_healthBarTexture;}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00140}\mbox{\hyperlink{class_personage_a9b2858ea1da06025a640a0151f6834dd}{00140}}     sf::Sprite \mbox{\hyperlink{class_personage_a9b2858ea1da06025a640a0151f6834dd}{m\_healthBarSprite}};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00141}00141 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00142}00142     \textcolor{comment}{// sf::Texture m\_specialityBarTexture;}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00143}\mbox{\hyperlink{class_personage_a11d7f7c3126f55b6e2a9826c03987c64}{00143}}     sf::Sprite \mbox{\hyperlink{class_personage_a11d7f7c3126f55b6e2a9826c03987c64}{m\_specialityBarSprite}};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00144}00144 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00145}00145     \textcolor{comment}{// sf::Texture m\_}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00146}\mbox{\hyperlink{class_personage_a446643fca11a76d0cd1ed94e234612da}{00146}}     sf::Sprite \mbox{\hyperlink{class_personage_a446643fca11a76d0cd1ed94e234612da}{m\_suit}};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00147}00147 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00148}00148     \textcolor{comment}{// Valeur de l'accélération du déplacement (accélération uniforme)}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00149}00149     \textcolor{comment}{// const float m\_MOVE\_SPEED \{ 200.f \};}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00150}00150 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00151}\mbox{\hyperlink{class_personage_aee1579f7f20f7d3ce28dc50b4b888259}{00151}}     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_personage_aee1579f7f20f7d3ce28dc50b4b888259}{m\_isPlayer}};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00058}00058     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00059}00059     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_personage_af9f5f4c71cf2113a83f1e8f401020ba0}{isDied}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00066}00066     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a01b776643850ebcc55ba806e2fa8085e}{show}}(sf::RenderTarget\& target) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00068}00068     \textcolor{comment}{//Sera appelé à chaque frame...}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00069}00069     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a492d4164bc6c439d43cc44fefcbd6468}{update}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00071}00071     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a938d215023e4594db6e6eb4341101767}{updateMousePosWindow}}(sf::Vector2i mousePosWindow);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00073}00073     \textcolor{comment}{// void setGameObjectName(std::string name);}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00075}00075     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_ac0e67cb98d13d11d49395bcaa9a8f6dd}{onCollisionEnter}}(\mbox{\hyperlink{class_collision}{Collision}} \textcolor{keyword}{const}\& collision) \textcolor{keyword}{const override};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00077}00077     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_acecd31422b51e2d0755c6d2de94d9510}{move}}(\mbox{\hyperlink{struct_my_vector}{MyVector}}\& speed) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00079}00079     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a71c0f3d9e3412c24050afd31c836872f}{renderBagInventory}}(sf::RenderTarget\& target);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00081}\mbox{\hyperlink{class_personage_a1dade2c8ec548dd2df7791252719fe1d}{00081}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a1dade2c8ec548dd2df7791252719fe1d}{simpleAttack}}(\mbox{\hyperlink{class_personage}{Personage}}\& target) = 0;}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00082}\mbox{\hyperlink{class_personage_a71f84a092284e295db1de628af4e918d}{00082}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a71f84a092284e295db1de628af4e918d}{specialAttack}}(\mbox{\hyperlink{class_personage}{Personage}}\& target) = 0;}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00084}00084     \textcolor{keyword}{virtual} \mbox{\hyperlink{structgame_1_1_item_action_result}{game::ItemActionResult}} \mbox{\hyperlink{class_personage_a45dcefc883e2db0a6562d0d8239dca6c}{receiveItemAction}}(\textcolor{keywordtype}{int} value, \mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game::ItemsCategories}} categorie);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00091}00091     \mbox{\hyperlink{namespacegame_ab3f078339ac2192dd0568f5a1491a513}{game::AnimationSide}} \textcolor{keyword}{const}\& \mbox{\hyperlink{class_personage_a885fd718ea73b82ecd6775667bc5aeeb}{getLastAnimationSide}}();}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00093}00093     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_af96d090c870bfcc8ce3bbc8cda06b6d0}{setLastAnimationSide}}(\mbox{\hyperlink{namespacegame_ab3f078339ac2192dd0568f5a1491a513}{game::AnimationSide}} side);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00095}00095     \textcolor{keyword}{static} PersonageMap \mbox{\hyperlink{class_personage_ae84a56d4a69b18dadd7bd1f5b1cea398}{getPersonages}}(); \textcolor{comment}{// REVIEW -\/ Retourner un pointeur pluto}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00097}00097 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00098}\mbox{\hyperlink{class_personage_a09a2af55d00d2fb7f90934e2fd450cef}{00098}}     \textcolor{keyword}{static} PersonageMap \mbox{\hyperlink{class_personage_a09a2af55d00d2fb7f90934e2fd450cef}{personages}};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00103}\mbox{\hyperlink{class_personage_af212abde7c9d97369a7132f45e2feec8}{00103}}     \mbox{\hyperlink{namespacegame_ab3f078339ac2192dd0568f5a1491a513}{game::AnimationSide}} \mbox{\hyperlink{class_personage_af212abde7c9d97369a7132f45e2feec8}{lastAnimationSide}};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00104}\mbox{\hyperlink{class_personage_ab0c020906dbb600cdb2aeb620e419e7f}{00104}}     \mbox{\hyperlink{class_bag}{Bag}}* \mbox{\hyperlink{class_personage_ab0c020906dbb600cdb2aeb620e419e7f}{bag}};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00105}00105     \textcolor{comment}{// REVIEW -\/ Faire les initialisation dans le cpp}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00110}00110 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a26d96b1af8f4a482b60a56e18629e14b}{init}}();}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00115}00115     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a8ed3bc3b47bd9830238fc92ff8ff7cfd}{initAnimations}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00116}00116     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_ac03bba7d28058936fad17e76b8418811}{initEXPBar}}();}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00117}00117     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a2bc14851a9625f02a5fa04eed5d1af27}{initHPBar}}();}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00118}00118     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a9670b4adc4283e6741f13289baf84387}{initBag}}();}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00120}00120     sf::Vector2f \mbox{\hyperlink{class_personage_a0cca40cc77abdb95354998264a4f7229}{calculateProgressBarsPosition}}();}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00127}00127     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_abefaa25c4898b1d986814381c7b4c52b}{increaseHealth}}(\textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00133}00133     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_ae40ec2da520a710bed7ea22e9f99bbbb}{increaseExp}}(\textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00139}00139     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a863a2c17aa860a54c8aeab5a62e68e56}{decreaseHealth}}(\textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00145}00145     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a398fa99a74e21944108447fb817e8781}{decreaseExp}}(\textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00146}00146     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_personage_a1f9047cde214e63d4f8dcc3c9265b0a1}{isLastAnimationSideRight}}();}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00151}00151     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a50ed1fa7ee7a90061c51fdbe02ece37d}{playCorrectSideHurtAnimation}}();}
 \DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00152}00152 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00153}\mbox{\hyperlink{class_personage_a824057a6da265aa4e58fa1dfbdd6037a}{00153}}     sf::RenderTarget* \mbox{\hyperlink{class_personage_a824057a6da265aa4e58fa1dfbdd6037a}{m\_window}} \{ 0 \};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00154}00154 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00155}00155     \textcolor{comment}{//EXP Bar}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00156}\mbox{\hyperlink{class_personage_a8ee532510ee5e4078e2723d29975ad5c}{00156}}     \mbox{\hyperlink{classgui_1_1_progress_bar}{gui::ProgressBar}}* \mbox{\hyperlink{class_personage_a8ee532510ee5e4078e2723d29975ad5c}{expBar}};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00157}00157 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00158}00158     \textcolor{comment}{//HP Bar}}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00159}\mbox{\hyperlink{class_personage_a395cf46197f77e7047cb4d3ac6993755}{00159}}     \mbox{\hyperlink{classgui_1_1_progress_bar}{gui::ProgressBar}}* \mbox{\hyperlink{class_personage_a395cf46197f77e7047cb4d3ac6993755}{hpBar}};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00160}00160 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00166}00166     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a3994eb488c9212770b697ff73c2d153b}{updatePosition}}(\textcolor{keywordtype}{float} posX, \textcolor{keywordtype}{float} posY) \textcolor{keyword}{override};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00167}00167 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00168}00168     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_ae81af6eab1894c26eb89fead2d82ed0d}{updateEXPBar}}();}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00169}00169     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a2b99762efecc865705da453c73ddf45d}{updateHPBar}}();}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00153}00153     \textcolor{comment}{// La quantité de vie du personnage}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00154}\mbox{\hyperlink{class_personage_adefd5be77df90ae0d9c9c24a86545771}{00154}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_personage_adefd5be77df90ae0d9c9c24a86545771}{m\_healthLevel}} \{ 100 \};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00156}00156     \textcolor{comment}{// int m\_specialityLevel \{ 50 \};}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00162}\mbox{\hyperlink{class_personage_a2e400a6657e23a1a859b0d91e7c2f62b}{00162}} \textcolor{comment}{}    \textcolor{keywordtype}{int} \mbox{\hyperlink{class_personage_a2e400a6657e23a1a859b0d91e7c2f62b}{m\_experienceLevel}} \{ 50 \};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00163}00163 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00169}\mbox{\hyperlink{class_personage_a29f9af8e7b66658aca70d68adf8fa7cb}{00169}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_personage_a29f9af8e7b66658aca70d68adf8fa7cb}{m\_shieldBoost}} \{ 0 \};}
 \DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00170}00170 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00171}00171     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_abc3bc1054dfc52ccdf479a48616b5504}{renderEXPBar}}(sf::RenderTarget\& target);}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00172}00172     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a67392d993c6554540e2f59443abd5a59}{renderHPBar}}(sf::RenderTarget\& target);}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00173}00173 \};}
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00174}00174 }
-\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00175}00175 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_PERSONGE\_HPP\_\_}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00171}00171     \textcolor{comment}{// Le nom de la spécialité}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00172}\mbox{\hyperlink{class_personage_a2e14c7228a3a5a6b6531c7b1077baa7f}{00172}}     std::string \mbox{\hyperlink{class_personage_a2e14c7228a3a5a6b6531c7b1077baa7f}{m\_specialtyName}};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00173}00173 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00174}00174     \textcolor{comment}{// Valeur de l'attaque}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00175}\mbox{\hyperlink{class_personage_ab894906ea503da5bc523baf2198fb038}{00175}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_personage_ab894906ea503da5bc523baf2198fb038}{m\_simpleAttackValue}} \{ 10 \};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00176}00176 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00177}00177     \textcolor{comment}{// Valeur de l'attaque}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00178}\mbox{\hyperlink{class_personage_ae6d43eebc4cdebd9006c879f92998c1c}{00178}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_personage_ae6d43eebc4cdebd9006c879f92998c1c}{m\_specialAttackValue}} \{ 25 \};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00179}00179 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00180}00180     \textcolor{comment}{// probabilité d'attaque réussi (entre 0 et 1) mais évitons le zéro}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00181}\mbox{\hyperlink{class_personage_aa9dffcf73f47fcb193f0f267fefcb810}{00181}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_personage_aa9dffcf73f47fcb193f0f267fefcb810}{m\_probabilitySuccessAttack}} \{ .5f \};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00182}00182 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00183}\mbox{\hyperlink{class_personage_aaa568c0af075b70a5af072834f9c9730}{00183}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_personage_aaa568c0af075b70a5af072834f9c9730}{m\_probabilityDodge}} \{ .1 \};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00184}00184 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00185}00185     \textcolor{comment}{// variation de l'attaque (valeur de l'attaque +/-\/ cette valeur)}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00186}\mbox{\hyperlink{class_personage_aef777eeaca1c30390140764d7c965555}{00186}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_personage_aef777eeaca1c30390140764d7c965555}{m\_attackVariation}} \{ 5 \};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00187}00187 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00188}00188     \textcolor{comment}{// sf::Texture m\_healthBarTexture;}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00189}\mbox{\hyperlink{class_personage_a9b2858ea1da06025a640a0151f6834dd}{00189}}     sf::Sprite \mbox{\hyperlink{class_personage_a9b2858ea1da06025a640a0151f6834dd}{m\_healthBarSprite}};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00190}00190 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00191}00191     \textcolor{comment}{// sf::Texture m\_specialityBarTexture;}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00192}\mbox{\hyperlink{class_personage_a11d7f7c3126f55b6e2a9826c03987c64}{00192}}     sf::Sprite \mbox{\hyperlink{class_personage_a11d7f7c3126f55b6e2a9826c03987c64}{m\_specialityBarSprite}};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00193}00193 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00199}\mbox{\hyperlink{class_personage_a446643fca11a76d0cd1ed94e234612da}{00199}}     sf::Sprite \mbox{\hyperlink{class_personage_a446643fca11a76d0cd1ed94e234612da}{m\_suit}};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00200}00200 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00201}\mbox{\hyperlink{class_personage_aee1579f7f20f7d3ce28dc50b4b888259}{00201}}     \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_personage_aee1579f7f20f7d3ce28dc50b4b888259}{m\_isPlayer}};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00202}00202 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00203}\mbox{\hyperlink{class_personage_a824057a6da265aa4e58fa1dfbdd6037a}{00203}}     sf::RenderTarget* \mbox{\hyperlink{class_personage_a824057a6da265aa4e58fa1dfbdd6037a}{m\_window}} \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00204}00204 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00205}00205     \textcolor{comment}{//EXP Bar}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00206}\mbox{\hyperlink{class_personage_a8ee532510ee5e4078e2723d29975ad5c}{00206}}     \mbox{\hyperlink{classgui_1_1_progress_bar}{gui::ProgressBar}}* \mbox{\hyperlink{class_personage_a8ee532510ee5e4078e2723d29975ad5c}{expBar}};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00207}00207 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00208}00208     \textcolor{comment}{//HP Bar}}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00209}\mbox{\hyperlink{class_personage_a395cf46197f77e7047cb4d3ac6993755}{00209}}     \mbox{\hyperlink{classgui_1_1_progress_bar}{gui::ProgressBar}}* \mbox{\hyperlink{class_personage_a395cf46197f77e7047cb4d3ac6993755}{hpBar}};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00210}00210 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00216}00216     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a3994eb488c9212770b697ff73c2d153b}{updatePosition}}(\textcolor{keywordtype}{float} posX, \textcolor{keywordtype}{float} posY) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00217}00217 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00225}00225     \textcolor{keyword}{virtual} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_personage_aa386a912ca8945c0a4941542e24e4e7d}{receiveHealthDamage}}(\textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00233}00233     \textcolor{keyword}{virtual} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_personage_acc69b2c0c2e2a35e2100a3d4584661c3}{receiveExpDamage}}(\textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00241}00241     \textcolor{keyword}{virtual} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_personage_ac8ff8ae7e14c4b0bdccaf152c2081e7f}{receiveHealthCare}}(\textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00249}00249     \textcolor{keyword}{virtual} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_personage_a20ae5b420dc7d3f2715c111467a78e7c}{receiveExpCare}}(\textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00256}00256     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a65517421b026b5b50bc8fb407406792e}{receiveShieldboost}}(\textcolor{keywordtype}{int} value);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00257}00257 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00258}00258     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_ae81af6eab1894c26eb89fead2d82ed0d}{updateEXPBar}}();}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00259}00259     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a2b99762efecc865705da453c73ddf45d}{updateHPBar}}();}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00260}00260 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00261}00261     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_abc3bc1054dfc52ccdf479a48616b5504}{renderEXPBar}}(sf::RenderTarget\& target);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00262}00262     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_personage_a67392d993c6554540e2f59443abd5a59}{renderHPBar}}(sf::RenderTarget\& target);}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00263}00263 \};}
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00264}00264 }
+\DoxyCodeLine{\Hypertarget{_personage_8hpp_source_l00265}00265 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_PERSONGE\_HPP\_\_}}
 
 \end{DoxyCode}

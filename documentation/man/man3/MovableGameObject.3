@@ -1,4 +1,4 @@
-.TH "MovableGameObject" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.TH "MovableGameObject" 3 "Samedi 30 Juillet 2022" "Jeu POA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -31,6 +31,10 @@ Dérivée par \fBPersonage\fP\&.
 .RI "virtual bool \fBaddToHall\fP (\fBHall\fP *\fBhall\fP)"
 .br
 .RI "Déplacer un objet vers une salle est virtuel pour permettre de récrire la fonction et spécifier peut être des conditions de déplacement\&. NOTE - Cet déplacement ne concerne pas le chagement des cordonnes mais juste l'éta d'appartenance\&. Néanmoins c'est à partir d'elle qu'on informe l'object des nouvelles limites de mouvement\&. "
+.ti -1c
+.RI "virtual const \fBHall\fP * \fBgetActualHall\fP () const"
+.br
+.RI "Get the Actual \fBHall\fP object\&. "
 .ti -1c
 .RI "virtual void \fBshow\fP (sf::RenderTarget &window)"
 .br
@@ -79,7 +83,7 @@ Dérivée par \fBPersonage\fP\&.
 .SS "Membres hérités additionnels"
 .SH "Description détaillée"
 .PP 
-Définition à la ligne \fB16\fP du fichier \fBMovableGameObject\&.hpp\fP\&.
+Définition à la ligne \fB17\fP du fichier \fBMovableGameObject\&.hpp\fP\&.
 .SH "Documentation des constructeurs et destructeur"
 .PP 
 .SS "MovableGameObject::MovableGameObject (std::string_view const & imageSpritePath)"
@@ -116,6 +120,19 @@ Définition à la ligne \fB37\fP du fichier \fBMovableGameObject\&.cpp\fP\&.
 
 .PP
 Définition à la ligne \fB27\fP du fichier \fBMovableGameObject\&.cpp\fP\&.
+.SS "const \fBHall\fP * MovableGameObject::getActualHall () const\fC [virtual]\fP"
+
+.PP
+Get the Actual \fBHall\fP object\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+const Hall* 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB44\fP du fichier \fBMovableGameObject\&.cpp\fP\&.
 .SS "\fBAnimationComponent\fP * MovableGameObject::getAnimationComponent ()"
 
 .PP
@@ -163,7 +180,7 @@ Met à jour les nouvelle limite de déplacement\&.
 .PP
 
 .PP
-Définition à la ligne \fB49\fP du fichier \fBMovableGameObject\&.cpp\fP\&.
+Définition à la ligne \fB54\fP du fichier \fBMovableGameObject\&.cpp\fP\&.
 .SS "void MovableGameObject::show (sf::RenderTarget & window)\fC [virtual]\fP"
 
 .PP
@@ -180,7 +197,7 @@ Réimplémentée à partir de \fBGameObject\fP\&.
 .PP
 Réimplémentée dans \fBPersonage\fP\&.
 .PP
-Définition à la ligne \fB44\fP du fichier \fBMovableGameObject\&.cpp\fP\&.
+Définition à la ligne \fB49\fP du fichier \fBMovableGameObject\&.cpp\fP\&.
 .SS "virtual void MovableGameObject::update ()\fC [pure virtual]\fP"
 
 .PP
@@ -198,13 +215,13 @@ Implémenté dans \fBPersonage\fP\&.
 .SS "\fBAnimationComponent\fP* MovableGameObject::animationComponent\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB54\fP du fichier \fBMovableGameObject\&.hpp\fP\&.
+Définition à la ligne \fB61\fP du fichier \fBMovableGameObject\&.hpp\fP\&.
 .SS "const \fBHall\fP* MovableGameObject::hall\fC [protected]\fP"
 
 .PP
 Ce pointeur ne doit pas être supprimé à ce niveau\&. 
 .PP
-Définition à la ligne \fB58\fP du fichier \fBMovableGameObject\&.hpp\fP\&.
+Définition à la ligne \fB65\fP du fichier \fBMovableGameObject\&.hpp\fP\&.
 
 .SH "Auteur"
 .PP 

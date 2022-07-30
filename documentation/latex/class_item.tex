@@ -9,25 +9,47 @@ Représente éssentiellement les object que pourra manipuler les personnages.
 
 {\ttfamily \#include $<$Item.\+hpp$>$}
 
-Graphe d\textquotesingle{}héritage de Item\+:\begin{figure}[H]
+
+
+Graphe d\textquotesingle{}héritage de Item\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.566879cm]{class_item}
+\includegraphics[height=550pt]{class_item__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Item\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_item__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_item_ae819a092279f2c4432a163893d88905d}{Item}} (std\+::string\+\_\+view const \&image\+Sprite\+Path, \mbox{\hyperlink{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705fa}{Items\+Categories}} \mbox{\hyperlink{class_item_aaa167cf26678cc807e34f87ef6fa2f54}{categorie}})
+\mbox{\hyperlink{class_item_a1f40c156d1ab6df5014d0b9a7353378f}{Item}} (std\+::string\+\_\+view const \&image\+Sprite\+Path, \mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game\+::\+Items\+Categories}} \mbox{\hyperlink{class_item_a6176ff68b9bc6059bb6e8840c3090e3a}{categorie}})
 \item 
 \mbox{\hyperlink{class_item_a11663c84075b78c3ae5e30fdfcd7c458}{$\sim$\+Item}} ()
 \item 
+\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game\+::\+Items\+Categories}} const \& \mbox{\hyperlink{class_item_aaea0ac82b6ca4b3acfc348641efbd324}{get\+Categorie}} () const
+\begin{DoxyCompactList}\small\item\em Get the Categorie object. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_item_ab2a2e5e2b20b61602e8edf0e4e573599}{on\+Collision\+Enter}} (\mbox{\hyperlink{class_collision}{Collision}} const \&collision) const =0
 \begin{DoxyCompactList}\small\item\em émit quand il entre en contacte avec un autre élément \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_item_a5e7b6054dbde86c485f1be747cb9926c}{update}} ()=0
 \item 
-virtual \mbox{\hyperlink{class_item_a180ec610ac1bfdec38466457f53ad3b7}{use\+On}} (\mbox{\hyperlink{class_personage}{Personage}} \&personage)=0
-\begin{DoxyCompactList}\small\item\em Utiliser l\textquotesingle{}item sur le personnage indiqué \end{DoxyCompactList}\end{DoxyCompactItemize}
+unsigned const \& \mbox{\hyperlink{class_item_a87358aef026b997a03e6477d85f00593}{get\+Value}} () const
+\begin{DoxyCompactList}\small\item\em Returne la valeur de l\textquotesingle{}effet de cet arme. \end{DoxyCompactList}\item 
+float const \& \mbox{\hyperlink{class_item_a9e29932b32336b689035d3f998fea76e}{get\+Range\+Of\+Action}} () const
+\begin{DoxyCompactList}\small\item\em Retourne le rayon d\textquotesingle{}action de l\textquotesingle{}item. \end{DoxyCompactList}\item 
+float const \& \mbox{\hyperlink{class_item_a1229606b7e0afaca04cb63cbb356a3a1}{get\+Waiting\+Time\+For\+Action}} () const
+\begin{DoxyCompactList}\small\item\em Retourne le temps d\textquotesingle{}attente pour que l\textquotesingle{}action soit faite. \end{DoxyCompactList}\item 
+bool const \& \mbox{\hyperlink{class_item_a900f9f23372ff903002ef063427f1ce4}{is\+One\+Use}} () const
+\begin{DoxyCompactList}\small\item\em Indique si l\textquotesingle{}item est à usage unique. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Fonctions membres protégées}
 \begin{DoxyCompactItemize}
 \item 
@@ -38,24 +60,30 @@ virtual void \mbox{\hyperlink{class_item_a4b98f05632e3641263c3d8f6fe26e58e}{upda
 \item 
 unsigned \mbox{\hyperlink{class_item_ae7cf6de790b69baa614a1456d54bbd9e}{value}}
 \begin{DoxyCompactList}\small\item\em Valeur de l\textquotesingle{}item à l\textquotesingle{}utilisation... \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705fa}{Items\+Categories}} \mbox{\hyperlink{class_item_aaa167cf26678cc807e34f87ef6fa2f54}{categorie}}
-\end{DoxyCompactItemize}
+float \mbox{\hyperlink{class_item_ac401c4d72c12ec78889efd2c6bd3476e}{range\+Of\+Action}}
+\begin{DoxyCompactList}\small\item\em rayon d\textquotesingle{}action de l\textquotesingle{}item \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_item_a6f4b8cd3fc03d3e66125e1ceb501cd04}{waiting\+Time\+For\+Action}}
+\begin{DoxyCompactList}\small\item\em Le temps d\textquotesingle{}attente pour que l\textquotesingle{}action soit faite. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game\+::\+Items\+Categories}} \mbox{\hyperlink{class_item_a6176ff68b9bc6059bb6e8840c3090e3a}{categorie}}
+\begin{DoxyCompactList}\small\item\em Représente les categories d\textquotesingle{}item. utilis pour définir les éffets... \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_item_a7b2b122824df2c3518f99628ed1454b7}{one\+Use}}
+\begin{DoxyCompactList}\small\item\em Indique si l\textquotesingle{}item ne peut etre utilisé qu\textquotesingle{}une seule fois. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Membres hérités additionnels}
 
 
 \doxysubsection{Description détaillée}
 Représente éssentiellement les object que pourra manipuler les personnages. 
 
-Définition à la ligne \mbox{\hyperlink{_item_8hpp_source_l00035}{35}} du fichier \mbox{\hyperlink{_item_8hpp_source}{Item.\+hpp}}.
+Définition à la ligne \mbox{\hyperlink{_item_8hpp_source_l00022}{22}} du fichier \mbox{\hyperlink{_item_8hpp_source}{Item.\+hpp}}.
 
 
 
 \doxysubsection{Documentation des constructeurs et destructeur}
-\mbox{\Hypertarget{class_item_ae819a092279f2c4432a163893d88905d}\label{class_item_ae819a092279f2c4432a163893d88905d}} 
+\mbox{\Hypertarget{class_item_a1f40c156d1ab6df5014d0b9a7353378f}\label{class_item_a1f40c156d1ab6df5014d0b9a7353378f}} 
 \index{Item@{Item}!Item@{Item}}
 \index{Item@{Item}!Item@{Item}}
 \doxysubsubsection{\texorpdfstring{Item()}{Item()}}
-{\footnotesize\ttfamily Item\+::\+Item (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view const \&}]{image\+Sprite\+Path,  }\item[{\mbox{\hyperlink{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705fa}{Items\+Categories}}}]{categorie }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Item\+::\+Item (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view const \&}]{image\+Sprite\+Path,  }\item[{\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game\+::\+Items\+Categories}}}]{categorie }\end{DoxyParamCaption})}
 
 
 
@@ -69,11 +97,138 @@ Définition à la ligne \mbox{\hyperlink{_item_8cpp_source_l00008}{8}} du fichie
 
 
 
-Définition à la ligne \mbox{\hyperlink{_item_8cpp_source_l00015}{15}} du fichier \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_item_8cpp_source_l00018}{18}} du fichier \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
 
 
 
 \doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_item_aaea0ac82b6ca4b3acfc348641efbd324}\label{class_item_aaea0ac82b6ca4b3acfc348641efbd324}} 
+\index{Item@{Item}!getCategorie@{getCategorie}}
+\index{getCategorie@{getCategorie}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getCategorie()}{getCategorie()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game\+::\+Items\+Categories}} const  \& Item\+::get\+Categorie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Categorie object. 
+
+\begin{DoxyReturn}{Renvoie}
+\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game\+::\+Items\+Categories}}\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_item_8cpp_source_l00022}{22}} du fichier \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_item_aaea0ac82b6ca4b3acfc348641efbd324_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_item_a9e29932b32336b689035d3f998fea76e}\label{class_item_a9e29932b32336b689035d3f998fea76e}} 
+\index{Item@{Item}!getRangeOfAction@{getRangeOfAction}}
+\index{getRangeOfAction@{getRangeOfAction}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getRangeOfAction()}{getRangeOfAction()}}
+{\footnotesize\ttfamily float const  \& Item\+::get\+Range\+Of\+Action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retourne le rayon d\textquotesingle{}action de l\textquotesingle{}item. 
+
+\begin{DoxyReturn}{Renvoie}
+float const\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_item_8cpp_source_l00032}{32}} du fichier \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_item_a9e29932b32336b689035d3f998fea76e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_item_a87358aef026b997a03e6477d85f00593}\label{class_item_a87358aef026b997a03e6477d85f00593}} 
+\index{Item@{Item}!getValue@{getValue}}
+\index{getValue@{getValue}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily unsigned const  \& Item\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returne la valeur de l\textquotesingle{}effet de cet arme. 
+
+\begin{DoxyReturn}{Renvoie}
+unsigned const\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_item_8cpp_source_l00027}{27}} du fichier \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_item_a87358aef026b997a03e6477d85f00593_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_item_a1229606b7e0afaca04cb63cbb356a3a1}\label{class_item_a1229606b7e0afaca04cb63cbb356a3a1}} 
+\index{Item@{Item}!getWaitingTimeForAction@{getWaitingTimeForAction}}
+\index{getWaitingTimeForAction@{getWaitingTimeForAction}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{getWaitingTimeForAction()}{getWaitingTimeForAction()}}
+{\footnotesize\ttfamily float const  \& Item\+::get\+Waiting\+Time\+For\+Action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retourne le temps d\textquotesingle{}attente pour que l\textquotesingle{}action soit faite. 
+
+\begin{DoxyReturn}{Renvoie}
+float const\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_item_8cpp_source_l00037}{37}} du fichier \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_item_a1229606b7e0afaca04cb63cbb356a3a1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_item_a900f9f23372ff903002ef063427f1ce4}\label{class_item_a900f9f23372ff903002ef063427f1ce4}} 
+\index{Item@{Item}!isOneUse@{isOneUse}}
+\index{isOneUse@{isOneUse}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{isOneUse()}{isOneUse()}}
+{\footnotesize\ttfamily bool const  \& Item\+::is\+One\+Use (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Indique si l\textquotesingle{}item est à usage unique. 
+
+\begin{DoxyReturn}{Renvoie}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_item_8cpp_source_l00042}{42}} du fichier \mbox{\hyperlink{_item_8cpp_source}{Item.\+cpp}}.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_item_a900f9f23372ff903002ef063427f1ce4_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_item_ab2a2e5e2b20b61602e8edf0e4e573599}\label{class_item_ab2a2e5e2b20b61602e8edf0e4e573599}} 
 \index{Item@{Item}!onCollisionEnter@{onCollisionEnter}}
 \index{onCollisionEnter@{onCollisionEnter}!Item@{Item}}
@@ -95,7 +250,7 @@ Implémente \mbox{\hyperlink{class_not_movable_game_object_a4954c3c803930ca5faf4
 
 
 
-Implémenté dans \mbox{\hyperlink{class_money_af14a2e8f1f215da2cda5c833f25818e5}{Money}}, \mbox{\hyperlink{class_shield_af82912a68032d931aba13f28004568fd}{Shield}}, \mbox{\hyperlink{class_sword_a6484ea989954570c9ece11d9843e72d1}{Sword}}, et \mbox{\hyperlink{class_vial_ace9277c2d5c91183ed1357eff154cc1b}{Vial}}.
+Implémenté dans \mbox{\hyperlink{class_boxing_gloves_ad6d311622857cccec7aa418a2ebee739}{Boxing\+Gloves}}, \mbox{\hyperlink{class_money_af14a2e8f1f215da2cda5c833f25818e5}{Money}}, \mbox{\hyperlink{class_shield_af82912a68032d931aba13f28004568fd}{Shield}}, \mbox{\hyperlink{class_sword_a6484ea989954570c9ece11d9843e72d1}{Sword}}, \mbox{\hyperlink{class_teleport_key_a7de596ef7713529170b78a3808d58555}{Teleport\+Key}}, et \mbox{\hyperlink{class_vial_ace9277c2d5c91183ed1357eff154cc1b}{Vial}}.
 
 \mbox{\Hypertarget{class_item_a5e7b6054dbde86c485f1be747cb9926c}\label{class_item_a5e7b6054dbde86c485f1be747cb9926c}} 
 \index{Item@{Item}!update@{update}}
@@ -109,7 +264,7 @@ Implémente \mbox{\hyperlink{class_not_movable_game_object_aafd50ee8f5e31bd1f4df
 
 
 
-Implémenté dans \mbox{\hyperlink{class_money_a9914e11ab0b3630f54b3711b3ef8cad8}{Money}}, \mbox{\hyperlink{class_shield_a22cfa66fa754653dd24c00bd13678b18}{Shield}}, \mbox{\hyperlink{class_sword_a4b650c68af5552a2f0d995b5fe3af3fc}{Sword}}, et \mbox{\hyperlink{class_vial_ad00a07bd850ba8cec2ee0cb2164fe820}{Vial}}.
+Implémenté dans \mbox{\hyperlink{class_boxing_gloves_a9b7927f53702f143eba8655fe94b7929}{Boxing\+Gloves}}, \mbox{\hyperlink{class_money_a9914e11ab0b3630f54b3711b3ef8cad8}{Money}}, \mbox{\hyperlink{class_shield_a22cfa66fa754653dd24c00bd13678b18}{Shield}}, \mbox{\hyperlink{class_sword_a4b650c68af5552a2f0d995b5fe3af3fc}{Sword}}, \mbox{\hyperlink{class_teleport_key_abdf3be75d26b434488d63acffb942e9d}{Teleport\+Key}}, et \mbox{\hyperlink{class_vial_ad00a07bd850ba8cec2ee0cb2164fe820}{Vial}}.
 
 \mbox{\Hypertarget{class_item_a4b98f05632e3641263c3d8f6fe26e58e}\label{class_item_a4b98f05632e3641263c3d8f6fe26e58e}} 
 \index{Item@{Item}!updatePosition@{updatePosition}}
@@ -125,33 +280,50 @@ Permet de mettre à jour la position actuelle.
 
 Implémente \mbox{\hyperlink{class_not_movable_game_object_a1ae6701a400e4455cb28936d4f1cd30d}{Not\+Movable\+Game\+Object}}.
 
-\mbox{\Hypertarget{class_item_a180ec610ac1bfdec38466457f53ad3b7}\label{class_item_a180ec610ac1bfdec38466457f53ad3b7}} 
-\index{Item@{Item}!useOn@{useOn}}
-\index{useOn@{useOn}!Item@{Item}}
-\doxysubsubsection{\texorpdfstring{useOn()}{useOn()}}
-{\footnotesize\ttfamily virtual Item\+::use\+On (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_personage}{Personage}} \&}]{personage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
-
-
-
-Utiliser l\textquotesingle{}item sur le personnage indiqué 
-
-
-\begin{DoxyParams}{Paramètres}
-{\em personage} & \\
-\hline
-\end{DoxyParams}
 
 
 \doxysubsection{Documentation des données membres}
-\mbox{\Hypertarget{class_item_aaa167cf26678cc807e34f87ef6fa2f54}\label{class_item_aaa167cf26678cc807e34f87ef6fa2f54}} 
+\mbox{\Hypertarget{class_item_a6176ff68b9bc6059bb6e8840c3090e3a}\label{class_item_a6176ff68b9bc6059bb6e8840c3090e3a}} 
 \index{Item@{Item}!categorie@{categorie}}
 \index{categorie@{categorie}!Item@{Item}}
 \doxysubsubsection{\texorpdfstring{categorie}{categorie}}
-{\footnotesize\ttfamily const \mbox{\hyperlink{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705fa}{Items\+Categories}} Item\+::categorie\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game\+::\+Items\+Categories}} Item\+::categorie\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Définition à la ligne \mbox{\hyperlink{_item_8hpp_source_l00066}{66}} du fichier \mbox{\hyperlink{_item_8hpp_source}{Item.\+hpp}}.
+Représente les categories d\textquotesingle{}item. utilis pour définir les éffets... 
+
+
+
+Définition à la ligne \mbox{\hyperlink{_item_8hpp_source_l00100}{100}} du fichier \mbox{\hyperlink{_item_8hpp_source}{Item.\+hpp}}.
+
+\mbox{\Hypertarget{class_item_a7b2b122824df2c3518f99628ed1454b7}\label{class_item_a7b2b122824df2c3518f99628ed1454b7}} 
+\index{Item@{Item}!oneUse@{oneUse}}
+\index{oneUse@{oneUse}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{oneUse}{oneUse}}
+{\footnotesize\ttfamily bool Item\+::one\+Use\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Indique si l\textquotesingle{}item ne peut etre utilisé qu\textquotesingle{}une seule fois. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{_item_8hpp_source_l00105}{105}} du fichier \mbox{\hyperlink{_item_8hpp_source}{Item.\+hpp}}.
+
+\mbox{\Hypertarget{class_item_ac401c4d72c12ec78889efd2c6bd3476e}\label{class_item_ac401c4d72c12ec78889efd2c6bd3476e}} 
+\index{Item@{Item}!rangeOfAction@{rangeOfAction}}
+\index{rangeOfAction@{rangeOfAction}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{rangeOfAction}{rangeOfAction}}
+{\footnotesize\ttfamily float Item\+::range\+Of\+Action\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+rayon d\textquotesingle{}action de l\textquotesingle{}item 
+
+
+
+Définition à la ligne \mbox{\hyperlink{_item_8hpp_source_l00089}{89}} du fichier \mbox{\hyperlink{_item_8hpp_source}{Item.\+hpp}}.
 
 \mbox{\Hypertarget{class_item_ae7cf6de790b69baa614a1456d54bbd9e}\label{class_item_ae7cf6de790b69baa614a1456d54bbd9e}} 
 \index{Item@{Item}!value@{value}}
@@ -165,7 +337,21 @@ Valeur de l\textquotesingle{}item à l\textquotesingle{}utilisation...
 
 
 
-Définition à la ligne \mbox{\hyperlink{_item_8hpp_source_l00065}{65}} du fichier \mbox{\hyperlink{_item_8hpp_source}{Item.\+hpp}}.
+Définition à la ligne \mbox{\hyperlink{_item_8hpp_source_l00084}{84}} du fichier \mbox{\hyperlink{_item_8hpp_source}{Item.\+hpp}}.
+
+\mbox{\Hypertarget{class_item_a6f4b8cd3fc03d3e66125e1ceb501cd04}\label{class_item_a6f4b8cd3fc03d3e66125e1ceb501cd04}} 
+\index{Item@{Item}!waitingTimeForAction@{waitingTimeForAction}}
+\index{waitingTimeForAction@{waitingTimeForAction}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{waitingTimeForAction}{waitingTimeForAction}}
+{\footnotesize\ttfamily float Item\+::waiting\+Time\+For\+Action\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Le temps d\textquotesingle{}attente pour que l\textquotesingle{}action soit faite. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{_item_8hpp_source_l00094}{94}} du fichier \mbox{\hyperlink{_item_8hpp_source}{Item.\+hpp}}.
 
 
 

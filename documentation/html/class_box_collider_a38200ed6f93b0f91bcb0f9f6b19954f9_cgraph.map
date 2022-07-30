@@ -1,0 +1,7 @@
+<map id="BoxCollider::touchEachOther" name="BoxCollider::touchEachOther">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,196,108"/>
+<area shape="rect" id="node2" href="$class_collider.html#a97506e7e7a75b63c3358eb898194b866" title=" " alt="" coords="244,5,417,32"/>
+<area shape="rect" id="node3" href="$class_collider.html#ac5e78bcb91de52d8202beea5c4b3a5f8" title=" " alt="" coords="266,56,395,83"/>
+<area shape="rect" id="node4" href="$class_game_object.html#a5f5f8870bb5d7e1496c2e565f5dd8bbd" title=" " alt="" coords="247,107,415,133"/>
+<area shape="rect" id="node5" href="$class_position.html#af409de5592dd7da6fb0ccb8d1681bb19" title="Get the Position object." alt="" coords="259,157,402,184"/>
+</map>

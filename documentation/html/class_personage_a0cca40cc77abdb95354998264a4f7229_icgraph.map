@@ -1,0 +1,13 @@
+<map id="Personage::calculateProgressBarsPosition" name="Personage::calculateProgressBarsPosition">
+<area shape="rect" id="node1" title=" " alt="" coords="971,49,1167,90"/>
+<area shape="rect" id="node2" href="$class_personage.html#ac03bba7d28058936fad17e76b8418811" title=" " alt="" coords="756,5,911,32"/>
+<area shape="rect" id="node4" href="$class_personage.html#a2bc14851a9625f02a5fa04eed5d1af27" title=" " alt="" coords="760,56,907,83"/>
+<area shape="rect" id="node5" href="$class_personage.html#a3994eb488c9212770b697ff73c2d153b" title="Permet de mettre à jour la position actuelle. Cette position sera déterminé par l&#39;évenement reçu au p..." alt="" coords="744,107,923,133"/>
+<area shape="rect" id="node3" href="$class_personage.html#a53b3b6c7865b2eb80de7c6edab217944" title=" " alt="" coords="541,31,696,57"/>
+<area shape="rect" id="node6" href="$class_personage.html#acecd31422b51e2d0755c6d2de94d9510" title=" " alt="" coords="557,107,680,133"/>
+<area shape="rect" id="node7" href="$class_enemy.html#a77df54c61b0253b5761256023dee656e" title=" " alt="" coords="347,81,493,108"/>
+<area shape="rect" id="node9" href="$class_player.html#aa14422c8d3c3950584dcd307172741b7" title=" " alt="" coords="349,132,491,159"/>
+<area shape="rect" id="node8" href="$class_enemy.html#af405531fd6d410c2216bd9fbe21c83ea" title=" " alt="" coords="188,81,299,108"/>
+<area shape="rect" id="node10" href="$class_player.html#ad6867e0c7bc18e82a1da4be7bf156d97" title=" " alt="" coords="190,132,297,159"/>
+<area shape="rect" id="node11" href="$class_game_state.html#a775a7d0cf422aec17e5846852f3c997d" title=" " alt="" coords="5,132,140,159"/>
+</map>

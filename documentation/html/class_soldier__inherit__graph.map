@@ -1,0 +1,6 @@
+<map id="Soldier" name="Soldier">
+<area shape="rect" id="node1" title=" " alt="" coords="24,2405,211,2571"/>
+<area shape="rect" id="node2" href="$class_personage.html" title=" " alt="" coords="9,1371,226,2357"/>
+<area shape="rect" id="node3" href="$class_movable_game_object.html" title=" " alt="" coords="8,805,227,1323"/>
+<area shape="rect" id="node4" href="$class_game_object.html" title=" " alt="" coords="5,5,229,757"/>
+</map>

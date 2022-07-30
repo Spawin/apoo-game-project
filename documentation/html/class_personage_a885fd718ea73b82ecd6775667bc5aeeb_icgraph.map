@@ -1,0 +1,8 @@
+<map id="Personage::getLastAnimationSide" name="Personage::getLastAnimationSide">
+<area shape="rect" id="node1" title="Get the Last Animation Side." alt="" coords="944,46,1163,73"/>
+<area shape="rect" id="node2" href="$class_personage.html#a1f9047cde214e63d4f8dcc3c9265b0a1" title=" " alt="" coords="711,39,896,80"/>
+<area shape="rect" id="node3" href="$class_personage.html#a863a2c17aa860a54c8aeab5a62e68e56" title="Diminuer la santé" alt="" coords="480,17,663,43"/>
+<area shape="rect" id="node6" href="$class_personage.html#a50ed1fa7ee7a90061c51fdbe02ece37d" title="Pour l&#39;animation HURT en tenant compte du coté vers lequel est dirigé le personage." alt="" coords="248,71,432,112"/>
+<area shape="rect" id="node4" href="$class_personage.html#aa386a912ca8945c0a4941542e24e4e7d" title="pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utili..." alt="" coords="255,5,425,47"/>
+<area shape="rect" id="node5" href="$class_personage.html#a45dcefc883e2db0a6562d0d8239dca6c" title=" " alt="" coords="5,46,200,73"/>
+</map>

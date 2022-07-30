@@ -6,10 +6,10 @@
 \DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#define \_\_POSITION\_HPP\_\_}}
 \DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00003}00003 }
 \DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_my_vector_8hpp}{include/MyVector.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00005}00005 \textcolor{comment}{// \#include "{}include/Rigidbody.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_rigidbody_8hpp}{include/Rigidbody.hpp}}"{}} \textcolor{comment}{//}}
 \DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{consts_8hpp}{include/consts.hpp}}"{}}}
 \DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00007}00007 }
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00008}00008 \textcolor{keyword}{class }RigidRigidbody;}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00008}00008 \textcolor{keyword}{class }\mbox{\hyperlink{class_rigidbody}{Rigidbody}};}
 \DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00009}00009 }
 \DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00010}\mbox{\hyperlink{class_position}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{class_position}{Position}}}
 \DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00011}00011 \{}
@@ -29,47 +29,48 @@
 \DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00025}00025     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_position_a53ad8ec2f8383db4d615b3fc4e888f77}{getY}}() \textcolor{keyword}{const};}
 \DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00026}00026 }
 \DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00033}00033     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_position_aafccfd0fdf3662f2ce3a9648374f6ccb}{getDistanceWith}}(\mbox{\hyperlink{class_position}{Position}} \textcolor{keyword}{const}\& autre) \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00034}00034 }
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00041}00041     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_position_a44364e1b27dac50ec6d0e9e4d7d1b2c1}{setPosition}}(\textcolor{keywordtype}{float} posX, \textcolor{keywordtype}{float} posY);}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00042}00042 }
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00048}00048     \mbox{\hyperlink{struct_my_vector}{MyVector}} \mbox{\hyperlink{class_position_af409de5592dd7da6fb0ccb8d1681bb19}{getPosition}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00049}00049 }
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00055}00055     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_position_a7a4256cdf1c47f24a5ee67194ddd8d68}{setPositionMovementLimit}}(sf::IntRect \textcolor{keyword}{const}\& hall);}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00056}00056 }
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00057}00057     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_position_ab5438e7590e0a9bff42748b810ca109a}{operator+=}}(\mbox{\hyperlink{struct_my_vector}{MyVector}} \textcolor{keyword}{const}\& v);}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00058}00058     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_position_a6674b6c7cbf33bf73dfa4daed319a8f4}{operator=}}(\mbox{\hyperlink{class_position}{Position}} \textcolor{keyword}{const}\& p);}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00059}00059     \textcolor{keyword}{friend} std::ostream\& \mbox{\hyperlink{class_position_a05ae23b24acbddfc067c554402e59997}{operator<<}}(std::ostream\& out, \mbox{\hyperlink{class_position}{Position}} \textcolor{keyword}{const}\& p);}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00060}00060 }
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00061}00061 \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00062}00062     \textcolor{keywordtype}{void} init();}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00063}00063     \textcolor{comment}{// recalcule les coordonnées pour qu’elles soient dans les limites ; inutile d’y accéder de l’extérieur, donc privée}}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00064}00064     \textcolor{keywordtype}{void} recalculate();}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00065}00065     \textcolor{keywordtype}{float} m\_x; \textcolor{comment}{// REVIEW -\/}}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00066}00066     \textcolor{keywordtype}{float} m\_y; \textcolor{comment}{// REVIEW -\/}}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00067}00067 }
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00068}00068     \textcolor{comment}{// Pour les NotMovableObject, on ne recalcul pas les coordonnées}}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00069}00069     \textcolor{keywordtype}{bool} \textcolor{keyword}{const} forMovableObject;}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00070}00070 }
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00071}00071     \mbox{\hyperlink{struct_my_vector}{MyVector}} m\_previousPosition;}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00072}00072     \textcolor{keywordtype}{void} setPreviousPosition(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y);}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00073}00073     \textcolor{keywordtype}{void} setPreviousPosition(\mbox{\hyperlink{struct_my_vector}{MyVector}} v);}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00074}00074 }
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00075}00075     \textcolor{comment}{// longueur et hauteur de l’espace sont static, partagés par tous les objets Coordonnees}}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00076}00076     \textcolor{keyword}{static} \textcolor{keywordtype}{int} m\_spaceWidth;}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00077}00077     \textcolor{keyword}{static} \textcolor{keywordtype}{int} m\_spaceHeight;}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00078}00078 }
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00079}00079     \textcolor{keywordtype}{float} \textcolor{keyword}{const} DETECTABILITY\_RADIUS;}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00080}00080 }
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00081}00081     \textcolor{keywordtype}{bool} m\_thereIsARigidBody;}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00082}00082 }
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00083}\mbox{\hyperlink{class_position_ab9677fbc0a8849136cf78204d65c4935}{00083}}     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_rigidbody}{Rigidbody}};}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00084}00084 }
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00085}00085     \textcolor{comment}{// Represente la salle dans laquelle la position peut occupée des coordonnées.}}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00086}00086     sf::IntRect hall;}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00087}00087 }
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00095}00095     \textcolor{keywordtype}{bool} canMove();}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00096}00096 \};}
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00097}00097 }
-\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00098}00098 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_POSITION\_HPP\_\_}}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00034}00034     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_position_aafccfd0fdf3662f2ce3a9648374f6ccb}{getDistanceWith}}(\textcolor{keywordtype}{float} \textcolor{keyword}{const}\& x, \textcolor{keywordtype}{float} \textcolor{keyword}{const}\& y) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00042}00042     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_position_a44364e1b27dac50ec6d0e9e4d7d1b2c1}{setPosition}}(\textcolor{keywordtype}{float} posX, \textcolor{keywordtype}{float} posY);}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00049}00049     \mbox{\hyperlink{struct_my_vector}{MyVector}} \mbox{\hyperlink{class_position_af409de5592dd7da6fb0ccb8d1681bb19}{getPosition}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00056}00056     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_position_a7a4256cdf1c47f24a5ee67194ddd8d68}{setPositionMovementLimit}}(sf::IntRect \textcolor{keyword}{const}\& hall);}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00058}00058     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_position_ab5438e7590e0a9bff42748b810ca109a}{operator+=}}(\mbox{\hyperlink{struct_my_vector}{MyVector}} \textcolor{keyword}{const}\& v);}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00059}00059     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_position_a6674b6c7cbf33bf73dfa4daed319a8f4}{operator=}}(\mbox{\hyperlink{class_position}{Position}} \textcolor{keyword}{const}\& p);}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00060}00060     \textcolor{keyword}{friend} std::ostream\& \mbox{\hyperlink{class_position_a05ae23b24acbddfc067c554402e59997}{operator<<}}(std::ostream\& out, \mbox{\hyperlink{class_position}{Position}} \textcolor{keyword}{const}\& p);}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00062}00062 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00063}00063     \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00064}00064     \textcolor{comment}{// recalcule les coordonnées pour qu’elles soient dans les limites ; inutile d’y accéder de l’extérieur, donc privée}}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00065}00065     \textcolor{keywordtype}{void} recalculate();}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00066}00066     \textcolor{keywordtype}{float} m\_x; \textcolor{comment}{// REVIEW -\/}}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00067}00067     \textcolor{keywordtype}{float} m\_y; \textcolor{comment}{// REVIEW -\/}}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00069}00069     \textcolor{comment}{// Pour les NotMovableObject, on ne recalcul pas les coordonnées}}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00070}00070     \textcolor{keywordtype}{bool} \textcolor{keyword}{const} forMovableObject;}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00072}00072     \mbox{\hyperlink{struct_my_vector}{MyVector}} m\_previousPosition;}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00073}00073     \textcolor{keywordtype}{void} setPreviousPosition(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y);}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00074}00074     \textcolor{keywordtype}{void} setPreviousPosition(\mbox{\hyperlink{struct_my_vector}{MyVector}} v);}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00076}00076     \textcolor{comment}{// longueur et hauteur de l’espace sont static, partagés par tous les objets Coordonnees}}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00077}00077     \textcolor{keyword}{static} \textcolor{keywordtype}{int} m\_spaceWidth;}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00078}00078     \textcolor{keyword}{static} \textcolor{keywordtype}{int} m\_spaceHeight;}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00080}00080     \textcolor{keywordtype}{float} \textcolor{keyword}{const} DETECTABILITY\_RADIUS;}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00082}00082     \textcolor{keywordtype}{bool} m\_thereIsARigidBody;}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00084}\mbox{\hyperlink{class_position_ab9677fbc0a8849136cf78204d65c4935}{00084}}     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_rigidbody}{Rigidbody}};}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00086}00086     \textcolor{comment}{// Represente la salle dans laquelle la position peut occupée des coordonnées.}}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00087}00087     sf::IntRect hall;}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00096}00096     \textcolor{keywordtype}{bool} canMove();}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00097}00097 \};}
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{_position_8hpp_source_l00099}00099 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_POSITION\_HPP\_\_}}
 
 \end{DoxyCode}

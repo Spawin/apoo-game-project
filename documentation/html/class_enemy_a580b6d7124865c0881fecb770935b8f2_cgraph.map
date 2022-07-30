@@ -1,0 +1,7 @@
+<map id="Enemy::render" name="Enemy::render">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,112,57"/>
+<area shape="rect" id="node2" href="$class_personage.html#a01b776643850ebcc55ba806e2fa8085e" title="Pour dessiner l&#39;élement dans la fenêtre." alt="" coords="160,31,283,57"/>
+<area shape="rect" id="node3" href="$class_personage.html#abc3bc1054dfc52ccdf479a48616b5504" title=" " alt="" coords="331,5,504,32"/>
+<area shape="rect" id="node5" href="$class_personage.html#a67392d993c6554540e2f59443abd5a59" title=" " alt="" coords="334,56,501,83"/>
+<area shape="rect" id="node4" href="$classgui_1_1_progress_bar.html#a2306f8517ac039e56095c389edbdb536" title=" " alt="" coords="552,31,715,57"/>
+</map>

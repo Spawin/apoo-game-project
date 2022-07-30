@@ -1,0 +1,9 @@
+<map id="Personage::update" name="Personage::update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,136,133"/>
+<area shape="rect" id="node2" href="$class_inventory.html#adb0cf453e653bc719cdb207b906dbc56" title=" " alt="" coords="213,5,331,32"/>
+<area shape="rect" id="node3" href="$class_bag.html#a5c8e365a36667f800eec30c4148500a6" title=" " alt="" coords="211,56,333,83"/>
+<area shape="rect" id="node4" href="$classgui_1_1_inventory.html#ae9385f05ca7064cb8b0cc48d3602446e" title=" " alt="" coords="199,107,345,133"/>
+<area shape="rect" id="node5" href="$class_personage.html#ae81af6eab1894c26eb89fead2d82ed0d" title=" " alt="" coords="184,157,360,184"/>
+<area shape="rect" id="node7" href="$class_personage.html#a2b99762efecc865705da453c73ddf45d" title=" " alt="" coords="187,208,357,235"/>
+<area shape="rect" id="node6" href="$classgui_1_1_progress_bar.html#ac280f079c89eec3a71176d77d7680e94" title=" " alt="" coords="408,183,575,209"/>
+</map>

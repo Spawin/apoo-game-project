@@ -83,6 +83,7 @@ $(document).ready(function(){initNavTree('namespacegame.html',''); initResizable
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#enum-members">Énumérations</a> &#124;
 <a href="#func-members">Fonctions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
@@ -90,6 +91,16 @@ $(document).ready(function(){initNavTree('namespacegame.html',''); initResizable
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1_attack_sate_informations.html">AttackSateInformations</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1_item_action_result.html">ItemActionResult</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resultat retourné à l'utilisateur après une l'utilisation d'un item sur un personage.  <a href="structgame_1_1_item_action_result.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1_player_stats.html">PlayerStats</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Énumérations</h2></td></tr>
 <tr class="memitem:aaa1c0491864f6f8110948f609545c945"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#aaa1c0491864f6f8110948f609545c945">movement_states</a> { <br />
@@ -113,6 +124,28 @@ $(document).ready(function(){initNavTree('namespacegame.html',''); initResizable
 <br />
  }</td></tr>
 <tr class="separator:a214a8f8fb832eaaa8cae6f1be423a2b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3627cfdb5f6ba53e14e5533e76530468"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">ItemsCategories</a> { <br />
+&#160;&#160;<a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468ab50339a10e1de285ac99d4c3990b8693">NONE</a>
+, <a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468a2bc794c2d9a28e52d1dd66d95e37d485">MONEY</a>
+, <a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468a223e1aaf0ac054deb62f01fd466b5b41">TELEPORTKEY</a>
+, <a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468a95865673c8870cd531ef8333dd7399a2">DEFEND</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468a51bd5d941c848fa5022c39ecd9df615c">ATTACK_BODY_TO_BODY</a>
+, <a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468a5b6dedb5671e6ae62bbb5f542324c48f">ATTACK_SEMI_DISTANCE</a>
+, <a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468a40711c589484941b36b935150b0403d4">ATTACK_DISTANCE</a>
+, <a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468a6377a0bcb00687d145c2d69374b832a9">VIAL_EXP</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468ad9912f2805a6dd5ed5eeaf49fb65b427">VIAL_HEALTH</a>
+, <a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468ab72904fbdd103b868d43271313251ec7">VIAL_ATTACK_EXP</a>
+, <a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468a8c60e3ddd7fd61b8e930160f58a7ec7b">VIAL_ATTACK_HEALTH</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a3627cfdb5f6ba53e14e5533e76530468"><td class="mdescLeft">&#160;</td><td class="mdescRight">Représente les catégories d'items. TODO - Compléter.... Va surtout aider dans l'utilisation de l'item et son comportement.  <a href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3627cfdb5f6ba53e14e5533e76530468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3f078339ac2192dd0568f5a1491a513"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#ab3f078339ac2192dd0568f5a1491a513">AnimationSide</a> { <a class="el" href="namespacegame.html#ab3f078339ac2192dd0568f5a1491a513a4f12877be097a8a1b71220e28c1817e0">LEFT</a>
+, <a class="el" href="namespacegame.html#ab3f078339ac2192dd0568f5a1491a513a6a6742137852f6e37c71330633fe9a83">RIGHT</a>
+ }</td></tr>
+<tr class="separator:ab3f078339ac2192dd0568f5a1491a513"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
@@ -149,12 +182,34 @@ Variables</h2></td></tr>
 <tr class="separator:ab43b1ee77948fb60b4bf11469c925d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a170cbd165f05ad7fd18066f9892b4a58"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#a170cbd165f05ad7fd18066f9892b4a58">PERSONNAGE_MAX_HEALTH</a> = 100</td></tr>
 <tr class="separator:a170cbd165f05ad7fd18066f9892b4a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a152e426c092a87b10c433230c2fff193"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#a152e426c092a87b10c433230c2fff193">PERSONNAGE_MAX_SPECIALITY</a> = 100</td></tr>
-<tr class="separator:a152e426c092a87b10c433230c2fff193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc35392c19609797e41765c10e69c567"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#afc35392c19609797e41765c10e69c567">PERSONNAGE_MAX_EXP</a> = 100</td></tr>
+<tr class="separator:afc35392c19609797e41765c10e69c567"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee7ec3c00c3424386587b3f2f5bdf437"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#aee7ec3c00c3424386587b3f2f5bdf437">INVENTORY_BLOCK_WIDTH</a> = 80</td></tr>
 <tr class="separator:aee7ec3c00c3424386587b3f2f5bdf437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36bcccf1c84ae3d714f93abbf54055fd"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#a36bcccf1c84ae3d714f93abbf54055fd">SCORE_ADD_AFTER_ENEMY_KILLED</a> = 50</td></tr>
+<tr class="separator:a36bcccf1c84ae3d714f93abbf54055fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation du type de l'énumération</h2>
+<a id="ab3f078339ac2192dd0568f5a1491a513" name="ab3f078339ac2192dd0568f5a1491a513"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3f078339ac2192dd0568f5a1491a513">&#9670;&nbsp;</a></span>AnimationSide</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacegame.html#ab3f078339ac2192dd0568f5a1491a513">game::AnimationSide</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="ab3f078339ac2192dd0568f5a1491a513a4f12877be097a8a1b71220e28c1817e0" name="ab3f078339ac2192dd0568f5a1491a513a4f12877be097a8a1b71220e28c1817e0"></a>LEFT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab3f078339ac2192dd0568f5a1491a513a6a6742137852f6e37c71330633fe9a83" name="ab3f078339ac2192dd0568f5a1491a513a6a6742137852f6e37c71330633fe9a83"></a>RIGHT&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Définition à la ligne <a class="el" href="consts_8hpp_source.html#l00098">98</a> du fichier <a class="el" href="consts_8hpp_source.html">consts.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a214a8f8fb832eaaa8cae6f1be423a2b0" name="a214a8f8fb832eaaa8cae6f1be423a2b0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a214a8f8fb832eaaa8cae6f1be423a2b0">&#9670;&nbsp;</a></span>inventory_items_types</h2>
 
@@ -174,7 +229,47 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a214a8f8fb832eaaa8cae6f1be423a2b0a73e510979d35b3bfb3c02215c02139a3" name="a214a8f8fb832eaaa8cae6f1be423a2b0a73e510979d35b3bfb3c02215c02139a3"></a>MONEY&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Définition à la ligne <a class="el" href="consts_8hpp_source.html#l00063">63</a> du fichier <a class="el" href="consts_8hpp_source.html">consts.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="consts_8hpp_source.html#l00065">65</a> du fichier <a class="el" href="consts_8hpp_source.html">consts.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a3627cfdb5f6ba53e14e5533e76530468" name="a3627cfdb5f6ba53e14e5533e76530468"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3627cfdb5f6ba53e14e5533e76530468">&#9670;&nbsp;</a></span>ItemsCategories</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">game::ItemsCategories</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Représente les catégories d'items. TODO - Compléter.... Va surtout aider dans l'utilisation de l'item et son comportement. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="a3627cfdb5f6ba53e14e5533e76530468ab50339a10e1de285ac99d4c3990b8693" name="a3627cfdb5f6ba53e14e5533e76530468ab50339a10e1de285ac99d4c3990b8693"></a>NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3627cfdb5f6ba53e14e5533e76530468a2bc794c2d9a28e52d1dd66d95e37d485" name="a3627cfdb5f6ba53e14e5533e76530468a2bc794c2d9a28e52d1dd66d95e37d485"></a>MONEY&#160;</td><td class="fielddoc"><p >N'est pas un item.. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a3627cfdb5f6ba53e14e5533e76530468a223e1aaf0ac054deb62f01fd466b5b41" name="a3627cfdb5f6ba53e14e5533e76530468a223e1aaf0ac054deb62f01fd466b5b41"></a>TELEPORTKEY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3627cfdb5f6ba53e14e5533e76530468a95865673c8870cd531ef8333dd7399a2" name="a3627cfdb5f6ba53e14e5533e76530468a95865673c8870cd531ef8333dd7399a2"></a>DEFEND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3627cfdb5f6ba53e14e5533e76530468a51bd5d941c848fa5022c39ecd9df615c" name="a3627cfdb5f6ba53e14e5533e76530468a51bd5d941c848fa5022c39ecd9df615c"></a>ATTACK_BODY_TO_BODY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3627cfdb5f6ba53e14e5533e76530468a5b6dedb5671e6ae62bbb5f542324c48f" name="a3627cfdb5f6ba53e14e5533e76530468a5b6dedb5671e6ae62bbb5f542324c48f"></a>ATTACK_SEMI_DISTANCE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3627cfdb5f6ba53e14e5533e76530468a40711c589484941b36b935150b0403d4" name="a3627cfdb5f6ba53e14e5533e76530468a40711c589484941b36b935150b0403d4"></a>ATTACK_DISTANCE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3627cfdb5f6ba53e14e5533e76530468a6377a0bcb00687d145c2d69374b832a9" name="a3627cfdb5f6ba53e14e5533e76530468a6377a0bcb00687d145c2d69374b832a9"></a>VIAL_EXP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3627cfdb5f6ba53e14e5533e76530468ad9912f2805a6dd5ed5eeaf49fb65b427" name="a3627cfdb5f6ba53e14e5533e76530468ad9912f2805a6dd5ed5eeaf49fb65b427"></a>VIAL_HEALTH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3627cfdb5f6ba53e14e5533e76530468ab72904fbdd103b868d43271313251ec7" name="a3627cfdb5f6ba53e14e5533e76530468ab72904fbdd103b868d43271313251ec7"></a>VIAL_ATTACK_EXP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3627cfdb5f6ba53e14e5533e76530468a8c60e3ddd7fd61b8e930160f58a7ec7b" name="a3627cfdb5f6ba53e14e5533e76530468a8c60e3ddd7fd61b8e930160f58a7ec7b"></a>VIAL_ATTACK_HEALTH&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Définition à la ligne <a class="el" href="consts_8hpp_source.html#l00079">79</a> du fichier <a class="el" href="consts_8hpp_source.html">consts.hpp</a>.</p>
 
 </div>
 </div>
@@ -198,7 +293,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="aaa1c0491864f6f8110948f609545c945ad621cf8e78236eaca174a3ce3a1d893d" name="aaa1c0491864f6f8110948f609545c945ad621cf8e78236eaca174a3ce3a1d893d"></a>MOVING_DOWN&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Définition à la ligne <a class="el" href="consts_8hpp_source.html#l00053">53</a> du fichier <a class="el" href="consts_8hpp_source.html">consts.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="consts_8hpp_source.html#l00055">55</a> du fichier <a class="el" href="consts_8hpp_source.html">consts.hpp</a>.</p>
 
 </div>
 </div>
@@ -226,7 +321,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="consts_8hpp_source.html#l00079">79</a> du fichier <a class="el" href="consts_8hpp_source.html">consts.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="consts_8hpp_source.html#l00111">111</a> du fichier <a class="el" href="consts_8hpp_source.html">consts.hpp</a>.</p>
 
 </div>
 </div>
@@ -447,6 +542,30 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="afc35392c19609797e41765c10e69c567" name="afc35392c19609797e41765c10e69c567"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc35392c19609797e41765c10e69c567">&#9670;&nbsp;</a></span>PERSONNAGE_MAX_EXP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int game::PERSONNAGE_MAX_EXP = 100</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="consts_8hpp_source.html#l00047">47</a> du fichier <a class="el" href="consts_8hpp_source.html">consts.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a170cbd165f05ad7fd18066f9892b4a58" name="a170cbd165f05ad7fd18066f9892b4a58"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a170cbd165f05ad7fd18066f9892b4a58">&#9670;&nbsp;</a></span>PERSONNAGE_MAX_HEALTH</h2>
 
@@ -471,30 +590,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a152e426c092a87b10c433230c2fff193" name="a152e426c092a87b10c433230c2fff193"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a152e426c092a87b10c433230c2fff193">&#9670;&nbsp;</a></span>PERSONNAGE_MAX_SPECIALITY</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr int game::PERSONNAGE_MAX_SPECIALITY = 100</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Définition à la ligne <a class="el" href="consts_8hpp_source.html#l00047">47</a> du fichier <a class="el" href="consts_8hpp_source.html">consts.hpp</a>.</p>
-
-</div>
-</div>
 <a id="ab43b1ee77948fb60b4bf11469c925d98" name="ab43b1ee77948fb60b4bf11469c925d98"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab43b1ee77948fb60b4bf11469c925d98">&#9670;&nbsp;</a></span>PERSONNAGE_WIDTH</h2>
 
@@ -516,6 +611,30 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Définition à la ligne <a class="el" href="consts_8hpp_source.html#l00044">44</a> du fichier <a class="el" href="consts_8hpp_source.html">consts.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a36bcccf1c84ae3d714f93abbf54055fd" name="a36bcccf1c84ae3d714f93abbf54055fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36bcccf1c84ae3d714f93abbf54055fd">&#9670;&nbsp;</a></span>SCORE_ADD_AFTER_ENEMY_KILLED</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int game::SCORE_ADD_AFTER_ENEMY_KILLED = 50</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="consts_8hpp_source.html#l00051">51</a> du fichier <a class="el" href="consts_8hpp_source.html">consts.hpp</a>.</p>
 
 </div>
 </div>

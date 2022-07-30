@@ -1,0 +1,6 @@
+<map id="Personage::initHPBar" name="Personage::initHPBar">
+<area shape="rect" id="node1" title=" " alt="" coords="5,42,152,69"/>
+<area shape="rect" id="node2" href="$class_personage.html#a0cca40cc77abdb95354998264a4f7229" title=" " alt="" coords="200,5,396,47"/>
+<area shape="rect" id="node4" href="$class_game_master.html#af7ff109051deeded5e09a450f29399ea" title=" " alt="" coords="205,71,391,98"/>
+<area shape="rect" id="node3" href="$class_game_object.html#a5f5f8870bb5d7e1496c2e565f5dd8bbd" title=" " alt="" coords="444,13,612,39"/>
+</map>

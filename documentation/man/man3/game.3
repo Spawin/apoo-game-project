@@ -1,4 +1,4 @@
-.TH "game" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.TH "game" 3 "Samedi 30 Juillet 2022" "Jeu POA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -6,6 +6,20 @@ game
 .SH SYNOPSIS
 .br
 .PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBAttackSateInformations\fP"
+.br
+.ti -1c
+.RI "struct \fBItemActionResult\fP"
+.br
+.RI "Resultat retourné à l'utilisateur après une l'utilisation d'un item sur un personage\&. "
+.ti -1c
+.RI "struct \fBPlayerStats\fP"
+.br
+.in -1c
 .SS "Énumérations"
 
 .in +1c
@@ -14,6 +28,13 @@ game
 .br
 .ti -1c
 .RI "enum \fBinventory_items_types\fP { \fBDEFAULT\fP = -1, \fBVIAL\fP = 0, \fBARMORY\fP, \fBTELEPORTKEY\fP, \fBMONEY\fP }"
+.br
+.ti -1c
+.RI "enum class \fBItemsCategories\fP { \fBNONE\fP, \fBMONEY\fP, \fBTELEPORTKEY\fP, \fBDEFEND\fP, \fBATTACK_BODY_TO_BODY\fP, \fBATTACK_SEMI_DISTANCE\fP, \fBATTACK_DISTANCE\fP, \fBVIAL_EXP\fP, \fBVIAL_HEALTH\fP, \fBVIAL_ATTACK_EXP\fP, \fBVIAL_ATTACK_HEALTH\fP }"
+.br
+.RI "Représente les catégories d'items\&. TODO - Compléter\&.\&.\&.\&. Va surtout aider dans l'utilisation de l'item et son comportement\&. "
+.ti -1c
+.RI "enum \fBAnimationSide\fP { \fBLEFT\fP, \fBRIGHT\fP }"
 .br
 .in -1c
 .SS "Fonctions"
@@ -69,14 +90,28 @@ game
 .RI "constexpr int \fBPERSONNAGE_MAX_HEALTH\fP = 100"
 .br
 .ti -1c
-.RI "constexpr int \fBPERSONNAGE_MAX_SPECIALITY\fP = 100"
+.RI "constexpr int \fBPERSONNAGE_MAX_EXP\fP = 100"
 .br
 .ti -1c
 .RI "constexpr int \fBINVENTORY_BLOCK_WIDTH\fP = 80"
 .br
+.ti -1c
+.RI "constexpr int \fBSCORE_ADD_AFTER_ENEMY_KILLED\fP = 50"
+.br
 .in -1c
 .SH "Documentation du type de l'énumération"
 .PP 
+.SS "enum \fBgame::AnimationSide\fP"
+
+.PP
+\fBValeurs énumérées\fP
+.in +1c
+.TP
+\fB\fILEFT \fP\fP
+.TP
+\fB\fIRIGHT \fP\fP
+.PP
+Définition à la ligne \fB98\fP du fichier \fBconsts\&.hpp\fP\&.
 .SS "enum \fBgame::inventory_items_types\fP"
 
 .PP
@@ -93,7 +128,39 @@ game
 .TP
 \fB\fIMONEY \fP\fP
 .PP
-Définition à la ligne \fB63\fP du fichier \fBconsts\&.hpp\fP\&.
+Définition à la ligne \fB65\fP du fichier \fBconsts\&.hpp\fP\&.
+.SS "enum class \fBgame::ItemsCategories\fP\fC [strong]\fP"
+
+.PP
+Représente les catégories d'items\&. TODO - Compléter\&.\&.\&.\&. Va surtout aider dans l'utilisation de l'item et son comportement\&. 
+.PP
+\fBValeurs énumérées\fP
+.in +1c
+.TP
+\fB\fINONE \fP\fP
+.TP
+\fB\fIMONEY \fP\fP
+N'est pas un item\&.\&. 
+.TP
+\fB\fITELEPORTKEY \fP\fP
+.TP
+\fB\fIDEFEND \fP\fP
+.TP
+\fB\fIATTACK_BODY_TO_BODY \fP\fP
+.TP
+\fB\fIATTACK_SEMI_DISTANCE \fP\fP
+.TP
+\fB\fIATTACK_DISTANCE \fP\fP
+.TP
+\fB\fIVIAL_EXP \fP\fP
+.TP
+\fB\fIVIAL_HEALTH \fP\fP
+.TP
+\fB\fIVIAL_ATTACK_EXP \fP\fP
+.TP
+\fB\fIVIAL_ATTACK_HEALTH \fP\fP
+.PP
+Définition à la ligne \fB79\fP du fichier \fBconsts\&.hpp\fP\&.
 .SS "enum \fBgame::movement_states\fP"
 
 .PP
@@ -112,13 +179,13 @@ Définition à la ligne \fB63\fP du fichier \fBconsts\&.hpp\fP\&.
 .TP
 \fB\fIMOVING_DOWN \fP\fP
 .PP
-Définition à la ligne \fB53\fP du fichier \fBconsts\&.hpp\fP\&.
+Définition à la ligne \fB55\fP du fichier \fBconsts\&.hpp\fP\&.
 .SH "Documentation des fonctions"
 .PP 
 .SS "std::string const  & game::GAME_NAME ()\fC [inline]\fP"
 
 .PP
-Définition à la ligne \fB79\fP du fichier \fBconsts\&.hpp\fP\&.
+Définition à la ligne \fB111\fP du fichier \fBconsts\&.hpp\fP\&.
 .SH "Documentation des variables"
 .PP 
 .SS "constexpr int game::DEFAULT_DETECTABILITY_RADIUS = 16\fC [constexpr]\fP"
@@ -157,18 +224,22 @@ Définition à la ligne \fB23\fP du fichier \fBconsts\&.hpp\fP\&.
 
 .PP
 Définition à la ligne \fB42\fP du fichier \fBconsts\&.hpp\fP\&.
+.SS "constexpr int game::PERSONNAGE_MAX_EXP = 100\fC [constexpr]\fP"
+
+.PP
+Définition à la ligne \fB47\fP du fichier \fBconsts\&.hpp\fP\&.
 .SS "constexpr int game::PERSONNAGE_MAX_HEALTH = 100\fC [constexpr]\fP"
 
 .PP
 Définition à la ligne \fB46\fP du fichier \fBconsts\&.hpp\fP\&.
-.SS "constexpr int game::PERSONNAGE_MAX_SPECIALITY = 100\fC [constexpr]\fP"
-
-.PP
-Définition à la ligne \fB47\fP du fichier \fBconsts\&.hpp\fP\&.
 .SS "constexpr int game::PERSONNAGE_WIDTH = 32\fC [constexpr]\fP"
 
 .PP
 Définition à la ligne \fB44\fP du fichier \fBconsts\&.hpp\fP\&.
+.SS "constexpr int game::SCORE_ADD_AFTER_ENEMY_KILLED = 50\fC [constexpr]\fP"
+
+.PP
+Définition à la ligne \fB51\fP du fichier \fBconsts\&.hpp\fP\&.
 .SS "constexpr int game::WALL_HEIGHT = 32\fC [constexpr]\fP"
 
 .PP

@@ -5,35 +5,55 @@
 \DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#ifndef \_\_PLAYER\_HPP\_\_}}
 \DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00002}00002 \textcolor{preprocessor}{\#define \_\_PLAYER\_HPP\_\_}}
 \DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00003}00003 }
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_personage_8hpp}{include/Personage.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00005}00005 }
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00006}\mbox{\hyperlink{class_player}{00006}} \textcolor{keyword}{class }\mbox{\hyperlink{class_player}{Player}}}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00007}00007 \{}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00008}00008 \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00009}00009     \mbox{\hyperlink{class_player_adacf4eab6353e0d82a345d4dc9181e80}{Player}}(\mbox{\hyperlink{class_personage}{Personage}}* personage);}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00010}00010     \mbox{\hyperlink{class_player_a749d2c00e1fe0f5c2746f7505a58c062}{\string~Player}}();}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00011}00011 }
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00012}00012     \textcolor{comment}{// Fonctions/Méthodes}}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00013}00013     sf::Vector2f \mbox{\hyperlink{class_player_a4f679a9d2fa60e76fe00d615dfe4d584}{getPosition}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00014}00014     \mbox{\hyperlink{class_personage}{Personage}}* \mbox{\hyperlink{class_player_a03b96343dc0a2c8c9ecfef6f36b50329}{getPersonage}}();}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00015}00015 }
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00016}00016     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_aa14422c8d3c3950584dcd307172741b7}{manageMove}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime);}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00017}00017     \textcolor{comment}{// void updateAnimation(const float\& deltaTime);}}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00018}00018 }
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00019}00019     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_abb3973b6cb17358b70363ca01b085463}{updateMousePosWindow}}(sf::Vector2i mousePosWindow);}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00020}00020     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_ad6867e0c7bc18e82a1da4be7bf156d97}{update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime);}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00021}00021     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a04d2bfed2fa42488eea9ff0cd9818b2a}{render}}(sf::RenderTarget\& target);}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00022}00022 }
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00023}00023 \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00024}00024     \textcolor{comment}{// Variables}}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00025}00025     \mbox{\hyperlink{class_personage}{Personage}}* personage;}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00030}00030     \textcolor{keywordtype}{bool} lastSideIsRight;}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00031}00031 }
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00032}00032     \textcolor{keywordtype}{float} waitAnimationEnd;}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_item_8hpp}{include/Item.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_personage_8hpp}{include/Personage.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{consts_8hpp}{include/consts.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00008}00008 \textcolor{keyword}{class }\mbox{\hyperlink{class_personage}{Personage}};}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00009}00009 \textcolor{keyword}{class }item;}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00011}\mbox{\hyperlink{class_player}{00011}} \textcolor{keyword}{class }\mbox{\hyperlink{class_player}{Player}}}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00012}00012 \{}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00013}00013 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00014}00014     \mbox{\hyperlink{class_player_adacf4eab6353e0d82a345d4dc9181e80}{Player}}(\mbox{\hyperlink{class_personage}{Personage}}* personage);}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00015}00015     \mbox{\hyperlink{class_player_a749d2c00e1fe0f5c2746f7505a58c062}{\string~Player}}();}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00017}00017     \textcolor{comment}{// Fonctions/Méthodes}}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00018}00018     sf::Vector2f \mbox{\hyperlink{class_player_a4f679a9d2fa60e76fe00d615dfe4d584}{getPosition}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00019}00019     \mbox{\hyperlink{class_personage}{Personage}}* \mbox{\hyperlink{class_player_a03b96343dc0a2c8c9ecfef6f36b50329}{getPersonage}}();}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00021}00021     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a583849c1d33124f3409b990b7c888bac}{manageActionToOtherPersonage}}(\textcolor{comment}{/*game::ItemsCategories categorie*/}); \textcolor{comment}{// REVIEW -\/ Private?}}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00022}00022     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_aa14422c8d3c3950584dcd307172741b7}{manageMove}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime);}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00023}00023     \textcolor{comment}{// void updateAnimation(const float\& deltaTime);}}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00025}00025     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_abb3973b6cb17358b70363ca01b085463}{updateMousePosWindow}}(sf::Vector2i mousePosWindow);}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00026}00026     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_ad6867e0c7bc18e82a1da4be7bf156d97}{update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime);}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00027}00027     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_a04d2bfed2fa42488eea9ff0cd9818b2a}{render}}(sf::RenderTarget\& target);}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00029}00029 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00030}00030     \textcolor{comment}{// Variables}}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00031}00031     \mbox{\hyperlink{structgame_1_1_player_stats}{game::PlayerStats}} playerStats;}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00032}00032     \mbox{\hyperlink{class_personage}{Personage}}* personage;}
 \DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00033}00033 }
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00034}00034     \textcolor{comment}{// Fonctions d'initialisation}}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00035}00035 \};}
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00036}00036 }
-\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00037}00037 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_PLAYER\_HPP\_\_}}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00038}00038     \mbox{\hyperlink{structgame_1_1_item_action_result}{game::ItemActionResult}} lastItemActionResult;}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00044}00044     \textcolor{comment}{// bool lastSideIsRight;}}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00046}00046     \textcolor{comment}{// float waitAnimationEnd;}}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00048}00048     \mbox{\hyperlink{structgame_1_1_attack_sate_informations}{game::AttackSateInformations}} attackSateInformations;}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00050}00050     \textcolor{comment}{// Fonctions d'initialisation}}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00051}00051     \textcolor{keywordtype}{void} initPlayerStats();}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00053}00053     \textcolor{keywordtype}{bool} haveThisItem(\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game::ItemsCategories}} \textcolor{keyword}{const}\& categorie) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00054}00054     \mbox{\hyperlink{class_item}{Item}} \textcolor{keyword}{const}* getFirstItemMatch(\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game::ItemsCategories}} \textcolor{keyword}{const}\& categorie) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00055}00055     \mbox{\hyperlink{class_item}{Item}}* getFirstItemMatchNonConst(\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game::ItemsCategories}} \textcolor{keyword}{const}\& categorie);}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00056}00056     \mbox{\hyperlink{namespacegame_ab3f078339ac2192dd0568f5a1491a513}{game::AnimationSide}} getLastAnimationSide();}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00057}00057     \textcolor{keywordtype}{bool} isLastAnimationSideRight();}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00062}00062     \textcolor{keywordtype}{void} resetLastItemActionResult();}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00063}00063     \textcolor{keywordtype}{void} resetAttackSateInformations();}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00064}00064 \};}
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_player_8hpp_source_l00066}00066 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_PLAYER\_HPP\_\_}}
 
 \end{DoxyCode}

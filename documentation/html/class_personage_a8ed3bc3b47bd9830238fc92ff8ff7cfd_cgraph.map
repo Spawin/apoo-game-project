@@ -1,0 +1,5 @@
+<map id="Personage::initAnimations" name="Personage::initAnimations">
+<area shape="rect" id="node1" title="Pour ajouter les animation pour un personnage." alt="" coords="5,46,180,73"/>
+<area shape="rect" id="node2" href="$class_animation_component.html#a899286fbfe73040577a674467275fbd3" title=" " alt="" coords="246,5,393,47"/>
+<area shape="rect" id="node3" href="$class_movable_game_object.html#a2e91f66b167c69682916b93cc5d900ae" title=" " alt="" coords="228,71,411,112"/>
+</map>

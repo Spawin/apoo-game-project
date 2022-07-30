@@ -470,8 +470,8 @@
 \DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00466}00466 }
 \DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00467}00467     this-\/>inventoryButtons[\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0ade2b8abe881dd8e4494afd39e979ebf8}{game::inventory\_items\_types::DEFAULT}}] = \{\};}
 \DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00468}00468     this-\/>inventoryButtons[\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a2b602b3377438010ebb120c46572f3c7}{game::inventory\_items\_types::ARMORY}}] = \{\};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00469}00469     this-\/>inventoryButtons[game::inventory\_items\_types::MONEY] = \{\};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00470}00470     this-\/>inventoryButtons[game::inventory\_items\_types::TELEPORTKEY] = \{\};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00469}00469     this-\/>inventoryButtons[\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a73e510979d35b3bfb3c02215c02139a3}{game::inventory\_items\_types::MONEY}}] = \{\};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00470}00470     this-\/>inventoryButtons[\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a166de762fd24b8c7c9624d8b42d4cfab}{game::inventory\_items\_types::TELEPORTKEY}}] = \{\};}
 \DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00471}00471     this-\/>inventoryButtons[\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a0783b29ef2cd9d2229b08af1093f5f0f}{game::inventory\_items\_types::VIAL}}] = \{\};}
 \DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00472}00472 \}}
 \DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00473}00473 }
@@ -512,169 +512,186 @@
 \DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00508}00508         \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a2b602b3377438010ebb120c46572f3c7}{game::inventory\_items\_types::ARMORY}}: \{}
 \DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00509}00509             \textcolor{keywordtype}{float} x = 80.f + 80.f * 4.f + 80.f * (this-\/>inventoryButtons[type].size() \% 2);}
 \DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00510}00510             \textcolor{keywordtype}{float} y = 130.f + 80.f + 80 * (floor((\textcolor{keywordtype}{float})this-\/>inventoryButtons[type].size() / 2.f));}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00511}00511             this-\/>inventoryButtons[type].push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_inventory_button}{InventoryButton}}(x, y, item-\/>\mbox{\hyperlink{class_game_object_a60bcdbbdaa9d1de7d265d404071d3c4d}{getSprite}}(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00512}00512             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00513}00513         \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00514}00514         \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00515}00515         \textcolor{keywordflow}{case} game::inventory\_items\_types::MONEY: \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00516}00516             std::cout << \textcolor{stringliteral}{"{}Affichage monaie\(\backslash\)n"{}};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00517}00517             \textcolor{comment}{// On affichera une seule fois le truc de la monaie}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00518}00518             \textcolor{keywordflow}{if} (this-\/>inventoryButtons[type].size() >= 1)}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00519}00519             \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00520}00520                 \textcolor{keywordflow}{try}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00521}00521                 \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00522}00522                     \textcolor{comment}{// std::cout << "{}ancien "{} << std::stoi(this-\/>inventoryButtons[type][0]-\/>getText()) << std::endl;}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00523}00523                     \textcolor{comment}{// std::cout << "{}maintenant "{} << std::to\_string(std::stoi(this-\/>inventoryButtons[type][0]-\/>getText()) + 1) << std::endl;}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00524}00524                     \textcolor{comment}{// on recupère l'ancien text, on a joute 1 et on met à jour l'affichage}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00525}00525                     this-\/>inventoryButtons[type][0]-\/>setText(std::to\_string(std::stoi(this-\/>inventoryButtons[type][0]-\/>getText()) + 1));}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00526}00526                 \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00527}00527                 \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} std::exception\& e)}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00528}00528                 \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00529}00529                     \textcolor{comment}{// TODO -\/}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00530}00530                 \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00531}00531 }
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00532}00532                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00533}00533             \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00534}00534             \textcolor{keywordtype}{float} x = 80.f + 80.f * 10.f + 80.f * (this-\/>inventoryButtons[type].size() \% 2);}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00535}00535             \textcolor{keywordtype}{float} y = 130.f + 80.f + 80 * (floor((\textcolor{keywordtype}{float})this-\/>inventoryButtons[type].size() / 2.f));}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00536}00536             this-\/>inventoryButtons[type].push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_inventory_button}{InventoryButton}}(x, y, item-\/>\mbox{\hyperlink{class_game_object_a60bcdbbdaa9d1de7d265d404071d3c4d}{getSprite}}(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50), sf::Color(255, 255, 255, 255), sf::Color(255, 255, 255, 255), sf::Color(20, 20, 20, 50)));}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00537}00537             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00538}00538         \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00539}00539         \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00540}00540         \textcolor{keywordflow}{case} game::inventory\_items\_types::TELEPORTKEY: \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00541}00541             \textcolor{keywordtype}{float} x = 80.f + 80.f * 7.f + 80.f * (this-\/>inventoryButtons[type].size() \% 2);}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00542}00542             \textcolor{keywordtype}{float} y = 130.f + 80.f + 80 * (floor((\textcolor{keywordtype}{float})this-\/>inventoryButtons[type].size() / 2.f));}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00543}00543             this-\/>inventoryButtons[type].push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_inventory_button}{InventoryButton}}(x, y, item-\/>\mbox{\hyperlink{class_game_object_a60bcdbbdaa9d1de7d265d404071d3c4d}{getSprite}}(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00544}00544             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00545}00545         \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00546}00546         \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00547}00547         \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a0783b29ef2cd9d2229b08af1093f5f0f}{game::inventory\_items\_types::VIAL}}: \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00548}00548             \textcolor{keywordtype}{float} x = 80.f + 80.f + 80.f * (this-\/>inventoryButtons[type].size() \% 2);}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00549}00549             \textcolor{keywordtype}{float} y = 130.f + 80.f + 80 * (floor((\textcolor{keywordtype}{float})this-\/>inventoryButtons[type].size() / 2.f));}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00550}00550             this-\/>inventoryButtons[type].push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_inventory_button}{InventoryButton}}(x, y, item-\/>\mbox{\hyperlink{class_game_object_a60bcdbbdaa9d1de7d265d404071d3c4d}{getSprite}}(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00511}00511             this-\/>inventoryButtons[type].push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_inventory_button}{gui::InventoryButton}}(x, y, item-\/>\mbox{\hyperlink{class_game_object_a60bcdbbdaa9d1de7d265d404071d3c4d}{getSprite}}(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00512}00512 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00513}00513             this-\/>inventoryItemDatas.push\_back(\{ item, short(this-\/>inventoryButtons[type].size() -\/ 1) \});}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00514}00514             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00515}00515         \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00516}00516         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00517}00517         \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a73e510979d35b3bfb3c02215c02139a3}{game::inventory\_items\_types::MONEY}}: \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00518}00518             \textcolor{comment}{// std::cout << "{}Affichage monaie\(\backslash\)n"{};}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00519}00519             \textcolor{comment}{// On affichera une seule fois le truc de la monaie}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00520}00520             \textcolor{keywordflow}{if} (this-\/>inventoryButtons[type].size() >= 1)}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00521}00521             \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00522}00522                 \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00523}00523                 \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00524}00524                     \textcolor{comment}{// std::cout << "{}ancien "{} << std::stoi(this-\/>inventoryButtons[type][0]-\/>getText()) << std::endl;}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00525}00525                     \textcolor{comment}{// std::cout << "{}maintenant "{} << std::to\_string(std::stoi(this-\/>inventoryButtons[type][0]-\/>getText()) + 1) << std::endl;}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00526}00526                     \textcolor{comment}{// on recupère l'ancien text, on a joute 1 et on met à jour l'affichage}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00527}00527                     this-\/>inventoryButtons[type][0]-\/>setText(std::to\_string(std::stoi(this-\/>inventoryButtons[type][0]-\/>getText()) + 1));}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00528}00528                 \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00529}00529                 \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} std::exception\& e)}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00530}00530                 \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00531}00531                     \textcolor{comment}{// TODO -\/}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00532}00532                 \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00533}00533 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00534}00534                 this-\/>inventoryItemDatas.push\_back(\{ item, short(this-\/>inventoryButtons[type].size() -\/ 1) \});}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00535}00535                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00536}00536             \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00537}00537             \textcolor{keywordtype}{float} x = 80.f + 80.f * 10.f + 80.f * (this-\/>inventoryButtons[type].size() \% 2);}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00538}00538             \textcolor{keywordtype}{float} y = 130.f + 80.f + 80 * (floor((\textcolor{keywordtype}{float})this-\/>inventoryButtons[type].size() / 2.f));}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00539}00539             this-\/>inventoryButtons[type].push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_inventory_button}{gui::InventoryButton}}(x, y, item-\/>\mbox{\hyperlink{class_game_object_a60bcdbbdaa9d1de7d265d404071d3c4d}{getSprite}}(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50), sf::Color(255, 255, 255, 255), sf::Color(255, 255, 255, 255), sf::Color(20, 20, 20, 50)));}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00540}00540 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00541}00541             this-\/>inventoryItemDatas.push\_back(\{ item, short(this-\/>inventoryButtons[type].size() -\/ 1) \});}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00542}00542             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00543}00543         \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00544}00544         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00545}00545         \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a166de762fd24b8c7c9624d8b42d4cfab}{game::inventory\_items\_types::TELEPORTKEY}}: \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00546}00546             \textcolor{keywordtype}{float} x = 80.f + 80.f * 7.f + 80.f * (this-\/>inventoryButtons[type].size() \% 2);}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00547}00547             \textcolor{keywordtype}{float} y = 130.f + 80.f + 80 * (floor((\textcolor{keywordtype}{float})this-\/>inventoryButtons[type].size() / 2.f));}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00548}00548             this-\/>inventoryButtons[type].push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_inventory_button}{gui::InventoryButton}}(x, y, item-\/>\mbox{\hyperlink{class_game_object_a60bcdbbdaa9d1de7d265d404071d3c4d}{getSprite}}(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00549}00549 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00550}00550             this-\/>inventoryItemDatas.push\_back(\{ item, short(this-\/>inventoryButtons[type].size() -\/ 1) \});}
 \DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00551}00551             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00552}00552         \}}
 \DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00553}00553         \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00554}00554         \textcolor{keywordflow}{default}: \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00555}00555             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00556}00556         \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00557}00557         \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00558}00558     \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00559}00559     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00560}00560 \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00561}00561 }
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00562}\mbox{\hyperlink{classgui_1_1_inventory_a9c0222f20c483ae191878731f0195f72}{00562}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classgui_1_1_inventory_a9c0222f20c483ae191878731f0195f72}{gui::Inventory::removeItem}}(\textcolor{keywordtype}{int} index \textcolor{comment}{/*, sf::Sprite const\& itemSprite*/}, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game::inventory\_items\_types}} type)}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00563}00563 \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00564}00564     \textcolor{comment}{// REVIEW -\/}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00565}00565     \textcolor{comment}{// vec.erase(std::remove(vec.begin(), vec.end(), value), vec.end());}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00566}00566     \textcolor{comment}{// this-\/>inventoryItemSprites[type].erase(std::remove(this-\/>inventoryItemSprites[type].begin(), this-\/>inventoryItemSprites[type].end(), itemSprite), this-\/>inventoryItemSprites[type].end());}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00567}00567     \textcolor{keyword}{delete} this-\/>inventoryButtons[type][index];}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00568}00568     this-\/>inventoryButtons[type].erase(std::remove(this-\/>inventoryButtons[type].begin(), this-\/>inventoryButtons[type].end(), this-\/>inventoryButtons[type][index]), this-\/>inventoryButtons[type].end());}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00569}00569     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00554}00554         \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a0783b29ef2cd9d2229b08af1093f5f0f}{game::inventory\_items\_types::VIAL}}: \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00555}00555             \textcolor{keywordtype}{float} x = 80.f + 80.f + 80.f * (this-\/>inventoryButtons[type].size() \% 2);}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00556}00556             \textcolor{keywordtype}{float} y = 130.f + 80.f + 80 * (floor((\textcolor{keywordtype}{float})this-\/>inventoryButtons[type].size() / 2.f));}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00557}00557             this-\/>inventoryButtons[type].push\_back(\textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_inventory_button}{gui::InventoryButton}}(x, y, item-\/>\mbox{\hyperlink{class_game_object_a60bcdbbdaa9d1de7d265d404071d3c4d}{getSprite}}(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00558}00558 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00559}00559             this-\/>inventoryItemDatas.push\_back(\{ item, short(this-\/>inventoryButtons[type].size() -\/ 1) \});}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00560}00560             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00561}00561         \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00562}00562         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00563}00563         \textcolor{keywordflow}{default}: \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00564}00564             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00565}00565         \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00566}00566         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00567}00567     \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00568}00568     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00569}00569 \}}
 \DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00570}00570 }
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00571}00571     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00572}00572 \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00573}00573 }
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00574}\mbox{\hyperlink{classgui_1_1_inventory_abf61ac4f9cae8d03468969bb0498a05a}{00574}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classgui_1_1_inventory_abf61ac4f9cae8d03468969bb0498a05a}{gui::Inventory::updateMousePosWindow}}(sf::Vector2i mousePosWindow)}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00575}00575 \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00576}00576     \textcolor{comment}{// Hover}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00577}00577     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\&\& inventoryButtonVectorPair : this-\/>inventoryButtons)}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00578}00578     \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00579}00579         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < inventoryButtonVectorPair.second.size(); i++)}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00580}00580         \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00581}00581             inventoryButtonVectorPair.second[i]-\/>update(mousePosWindow);}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00582}00582         \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00583}00583     \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00584}00584 \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00585}00585 }
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00586}\mbox{\hyperlink{classgui_1_1_inventory_ae9385f05ca7064cb8b0cc48d3602446e}{00586}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classgui_1_1_inventory_ae9385f05ca7064cb8b0cc48d3602446e}{gui::Inventory::update}}(\textcolor{comment}{/*const sf::Vector2i\& mousePosView*/}) \textcolor{comment}{// REVIEW -\/}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00587}00587 \{\}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00588}00588 }
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00589}\mbox{\hyperlink{classgui_1_1_inventory_a20a0ed58d1b1bdfe941ba86ffc9091dc}{00589}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classgui_1_1_inventory_a20a0ed58d1b1bdfe941ba86ffc9091dc}{gui::Inventory::render}}(sf::RenderTarget\& target)}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00590}00590 \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00591}00591     this-\/>setGraphicsElementPosition(target.getView());}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00592}00592     \textcolor{comment}{// sf::CircleShape shape(200.f);}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00593}00593 }
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00594}00594     \textcolor{comment}{// shape.setFillColor(sf::Color(100, 250, 50));}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00595}00595 }
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00596}00596     \textcolor{comment}{// target.draw(shape); // REVIEW -\/}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00597}00597 }
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00598}00598     target.draw(this-\/>background);}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00599}00599 }
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00600}00600     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>inventoryButtons.begin(); it != this-\/>inventoryButtons.end(); it++)}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00601}00601     \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00602}00602         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < it-\/>second.size(); i++)}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00603}00603         \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00604}00604             it-\/>second[i]-\/>render(target);}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00605}00605         \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00606}00606     \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00607}00607 \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00608}00608 }
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00609}00609 \textcolor{keywordtype}{void} gui::Inventory::setGraphicsElementPosition(sf::View \textcolor{keyword}{const}\& view)}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00610}00610 \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00611}00611 }
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00612}00612     sf::Vector2f v(view.getCenter());}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00613}00613     sf::Vector2f s(view.getSize());}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00571}\mbox{\hyperlink{classgui_1_1_inventory_a5b441996b23e40dcd79faf8668296969}{00571}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classgui_1_1_inventory_a5b441996b23e40dcd79faf8668296969}{gui::Inventory::removeItem}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_item}{Item}}* item \textcolor{comment}{/*, sf::Sprite const\& itemSprite*/}, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game::inventory\_items\_types}} type)}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00572}00572 \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00573}00573     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < this-\/>inventoryItemDatas.size(); i++)}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00574}00574     \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00575}00575         \textcolor{keywordflow}{if} (this-\/>inventoryItemDatas[i].item == item)}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00576}00576         \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00577}00577 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00578}00578             \textcolor{comment}{// REVIEW -\/}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00579}00579             \textcolor{comment}{// vec.erase(std::remove(vec.begin(), vec.end(), value), vec.end());}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00580}00580             \textcolor{comment}{// this-\/>inventoryItemSprites[type].erase(std::remove(this-\/>inventoryItemSprites[type].begin(), this-\/>inventoryItemSprites[type].end(), itemSprite), this-\/>inventoryItemSprites[type].end());}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00581}00581             \textcolor{keyword}{delete} this-\/>inventoryButtons[type][this-\/>inventoryItemDatas[i].Index];}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00582}00582             this-\/>inventoryButtons[type].erase(std::remove(this-\/>inventoryButtons[type].begin(), this-\/>inventoryButtons[type].end(), this-\/>inventoryButtons[type][this-\/>inventoryItemDatas[i].Index]), this-\/>inventoryButtons[type].end());}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00583}00583             \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00584}00584             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00585}00585         \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00586}00586     \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00587}00587 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00588}00588     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00589}00589 \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00590}00590 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00591}\mbox{\hyperlink{classgui_1_1_inventory_abf61ac4f9cae8d03468969bb0498a05a}{00591}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classgui_1_1_inventory_abf61ac4f9cae8d03468969bb0498a05a}{gui::Inventory::updateMousePosWindow}}(sf::Vector2i mousePosWindow)}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00592}00592 \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00593}00593     \textcolor{comment}{// Hover}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00594}00594     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\&\& inventoryButtonVectorPair : this-\/>inventoryButtons)}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00595}00595     \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00596}00596         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < inventoryButtonVectorPair.second.size(); i++)}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00597}00597         \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00598}00598             inventoryButtonVectorPair.second[i]-\/>update(mousePosWindow);}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00599}00599         \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00600}00600     \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00601}00601 \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00602}00602 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00603}\mbox{\hyperlink{classgui_1_1_inventory_ae9385f05ca7064cb8b0cc48d3602446e}{00603}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classgui_1_1_inventory_ae9385f05ca7064cb8b0cc48d3602446e}{gui::Inventory::update}}(\textcolor{comment}{/*const sf::Vector2i\& mousePosView*/}) \textcolor{comment}{// REVIEW -\/}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00604}00604 \{\}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00605}00605 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00606}\mbox{\hyperlink{classgui_1_1_inventory_a20a0ed58d1b1bdfe941ba86ffc9091dc}{00606}} \textcolor{keywordtype}{void} \mbox{\hyperlink{classgui_1_1_inventory_a20a0ed58d1b1bdfe941ba86ffc9091dc}{gui::Inventory::render}}(sf::RenderTarget\& target)}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00607}00607 \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00608}00608     this-\/>setGraphicsElementPosition(target.getView());}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00609}00609     \textcolor{comment}{// sf::CircleShape shape(200.f);}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00610}00610 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00611}00611     \textcolor{comment}{// shape.setFillColor(sf::Color(100, 250, 50));}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00612}00612 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00613}00613     \textcolor{comment}{// target.draw(shape); // REVIEW -\/}}
 \DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00614}00614 }
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00615}00615     \textcolor{comment}{// On calcul le décallage du centre de la vue}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00616}00616     \textcolor{keywordtype}{float} addX(v.x -\/ s.x / 2.f);}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00617}00617     \textcolor{keywordtype}{float} addY(v.y -\/ s.y / 2.f);}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00618}00618 }
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00619}00619     this-\/>background.setPosition(80.f + addX, 130.f + addY);}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00620}00620 }
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00621}00621     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>inventoryButtons.begin(); it != this-\/>inventoryButtons.end(); it++)}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00622}00622     \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00623}00623         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < it-\/>second.size(); i++)}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00624}00624         \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00625}00625             \textcolor{keywordtype}{float} x(0.f);}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00626}00626             \textcolor{keywordtype}{float} y(0.f);}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00627}00627             \textcolor{keywordflow}{switch} (it-\/>first)}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00628}00628             \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00629}00629                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a0783b29ef2cd9d2229b08af1093f5f0f}{game::inventory\_items\_types::VIAL}}: \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00630}00630                     x = 80.f + 80.f * 1.f + 80.f * (i \% 2) + addX;}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00631}00631                     y = 130.f + 80.f + 80 * (floor((\textcolor{keywordtype}{float})i / 2.f)) + addY;}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00632}00632                 \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00633}00633                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00634}00634                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a2b602b3377438010ebb120c46572f3c7}{game::inventory\_items\_types::ARMORY}}: \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00635}00635                     x = 80.f + 80.f * 4.f + 80.f * (i \% 2) + addX;}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00636}00636                     y = 130.f + 80.f + 80 * (floor((\textcolor{keywordtype}{float})i / 2.f)) + addY;}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00637}00637                 \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00638}00638                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00639}00639                 \textcolor{keywordflow}{case} game::inventory\_items\_types::TELEPORTKEY: \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00640}00640                     x = 80.f + 80.f * 7.f + 80.f * (i \% 2) + addX;}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00641}00641                     y = 130.f + 80.f + 80 * (floor((\textcolor{keywordtype}{float})i / 2.f)) + addY;}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00642}00642                 \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00643}00643                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00644}00644                 \textcolor{keywordflow}{case} game::inventory\_items\_types::MONEY: \{}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00645}00645                     \textcolor{comment}{// On affichera une seule fois le truc de la monaie}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00646}00646                     \textcolor{keywordflow}{if} (i > 1)}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00647}00647                         \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00648}00648 }
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00649}00649                     x = 80.f + 80.f * 10.f + addX;}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00650}00650                     y = 130.f + 80.f + addY;}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00651}00651                 \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00652}00652                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00653}00653 }
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00654}00654                 \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00655}00655                     \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00656}00656             \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00657}00657             it-\/>second[i]-\/>setPosition(x, y, addX, addY);}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00658}00658         \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00659}00659     \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00660}00660 \}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00661}00661 }
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00662}00662 \textcolor{comment}{// std::vector<sf::Sprite const\&>::iterator gui::Inventory::getItemSpriteIterator(sf::Sprite const\& itemSprite, game::inventory\_items\_types type)}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00663}00663 \textcolor{comment}{// \{}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00664}00664 \textcolor{comment}{//  for (auto it = this-\/>inventoryItemSprites[type].begin(); it != this-\/>inventoryItemSprites[type].end(); it++)}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00665}00665 \textcolor{comment}{//  \{}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00666}00666 \textcolor{comment}{//      if ((*it) == itemSprite)}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00667}00667 \textcolor{comment}{//      \{}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00668}00668 \textcolor{comment}{//          return it;}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00669}00669 \textcolor{comment}{//      \}}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00670}00670 \textcolor{comment}{//  \}}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00671}00671 \textcolor{comment}{//  return std::vector<sf::Sprite const\&>::iterator(); // REVIEW -\/}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00672}00672 \textcolor{comment}{// \}}}
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00673}00673 }
-\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00674}00674 \textcolor{comment}{// ********************************* End Inventory}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00615}00615     target.draw(this-\/>background);}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00616}00616 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00617}00617     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>inventoryButtons.begin(); it != this-\/>inventoryButtons.end(); it++)}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00618}00618     \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00619}00619         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < it-\/>second.size(); i++)}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00620}00620         \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00621}00621             it-\/>second[i]-\/>render(target);}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00622}00622         \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00623}00623     \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00624}00624 \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00625}00625 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00626}00626 \textcolor{keywordtype}{void} gui::Inventory::setGraphicsElementPosition(sf::View \textcolor{keyword}{const}\& view)}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00627}00627 \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00628}00628 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00629}00629     sf::Vector2f v(view.getCenter());}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00630}00630     sf::Vector2f s(view.getSize());}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00631}00631 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00632}00632     \textcolor{comment}{// On calcul le décallage du centre de la vue}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00633}00633     \textcolor{keywordtype}{float} addX(v.x -\/ s.x / 2.f);}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00634}00634     \textcolor{keywordtype}{float} addY(v.y -\/ s.y / 2.f);}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00635}00635 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00636}00636     this-\/>background.setPosition(80.f + addX, 130.f + addY);}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00637}00637 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00638}00638     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>inventoryButtons.begin(); it != this-\/>inventoryButtons.end(); it++)}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00639}00639     \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00640}00640         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < it-\/>second.size(); i++)}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00641}00641         \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00642}00642             \textcolor{keywordtype}{float} x(0.f);}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00643}00643             \textcolor{keywordtype}{float} y(0.f);}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00644}00644             \textcolor{keywordflow}{switch} (it-\/>first)}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00645}00645             \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00646}00646                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a0783b29ef2cd9d2229b08af1093f5f0f}{game::inventory\_items\_types::VIAL}}: \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00647}00647                     x = 80.f + 80.f * 1.f + 80.f * (i \% 2) + addX;}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00648}00648                     y = 130.f + 80.f + 80 * (floor((\textcolor{keywordtype}{float})i / 2.f)) + addY;}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00649}00649                 \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00650}00650                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00651}00651                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a2b602b3377438010ebb120c46572f3c7}{game::inventory\_items\_types::ARMORY}}: \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00652}00652                     x = 80.f + 80.f * 4.f + 80.f * (i \% 2) + addX;}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00653}00653                     y = 130.f + 80.f + 80 * (floor((\textcolor{keywordtype}{float})i / 2.f)) + addY;}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00654}00654                 \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00655}00655                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00656}00656                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a166de762fd24b8c7c9624d8b42d4cfab}{game::inventory\_items\_types::TELEPORTKEY}}: \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00657}00657                     x = 80.f + 80.f * 7.f + 80.f * (i \% 2) + addX;}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00658}00658                     y = 130.f + 80.f + 80 * (floor((\textcolor{keywordtype}{float})i / 2.f)) + addY;}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00659}00659                 \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00660}00660                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00661}00661                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0a73e510979d35b3bfb3c02215c02139a3}{game::inventory\_items\_types::MONEY}}: \{}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00662}00662                     \textcolor{comment}{// On affichera une seule fois le truc de la monaie}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00663}00663                     \textcolor{keywordflow}{if} (i > 1)}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00664}00664                         \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00665}00665 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00666}00666                     x = 80.f + 80.f * 10.f + addX;}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00667}00667                     y = 130.f + 80.f + addY;}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00668}00668                 \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00669}00669                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00670}00670 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00671}00671                 \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00672}00672                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00673}00673             \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00674}00674             it-\/>second[i]-\/>setPosition(x, y, addX, addY);}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00675}00675         \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00676}00676     \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00677}00677 \}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00678}00678 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00679}00679 \textcolor{comment}{// std::vector<sf::Sprite const\&>::iterator gui::Inventory::getItemSpriteIterator(sf::Sprite const\& itemSprite, game::inventory\_items\_types type)}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00680}00680 \textcolor{comment}{// \{}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00681}00681 \textcolor{comment}{//  for (auto it = this-\/>inventoryItemSprites[type].begin(); it != this-\/>inventoryItemSprites[type].end(); it++)}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00682}00682 \textcolor{comment}{//  \{}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00683}00683 \textcolor{comment}{//      if ((*it) == itemSprite)}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00684}00684 \textcolor{comment}{//      \{}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00685}00685 \textcolor{comment}{//          return it;}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00686}00686 \textcolor{comment}{//      \}}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00687}00687 \textcolor{comment}{//  \}}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00688}00688 \textcolor{comment}{//  return std::vector<sf::Sprite const\&>::iterator(); // REVIEW -\/}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00689}00689 \textcolor{comment}{// \}}}
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00690}00690 }
+\DoxyCodeLine{\Hypertarget{_gui_8cpp_source_l00691}00691 \textcolor{comment}{// ********************************* End Inventory}}
 
 \end{DoxyCode}

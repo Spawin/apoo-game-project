@@ -1,4 +1,4 @@
-.TH "Inventory" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.TH "Inventory" 3 "Samedi 30 Juillet 2022" "Jeu POA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -18,13 +18,27 @@ Inventory
 .RI "\fB~Inventory\fP ()"
 .br
 .ti -1c
-.RI "bool \fBadd\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type)"
+.RI "bool \fBadd\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type, sf::Vector2f const &coordinates)"
 .br
 .ti -1c
-.RI "bool \fBmove\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type, \fBInventory\fP *to_inventory)"
+.RI "bool \fBmove\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type, \fBInventory\fP *to_inventory, sf::Vector2f const &coordinates)"
 .br
 .ti -1c
 .RI "bool \fBremove\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type)"
+.br
+.ti -1c
+.RI "bool \fBhaveThisItem\fP (\fBgame::ItemsCategories\fP const &categorie) const"
+.br
+.ti -1c
+.RI "\fBgame::inventory_items_types\fP const & \fBgetInventoryItemType\fP (\fBItem\fP const *item) const"
+.br
+.RI "Retourne le type de l'inventaire de l'item\&. "
+.ti -1c
+.RI "\fBItem\fP const * \fBgetFirstItemMatch\fP (\fBgame::ItemsCategories\fP const &categorie) const"
+.br
+.RI "Retourne le premier item qui vérifie le paramètre\&. NOTE - S'assurer d'appeler haveThisItem avant pour vérifier la disponibilité de l'objet recherché\&. Si l'item n'est pas trouvé un retour null_ptr est envoyé\&. "
+.ti -1c
+.RI "\fBItem\fP * \fBgetFirstItemMatchNonConst\fP (\fBgame::ItemsCategories\fP const &categorie)"
 .br
 .ti -1c
 .RI "int \fBgetTypeLimit\fP (\fBgame::inventory_items_types\fP type)"
@@ -38,7 +52,7 @@ Inventory
 .in -1c
 .SH "Description détaillée"
 .PP 
-Définition à la ligne \fB22\fP du fichier \fBInventory\&.hpp\fP\&.
+Définition à la ligne \fB18\fP du fichier \fBInventory\&.hpp\fP\&.
 .SH "Documentation des constructeurs et destructeur"
 .PP 
 .SS "Inventory::Inventory (unsigned vial_capacity = \fC6\fP, unsigned armory_capacity = \fC4\fP, unsigned teleportKey_capacity = \fC3\fP, unsigned money_capacity = \fC9999999\fP)"
@@ -48,33 +62,77 @@ Définition à la ligne \fB32\fP du fichier \fBInventory\&.cpp\fP\&.
 .SS "Inventory::~Inventory ()"
 
 .PP
-Définition à la ligne \fB39\fP du fichier \fBInventory\&.cpp\fP\&.
+Définition à la ligne \fB40\fP du fichier \fBInventory\&.cpp\fP\&.
 .SH "Documentation des fonctions membres"
 .PP 
-.SS "bool Inventory::add (\fBItem\fP * item, \fBgame::inventory_items_types\fP type)"
+.SS "bool Inventory::add (\fBItem\fP * item, \fBgame::inventory_items_types\fP type, sf::Vector2f const & coordinates)"
 
 .PP
-Définition à la ligne \fB55\fP du fichier \fBInventory\&.cpp\fP\&.
+Définition à la ligne \fB56\fP du fichier \fBInventory\&.cpp\fP\&.
+.SS "\fBItem\fP const  * Inventory::getFirstItemMatch (\fBgame::ItemsCategories\fP const & categorie) const"
+
+.PP
+Retourne le premier item qui vérifie le paramètre\&. NOTE - S'assurer d'appeler haveThisItem avant pour vérifier la disponibilité de l'objet recherché\&. Si l'item n'est pas trouvé un retour null_ptr est envoyé\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIcategorie\fP 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+\fBItem\fP const* 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB134\fP du fichier \fBInventory\&.cpp\fP\&.
+.SS "\fBItem\fP * Inventory::getFirstItemMatchNonConst (\fBgame::ItemsCategories\fP const & categorie)"
+
+.PP
+Définition à la ligne \fB150\fP du fichier \fBInventory\&.cpp\fP\&.
 .SS "int Inventory::getFreePlace (\fBgame::inventory_items_types\fP type)"
 
 .PP
-Définition à la ligne \fB94\fP du fichier \fBInventory\&.cpp\fP\&.
+Définition à la ligne \fB171\fP du fichier \fBInventory\&.cpp\fP\&.
 .SS "\fBgui::Inventory\fP * Inventory::getGui ()"
 
 .PP
-Définition à la ligne \fB99\fP du fichier \fBInventory\&.cpp\fP\&.
+Définition à la ligne \fB176\fP du fichier \fBInventory\&.cpp\fP\&.
+.SS "\fBgame::inventory_items_types\fP const  & Inventory::getInventoryItemType (\fBItem\fP const * item) const"
+
+.PP
+Retourne le type de l'inventaire de l'item\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIitem\fP 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+\fBgame::inventory_items_types\fP const& 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB118\fP du fichier \fBInventory\&.cpp\fP\&.
 .SS "int Inventory::getTypeLimit (\fBgame::inventory_items_types\fP type)"
 
 .PP
-Définition à la ligne \fB89\fP du fichier \fBInventory\&.cpp\fP\&.
-.SS "bool Inventory::move (\fBItem\fP * item, \fBgame::inventory_items_types\fP type, \fBInventory\fP * to_inventory)"
+Définition à la ligne \fB166\fP du fichier \fBInventory\&.cpp\fP\&.
+.SS "bool Inventory::haveThisItem (\fBgame::ItemsCategories\fP const & categorie) const"
 
 .PP
-Définition à la ligne \fB68\fP du fichier \fBInventory\&.cpp\fP\&.
+Définition à la ligne \fB101\fP du fichier \fBInventory\&.cpp\fP\&.
+.SS "bool Inventory::move (\fBItem\fP * item, \fBgame::inventory_items_types\fP type, \fBInventory\fP * to_inventory, sf::Vector2f const & coordinates)"
+
+.PP
+Définition à la ligne \fB72\fP du fichier \fBInventory\&.cpp\fP\&.
 .SS "bool Inventory::remove (\fBItem\fP * item, \fBgame::inventory_items_types\fP type)"
 
 .PP
-Définition à la ligne \fB80\fP du fichier \fBInventory\&.cpp\fP\&.
+Définition à la ligne \fB88\fP du fichier \fBInventory\&.cpp\fP\&.
 
 .SH "Auteur"
 .PP 

@@ -1,0 +1,5 @@
+<map id="Collider::getContactPoints" name="Collider::getContactPoints">
+<area shape="rect" id="node1" title=" " alt="" coords="244,35,417,61"/>
+<area shape="rect" id="node2" href="$class_box_collider.html#a38200ed6f93b0f91bcb0f9f6b19954f9" title=" " alt="" coords="5,5,196,32"/>
+<area shape="rect" id="node3" href="$class_polygon_collider.html#a6db0242a202318ed2b1e8017fc06ac19" title=" " alt="" coords="9,57,192,98"/>
+</map>

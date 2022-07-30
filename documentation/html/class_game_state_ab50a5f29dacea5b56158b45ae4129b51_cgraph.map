@@ -1,0 +1,15 @@
+<map id="GameState::render" name="GameState::render">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,137,133"/>
+<area shape="rect" id="node2" href="$class_player.html#a03b96343dc0a2c8c9ecfef6f36b50329" title=" " alt="" coords="213,5,360,32"/>
+<area shape="rect" id="node3" href="$class_enemy_manager.html#a96ae46ce3b26cd534d49363bcc344ed7" title=" " alt="" coords="208,56,365,83"/>
+<area shape="rect" id="node4" href="$class_pause_menu.html#ab52735e20aa287ea7a17783e9005e2a8" title=" " alt="" coords="219,107,354,133"/>
+<area shape="rect" id="node5" href="$class_player.html#a04d2bfed2fa42488eea9ff0cd9818b2a" title=" " alt="" coords="235,157,338,184"/>
+<area shape="rect" id="node10" href="$class_personage.html#a71c0f3d9e3412c24050afd31c836872f" title=" " alt="" coords="185,208,388,235"/>
+<area shape="rect" id="node6" href="$class_personage.html#a01b776643850ebcc55ba806e2fa8085e" title="Pour dessiner l&#39;élement dans la fenêtre." alt="" coords="445,157,567,184"/>
+<area shape="rect" id="node7" href="$class_personage.html#abc3bc1054dfc52ccdf479a48616b5504" title=" " alt="" coords="624,107,797,133"/>
+<area shape="rect" id="node9" href="$class_personage.html#a67392d993c6554540e2f59443abd5a59" title=" " alt="" coords="627,157,794,184"/>
+<area shape="rect" id="node8" href="$classgui_1_1_progress_bar.html#a2306f8517ac039e56095c389edbdb536" title=" " alt="" coords="845,132,1008,159"/>
+<area shape="rect" id="node11" href="$class_bag.html#a81528b3dffe4e4542f31fab596d9daf4" title=" " alt="" coords="436,208,576,235"/>
+<area shape="rect" id="node12" href="$class_inventory.html#adb0cf453e653bc719cdb207b906dbc56" title=" " alt="" coords="651,208,770,235"/>
+<area shape="rect" id="node13" href="$classgui_1_1_inventory.html#a20a0ed58d1b1bdfe941ba86ffc9091dc" title=" " alt="" coords="639,259,782,285"/>
+</map>

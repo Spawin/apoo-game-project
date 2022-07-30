@@ -1,0 +1,14 @@
+<map id="Animation::isDone" name="Animation::isDone">
+<area shape="rect" id="node1" title=" " alt="" coords="905,60,1033,87"/>
+<area shape="rect" id="node2" href="$class_animation_component.html#a6d21f017db5d731ac068921c28187429" title="Vérifie si cette animation peut etre lancée (on va comparer les priorité) Retourne vrai si la dernièr..." alt="" coords="711,19,857,61"/>
+<area shape="rect" id="node8" href="$class_animation_component.html#aebd4155a58d405bbeaf9a60fe641181e" title=" " alt="" coords="711,85,857,126"/>
+<area shape="rect" id="node3" href="$class_enemy.html#a77df54c61b0253b5761256023dee656e" title=" " alt="" coords="498,9,645,36"/>
+<area shape="rect" id="node5" href="$class_player.html#aa14422c8d3c3950584dcd307172741b7" title=" " alt="" coords="500,60,643,87"/>
+<area shape="rect" id="node4" href="$class_enemy.html#af405531fd6d410c2216bd9fbe21c83ea" title=" " alt="" coords="285,5,395,32"/>
+<area shape="rect" id="node6" href="$class_player.html#ad6867e0c7bc18e82a1da4be7bf156d97" title=" " alt="" coords="287,56,393,83"/>
+<area shape="rect" id="node7" href="$class_game_state.html#a775a7d0cf422aec17e5846852f3c997d" title=" " alt="" coords="35,56,170,83"/>
+<area shape="rect" id="node9" href="$class_personage.html#a863a2c17aa860a54c8aeab5a62e68e56" title="Diminuer la santé" alt="" coords="480,113,663,140"/>
+<area shape="rect" id="node12" href="$class_personage.html#a50ed1fa7ee7a90061c51fdbe02ece37d" title="Pour l&#39;animation HURT en tenant compte du coté vers lequel est dirigé le personage." alt="" coords="248,173,432,214"/>
+<area shape="rect" id="node10" href="$class_personage.html#aa386a912ca8945c0a4941542e24e4e7d" title="pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utili..." alt="" coords="255,107,425,149"/>
+<area shape="rect" id="node11" href="$class_personage.html#a45dcefc883e2db0a6562d0d8239dca6c" title=" " alt="" coords="5,147,200,173"/>
+</map>

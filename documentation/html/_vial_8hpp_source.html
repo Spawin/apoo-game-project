@@ -88,48 +88,47 @@ $(document).ready(function(){initNavTree('_vial_8hpp_source.html',''); initResiz
 <a href="_vial_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#if !defined(__VIAL_HPP__)</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">    #define __VIAL_HPP__</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">    #include &quot;<a class="code" href="_item_8hpp.html">include/Item.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">class </span><a class="code hl_class" href="class_item.html">Item</a>;</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// enum class VialCategorie {</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//  MEDECINE_HEALTH, // Augmente la santé</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//  MEDECINE_EXP,// Augmente l&#39;exp</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//  POISON_HEALTH,// Diminue la santé</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//  POISON_EXP,// Diminue l&#39;exp</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// };</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_vial.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="class_vial.html">Vial</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_item.html">Item</a></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">// Constructeurs/Destructeur</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_function" href="class_vial.html#a151fc9de87a2511c6be632845a92c480">Vial</a>(<span class="comment">/*std::string_view const&amp; imageSpritePath, */</span> <a class="code hl_enumeration" href="_item_8hpp.html#ab96fbadc159fcb2380ed41ce0ec705fa">ItemsCategories</a> <a class="code hl_variable" href="class_item.html#aaa167cf26678cc807e34f87ef6fa2f54">categorie</a>);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_function" href="class_vial.html#af6f1f69b83b26138705f10258542320a">~Vial</a>();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">// Fonctions/Méthodes</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_vial.html#ace9277c2d5c91183ed1357eff154cc1b">onCollisionEnter</a>(<a class="code hl_class" href="class_collision.html">Collision</a> <span class="keyword">const</span>&amp; collision) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_vial.html#ad00a07bd850ba8cec2ee0cb2164fe820">update</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// Variables</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">    #include &quot;<a class="code" href="_collision_8hpp.html">include/Collision.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">    #include &quot;<a class="code" href="_item_8hpp.html">include/Item.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">class </span><a class="code hl_class" href="class_item.html">Item</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// class Personage;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span><a class="code hl_class" href="class_collision.html">Collision</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_vial.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="class_vial.html">Vial</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_item.html">Item</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">// Constructeurs/Destructeur</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_function" href="class_vial.html#a5eb64748ada3abcd0405007371b0fa6a">Vial</a>(<a class="code hl_enumeration" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">game::ItemsCategories</a> <a class="code hl_variable" href="class_item.html#a6176ff68b9bc6059bb6e8840c3090e3a">categorie</a>);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_function" href="class_vial.html#af6f1f69b83b26138705f10258542320a">~Vial</a>();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">// Fonctions/Méthodes</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_vial.html#ace9277c2d5c91183ed1357eff154cc1b">onCollisionEnter</a>(<a class="code hl_class" href="class_collision.html">Collision</a> <span class="keyword">const</span>&amp; collision) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_vial.html#ad00a07bd850ba8cec2ee0cb2164fe820">update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// virtual void useOn(Personage&amp; personage) override;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">// Variables</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// Fonctions d&#39;initialisation</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">// Fonctions d&#39;initialisation</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> updatePosition(<span class="keywordtype">float</span> posX, <span class="keywordtype">float</span> posY) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif </span><span class="comment">// __VIAL_HPP__</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> updatePosition(<span class="keywordtype">float</span> posX, <span class="keywordtype">float</span> posY) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif </span><span class="comment">// __VIAL_HPP__</span></div>
+<div class="ttc" id="a_collision_8hpp_html"><div class="ttname"><a href="_collision_8hpp.html">Collision.hpp</a></div></div>
 <div class="ttc" id="a_item_8hpp_html"><div class="ttname"><a href="_item_8hpp.html">Item.hpp</a></div></div>
-<div class="ttc" id="a_item_8hpp_html_ab96fbadc159fcb2380ed41ce0ec705fa"><div class="ttname"><a href="_item_8hpp.html#ab96fbadc159fcb2380ed41ce0ec705fa">ItemsCategories</a></div><div class="ttdeci">ItemsCategories</div><div class="ttdoc">Représente les catégories d'items. TODO - Compléter.... Va surtout aider dans l'utilisation de l'item...</div><div class="ttdef"><b>Definition:</b> <a href="_item_8hpp_source.html#l00015">Item.hpp:16</a></div></div>
 <div class="ttc" id="aclass_collision_html"><div class="ttname"><a href="class_collision.html">Collision</a></div><div class="ttdef"><b>Definition:</b> <a href="_collision_8hpp_source.html#l00009">Collision.hpp:10</a></div></div>
-<div class="ttc" id="aclass_item_html"><div class="ttname"><a href="class_item.html">Item</a></div><div class="ttdoc">Représente éssentiellement les object que pourra manipuler les personnages.</div><div class="ttdef"><b>Definition:</b> <a href="_item_8hpp_source.html#l00035">Item.hpp:36</a></div></div>
-<div class="ttc" id="aclass_item_html_aaa167cf26678cc807e34f87ef6fa2f54"><div class="ttname"><a href="class_item.html#aaa167cf26678cc807e34f87ef6fa2f54">Item::categorie</a></div><div class="ttdeci">const ItemsCategories categorie</div><div class="ttdef"><b>Definition:</b> <a href="_item_8hpp_source.html#l00066">Item.hpp:66</a></div></div>
-<div class="ttc" id="aclass_vial_html"><div class="ttname"><a href="class_vial.html">Vial</a></div><div class="ttdef"><b>Definition:</b> <a href="_vial_8hpp_source.html#l00015">Vial.hpp:16</a></div></div>
-<div class="ttc" id="aclass_vial_html_a151fc9de87a2511c6be632845a92c480"><div class="ttname"><a href="class_vial.html#a151fc9de87a2511c6be632845a92c480">Vial::Vial</a></div><div class="ttdeci">Vial(ItemsCategories categorie)</div><div class="ttdef"><b>Definition:</b> <a href="_vial_8cpp_source.html#l00009">Vial.cpp:9</a></div></div>
-<div class="ttc" id="aclass_vial_html_ace9277c2d5c91183ed1357eff154cc1b"><div class="ttname"><a href="class_vial.html#ace9277c2d5c91183ed1357eff154cc1b">Vial::onCollisionEnter</a></div><div class="ttdeci">virtual void onCollisionEnter(Collision const &amp;collision) const override</div><div class="ttdoc">émit quand il entre en contacte avec un autre élément</div><div class="ttdef"><b>Definition:</b> <a href="_vial_8cpp_source.html#l00057">Vial.cpp:57</a></div></div>
-<div class="ttc" id="aclass_vial_html_ad00a07bd850ba8cec2ee0cb2164fe820"><div class="ttname"><a href="class_vial.html#ad00a07bd850ba8cec2ee0cb2164fe820">Vial::update</a></div><div class="ttdeci">virtual void update() override</div><div class="ttdef"><b>Definition:</b> <a href="_vial_8cpp_source.html#l00062">Vial.cpp:62</a></div></div>
-<div class="ttc" id="aclass_vial_html_af6f1f69b83b26138705f10258542320a"><div class="ttname"><a href="class_vial.html#af6f1f69b83b26138705f10258542320a">Vial::~Vial</a></div><div class="ttdeci">~Vial()</div><div class="ttdef"><b>Definition:</b> <a href="_vial_8cpp_source.html#l00052">Vial.cpp:52</a></div></div>
+<div class="ttc" id="aclass_item_html"><div class="ttname"><a href="class_item.html">Item</a></div><div class="ttdoc">Représente éssentiellement les object que pourra manipuler les personnages.</div><div class="ttdef"><b>Definition:</b> <a href="_item_8hpp_source.html#l00022">Item.hpp:23</a></div></div>
+<div class="ttc" id="aclass_item_html_a6176ff68b9bc6059bb6e8840c3090e3a"><div class="ttname"><a href="class_item.html#a6176ff68b9bc6059bb6e8840c3090e3a">Item::categorie</a></div><div class="ttdeci">const game::ItemsCategories categorie</div><div class="ttdoc">Représente les categories d'item. utilis pour définir les éffets...</div><div class="ttdef"><b>Definition:</b> <a href="_item_8hpp_source.html#l00100">Item.hpp:100</a></div></div>
+<div class="ttc" id="aclass_vial_html"><div class="ttname"><a href="class_vial.html">Vial</a></div><div class="ttdef"><b>Definition:</b> <a href="_vial_8hpp_source.html#l00011">Vial.hpp:12</a></div></div>
+<div class="ttc" id="aclass_vial_html_a5eb64748ada3abcd0405007371b0fa6a"><div class="ttname"><a href="class_vial.html#a5eb64748ada3abcd0405007371b0fa6a">Vial::Vial</a></div><div class="ttdeci">Vial(game::ItemsCategories categorie)</div><div class="ttdef"><b>Definition:</b> <a href="_vial_8cpp_source.html#l00009">Vial.cpp:9</a></div></div>
+<div class="ttc" id="aclass_vial_html_ace9277c2d5c91183ed1357eff154cc1b"><div class="ttname"><a href="class_vial.html#ace9277c2d5c91183ed1357eff154cc1b">Vial::onCollisionEnter</a></div><div class="ttdeci">virtual void onCollisionEnter(Collision const &amp;collision) const override</div><div class="ttdoc">émit quand il entre en contacte avec un autre élément</div><div class="ttdef"><b>Definition:</b> <a href="_vial_8cpp_source.html#l00063">Vial.cpp:63</a></div></div>
+<div class="ttc" id="aclass_vial_html_ad00a07bd850ba8cec2ee0cb2164fe820"><div class="ttname"><a href="class_vial.html#ad00a07bd850ba8cec2ee0cb2164fe820">Vial::update</a></div><div class="ttdeci">virtual void update() override</div><div class="ttdef"><b>Definition:</b> <a href="_vial_8cpp_source.html#l00068">Vial.cpp:68</a></div></div>
+<div class="ttc" id="aclass_vial_html_af6f1f69b83b26138705f10258542320a"><div class="ttname"><a href="class_vial.html#af6f1f69b83b26138705f10258542320a">Vial::~Vial</a></div><div class="ttdeci">~Vial()</div><div class="ttdef"><b>Definition:</b> <a href="_vial_8cpp_source.html#l00058">Vial.cpp:58</a></div></div>
+<div class="ttc" id="anamespacegame_html_a3627cfdb5f6ba53e14e5533e76530468"><div class="ttname"><a href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">game::ItemsCategories</a></div><div class="ttdeci">ItemsCategories</div><div class="ttdoc">Représente les catégories d'items. TODO - Compléter.... Va surtout aider dans l'utilisation de l'item...</div><div class="ttdef"><b>Definition:</b> <a href="consts_8hpp_source.html#l00079">consts.hpp:80</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

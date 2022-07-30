@@ -50,9 +50,16 @@
 \DoxyCodeLine{\Hypertarget{_not_movable_game_object_8cpp_source_l00046}00046     \mbox{\hyperlink{class_game_object_a3f7a674006e1cce96ccb6c60f0ff9aaf}{GameObject::show}}(window);}
 \DoxyCodeLine{\Hypertarget{_not_movable_game_object_8cpp_source_l00047}00047 \}}
 \DoxyCodeLine{\Hypertarget{_not_movable_game_object_8cpp_source_l00048}00048 }
-\DoxyCodeLine{\Hypertarget{_not_movable_game_object_8cpp_source_l00049}\mbox{\hyperlink{class_not_movable_game_object_ad1d21edd47d563f733223b390bbdd969}{00049}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_not_movable_game_object_ad1d21edd47d563f733223b390bbdd969}{NotMovableGameObject::setPositionMovementLimit}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hall}{Hall}}* hall)}
+\DoxyCodeLine{\Hypertarget{_not_movable_game_object_8cpp_source_l00049}\mbox{\hyperlink{class_not_movable_game_object_ac15fa38f4fafb47ee0e58efa1996988c}{00049}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_not_movable_game_object_ac15fa38f4fafb47ee0e58efa1996988c}{NotMovableGameObject::setPosition}}(sf::Vector2f \textcolor{keyword}{const}\& coordinates)}
 \DoxyCodeLine{\Hypertarget{_not_movable_game_object_8cpp_source_l00050}00050 \{}
-\DoxyCodeLine{\Hypertarget{_not_movable_game_object_8cpp_source_l00051}00051     this-\/>\mbox{\hyperlink{class_game_object_a13cde9cf52cf7e4d6771eee5ccdaa5d7}{m\_position}}-\/>\mbox{\hyperlink{class_position_a7a4256cdf1c47f24a5ee67194ddd8d68}{setPositionMovementLimit}}(hall-\/>\mbox{\hyperlink{class_hall_ae8b24a02bbc5c17bf1e557cb3d98a76d}{getIntRect}}());}
-\DoxyCodeLine{\Hypertarget{_not_movable_game_object_8cpp_source_l00052}00052 \}}
+\DoxyCodeLine{\Hypertarget{_not_movable_game_object_8cpp_source_l00051}00051     \textcolor{comment}{// m\_position-\/>setPosition(coordinates.x, coordinates.y);}}
+\DoxyCodeLine{\Hypertarget{_not_movable_game_object_8cpp_source_l00052}00052     \textcolor{comment}{// REVIEW -\/}}
+\DoxyCodeLine{\Hypertarget{_not_movable_game_object_8cpp_source_l00053}00053     this-\/>\mbox{\hyperlink{class_not_movable_game_object_a1ae6701a400e4455cb28936d4f1cd30d}{updatePosition}}(coordinates.x, coordinates.y);}
+\DoxyCodeLine{\Hypertarget{_not_movable_game_object_8cpp_source_l00054}00054 \}}
+\DoxyCodeLine{\Hypertarget{_not_movable_game_object_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_not_movable_game_object_8cpp_source_l00056}\mbox{\hyperlink{class_not_movable_game_object_ad1d21edd47d563f733223b390bbdd969}{00056}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_not_movable_game_object_ad1d21edd47d563f733223b390bbdd969}{NotMovableGameObject::setPositionMovementLimit}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hall}{Hall}}* hall)}
+\DoxyCodeLine{\Hypertarget{_not_movable_game_object_8cpp_source_l00057}00057 \{}
+\DoxyCodeLine{\Hypertarget{_not_movable_game_object_8cpp_source_l00058}00058     this-\/>\mbox{\hyperlink{class_game_object_a13cde9cf52cf7e4d6771eee5ccdaa5d7}{m\_position}}-\/>\mbox{\hyperlink{class_position_a7a4256cdf1c47f24a5ee67194ddd8d68}{setPositionMovementLimit}}(hall-\/>\mbox{\hyperlink{class_hall_ae8b24a02bbc5c17bf1e557cb3d98a76d}{getIntRect}}());}
+\DoxyCodeLine{\Hypertarget{_not_movable_game_object_8cpp_source_l00059}00059 \}}
 
 \end{DoxyCode}

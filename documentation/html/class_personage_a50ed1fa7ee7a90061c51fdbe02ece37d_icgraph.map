@@ -1,0 +1,4 @@
+<map id="Personage::playCorrectSideHurtAnimation" name="Personage::playCorrectSideHurtAnimation">
+<area shape="rect" id="node1" title="Pour l&#39;animation HURT en tenant compte du coté vers lequel est dirigé le personage." alt="" coords="248,5,432,47"/>
+<area shape="rect" id="node2" href="$class_personage.html#a45dcefc883e2db0a6562d0d8239dca6c" title=" " alt="" coords="5,13,200,39"/>
+</map>

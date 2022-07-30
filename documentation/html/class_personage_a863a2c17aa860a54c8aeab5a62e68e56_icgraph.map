@@ -1,0 +1,5 @@
+<map id="Personage::decreaseHealth" name="Personage::decreaseHealth">
+<area shape="rect" id="node1" title="Diminuer la santé" alt="" coords="465,13,648,39"/>
+<area shape="rect" id="node2" href="$class_personage.html#aa386a912ca8945c0a4941542e24e4e7d" title="pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utili..." alt="" coords="248,5,417,47"/>
+<area shape="rect" id="node3" href="$class_personage.html#a45dcefc883e2db0a6562d0d8239dca6c" title=" " alt="" coords="5,13,200,39"/>
+</map>

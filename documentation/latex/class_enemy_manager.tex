@@ -1,0 +1,155 @@
+\hypertarget{class_enemy_manager}{}\doxysection{Référence de la classe Enemy\+Manager}
+\label{class_enemy_manager}\index{EnemyManager@{EnemyManager}}
+
+
+{\ttfamily \#include $<$Enemy\+Manager.\+hpp$>$}
+
+
+
+Graphe de collaboration de Enemy\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{class_enemy_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_enemy_manager_a737886bd4068582bfaf8cf36929b6cfd}{Enemy\+Manager}} (std\+::vector$<$ \mbox{\hyperlink{class_hall}{Hall}} $\ast$ $>$ \&halls)
+\item 
+\mbox{\hyperlink{class_enemy_manager_afe3583e45273d5509e59467d06a3feb6}{$\sim$\+Enemy\+Manager}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_manager_acc8ce6c15754a5a1041614ffdd3f40d9}{create\+Enemy}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_manager_a7402fb1345dfbb8b9b841bd31973c395}{remove\+Enemy}} (const int index)
+\item 
+void \mbox{\hyperlink{class_enemy_manager_ad2d9a377d3aa6020e3aa56685936f9f1}{update\+Enemies\+State}} (sf\+::\+Vector2f const \&player\+Coordinates)
+\begin{DoxyCompactList}\small\item\em Pour rendre actif les énemis qui se trouve dans la même sale que le joueur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_manager_a0fd6551156815d291bbbb3bacc2fe8c1}{update}} (const float \&deltatime)
+\item 
+void \mbox{\hyperlink{class_enemy_manager_a96ae46ce3b26cd534d49363bcc344ed7}{render}} (sf\+::\+Render\+Target \&target)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+
+
+Définition à la ligne \mbox{\hyperlink{_enemy_manager_8hpp_source_l00021}{21}} du fichier \mbox{\hyperlink{_enemy_manager_8hpp_source}{Enemy\+Manager.\+hpp}}.
+
+
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_enemy_manager_a737886bd4068582bfaf8cf36929b6cfd}\label{class_enemy_manager_a737886bd4068582bfaf8cf36929b6cfd}} 
+\index{EnemyManager@{EnemyManager}!EnemyManager@{EnemyManager}}
+\index{EnemyManager@{EnemyManager}!EnemyManager@{EnemyManager}}
+\doxysubsubsection{\texorpdfstring{EnemyManager()}{EnemyManager()}}
+{\footnotesize\ttfamily Enemy\+Manager\+::\+Enemy\+Manager (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_hall}{Hall}} $\ast$ $>$ \&}]{halls }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_enemy_manager_8cpp_source_l00018}{18}} du fichier \mbox{\hyperlink{_enemy_manager_8cpp_source}{Enemy\+Manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_enemy_manager_afe3583e45273d5509e59467d06a3feb6}\label{class_enemy_manager_afe3583e45273d5509e59467d06a3feb6}} 
+\index{EnemyManager@{EnemyManager}!````~EnemyManager@{$\sim$EnemyManager}}
+\index{````~EnemyManager@{$\sim$EnemyManager}!EnemyManager@{EnemyManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$EnemyManager()}{~EnemyManager()}}
+{\footnotesize\ttfamily Enemy\+Manager\+::$\sim$\+Enemy\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_enemy_manager_8cpp_source_l00023}{23}} du fichier \mbox{\hyperlink{_enemy_manager_8cpp_source}{Enemy\+Manager.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_enemy_manager_acc8ce6c15754a5a1041614ffdd3f40d9}\label{class_enemy_manager_acc8ce6c15754a5a1041614ffdd3f40d9}} 
+\index{EnemyManager@{EnemyManager}!createEnemy@{createEnemy}}
+\index{createEnemy@{createEnemy}!EnemyManager@{EnemyManager}}
+\doxysubsubsection{\texorpdfstring{createEnemy()}{createEnemy()}}
+{\footnotesize\ttfamily void Enemy\+Manager\+::create\+Enemy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_enemy_manager_8cpp_source_l00032}{32}} du fichier \mbox{\hyperlink{_enemy_manager_8cpp_source}{Enemy\+Manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_enemy_manager_a7402fb1345dfbb8b9b841bd31973c395}\label{class_enemy_manager_a7402fb1345dfbb8b9b841bd31973c395}} 
+\index{EnemyManager@{EnemyManager}!removeEnemy@{removeEnemy}}
+\index{removeEnemy@{removeEnemy}!EnemyManager@{EnemyManager}}
+\doxysubsubsection{\texorpdfstring{removeEnemy()}{removeEnemy()}}
+{\footnotesize\ttfamily void Enemy\+Manager\+::remove\+Enemy (\begin{DoxyParamCaption}\item[{const int}]{index }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_enemy_manager_8cpp_source_l00045}{45}} du fichier \mbox{\hyperlink{_enemy_manager_8cpp_source}{Enemy\+Manager.\+cpp}}.
+
+\mbox{\Hypertarget{class_enemy_manager_a96ae46ce3b26cd534d49363bcc344ed7}\label{class_enemy_manager_a96ae46ce3b26cd534d49363bcc344ed7}} 
+\index{EnemyManager@{EnemyManager}!render@{render}}
+\index{render@{render}!EnemyManager@{EnemyManager}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Enemy\+Manager\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_enemy_manager_8cpp_source_l00079}{79}} du fichier \mbox{\hyperlink{_enemy_manager_8cpp_source}{Enemy\+Manager.\+cpp}}.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_enemy_manager_a96ae46ce3b26cd534d49363bcc344ed7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_enemy_manager_a0fd6551156815d291bbbb3bacc2fe8c1}\label{class_enemy_manager_a0fd6551156815d291bbbb3bacc2fe8c1}} 
+\index{EnemyManager@{EnemyManager}!update@{update}}
+\index{update@{update}!EnemyManager@{EnemyManager}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Enemy\+Manager\+::update (\begin{DoxyParamCaption}\item[{const float \&}]{deltatime }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_enemy_manager_8cpp_source_l00068}{68}} du fichier \mbox{\hyperlink{_enemy_manager_8cpp_source}{Enemy\+Manager.\+cpp}}.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_enemy_manager_a0fd6551156815d291bbbb3bacc2fe8c1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_enemy_manager_ad2d9a377d3aa6020e3aa56685936f9f1}\label{class_enemy_manager_ad2d9a377d3aa6020e3aa56685936f9f1}} 
+\index{EnemyManager@{EnemyManager}!updateEnemiesState@{updateEnemiesState}}
+\index{updateEnemiesState@{updateEnemiesState}!EnemyManager@{EnemyManager}}
+\doxysubsubsection{\texorpdfstring{updateEnemiesState()}{updateEnemiesState()}}
+{\footnotesize\ttfamily void Enemy\+Manager\+::update\+Enemies\+State (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f const \&}]{player\+Coordinates }\end{DoxyParamCaption})}
+
+
+
+Pour rendre actif les énemis qui se trouve dans la même sale que le joueur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em player\+Coordinates} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \mbox{\hyperlink{_enemy_manager_8cpp_source_l00060}{60}} du fichier \mbox{\hyperlink{_enemy_manager_8cpp_source}{Enemy\+Manager.\+cpp}}.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_manager_ad2d9a377d3aa6020e3aa56685936f9f1_icgraph}
+\end{center}
+\end{figure}
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_enemy_manager_8hpp}{Enemy\+Manager.\+hpp}}\item 
+C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\mbox{\hyperlink{_enemy_manager_8cpp}{Enemy\+Manager.\+cpp}}\end{DoxyCompactItemize}

@@ -4,6 +4,7 @@ var class_movable_game_object =
     [ "~MovableGameObject", "class_movable_game_object.html#ab86ce333c409ff3cec75db7040d264d5", null ],
     [ "addToHall", "class_movable_game_object.html#ac3ca02b727df6802b66bc7cd677b0504", null ],
     [ "createAnimationComponent", "class_movable_game_object.html#a2e91f66b167c69682916b93cc5d900ae", null ],
+    [ "getActualHall", "class_movable_game_object.html#a36de4dc55f1cb184386777f668ae34a8", null ],
     [ "getAnimationComponent", "class_movable_game_object.html#ad3b241b18227ac3eacee79069af64fc7", null ],
     [ "initAnimations", "class_movable_game_object.html#a14ce6a7878ca03a4c451a64a0eb88555", null ],
     [ "initPosition", "class_movable_game_object.html#a0e0909f577c773a6fd5c4b7f0661228c", null ],

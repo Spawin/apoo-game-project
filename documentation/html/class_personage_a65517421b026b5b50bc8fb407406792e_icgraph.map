@@ -1,0 +1,4 @@
+<map id="Personage::receiveShieldboost" name="Personage::receiveShieldboost">
+<area shape="rect" id="node1" title="Pour activer la protection du bouclier. Il faut noter que son activation est temporaire et protège la..." alt="" coords="248,5,448,32"/>
+<area shape="rect" id="node2" href="$class_personage.html#a45dcefc883e2db0a6562d0d8239dca6c" title=" " alt="" coords="5,5,200,32"/>
+</map>

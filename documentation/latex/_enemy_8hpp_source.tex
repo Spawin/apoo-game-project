@@ -1,0 +1,47 @@
+\hypertarget{_enemy_8hpp_source}{}\doxysection{Enemy.\+hpp}
+\label{_enemy_8hpp_source}\index{C:/programs\_sc/CIC/MITST06/jeu/src/include/Enemy.hpp@{C:/programs\_sc/CIC/MITST06/jeu/src/include/Enemy.hpp}}
+\mbox{\hyperlink{_enemy_8hpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#if !defined(\_\_ENEMY\_HPP\_\_)}}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00002}00002 \textcolor{preprocessor}{    \#define \_\_ENEMY\_HPP\_\_}}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00004}00004 \textcolor{preprocessor}{    \#include "{}\mbox{\hyperlink{_personage_8hpp}{include/Personage.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00005}00005 \textcolor{preprocessor}{    \#include "{}\mbox{\hyperlink{consts_8hpp}{include/consts.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00007}00007 \textcolor{keyword}{class }\mbox{\hyperlink{class_personage}{Personage}};}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00009}00009 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespacegame}{game}}}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00010}00010 \{}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00011}00011 \textcolor{keyword}{enum} \mbox{\hyperlink{namespacegame_ab3f078339ac2192dd0568f5a1491a513}{AnimationSide}};}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00012}00012 \} \textcolor{comment}{// namespace game}}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00014}\mbox{\hyperlink{class_enemy}{00014}} \textcolor{keyword}{class }\mbox{\hyperlink{class_enemy}{Enemy}}}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00015}00015 \{}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00016}00016 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00017}00017     \textcolor{comment}{// Constructeurs/Destructeur}}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00018}00018     \mbox{\hyperlink{class_enemy_a85131c42a2bfbbaf25945390223b21d8}{Enemy}}(\mbox{\hyperlink{class_personage}{Personage}}* personage);}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00019}00019     \mbox{\hyperlink{class_enemy_ac0eec4755e28c02688065f9657150ac3}{\string~Enemy}}();}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00021}00021     \textcolor{comment}{// Fonctions/Méthodes}}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00022}00022     sf::Vector2f \mbox{\hyperlink{class_enemy_a504eec8dff6dfa04a23293b0fc345f92}{getPosition}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00023}00023     \mbox{\hyperlink{class_personage}{Personage}}* \mbox{\hyperlink{class_enemy_a5d87465935c65ab33595df607202f163}{getPersonage}}();}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00025}00025     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_a77df54c61b0253b5761256023dee656e}{manageMove}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime);}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00027}00027     \textcolor{comment}{// void updateMousePosWindow(sf::Vector2i mousePosWindow);}}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00028}00028     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_af405531fd6d410c2216bd9fbe21c83ea}{update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime);}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00029}00029     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_a580b6d7124865c0881fecb770935b8f2}{render}}(sf::RenderTarget\& target);}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00031}00031 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00032}00032     \textcolor{comment}{// Variables}}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00033}00033     \mbox{\hyperlink{class_personage}{Personage}}* personage;}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00035}00035     \textcolor{comment}{// Fonctions d'initialisation}}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00037}00037     \mbox{\hyperlink{namespacegame_ab3f078339ac2192dd0568f5a1491a513}{game::AnimationSide}} getLastAnimationSide();}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00038}00038     \textcolor{keywordtype}{bool} isLastAnimationSideRight();}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00039}00039 \};}
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_enemy_8hpp_source_l00041}00041 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_ENEMY\_HPP\_\_}}
+
+\end{DoxyCode}

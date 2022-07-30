@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['wall_5fheight_0',['WALL_HEIGHT',['../namespacegame.html#a856fac7c03d1453ffaf4a9c0c649722c',1,'game']]],
-  ['wall_5fwidth_1',['WALL_WIDTH',['../namespacegame.html#a0a7ab0e3e54d4d110ad489f223d91f14',1,'game']]],
-  ['window_2',['window',['../struct_state_data.html#a07974705606e19f59185a4b34895eef0',1,'StateData::window()'],['../class_state.html#ae6259a383c98ae7496266a76a9daf478',1,'State::window()']]],
-  ['window_5fheight_3',['WINDOW_HEIGHT',['../namespacegame.html#a7e5a6e190446686addab44689f99a89b',1,'game']]],
-  ['window_5fwidth_4',['WINDOW_WIDTH',['../namespacegame.html#a8024671adc6f9b0fe39789a8ea5a357a',1,'game']]]
+  ['textures_0',['textures',['../class_state.html#af747b588cad4683d34c38a03c2f8d046',1,'State']]],
+  ['title_1',['title',['../class_graphics_settings.html#a524c4928c24954f1664cbba71489198a',1,'GraphicsSettings']]]
 ];

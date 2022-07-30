@@ -96,13 +96,25 @@ $(document).ready(function(){initNavTree('class_collider.html',''); initResizabl
 <div class="dynheader">
 Graphe d'héritage de Collider:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_collider.png" usemap="#Collider_map" alt=""/>
-  <map id="Collider_map" name="Collider_map">
-<area href="class_box_collider.html" alt="BoxCollider" shape="rect" coords="0,56,102,80"/>
-<area href="class_polygon_collider.html" alt="PolygonCollider" shape="rect" coords="112,56,214,80"/>
-  </map>
-</div></div>
+<div class="center"><img src="class_collider__inherit__graph.png" border="0" usemap="#a_collider_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_collider_inherit__map" id="a_collider_inherit__map">
+<area shape="rect" title=" " alt="" coords="108,5,301,347"/>
+<area shape="rect" href="class_box_collider.html" title=" " alt="" coords="5,395,188,648"/>
+<area shape="rect" href="class_polygon_collider.html" title=" " alt="" coords="212,402,413,641"/>
+</map>
+</div>
+<div class="dynheader">
+Graphe de collaboration de Collider:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collider__coll__graph.png" border="0" usemap="#a_collider_coll__map" alt="Collaboration graph"/></div>
+<map name="a_collider_coll__map" id="a_collider_coll__map">
+<area shape="rect" title=" " alt="" coords="5,101,199,413"/>
+<area shape="rect" href="class_game_object.html" title=" " alt="" coords="223,571,447,1264"/>
+<area shape="rect" href="class_rigidbody.html" title=" " alt="" coords="215,1327,456,1448"/>
+<area shape="rect" href="class_position.html" title=" " alt="" coords="223,5,554,508"/>
+<area shape="rect" href="struct_my_vector.html" title=" " alt="" coords="579,115,775,398"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -122,6 +134,9 @@ Fonctions membres publiques statiques</h2></td></tr>
 <tr class="memitem:a765cffbef5d5e713672cea46c563dc67"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collider.html#a765cffbef5d5e713672cea46c563dc67">update</a> ()</td></tr>
 <tr class="memdesc:a765cffbef5d5e713672cea46c563dc67"><td class="mdescLeft">&#160;</td><td class="mdescRight">C'est à ce niveau qu'on gère la détection de collisions.  <a href="class_collider.html#a765cffbef5d5e713672cea46c563dc67">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a765cffbef5d5e713672cea46c563dc67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19074031377d5b600bf120adfdcdf1c9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collider.html#a19074031377d5b600bf120adfdcdf1c9">removeObjects</a> (int gameObjectId)</td></tr>
+<tr class="memdesc:a19074031377d5b600bf120adfdcdf1c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appelé à la destruction d'un objet pour l'enlever de la liste.  <a href="class_collider.html#a19074031377d5b600bf120adfdcdf1c9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a19074031377d5b600bf120adfdcdf1c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Attributs protégés</h2></td></tr>
@@ -173,7 +188,16 @@ Attributs protégés statiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_collider_8cpp_source.html#l00025">25</a> du fichier <a class="el" href="_collider_8cpp_source.html">Collider.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_collider_8cpp_source.html#l00028">28</a> du fichier <a class="el" href="_collider_8cpp_source.html">Collider.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collider_a5f7d036476d2bff521151c2031f20d46_cgraph.png" border="0" usemap="#aclass_collider_a5f7d036476d2bff521151c2031f20d46_cgraph" alt=""/></div>
+<map name="aclass_collider_a5f7d036476d2bff521151c2031f20d46_cgraph" id="aclass_collider_a5f7d036476d2bff521151c2031f20d46_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,121,32"/>
+<area shape="rect" href="class_game_object.html#a7bc5db5459f66fad48f88c7d8e1863b6" title=" " alt="" coords="169,5,373,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -200,7 +224,7 @@ Attributs protégés statiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_collider_8cpp_source.html#l00044">44</a> du fichier <a class="el" href="_collider_8cpp_source.html">Collider.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_collider_8cpp_source.html#l00047">47</a> du fichier <a class="el" href="_collider_8cpp_source.html">Collider.cpp</a>.</p>
 
 </div>
 </div>
@@ -229,6 +253,16 @@ Attributs protégés statiques</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implémenté dans <a class="el" href="class_box_collider.html#ac9e717b633ad63fdcbaefb479d6d1e25">BoxCollider</a>, et <a class="el" href="class_polygon_collider.html#ae312be67f56fcc6db3967f4b46a6242b">PolygonCollider</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collider_a97506e7e7a75b63c3358eb898194b866_icgraph.png" border="0" usemap="#aclass_collider_a97506e7e7a75b63c3358eb898194b866_icgraph" alt=""/></div>
+<map name="aclass_collider_a97506e7e7a75b63c3358eb898194b866_icgraph" id="aclass_collider_a97506e7e7a75b63c3358eb898194b866_icgraph">
+<area shape="rect" title=" " alt="" coords="244,35,417,61"/>
+<area shape="rect" href="class_box_collider.html#a38200ed6f93b0f91bcb0f9f6b19954f9" title=" " alt="" coords="5,5,196,32"/>
+<area shape="rect" href="class_polygon_collider.html#a6db0242a202318ed2b1e8017fc06ac19" title=" " alt="" coords="9,57,192,98"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -247,7 +281,56 @@ Attributs protégés statiques</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_collider_8cpp_source.html#l00049">49</a> du fichier <a class="el" href="_collider_8cpp_source.html">Collider.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_collider_8cpp_source.html#l00052">52</a> du fichier <a class="el" href="_collider_8cpp_source.html">Collider.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collider_ac5e78bcb91de52d8202beea5c4b3a5f8_icgraph.png" border="0" usemap="#aclass_collider_ac5e78bcb91de52d8202beea5c4b3a5f8_icgraph" alt=""/></div>
+<map name="aclass_collider_ac5e78bcb91de52d8202beea5c4b3a5f8_icgraph" id="aclass_collider_ac5e78bcb91de52d8202beea5c4b3a5f8_icgraph">
+<area shape="rect" title=" " alt="" coords="244,35,373,61"/>
+<area shape="rect" href="class_box_collider.html#a38200ed6f93b0f91bcb0f9f6b19954f9" title=" " alt="" coords="5,5,196,32"/>
+<area shape="rect" href="class_polygon_collider.html#a6db0242a202318ed2b1e8017fc06ac19" title=" " alt="" coords="9,57,192,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a19074031377d5b600bf120adfdcdf1c9" name="a19074031377d5b600bf120adfdcdf1c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19074031377d5b600bf120adfdcdf1c9">&#9670;&nbsp;</a></span>removeObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Collider::removeObjects </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>gameObjectId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Appelé à la destruction d'un objet pour l'enlever de la liste. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_collider_8cpp_source.html#l00101">101</a> du fichier <a class="el" href="_collider_8cpp_source.html">Collider.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collider_a19074031377d5b600bf120adfdcdf1c9_icgraph.png" border="0" usemap="#aclass_collider_a19074031377d5b600bf120adfdcdf1c9_icgraph" alt=""/></div>
+<map name="aclass_collider_a19074031377d5b600bf120adfdcdf1c9_icgraph" id="aclass_collider_a19074031377d5b600bf120adfdcdf1c9_icgraph">
+<area shape="rect" title="Appelé à la destruction d&#39;un objet pour l&#39;enlever de la liste." alt="" coords="237,5,396,32"/>
+<area shape="rect" href="class_game_object.html#ab82dfdb656f9051c0587e6593b2dda97" title=" " alt="" coords="5,5,189,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -304,7 +387,17 @@ Attributs protégés statiques</h2></td></tr>
 
 <p>C'est à ce niveau qu'on gère la détection de collisions. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_collider_8cpp_source.html#l00059">59</a> du fichier <a class="el" href="_collider_8cpp_source.html">Collider.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_collider_8cpp_source.html#l00062">62</a> du fichier <a class="el" href="_collider_8cpp_source.html">Collider.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collider_a765cffbef5d5e713672cea46c563dc67_icgraph.png" border="0" usemap="#aclass_collider_a765cffbef5d5e713672cea46c563dc67_icgraph" alt=""/></div>
+<map name="aclass_collider_a765cffbef5d5e713672cea46c563dc67_icgraph" id="aclass_collider_a765cffbef5d5e713672cea46c563dc67_icgraph">
+<area shape="rect" title="C&#39;est à ce niveau qu&#39;on gère la détection de collisions." alt="" coords="365,5,477,32"/>
+<area shape="rect" href="class_game_master.html#abf9e9d93a26bcfd91e5c2863924c0d1a" title=" " alt="" coords="176,5,317,32"/>
+<area shape="rect" href="class_game_master.html#ac24934f7f53ef8e48726e16190974320" title=" " alt="" coords="5,5,128,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -329,7 +422,7 @@ Attributs protégés statiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_collider_8hpp_source.html#l00036">36</a> du fichier <a class="el" href="_collider_8hpp_source.html">Collider.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_collider_8hpp_source.html#l00041">41</a> du fichier <a class="el" href="_collider_8hpp_source.html">Collider.hpp</a>.</p>
 
 </div>
 </div>
@@ -357,7 +450,7 @@ Attributs protégés statiques</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> ret;</div>
 <div class="line">}()</div>
 </div><!-- fragment -->
-<p class="definition">Définition à la ligne <a class="el" href="_collider_8hpp_source.html#l00037">37</a> du fichier <a class="el" href="_collider_8hpp_source.html">Collider.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_collider_8hpp_source.html#l00042">42</a> du fichier <a class="el" href="_collider_8hpp_source.html">Collider.hpp</a>.</p>
 
 </div>
 </div>
@@ -381,7 +474,7 @@ Attributs protégés statiques</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_collider_8hpp_source.html#l00035">35</a> du fichier <a class="el" href="_collider_8hpp_source.html">Collider.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_collider_8hpp_source.html#l00040">40</a> du fichier <a class="el" href="_collider_8hpp_source.html">Collider.hpp</a>.</p>
 
 </div>
 </div>

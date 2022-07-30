@@ -95,17 +95,32 @@ $(document).ready(function(){initNavTree('class_movable_game_object.html',''); i
 <div class="dynheader">
 Graphe d'héritage de MovableGameObject:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_movable_game_object.png" usemap="#MovableGameObject_map" alt=""/>
-  <map id="MovableGameObject_map" name="MovableGameObject_map">
-<area href="class_game_object.html" alt="GameObject" shape="rect" coords="210,0,340,24"/>
-<area href="class_personage.html" alt="Personage" shape="rect" coords="210,112,340,136"/>
-<area href="class_druid.html" alt="Druid" shape="rect" coords="0,168,130,192"/>
-<area href="class_religious.html" alt="Religious" shape="rect" coords="140,168,270,192"/>
-<area href="class_soldier.html" alt="Soldier" shape="rect" coords="280,168,410,192"/>
-<area href="class_worker.html" alt="Worker" shape="rect" coords="420,168,550,192"/>
-  </map>
-</div></div>
+<div class="center"><img src="class_movable_game_object__inherit__graph.png" border="0" usemap="#a_movable_game_object_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_movable_game_object_inherit__map" id="a_movable_game_object_inherit__map">
+<area shape="rect" title=" " alt="" coords="305,805,524,1323"/>
+<area shape="rect" href="class_personage.html" title=" " alt="" coords="306,1371,523,2357"/>
+<area shape="rect" href="class_game_object.html" title=" " alt="" coords="303,5,527,757"/>
+<area shape="rect" href="class_druid.html" title=" " alt="" coords="5,2413,192,2563"/>
+<area shape="rect" href="class_religious.html" title=" " alt="" coords="216,2413,403,2563"/>
+<area shape="rect" href="class_soldier.html" title=" " alt="" coords="427,2405,613,2571"/>
+<area shape="rect" href="class_worker.html" title=" " alt="" coords="637,2413,824,2563"/>
+</map>
+</div>
+<div class="dynheader">
+Graphe de collaboration de MovableGameObject:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_movable_game_object__coll__graph.png" border="0" usemap="#a_movable_game_object_coll__map" alt="Collaboration graph"/></div>
+<map name="a_movable_game_object_coll__map" id="a_movable_game_object_coll__map">
+<area shape="rect" title=" " alt="" coords="521,1327,740,1815"/>
+<area shape="rect" href="class_game_object.html" title=" " alt="" coords="203,571,427,1264"/>
+<area shape="rect" href="class_collider.html" title=" " alt="" coords="38,1415,231,1727"/>
+<area shape="rect" href="class_rigidbody.html" title=" " alt="" coords="255,1510,497,1631"/>
+<area shape="rect" href="class_position.html" title=" " alt="" coords="5,5,336,508"/>
+<area shape="rect" href="struct_my_vector.html" title=" " alt="" coords="361,115,557,398"/>
+<area shape="rect" href="class_animation_component.html" title=" " alt="" coords="512,747,712,1088"/>
+<area shape="rect" href="class_hall.html" title=" " alt="" coords="736,681,939,1154"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -120,6 +135,9 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:ac3ca02b727df6802b66bc7cd677b0504"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#ac3ca02b727df6802b66bc7cd677b0504">addToHall</a> (<a class="el" href="class_hall.html">Hall</a> *<a class="el" href="class_movable_game_object.html#a82a572bd2815eb23cf9b752dbc70784e">hall</a>)</td></tr>
 <tr class="memdesc:ac3ca02b727df6802b66bc7cd677b0504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déplacer un objet vers une salle est virtuel pour permettre de récrire la fonction et spécifier peut être des conditions de déplacement. NOTE - Cet déplacement ne concerne pas le chagement des cordonnes mais juste l'éta d'appartenance. Néanmoins c'est à partir d'elle qu'on informe l'object des nouvelles limites de mouvement.  <a href="class_movable_game_object.html#ac3ca02b727df6802b66bc7cd677b0504">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ac3ca02b727df6802b66bc7cd677b0504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36de4dc55f1cb184386777f668ae34a8"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="class_hall.html">Hall</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#a36de4dc55f1cb184386777f668ae34a8">getActualHall</a> () const</td></tr>
+<tr class="memdesc:a36de4dc55f1cb184386777f668ae34a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Actual <a class="el" href="class_hall.html">Hall</a> object.  <a href="class_movable_game_object.html#a36de4dc55f1cb184386777f668ae34a8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a36de4dc55f1cb184386777f668ae34a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a642733a3472829a5526280e44bfd27e5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_movable_game_object.html#a642733a3472829a5526280e44bfd27e5">show</a> (sf::RenderTarget &amp;window)</td></tr>
 <tr class="memdesc:a642733a3472829a5526280e44bfd27e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pour dessiner l'élement dans la fenêtre.  <a href="class_movable_game_object.html#a642733a3472829a5526280e44bfd27e5">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a642733a3472829a5526280e44bfd27e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,6 +165,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:a1d7e99dbc0f116d7a20b0229180397db inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a800f7c8a8df0bd57aca9f8de170d7906 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a800f7c8a8df0bd57aca9f8de170d7906">getGameObjectName</a> () const</td></tr>
 <tr class="separator:a800f7c8a8df0bd57aca9f8de170d7906 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad03571b58d55ca1de607cdf96e8207a inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#aad03571b58d55ca1de607cdf96e8207a">setGameObjectName</a> (std::string name)</td></tr>
+<tr class="separator:aad03571b58d55ca1de607cdf96e8207a inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a394309d681a8e5eb59656029a32881de inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a394309d681a8e5eb59656029a32881de">onCollisionEnter</a> (<a class="el" href="class_collision.html">Collision</a> const &amp;collision) const =0</td></tr>
 <tr class="memdesc:a394309d681a8e5eb59656029a32881de inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">émit quand il entre en contacte avec un autre élément  <a href="class_game_object.html#a394309d681a8e5eb59656029a32881de">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a394309d681a8e5eb59656029a32881de inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -215,10 +235,14 @@ Membres hérités additionnels</h2></td></tr>
 <tr class="memitem:a5f826d1945fc978181c713da7fd7ccb9 inherit pub_static_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a5f826d1945fc978181c713da7fd7ccb9">SetTime</a> (float t)</td></tr>
 <tr class="memdesc:a5f826d1945fc978181c713da7fd7ccb9 inherit pub_static_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Time object.  <a href="class_game_object.html#a5f826d1945fc978181c713da7fd7ccb9">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5f826d1945fc978181c713da7fd7ccb9 inherit pub_static_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19b84dec4e9ab4daccad16a0ac7a68f7 inherit pub_static_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, <a class="el" href="class_game_object.html">GameObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a19b84dec4e9ab4daccad16a0ac7a68f7">getGameobjects</a> ()</td></tr>
+<tr class="separator:a19b84dec4e9ab4daccad16a0ac7a68f7 inherit pub_static_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_static_methods_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_class_game_object')"><img src="closed.png" alt="-"/>&#160;Fonctions membres protégées statiques hérités de <a class="el" href="class_game_object.html">GameObject</a></td></tr>
 <tr class="memitem:a4b73684e5c01134509c61fc7bab43484 inherit pro_static_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a4b73684e5c01134509c61fc7bab43484">incrementCount</a> ()</td></tr>
 <tr class="separator:a4b73684e5c01134509c61fc7bab43484 inherit pro_static_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_static_attribs_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_class_game_object')"><img src="closed.png" alt="-"/>&#160;Attributs protégés statiques hérités de <a class="el" href="class_game_object.html">GameObject</a></td></tr>
+<tr class="memitem:ae37236cecf990bd88e5e012ca950bbb3 inherit pro_static_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, <a class="el" href="class_game_object.html">GameObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#ae37236cecf990bd88e5e012ca950bbb3">gameObjects</a></td></tr>
+<tr class="separator:ae37236cecf990bd88e5e012ca950bbb3 inherit pro_static_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c0e2d6826099f2d8a5680ac67f01eab inherit pro_static_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a9c0e2d6826099f2d8a5680ac67f01eab">m_count</a> = 0</td></tr>
 <tr class="separator:a9c0e2d6826099f2d8a5680ac67f01eab inherit pro_static_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d27884636bd454b9858f179dc99e132 inherit pro_static_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a8d27884636bd454b9858f179dc99e132">m_time</a> = 0.f</td></tr>
@@ -226,7 +250,7 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock">
-<p class="definition">Définition à la ligne <a class="el" href="_movable_game_object_8hpp_source.html#l00016">16</a> du fichier <a class="el" href="_movable_game_object_8hpp_source.html">MovableGameObject.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_movable_game_object_8hpp_source.html#l00017">17</a> du fichier <a class="el" href="_movable_game_object_8hpp_source.html">MovableGameObject.hpp</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="a786b4b88e7a155f561593313432c06f9" name="a786b4b88e7a155f561593313432c06f9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a786b4b88e7a155f561593313432c06f9">&#9670;&nbsp;</a></span>MovableGameObject()</h2>
@@ -245,6 +269,17 @@ Membres hérités additionnels</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Définition à la ligne <a class="el" href="_movable_game_object_8cpp_source.html#l00013">13</a> du fichier <a class="el" href="_movable_game_object_8cpp_source.html">MovableGameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_movable_game_object_a786b4b88e7a155f561593313432c06f9_cgraph.png" border="0" usemap="#aclass_movable_game_object_a786b4b88e7a155f561593313432c06f9_cgraph" alt=""/></div>
+<map name="aclass_movable_game_object_a786b4b88e7a155f561593313432c06f9_cgraph" id="aclass_movable_game_object_a786b4b88e7a155f561593313432c06f9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,23,156,65"/>
+<area shape="rect" href="class_movable_game_object.html#a0e0909f577c773a6fd5c4b7f0661228c" title=" " alt="" coords="204,23,355,65"/>
+<area shape="rect" href="class_position.html#af409de5592dd7da6fb0ccb8d1681bb19" title="Get the Position object." alt="" coords="404,5,547,32"/>
+<area shape="rect" href="struct_my_vector.html#ada641074b59d610778cdf2ec7c144905" title=" " alt="" coords="403,56,548,83"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -304,6 +339,17 @@ Membres hérités additionnels</h2></td></tr>
 false Si le déplacement n'a pas eu lieu </dd></dl>
 
 <p class="definition">Définition à la ligne <a class="el" href="_movable_game_object_8cpp_source.html#l00037">37</a> du fichier <a class="el" href="_movable_game_object_8cpp_source.html">MovableGameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_movable_game_object_ac3ca02b727df6802b66bc7cd677b0504_cgraph.png" border="0" usemap="#aclass_movable_game_object_ac3ca02b727df6802b66bc7cd677b0504_cgraph" alt=""/></div>
+<map name="aclass_movable_game_object_ac3ca02b727df6802b66bc7cd677b0504_cgraph" id="aclass_movable_game_object_ac3ca02b727df6802b66bc7cd677b0504_cgraph">
+<area shape="rect" title="Déplacer un objet vers une salle est virtuel pour permettre de récrire la fonction et spécifier peut ..." alt="" coords="5,27,156,69"/>
+<area shape="rect" href="class_movable_game_object.html#a3c21e1f1df5715b09a286255999d04b1" title="Met à jour les nouvelle limite de déplacement." alt="" coords="204,27,379,69"/>
+<area shape="rect" href="class_hall.html#ae8b24a02bbc5c17bf1e557cb3d98a76d" title=" " alt="" coords="472,5,583,32"/>
+<area shape="rect" href="class_position.html#a7a4256cdf1c47f24a5ee67194ddd8d68" title="Met à jour les nouvelle limite de déplacement." alt="" coords="427,57,628,98"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -332,6 +378,46 @@ false Si le déplacement n'a pas eu lieu </dd></dl>
 </div><div class="memdoc">
 
 <p class="definition">Définition à la ligne <a class="el" href="_movable_game_object_8cpp_source.html#l00027">27</a> du fichier <a class="el" href="_movable_game_object_8cpp_source.html">MovableGameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_movable_game_object_a2e91f66b167c69682916b93cc5d900ae_icgraph.png" border="0" usemap="#aclass_movable_game_object_a2e91f66b167c69682916b93cc5d900ae_icgraph" alt=""/></div>
+<map name="aclass_movable_game_object_a2e91f66b167c69682916b93cc5d900ae_icgraph" id="aclass_movable_game_object_a2e91f66b167c69682916b93cc5d900ae_icgraph">
+<area shape="rect" title=" " alt="" coords="431,5,613,47"/>
+<area shape="rect" href="class_personage.html#a8ed3bc3b47bd9830238fc92ff8ff7cfd" title="Pour ajouter les animation pour un personnage." alt="" coords="208,13,383,39"/>
+<area shape="rect" href="class_personage.html#a53b3b6c7865b2eb80de7c6edab217944" title=" " alt="" coords="5,13,160,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a36de4dc55f1cb184386777f668ae34a8" name="a36de4dc55f1cb184386777f668ae34a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36de4dc55f1cb184386777f668ae34a8">&#9670;&nbsp;</a></span>getActualHall()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_hall.html">Hall</a> * MovableGameObject::getActualHall </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the Actual <a class="el" href="class_hall.html">Hall</a> object. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>const Hall* </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_movable_game_object_8cpp_source.html#l00044">44</a> du fichier <a class="el" href="_movable_game_object_8cpp_source.html">MovableGameObject.cpp</a>.</p>
 
 </div>
 </div>
@@ -351,6 +437,23 @@ false Si le déplacement n'a pas eu lieu </dd></dl>
 </div><div class="memdoc">
 
 <p class="definition">Définition à la ligne <a class="el" href="_movable_game_object_8cpp_source.html#l00032">32</a> du fichier <a class="el" href="_movable_game_object_8cpp_source.html">MovableGameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_movable_game_object_ad3b241b18227ac3eacee79069af64fc7_icgraph.png" border="0" usemap="#aclass_movable_game_object_ad3b241b18227ac3eacee79069af64fc7_icgraph" alt=""/></div>
+<map name="aclass_movable_game_object_ad3b241b18227ac3eacee79069af64fc7_icgraph" id="aclass_movable_game_object_ad3b241b18227ac3eacee79069af64fc7_icgraph">
+<area shape="rect" title=" " alt="" coords="711,96,875,137"/>
+<area shape="rect" href="class_personage.html#a863a2c17aa860a54c8aeab5a62e68e56" title="Diminuer la santé" alt="" coords="480,18,663,45"/>
+<area shape="rect" href="class_enemy.html#a77df54c61b0253b5761256023dee656e" title=" " alt="" coords="498,74,645,101"/>
+<area shape="rect" href="class_player.html#aa14422c8d3c3950584dcd307172741b7" title=" " alt="" coords="500,183,643,210"/>
+<area shape="rect" href="class_personage.html#a50ed1fa7ee7a90061c51fdbe02ece37d" title="Pour l&#39;animation HURT en tenant compte du coté vers lequel est dirigé le personage." alt="" coords="248,123,432,164"/>
+<area shape="rect" href="class_personage.html#aa386a912ca8945c0a4941542e24e4e7d" title="pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utili..." alt="" coords="255,5,425,47"/>
+<area shape="rect" href="class_personage.html#a45dcefc883e2db0a6562d0d8239dca6c" title=" " alt="" coords="5,71,200,98"/>
+<area shape="rect" href="class_enemy.html#af405531fd6d410c2216bd9fbe21c83ea" title=" " alt="" coords="285,71,395,98"/>
+<area shape="rect" href="class_player.html#ad6867e0c7bc18e82a1da4be7bf156d97" title=" " alt="" coords="287,189,393,215"/>
+<area shape="rect" href="class_game_state.html#a775a7d0cf422aec17e5846852f3c997d" title=" " alt="" coords="35,189,170,215"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -420,6 +523,25 @@ false Si le déplacement n'a pas eu lieu </dd></dl>
 <p>Implémente <a class="el" href="class_game_object.html#ad860b401fa64188046b2b7019e006283">GameObject</a>.</p>
 
 <p class="definition">Définition à la ligne <a class="el" href="_movable_game_object_8cpp_source.html#l00006">6</a> du fichier <a class="el" href="_movable_game_object_8cpp_source.html">MovableGameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_movable_game_object_a0e0909f577c773a6fd5c4b7f0661228c_cgraph.png" border="0" usemap="#aclass_movable_game_object_a0e0909f577c773a6fd5c4b7f0661228c_cgraph" alt=""/></div>
+<map name="aclass_movable_game_object_a0e0909f577c773a6fd5c4b7f0661228c_cgraph" id="aclass_movable_game_object_a0e0909f577c773a6fd5c4b7f0661228c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,23,156,65"/>
+<area shape="rect" href="class_position.html#af409de5592dd7da6fb0ccb8d1681bb19" title="Get the Position object." alt="" coords="205,5,348,32"/>
+<area shape="rect" href="struct_my_vector.html#ada641074b59d610778cdf2ec7c144905" title=" " alt="" coords="204,56,349,83"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_movable_game_object_a0e0909f577c773a6fd5c4b7f0661228c_icgraph.png" border="0" usemap="#aclass_movable_game_object_a0e0909f577c773a6fd5c4b7f0661228c_icgraph" alt=""/></div>
+<map name="aclass_movable_game_object_a0e0909f577c773a6fd5c4b7f0661228c_icgraph" id="aclass_movable_game_object_a0e0909f577c773a6fd5c4b7f0661228c_icgraph">
+<area shape="rect" title=" " alt="" coords="204,5,355,47"/>
+<area shape="rect" href="class_movable_game_object.html#a786b4b88e7a155f561593313432c06f9" title=" " alt="" coords="5,5,156,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -521,7 +643,26 @@ false Si le déplacement n'a pas eu lieu </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="_movable_game_object_8cpp_source.html#l00049">49</a> du fichier <a class="el" href="_movable_game_object_8cpp_source.html">MovableGameObject.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_movable_game_object_8cpp_source.html#l00054">54</a> du fichier <a class="el" href="_movable_game_object_8cpp_source.html">MovableGameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_movable_game_object_a3c21e1f1df5715b09a286255999d04b1_cgraph.png" border="0" usemap="#aclass_movable_game_object_a3c21e1f1df5715b09a286255999d04b1_cgraph" alt=""/></div>
+<map name="aclass_movable_game_object_a3c21e1f1df5715b09a286255999d04b1_cgraph" id="aclass_movable_game_object_a3c21e1f1df5715b09a286255999d04b1_cgraph">
+<area shape="rect" title="Met à jour les nouvelle limite de déplacement." alt="" coords="5,27,180,69"/>
+<area shape="rect" href="class_hall.html#ae8b24a02bbc5c17bf1e557cb3d98a76d" title=" " alt="" coords="273,5,384,32"/>
+<area shape="rect" href="class_position.html#a7a4256cdf1c47f24a5ee67194ddd8d68" title="Met à jour les nouvelle limite de déplacement." alt="" coords="228,57,429,98"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_movable_game_object_a3c21e1f1df5715b09a286255999d04b1_icgraph.png" border="0" usemap="#aclass_movable_game_object_a3c21e1f1df5715b09a286255999d04b1_icgraph" alt=""/></div>
+<map name="aclass_movable_game_object_a3c21e1f1df5715b09a286255999d04b1_icgraph" id="aclass_movable_game_object_a3c21e1f1df5715b09a286255999d04b1_icgraph">
+<area shape="rect" title="Met à jour les nouvelle limite de déplacement." alt="" coords="204,5,379,47"/>
+<area shape="rect" href="class_movable_game_object.html#ac3ca02b727df6802b66bc7cd677b0504" title="Déplacer un objet vers une salle est virtuel pour permettre de récrire la fonction et spécifier peut ..." alt="" coords="5,5,156,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -561,7 +702,16 @@ false Si le déplacement n'a pas eu lieu </dd></dl>
 
 <p>Réimplémentée dans <a class="el" href="class_personage.html#a01b776643850ebcc55ba806e2fa8085e">Personage</a>.</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_movable_game_object_8cpp_source.html#l00044">44</a> du fichier <a class="el" href="_movable_game_object_8cpp_source.html">MovableGameObject.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_movable_game_object_8cpp_source.html#l00049">49</a> du fichier <a class="el" href="_movable_game_object_8cpp_source.html">MovableGameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_movable_game_object_a642733a3472829a5526280e44bfd27e5_cgraph.png" border="0" usemap="#aclass_movable_game_object_a642733a3472829a5526280e44bfd27e5_cgraph" alt=""/></div>
+<map name="aclass_movable_game_object_a642733a3472829a5526280e44bfd27e5_cgraph" id="aclass_movable_game_object_a642733a3472829a5526280e44bfd27e5_cgraph">
+<area shape="rect" title="Pour dessiner l&#39;élement dans la fenêtre." alt="" coords="5,5,185,32"/>
+<area shape="rect" href="class_game_object.html#a3f7a674006e1cce96ccb6c60f0ff9aaf" title="Pour dessiner l&#39;élement dans la fenêtre." alt="" coords="233,5,367,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -655,7 +805,7 @@ false Si le déplacement n'a pas eu lieu </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_movable_game_object_8hpp_source.html#l00054">54</a> du fichier <a class="el" href="_movable_game_object_8hpp_source.html">MovableGameObject.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_movable_game_object_8hpp_source.html#l00061">61</a> du fichier <a class="el" href="_movable_game_object_8hpp_source.html">MovableGameObject.hpp</a>.</p>
 
 </div>
 </div>
@@ -681,7 +831,7 @@ false Si le déplacement n'a pas eu lieu </dd></dl>
 
 <p>Ce pointeur ne doit pas être supprimé à ce niveau. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_movable_game_object_8hpp_source.html#l00058">58</a> du fichier <a class="el" href="_movable_game_object_8hpp_source.html">MovableGameObject.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_movable_game_object_8hpp_source.html#l00065">65</a> du fichier <a class="el" href="_movable_game_object_8hpp_source.html">MovableGameObject.hpp</a>.</p>
 
 </div>
 </div>

@@ -1,0 +1,5 @@
+<map id="Personage::getInventoryItemType" name="Personage::getInventoryItemType">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,220,32"/>
+<area shape="rect" id="node2" href="$class_bag.html#ab0117561af073f4f5c245acbd9f98026" title=" " alt="" coords="268,5,443,32"/>
+<area shape="rect" id="node3" href="$class_inventory.html#aa8ea7d66f755600fded21fdb2c846e15" title="Retourne le type de l&#39;inventaire de l&#39;item." alt="" coords="491,5,693,32"/>
+</map>

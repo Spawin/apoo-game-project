@@ -1,0 +1,94 @@
+\hypertarget{_enemy_manager_8cpp_source}{}\doxysection{Enemy\+Manager.\+cpp}
+\label{_enemy_manager_8cpp_source}\index{C:/programs\_sc/CIC/MITST06/jeu/src/include/EnemyManager.cpp@{C:/programs\_sc/CIC/MITST06/jeu/src/include/EnemyManager.cpp}}
+\mbox{\hyperlink{_enemy_manager_8cpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_enemy_manager_8hpp}{include/EnemyManager.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_druid_8hpp}{include/Druid.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_religious_8hpp}{include/Religious.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_soldier_8hpp}{include/Soldier.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_worker_8hpp}{include/Worker.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{consts_8hpp}{include/consts.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00008}00008 \textcolor{keyword}{class }\mbox{\hyperlink{class_druid}{Druid}};}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00009}00009 \textcolor{keyword}{class }\mbox{\hyperlink{class_religious}{Religious}};}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00010}00010 \textcolor{keyword}{class }\mbox{\hyperlink{class_soldier}{Soldier}};}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00011}00011 \textcolor{keyword}{class }\mbox{\hyperlink{class_worker}{Worker}};}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00013}00013 \textcolor{comment}{// Fonction static}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00015}00015 \textcolor{comment}{// Fonctions d'initialisation}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00017}00017 \textcolor{comment}{// Constructeurs/Destructeur}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00018}\mbox{\hyperlink{class_enemy_manager_a737886bd4068582bfaf8cf36929b6cfd}{00018}} \mbox{\hyperlink{class_enemy_manager_a737886bd4068582bfaf8cf36929b6cfd}{EnemyManager::EnemyManager}}(std::vector<Hall*>\& halls) :}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00019}00019     halls(halls)}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00020}00020 \{}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00021}00021 \}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00023}\mbox{\hyperlink{class_enemy_manager_afe3583e45273d5509e59467d06a3feb6}{00023}} \mbox{\hyperlink{class_enemy_manager_afe3583e45273d5509e59467d06a3feb6}{EnemyManager::\string~EnemyManager}}()}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00024}00024 \{}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00025}00025     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < this-\/>enemies.size(); i++)}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00026}00026     \{}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00027}00027         \textcolor{keyword}{delete} this-\/>enemies[i].enemy;}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00028}00028     \}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00029}00029 \}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00031}00031 \textcolor{comment}{// Fonctions/Méthodes}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00032}\mbox{\hyperlink{class_enemy_manager_acc8ce6c15754a5a1041614ffdd3f40d9}{00032}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_manager_acc8ce6c15754a5a1041614ffdd3f40d9}{EnemyManager::createEnemy}}()}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00033}00033 \{}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00034}00034     this-\/>enemies.push\_back(\{}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00035}00035         \textcolor{keyword}{false},}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00036}00036         \textcolor{keyword}{new} \mbox{\hyperlink{class_enemy}{Enemy}}(\textcolor{keyword}{new} \mbox{\hyperlink{class_soldier}{Soldier}}()),}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00037}00037     \});}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00039}00039     this-\/>halls[0]-\/>addMovableGameObject(this-\/>enemies.back().enemy-\/>getPersonage());}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00040}00040     this-\/>enemies.back().enemy-\/>getPersonage()-\/>addToHall(this-\/>halls[0]);}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00041}00041     \mbox{\hyperlink{struct_my_vector}{MyVector}} v \{ \mbox{\hyperlink{namespacegame_a31101344334dbbe88a0c2fd3313f697a}{game::GAME\_BLOCKS\_WIDTH}} * 4, \mbox{\hyperlink{namespacegame_a31101344334dbbe88a0c2fd3313f697a}{game::GAME\_BLOCKS\_WIDTH}} * 76 \};}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00042}00042     this-\/>enemies.back().enemy-\/>getPersonage()-\/>move(v);}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00043}00043 \}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00045}\mbox{\hyperlink{class_enemy_manager_a7402fb1345dfbb8b9b841bd31973c395}{00045}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_manager_a7402fb1345dfbb8b9b841bd31973c395}{EnemyManager::removeEnemy}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index)}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00046}00046 \{}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00047}00047     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00048}00048     \{}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00049}00049         \textcolor{keyword}{delete} this-\/>enemies[index].enemy;}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00050}00050     \}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00051}00051     \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} std::exception\& e)}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00052}00052     \{}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00053}00053         std::cerr << e.what() << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00054}00054         std::cout << \textcolor{stringliteral}{"{}ERROR::ENEMYMANAGER::REMOVEENEMY::..."{}}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00055}00055                   << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00056}00056     \}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00057}00057     this-\/>enemies.erase(this-\/>enemies.begin() + index);}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00058}00058 \}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00060}\mbox{\hyperlink{class_enemy_manager_ad2d9a377d3aa6020e3aa56685936f9f1}{00060}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_manager_ad2d9a377d3aa6020e3aa56685936f9f1}{EnemyManager::updateEnemiesState}}(sf::Vector2f \textcolor{keyword}{const}\& playerCoordinates)}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00061}00061 \{}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00062}00062     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < this-\/>enemies.size(); i++)}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00063}00063     \{}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00064}00064         this-\/>enemies[i].active = this-\/>enemies[i].enemy-\/>getPersonage()-\/>getActualHall()-\/>isIn(playerCoordinates);}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00065}00065     \}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00066}00066 \}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00068}\mbox{\hyperlink{class_enemy_manager_a0fd6551156815d291bbbb3bacc2fe8c1}{00068}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_manager_a0fd6551156815d291bbbb3bacc2fe8c1}{EnemyManager::update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltatime)}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00069}00069 \{}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00070}00070     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < this-\/>enemies.size(); i++)}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00071}00071     \{}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00072}00072         \textcolor{keywordflow}{if} (this-\/>enemies[i].active)}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00073}00073         \{}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00074}00074             this-\/>enemies[i].enemy-\/>update(deltatime);}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00075}00075         \}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00076}00076     \}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00077}00077 \}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00079}\mbox{\hyperlink{class_enemy_manager_a96ae46ce3b26cd534d49363bcc344ed7}{00079}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_manager_a96ae46ce3b26cd534d49363bcc344ed7}{EnemyManager::render}}(sf::RenderTarget\& target)}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00080}00080 \{}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00081}00081     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < this-\/>enemies.size(); i++)}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00082}00082     \{}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00083}00083         \textcolor{keywordflow}{if} (this-\/>enemies[i].active)}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00084}00084         \{}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00085}00085             this-\/>enemies[i].enemy-\/>render(target);}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00086}00086         \}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00087}00087     \}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8cpp_source_l00088}00088 \}}
+
+\end{DoxyCode}

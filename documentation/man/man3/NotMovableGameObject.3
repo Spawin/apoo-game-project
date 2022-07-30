@@ -1,4 +1,4 @@
-.TH "NotMovableGameObject" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.TH "NotMovableGameObject" 3 "Samedi 30 Juillet 2022" "Jeu POA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -37,6 +37,9 @@ Dérivée par \fBBag\fP, et \fBItem\fP\&.
 .ti -1c
 .RI "virtual void \fBupdate\fP ()=0"
 .br
+.ti -1c
+.RI "virtual void \fBsetPosition\fP (sf::Vector2f const &coordinates)"
+.br
 .in -1c
 .SS "Fonctions membres protégées"
 
@@ -59,14 +62,14 @@ Dérivée par \fBBag\fP, et \fBItem\fP\&.
 .ti -1c
 .RI "const \fBHall\fP * \fBhall\fP"
 .br
-.RI "Initialiser animationComponent et les animations\&. "
+.RI "Ce pointeur ne doit pas être supprimé à ce niveau\&. "
 .in -1c
 .SS "Membres hérités additionnels"
 .SH "Description détaillée"
 .PP 
 Represente les objets imobiles\&. NOTE - Certains de ces Object Peuvent être déplacée ou transporté par un Personnage par exemple\&. 
 .PP
-Définition à la ligne \fB21\fP du fichier \fBNotMovableGameObject\&.hpp\fP\&.
+Définition à la ligne \fB24\fP du fichier \fBNotMovableGameObject\&.hpp\fP\&.
 .SH "Documentation des constructeurs et destructeur"
 .PP 
 .SS "NotMovableGameObject::NotMovableGameObject (std::string_view const & imageSpritePath)"
@@ -119,7 +122,11 @@ Définition à la ligne \fB6\fP du fichier \fBNotMovableGameObject\&.cpp\fP\&.
 .PP
 Implémente \fBGameObject\fP\&.
 .PP
-Implémenté dans \fBItem\fP, \fBBag\fP, \fBMoney\fP, \fBShield\fP, \fBSword\fP, et \fBVial\fP\&.
+Implémenté dans \fBItem\fP, \fBBag\fP, \fBBoxingGloves\fP, \fBMoney\fP, \fBShield\fP, \fBSword\fP, \fBTeleportKey\fP, et \fBVial\fP\&.
+.SS "void NotMovableGameObject::setPosition (sf::Vector2f const & coordinates)\fC [virtual]\fP"
+
+.PP
+Définition à la ligne \fB49\fP du fichier \fBNotMovableGameObject\&.cpp\fP\&.
 .SS "void NotMovableGameObject::setPositionMovementLimit (const \fBHall\fP * hall)\fC [protected]\fP, \fC [virtual]\fP"
 
 .PP
@@ -132,7 +139,7 @@ Met à jour les nouvelle limite de déplacement\&.
 .PP
 
 .PP
-Définition à la ligne \fB49\fP du fichier \fBNotMovableGameObject\&.cpp\fP\&.
+Définition à la ligne \fB56\fP du fichier \fBNotMovableGameObject\&.cpp\fP\&.
 .SS "void NotMovableGameObject::show (sf::RenderTarget & window)\fC [virtual]\fP"
 
 .PP
@@ -153,7 +160,7 @@ Définition à la ligne \fB44\fP du fichier \fBNotMovableGameObject\&.cpp\fP\&.
 .PP
 Implémente \fBGameObject\fP\&.
 .PP
-Implémenté dans \fBBag\fP, \fBMoney\fP, \fBShield\fP, \fBSword\fP, \fBVial\fP, et \fBItem\fP\&.
+Implémenté dans \fBBag\fP, \fBBoxingGloves\fP, \fBMoney\fP, \fBShield\fP, \fBSword\fP, \fBTeleportKey\fP, \fBVial\fP, et \fBItem\fP\&.
 .SS "virtual void NotMovableGameObject::updatePosition (float posX, float posY)\fC [protected]\fP, \fC [pure virtual]\fP"
 
 .PP
@@ -165,9 +172,9 @@ Implémenté dans \fBItem\fP\&.
 .SS "const \fBHall\fP* NotMovableGameObject::hall\fC [protected]\fP"
 
 .PP
-Initialiser animationComponent et les animations\&. Ce pointeur ne doit pas être supprimé à ce niveau 
+Ce pointeur ne doit pas être supprimé à ce niveau\&. 
 .PP
-Définition à la ligne \fB67\fP du fichier \fBNotMovableGameObject\&.hpp\fP\&.
+Définition à la ligne \fB65\fP du fichier \fBNotMovableGameObject\&.hpp\fP\&.
 
 .SH "Auteur"
 .PP 

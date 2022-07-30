@@ -1,0 +1,6 @@
+<map id="Personage::onCollisionEnter" name="Personage::onCollisionEnter">
+<area shape="rect" id="node1" title="émit quand il entre en contacte avec un autre élément" alt="" coords="5,56,192,83"/>
+<area shape="rect" id="node2" href="$class_collision.html#aa999b0911c592967bf91cc2089cf8815" title="Get the Game Object object." alt="" coords="269,5,439,32"/>
+<area shape="rect" id="node3" href="$class_game_object.html#a800f7c8a8df0bd57aca9f8de170d7906" title=" " alt="" coords="240,56,468,83"/>
+<area shape="rect" id="node4" href="$class_collision.html#a8593db55ec453c4a041e68f70b345794" title=" " alt="" coords="303,107,405,133"/>
+</map>

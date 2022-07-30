@@ -1,0 +1,9 @@
+<map id="Personage::addItem" name="Personage::addItem">
+<area shape="rect" id="node1" title=" " alt="" coords="5,35,144,61"/>
+<area shape="rect" id="node2" href="$class_bag.html#a894be6b336ee6521272eb9dac2f75be6" title=" " alt="" coords="192,35,291,61"/>
+<area shape="rect" id="node3" href="$class_inventory.html#a6ba8f9f2aacaaebf7aeccf82d8987924" title=" " alt="" coords="339,35,441,61"/>
+<area shape="rect" id="node4" href="$classgui_1_1_inventory.html#a4b5b31eebd9beeee352b8a8f84cd5bd5" title=" " alt="" coords="495,5,647,32"/>
+<area shape="rect" id="node6" href="$class_not_movable_game_object.html#ac15fa38f4fafb47ee0e58efa1996988c" title=" " alt="" coords="489,57,652,98"/>
+<area shape="rect" id="node5" href="$class_game_object.html#a60bcdbbdaa9d1de7d265d404071d3c4d" title=" " alt="" coords="704,5,859,32"/>
+<area shape="rect" id="node7" href="$class_not_movable_game_object.html#a1ae6701a400e4455cb28936d4f1cd30d" title="Permet de mettre à jour la position actuelle." alt="" coords="700,57,863,98"/>
+</map>

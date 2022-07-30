@@ -1,0 +1,7 @@
+<map id="Hall::getIntRect" name="Hall::getIntRect">
+<area shape="rect" id="node1" title=" " alt="" coords="447,46,557,73"/>
+<area shape="rect" id="node2" href="$class_movable_game_object.html#a3c21e1f1df5715b09a286255999d04b1" title="Met à jour les nouvelle limite de déplacement." alt="" coords="220,5,395,47"/>
+<area shape="rect" id="node4" href="$class_not_movable_game_object.html#ad1d21edd47d563f733223b390bbdd969" title="Met à jour les nouvelle limite de déplacement." alt="" coords="216,71,399,112"/>
+<area shape="rect" id="node3" href="$class_movable_game_object.html#ac3ca02b727df6802b66bc7cd677b0504" title="Déplacer un objet vers une salle est virtuel pour permettre de récrire la fonction et spécifier peut ..." alt="" coords="11,5,162,47"/>
+<area shape="rect" id="node5" href="$class_not_movable_game_object.html#aa788f5bb11af921baaa8c12b2b69b4b6" title="Déplacer un objet vers une salle est virtuel pour permettre de récrire la fonction et spécifier peut ..." alt="" coords="5,71,168,112"/>
+</map>

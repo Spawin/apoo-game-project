@@ -1,0 +1,4 @@
+<map id="Bag::getFirstItemMatch" name="Bag::getFirstItemMatch">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node2" href="$class_inventory.html#ab299b7578ab77568ed17af72088e6154" title="Retourne le premier item qui vérifie le paramètre. NOTE &#45; S&#39;assurer d&#39;appeler haveThisItem avant pour..." alt="" coords="212,5,399,32"/>
+</map>

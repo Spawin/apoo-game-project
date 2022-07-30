@@ -1,0 +1,7 @@
+<map id="Player::updateMousePosWindow" name="Player::updateMousePosWindow">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,220,83"/>
+<area shape="rect" id="node2" href="$class_personage.html#a938d215023e4594db6e6eb4341101767" title=" " alt="" coords="268,49,461,90"/>
+<area shape="rect" id="node3" href="$class_inventory.html#adb0cf453e653bc719cdb207b906dbc56" title=" " alt="" coords="542,5,661,32"/>
+<area shape="rect" id="node4" href="$class_bag.html#a5c8e365a36667f800eec30c4148500a6" title=" " alt="" coords="540,56,663,83"/>
+<area shape="rect" id="node5" href="$classgui_1_1_inventory.html#abf61ac4f9cae8d03468969bb0498a05a" title=" " alt="" coords="509,107,693,149"/>
+</map>

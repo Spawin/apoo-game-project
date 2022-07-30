@@ -1,0 +1,12 @@
+<map id="Item" name="Item">
+<area shape="rect" id="node1" title="Représente éssentiellement les object que pourra manipuler les personnages." alt="" coords="492,1239,713,1683"/>
+<area shape="rect" id="node4" href="$class_armory.html" title=" " alt="" coords="175,1760,396,1881"/>
+<area shape="rect" id="node8" href="$class_money.html" title=" " alt="" coords="420,1738,591,1903"/>
+<area shape="rect" id="node9" href="$class_teleport_key.html" title=" " alt="" coords="615,1738,785,1903"/>
+<area shape="rect" id="node10" href="$class_vial.html" title=" " alt="" coords="809,1731,1004,1911"/>
+<area shape="rect" id="node2" href="$class_not_movable_game_object.html" title="Represente les objets imobiles. NOTE &#45; Certains de ces Object Peuvent être déplacée ou transporté par..." alt="" coords="497,805,709,1191"/>
+<area shape="rect" id="node3" href="$class_game_object.html" title=" " alt="" coords="491,5,715,757"/>
+<area shape="rect" id="node5" href="$class_boxing_gloves.html" title=" " alt="" coords="5,1959,176,2124"/>
+<area shape="rect" id="node6" href="$class_shield.html" title=" " alt="" coords="200,1959,371,2124"/>
+<area shape="rect" id="node7" href="$class_sword.html" title=" " alt="" coords="395,1959,565,2124"/>
+</map>

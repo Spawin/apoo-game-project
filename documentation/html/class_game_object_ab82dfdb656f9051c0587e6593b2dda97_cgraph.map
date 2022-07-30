@@ -1,0 +1,6 @@
+<map id="GameObject::~GameObject" name="GameObject::~GameObject">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,189,83"/>
+<area shape="rect" id="node2" href="$class_game_object.html#a7bc5db5459f66fad48f88c7d8e1863b6" title=" " alt="" coords="249,5,453,32"/>
+<area shape="rect" id="node3" href="$class_game_object.html#a800f7c8a8df0bd57aca9f8de170d7906" title=" " alt="" coords="237,56,465,83"/>
+<area shape="rect" id="node4" href="$class_collider.html#a19074031377d5b600bf120adfdcdf1c9" title="Appelé à la destruction d&#39;un objet pour l&#39;enlever de la liste." alt="" coords="272,107,431,133"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="C:/programs_sc/CIC/MITST06/jeu/src/include/GameObject.hpp" name="C:/programs_sc/CIC/MITST06/jeu/src/include/GameObject.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="365,5,530,61"/>
+<area shape="rect" id="node2" href="$_collider_8hpp.html" title=" " alt="" coords="109,109,244,136"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,184,52,211"/>
+<area shape="rect" id="node6" title=" " alt="" coords="347,184,401,211"/>
+<area shape="rect" id="node8" href="$_collision_8hpp.html" title=" " alt="" coords="269,109,410,136"/>
+<area shape="rect" id="node9" href="$_my_vector_8hpp.html" title=" " alt="" coords="425,184,573,211"/>
+<area shape="rect" id="node12" href="$_position_8hpp.html" title=" " alt="" coords="535,109,674,136"/>
+<area shape="rect" id="node13" href="$_rigidbody_8hpp.html" title=" " alt="" coords="649,184,798,211"/>
+<area shape="rect" id="node14" title=" " alt="" coords="773,109,858,136"/>
+<area shape="rect" id="node3" title=" " alt="" coords="77,184,149,211"/>
+<area shape="rect" id="node5" title=" " alt="" coords="253,184,322,211"/>
+<area shape="rect" id="node7" title=" " alt="" coords="173,184,229,211"/>
+<area shape="rect" id="node10" href="$consts_8hpp.html" title="Ensemble des constantes du jeux." alt="" coords="546,259,677,285"/>
+<area shape="rect" id="node11" title=" " alt="" coords="463,259,522,285"/>
+</map>

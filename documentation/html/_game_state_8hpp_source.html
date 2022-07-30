@@ -93,77 +93,100 @@ $(document).ready(function(){initNavTree('_game_state_8hpp_source.html',''); ini
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">    #include &quot;<a class="code" href="_game_map_8hpp.html">include/GameMap.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">    #include &quot;<a class="code" href="_hall_8hpp.html">include/Hall.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">    #include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_game_state.html">   10</a></span><span class="keyword">class </span><a class="code hl_class" href="class_game_state.html">GameState</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_state.html">State</a></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">    #include &quot;<a class="code" href="_enemy_8hpp.html">include/Enemy.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">    #include &quot;<a class="code" href="_enemy_manager_8hpp.html">include/EnemyManager.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">    #include &quot;<a class="code" href="_player_8hpp.html">include/Player.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">// Constructeurs/Destructeur</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_function" href="class_game_state.html#a17b02b1db2986100cbeb35195087fb9b">GameState</a>(<a class="code hl_struct" href="struct_state_data.html">StateData</a>* <a class="code hl_variable" href="class_state.html#a9c55cdba6e8a4a7b8a6a83fa51311514">stateData</a>);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_game_state.html#ae623df5042cd0c17daa3394fdcb397b3">~GameState</a>();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">// Fonctions/Méthodes</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">// void endState() override;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_game_state.html#ab305504819239f663c290c754a0c9d3d">getKeyTime</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_state.html#a785b6e0683b08b0dca93c108a5495413">updateSFMLEvents</a>(<span class="keyword">const</span> sf::Event&amp; sfEvent) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_state.html#a879974629713034e25dd515dae008c78">updateInput</a>(<span class="keyword">const</span> <span class="keywordtype">float</span>&amp; deltaTime) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_state.html#ad2a47f94bfffccc635b680d996144e0e">updatePauseMenuButtons</a>();</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">class </span><a class="code hl_class" href="class_state.html">State</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">class </span><a class="code hl_class" href="class_pause_menu.html">PauseMenu</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">class </span><a class="code hl_class" href="class_game_map.html">GameMap</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span><a class="code hl_class" href="class_hall.html">Hall</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">class </span><a class="code hl_class" href="class_enemy.html">Enemy</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">class </span><a class="code hl_class" href="class_enemy_manager.html">EnemyManager</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span><a class="code hl_class" href="class_player.html">Player</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">struct </span><a class="code hl_struct" href="struct_state_data.html">StateData</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_game_state.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="class_game_state.html">GameState</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_state.html">State</a></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_state.html#a775a7d0cf422aec17e5846852f3c997d">update</a>(<span class="keyword">const</span> <span class="keywordtype">float</span>&amp; deltaTime) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_state.html#ab50a5f29dacea5b56158b45ae4129b51">render</a>(sf::RenderTarget* target = <span class="keyword">nullptr</span>) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// Variables</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    sf::View view;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    sf::RenderTexture renderTexture;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    sf::Sprite renderSprite;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    sf::Font font;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">// Pour gérer le temps d&#39;apuis sur les touches</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    sf::Clock keyTimer;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">// Temps de réponse pour une touche</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">float</span> keyTimeMax;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_class" href="class_player.html">Player</a>* player;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_class" href="class_pause_menu.html">PauseMenu</a>* pauseMenu;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_class" href="class_game_map.html">GameMap</a>* gameMap;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    std::vector&lt;Hall*&gt; halls;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// Constructeurs/Destructeur</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_function" href="class_game_state.html#a17b02b1db2986100cbeb35195087fb9b">GameState</a>(<a class="code hl_struct" href="struct_state_data.html">StateData</a>* <a class="code hl_variable" href="class_state.html#a9c55cdba6e8a4a7b8a6a83fa51311514">stateData</a>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_game_state.html#ae623df5042cd0c17daa3394fdcb397b3">~GameState</a>();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">// Fonctions/Méthodes</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">// void endState() override;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_game_state.html#ab305504819239f663c290c754a0c9d3d">getKeyTime</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_state.html#a785b6e0683b08b0dca93c108a5495413">updateSFMLEvents</a>(<span class="keyword">const</span> sf::Event&amp; sfEvent) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_state.html#a879974629713034e25dd515dae008c78">updateInput</a>(<span class="keyword">const</span> <span class="keywordtype">float</span>&amp; deltaTime) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_state.html#ad2a47f94bfffccc635b680d996144e0e">updatePauseMenuButtons</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_state.html#a775a7d0cf422aec17e5846852f3c997d">update</a>(<span class="keyword">const</span> <span class="keywordtype">float</span>&amp; deltaTime) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_game_state.html#ab50a5f29dacea5b56158b45ae4129b51">render</a>(sf::RenderTarget* target = <span class="keyword">nullptr</span>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">// Variables</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    sf::View view;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    sf::RenderTexture renderTexture;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    sf::Sprite renderSprite;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    sf::Font font;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">// Fonctions d&#39;initialisation</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> initDeferredRender();</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">void</span> initFonts();</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> initPauseMenu();</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> initKeyTime();</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> initGameMap();</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> initPlayer();</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> initHalls();</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#endif </span><span class="comment">// __GAME_STATE_HPP__</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">// Pour gérer le temps d&#39;apuis sur les touches</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    sf::Clock keyTimer;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">// Temps de réponse pour une touche</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">float</span> keyTimeMax;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_class" href="class_player.html">Player</a>* player;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="comment">// Enemy* testEnemy;</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_class" href="class_enemy_manager.html">EnemyManager</a>* enemyManager;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_class" href="class_pause_menu.html">PauseMenu</a>* pauseMenu;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_class" href="class_game_map.html">GameMap</a>* gameMap;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    std::vector&lt;Hall*&gt; halls;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">// Fonctions d&#39;initialisation</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">void</span> initDeferredRender();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> initFonts();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">void</span> initPauseMenu();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">void</span> initKeyTime();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">void</span> initGameMap();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">void</span> initHalls();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">void</span> initPlayer();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">void</span> initEnemyManager();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>};</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#endif </span><span class="comment">// __GAME_STATE_HPP__</span></div>
+<div class="ttc" id="a_enemy_8hpp_html"><div class="ttname"><a href="_enemy_8hpp.html">Enemy.hpp</a></div></div>
+<div class="ttc" id="a_enemy_manager_8hpp_html"><div class="ttname"><a href="_enemy_manager_8hpp.html">EnemyManager.hpp</a></div></div>
 <div class="ttc" id="a_game_map_8hpp_html"><div class="ttname"><a href="_game_map_8hpp.html">GameMap.hpp</a></div></div>
 <div class="ttc" id="a_hall_8hpp_html"><div class="ttname"><a href="_hall_8hpp.html">Hall.hpp</a></div></div>
 <div class="ttc" id="a_pause_menu_8hpp_html"><div class="ttname"><a href="_pause_menu_8hpp.html">PauseMenu.hpp</a></div></div>
+<div class="ttc" id="a_player_8hpp_html"><div class="ttname"><a href="_player_8hpp.html">Player.hpp</a></div></div>
 <div class="ttc" id="a_state_8hpp_html"><div class="ttname"><a href="_state_8hpp.html">State.hpp</a></div></div>
+<div class="ttc" id="aclass_enemy_html"><div class="ttname"><a href="class_enemy.html">Enemy</a></div><div class="ttdef"><b>Definition:</b> <a href="_enemy_8hpp_source.html#l00014">Enemy.hpp:15</a></div></div>
+<div class="ttc" id="aclass_enemy_manager_html"><div class="ttname"><a href="class_enemy_manager.html">EnemyManager</a></div><div class="ttdef"><b>Definition:</b> <a href="_enemy_manager_8hpp_source.html#l00021">EnemyManager.hpp:22</a></div></div>
 <div class="ttc" id="aclass_game_map_html"><div class="ttname"><a href="class_game_map.html">GameMap</a></div><div class="ttdef"><b>Definition:</b> <a href="_game_map_8hpp_source.html#l00004">GameMap.hpp:5</a></div></div>
-<div class="ttc" id="aclass_game_state_html"><div class="ttname"><a href="class_game_state.html">GameState</a></div><div class="ttdef"><b>Definition:</b> <a href="_game_state_8hpp_source.html#l00010">GameState.hpp:11</a></div></div>
-<div class="ttc" id="aclass_game_state_html_a17b02b1db2986100cbeb35195087fb9b"><div class="ttname"><a href="class_game_state.html#a17b02b1db2986100cbeb35195087fb9b">GameState::GameState</a></div><div class="ttdeci">GameState(StateData *stateData)</div><div class="ttdef"><b>Definition:</b> <a href="_game_state_8cpp_source.html#l00114">GameState.cpp:114</a></div></div>
-<div class="ttc" id="aclass_game_state_html_a775a7d0cf422aec17e5846852f3c997d"><div class="ttname"><a href="class_game_state.html#a775a7d0cf422aec17e5846852f3c997d">GameState::update</a></div><div class="ttdeci">void update(const float &amp;deltaTime) override</div><div class="ttdef"><b>Definition:</b> <a href="_game_state_8cpp_source.html#l00208">GameState.cpp:208</a></div></div>
-<div class="ttc" id="aclass_game_state_html_a785b6e0683b08b0dca93c108a5495413"><div class="ttname"><a href="class_game_state.html#a785b6e0683b08b0dca93c108a5495413">GameState::updateSFMLEvents</a></div><div class="ttdeci">virtual void updateSFMLEvents(const sf::Event &amp;sfEvent) override</div><div class="ttdef"><b>Definition:</b> <a href="_game_state_8cpp_source.html#l00166">GameState.cpp:166</a></div></div>
-<div class="ttc" id="aclass_game_state_html_a879974629713034e25dd515dae008c78"><div class="ttname"><a href="class_game_state.html#a879974629713034e25dd515dae008c78">GameState::updateInput</a></div><div class="ttdeci">void updateInput(const float &amp;deltaTime) override</div><div class="ttdef"><b>Definition:</b> <a href="_game_state_8cpp_source.html#l00184">GameState.cpp:184</a></div></div>
-<div class="ttc" id="aclass_game_state_html_ab305504819239f663c290c754a0c9d3d"><div class="ttname"><a href="class_game_state.html#ab305504819239f663c290c754a0c9d3d">GameState::getKeyTime</a></div><div class="ttdeci">bool getKeyTime() override</div><div class="ttdef"><b>Definition:</b> <a href="_game_state_8cpp_source.html#l00155">GameState.cpp:155</a></div></div>
-<div class="ttc" id="aclass_game_state_html_ab50a5f29dacea5b56158b45ae4129b51"><div class="ttname"><a href="class_game_state.html#ab50a5f29dacea5b56158b45ae4129b51">GameState::render</a></div><div class="ttdeci">void render(sf::RenderTarget *target=nullptr) override</div><div class="ttdef"><b>Definition:</b> <a href="_game_state_8cpp_source.html#l00232">GameState.cpp:232</a></div></div>
-<div class="ttc" id="aclass_game_state_html_ad2a47f94bfffccc635b680d996144e0e"><div class="ttname"><a href="class_game_state.html#ad2a47f94bfffccc635b680d996144e0e">GameState::updatePauseMenuButtons</a></div><div class="ttdeci">void updatePauseMenuButtons()</div><div class="ttdef"><b>Definition:</b> <a href="_game_state_8cpp_source.html#l00202">GameState.cpp:202</a></div></div>
-<div class="ttc" id="aclass_game_state_html_ae623df5042cd0c17daa3394fdcb397b3"><div class="ttname"><a href="class_game_state.html#ae623df5042cd0c17daa3394fdcb397b3">GameState::~GameState</a></div><div class="ttdeci">virtual ~GameState()</div><div class="ttdef"><b>Definition:</b> <a href="_game_state_8cpp_source.html#l00136">GameState.cpp:136</a></div></div>
-<div class="ttc" id="aclass_pause_menu_html"><div class="ttname"><a href="class_pause_menu.html">PauseMenu</a></div><div class="ttdef"><b>Definition:</b> <a href="_pause_menu_8hpp_source.html#l00008">PauseMenu.hpp:9</a></div></div>
-<div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00006">Player.hpp:7</a></div></div>
-<div class="ttc" id="aclass_state_html"><div class="ttname"><a href="class_state.html">State</a></div><div class="ttdef"><b>Definition:</b> <a href="_state_8hpp_source.html#l00035">State.hpp:36</a></div></div>
-<div class="ttc" id="aclass_state_html_a9c55cdba6e8a4a7b8a6a83fa51311514"><div class="ttname"><a href="class_state.html#a9c55cdba6e8a4a7b8a6a83fa51311514">State::stateData</a></div><div class="ttdeci">StateData * stateData</div><div class="ttdef"><b>Definition:</b> <a href="_state_8hpp_source.html#l00064">State.hpp:64</a></div></div>
-<div class="ttc" id="astruct_state_data_html"><div class="ttname"><a href="struct_state_data.html">StateData</a></div><div class="ttdef"><b>Definition:</b> <a href="_state_8hpp_source.html#l00024">State.hpp:25</a></div></div>
+<div class="ttc" id="aclass_game_state_html"><div class="ttname"><a href="class_game_state.html">GameState</a></div><div class="ttdef"><b>Definition:</b> <a href="_game_state_8hpp_source.html#l00023">GameState.hpp:24</a></div></div>
+<div class="ttc" id="aclass_game_state_html_a17b02b1db2986100cbeb35195087fb9b"><div class="ttname"><a href="class_game_state.html#a17b02b1db2986100cbeb35195087fb9b">GameState::GameState</a></div><div class="ttdeci">GameState(StateData *stateData)</div><div class="ttdef"><b>Definition:</b> <a href="_game_state_8cpp_source.html#l00142">GameState.cpp:142</a></div></div>
+<div class="ttc" id="aclass_game_state_html_a775a7d0cf422aec17e5846852f3c997d"><div class="ttname"><a href="class_game_state.html#a775a7d0cf422aec17e5846852f3c997d">GameState::update</a></div><div class="ttdeci">void update(const float &amp;deltaTime) override</div><div class="ttdef"><b>Definition:</b> <a href="_game_state_8cpp_source.html#l00239">GameState.cpp:239</a></div></div>
+<div class="ttc" id="aclass_game_state_html_a785b6e0683b08b0dca93c108a5495413"><div class="ttname"><a href="class_game_state.html#a785b6e0683b08b0dca93c108a5495413">GameState::updateSFMLEvents</a></div><div class="ttdeci">virtual void updateSFMLEvents(const sf::Event &amp;sfEvent) override</div><div class="ttdef"><b>Definition:</b> <a href="_game_state_8cpp_source.html#l00197">GameState.cpp:197</a></div></div>
+<div class="ttc" id="aclass_game_state_html_a879974629713034e25dd515dae008c78"><div class="ttname"><a href="class_game_state.html#a879974629713034e25dd515dae008c78">GameState::updateInput</a></div><div class="ttdeci">void updateInput(const float &amp;deltaTime) override</div><div class="ttdef"><b>Definition:</b> <a href="_game_state_8cpp_source.html#l00215">GameState.cpp:215</a></div></div>
+<div class="ttc" id="aclass_game_state_html_ab305504819239f663c290c754a0c9d3d"><div class="ttname"><a href="class_game_state.html#ab305504819239f663c290c754a0c9d3d">GameState::getKeyTime</a></div><div class="ttdeci">bool getKeyTime() override</div><div class="ttdef"><b>Definition:</b> <a href="_game_state_8cpp_source.html#l00186">GameState.cpp:186</a></div></div>
+<div class="ttc" id="aclass_game_state_html_ab50a5f29dacea5b56158b45ae4129b51"><div class="ttname"><a href="class_game_state.html#ab50a5f29dacea5b56158b45ae4129b51">GameState::render</a></div><div class="ttdeci">void render(sf::RenderTarget *target=nullptr) override</div><div class="ttdef"><b>Definition:</b> <a href="_game_state_8cpp_source.html#l00267">GameState.cpp:267</a></div></div>
+<div class="ttc" id="aclass_game_state_html_ad2a47f94bfffccc635b680d996144e0e"><div class="ttname"><a href="class_game_state.html#ad2a47f94bfffccc635b680d996144e0e">GameState::updatePauseMenuButtons</a></div><div class="ttdeci">void updatePauseMenuButtons()</div><div class="ttdef"><b>Definition:</b> <a href="_game_state_8cpp_source.html#l00233">GameState.cpp:233</a></div></div>
+<div class="ttc" id="aclass_game_state_html_ae623df5042cd0c17daa3394fdcb397b3"><div class="ttname"><a href="class_game_state.html#ae623df5042cd0c17daa3394fdcb397b3">GameState::~GameState</a></div><div class="ttdeci">virtual ~GameState()</div><div class="ttdef"><b>Definition:</b> <a href="_game_state_8cpp_source.html#l00164">GameState.cpp:164</a></div></div>
+<div class="ttc" id="aclass_hall_html"><div class="ttname"><a href="class_hall.html">Hall</a></div><div class="ttdef"><b>Definition:</b> <a href="_hall_8hpp_source.html#l00018">Hall.hpp:19</a></div></div>
+<div class="ttc" id="aclass_pause_menu_html"><div class="ttname"><a href="class_pause_menu.html">PauseMenu</a></div><div class="ttdef"><b>Definition:</b> <a href="_pause_menu_8hpp_source.html#l00011">PauseMenu.hpp:12</a></div></div>
+<div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00011">Player.hpp:12</a></div></div>
+<div class="ttc" id="aclass_state_html"><div class="ttname"><a href="class_state.html">State</a></div><div class="ttdef"><b>Definition:</b> <a href="_state_8hpp_source.html#l00036">State.hpp:37</a></div></div>
+<div class="ttc" id="aclass_state_html_a9c55cdba6e8a4a7b8a6a83fa51311514"><div class="ttname"><a href="class_state.html#a9c55cdba6e8a4a7b8a6a83fa51311514">State::stateData</a></div><div class="ttdeci">StateData * stateData</div><div class="ttdef"><b>Definition:</b> <a href="_state_8hpp_source.html#l00065">State.hpp:65</a></div></div>
+<div class="ttc" id="astruct_state_data_html"><div class="ttname"><a href="struct_state_data.html">StateData</a></div><div class="ttdef"><b>Definition:</b> <a href="_state_8hpp_source.html#l00025">State.hpp:26</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

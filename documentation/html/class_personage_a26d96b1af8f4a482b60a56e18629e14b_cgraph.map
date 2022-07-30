@@ -1,0 +1,4 @@
+<map id="Personage::init" name="Personage::init">
+<area shape="rect" id="node1" title="Pour initialiser les valeur par défaut du GameObject." alt="" coords="5,5,115,32"/>
+<area shape="rect" id="node2" href="$class_game_object.html#aad03571b58d55ca1de607cdf96e8207a" title=" " alt="" coords="163,5,391,32"/>
+</map>

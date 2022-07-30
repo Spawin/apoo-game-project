@@ -1,0 +1,13 @@
+<map id="GameObject::setGameObjectName" name="GameObject::setGameObjectName">
+<area shape="rect" id="node1" title=" " alt="" coords="624,183,852,209"/>
+<area shape="rect" id="node2" href="$class_bag.html#ae0593c22c7dd8b32cab469af92fb200c" title=" " alt="" coords="444,5,520,32"/>
+<area shape="rect" id="node3" href="$class_boxing_gloves.html#ab05be7aa7c8b9b66c311f7fe56861b3c" title=" " alt="" coords="388,56,576,83"/>
+<area shape="rect" id="node4" href="$class_enemy.html#a85131c42a2bfbbaf25945390223b21d8" title=" " alt="" coords="426,107,538,133"/>
+<area shape="rect" id="node5" href="$class_personage.html#a26d96b1af8f4a482b60a56e18629e14b" title="Pour initialiser les valeur par défaut du GameObject." alt="" coords="219,196,329,223"/>
+<area shape="rect" id="node7" href="$class_player.html#adacf4eab6353e0d82a345d4dc9181e80" title=" " alt="" coords="430,208,534,235"/>
+<area shape="rect" id="node8" href="$class_shield.html#a8a6e827c94750d8c1a1d523cb1b105de" title=" " alt="" coords="431,259,533,285"/>
+<area shape="rect" id="node9" href="$class_sword.html#af33284e40825ec8ddccd01fa5833be36" title=" " alt="" coords="431,309,533,336"/>
+<area shape="rect" id="node10" href="$class_vial.html#a5eb64748ada3abcd0405007371b0fa6a" title=" " alt="" coords="445,360,519,387"/>
+<area shape="rect" id="node6" href="$class_personage.html#a53b3b6c7865b2eb80de7c6edab217944" title=" " alt="" coords="5,259,160,285"/>
+<area shape="rect" id="node11" href="$class_personage.html#a9670b4adc4283e6741f13289baf84387" title=" " alt="" coords="208,284,340,311"/>
+</map>

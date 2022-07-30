@@ -1,4 +1,4 @@
-.TH "Hall" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.TH "Hall" 3 "Samedi 30 Juillet 2022" "Jeu POA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -20,14 +20,25 @@ Dérivée par \fBLounge\fP, et \fBRoom\fP\&.
 .RI "virtual \fB~Hall\fP ()"
 .br
 .ti -1c
+.RI "bool \fBaddItem\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type, sf::Vector2f const &coordinates)"
+.br
+.ti -1c
+.RI "bool \fBmoveItem\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type, \fBInventory\fP *to_inventory, sf::Vector2f const &coordinates)"
+.br
+.ti -1c
+.RI "bool \fBremoveItem\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type)"
+.br
+.ti -1c
 .RI "virtual bool \fBaddMovableGameObject\fP (\fBMovableGameObject\fP *movableGameObject)"
 .br
 .ti -1c
 .RI "bool \fBisIn\fP (\fBMyVector\fP const &coordinates) const"
 .br
+.RI "Vérifier si les coordonnées de position données se trouve dans la pièce\&. "
 .ti -1c
 .RI "bool \fBisIn\fP (sf::Vector2f const &coordinates) const"
 .br
+.RI "Vérifier si les coordonnées de position données se trouve dans la pièce\&. "
 .ti -1c
 .RI "const sf::IntRect & \fBgetIntRect\fP () const"
 .br
@@ -37,39 +48,83 @@ Dérivée par \fBLounge\fP, et \fBRoom\fP\&.
 .in -1c
 .SH "Description détaillée"
 .PP 
-Définition à la ligne \fB11\fP du fichier \fBHall\&.hpp\fP\&.
+Définition à la ligne \fB18\fP du fichier \fBHall\&.hpp\fP\&.
 .SH "Documentation des constructeurs et destructeur"
 .PP 
 .SS "Hall::Hall (sf::Vector2i topLeftPoint, int width, int height)"
 
 .PP
-Définition à la ligne \fB8\fP du fichier \fBHall\&.cpp\fP\&.
+Définition à la ligne \fB12\fP du fichier \fBHall\&.cpp\fP\&.
 .SS "Hall::~Hall ()\fC [virtual]\fP"
 
 .PP
-Définition à la ligne \fB24\fP du fichier \fBHall\&.cpp\fP\&.
+Définition à la ligne \fB29\fP du fichier \fBHall\&.cpp\fP\&.
 .SH "Documentation des fonctions membres"
 .PP 
-.SS "bool Hall::addMovableGameObject (\fBMovableGameObject\fP * movableGameObject)\fC [virtual]\fP"
-
-.PP
-Définition à la ligne \fB29\fP du fichier \fBHall\&.cpp\fP\&.
-.SS "const sf::IntRect & Hall::getIntRect () const"
-
-.PP
-Définition à la ligne \fB60\fP du fichier \fBHall\&.cpp\fP\&.
-.SS "bool Hall::isIn (\fBMyVector\fP const & coordinates) const"
+.SS "bool Hall::addItem (\fBItem\fP * item, \fBgame::inventory_items_types\fP type, sf::Vector2f const & coordinates)"
 
 .PP
 Définition à la ligne \fB35\fP du fichier \fBHall\&.cpp\fP\&.
+.SS "bool Hall::addMovableGameObject (\fBMovableGameObject\fP * movableGameObject)\fC [virtual]\fP"
+
+.PP
+Définition à la ligne \fB50\fP du fichier \fBHall\&.cpp\fP\&.
+.SS "const sf::IntRect & Hall::getIntRect () const"
+
+.PP
+Définition à la ligne \fB81\fP du fichier \fBHall\&.cpp\fP\&.
+.SS "bool Hall::isIn (\fBMyVector\fP const & coordinates) const"
+
+.PP
+Vérifier si les coordonnées de position données se trouve dans la pièce\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIcoordinates\fP 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+true 
+.PP
+false 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB56\fP du fichier \fBHall\&.cpp\fP\&.
 .SS "bool Hall::isIn (sf::Vector2f const & coordinates) const"
 
 .PP
-Définition à la ligne \fB47\fP du fichier \fBHall\&.cpp\fP\&.
+Vérifier si les coordonnées de position données se trouve dans la pièce\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIcoordinates\fP 
+.RE
+.PP
+\fBRenvoie\fP
+.RS 4
+true 
+.PP
+false 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB68\fP du fichier \fBHall\&.cpp\fP\&.
+.SS "bool Hall::moveItem (\fBItem\fP * item, \fBgame::inventory_items_types\fP type, \fBInventory\fP * to_inventory, sf::Vector2f const & coordinates)"
+
+.PP
+Définition à la ligne \fB40\fP du fichier \fBHall\&.cpp\fP\&.
+.SS "bool Hall::removeItem (\fBItem\fP * item, \fBgame::inventory_items_types\fP type)"
+
+.PP
+Définition à la ligne \fB45\fP du fichier \fBHall\&.cpp\fP\&.
 .SS "void Hall::render (sf::RenderTarget & target)\fC [virtual]\fP"
 
 .PP
-Définition à la ligne \fB65\fP du fichier \fBHall\&.cpp\fP\&.
+Définition à la ligne \fB86\fP du fichier \fBHall\&.cpp\fP\&.
 
 .SH "Auteur"
 .PP 

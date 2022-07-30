@@ -1,0 +1,4 @@
+<map id="Collision::getGameObject" name="Collision::getGameObject">
+<area shape="rect" id="node1" title="Get the Game Object object." alt="" coords="240,5,411,32"/>
+<area shape="rect" id="node2" href="$class_personage.html#ac0e67cb98d13d11d49395bcaa9a8f6dd" title="émit quand il entre en contacte avec un autre élément" alt="" coords="5,5,192,32"/>
+</map>

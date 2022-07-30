@@ -1,0 +1,11 @@
+<map id="Collision::test" name="Collision::test">
+<area shape="rect" id="node1" title=" " alt="" coords="240,199,341,225"/>
+<area shape="rect" id="node2" href="$class_bag.html#a0b6b0d7335ce631d81b785c63c959e1e" title="émit quand il entre en contacte avec un autre élément" alt="" coords="25,5,172,32"/>
+<area shape="rect" id="node3" href="$class_boxing_gloves.html#ad6d311622857cccec7aa418a2ebee739" title="émit quand il entre en contacte avec un autre élément" alt="" coords="13,57,185,98"/>
+<area shape="rect" id="node4" href="$class_money.html#af14a2e8f1f215da2cda5c833f25818e5" title="émit quand il entre en contacte avec un autre élément" alt="" coords="17,123,180,149"/>
+<area shape="rect" id="node5" href="$class_personage.html#ac0e67cb98d13d11d49395bcaa9a8f6dd" title="émit quand il entre en contacte avec un autre élément" alt="" coords="5,173,192,200"/>
+<area shape="rect" id="node6" href="$class_shield.html#af82912a68032d931aba13f28004568fd" title="émit quand il entre en contacte avec un autre élément" alt="" coords="19,224,179,251"/>
+<area shape="rect" id="node7" href="$class_sword.html#a6484ea989954570c9ece11d9843e72d1" title="émit quand il entre en contacte avec un autre élément" alt="" coords="19,275,179,301"/>
+<area shape="rect" id="node8" href="$class_teleport_key.html#a7de596ef7713529170b78a3808d58555" title="émit quand il entre en contacte avec un autre élément" alt="" coords="17,326,180,367"/>
+<area shape="rect" id="node9" href="$class_vial.html#ace9277c2d5c91183ed1357eff154cc1b" title="émit quand il entre en contacte avec un autre élément" alt="" coords="25,392,172,419"/>
+</map>

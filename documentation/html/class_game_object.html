@@ -99,24 +99,39 @@ $(document).ready(function(){initNavTree('class_game_object.html',''); initResiz
 <div class="dynheader">
 Graphe d'héritage de GameObject:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_game_object.png" usemap="#GameObject_map" alt=""/>
-  <map id="GameObject_map" name="GameObject_map">
-<area href="class_movable_game_object.html" alt="MovableGameObject" shape="rect" coords="0,56,149,80"/>
-<area href="class_not_movable_game_object.html" title="Represente les objets imobiles. NOTE - Certains de ces Object Peuvent être déplacée ou transporté par..." alt="NotMovableGameObject" shape="rect" coords="238,56,387,80"/>
-<area href="class_personage.html" alt="Personage" shape="rect" coords="0,112,149,136"/>
-<area href="class_bag.html" alt="Bag" shape="rect" coords="159,112,308,136"/>
-<area href="class_item.html" title="Représente éssentiellement les object que pourra manipuler les personnages." alt="Item" shape="rect" coords="318,112,467,136"/>
-<area href="class_druid.html" alt="Druid" shape="rect" coords="159,168,308,192"/>
-<area href="class_religious.html" alt="Religious" shape="rect" coords="159,224,308,248"/>
-<area href="class_soldier.html" alt="Soldier" shape="rect" coords="159,280,308,304"/>
-<area href="class_worker.html" alt="Worker" shape="rect" coords="159,336,308,360"/>
-<area href="class_armory.html" alt="Armory" shape="rect" coords="477,168,626,192"/>
-<area href="class_money.html" alt="Money" shape="rect" coords="477,224,626,248"/>
-<area href="class_teleport_key.html" alt="TeleportKey" shape="rect" coords="477,280,626,304"/>
-<area href="class_vial.html" alt="Vial" shape="rect" coords="477,336,626,360"/>
-  </map>
-</div></div>
+<div class="center"><img src="class_game_object__inherit__graph.png" border="0" usemap="#a_game_object_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_game_object_inherit__map" id="a_game_object_inherit__map">
+<area shape="rect" title=" " alt="" coords="572,5,796,757"/>
+<area shape="rect" href="class_movable_game_object.html" title=" " alt="" coords="455,805,673,1323"/>
+<area shape="rect" href="class_not_movable_game_object.html" title="Represente les objets imobiles. NOTE &#45; Certains de ces Object Peuvent être déplacée ou transporté par..." alt="" coords="785,871,997,1257"/>
+<area shape="rect" href="class_personage.html" title=" " alt="" coords="411,1371,629,2357"/>
+<area shape="rect" href="class_druid.html" title=" " alt="" coords="5,2420,192,2571"/>
+<area shape="rect" href="class_religious.html" title=" " alt="" coords="216,2420,403,2571"/>
+<area shape="rect" href="class_soldier.html" title=" " alt="" coords="427,2413,613,2578"/>
+<area shape="rect" href="class_worker.html" title=" " alt="" coords="637,2420,824,2571"/>
+<area shape="rect" href="class_bag.html" title=" " alt="" coords="782,1583,999,2145"/>
+<area shape="rect" href="class_item.html" title="Représente éssentiellement les object que pourra manipuler les personnages." alt="" coords="1068,1642,1289,2086"/>
+<area shape="rect" href="class_armory.html" title=" " alt="" coords="848,2435,1069,2556"/>
+<area shape="rect" href="class_money.html" title=" " alt="" coords="1093,2413,1264,2578"/>
+<area shape="rect" href="class_teleport_key.html" title=" " alt="" coords="1288,2413,1459,2578"/>
+<area shape="rect" href="class_vial.html" title=" " alt="" coords="1483,2405,1677,2585"/>
+<area shape="rect" href="class_boxing_gloves.html" title=" " alt="" coords="679,2633,849,2799"/>
+<area shape="rect" href="class_shield.html" title=" " alt="" coords="873,2633,1044,2799"/>
+<area shape="rect" href="class_sword.html" title=" " alt="" coords="1068,2633,1239,2799"/>
+</map>
+</div>
+<div class="dynheader">
+Graphe de collaboration de GameObject:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_object__coll__graph.png" border="0" usemap="#a_game_object_coll__map" alt="Collaboration graph"/></div>
+<map name="a_game_object_coll__map" id="a_game_object_coll__map">
+<area shape="rect" title=" " alt="" coords="203,571,427,1264"/>
+<area shape="rect" href="class_collider.html" title=" " alt="" coords="106,1327,299,1639"/>
+<area shape="rect" href="class_rigidbody.html" title=" " alt="" coords="331,1422,573,1543"/>
+<area shape="rect" href="class_position.html" title=" " alt="" coords="5,5,336,508"/>
+<area shape="rect" href="struct_my_vector.html" title=" " alt="" coords="361,115,557,398"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -138,6 +153,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:a1d7e99dbc0f116d7a20b0229180397db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a800f7c8a8df0bd57aca9f8de170d7906"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a800f7c8a8df0bd57aca9f8de170d7906">getGameObjectName</a> () const</td></tr>
 <tr class="separator:a800f7c8a8df0bd57aca9f8de170d7906"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad03571b58d55ca1de607cdf96e8207a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#aad03571b58d55ca1de607cdf96e8207a">setGameObjectName</a> (std::string name)</td></tr>
+<tr class="separator:aad03571b58d55ca1de607cdf96e8207a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a394309d681a8e5eb59656029a32881de"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a394309d681a8e5eb59656029a32881de">onCollisionEnter</a> (<a class="el" href="class_collision.html">Collision</a> const &amp;collision) const =0</td></tr>
 <tr class="memdesc:a394309d681a8e5eb59656029a32881de"><td class="mdescLeft">&#160;</td><td class="mdescRight">émit quand il entre en contacte avec un autre élément  <a href="class_game_object.html#a394309d681a8e5eb59656029a32881de">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a394309d681a8e5eb59656029a32881de"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,6 +174,8 @@ Fonctions membres publiques statiques</h2></td></tr>
 <tr class="memitem:a5f826d1945fc978181c713da7fd7ccb9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a5f826d1945fc978181c713da7fd7ccb9">SetTime</a> (float t)</td></tr>
 <tr class="memdesc:a5f826d1945fc978181c713da7fd7ccb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Time object.  <a href="class_game_object.html#a5f826d1945fc978181c713da7fd7ccb9">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5f826d1945fc978181c713da7fd7ccb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19b84dec4e9ab4daccad16a0ac7a68f7"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, <a class="el" href="class_game_object.html">GameObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a19b84dec4e9ab4daccad16a0ac7a68f7">getGameobjects</a> ()</td></tr>
+<tr class="separator:a19b84dec4e9ab4daccad16a0ac7a68f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Fonctions membres protégées</h2></td></tr>
@@ -193,6 +212,8 @@ Attributs protégés</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-attribs" name="pro-static-attribs"></a>
 Attributs protégés statiques</h2></td></tr>
+<tr class="memitem:ae37236cecf990bd88e5e012ca950bbb3"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, <a class="el" href="class_game_object.html">GameObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#ae37236cecf990bd88e5e012ca950bbb3">gameObjects</a></td></tr>
+<tr class="separator:ae37236cecf990bd88e5e012ca950bbb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c0e2d6826099f2d8a5680ac67f01eab"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a9c0e2d6826099f2d8a5680ac67f01eab">m_count</a> = 0</td></tr>
 <tr class="separator:a9c0e2d6826099f2d8a5680ac67f01eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d27884636bd454b9858f179dc99e132"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a8d27884636bd454b9858f179dc99e132">m_time</a> = 0.f</td></tr>
@@ -205,7 +226,7 @@ Amis</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock">
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00015">15</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00019">19</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="abcc6c98f8a45808760930dc5911da2e8" name="abcc6c98f8a45808760930dc5911da2e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abcc6c98f8a45808760930dc5911da2e8">&#9670;&nbsp;</a></span>GameObject()</h2>
@@ -240,7 +261,18 @@ Amis</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00036">36</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00045">45</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_object_abcc6c98f8a45808760930dc5911da2e8_cgraph.png" border="0" usemap="#aclass_game_object_abcc6c98f8a45808760930dc5911da2e8_cgraph" alt=""/></div>
+<map name="aclass_game_object_abcc6c98f8a45808760930dc5911da2e8_cgraph" id="aclass_game_object_abcc6c98f8a45808760930dc5911da2e8_cgraph">
+<area shape="rect" title="Construct a new Game Object object." alt="" coords="5,31,181,57"/>
+<area shape="rect" href="class_game_object.html#a9b565e5ec63bef28e5c860f724d2de7c" title="Pour initialiser les valeur par défaut du GameObject." alt="" coords="229,31,349,57"/>
+<area shape="rect" href="class_game_object.html#a7bc5db5459f66fad48f88c7d8e1863b6" title=" " alt="" coords="397,5,601,32"/>
+<area shape="rect" href="class_game_object.html#a4b73684e5c01134509c61fc7bab43484" title=" " alt="" coords="402,56,597,83"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -267,7 +299,18 @@ Amis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00050">50</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00059">59</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_object_ab82dfdb656f9051c0587e6593b2dda97_cgraph.png" border="0" usemap="#aclass_game_object_ab82dfdb656f9051c0587e6593b2dda97_cgraph" alt=""/></div>
+<map name="aclass_game_object_ab82dfdb656f9051c0587e6593b2dda97_cgraph" id="aclass_game_object_ab82dfdb656f9051c0587e6593b2dda97_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,189,83"/>
+<area shape="rect" href="class_game_object.html#a7bc5db5459f66fad48f88c7d8e1863b6" title=" " alt="" coords="249,5,453,32"/>
+<area shape="rect" href="class_game_object.html#a800f7c8a8df0bd57aca9f8de170d7906" title=" " alt="" coords="237,56,465,83"/>
+<area shape="rect" href="class_collider.html#a19074031377d5b600bf120adfdcdf1c9" title="Appelé à la destruction d&#39;un objet pour l&#39;enlever de la liste." alt="" coords="272,107,431,133"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -289,7 +332,17 @@ Amis</h2></td></tr>
 
 <p>Quand un collider détect une collision, il envoi l'information au rigidBody. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00110">110</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00131">131</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_object_a923eb7f3030e15e3e5cc2da08417b57c_cgraph.png" border="0" usemap="#aclass_game_object_a923eb7f3030e15e3e5cc2da08417b57c_cgraph" alt=""/></div>
+<map name="aclass_game_object_a923eb7f3030e15e3e5cc2da08417b57c_cgraph" id="aclass_game_object_a923eb7f3030e15e3e5cc2da08417b57c_cgraph">
+<area shape="rect" title="Quand un collider détect une collision, il envoi l&#39;information au rigidBody." alt="" coords="5,27,176,69"/>
+<area shape="rect" href="class_game_object.html#a383ef4aec2bddf99d2255b7625c2e88a" title="Vérifie si &#39;objet est un corps rigid. (On ne peut pas passer à travers un corps rigid)" alt="" coords="224,5,400,32"/>
+<area shape="rect" href="class_rigidbody.html#a9d9614b3c76e39118e39bdd9e02ed740" title=" " alt="" coords="225,57,399,98"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -308,7 +361,7 @@ Amis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00118">118</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00139">139</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
 
 </div>
 </div>
@@ -327,7 +380,21 @@ Amis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00071">71</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00087">87</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_object_a7bc5db5459f66fad48f88c7d8e1863b6_icgraph.png" border="0" usemap="#aclass_game_object_a7bc5db5459f66fad48f88c7d8e1863b6_icgraph" alt=""/></div>
+<map name="aclass_game_object_a7bc5db5459f66fad48f88c7d8e1863b6_icgraph" id="aclass_game_object_a7bc5db5459f66fad48f88c7d8e1863b6_icgraph">
+<area shape="rect" title=" " alt="" coords="461,107,665,133"/>
+<area shape="rect" href="class_collider.html#a5f7d036476d2bff521151c2031f20d46" title=" " alt="" coords="263,5,379,32"/>
+<area shape="rect" href="class_game_object.html#a9b565e5ec63bef28e5c860f724d2de7c" title="Pour initialiser les valeur par défaut du GameObject." alt="" coords="261,56,381,83"/>
+<area shape="rect" href="class_personage.html#a53b3b6c7865b2eb80de7c6edab217944" title=" " alt="" coords="244,107,399,133"/>
+<area shape="rect" href="class_game_object.html#ab82dfdb656f9051c0587e6593b2dda97" title=" " alt="" coords="229,157,413,184"/>
+<area shape="rect" href="class_personage.html#a1767f263a4d3681ce02ef14f9b2afae8" title=" " alt="" coords="240,208,403,235"/>
+<area shape="rect" href="class_game_object.html#abcc6c98f8a45808760930dc5911da2e8" title="Construct a new Game Object object." alt="" coords="5,56,181,83"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -346,7 +413,56 @@ Amis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00086">86</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00102">102</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_object_a800f7c8a8df0bd57aca9f8de170d7906_icgraph.png" border="0" usemap="#aclass_game_object_a800f7c8a8df0bd57aca9f8de170d7906_icgraph" alt=""/></div>
+<map name="aclass_game_object_a800f7c8a8df0bd57aca9f8de170d7906_icgraph" id="aclass_game_object_a800f7c8a8df0bd57aca9f8de170d7906_icgraph">
+<area shape="rect" title=" " alt="" coords="777,292,1005,319"/>
+<area shape="rect" href="class_player.html#a583849c1d33124f3409b990b7c888bac" title=" " alt="" coords="533,23,729,65"/>
+<area shape="rect" href="class_personage.html#ac0e67cb98d13d11d49395bcaa9a8f6dd" title="émit quand il entre en contacte avec un autre élément" alt="" coords="538,89,725,116"/>
+<area shape="rect" href="class_druid.html#a10b5e09cbe48821a6e698b4e1a22891e" title=" " alt="" coords="563,140,699,167"/>
+<area shape="rect" href="class_religious.html#a64ca2f182b11beb1aeb3a6c68104dacc" title=" " alt="" coords="552,191,711,217"/>
+<area shape="rect" href="class_soldier.html#ad55488b632b3e91eca9d20cfb06f52d7" title="Pour dessiner l&#39;élement dans la fenêtre." alt="" coords="558,241,705,268"/>
+<area shape="rect" href="class_worker.html#a0f2da631bc38894a4d69943b344ea913" title=" " alt="" coords="557,292,705,319"/>
+<area shape="rect" href="class_druid.html#af425674f8a34ad9db44444d1eb0d4d37" title=" " alt="" coords="562,343,701,369"/>
+<area shape="rect" href="class_religious.html#a31ed6ef50b6e4f5ed50b763e5c4ff11a" title=" " alt="" coords="550,393,713,420"/>
+<area shape="rect" href="class_soldier.html#aebd513f96b6f365ddc1d56ca1ea16a64" title=" " alt="" coords="557,444,706,471"/>
+<area shape="rect" href="class_worker.html#aada6d606903946c0fa1bf122a58722d3" title=" " alt="" coords="556,495,707,521"/>
+<area shape="rect" href="class_game_object.html#ab82dfdb656f9051c0587e6593b2dda97" title=" " alt="" coords="539,545,723,572"/>
+<area shape="rect" href="class_player.html#aa14422c8d3c3950584dcd307172741b7" title=" " alt="" coords="343,5,485,32"/>
+<area shape="rect" href="class_player.html#ad6867e0c7bc18e82a1da4be7bf156d97" title=" " alt="" coords="188,31,295,57"/>
+<area shape="rect" href="class_game_state.html#a775a7d0cf422aec17e5846852f3c997d" title=" " alt="" coords="5,31,140,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a19b84dec4e9ab4daccad16a0ac7a68f7" name="a19b84dec4e9ab4daccad16a0ac7a68f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19b84dec4e9ab4daccad16a0ac7a68f7">&#9670;&nbsp;</a></span>getGameobjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt; std::string, <a class="el" href="class_game_object.html">GameObject</a> * &gt; GameObject::getGameobjects </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00144">144</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
 
 </div>
 </div>
@@ -365,7 +481,7 @@ Amis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00081">81</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00097">97</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
 
 </div>
 </div>
@@ -384,7 +500,31 @@ Amis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00076">76</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00092">92</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_object_a5f5f8870bb5d7e1496c2e565f5dd8bbd_icgraph.png" border="0" usemap="#aclass_game_object_a5f5f8870bb5d7e1496c2e565f5dd8bbd_icgraph" alt=""/></div>
+<map name="aclass_game_object_a5f5f8870bb5d7e1496c2e565f5dd8bbd_icgraph" id="aclass_game_object_a5f5f8870bb5d7e1496c2e565f5dd8bbd_icgraph">
+<area shape="rect" title=" " alt="" coords="1256,259,1424,285"/>
+<area shape="rect" href="class_personage.html#a0cca40cc77abdb95354998264a4f7229" title=" " alt="" coords="1012,70,1208,111"/>
+<area shape="rect" href="class_personage.html#acecd31422b51e2d0755c6d2de94d9510" title=" " alt="" coords="578,157,701,184"/>
+<area shape="rect" href="class_enemy.html#a504eec8dff6dfa04a23293b0fc345f92" title=" " alt="" coords="1042,208,1178,235"/>
+<area shape="rect" href="class_player.html#a4f679a9d2fa60e76fe00d615dfe4d584" title=" " alt="" coords="354,309,486,336"/>
+<area shape="rect" href="class_player.html#a583849c1d33124f3409b990b7c888bac" title=" " alt="" coords="541,243,737,285"/>
+<area shape="rect" href="class_box_collider.html#a38200ed6f93b0f91bcb0f9f6b19954f9" title=" " alt="" coords="1015,360,1205,387"/>
+<area shape="rect" href="class_polygon_collider.html#a6db0242a202318ed2b1e8017fc06ac19" title=" " alt="" coords="1019,411,1201,453"/>
+<area shape="rect" href="class_personage.html#ac03bba7d28058936fad17e76b8418811" title=" " alt="" coords="797,5,952,32"/>
+<area shape="rect" href="class_personage.html#a2bc14851a9625f02a5fa04eed5d1af27" title=" " alt="" coords="801,56,948,83"/>
+<area shape="rect" href="class_personage.html#a3994eb488c9212770b697ff73c2d153b" title="Permet de mettre à jour la position actuelle. Cette position sera déterminé par l&#39;évenement reçu au p..." alt="" coords="785,107,964,133"/>
+<area shape="rect" href="class_personage.html#a53b3b6c7865b2eb80de7c6edab217944" title=" " alt="" coords="562,31,717,57"/>
+<area shape="rect" href="class_enemy.html#a77df54c61b0253b5761256023dee656e" title=" " alt="" coords="347,157,493,184"/>
+<area shape="rect" href="class_player.html#aa14422c8d3c3950584dcd307172741b7" title=" " alt="" coords="349,208,491,235"/>
+<area shape="rect" href="class_enemy.html#af405531fd6d410c2216bd9fbe21c83ea" title=" " alt="" coords="188,157,299,184"/>
+<area shape="rect" href="class_player.html#ad6867e0c7bc18e82a1da4be7bf156d97" title=" " alt="" coords="190,259,297,285"/>
+<area shape="rect" href="class_game_state.html#a775a7d0cf422aec17e5846852f3c997d" title=" " alt="" coords="5,284,140,311"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -403,7 +543,26 @@ Amis</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00097">97</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00118">118</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_object_a60bcdbbdaa9d1de7d265d404071d3c4d_icgraph.png" border="0" usemap="#aclass_game_object_a60bcdbbdaa9d1de7d265d404071d3c4d_icgraph" alt=""/></div>
+<map name="aclass_game_object_a60bcdbbdaa9d1de7d265d404071d3c4d_icgraph" id="aclass_game_object_a60bcdbbdaa9d1de7d265d404071d3c4d_icgraph">
+<area shape="rect" title=" " alt="" coords="904,93,1059,120"/>
+<area shape="rect" href="classgui_1_1_inventory.html#a4b5b31eebd9beeee352b8a8f84cd5bd5" title=" " alt="" coords="704,93,856,120"/>
+<area shape="rect" href="class_inventory.html#a6ba8f9f2aacaaebf7aeccf82d8987924" title=" " alt="" coords="553,93,656,120"/>
+<area shape="rect" href="class_bag.html#a894be6b336ee6521272eb9dac2f75be6" title=" " alt="" coords="401,43,499,69"/>
+<area shape="rect" href="class_hall.html#a817dc6744558557c847eb6d74d08cb81" title=" " alt="" coords="401,93,499,120"/>
+<area shape="rect" href="class_inventory.html#a2caea8bbe0a4d963530f669ff4221cc6" title=" " alt="" coords="395,144,505,171"/>
+<area shape="rect" href="class_personage.html#aa995d729f1d7ac21b9c9423556f7a17e" title=" " alt="" coords="208,5,347,32"/>
+<area shape="rect" href="class_personage.html#a9670b4adc4283e6741f13289baf84387" title=" " alt="" coords="211,56,343,83"/>
+<area shape="rect" href="class_personage.html#a53b3b6c7865b2eb80de7c6edab217944" title=" " alt="" coords="5,56,160,83"/>
+<area shape="rect" href="class_bag.html#a1564094e96027c1a0234fd4a8c84ee66" title=" " alt="" coords="223,119,331,145"/>
+<area shape="rect" href="class_hall.html#a32e746256200ea36db17b5d1e9ea50d5" title=" " alt="" coords="224,169,331,196"/>
+<area shape="rect" href="class_personage.html#a905c0a8340b7f13513b6166807a6e0c6" title=" " alt="" coords="9,119,156,145"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -430,7 +589,17 @@ Amis</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00008">8</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00015">15</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_object_a4b73684e5c01134509c61fc7bab43484_icgraph.png" border="0" usemap="#aclass_game_object_a4b73684e5c01134509c61fc7bab43484_icgraph" alt=""/></div>
+<map name="aclass_game_object_a4b73684e5c01134509c61fc7bab43484_icgraph" id="aclass_game_object_a4b73684e5c01134509c61fc7bab43484_icgraph">
+<area shape="rect" title=" " alt="" coords="397,5,592,32"/>
+<area shape="rect" href="class_game_object.html#a9b565e5ec63bef28e5c860f724d2de7c" title="Pour initialiser les valeur par défaut du GameObject." alt="" coords="229,5,349,32"/>
+<area shape="rect" href="class_game_object.html#abcc6c98f8a45808760930dc5911da2e8" title="Construct a new Game Object object." alt="" coords="5,5,181,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -459,7 +628,26 @@ Amis</h2></td></tr>
 
 <p>Pour initialiser les valeur par défaut du <a class="el" href="class_game_object.html">GameObject</a>. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00013">13</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00020">20</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_object_a9b565e5ec63bef28e5c860f724d2de7c_cgraph.png" border="0" usemap="#aclass_game_object_a9b565e5ec63bef28e5c860f724d2de7c_cgraph" alt=""/></div>
+<map name="aclass_game_object_a9b565e5ec63bef28e5c860f724d2de7c_cgraph" id="aclass_game_object_a9b565e5ec63bef28e5c860f724d2de7c_cgraph">
+<area shape="rect" title="Pour initialiser les valeur par défaut du GameObject." alt="" coords="5,31,125,57"/>
+<area shape="rect" href="class_game_object.html#a7bc5db5459f66fad48f88c7d8e1863b6" title=" " alt="" coords="173,5,377,32"/>
+<area shape="rect" href="class_game_object.html#a4b73684e5c01134509c61fc7bab43484" title=" " alt="" coords="178,56,373,83"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_object_a9b565e5ec63bef28e5c860f724d2de7c_icgraph.png" border="0" usemap="#aclass_game_object_a9b565e5ec63bef28e5c860f724d2de7c_icgraph" alt=""/></div>
+<map name="aclass_game_object_a9b565e5ec63bef28e5c860f724d2de7c_icgraph" id="aclass_game_object_a9b565e5ec63bef28e5c860f724d2de7c_icgraph">
+<area shape="rect" title="Pour initialiser les valeur par défaut du GameObject." alt="" coords="229,5,349,32"/>
+<area shape="rect" href="class_game_object.html#abcc6c98f8a45808760930dc5911da2e8" title="Construct a new Game Object object." alt="" coords="5,5,181,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -521,7 +709,16 @@ Amis</h2></td></tr>
 <dd>
 false </dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00105">105</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00126">126</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_object_a383ef4aec2bddf99d2255b7625c2e88a_icgraph.png" border="0" usemap="#aclass_game_object_a383ef4aec2bddf99d2255b7625c2e88a_icgraph" alt=""/></div>
+<map name="aclass_game_object_a383ef4aec2bddf99d2255b7625c2e88a_icgraph" id="aclass_game_object_a383ef4aec2bddf99d2255b7625c2e88a_icgraph">
+<area shape="rect" title="Vérifie si &#39;objet est un corps rigid. (On ne peut pas passer à travers un corps rigid)" alt="" coords="224,13,400,39"/>
+<area shape="rect" href="class_game_object.html#a923eb7f3030e15e3e5cc2da08417b57c" title="Quand un collider détect une collision, il envoi l&#39;information au rigidBody." alt="" coords="5,5,176,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -557,7 +754,45 @@ false </dd></dl>
   </dd>
 </dl>
 
-<p>Implémenté dans <a class="el" href="class_item.html#ab2a2e5e2b20b61602e8edf0e4e573599">Item</a>, <a class="el" href="class_movable_game_object.html#a65c649a0cf69aa86032cb3fc63e9da01">MovableGameObject</a>, <a class="el" href="class_not_movable_game_object.html#a4954c3c803930ca5faf48bab88fb19bd">NotMovableGameObject</a>, <a class="el" href="class_bag.html#a0b6b0d7335ce631d81b785c63c959e1e">Bag</a>, <a class="el" href="class_money.html#af14a2e8f1f215da2cda5c833f25818e5">Money</a>, <a class="el" href="class_personage.html#ac0e67cb98d13d11d49395bcaa9a8f6dd">Personage</a>, <a class="el" href="class_shield.html#af82912a68032d931aba13f28004568fd">Shield</a>, <a class="el" href="class_sword.html#a6484ea989954570c9ece11d9843e72d1">Sword</a>, et <a class="el" href="class_vial.html#ace9277c2d5c91183ed1357eff154cc1b">Vial</a>.</p>
+<p>Implémenté dans <a class="el" href="class_item.html#ab2a2e5e2b20b61602e8edf0e4e573599">Item</a>, <a class="el" href="class_movable_game_object.html#a65c649a0cf69aa86032cb3fc63e9da01">MovableGameObject</a>, <a class="el" href="class_not_movable_game_object.html#a4954c3c803930ca5faf48bab88fb19bd">NotMovableGameObject</a>, <a class="el" href="class_bag.html#a0b6b0d7335ce631d81b785c63c959e1e">Bag</a>, <a class="el" href="class_boxing_gloves.html#ad6d311622857cccec7aa418a2ebee739">BoxingGloves</a>, <a class="el" href="class_money.html#af14a2e8f1f215da2cda5c833f25818e5">Money</a>, <a class="el" href="class_personage.html#ac0e67cb98d13d11d49395bcaa9a8f6dd">Personage</a>, <a class="el" href="class_shield.html#af82912a68032d931aba13f28004568fd">Shield</a>, <a class="el" href="class_sword.html#a6484ea989954570c9ece11d9843e72d1">Sword</a>, <a class="el" href="class_teleport_key.html#a7de596ef7713529170b78a3808d58555">TeleportKey</a>, et <a class="el" href="class_vial.html#ace9277c2d5c91183ed1357eff154cc1b">Vial</a>.</p>
+
+</div>
+</div>
+<a id="aad03571b58d55ca1de607cdf96e8207a" name="aad03571b58d55ca1de607cdf96e8207a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad03571b58d55ca1de607cdf96e8207a">&#9670;&nbsp;</a></span>setGameObjectName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameObject::setGameObjectName </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00107">107</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_object_aad03571b58d55ca1de607cdf96e8207a_icgraph.png" border="0" usemap="#aclass_game_object_aad03571b58d55ca1de607cdf96e8207a_icgraph" alt=""/></div>
+<map name="aclass_game_object_aad03571b58d55ca1de607cdf96e8207a_icgraph" id="aclass_game_object_aad03571b58d55ca1de607cdf96e8207a_icgraph">
+<area shape="rect" title=" " alt="" coords="624,183,852,209"/>
+<area shape="rect" href="class_bag.html#ae0593c22c7dd8b32cab469af92fb200c" title=" " alt="" coords="444,5,520,32"/>
+<area shape="rect" href="class_boxing_gloves.html#ab05be7aa7c8b9b66c311f7fe56861b3c" title=" " alt="" coords="388,56,576,83"/>
+<area shape="rect" href="class_enemy.html#a85131c42a2bfbbaf25945390223b21d8" title=" " alt="" coords="426,107,538,133"/>
+<area shape="rect" href="class_personage.html#a26d96b1af8f4a482b60a56e18629e14b" title="Pour initialiser les valeur par défaut du GameObject." alt="" coords="219,196,329,223"/>
+<area shape="rect" href="class_player.html#adacf4eab6353e0d82a345d4dc9181e80" title=" " alt="" coords="430,208,534,235"/>
+<area shape="rect" href="class_shield.html#a8a6e827c94750d8c1a1d523cb1b105de" title=" " alt="" coords="431,259,533,285"/>
+<area shape="rect" href="class_sword.html#af33284e40825ec8ddccd01fa5833be36" title=" " alt="" coords="431,309,533,336"/>
+<area shape="rect" href="class_vial.html#a5eb64748ada3abcd0405007371b0fa6a" title=" " alt="" coords="445,360,519,387"/>
+<area shape="rect" href="class_personage.html#a53b3b6c7865b2eb80de7c6edab217944" title=" " alt="" coords="5,259,160,285"/>
+<area shape="rect" href="class_personage.html#a9670b4adc4283e6741f13289baf84387" title=" " alt="" coords="208,284,340,311"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -593,7 +828,17 @@ false </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00066">66</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00082">82</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_object_a5f826d1945fc978181c713da7fd7ccb9_icgraph.png" border="0" usemap="#aclass_game_object_a5f826d1945fc978181c713da7fd7ccb9_icgraph" alt=""/></div>
+<map name="aclass_game_object_a5f826d1945fc978181c713da7fd7ccb9_icgraph" id="aclass_game_object_a5f826d1945fc978181c713da7fd7ccb9_icgraph">
+<area shape="rect" title="Set the Time object." alt="" coords="423,5,573,32"/>
+<area shape="rect" href="class_game_master.html#a495d4518b25254927fd5b3c129ea1b5e" title=" " alt="" coords="176,5,375,32"/>
+<area shape="rect" href="class_game_master.html#ac24934f7f53ef8e48726e16190974320" title=" " alt="" coords="5,5,128,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -631,7 +876,17 @@ false </dd></dl>
 
 <p>Réimplémentée dans <a class="el" href="class_personage.html#a01b776643850ebcc55ba806e2fa8085e">Personage</a>, <a class="el" href="class_movable_game_object.html#a642733a3472829a5526280e44bfd27e5">MovableGameObject</a>, et <a class="el" href="class_not_movable_game_object.html#a203fd11b9476996adcd1345b9d8a8d61">NotMovableGameObject</a>.</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00058">58</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8cpp_source.html#l00074">74</a> du fichier <a class="el" href="_game_object_8cpp_source.html">GameObject.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_object_a3f7a674006e1cce96ccb6c60f0ff9aaf_icgraph.png" border="0" usemap="#aclass_game_object_a3f7a674006e1cce96ccb6c60f0ff9aaf_icgraph" alt=""/></div>
+<map name="aclass_game_object_a3f7a674006e1cce96ccb6c60f0ff9aaf_icgraph" id="aclass_game_object_a3f7a674006e1cce96ccb6c60f0ff9aaf_icgraph">
+<area shape="rect" title="Pour dessiner l&#39;élement dans la fenêtre." alt="" coords="233,35,367,61"/>
+<area shape="rect" href="class_movable_game_object.html#a642733a3472829a5526280e44bfd27e5" title="Pour dessiner l&#39;élement dans la fenêtre." alt="" coords="5,5,185,32"/>
+<area shape="rect" href="class_not_movable_game_object.html#a203fd11b9476996adcd1345b9d8a8d61" title="Pour dessiner l&#39;élement dans la fenêtre." alt="" coords="14,57,177,98"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -658,7 +913,7 @@ false </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Implémenté dans <a class="el" href="class_bag.html#a790dadd6a2d45469cccd653ff5dd2317">Bag</a>, <a class="el" href="class_money.html#a9914e11ab0b3630f54b3711b3ef8cad8">Money</a>, <a class="el" href="class_personage.html#a492d4164bc6c439d43cc44fefcbd6468">Personage</a>, <a class="el" href="class_shield.html#a22cfa66fa754653dd24c00bd13678b18">Shield</a>, <a class="el" href="class_sword.html#a4b650c68af5552a2f0d995b5fe3af3fc">Sword</a>, <a class="el" href="class_vial.html#ad00a07bd850ba8cec2ee0cb2164fe820">Vial</a>, <a class="el" href="class_item.html#a5e7b6054dbde86c485f1be747cb9926c">Item</a>, <a class="el" href="class_movable_game_object.html#a07e44e5e7fd45ea5eb50fb86983473f1">MovableGameObject</a>, et <a class="el" href="class_not_movable_game_object.html#aafd50ee8f5e31bd1f4dfb4bd95053267">NotMovableGameObject</a>.</p>
+<p>Implémenté dans <a class="el" href="class_bag.html#a790dadd6a2d45469cccd653ff5dd2317">Bag</a>, <a class="el" href="class_boxing_gloves.html#a9b7927f53702f143eba8655fe94b7929">BoxingGloves</a>, <a class="el" href="class_money.html#a9914e11ab0b3630f54b3711b3ef8cad8">Money</a>, <a class="el" href="class_personage.html#a492d4164bc6c439d43cc44fefcbd6468">Personage</a>, <a class="el" href="class_shield.html#a22cfa66fa754653dd24c00bd13678b18">Shield</a>, <a class="el" href="class_sword.html#a4b650c68af5552a2f0d995b5fe3af3fc">Sword</a>, <a class="el" href="class_teleport_key.html#abdf3be75d26b434488d63acffb942e9d">TeleportKey</a>, <a class="el" href="class_vial.html#ad00a07bd850ba8cec2ee0cb2164fe820">Vial</a>, <a class="el" href="class_item.html#a5e7b6054dbde86c485f1be747cb9926c">Item</a>, <a class="el" href="class_movable_game_object.html#a07e44e5e7fd45ea5eb50fb86983473f1">MovableGameObject</a>, et <a class="el" href="class_not_movable_game_object.html#aafd50ee8f5e31bd1f4dfb4bd95053267">NotMovableGameObject</a>.</p>
 
 </div>
 </div>
@@ -683,11 +938,39 @@ false </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00115">115</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00124">124</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentation des données membres</h2>
+<a id="ae37236cecf990bd88e5e012ca950bbb3" name="ae37236cecf990bd88e5e012ca950bbb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae37236cecf990bd88e5e012ca950bbb3">&#9670;&nbsp;</a></span>gameObjects</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt; std::string, <a class="el" href="class_game_object.html">GameObject</a> * &gt; GameObject::gameObjects</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Valeur initiale :</b><div class="fragment"><div class="line">= [] {</div>
+<div class="line">    std::map&lt;std::string, GameObject*&gt; ret;</div>
+<div class="line">    <span class="keywordflow">return</span> ret;</div>
+<div class="line">}()</div>
+</div><!-- fragment -->
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00096">96</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
+
+</div>
+</div>
 <a id="ab9f3598767553b274e98b2df36122bbd" name="ab9f3598767553b274e98b2df36122bbd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab9f3598767553b274e98b2df36122bbd">&#9670;&nbsp;</a></span>m_body</h2>
 
@@ -708,7 +991,7 @@ false </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00106">106</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00115">115</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
 
 </div>
 </div>
@@ -735,7 +1018,7 @@ false </dd></dl>
 <p>Permet de mettre à jour la position actuelle. </p>
 <p >REVIEW </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00126">126</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00135">135</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
 
 </div>
 </div>
@@ -759,7 +1042,7 @@ false </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00100">100</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00109">109</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
 
 </div>
 </div>
@@ -783,7 +1066,7 @@ false </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00098">98</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00107">107</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
 
 </div>
 </div>
@@ -807,7 +1090,7 @@ false </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00096">96</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00105">105</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
 
 </div>
 </div>
@@ -831,7 +1114,7 @@ false </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00108">108</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00117">117</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
 
 </div>
 </div>
@@ -855,7 +1138,7 @@ false </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00127">127</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00136">136</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
 
 </div>
 </div>
@@ -879,7 +1162,7 @@ false </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00110">110</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00119">119</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
 
 </div>
 </div>
@@ -903,7 +1186,7 @@ false </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00104">104</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00113">113</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
 
 </div>
 </div>
@@ -927,7 +1210,7 @@ false </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00113">113</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_game_object_8hpp_source.html#l00122">122</a> du fichier <a class="el" href="_game_object_8hpp_source.html">GameObject.hpp</a>.</p>
 
 </div>
 </div>

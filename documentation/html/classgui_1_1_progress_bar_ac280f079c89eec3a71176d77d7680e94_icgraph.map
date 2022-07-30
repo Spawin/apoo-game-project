@@ -1,0 +1,9 @@
+<map id="gui::ProgressBar::update" name="gui::ProgressBar::update">
+<area shape="rect" id="node1" title=" " alt="" coords="749,31,916,57"/>
+<area shape="rect" id="node2" href="$class_personage.html#ae81af6eab1894c26eb89fead2d82ed0d" title=" " alt="" coords="525,5,701,32"/>
+<area shape="rect" id="node7" href="$class_personage.html#a2b99762efecc865705da453c73ddf45d" title=" " alt="" coords="529,56,698,83"/>
+<area shape="rect" id="node3" href="$class_personage.html#a492d4164bc6c439d43cc44fefcbd6468" title=" " alt="" coords="347,31,477,57"/>
+<area shape="rect" id="node4" href="$class_enemy.html#af405531fd6d410c2216bd9fbe21c83ea" title=" " alt="" coords="188,5,299,32"/>
+<area shape="rect" id="node5" href="$class_player.html#ad6867e0c7bc18e82a1da4be7bf156d97" title=" " alt="" coords="190,56,297,83"/>
+<area shape="rect" id="node6" href="$class_game_state.html#a775a7d0cf422aec17e5846852f3c997d" title=" " alt="" coords="5,56,140,83"/>
+</map>

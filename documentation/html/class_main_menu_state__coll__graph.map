@@ -1,0 +1,6 @@
+<map id="MainMenuState" name="MainMenuState">
+<area shape="rect" id="node1" title=" " alt="" coords="5,1101,216,1384"/>
+<area shape="rect" id="node2" href="$class_state.html" title=" " alt="" coords="5,520,216,1052"/>
+<area shape="rect" id="node3" href="$struct_state_data.html" title=" " alt="" coords="37,307,185,457"/>
+<area shape="rect" id="node4" href="$class_graphics_settings.html" title=" " alt="" coords="11,5,210,244"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Soldier::simpleAttack" name="Soldier::simpleAttack">
+<area shape="rect" id="node1" title="Pour dessiner l&#39;élement dans la fenêtre." alt="" coords="5,5,152,32"/>
+<area shape="rect" id="node2" href="$class_game_object.html#a800f7c8a8df0bd57aca9f8de170d7906" title=" " alt="" coords="200,5,428,32"/>
+</map>

@@ -1,0 +1,84 @@
+.TH "EnemyManager" 3 "Samedi 30 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EnemyManager
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <EnemyManager\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBEnemyManager\fP (std::vector< \fBHall\fP * > &halls)"
+.br
+.ti -1c
+.RI "\fB~EnemyManager\fP ()"
+.br
+.ti -1c
+.RI "void \fBcreateEnemy\fP ()"
+.br
+.ti -1c
+.RI "void \fBremoveEnemy\fP (const int index)"
+.br
+.ti -1c
+.RI "void \fBupdateEnemiesState\fP (sf::Vector2f const &playerCoordinates)"
+.br
+.RI "Pour rendre actif les énemis qui se trouve dans la même sale que le joueur\&. "
+.ti -1c
+.RI "void \fBupdate\fP (const float &deltatime)"
+.br
+.ti -1c
+.RI "void \fBrender\fP (sf::RenderTarget &target)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB21\fP du fichier \fBEnemyManager\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "EnemyManager::EnemyManager (std::vector< \fBHall\fP * > & halls)"
+
+.PP
+Définition à la ligne \fB18\fP du fichier \fBEnemyManager\&.cpp\fP\&.
+.SS "EnemyManager::~EnemyManager ()"
+
+.PP
+Définition à la ligne \fB23\fP du fichier \fBEnemyManager\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "void EnemyManager::createEnemy ()"
+
+.PP
+Définition à la ligne \fB32\fP du fichier \fBEnemyManager\&.cpp\fP\&.
+.SS "void EnemyManager::removeEnemy (const int index)"
+
+.PP
+Définition à la ligne \fB45\fP du fichier \fBEnemyManager\&.cpp\fP\&.
+.SS "void EnemyManager::render (sf::RenderTarget & target)"
+
+.PP
+Définition à la ligne \fB79\fP du fichier \fBEnemyManager\&.cpp\fP\&.
+.SS "void EnemyManager::update (const float & deltatime)"
+
+.PP
+Définition à la ligne \fB68\fP du fichier \fBEnemyManager\&.cpp\fP\&.
+.SS "void EnemyManager::updateEnemiesState (sf::Vector2f const & playerCoordinates)"
+
+.PP
+Pour rendre actif les énemis qui se trouve dans la même sale que le joueur\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIplayerCoordinates\fP 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB60\fP du fichier \fBEnemyManager\&.cpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

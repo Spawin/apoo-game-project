@@ -1,4 +1,4 @@
-.TH "Personage" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.TH "Personage" 3 "Samedi 30 Juillet 2022" "Jeu POA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -25,10 +25,31 @@ Dérivée par \fBDruid\fP, \fBReligious\fP, \fBSoldier\fP, et \fBWorker\fP\&.
 .RI "virtual \fB~Personage\fP ()"
 .br
 .ti -1c
+.RI "bool \fBaddItem\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type, sf::Vector2f const &coordinates)"
+.br
+.ti -1c
+.RI "bool \fBmoveItem\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type, \fBInventory\fP *to_inventory, sf::Vector2f const &coordinates)"
+.br
+.ti -1c
+.RI "bool \fBremoveItem\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type)"
+.br
+.ti -1c
+.RI "bool \fBhaveThisItem\fP (\fBgame::ItemsCategories\fP const &categorie) const"
+.br
+.ti -1c
+.RI "\fBgame::inventory_items_types\fP const & \fBgetInventoryItemType\fP (\fBItem\fP const *item) const"
+.br
+.ti -1c
+.RI "\fBItem\fP const * \fBgetFirstItemMatch\fP (\fBgame::ItemsCategories\fP const &categorie) const"
+.br
+.ti -1c
+.RI "\fBItem\fP * \fBgetFirstItemMatchNonConst\fP (\fBgame::ItemsCategories\fP const &categorie)"
+.br
+.ti -1c
 .RI "const int & \fBgetHealthLevel\fP () const"
 .br
 .ti -1c
-.RI "const int & \fBgetSpecialityLevel\fP () const"
+.RI "const int & \fBgetExperienceLevel\fP () const"
 .br
 .ti -1c
 .RI "bool \fBisDied\fP () const"
@@ -42,9 +63,6 @@ Dérivée par \fBDruid\fP, \fBReligious\fP, \fBSoldier\fP, et \fBWorker\fP\&.
 .br
 .ti -1c
 .RI "void \fBupdateMousePosWindow\fP (sf::Vector2i mousePosWindow)"
-.br
-.ti -1c
-.RI "void \fBsetGameObjectName\fP (std::string name)"
 .br
 .ti -1c
 .RI "void \fBonCollisionEnter\fP (\fBCollision\fP const &collision) const override"
@@ -63,21 +81,22 @@ Dérivée par \fBDruid\fP, \fBReligious\fP, \fBSoldier\fP, et \fBWorker\fP\&.
 .RI "virtual void \fBspecialAttack\fP (\fBPersonage\fP &target)=0"
 .br
 .ti -1c
-.RI "virtual unsigned \fBreceiveHealthDamage\fP (int value)=0"
+.RI "virtual \fBgame::ItemActionResult\fP \fBreceiveItemAction\fP (int value, \fBgame::ItemsCategories\fP categorie)"
 .br
-.RI "pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
 .ti -1c
-.RI "virtual unsigned \fBreceiveExpDamage\fP (int value)=0"
+.RI "\fBgame::AnimationSide\fP const & \fBgetLastAnimationSide\fP ()"
 .br
-.RI "pour recevoir les dégats d'exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
+.RI "Get the Last \fBAnimation\fP Side\&. "
 .ti -1c
-.RI "virtual unsigned \fBreceiveHealthCare\fP (int value)=0"
+.RI "void \fBsetLastAnimationSide\fP (\fBgame::AnimationSide\fP side)"
 .br
-.RI "pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
+.in -1c
+.SS "Fonctions membres publiques statiques"
+
+.in +1c
 .ti -1c
-.RI "virtual unsigned \fBreceiveExpCare\fP (int value)=0"
+.RI "static PersonageMap \fBgetPersonages\fP ()"
 .br
-.RI "pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
 .in -1c
 .SS "Fonctions membres protégées"
 
@@ -103,9 +122,52 @@ Dérivée par \fBDruid\fP, \fBReligious\fP, \fBSoldier\fP, et \fBWorker\fP\&.
 .RI "sf::Vector2f \fBcalculateProgressBarsPosition\fP ()"
 .br
 .ti -1c
+.RI "void \fBincreaseHealth\fP (int value)"
+.br
+.RI "Augmenter la santé "
+.ti -1c
+.RI "void \fBincreaseExp\fP (int value)"
+.br
+.RI "Augmenter l'expérience\&. "
+.ti -1c
+.RI "void \fBdecreaseHealth\fP (int value)"
+.br
+.RI "Diminuer la santé "
+.ti -1c
+.RI "void \fBdecreaseExp\fP (int value)"
+.br
+.RI "Diminuer l'expériance\&. "
+.ti -1c
+.RI "bool \fBisLastAnimationSideRight\fP ()"
+.br
+.ti -1c
+.RI "void \fBplayCorrectSideHurtAnimation\fP ()"
+.br
+.RI "Pour l'animation HURT en tenant compte du coté vers lequel est dirigé le personage\&. "
+.ti -1c
 .RI "virtual void \fBupdatePosition\fP (float posX, float posY) override"
 .br
 .RI "Permet de mettre à jour la position actuelle\&. Cette position sera déterminé par l'évenement reçu au préalable\&. Aussi il s'agit dans ce cas d'une accélération uniforme\&. "
+.ti -1c
+.RI "virtual unsigned \fBreceiveHealthDamage\fP (int value)"
+.br
+.RI "pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
+.ti -1c
+.RI "virtual unsigned \fBreceiveExpDamage\fP (int value)"
+.br
+.RI "pour recevoir les dégats d'exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
+.ti -1c
+.RI "virtual unsigned \fBreceiveHealthCare\fP (int value)"
+.br
+.RI "pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
+.ti -1c
+.RI "virtual unsigned \fBreceiveExpCare\fP (int value)"
+.br
+.RI "pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
+.ti -1c
+.RI "virtual void \fBreceiveShieldboost\fP (int value)"
+.br
+.RI "Pour activer la protection du bouclier\&. Il faut noter que son activation est temporaire et protège la santé en diminuant l'ataque\&. "
 .ti -1c
 .RI "void \fBupdateEXPBar\fP ()"
 .br
@@ -123,14 +185,23 @@ Dérivée par \fBDruid\fP, \fBReligious\fP, \fBSoldier\fP, et \fBWorker\fP\&.
 
 .in +1c
 .ti -1c
+.RI "\fBgame::AnimationSide\fP \fBlastAnimationSide\fP"
+.br
+.RI "Permet de controler de quelque coté diriger une animation (gauche ou droite) "
+.ti -1c
 .RI "\fBBag\fP * \fBbag\fP"
 .br
 .ti -1c
 .RI "int \fBm_healthLevel\fP { 100 }"
 .br
 .ti -1c
-.RI "int \fBm_specialityLevel\fP { 50 }"
+.RI "int \fBm_experienceLevel\fP { 50 }"
 .br
+.RI "La quantité de ça spécialité\&. NOTE -\&. "
+.ti -1c
+.RI "int \fBm_shieldBoost\fP { 0 }"
+.br
+.RI "représente la valeur de protection offerte par le bouclié\&. NOTE - Meme si la valeur n'est pas nulle, tant que le bouclié n'est pas activé, cette dernière n'est pas concidérée "
 .ti -1c
 .RI "std::string \fBm_specialtyName\fP"
 .br
@@ -144,6 +215,9 @@ Dérivée par \fBDruid\fP, \fBReligious\fP, \fBSoldier\fP, et \fBWorker\fP\&.
 .RI "float \fBm_probabilitySuccessAttack\fP { \&.5f }"
 .br
 .ti -1c
+.RI "float \fBm_probabilityDodge\fP { \&.1 }"
+.br
+.ti -1c
 .RI "int \fBm_attackVariation\fP { 5 }"
 .br
 .ti -1c
@@ -155,6 +229,7 @@ Dérivée par \fBDruid\fP, \fBReligious\fP, \fBSoldier\fP, et \fBWorker\fP\&.
 .ti -1c
 .RI "sf::Sprite \fBm_suit\fP"
 .br
+.RI "Représente la tenue du personage\&. REVIEW\&. "
 .ti -1c
 .RI "const bool \fBm_isPlayer\fP"
 .br
@@ -168,42 +243,138 @@ Dérivée par \fBDruid\fP, \fBReligious\fP, \fBSoldier\fP, et \fBWorker\fP\&.
 .RI "\fBgui::ProgressBar\fP * \fBhpBar\fP"
 .br
 .in -1c
+.SS "Attributs protégés statiques"
+
+.in +1c
+.ti -1c
+.RI "static PersonageMap \fBpersonages\fP"
+.br
+.in -1c
 .SS "Membres hérités additionnels"
 .SH "Description détaillée"
 .PP 
-Définition à la ligne \fB13\fP du fichier \fBPersonage\&.hpp\fP\&.
+Définition à la ligne \fB26\fP du fichier \fBPersonage\&.hpp\fP\&.
 .SH "Documentation des constructeurs et destructeur"
 .PP 
 .SS "Personage::Personage (bool isPlayer = \fCfalse\fP)\fC [explicit]\fP"
 
 .PP
-Définition à la ligne \fB123\fP du fichier \fBPersonage\&.cpp\fP\&.
+Définition à la ligne \fB146\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SS "Personage::Personage (\fBPersonage\fP const & p)\fC [explicit]\fP, \fC [delete]\fP"
 
 .SS "Personage::~Personage ()\fC [virtual]\fP"
 
 .PP
-Définition à la ligne \fB148\fP du fichier \fBPersonage\&.cpp\fP\&.
+Définition à la ligne \fB173\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SH "Documentation des fonctions membres"
 .PP 
+.SS "bool Personage::addItem (\fBItem\fP * item, \fBgame::inventory_items_types\fP type, sf::Vector2f const & coordinates)"
+
+.PP
+Définition à la ligne \fB189\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SS "sf::Vector2f Personage::calculateProgressBarsPosition ()\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB158\fP du fichier \fBPersonage\&.cpp\fP\&.
-.SS "const int & Personage::getHealthLevel () const\fC [inline]\fP"
+Définition à la ligne \fB234\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "void Personage::decreaseExp (int value)\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB31\fP du fichier \fBPersonage\&.hpp\fP\&.
-.SS "const int & Personage::getSpecialityLevel () const\fC [inline]\fP"
+Diminuer l'expériance\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIvalue\fP 
+.RE
+.PP
 
 .PP
-Définition à la ligne \fB36\fP du fichier \fBPersonage\&.hpp\fP\&.
+Définition à la ligne \fB287\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "void Personage::decreaseHealth (int value)\fC [protected]\fP"
+
+.PP
+Diminuer la santé 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIvalue\fP 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB260\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "const int & Personage::getExperienceLevel () const"
+
+.PP
+Définition à la ligne \fB229\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "\fBItem\fP const  * Personage::getFirstItemMatch (\fBgame::ItemsCategories\fP const & categorie) const"
+
+.PP
+Définition à la ligne \fB214\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "\fBItem\fP * Personage::getFirstItemMatchNonConst (\fBgame::ItemsCategories\fP const & categorie)"
+
+.PP
+Définition à la ligne \fB219\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "const int & Personage::getHealthLevel () const"
+
+.PP
+Définition à la ligne \fB224\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "\fBgame::inventory_items_types\fP const  & Personage::getInventoryItemType (\fBItem\fP const * item) const"
+
+.PP
+Définition à la ligne \fB209\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "\fBgame::AnimationSide\fP const  & Personage::getLastAnimationSide ()"
+
+.PP
+Get the Last \fBAnimation\fP Side\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+\fBgame::AnimationSide\fP 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB392\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "Personage::PersonageMap Personage::getPersonages ()\fC [static]\fP"
+
+.PP
+Définition à la ligne \fB402\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "bool Personage::haveThisItem (\fBgame::ItemsCategories\fP const & categorie) const"
+
+.PP
+Définition à la ligne \fB204\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "void Personage::increaseExp (int value)\fC [protected]\fP"
+
+.PP
+Augmenter l'expérience\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIvalue\fP 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB250\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "void Personage::increaseHealth (int value)\fC [protected]\fP"
+
+.PP
+Augmenter la santé 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIvalue\fP 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB240\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SS "void Personage::init ()\fC [protected]\fP"
 
 .PP
 Pour initialiser les valeur par défaut du \fBGameObject\fP\&. 
 .PP
-Définition à la ligne \fB18\fP du fichier \fBPersonage\&.cpp\fP\&.
+Définition à la ligne \fB36\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SS "void Personage::initAnimations ()\fC [override]\fP, \fC [protected]\fP, \fC [virtual]\fP"
 
 .PP
@@ -211,29 +382,37 @@ Pour ajouter les animation pour un personnage\&.
 .PP
 Implémente \fBMovableGameObject\fP\&.
 .PP
-Définition à la ligne \fB68\fP du fichier \fBPersonage\&.cpp\fP\&.
+Définition à la ligne \fB88\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SS "void Personage::initBag ()\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB102\fP du fichier \fBPersonage\&.cpp\fP\&.
+Définition à la ligne \fB122\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SS "void Personage::initEXPBar ()\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB90\fP du fichier \fBPersonage\&.cpp\fP\&.
+Définition à la ligne \fB110\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SS "void Personage::initHPBar ()\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB96\fP du fichier \fBPersonage\&.cpp\fP\&.
+Définition à la ligne \fB116\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SS "bool Personage::isDied () const"
 
 .PP
-Définition à la ligne \fB163\fP du fichier \fBPersonage\&.cpp\fP\&.
+Définition à la ligne \fB314\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "bool Personage::isLastAnimationSideRight ()\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB297\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SS "void Personage::move (\fBMyVector\fP & speed)\fC [override]\fP, \fC [virtual]\fP"
 
 .PP
 Implémente \fBMovableGameObject\fP\&.
 .PP
-Définition à la ligne \fB230\fP du fichier \fBPersonage\&.cpp\fP\&.
+Définition à la ligne \fB382\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "bool Personage::moveItem (\fBItem\fP * item, \fBgame::inventory_items_types\fP type, \fBInventory\fP * to_inventory, sf::Vector2f const & coordinates)"
+
+.PP
+Définition à la ligne \fB194\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SS "void Personage::onCollisionEnter (\fBCollision\fP const & collision) const\fC [override]\fP, \fC [virtual]\fP"
 
 .PP
@@ -248,8 +427,14 @@ Définition à la ligne \fB230\fP du fichier \fBPersonage\&.cpp\fP\&.
 .PP
 Implémente \fBMovableGameObject\fP\&.
 .PP
-Définition à la ligne \fB196\fP du fichier \fBPersonage\&.cpp\fP\&.
-.SS "virtual unsigned Personage::receiveExpCare (int value)\fC [pure virtual]\fP"
+Définition à la ligne \fB347\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "void Personage::playCorrectSideHurtAnimation ()\fC [protected]\fP"
+
+.PP
+Pour l'animation HURT en tenant compte du coté vers lequel est dirigé le personage\&. 
+.PP
+Définition à la ligne \fB302\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "unsigned Personage::receiveExpCare (int value)\fC [protected]\fP, \fC [virtual]\fP"
 
 .PP
 pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) 
@@ -266,8 +451,8 @@ unsigned
 .PP
 
 .PP
-Implémenté dans \fBDruid\fP, \fBReligious\fP, \fBSoldier\fP, et \fBWorker\fP\&.
-.SS "virtual unsigned Personage::receiveExpDamage (int value)\fC [pure virtual]\fP"
+Définition à la ligne \fB481\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "unsigned Personage::receiveExpDamage (int value)\fC [protected]\fP, \fC [virtual]\fP"
 
 .PP
 pour recevoir les dégats d'exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) 
@@ -284,8 +469,8 @@ unsigned
 .PP
 
 .PP
-Implémenté dans \fBDruid\fP, \fBReligious\fP, \fBSoldier\fP, et \fBWorker\fP\&.
-.SS "virtual unsigned Personage::receiveHealthCare (int value)\fC [pure virtual]\fP"
+Définition à la ligne \fB467\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "unsigned Personage::receiveHealthCare (int value)\fC [protected]\fP, \fC [virtual]\fP"
 
 .PP
 pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) 
@@ -302,8 +487,8 @@ unsigned
 .PP
 
 .PP
-Implémenté dans \fBDruid\fP, \fBReligious\fP, \fBSoldier\fP, et \fBWorker\fP\&.
-.SS "virtual unsigned Personage::receiveHealthDamage (int value)\fC [pure virtual]\fP"
+Définition à la ligne \fB474\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "unsigned Personage::receiveHealthDamage (int value)\fC [protected]\fP, \fC [virtual]\fP"
 
 .PP
 pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) 
@@ -320,23 +505,44 @@ unsigned
 .PP
 
 .PP
-Implémenté dans \fBDruid\fP, \fBReligious\fP, \fBSoldier\fP, et \fBWorker\fP\&.
+Définition à la ligne \fB460\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "\fBgame::ItemActionResult\fP Personage::receiveItemAction (int value, \fBgame::ItemsCategories\fP categorie)\fC [virtual]\fP"
+
+.PP
+Définition à la ligne \fB408\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "void Personage::receiveShieldboost (int value)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Pour activer la protection du bouclier\&. Il faut noter que son activation est temporaire et protège la santé en diminuant l'ataque\&. 
+.PP
+\fBParamètres\fP
+.RS 4
+\fIvalue\fP 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB488\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "bool Personage::removeItem (\fBItem\fP * item, \fBgame::inventory_items_types\fP type)"
+
+.PP
+Définition à la ligne \fB199\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SS "void Personage::renderBagInventory (sf::RenderTarget & target)"
 
 .PP
-Définition à la ligne \fB235\fP du fichier \fBPersonage\&.cpp\fP\&.
+Définition à la ligne \fB387\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SS "void Personage::renderEXPBar (sf::RenderTarget & target)\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB250\fP du fichier \fBPersonage\&.cpp\fP\&.
+Définition à la ligne \fB505\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SS "void Personage::renderHPBar (sf::RenderTarget & target)\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB255\fP du fichier \fBPersonage\&.cpp\fP\&.
-.SS "void Personage::setGameObjectName (std::string name)"
+Définition à la ligne \fB510\fP du fichier \fBPersonage\&.cpp\fP\&.
+.SS "void Personage::setLastAnimationSide (\fBgame::AnimationSide\fP side)"
 
 .PP
-Définition à la ligne \fB191\fP du fichier \fBPersonage\&.cpp\fP\&.
+Définition à la ligne \fB397\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SS "void Personage::show (sf::RenderTarget & target)\fC [override]\fP, \fC [virtual]\fP"
 
 .PP
@@ -351,7 +557,7 @@ Pour dessiner l'élement dans la fenêtre\&.
 .PP
 Réimplémentée à partir de \fBMovableGameObject\fP\&.
 .PP
-Définition à la ligne \fB168\fP du fichier \fBPersonage\&.cpp\fP\&.
+Définition à la ligne \fB319\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SS "virtual void Personage::simpleAttack (\fBPersonage\fP & target)\fC [pure virtual]\fP"
 
 .PP
@@ -365,19 +571,19 @@ Implémenté dans \fBDruid\fP, \fBReligious\fP, \fBSoldier\fP, et \fBWorker\fP\&
 .PP
 Implémente \fBMovableGameObject\fP\&.
 .PP
-Définition à la ligne \fB178\fP du fichier \fBPersonage\&.cpp\fP\&.
+Définition à la ligne \fB329\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SS "void Personage::updateEXPBar ()\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB240\fP du fichier \fBPersonage\&.cpp\fP\&.
+Définition à la ligne \fB495\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SS "void Personage::updateHPBar ()\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB245\fP du fichier \fBPersonage\&.cpp\fP\&.
+Définition à la ligne \fB500\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SS "void Personage::updateMousePosWindow (sf::Vector2i mousePosWindow)"
 
 .PP
-Définition à la ligne \fB186\fP du fichier \fBPersonage\&.cpp\fP\&.
+Définition à la ligne \fB337\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SS "void Personage::updatePosition (float posX, float posY)\fC [override]\fP, \fC [protected]\fP, \fC [virtual]\fP"
 
 .PP
@@ -385,69 +591,100 @@ Permet de mettre à jour la position actuelle\&. Cette position sera déterminé
 .PP
 Implémente \fBMovableGameObject\fP\&.
 .PP
-Définition à la ligne \fB206\fP du fichier \fBPersonage\&.cpp\fP\&.
+Définition à la ligne \fB358\fP du fichier \fBPersonage\&.cpp\fP\&.
 .SH "Documentation des données membres"
 .PP 
 .SS "\fBBag\fP* Personage::bag\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB100\fP du fichier \fBPersonage\&.hpp\fP\&.
+Définition à la ligne \fB104\fP du fichier \fBPersonage\&.hpp\fP\&.
 .SS "\fBgui::ProgressBar\fP* Personage::expBar\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB156\fP du fichier \fBPersonage\&.hpp\fP\&.
+Définition à la ligne \fB206\fP du fichier \fBPersonage\&.hpp\fP\&.
 .SS "\fBgui::ProgressBar\fP* Personage::hpBar\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB159\fP du fichier \fBPersonage\&.hpp\fP\&.
+Définition à la ligne \fB209\fP du fichier \fBPersonage\&.hpp\fP\&.
+.SS "\fBgame::AnimationSide\fP Personage::lastAnimationSide\fC [protected]\fP"
+
+.PP
+Permet de controler de quelque coté diriger une animation (gauche ou droite) 
+.PP
+Définition à la ligne \fB103\fP du fichier \fBPersonage\&.hpp\fP\&.
 .SS "int Personage::m_attackVariation { 5 }\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB137\fP du fichier \fBPersonage\&.hpp\fP\&.
+Définition à la ligne \fB186\fP du fichier \fBPersonage\&.hpp\fP\&.
+.SS "int Personage::m_experienceLevel { 50 }\fC [protected]\fP"
+
+.PP
+La quantité de ça spécialité\&. NOTE -\&. 
+.PP
+Définition à la ligne \fB162\fP du fichier \fBPersonage\&.hpp\fP\&.
 .SS "sf::Sprite Personage::m_healthBarSprite\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB140\fP du fichier \fBPersonage\&.hpp\fP\&.
+Définition à la ligne \fB189\fP du fichier \fBPersonage\&.hpp\fP\&.
 .SS "int Personage::m_healthLevel { 100 }\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB119\fP du fichier \fBPersonage\&.hpp\fP\&.
+Définition à la ligne \fB154\fP du fichier \fBPersonage\&.hpp\fP\&.
 .SS "const bool Personage::m_isPlayer\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB151\fP du fichier \fBPersonage\&.hpp\fP\&.
+Définition à la ligne \fB201\fP du fichier \fBPersonage\&.hpp\fP\&.
+.SS "float Personage::m_probabilityDodge { \&.1 }\fC [protected]\fP"
+
+.PP
+Définition à la ligne \fB183\fP du fichier \fBPersonage\&.hpp\fP\&.
 .SS "float Personage::m_probabilitySuccessAttack { \&.5f }\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB134\fP du fichier \fBPersonage\&.hpp\fP\&.
+Définition à la ligne \fB181\fP du fichier \fBPersonage\&.hpp\fP\&.
+.SS "int Personage::m_shieldBoost { 0 }\fC [protected]\fP"
+
+.PP
+représente la valeur de protection offerte par le bouclié\&. NOTE - Meme si la valeur n'est pas nulle, tant que le bouclié n'est pas activé, cette dernière n'est pas concidérée 
+.PP
+Définition à la ligne \fB169\fP du fichier \fBPersonage\&.hpp\fP\&.
 .SS "int Personage::m_simpleAttackValue { 10 }\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB128\fP du fichier \fBPersonage\&.hpp\fP\&.
+Définition à la ligne \fB175\fP du fichier \fBPersonage\&.hpp\fP\&.
 .SS "int Personage::m_specialAttackValue { 25 }\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB131\fP du fichier \fBPersonage\&.hpp\fP\&.
+Définition à la ligne \fB178\fP du fichier \fBPersonage\&.hpp\fP\&.
 .SS "sf::Sprite Personage::m_specialityBarSprite\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB143\fP du fichier \fBPersonage\&.hpp\fP\&.
-.SS "int Personage::m_specialityLevel { 50 }\fC [protected]\fP"
-
-.PP
-Définition à la ligne \fB122\fP du fichier \fBPersonage\&.hpp\fP\&.
+Définition à la ligne \fB192\fP du fichier \fBPersonage\&.hpp\fP\&.
 .SS "std::string Personage::m_specialtyName\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB125\fP du fichier \fBPersonage\&.hpp\fP\&.
+Définition à la ligne \fB172\fP du fichier \fBPersonage\&.hpp\fP\&.
 .SS "sf::Sprite Personage::m_suit\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB146\fP du fichier \fBPersonage\&.hpp\fP\&.
+Représente la tenue du personage\&. REVIEW\&. 
+.PP
+Définition à la ligne \fB199\fP du fichier \fBPersonage\&.hpp\fP\&.
 .SS "sf::RenderTarget* Personage::m_window { 0 }\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB153\fP du fichier \fBPersonage\&.hpp\fP\&.
+Définition à la ligne \fB203\fP du fichier \fBPersonage\&.hpp\fP\&.
+.SS "Personage::PersonageMap Personage::personages\fC [static]\fP, \fC [protected]\fP"
+\fBValeur initiale :\fP
+.PP
+.nf
+= [] {
+    PersonageMap ret;
+    return ret;
+}()
+.fi
+.PP
+Définition à la ligne \fB98\fP du fichier \fBPersonage\&.hpp\fP\&.
 
 .SH "Auteur"
 .PP 

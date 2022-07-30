@@ -1,0 +1,10 @@
+<map id="Inventory::remove" name="Inventory::remove">
+<area shape="rect" id="node1" title=" " alt="" coords="1151,56,1273,83"/>
+<area shape="rect" id="node2" href="$class_bag.html#ae1902348311f9d34bc2c8226ab30f0f2" title=" " alt="" coords="984,31,1103,57"/>
+<area shape="rect" id="node8" href="$class_hall.html#a29cee0bf1a5ede784e5b5d5413c5bda1" title=" " alt="" coords="984,81,1103,108"/>
+<area shape="rect" id="node3" href="$class_personage.html#a27255cf1214312c1bdc5c77796378bbd" title=" " alt="" coords="777,31,936,57"/>
+<area shape="rect" id="node4" href="$class_player.html#a583849c1d33124f3409b990b7c888bac" title=" " alt="" coords="533,23,729,65"/>
+<area shape="rect" id="node5" href="$class_player.html#aa14422c8d3c3950584dcd307172741b7" title=" " alt="" coords="343,5,485,32"/>
+<area shape="rect" id="node6" href="$class_player.html#ad6867e0c7bc18e82a1da4be7bf156d97" title=" " alt="" coords="188,31,295,57"/>
+<area shape="rect" id="node7" href="$class_game_state.html#a775a7d0cf422aec17e5846852f3c997d" title=" " alt="" coords="5,31,140,57"/>
+</map>

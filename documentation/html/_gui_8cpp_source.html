@@ -553,8 +553,8 @@ $(document).ready(function(){initNavTree('_gui_8cpp_source.html',''); initResiza
 <div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span> </div>
 <div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>    this-&gt;inventoryButtons[<a class="code hl_enumvalue" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0ade2b8abe881dd8e4494afd39e979ebf8">game::inventory_items_types::DEFAULT</a>] = {};</div>
 <div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>    this-&gt;inventoryButtons[<a class="code hl_enumvalue" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a2b602b3377438010ebb120c46572f3c7">game::inventory_items_types::ARMORY</a>] = {};</div>
-<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>    this-&gt;inventoryButtons[game::inventory_items_types::MONEY] = {};</div>
-<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>    this-&gt;inventoryButtons[game::inventory_items_types::TELEPORTKEY] = {};</div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>    this-&gt;inventoryButtons[<a class="code hl_enumvalue" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a73e510979d35b3bfb3c02215c02139a3">game::inventory_items_types::MONEY</a>] = {};</div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>    this-&gt;inventoryButtons[<a class="code hl_enumvalue" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a166de762fd24b8c7c9624d8b42d4cfab">game::inventory_items_types::TELEPORTKEY</a>] = {};</div>
 <div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>    this-&gt;inventoryButtons[<a class="code hl_enumvalue" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a0783b29ef2cd9d2229b08af1093f5f0f">game::inventory_items_types::VIAL</a>] = {};</div>
 <div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>}</div>
 <div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span> </div>
@@ -595,176 +595,193 @@ $(document).ready(function(){initNavTree('_gui_8cpp_source.html',''); initResiza
 <div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a2b602b3377438010ebb120c46572f3c7">game::inventory_items_types::ARMORY</a>: {</div>
 <div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>            <span class="keywordtype">float</span> x = 80.f + 80.f * 4.f + 80.f * (this-&gt;inventoryButtons[type].size() % 2);</div>
 <div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>            <span class="keywordtype">float</span> y = 130.f + 80.f + 80 * (floor((<span class="keywordtype">float</span>)this-&gt;inventoryButtons[type].size() / 2.f));</div>
-<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>            this-&gt;inventoryButtons[type].push_back(<span class="keyword">new</span> <a class="code hl_class" href="classgui_1_1_inventory_button.html">InventoryButton</a>(x, y, item-&gt;<a class="code hl_function" href="class_game_object.html#a60bcdbbdaa9d1de7d265d404071d3c4d">getSprite</a>(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));</div>
-<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>        }</div>
-<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>        <span class="keywordflow">case</span> game::inventory_items_types::MONEY: {</div>
-<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Affichage monaie\n&quot;</span>;</div>
-<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>            <span class="comment">// On affichera une seule fois le truc de la monaie</span></div>
-<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>            <span class="keywordflow">if</span> (this-&gt;inventoryButtons[type].size() &gt;= 1)</div>
-<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>            {</div>
-<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>                <span class="keywordflow">try</span></div>
-<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>                {</div>
-<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>                    <span class="comment">// std::cout &lt;&lt; &quot;ancien &quot; &lt;&lt; std::stoi(this-&gt;inventoryButtons[type][0]-&gt;getText()) &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span>                    <span class="comment">// std::cout &lt;&lt; &quot;maintenant &quot; &lt;&lt; std::to_string(std::stoi(this-&gt;inventoryButtons[type][0]-&gt;getText()) + 1) &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>                    <span class="comment">// on recupère l&#39;ancien text, on a joute 1 et on met à jour l&#39;affichage</span></div>
-<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>                    this-&gt;inventoryButtons[type][0]-&gt;setText(std::to_string(std::stoi(this-&gt;inventoryButtons[type][0]-&gt;getText()) + 1));</div>
-<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>                }</div>
-<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>                <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e)</div>
-<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>                {</div>
-<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>                    <span class="comment">// TODO -</span></div>
-<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>                }</div>
-<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span> </div>
-<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>            }</div>
-<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>            <span class="keywordtype">float</span> x = 80.f + 80.f * 10.f + 80.f * (this-&gt;inventoryButtons[type].size() % 2);</div>
-<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>            <span class="keywordtype">float</span> y = 130.f + 80.f + 80 * (floor((<span class="keywordtype">float</span>)this-&gt;inventoryButtons[type].size() / 2.f));</div>
-<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>            this-&gt;inventoryButtons[type].push_back(<span class="keyword">new</span> <a class="code hl_class" href="classgui_1_1_inventory_button.html">InventoryButton</a>(x, y, item-&gt;<a class="code hl_function" href="class_game_object.html#a60bcdbbdaa9d1de7d265d404071d3c4d">getSprite</a>(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50), sf::Color(255, 255, 255, 255), sf::Color(255, 255, 255, 255), sf::Color(20, 20, 20, 50)));</div>
-<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>        }</div>
-<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>        <span class="keywordflow">case</span> game::inventory_items_types::TELEPORTKEY: {</div>
-<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>            <span class="keywordtype">float</span> x = 80.f + 80.f * 7.f + 80.f * (this-&gt;inventoryButtons[type].size() % 2);</div>
-<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>            <span class="keywordtype">float</span> y = 130.f + 80.f + 80 * (floor((<span class="keywordtype">float</span>)this-&gt;inventoryButtons[type].size() / 2.f));</div>
-<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>            this-&gt;inventoryButtons[type].push_back(<span class="keyword">new</span> <a class="code hl_class" href="classgui_1_1_inventory_button.html">InventoryButton</a>(x, y, item-&gt;<a class="code hl_function" href="class_game_object.html#a60bcdbbdaa9d1de7d265d404071d3c4d">getSprite</a>(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));</div>
-<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>        }</div>
-<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a0783b29ef2cd9d2229b08af1093f5f0f">game::inventory_items_types::VIAL</a>: {</div>
-<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>            <span class="keywordtype">float</span> x = 80.f + 80.f + 80.f * (this-&gt;inventoryButtons[type].size() % 2);</div>
-<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span>            <span class="keywordtype">float</span> y = 130.f + 80.f + 80 * (floor((<span class="keywordtype">float</span>)this-&gt;inventoryButtons[type].size() / 2.f));</div>
-<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>            this-&gt;inventoryButtons[type].push_back(<span class="keyword">new</span> <a class="code hl_class" href="classgui_1_1_inventory_button.html">InventoryButton</a>(x, y, item-&gt;<a class="code hl_function" href="class_game_object.html#a60bcdbbdaa9d1de7d265d404071d3c4d">getSprite</a>(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));</div>
+<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>            this-&gt;inventoryButtons[type].push_back(<span class="keyword">new</span> <a class="code hl_class" href="classgui_1_1_inventory_button.html">gui::InventoryButton</a>(x, y, item-&gt;<a class="code hl_function" href="class_game_object.html#a60bcdbbdaa9d1de7d265d404071d3c4d">getSprite</a>(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));</div>
+<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span> </div>
+<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>            this-&gt;inventoryItemDatas.push_back({ item, short(this-&gt;inventoryButtons[type].size() - 1) });</div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>        }</div>
+<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a73e510979d35b3bfb3c02215c02139a3">game::inventory_items_types::MONEY</a>: {</div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>            <span class="comment">// std::cout &lt;&lt; &quot;Affichage monaie\n&quot;;</span></div>
+<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>            <span class="comment">// On affichera une seule fois le truc de la monaie</span></div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>            <span class="keywordflow">if</span> (this-&gt;inventoryButtons[type].size() &gt;= 1)</div>
+<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>            {</div>
+<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>                <span class="keywordflow">try</span></div>
+<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span>                {</div>
+<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>                    <span class="comment">// std::cout &lt;&lt; &quot;ancien &quot; &lt;&lt; std::stoi(this-&gt;inventoryButtons[type][0]-&gt;getText()) &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>                    <span class="comment">// std::cout &lt;&lt; &quot;maintenant &quot; &lt;&lt; std::to_string(std::stoi(this-&gt;inventoryButtons[type][0]-&gt;getText()) + 1) &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>                    <span class="comment">// on recupère l&#39;ancien text, on a joute 1 et on met à jour l&#39;affichage</span></div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>                    this-&gt;inventoryButtons[type][0]-&gt;setText(std::to_string(std::stoi(this-&gt;inventoryButtons[type][0]-&gt;getText()) + 1));</div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>                }</div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>                <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e)</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>                {</div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>                    <span class="comment">// TODO -</span></div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>                }</div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span> </div>
+<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>                this-&gt;inventoryItemDatas.push_back({ item, short(this-&gt;inventoryButtons[type].size() - 1) });</div>
+<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>            }</div>
+<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span>            <span class="keywordtype">float</span> x = 80.f + 80.f * 10.f + 80.f * (this-&gt;inventoryButtons[type].size() % 2);</div>
+<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>            <span class="keywordtype">float</span> y = 130.f + 80.f + 80 * (floor((<span class="keywordtype">float</span>)this-&gt;inventoryButtons[type].size() / 2.f));</div>
+<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>            this-&gt;inventoryButtons[type].push_back(<span class="keyword">new</span> <a class="code hl_class" href="classgui_1_1_inventory_button.html">gui::InventoryButton</a>(x, y, item-&gt;<a class="code hl_function" href="class_game_object.html#a60bcdbbdaa9d1de7d265d404071d3c4d">getSprite</a>(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50), sf::Color(255, 255, 255, 255), sf::Color(255, 255, 255, 255), sf::Color(20, 20, 20, 50)));</div>
+<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span> </div>
+<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>            this-&gt;inventoryItemDatas.push_back({ item, short(this-&gt;inventoryButtons[type].size() - 1) });</div>
+<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>        }</div>
+<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a166de762fd24b8c7c9624d8b42d4cfab">game::inventory_items_types::TELEPORTKEY</a>: {</div>
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>            <span class="keywordtype">float</span> x = 80.f + 80.f * 7.f + 80.f * (this-&gt;inventoryButtons[type].size() % 2);</div>
+<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>            <span class="keywordtype">float</span> y = 130.f + 80.f + 80 * (floor((<span class="keywordtype">float</span>)this-&gt;inventoryButtons[type].size() / 2.f));</div>
+<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>            this-&gt;inventoryButtons[type].push_back(<span class="keyword">new</span> <a class="code hl_class" href="classgui_1_1_inventory_button.html">gui::InventoryButton</a>(x, y, item-&gt;<a class="code hl_function" href="class_game_object.html#a60bcdbbdaa9d1de7d265d404071d3c4d">getSprite</a>(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));</div>
+<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span> </div>
+<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>            this-&gt;inventoryItemDatas.push_back({ item, short(this-&gt;inventoryButtons[type].size() - 1) });</div>
 <div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>        }</div>
 <div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>        <span class="keywordflow">default</span>: {</div>
-<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>        }</div>
-<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>    }</div>
-<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>}</div>
-<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span> </div>
-<div class="line"><a id="l00562" name="l00562"></a><span class="lineno"><a class="line" href="classgui_1_1_inventory.html#a9c0222f20c483ae191878731f0195f72">  562</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classgui_1_1_inventory.html#a9c0222f20c483ae191878731f0195f72">gui::Inventory::removeItem</a>(<span class="keywordtype">int</span> index <span class="comment">/*, sf::Sprite const&amp; itemSprite*/</span>, <a class="code hl_enumeration" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0">game::inventory_items_types</a> type)</div>
-<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>{</div>
-<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>    <span class="comment">// REVIEW -</span></div>
-<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>    <span class="comment">// vec.erase(std::remove(vec.begin(), vec.end(), value), vec.end());</span></div>
-<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>    <span class="comment">// this-&gt;inventoryItemSprites[type].erase(std::remove(this-&gt;inventoryItemSprites[type].begin(), this-&gt;inventoryItemSprites[type].end(), itemSprite), this-&gt;inventoryItemSprites[type].end());</span></div>
-<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>    <span class="keyword">delete</span> this-&gt;inventoryButtons[type][index];</div>
-<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>    this-&gt;inventoryButtons[type].erase(std::remove(this-&gt;inventoryButtons[type].begin(), this-&gt;inventoryButtons[type].end(), this-&gt;inventoryButtons[type][index]), this-&gt;inventoryButtons[type].end());</div>
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a0783b29ef2cd9d2229b08af1093f5f0f">game::inventory_items_types::VIAL</a>: {</div>
+<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>            <span class="keywordtype">float</span> x = 80.f + 80.f + 80.f * (this-&gt;inventoryButtons[type].size() % 2);</div>
+<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>            <span class="keywordtype">float</span> y = 130.f + 80.f + 80 * (floor((<span class="keywordtype">float</span>)this-&gt;inventoryButtons[type].size() / 2.f));</div>
+<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>            this-&gt;inventoryButtons[type].push_back(<span class="keyword">new</span> <a class="code hl_class" href="classgui_1_1_inventory_button.html">gui::InventoryButton</a>(x, y, item-&gt;<a class="code hl_function" href="class_game_object.html#a60bcdbbdaa9d1de7d265d404071d3c4d">getSprite</a>(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));</div>
+<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span> </div>
+<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>            this-&gt;inventoryItemDatas.push_back({ item, short(this-&gt;inventoryButtons[type].size() - 1) });</div>
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>        }</div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>        <span class="keywordflow">default</span>: {</div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>        }</div>
+<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>    }</div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>}</div>
 <div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span> </div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>}</div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span> </div>
-<div class="line"><a id="l00574" name="l00574"></a><span class="lineno"><a class="line" href="classgui_1_1_inventory.html#abf61ac4f9cae8d03468969bb0498a05a">  574</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classgui_1_1_inventory.html#abf61ac4f9cae8d03468969bb0498a05a">gui::Inventory::updateMousePosWindow</a>(sf::Vector2i mousePosWindow)</div>
-<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>{</div>
-<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>    <span class="comment">// Hover</span></div>
-<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; inventoryButtonVectorPair : this-&gt;inventoryButtons)</div>
-<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>    {</div>
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; inventoryButtonVectorPair.second.size(); i++)</div>
-<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>        {</div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>            inventoryButtonVectorPair.second[i]-&gt;update(mousePosWindow);</div>
-<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>        }</div>
-<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>    }</div>
-<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>}</div>
-<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span> </div>
-<div class="line"><a id="l00586" name="l00586"></a><span class="lineno"><a class="line" href="classgui_1_1_inventory.html#ae9385f05ca7064cb8b0cc48d3602446e">  586</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classgui_1_1_inventory.html#ae9385f05ca7064cb8b0cc48d3602446e">gui::Inventory::update</a>(<span class="comment">/*const sf::Vector2i&amp; mousePosView*/</span>) <span class="comment">// REVIEW -</span></div>
-<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>{}</div>
-<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span> </div>
-<div class="line"><a id="l00589" name="l00589"></a><span class="lineno"><a class="line" href="classgui_1_1_inventory.html#a20a0ed58d1b1bdfe941ba86ffc9091dc">  589</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classgui_1_1_inventory.html#a20a0ed58d1b1bdfe941ba86ffc9091dc">gui::Inventory::render</a>(sf::RenderTarget&amp; target)</div>
-<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>{</div>
-<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>    this-&gt;setGraphicsElementPosition(target.getView());</div>
-<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>    <span class="comment">// sf::CircleShape shape(200.f);</span></div>
-<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span> </div>
-<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>    <span class="comment">// shape.setFillColor(sf::Color(100, 250, 50));</span></div>
-<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span> </div>
-<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>    <span class="comment">// target.draw(shape); // REVIEW -</span></div>
-<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span> </div>
-<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>    target.draw(this-&gt;background);</div>
-<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span> </div>
-<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = this-&gt;inventoryButtons.begin(); it != this-&gt;inventoryButtons.end(); it++)</div>
-<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>    {</div>
-<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; it-&gt;second.size(); i++)</div>
-<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>        {</div>
-<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>            it-&gt;second[i]-&gt;render(target);</div>
-<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>        }</div>
-<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>    }</div>
-<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>}</div>
-<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span> </div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span><span class="keywordtype">void</span> gui::Inventory::setGraphicsElementPosition(sf::View <span class="keyword">const</span>&amp; view)</div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>{</div>
-<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span> </div>
-<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>    sf::Vector2f v(view.getCenter());</div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>    sf::Vector2f s(view.getSize());</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno"><a class="line" href="classgui_1_1_inventory.html#a5b441996b23e40dcd79faf8668296969">  571</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classgui_1_1_inventory.html#a5b441996b23e40dcd79faf8668296969">gui::Inventory::removeItem</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_item.html">Item</a>* item <span class="comment">/*, sf::Sprite const&amp; itemSprite*/</span>, <a class="code hl_enumeration" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0">game::inventory_items_types</a> type)</div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>{</div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; this-&gt;inventoryItemDatas.size(); i++)</div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>    {</div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>        <span class="keywordflow">if</span> (this-&gt;inventoryItemDatas[i].item == item)</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>        {</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span> </div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>            <span class="comment">// REVIEW -</span></div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>            <span class="comment">// vec.erase(std::remove(vec.begin(), vec.end(), value), vec.end());</span></div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>            <span class="comment">// this-&gt;inventoryItemSprites[type].erase(std::remove(this-&gt;inventoryItemSprites[type].begin(), this-&gt;inventoryItemSprites[type].end(), itemSprite), this-&gt;inventoryItemSprites[type].end());</span></div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>            <span class="keyword">delete</span> this-&gt;inventoryButtons[type][this-&gt;inventoryItemDatas[i].Index];</div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>            this-&gt;inventoryButtons[type].erase(std::remove(this-&gt;inventoryButtons[type].begin(), this-&gt;inventoryButtons[type].end(), this-&gt;inventoryButtons[type][this-&gt;inventoryItemDatas[i].Index]), this-&gt;inventoryButtons[type].end());</div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>            <span class="comment">//</span></div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>        }</div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>    }</div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span> </div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>}</div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span> </div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno"><a class="line" href="classgui_1_1_inventory.html#abf61ac4f9cae8d03468969bb0498a05a">  591</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classgui_1_1_inventory.html#abf61ac4f9cae8d03468969bb0498a05a">gui::Inventory::updateMousePosWindow</a>(sf::Vector2i mousePosWindow)</div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>{</div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>    <span class="comment">// Hover</span></div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; inventoryButtonVectorPair : this-&gt;inventoryButtons)</div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>    {</div>
+<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; inventoryButtonVectorPair.second.size(); i++)</div>
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>        {</div>
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>            inventoryButtonVectorPair.second[i]-&gt;update(mousePosWindow);</div>
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>        }</div>
+<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>    }</div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>}</div>
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span> </div>
+<div class="line"><a id="l00603" name="l00603"></a><span class="lineno"><a class="line" href="classgui_1_1_inventory.html#ae9385f05ca7064cb8b0cc48d3602446e">  603</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classgui_1_1_inventory.html#ae9385f05ca7064cb8b0cc48d3602446e">gui::Inventory::update</a>(<span class="comment">/*const sf::Vector2i&amp; mousePosView*/</span>) <span class="comment">// REVIEW -</span></div>
+<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>{}</div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span> </div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno"><a class="line" href="classgui_1_1_inventory.html#a20a0ed58d1b1bdfe941ba86ffc9091dc">  606</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classgui_1_1_inventory.html#a20a0ed58d1b1bdfe941ba86ffc9091dc">gui::Inventory::render</a>(sf::RenderTarget&amp; target)</div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>{</div>
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>    this-&gt;setGraphicsElementPosition(target.getView());</div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>    <span class="comment">// sf::CircleShape shape(200.f);</span></div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span> </div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>    <span class="comment">// shape.setFillColor(sf::Color(100, 250, 50));</span></div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span> </div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>    <span class="comment">// target.draw(shape); // REVIEW -</span></div>
 <div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span> </div>
-<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>    <span class="comment">// On calcul le décallage du centre de la vue</span></div>
-<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>    <span class="keywordtype">float</span> addX(v.x - s.x / 2.f);</div>
-<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>    <span class="keywordtype">float</span> addY(v.y - s.y / 2.f);</div>
-<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span> </div>
-<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>    this-&gt;background.setPosition(80.f + addX, 130.f + addY);</div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span> </div>
-<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = this-&gt;inventoryButtons.begin(); it != this-&gt;inventoryButtons.end(); it++)</div>
-<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>    {</div>
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; it-&gt;second.size(); i++)</div>
-<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>        {</div>
-<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>            <span class="keywordtype">float</span> x(0.f);</div>
-<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>            <span class="keywordtype">float</span> y(0.f);</div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>            <span class="keywordflow">switch</span> (it-&gt;first)</div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>            {</div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>                <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a0783b29ef2cd9d2229b08af1093f5f0f">game::inventory_items_types::VIAL</a>: {</div>
-<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>                    x = 80.f + 80.f * 1.f + 80.f * (i % 2) + addX;</div>
-<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>                    y = 130.f + 80.f + 80 * (floor((<span class="keywordtype">float</span>)i / 2.f)) + addY;</div>
-<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>                }</div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>                <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a2b602b3377438010ebb120c46572f3c7">game::inventory_items_types::ARMORY</a>: {</div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>                    x = 80.f + 80.f * 4.f + 80.f * (i % 2) + addX;</div>
-<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>                    y = 130.f + 80.f + 80 * (floor((<span class="keywordtype">float</span>)i / 2.f)) + addY;</div>
-<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>                }</div>
-<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>                <span class="keywordflow">case</span> game::inventory_items_types::TELEPORTKEY: {</div>
-<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>                    x = 80.f + 80.f * 7.f + 80.f * (i % 2) + addX;</div>
-<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>                    y = 130.f + 80.f + 80 * (floor((<span class="keywordtype">float</span>)i / 2.f)) + addY;</div>
-<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>                }</div>
-<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>                <span class="keywordflow">case</span> game::inventory_items_types::MONEY: {</div>
-<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>                    <span class="comment">// On affichera une seule fois le truc de la monaie</span></div>
-<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>                    <span class="keywordflow">if</span> (i &gt; 1)</div>
-<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span> </div>
-<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>                    x = 80.f + 80.f * 10.f + addX;</div>
-<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>                    y = 130.f + 80.f + addY;</div>
-<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>                }</div>
-<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span> </div>
-<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>                <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>            }</div>
-<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>            it-&gt;second[i]-&gt;setPosition(x, y, addX, addY);</div>
-<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>        }</div>
-<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>    }</div>
-<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>}</div>
-<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span> </div>
-<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span><span class="comment">// std::vector&lt;sf::Sprite const&amp;&gt;::iterator gui::Inventory::getItemSpriteIterator(sf::Sprite const&amp; itemSprite, game::inventory_items_types type)</span></div>
-<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span><span class="comment">// {</span></div>
-<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span><span class="comment">//  for (auto it = this-&gt;inventoryItemSprites[type].begin(); it != this-&gt;inventoryItemSprites[type].end(); it++)</span></div>
-<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span><span class="comment">//  {</span></div>
-<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span><span class="comment">//      if ((*it) == itemSprite)</span></div>
-<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span><span class="comment">//      {</span></div>
-<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span><span class="comment">//          return it;</span></div>
-<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span><span class="comment">//      }</span></div>
-<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span><span class="comment">//  }</span></div>
-<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span><span class="comment">//  return std::vector&lt;sf::Sprite const&amp;&gt;::iterator(); // REVIEW -</span></div>
-<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span><span class="comment">// }</span></div>
-<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span> </div>
-<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span><span class="comment">// ********************************* End Inventory</span></div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>    target.draw(this-&gt;background);</div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span> </div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = this-&gt;inventoryButtons.begin(); it != this-&gt;inventoryButtons.end(); it++)</div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>    {</div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; it-&gt;second.size(); i++)</div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>        {</div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>            it-&gt;second[i]-&gt;render(target);</div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>        }</div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>    }</div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>}</div>
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span> </div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span><span class="keywordtype">void</span> gui::Inventory::setGraphicsElementPosition(sf::View <span class="keyword">const</span>&amp; view)</div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>{</div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span> </div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>    sf::Vector2f v(view.getCenter());</div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>    sf::Vector2f s(view.getSize());</div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span> </div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>    <span class="comment">// On calcul le décallage du centre de la vue</span></div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>    <span class="keywordtype">float</span> addX(v.x - s.x / 2.f);</div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>    <span class="keywordtype">float</span> addY(v.y - s.y / 2.f);</div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span> </div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>    this-&gt;background.setPosition(80.f + addX, 130.f + addY);</div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span> </div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = this-&gt;inventoryButtons.begin(); it != this-&gt;inventoryButtons.end(); it++)</div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>    {</div>
+<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; it-&gt;second.size(); i++)</div>
+<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>        {</div>
+<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>            <span class="keywordtype">float</span> x(0.f);</div>
+<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>            <span class="keywordtype">float</span> y(0.f);</div>
+<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>            <span class="keywordflow">switch</span> (it-&gt;first)</div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>            {</div>
+<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>                <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a0783b29ef2cd9d2229b08af1093f5f0f">game::inventory_items_types::VIAL</a>: {</div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>                    x = 80.f + 80.f * 1.f + 80.f * (i % 2) + addX;</div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>                    y = 130.f + 80.f + 80 * (floor((<span class="keywordtype">float</span>)i / 2.f)) + addY;</div>
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>                }</div>
+<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>                <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a2b602b3377438010ebb120c46572f3c7">game::inventory_items_types::ARMORY</a>: {</div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>                    x = 80.f + 80.f * 4.f + 80.f * (i % 2) + addX;</div>
+<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>                    y = 130.f + 80.f + 80 * (floor((<span class="keywordtype">float</span>)i / 2.f)) + addY;</div>
+<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>                }</div>
+<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>                <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a166de762fd24b8c7c9624d8b42d4cfab">game::inventory_items_types::TELEPORTKEY</a>: {</div>
+<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>                    x = 80.f + 80.f * 7.f + 80.f * (i % 2) + addX;</div>
+<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>                    y = 130.f + 80.f + 80 * (floor((<span class="keywordtype">float</span>)i / 2.f)) + addY;</div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>                }</div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>                <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a73e510979d35b3bfb3c02215c02139a3">game::inventory_items_types::MONEY</a>: {</div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>                    <span class="comment">// On affichera une seule fois le truc de la monaie</span></div>
+<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>                    <span class="keywordflow">if</span> (i &gt; 1)</div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span> </div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>                    x = 80.f + 80.f * 10.f + addX;</div>
+<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>                    y = 130.f + 80.f + addY;</div>
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>                }</div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span> </div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>                <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>            }</div>
+<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>            it-&gt;second[i]-&gt;setPosition(x, y, addX, addY);</div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>        }</div>
+<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>    }</div>
+<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>}</div>
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span> </div>
+<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span><span class="comment">// std::vector&lt;sf::Sprite const&amp;&gt;::iterator gui::Inventory::getItemSpriteIterator(sf::Sprite const&amp; itemSprite, game::inventory_items_types type)</span></div>
+<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span><span class="comment">// {</span></div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span><span class="comment">//  for (auto it = this-&gt;inventoryItemSprites[type].begin(); it != this-&gt;inventoryItemSprites[type].end(); it++)</span></div>
+<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span><span class="comment">//  {</span></div>
+<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span><span class="comment">//      if ((*it) == itemSprite)</span></div>
+<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span><span class="comment">//      {</span></div>
+<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span><span class="comment">//          return it;</span></div>
+<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span><span class="comment">//      }</span></div>
+<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span><span class="comment">//  }</span></div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span><span class="comment">//  return std::vector&lt;sf::Sprite const&amp;&gt;::iterator(); // REVIEW -</span></div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span><span class="comment">// }</span></div>
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span> </div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span><span class="comment">// ********************************* End Inventory</span></div>
 <div class="ttc" id="a_gui_8hpp_html"><div class="ttname"><a href="_gui_8hpp.html">Gui.hpp</a></div></div>
-<div class="ttc" id="a_gui_8hpp_html_a11a6094191da43b6b4568e7736fb89baab07455a5cba7480564ccdf0225f8d082"><div class="ttname"><a href="_gui_8hpp.html#a11a6094191da43b6b4568e7736fb89baab07455a5cba7480564ccdf0225f8d082">BTN_IDLE</a></div><div class="ttdeci">@ BTN_IDLE</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8hpp_source.html#l00015">Gui.hpp:15</a></div></div>
-<div class="ttc" id="a_gui_8hpp_html_a11a6094191da43b6b4568e7736fb89baaba1830557d2dc99efd3e5fc8a7dd64ab"><div class="ttname"><a href="_gui_8hpp.html#a11a6094191da43b6b4568e7736fb89baaba1830557d2dc99efd3e5fc8a7dd64ab">BTN_ACTIVE</a></div><div class="ttdeci">@ BTN_ACTIVE</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8hpp_source.html#l00018">Gui.hpp:17</a></div></div>
-<div class="ttc" id="a_gui_8hpp_html_a11a6094191da43b6b4568e7736fb89baad6fdb8a1568b56acfc5a2870feef75aa"><div class="ttname"><a href="_gui_8hpp.html#a11a6094191da43b6b4568e7736fb89baad6fdb8a1568b56acfc5a2870feef75aa">BTN_HOVER</a></div><div class="ttdeci">@ BTN_HOVER</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8hpp_source.html#l00016">Gui.hpp:16</a></div></div>
-<div class="ttc" id="aclass_game_object_html_a60bcdbbdaa9d1de7d265d404071d3c4d"><div class="ttname"><a href="class_game_object.html#a60bcdbbdaa9d1de7d265d404071d3c4d">GameObject::getSprite</a></div><div class="ttdeci">sf::Sprite const &amp; getSprite() const</div><div class="ttdef"><b>Definition:</b> <a href="_game_object_8cpp_source.html#l00097">GameObject.cpp:97</a></div></div>
-<div class="ttc" id="aclass_item_html"><div class="ttname"><a href="class_item.html">Item</a></div><div class="ttdoc">Représente éssentiellement les object que pourra manipuler les personnages.</div><div class="ttdef"><b>Definition:</b> <a href="_item_8hpp_source.html#l00035">Item.hpp:36</a></div></div>
+<div class="ttc" id="a_gui_8hpp_html_a11a6094191da43b6b4568e7736fb89baab07455a5cba7480564ccdf0225f8d082"><div class="ttname"><a href="_gui_8hpp.html#a11a6094191da43b6b4568e7736fb89baab07455a5cba7480564ccdf0225f8d082">BTN_IDLE</a></div><div class="ttdeci">@ BTN_IDLE</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8hpp_source.html#l00014">Gui.hpp:14</a></div></div>
+<div class="ttc" id="a_gui_8hpp_html_a11a6094191da43b6b4568e7736fb89baaba1830557d2dc99efd3e5fc8a7dd64ab"><div class="ttname"><a href="_gui_8hpp.html#a11a6094191da43b6b4568e7736fb89baaba1830557d2dc99efd3e5fc8a7dd64ab">BTN_ACTIVE</a></div><div class="ttdeci">@ BTN_ACTIVE</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8hpp_source.html#l00017">Gui.hpp:16</a></div></div>
+<div class="ttc" id="a_gui_8hpp_html_a11a6094191da43b6b4568e7736fb89baad6fdb8a1568b56acfc5a2870feef75aa"><div class="ttname"><a href="_gui_8hpp.html#a11a6094191da43b6b4568e7736fb89baad6fdb8a1568b56acfc5a2870feef75aa">BTN_HOVER</a></div><div class="ttdeci">@ BTN_HOVER</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8hpp_source.html#l00015">Gui.hpp:15</a></div></div>
+<div class="ttc" id="aclass_game_object_html_a60bcdbbdaa9d1de7d265d404071d3c4d"><div class="ttname"><a href="class_game_object.html#a60bcdbbdaa9d1de7d265d404071d3c4d">GameObject::getSprite</a></div><div class="ttdeci">sf::Sprite const &amp; getSprite() const</div><div class="ttdef"><b>Definition:</b> <a href="_game_object_8cpp_source.html#l00118">GameObject.cpp:118</a></div></div>
+<div class="ttc" id="aclass_item_html"><div class="ttname"><a href="class_item.html">Item</a></div><div class="ttdoc">Représente éssentiellement les object que pourra manipuler les personnages.</div><div class="ttdef"><b>Definition:</b> <a href="_item_8hpp_source.html#l00022">Item.hpp:23</a></div></div>
 <div class="ttc" id="aclassgui_1_1_button_html_a088a6010b58ae6ee6e94210213dbf000"><div class="ttname"><a href="classgui_1_1_button.html#a088a6010b58ae6ee6e94210213dbf000">gui::Button::~Button</a></div><div class="ttdeci">~Button()</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00098">Gui.cpp:98</a></div></div>
 <div class="ttc" id="aclassgui_1_1_button_html_a1f93eac2279f05eef417a376b0bd7429"><div class="ttname"><a href="classgui_1_1_button.html#a1f93eac2279f05eef417a376b0bd7429">gui::Button::render</a></div><div class="ttdeci">void render(sf::RenderTarget &amp;target)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00197">Gui.cpp:197</a></div></div>
 <div class="ttc" id="aclassgui_1_1_button_html_a3a7697b6b4c7e45c017d1ca1d91c48f8"><div class="ttname"><a href="classgui_1_1_button.html#a3a7697b6b4c7e45c017d1ca1d91c48f8">gui::Button::setText</a></div><div class="ttdeci">void setText(const std::string text)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00121">Gui.cpp:121</a></div></div>
@@ -776,7 +793,7 @@ $(document).ready(function(){initNavTree('_gui_8cpp_source.html',''); initResiza
 <div class="ttc" id="aclassgui_1_1_button_html_ab4b11239a7d9e4c0b8f25ea0d969d17b"><div class="ttname"><a href="classgui_1_1_button.html#ab4b11239a7d9e4c0b8f25ea0d969d17b">gui::Button::getId</a></div><div class="ttdeci">const short unsigned &amp; getId() const</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00116">Gui.cpp:116</a></div></div>
 <div class="ttc" id="aclassgui_1_1_button_html_abdab94a0f529a791517d45a97eeb6396"><div class="ttname"><a href="classgui_1_1_button.html#abdab94a0f529a791517d45a97eeb6396">gui::Button::getText</a></div><div class="ttdeci">const std::string getText() const</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00111">Gui.cpp:111</a></div></div>
 <div class="ttc" id="aclassgui_1_1_button_html_ae636da5f0375715fff7e373dd7ffcc0a"><div class="ttname"><a href="classgui_1_1_button.html#ae636da5f0375715fff7e373dd7ffcc0a">gui::Button::isPressed</a></div><div class="ttdeci">bool isPressed() const</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00103">Gui.cpp:103</a></div></div>
-<div class="ttc" id="aclassgui_1_1_inventory_button_html"><div class="ttname"><a href="classgui_1_1_inventory_button.html">gui::InventoryButton</a></div><div class="ttdef"><b>Definition:</b> <a href="_gui_8hpp_source.html#l00114">Gui.hpp:115</a></div></div>
+<div class="ttc" id="aclassgui_1_1_inventory_button_html"><div class="ttname"><a href="classgui_1_1_inventory_button.html">gui::InventoryButton</a></div><div class="ttdef"><b>Definition:</b> <a href="_gui_8hpp_source.html#l00113">Gui.hpp:114</a></div></div>
 <div class="ttc" id="aclassgui_1_1_inventory_button_html_a4ea4c3015e87bd42a4ae9d6700bd93cc"><div class="ttname"><a href="classgui_1_1_inventory_button.html#a4ea4c3015e87bd42a4ae9d6700bd93cc">gui::InventoryButton::~InventoryButton</a></div><div class="ttdeci">~InventoryButton()</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00339">Gui.cpp:339</a></div></div>
 <div class="ttc" id="aclassgui_1_1_inventory_button_html_a5faa08a8628a48c2be3f793f2d560731"><div class="ttname"><a href="classgui_1_1_inventory_button.html#a5faa08a8628a48c2be3f793f2d560731">gui::InventoryButton::setText</a></div><div class="ttdeci">void setText(const std::string text)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00343">Gui.cpp:343</a></div></div>
 <div class="ttc" id="aclassgui_1_1_inventory_button_html_a608ac19381b86a06f4077339c862a204"><div class="ttname"><a href="classgui_1_1_inventory_button.html#a608ac19381b86a06f4077339c862a204">gui::InventoryButton::update</a></div><div class="ttdeci">void update(const sf::Vector2i &amp;mousePosWindow)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00383">Gui.cpp:383</a></div></div>
@@ -786,23 +803,25 @@ $(document).ready(function(){initNavTree('_gui_8cpp_source.html',''); initResiza
 <div class="ttc" id="aclassgui_1_1_inventory_button_html_a8ffd5ac598f6d5f71198d3cee95d9812"><div class="ttname"><a href="classgui_1_1_inventory_button.html#a8ffd5ac598f6d5f71198d3cee95d9812">gui::InventoryButton::render</a></div><div class="ttdeci">void render(sf::RenderTarget &amp;target)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00431">Gui.cpp:431</a></div></div>
 <div class="ttc" id="aclassgui_1_1_inventory_button_html_aa9e3b94b03157ce5dd97f18cfd36ef3b"><div class="ttname"><a href="classgui_1_1_inventory_button.html#aa9e3b94b03157ce5dd97f18cfd36ef3b">gui::InventoryButton::setPosition</a></div><div class="ttdeci">void setPosition(float x, float y, float addX, float addY)</div><div class="ttdoc">Set the Position object.</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00366">Gui.cpp:366</a></div></div>
 <div class="ttc" id="aclassgui_1_1_inventory_button_html_aedc199396b1f9bbe89523ca4701f2137"><div class="ttname"><a href="classgui_1_1_inventory_button.html#aedc199396b1f9bbe89523ca4701f2137">gui::InventoryButton::isPressed</a></div><div class="ttdeci">bool isPressed() const</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00353">Gui.cpp:353</a></div></div>
-<div class="ttc" id="aclassgui_1_1_inventory_html_a20a0ed58d1b1bdfe941ba86ffc9091dc"><div class="ttname"><a href="classgui_1_1_inventory.html#a20a0ed58d1b1bdfe941ba86ffc9091dc">gui::Inventory::render</a></div><div class="ttdeci">void render(sf::RenderTarget &amp;target)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00589">Gui.cpp:589</a></div></div>
+<div class="ttc" id="aclassgui_1_1_inventory_html_a20a0ed58d1b1bdfe941ba86ffc9091dc"><div class="ttname"><a href="classgui_1_1_inventory.html#a20a0ed58d1b1bdfe941ba86ffc9091dc">gui::Inventory::render</a></div><div class="ttdeci">void render(sf::RenderTarget &amp;target)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00606">Gui.cpp:606</a></div></div>
 <div class="ttc" id="aclassgui_1_1_inventory_html_a4b5b31eebd9beeee352b8a8f84cd5bd5"><div class="ttname"><a href="classgui_1_1_inventory.html#a4b5b31eebd9beeee352b8a8f84cd5bd5">gui::Inventory::addItem</a></div><div class="ttdeci">bool addItem(const Item *item, game::inventory_items_types type)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00498">Gui.cpp:498</a></div></div>
+<div class="ttc" id="aclassgui_1_1_inventory_html_a5b441996b23e40dcd79faf8668296969"><div class="ttname"><a href="classgui_1_1_inventory.html#a5b441996b23e40dcd79faf8668296969">gui::Inventory::removeItem</a></div><div class="ttdeci">bool removeItem(const Item *item, game::inventory_items_types type)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00571">Gui.cpp:571</a></div></div>
 <div class="ttc" id="aclassgui_1_1_inventory_html_a6c6dfcb6d977c74a7abf46809e892e3d"><div class="ttname"><a href="classgui_1_1_inventory.html#a6c6dfcb6d977c74a7abf46809e892e3d">gui::Inventory::~Inventory</a></div><div class="ttdeci">~Inventory()</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00483">Gui.cpp:483</a></div></div>
-<div class="ttc" id="aclassgui_1_1_inventory_html_a9c0222f20c483ae191878731f0195f72"><div class="ttname"><a href="classgui_1_1_inventory.html#a9c0222f20c483ae191878731f0195f72">gui::Inventory::removeItem</a></div><div class="ttdeci">bool removeItem(int index, game::inventory_items_types type)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00562">Gui.cpp:562</a></div></div>
-<div class="ttc" id="aclassgui_1_1_inventory_html_abf61ac4f9cae8d03468969bb0498a05a"><div class="ttname"><a href="classgui_1_1_inventory.html#abf61ac4f9cae8d03468969bb0498a05a">gui::Inventory::updateMousePosWindow</a></div><div class="ttdeci">void updateMousePosWindow(sf::Vector2i mousePosWindow)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00574">Gui.cpp:574</a></div></div>
+<div class="ttc" id="aclassgui_1_1_inventory_html_abf61ac4f9cae8d03468969bb0498a05a"><div class="ttname"><a href="classgui_1_1_inventory.html#abf61ac4f9cae8d03468969bb0498a05a">gui::Inventory::updateMousePosWindow</a></div><div class="ttdeci">void updateMousePosWindow(sf::Vector2i mousePosWindow)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00591">Gui.cpp:591</a></div></div>
 <div class="ttc" id="aclassgui_1_1_inventory_html_ad2dd4fe0f8ca9937ece6bd0d74af6c58"><div class="ttname"><a href="classgui_1_1_inventory.html#ad2dd4fe0f8ca9937ece6bd0d74af6c58">gui::Inventory::Inventory</a></div><div class="ttdeci">Inventory(sf::Font const &amp;font)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00475">Gui.cpp:475</a></div></div>
-<div class="ttc" id="aclassgui_1_1_inventory_html_ae9385f05ca7064cb8b0cc48d3602446e"><div class="ttname"><a href="classgui_1_1_inventory.html#ae9385f05ca7064cb8b0cc48d3602446e">gui::Inventory::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00586">Gui.cpp:586</a></div></div>
+<div class="ttc" id="aclassgui_1_1_inventory_html_ae9385f05ca7064cb8b0cc48d3602446e"><div class="ttname"><a href="classgui_1_1_inventory.html#ae9385f05ca7064cb8b0cc48d3602446e">gui::Inventory::update</a></div><div class="ttdeci">void update()</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00603">Gui.cpp:603</a></div></div>
 <div class="ttc" id="aclassgui_1_1_progress_bar_html_a2306f8517ac039e56095c389edbdb536"><div class="ttname"><a href="classgui_1_1_progress_bar.html#a2306f8517ac039e56095c389edbdb536">gui::ProgressBar::render</a></div><div class="ttdeci">void render(sf::RenderTarget &amp;target)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00275">Gui.cpp:275</a></div></div>
 <div class="ttc" id="aclassgui_1_1_progress_bar_html_a9414f94d811ba61b1b047e71e053d723"><div class="ttname"><a href="classgui_1_1_progress_bar.html#a9414f94d811ba61b1b047e71e053d723">gui::ProgressBar::ProgressBar</a></div><div class="ttdeci">ProgressBar(float x, float y, float width, float height, sf::Color inner_color, unsigned character_size, sf::VideoMode &amp;vm, sf::Font *font=NULL, bool text_bold=false)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00206">Gui.cpp:206</a></div></div>
 <div class="ttc" id="aclassgui_1_1_progress_bar_html_ac280f079c89eec3a71176d77d7680e94"><div class="ttname"><a href="classgui_1_1_progress_bar.html#ac280f079c89eec3a71176d77d7680e94">gui::ProgressBar::update</a></div><div class="ttdeci">void update(int current_value, int max_value)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00258">Gui.cpp:258</a></div></div>
 <div class="ttc" id="aclassgui_1_1_progress_bar_html_ad19c7e4fcbc7a33631253f94dda7b4d5"><div class="ttname"><a href="classgui_1_1_progress_bar.html#ad19c7e4fcbc7a33631253f94dda7b4d5">gui::ProgressBar::setPosition</a></div><div class="ttdeci">void setPosition(sf::Vector2f const &amp;position, sf::VideoMode &amp;vm)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00246">Gui.cpp:246</a></div></div>
 <div class="ttc" id="aclassgui_1_1_progress_bar_html_ade049ad3e39c57dc0047ae4fcd43e35c"><div class="ttname"><a href="classgui_1_1_progress_bar.html#ade049ad3e39c57dc0047ae4fcd43e35c">gui::ProgressBar::~ProgressBar</a></div><div class="ttdeci">~ProgressBar()</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00241">Gui.cpp:241</a></div></div>
 <div class="ttc" id="aconsts_8hpp_html"><div class="ttname"><a href="consts_8hpp.html">consts.hpp</a></div><div class="ttdoc">Ensemble des constantes du jeux.</div></div>
-<div class="ttc" id="anamespacegame_html_a214a8f8fb832eaaa8cae6f1be423a2b0"><div class="ttname"><a href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0">game::inventory_items_types</a></div><div class="ttdeci">inventory_items_types</div><div class="ttdef"><b>Definition:</b> <a href="consts_8hpp_source.html#l00063">consts.hpp:64</a></div></div>
-<div class="ttc" id="anamespacegame_html_a214a8f8fb832eaaa8cae6f1be423a2b0a0783b29ef2cd9d2229b08af1093f5f0f"><div class="ttname"><a href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a0783b29ef2cd9d2229b08af1093f5f0f">game::VIAL</a></div><div class="ttdeci">@ VIAL</div><div class="ttdef"><b>Definition:</b> <a href="consts_8hpp_source.html#l00066">consts.hpp:66</a></div></div>
-<div class="ttc" id="anamespacegame_html_a214a8f8fb832eaaa8cae6f1be423a2b0a2b602b3377438010ebb120c46572f3c7"><div class="ttname"><a href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a2b602b3377438010ebb120c46572f3c7">game::ARMORY</a></div><div class="ttdeci">@ ARMORY</div><div class="ttdef"><b>Definition:</b> <a href="consts_8hpp_source.html#l00067">consts.hpp:67</a></div></div>
-<div class="ttc" id="anamespacegame_html_a214a8f8fb832eaaa8cae6f1be423a2b0ade2b8abe881dd8e4494afd39e979ebf8"><div class="ttname"><a href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0ade2b8abe881dd8e4494afd39e979ebf8">game::DEFAULT</a></div><div class="ttdeci">@ DEFAULT</div><div class="ttdef"><b>Definition:</b> <a href="consts_8hpp_source.html#l00065">consts.hpp:65</a></div></div>
+<div class="ttc" id="anamespacegame_html_a214a8f8fb832eaaa8cae6f1be423a2b0"><div class="ttname"><a href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0">game::inventory_items_types</a></div><div class="ttdeci">inventory_items_types</div><div class="ttdef"><b>Definition:</b> <a href="consts_8hpp_source.html#l00065">consts.hpp:66</a></div></div>
+<div class="ttc" id="anamespacegame_html_a214a8f8fb832eaaa8cae6f1be423a2b0a0783b29ef2cd9d2229b08af1093f5f0f"><div class="ttname"><a href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a0783b29ef2cd9d2229b08af1093f5f0f">game::VIAL</a></div><div class="ttdeci">@ VIAL</div><div class="ttdef"><b>Definition:</b> <a href="consts_8hpp_source.html#l00068">consts.hpp:68</a></div></div>
+<div class="ttc" id="anamespacegame_html_a214a8f8fb832eaaa8cae6f1be423a2b0a166de762fd24b8c7c9624d8b42d4cfab"><div class="ttname"><a href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a166de762fd24b8c7c9624d8b42d4cfab">game::TELEPORTKEY</a></div><div class="ttdeci">@ TELEPORTKEY</div><div class="ttdef"><b>Definition:</b> <a href="consts_8hpp_source.html#l00070">consts.hpp:70</a></div></div>
+<div class="ttc" id="anamespacegame_html_a214a8f8fb832eaaa8cae6f1be423a2b0a2b602b3377438010ebb120c46572f3c7"><div class="ttname"><a href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a2b602b3377438010ebb120c46572f3c7">game::ARMORY</a></div><div class="ttdeci">@ ARMORY</div><div class="ttdef"><b>Definition:</b> <a href="consts_8hpp_source.html#l00069">consts.hpp:69</a></div></div>
+<div class="ttc" id="anamespacegame_html_a214a8f8fb832eaaa8cae6f1be423a2b0a73e510979d35b3bfb3c02215c02139a3"><div class="ttname"><a href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0a73e510979d35b3bfb3c02215c02139a3">game::MONEY</a></div><div class="ttdeci">@ MONEY</div><div class="ttdef"><b>Definition:</b> <a href="consts_8hpp_source.html#l00072">consts.hpp:71</a></div></div>
+<div class="ttc" id="anamespacegame_html_a214a8f8fb832eaaa8cae6f1be423a2b0ade2b8abe881dd8e4494afd39e979ebf8"><div class="ttname"><a href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0ade2b8abe881dd8e4494afd39e979ebf8">game::DEFAULT</a></div><div class="ttdeci">@ DEFAULT</div><div class="ttdef"><b>Definition:</b> <a href="consts_8hpp_source.html#l00067">consts.hpp:67</a></div></div>
 <div class="ttc" id="anamespacegame_html_aee7ec3c00c3424386587b3f2f5bdf437"><div class="ttname"><a href="namespacegame.html#aee7ec3c00c3424386587b3f2f5bdf437">game::INVENTORY_BLOCK_WIDTH</a></div><div class="ttdeci">constexpr int INVENTORY_BLOCK_WIDTH</div><div class="ttdef"><b>Definition:</b> <a href="consts_8hpp_source.html#l00049">consts.hpp:49</a></div></div>
 <div class="ttc" id="anamespacegui_html_a003286be817407a8a5192e664285dc91"><div class="ttname"><a href="namespacegui.html#a003286be817407a8a5192e664285dc91">gui::p2pX</a></div><div class="ttdeci">float p2pX(const float perc, const sf::VideoMode &amp;vm)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00009">Gui.cpp:9</a></div></div>
 <div class="ttc" id="anamespacegui_html_a4e55941333524a17e5ab3e09d5fe89b7"><div class="ttname"><a href="namespacegui.html#a4e55941333524a17e5ab3e09d5fe89b7">gui::calcCharSize</a></div><div class="ttdeci">unsigned calcCharSize(const sf::VideoMode &amp;vm, const unsigned modifier=60)</div><div class="ttdef"><b>Definition:</b> <a href="_gui_8cpp_source.html#l00037">Gui.cpp:37</a></div></div>

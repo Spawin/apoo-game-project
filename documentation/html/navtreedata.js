@@ -63,9 +63,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_animation_8cpp.html",
-"class_collider.html#a564acde9860f875a32a6638c573d87be",
-"class_rigidbody.html",
-"namespacegame.html#a31101344334dbbe88a0c2fd3313f697a"
+"class_boxing_gloves.html",
+"class_personage.html#ac93ee3156d7d9b1a5bae68603ab24ca2",
+"functions_func_c.html"
 ];
 
 var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';

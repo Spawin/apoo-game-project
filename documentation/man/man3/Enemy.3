@@ -1,0 +1,74 @@
+.TH "Enemy" 3 "Samedi 30 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Enemy
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Enemy\&.hpp>\fP
+.SS "Fonctions membres publiques"
+
+.in +1c
+.ti -1c
+.RI "\fBEnemy\fP (\fBPersonage\fP *personage)"
+.br
+.ti -1c
+.RI "\fB~Enemy\fP ()"
+.br
+.ti -1c
+.RI "sf::Vector2f \fBgetPosition\fP () const"
+.br
+.ti -1c
+.RI "\fBPersonage\fP * \fBgetPersonage\fP ()"
+.br
+.ti -1c
+.RI "void \fBmanageMove\fP (const float &deltaTime)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (const float &deltaTime)"
+.br
+.ti -1c
+.RI "void \fBrender\fP (sf::RenderTarget &target)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Définition à la ligne \fB14\fP du fichier \fBEnemy\&.hpp\fP\&.
+.SH "Documentation des constructeurs et destructeur"
+.PP 
+.SS "Enemy::Enemy (\fBPersonage\fP * personage)"
+
+.PP
+Définition à la ligne \fB8\fP du fichier \fBEnemy\&.cpp\fP\&.
+.SS "Enemy::~Enemy ()"
+
+.PP
+Définition à la ligne \fB16\fP du fichier \fBEnemy\&.cpp\fP\&.
+.SH "Documentation des fonctions membres"
+.PP 
+.SS "\fBPersonage\fP * Enemy::getPersonage ()"
+
+.PP
+Définition à la ligne \fB27\fP du fichier \fBEnemy\&.cpp\fP\&.
+.SS "sf::Vector2f Enemy::getPosition () const"
+
+.PP
+Définition à la ligne \fB22\fP du fichier \fBEnemy\&.cpp\fP\&.
+.SS "void Enemy::manageMove (const float & deltaTime)"
+
+.PP
+Définition à la ligne \fB32\fP du fichier \fBEnemy\&.cpp\fP\&.
+.SS "void Enemy::render (sf::RenderTarget & target)"
+
+.PP
+Définition à la ligne \fB204\fP du fichier \fBEnemy\&.cpp\fP\&.
+.SS "void Enemy::update (const float & deltaTime)"
+
+.PP
+Définition à la ligne \fB197\fP du fichier \fBEnemy\&.cpp\fP\&.
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

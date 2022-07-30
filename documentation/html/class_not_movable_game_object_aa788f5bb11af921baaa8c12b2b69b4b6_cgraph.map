@@ -1,0 +1,6 @@
+<map id="NotMovableGameObject::addToHall" name="NotMovableGameObject::addToHall">
+<area shape="rect" id="node1" title="Déplacer un objet vers une salle est virtuel pour permettre de récrire la fonction et spécifier peut ..." alt="" coords="5,27,168,69"/>
+<area shape="rect" id="node2" href="$class_not_movable_game_object.html#ad1d21edd47d563f733223b390bbdd969" title="Met à jour les nouvelle limite de déplacement." alt="" coords="216,27,399,69"/>
+<area shape="rect" id="node3" href="$class_hall.html#ae8b24a02bbc5c17bf1e557cb3d98a76d" title=" " alt="" coords="492,5,603,32"/>
+<area shape="rect" id="node4" href="$class_position.html#a7a4256cdf1c47f24a5ee67194ddd8d68" title="Met à jour les nouvelle limite de déplacement." alt="" coords="447,57,648,98"/>
+</map>

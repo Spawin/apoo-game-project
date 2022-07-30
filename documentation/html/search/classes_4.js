@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['gamemap_0',['GameMap',['../class_game_map.html',1,'']]],
-  ['gamemaster_1',['GameMaster',['../class_game_master.html',1,'']]],
-  ['gameobject_2',['GameObject',['../class_game_object.html',1,'']]],
-  ['gamestate_3',['GameState',['../class_game_state.html',1,'']]],
-  ['graphicssettings_4',['GraphicsSettings',['../class_graphics_settings.html',1,'']]]
+  ['enemy_0',['Enemy',['../class_enemy.html',1,'']]],
+  ['enemydata_1',['EnemyData',['../struct_enemy_data.html',1,'']]],
+  ['enemymanager_2',['EnemyManager',['../class_enemy_manager.html',1,'']]]
 ];

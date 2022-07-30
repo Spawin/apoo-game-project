@@ -1,4 +1,4 @@
-.TH "C:/programs_sc/CIC/MITST06/jeu/src/include/consts.hpp" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.TH "C:/programs_sc/CIC/MITST06/jeu/src/include/consts.hpp" 3 "Samedi 30 Juillet 2022" "Jeu POA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -7,6 +7,20 @@ C:/programs_sc/CIC/MITST06/jeu/src/include/consts.hpp \- Ensemble des constantes
 .SH SYNOPSIS
 .br
 .PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBgame::AttackSateInformations\fP"
+.br
+.ti -1c
+.RI "struct \fBgame::ItemActionResult\fP"
+.br
+.RI "Resultat retourné à l'utilisateur après une l'utilisation d'un item sur un personage\&. "
+.ti -1c
+.RI "struct \fBgame::PlayerStats\fP"
+.br
+.in -1c
 .SS "Espaces de nommage"
 
 .in +1c
@@ -22,6 +36,13 @@ C:/programs_sc/CIC/MITST06/jeu/src/include/consts.hpp \- Ensemble des constantes
 .br
 .ti -1c
 .RI "enum \fBgame::inventory_items_types\fP { \fBgame::DEFAULT\fP = -1, \fBgame::VIAL\fP = 0, \fBgame::ARMORY\fP, \fBgame::TELEPORTKEY\fP, \fBgame::MONEY\fP }"
+.br
+.ti -1c
+.RI "enum class \fBgame::ItemsCategories\fP { \fBgame::NONE\fP, \fBgame::MONEY\fP, \fBgame::TELEPORTKEY\fP, \fBgame::DEFEND\fP, \fBgame::ATTACK_BODY_TO_BODY\fP, \fBgame::ATTACK_SEMI_DISTANCE\fP, \fBgame::ATTACK_DISTANCE\fP, \fBgame::VIAL_EXP\fP, \fBgame::VIAL_HEALTH\fP, \fBgame::VIAL_ATTACK_EXP\fP, \fBgame::VIAL_ATTACK_HEALTH\fP }"
+.br
+.RI "Représente les catégories d'items\&. TODO - Compléter\&.\&.\&.\&. Va surtout aider dans l'utilisation de l'item et son comportement\&. "
+.ti -1c
+.RI "enum \fBgame::AnimationSide\fP { \fBgame::LEFT\fP, \fBgame::RIGHT\fP }"
 .br
 .in -1c
 .SS "Fonctions"
@@ -77,10 +98,13 @@ C:/programs_sc/CIC/MITST06/jeu/src/include/consts.hpp \- Ensemble des constantes
 .RI "constexpr int \fBgame::PERSONNAGE_MAX_HEALTH\fP = 100"
 .br
 .ti -1c
-.RI "constexpr int \fBgame::PERSONNAGE_MAX_SPECIALITY\fP = 100"
+.RI "constexpr int \fBgame::PERSONNAGE_MAX_EXP\fP = 100"
 .br
 .ti -1c
 .RI "constexpr int \fBgame::INVENTORY_BLOCK_WIDTH\fP = 80"
+.br
+.ti -1c
+.RI "constexpr int \fBgame::SCORE_ADD_AFTER_ENEMY_KILLED\fP = 50"
 .br
 .in -1c
 .SH "Description détaillée"

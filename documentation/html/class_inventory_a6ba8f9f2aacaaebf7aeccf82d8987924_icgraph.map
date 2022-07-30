@@ -1,0 +1,12 @@
+<map id="Inventory::add" name="Inventory::add">
+<area shape="rect" id="node1" title=" " alt="" coords="553,93,656,120"/>
+<area shape="rect" id="node2" href="$class_bag.html#a894be6b336ee6521272eb9dac2f75be6" title=" " alt="" coords="401,43,499,69"/>
+<area shape="rect" id="node6" href="$class_hall.html#a817dc6744558557c847eb6d74d08cb81" title=" " alt="" coords="401,93,499,120"/>
+<area shape="rect" id="node7" href="$class_inventory.html#a2caea8bbe0a4d963530f669ff4221cc6" title=" " alt="" coords="395,144,505,171"/>
+<area shape="rect" id="node3" href="$class_personage.html#aa995d729f1d7ac21b9c9423556f7a17e" title=" " alt="" coords="208,5,347,32"/>
+<area shape="rect" id="node4" href="$class_personage.html#a9670b4adc4283e6741f13289baf84387" title=" " alt="" coords="211,56,343,83"/>
+<area shape="rect" id="node5" href="$class_personage.html#a53b3b6c7865b2eb80de7c6edab217944" title=" " alt="" coords="5,56,160,83"/>
+<area shape="rect" id="node8" href="$class_bag.html#a1564094e96027c1a0234fd4a8c84ee66" title=" " alt="" coords="223,119,331,145"/>
+<area shape="rect" id="node10" href="$class_hall.html#a32e746256200ea36db17b5d1e9ea50d5" title=" " alt="" coords="224,169,331,196"/>
+<area shape="rect" id="node9" href="$class_personage.html#a905c0a8340b7f13513b6166807a6e0c6" title=" " alt="" coords="9,119,156,145"/>
+</map>

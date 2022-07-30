@@ -1,81 +1,32 @@
 \hypertarget{_item_8hpp}{}\doxysection{Référence du fichier C\+:/programs\+\_\+sc/\+CIC/\+MITST06/jeu/src/include/\+Item.hpp}
 \label{_item_8hpp}\index{C:/programs\_sc/CIC/MITST06/jeu/src/include/Item.hpp@{C:/programs\_sc/CIC/MITST06/jeu/src/include/Item.hpp}}
-{\ttfamily \#include \char`\"{}include/\+Not\+Movable\+Game\+Object.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}include/\+Personage.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/consts.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/\+Collision.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/\+Not\+Movable\+Game\+Object.\+hpp\char`\"{}}\newline
+Graphe des dépendances par inclusion de Item.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_item_8hpp__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_item_8hpp__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{class_item}{Item}}
 \begin{DoxyCompactList}\small\item\em Représente éssentiellement les object que pourra manipuler les personnages. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Énumérations}
+\doxysubsection*{Espaces de nommage}
 \begin{DoxyCompactItemize}
 \item 
-enum class \mbox{\hyperlink{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705fa}{Items\+Categories}} \{ \newline
-\mbox{\hyperlink{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa2bc794c2d9a28e52d1dd66d95e37d485}{MONEY}}
-, \mbox{\hyperlink{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa223e1aaf0ac054deb62f01fd466b5b41}{TELEPORTKEY}}
-, \mbox{\hyperlink{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa95865673c8870cd531ef8333dd7399a2}{DEFEND}}
-, \mbox{\hyperlink{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa51bd5d941c848fa5022c39ecd9df615c}{ATTACK\+\_\+\+BODY\+\_\+\+TO\+\_\+\+BODY}}
-, \newline
-\mbox{\hyperlink{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa40711c589484941b36b935150b0403d4}{ATTACK\+\_\+\+DISTANCE}}
-, \mbox{\hyperlink{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa6377a0bcb00687d145c2d69374b832a9}{VIAL\+\_\+\+EXP}}
-, \mbox{\hyperlink{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faad9912f2805a6dd5ed5eeaf49fb65b427}{VIAL\+\_\+\+HEALTH}}
-, \mbox{\hyperlink{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faab72904fbdd103b868d43271313251ec7}{VIAL\+\_\+\+ATTACK\+\_\+\+EXP}}
-, \newline
-\mbox{\hyperlink{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa8c60e3ddd7fd61b8e930160f58a7ec7b}{VIAL\+\_\+\+ATTACK\+\_\+\+HEALTH}}
- \}
-\begin{DoxyCompactList}\small\item\em Représente les catégories d\textquotesingle{}items. TODO -\/ Compléter.... Va surtout aider dans l\textquotesingle{}utilisation de l\textquotesingle{}item et son comportement. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\doxysubsection{Documentation du type de l\textquotesingle{}énumération}
-\mbox{\Hypertarget{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705fa}\label{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705fa}} 
-\index{Item.hpp@{Item.hpp}!ItemsCategories@{ItemsCategories}}
-\index{ItemsCategories@{ItemsCategories}!Item.hpp@{Item.hpp}}
-\doxysubsubsection{\texorpdfstring{ItemsCategories}{ItemsCategories}}
-{\footnotesize\ttfamily enum class \mbox{\hyperlink{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705fa}{Items\+Categories}}\hspace{0.3cm}{\ttfamily [strong]}}
-
-
-
-Représente les catégories d\textquotesingle{}items. TODO -\/ Compléter.... Va surtout aider dans l\textquotesingle{}utilisation de l\textquotesingle{}item et son comportement. 
-
-\begin{DoxyEnumFields}{Valeurs énumérées}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MONEY@{MONEY}!Item.hpp@{Item.hpp}}\index{Item.hpp@{Item.hpp}!MONEY@{MONEY}}}\mbox{\Hypertarget{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa2bc794c2d9a28e52d1dd66d95e37d485}\label{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa2bc794c2d9a28e52d1dd66d95e37d485}} 
-MONEY&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{TELEPORTKEY@{TELEPORTKEY}!Item.hpp@{Item.hpp}}\index{Item.hpp@{Item.hpp}!TELEPORTKEY@{TELEPORTKEY}}}\mbox{\Hypertarget{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa223e1aaf0ac054deb62f01fd466b5b41}\label{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa223e1aaf0ac054deb62f01fd466b5b41}} 
-TELEPORTKEY&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{DEFEND@{DEFEND}!Item.hpp@{Item.hpp}}\index{Item.hpp@{Item.hpp}!DEFEND@{DEFEND}}}\mbox{\Hypertarget{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa95865673c8870cd531ef8333dd7399a2}\label{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa95865673c8870cd531ef8333dd7399a2}} 
-DEFEND&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ATTACK\_BODY\_TO\_BODY@{ATTACK\_BODY\_TO\_BODY}!Item.hpp@{Item.hpp}}\index{Item.hpp@{Item.hpp}!ATTACK\_BODY\_TO\_BODY@{ATTACK\_BODY\_TO\_BODY}}}\mbox{\Hypertarget{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa51bd5d941c848fa5022c39ecd9df615c}\label{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa51bd5d941c848fa5022c39ecd9df615c}} 
-ATTACK\+\_\+\+BODY\+\_\+\+TO\+\_\+\+BODY&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ATTACK\_DISTANCE@{ATTACK\_DISTANCE}!Item.hpp@{Item.hpp}}\index{Item.hpp@{Item.hpp}!ATTACK\_DISTANCE@{ATTACK\_DISTANCE}}}\mbox{\Hypertarget{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa40711c589484941b36b935150b0403d4}\label{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa40711c589484941b36b935150b0403d4}} 
-ATTACK\+\_\+\+DISTANCE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{VIAL\_EXP@{VIAL\_EXP}!Item.hpp@{Item.hpp}}\index{Item.hpp@{Item.hpp}!VIAL\_EXP@{VIAL\_EXP}}}\mbox{\Hypertarget{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa6377a0bcb00687d145c2d69374b832a9}\label{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa6377a0bcb00687d145c2d69374b832a9}} 
-VIAL\+\_\+\+EXP&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{VIAL\_HEALTH@{VIAL\_HEALTH}!Item.hpp@{Item.hpp}}\index{Item.hpp@{Item.hpp}!VIAL\_HEALTH@{VIAL\_HEALTH}}}\mbox{\Hypertarget{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faad9912f2805a6dd5ed5eeaf49fb65b427}\label{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faad9912f2805a6dd5ed5eeaf49fb65b427}} 
-VIAL\+\_\+\+HEALTH&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{VIAL\_ATTACK\_EXP@{VIAL\_ATTACK\_EXP}!Item.hpp@{Item.hpp}}\index{Item.hpp@{Item.hpp}!VIAL\_ATTACK\_EXP@{VIAL\_ATTACK\_EXP}}}\mbox{\Hypertarget{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faab72904fbdd103b868d43271313251ec7}\label{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faab72904fbdd103b868d43271313251ec7}} 
-VIAL\+\_\+\+ATTACK\+\_\+\+EXP&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{VIAL\_ATTACK\_HEALTH@{VIAL\_ATTACK\_HEALTH}!Item.hpp@{Item.hpp}}\index{Item.hpp@{Item.hpp}!VIAL\_ATTACK\_HEALTH@{VIAL\_ATTACK\_HEALTH}}}\mbox{\Hypertarget{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa8c60e3ddd7fd61b8e930160f58a7ec7b}\label{_item_8hpp_ab96fbadc159fcb2380ed41ce0ec705faa8c60e3ddd7fd61b8e930160f58a7ec7b}} 
-VIAL\+\_\+\+ATTACK\+\_\+\+HEALTH&\\
-\hline
-
-\end{DoxyEnumFields}
-
-
-Définition à la ligne \mbox{\hyperlink{_item_8hpp_source_l00015}{15}} du fichier \mbox{\hyperlink{_item_8hpp_source}{Item.\+hpp}}.
-
+namespace \mbox{\hyperlink{namespacegame}{game}}
+\end{DoxyCompactItemize}

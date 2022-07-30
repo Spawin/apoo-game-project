@@ -1,0 +1,4 @@
+<map id="Collider::removeObjects" name="Collider::removeObjects">
+<area shape="rect" id="node1" title="Appelé à la destruction d&#39;un objet pour l&#39;enlever de la liste." alt="" coords="237,5,396,32"/>
+<area shape="rect" id="node2" href="$class_game_object.html#ab82dfdb656f9051c0587e6593b2dda97" title=" " alt="" coords="5,5,189,32"/>
+</map>

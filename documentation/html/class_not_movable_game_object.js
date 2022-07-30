@@ -5,6 +5,7 @@ var class_not_movable_game_object =
     [ "addToHall", "class_not_movable_game_object.html#aa788f5bb11af921baaa8c12b2b69b4b6", null ],
     [ "initPosition", "class_not_movable_game_object.html#aca3c2dfcd7875f888650bb06d549bd2e", null ],
     [ "onCollisionEnter", "class_not_movable_game_object.html#a4954c3c803930ca5faf48bab88fb19bd", null ],
+    [ "setPosition", "class_not_movable_game_object.html#ac15fa38f4fafb47ee0e58efa1996988c", null ],
     [ "setPositionMovementLimit", "class_not_movable_game_object.html#ad1d21edd47d563f733223b390bbdd969", null ],
     [ "show", "class_not_movable_game_object.html#a203fd11b9476996adcd1345b9d8a8d61", null ],
     [ "update", "class_not_movable_game_object.html#aafd50ee8f5e31bd1f4dfb4bd95053267", null ],

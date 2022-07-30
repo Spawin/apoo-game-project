@@ -3,213 +3,216 @@
 \mbox{\hyperlink{_main_menu_state_8cpp}{Aller à la documentation de ce fichier.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_main_menu_state_8hpp}{include/MainMenuState.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00002}00002 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00003}00003 \textcolor{keyword}{using namespace }std;}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00004}00004 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00005}00005 \textcolor{comment}{// Fonction static}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00006}00006 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00007}00007 \textcolor{comment}{// Fonctions d'initialisation}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00008}00008 \textcolor{comment}{// void MainMenuState::initFonts()\{\}}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00009}00009 \textcolor{keywordtype}{void} MainMenuState::initFonts()}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00010}00010 \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00011}00011     \textcolor{keywordflow}{if} (!this-\/>font.loadFromFile(\textcolor{stringliteral}{"{}content/fonts/Dosis-\/Light.ttf"{}}))}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00012}00012     \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00013}00013         \textcolor{keywordflow}{throw}(\textcolor{stringliteral}{"{}ERROR::MAIN\_MENU\_STATE::COULD\_NOT\_LOAD\_FONT"{}});}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00014}00014     \}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00015}00015 \}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00016}00016 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00017}00017 \textcolor{comment}{// void MainMenuState::initFonts()\{\}}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00018}00018 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00019}00019 \textcolor{keywordtype}{void} MainMenuState::initGui()}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00020}00020 \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00021}00021     \textcolor{comment}{// const sf::VideoMode\& vm = sf::VideoMode::getDesktopMode(); // REVIEW -\/}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00022}00022     \textcolor{keyword}{const} sf::VideoMode vm(this-\/>\mbox{\hyperlink{class_state_a9c55cdba6e8a4a7b8a6a83fa51311514}{stateData}}-\/>\mbox{\hyperlink{struct_state_data_a82caf8eb1620cee49701ac8bb8343140}{graphicsSettings}}-\/>\mbox{\hyperlink{class_graphics_settings_adc582bb940381840fba48c7f0abd4d1d}{resolution}}); \textcolor{comment}{// = sf::VideoMode::getDesktopMode(); // REVIEW -\/}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00023}00023     \textcolor{comment}{// NOTE -\/ Pour utiliser const sf::VideoMode\& vm = sf::VideoMode::getDesktopMode();}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00024}00024     \textcolor{comment}{// IL faudrait réadapter les coordonnées des points. On aura par exemples}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00025}00025     \textcolor{comment}{// gui::p2pX(15.6f, vm), gui::p2pY(30.f, vm) pour le premir boutton et ainsi de suite}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00026}00026 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00027}00027     \textcolor{comment}{//* Background}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00028}00028     this-\/>background.setSize(sf::Vector2f(this-\/>\mbox{\hyperlink{class_state_ae6259a383c98ae7496266a76a9daf478}{window}}-\/>getSize().x, this-\/>window-\/>getSize().y));}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00029}00029     \textcolor{keywordflow}{if} (!this-\/>backgroundTexture.loadFromFile(\textcolor{stringliteral}{"{}content/backgrounds/backgrounds.png"{}}))}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00030}00030     \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00031}00031         \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"{}ERROR::MAIN\_MENU\_STATE::FAILED\_TO\_LOAD\_BACKGROUND\_TEXTURE"{}};}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00032}00032     \}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00033}00033     this-\/>background.setTexture(\&this-\/>backgroundTexture);}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00034}00034     \textcolor{comment}{// this-\/>background.setScale();}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00035}00035     \textcolor{comment}{// this-\/>background.setFillColor(sf::Color::Magenta);}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00036}00036     \textcolor{comment}{// this-\/>background.setPosition(this-\/>window-\/>getView().getCenter().x -\/ this-\/>window-\/>getSize().x / 2, this-\/>window-\/>getView().getCenter().y -\/ this-\/>window-\/>getSize().y / 2);}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00037}00037 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00038}00038     \textcolor{comment}{//* Buttons}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00039}00039     this-\/>buttons[\textcolor{stringliteral}{"{}GAME\_STATE\_RESUME"{}}] = \textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_button}{gui::Button}}(}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00040}00040         \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(15.6f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(40.f, vm), \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(13.f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(6.f, vm), \&this-\/>font,}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00041}00041         \textcolor{stringliteral}{"{}Reprendre"{}}, \textcolor{comment}{//}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00042}00042         \mbox{\hyperlink{namespacegui_a4e55941333524a17e5ab3e09d5fe89b7}{gui::calcCharSize}}(vm),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00043}00043         sf::Color(200, 200, 200, 200),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00044}00044         sf::Color(255, 255, 255, 255),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00045}00045         sf::Color(20, 20, 20, 50),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00046}00046         sf::Color(70, 70, 70, 0),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00047}00047         sf::Color(150, 150, 150, 0),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00048}00048         sf::Color(20, 20, 20, 0));}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00049}00049 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00050}00050     this-\/>buttons[\textcolor{stringliteral}{"{}GAME\_STATE\_NEW"{}}] = \textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_button}{gui::Button}}(}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00051}00051         \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(15.6f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(50.f, vm), \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(13.f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(6.f, vm), \&this-\/>font,}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00052}00052         \textcolor{stringliteral}{"{}Nouvelle partie"{}}, \textcolor{comment}{//}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00053}00053         \mbox{\hyperlink{namespacegui_a4e55941333524a17e5ab3e09d5fe89b7}{gui::calcCharSize}}(vm),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00054}00054         sf::Color(200, 200, 200, 200),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00055}00055         sf::Color(255, 255, 255, 255),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00056}00056         sf::Color(20, 20, 20, 50),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00057}00057         sf::Color(70, 70, 70, 0),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00058}00058         sf::Color(150, 150, 150, 0),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00059}00059         sf::Color(20, 20, 20, 0));}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00060}00060 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00061}00061     this-\/>buttons[\textcolor{stringliteral}{"{}SETTINGS\_STATE"{}}] = \textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_button}{gui::Button}}(}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00062}00062         \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(15.6f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(60.f, vm), \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(13.f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(6.f, vm), \&this-\/>font,}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00063}00063         \textcolor{stringliteral}{"{}Param"{}}, \textcolor{comment}{//}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00064}00064         \mbox{\hyperlink{namespacegui_a4e55941333524a17e5ab3e09d5fe89b7}{gui::calcCharSize}}(vm),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00065}00065         sf::Color(200, 200, 200, 200),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00066}00066         sf::Color(255, 255, 255, 255),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00067}00067         sf::Color(20, 20, 20, 50),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00068}00068         sf::Color(70, 70, 70, 0),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00069}00069         sf::Color(150, 150, 150, 0),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00070}00070         sf::Color(20, 20, 20, 0));}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00071}00071 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00072}00072     \textcolor{comment}{//*}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00073}00073     this-\/>buttons[\textcolor{stringliteral}{"{}EDITOR\_STATE"{}}] = \textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_button}{gui::Button}}(}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00074}00074         \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(15.6f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(70.f, vm), \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(13.f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(6.f, vm), \&this-\/>font,}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00075}00075         \textcolor{stringliteral}{"{}..."{}}, \textcolor{comment}{//}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00076}00076         \mbox{\hyperlink{namespacegui_a4e55941333524a17e5ab3e09d5fe89b7}{gui::calcCharSize}}(vm),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00077}00077         sf::Color(200, 200, 200, 200),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00078}00078         sf::Color(255, 255, 255, 255),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00079}00079         sf::Color(20, 20, 20, 50),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00080}00080         sf::Color(70, 70, 70, 0),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00081}00081         sf::Color(150, 150, 150, 0),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00082}00082         sf::Color(20, 20, 20, 0));}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00083}00083     \textcolor{comment}{//*/}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00084}00084 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00085}00085     this-\/>buttons[\textcolor{stringliteral}{"{}EXIT\_STATE"{}}] = \textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_button}{gui::Button}}(}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00086}00086         \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(15.6f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(85.f, vm), \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(13.f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(6.f, vm), \&this-\/>font,}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00087}00087         \textcolor{stringliteral}{"{}Quitter"{}}, \textcolor{comment}{//}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00088}00088         \mbox{\hyperlink{namespacegui_a4e55941333524a17e5ab3e09d5fe89b7}{gui::calcCharSize}}(vm),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00089}00089         sf::Color(200, 200, 200, 200),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00090}00090         sf::Color(255, 255, 255, 255),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00091}00091         sf::Color(20, 20, 20, 50),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00092}00092         sf::Color(100, 100, 100, 0),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00093}00093         sf::Color(150, 150, 150, 0),}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00094}00094         sf::Color(20, 20, 20, 0));}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00095}00095 \}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00096}00096 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00097}00097 \textcolor{keywordtype}{void} MainMenuState::resetGui()}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00098}00098 \{\}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_game_state_8hpp}{include/GameState.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00004}00004 \textcolor{keyword}{class }\mbox{\hyperlink{class_game_state}{GameState}};}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00006}00006 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00008}00008 \textcolor{comment}{// Fonction static}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00010}00010 \textcolor{comment}{// Fonctions d'initialisation}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00011}00011 \textcolor{comment}{// void MainMenuState::initFonts()\{\}}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00012}00012 \textcolor{keywordtype}{void} MainMenuState::initFonts()}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00013}00013 \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00014}00014     \textcolor{keywordflow}{if} (!this-\/>font.loadFromFile(\textcolor{stringliteral}{"{}content/fonts/Dosis-\/Light.ttf"{}}))}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00015}00015     \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00016}00016         \textcolor{keywordflow}{throw}(\textcolor{stringliteral}{"{}ERROR::MAIN\_MENU\_STATE::COULD\_NOT\_LOAD\_FONT"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00017}00017     \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00018}00018 \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00020}00020 \textcolor{comment}{// void MainMenuState::initFonts()\{\}}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00022}00022 \textcolor{keywordtype}{void} MainMenuState::initGui()}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00023}00023 \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00024}00024     \textcolor{comment}{// const sf::VideoMode\& vm = sf::VideoMode::getDesktopMode(); // REVIEW -\/}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00025}00025     \textcolor{keyword}{const} sf::VideoMode vm(this-\/>\mbox{\hyperlink{class_state_a9c55cdba6e8a4a7b8a6a83fa51311514}{stateData}}-\/>\mbox{\hyperlink{struct_state_data_a82caf8eb1620cee49701ac8bb8343140}{graphicsSettings}}-\/>\mbox{\hyperlink{class_graphics_settings_adc582bb940381840fba48c7f0abd4d1d}{resolution}}); \textcolor{comment}{// = sf::VideoMode::getDesktopMode(); // REVIEW -\/}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00026}00026     \textcolor{comment}{// NOTE -\/ Pour utiliser const sf::VideoMode\& vm = sf::VideoMode::getDesktopMode();}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00027}00027     \textcolor{comment}{// IL faudrait réadapter les coordonnées des points. On aura par exemples}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00028}00028     \textcolor{comment}{// gui::p2pX(15.6f, vm), gui::p2pY(30.f, vm) pour le premir boutton et ainsi de suite}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00030}00030     \textcolor{comment}{//* Background}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00031}00031     this-\/>background.setSize(sf::Vector2f(this-\/>\mbox{\hyperlink{class_state_ae6259a383c98ae7496266a76a9daf478}{window}}-\/>getSize().x, this-\/>window-\/>getSize().y));}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00032}00032     \textcolor{keywordflow}{if} (!this-\/>backgroundTexture.loadFromFile(\textcolor{stringliteral}{"{}content/backgrounds/backgrounds.png"{}}))}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00033}00033     \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00034}00034         \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"{}ERROR::MAIN\_MENU\_STATE::FAILED\_TO\_LOAD\_BACKGROUND\_TEXTURE"{}};}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00035}00035     \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00036}00036     this-\/>background.setTexture(\&this-\/>backgroundTexture);}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00037}00037     \textcolor{comment}{// this-\/>background.setScale();}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00038}00038     \textcolor{comment}{// this-\/>background.setFillColor(sf::Color::Magenta);}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00039}00039     \textcolor{comment}{// this-\/>background.setPosition(this-\/>window-\/>getView().getCenter().x -\/ this-\/>window-\/>getSize().x / 2, this-\/>window-\/>getView().getCenter().y -\/ this-\/>window-\/>getSize().y / 2);}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00041}00041     \textcolor{comment}{//* Buttons}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00042}00042     this-\/>buttons[\textcolor{stringliteral}{"{}GAME\_STATE\_RESUME"{}}] = \textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_button}{gui::Button}}(}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00043}00043         \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(15.6f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(40.f, vm), \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(13.f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(6.f, vm), \&this-\/>font,}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00044}00044         \textcolor{stringliteral}{"{}Reprendre"{}}, \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00045}00045         \mbox{\hyperlink{namespacegui_a4e55941333524a17e5ab3e09d5fe89b7}{gui::calcCharSize}}(vm),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00046}00046         sf::Color(200, 200, 200, 200),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00047}00047         sf::Color(255, 255, 255, 255),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00048}00048         sf::Color(20, 20, 20, 50),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00049}00049         sf::Color(70, 70, 70, 0),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00050}00050         sf::Color(150, 150, 150, 0),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00051}00051         sf::Color(20, 20, 20, 0));}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00053}00053     this-\/>buttons[\textcolor{stringliteral}{"{}GAME\_STATE\_NEW"{}}] = \textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_button}{gui::Button}}(}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00054}00054         \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(15.6f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(50.f, vm), \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(13.f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(6.f, vm), \&this-\/>font,}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00055}00055         \textcolor{stringliteral}{"{}Nouvelle partie"{}}, \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00056}00056         \mbox{\hyperlink{namespacegui_a4e55941333524a17e5ab3e09d5fe89b7}{gui::calcCharSize}}(vm),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00057}00057         sf::Color(200, 200, 200, 200),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00058}00058         sf::Color(255, 255, 255, 255),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00059}00059         sf::Color(20, 20, 20, 50),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00060}00060         sf::Color(70, 70, 70, 0),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00061}00061         sf::Color(150, 150, 150, 0),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00062}00062         sf::Color(20, 20, 20, 0));}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00064}00064     this-\/>buttons[\textcolor{stringliteral}{"{}SETTINGS\_STATE"{}}] = \textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_button}{gui::Button}}(}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00065}00065         \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(15.6f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(60.f, vm), \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(13.f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(6.f, vm), \&this-\/>font,}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00066}00066         \textcolor{stringliteral}{"{}Param"{}}, \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00067}00067         \mbox{\hyperlink{namespacegui_a4e55941333524a17e5ab3e09d5fe89b7}{gui::calcCharSize}}(vm),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00068}00068         sf::Color(200, 200, 200, 200),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00069}00069         sf::Color(255, 255, 255, 255),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00070}00070         sf::Color(20, 20, 20, 50),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00071}00071         sf::Color(70, 70, 70, 0),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00072}00072         sf::Color(150, 150, 150, 0),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00073}00073         sf::Color(20, 20, 20, 0));}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00075}00075     \textcolor{comment}{//*}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00076}00076     this-\/>buttons[\textcolor{stringliteral}{"{}EDITOR\_STATE"{}}] = \textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_button}{gui::Button}}(}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00077}00077         \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(15.6f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(70.f, vm), \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(13.f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(6.f, vm), \&this-\/>font,}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00078}00078         \textcolor{stringliteral}{"{}..."{}}, \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00079}00079         \mbox{\hyperlink{namespacegui_a4e55941333524a17e5ab3e09d5fe89b7}{gui::calcCharSize}}(vm),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00080}00080         sf::Color(200, 200, 200, 200),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00081}00081         sf::Color(255, 255, 255, 255),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00082}00082         sf::Color(20, 20, 20, 50),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00083}00083         sf::Color(70, 70, 70, 0),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00084}00084         sf::Color(150, 150, 150, 0),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00085}00085         sf::Color(20, 20, 20, 0));}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00086}00086     \textcolor{comment}{//*/}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00088}00088     this-\/>buttons[\textcolor{stringliteral}{"{}EXIT\_STATE"{}}] = \textcolor{keyword}{new} \mbox{\hyperlink{classgui_1_1_button}{gui::Button}}(}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00089}00089         \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(15.6f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(85.f, vm), \mbox{\hyperlink{namespacegui_a003286be817407a8a5192e664285dc91}{gui::p2pX}}(13.f, vm), \mbox{\hyperlink{namespacegui_aefd757a25c06b1be8543d4ea0036461d}{gui::p2pY}}(6.f, vm), \&this-\/>font,}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00090}00090         \textcolor{stringliteral}{"{}Quitter"{}}, \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00091}00091         \mbox{\hyperlink{namespacegui_a4e55941333524a17e5ab3e09d5fe89b7}{gui::calcCharSize}}(vm),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00092}00092         sf::Color(200, 200, 200, 200),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00093}00093         sf::Color(255, 255, 255, 255),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00094}00094         sf::Color(20, 20, 20, 50),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00095}00095         sf::Color(100, 100, 100, 0),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00096}00096         sf::Color(150, 150, 150, 0),}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00097}00097         sf::Color(20, 20, 20, 0));}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00098}00098 \}}
 \DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00099}00099 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00100}00100 \textcolor{comment}{// Constructeurs/Destructeur}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00101}\mbox{\hyperlink{class_main_menu_state_a4203159ff9f6dac008cfddac3df67ee8}{00101}} \mbox{\hyperlink{class_main_menu_state_a4203159ff9f6dac008cfddac3df67ee8}{MainMenuState::MainMenuState}}(\mbox{\hyperlink{struct_state_data}{StateData}}* stateData) :}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00102}00102     \mbox{\hyperlink{class_state}{State}}(stateData)}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00103}00103 \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00104}00104     \textcolor{comment}{// this-\/>initVariables();}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00105}00105     this-\/>initFonts();}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00106}00106     \textcolor{comment}{// this-\/>initKeybinds();}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00107}00107     this-\/>initGui();}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00108}00108     \textcolor{comment}{// this-\/>resetGui();}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00109}00109 \}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00110}00110 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00111}\mbox{\hyperlink{class_main_menu_state_a8af4d586b93c315a1a15b5fe83ec0760}{00111}} \mbox{\hyperlink{class_main_menu_state_a8af4d586b93c315a1a15b5fe83ec0760}{MainMenuState::\string~MainMenuState}}()}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00112}00112 \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00113}00113     \textcolor{comment}{// auto it = this-\/>buttons.begin();}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00114}00114     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>buttons.begin(); it != this-\/>buttons.end(); ++it)}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00115}00115     \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00116}00116         \textcolor{keyword}{delete} it-\/>second;}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00117}00117     \}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00118}00118     this-\/>buttons.clear();}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00119}00119 \}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00120}00120 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00121}00121 \textcolor{comment}{// Fonctions/Méthodes}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00122}00122 \textcolor{comment}{// void MainMenuState::endState()}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00123}00123 \textcolor{comment}{// \{}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00124}00124 \textcolor{comment}{//  cout << "{}Fin du Main menu state\(\backslash\)n"{};}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00125}00125 \textcolor{comment}{// \}}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00126}00126 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00127}\mbox{\hyperlink{class_main_menu_state_ad1bb8199b0e05cee38637cb28ffe278b}{00127}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_state_ad1bb8199b0e05cee38637cb28ffe278b}{MainMenuState::updateInput}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime)}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00128}00128 \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00129}00129     \textcolor{keywordflow}{if} (deltaTime > 1)}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00130}00130         cerr << deltaTime << endl;}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00131}00131     \textcolor{comment}{// this-\/>checkForQuit();}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00132}00132 \}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00133}00133 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00134}\mbox{\hyperlink{class_main_menu_state_a65bcc18f86712685e80aa103bdfefabe}{00134}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_state_a65bcc18f86712685e80aa103bdfefabe}{MainMenuState::updateSFMLEvents}}(\textcolor{keyword}{const} sf::Event\& sfEvent)}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00135}00135 \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00136}00136     \textcolor{keywordflow}{if} (sfEvent.type == sf::Event::KeyReleased)}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00137}00137     \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00138}00138         \textcolor{comment}{// Racouci clavier pour lancer les chose comme en utilisant la souris}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00139}00139     \}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00140}00140 \}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00141}00141 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00142}\mbox{\hyperlink{class_main_menu_state_a814fcf755b02804447b0460a57e25833}{00142}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_state_a814fcf755b02804447b0460a57e25833}{MainMenuState::updateButtons}}()}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00143}00143 \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00144}00144     \textcolor{comment}{/*Updates all the buttons in the state and handles their functionlaity.*/}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00145}00145 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00146}00146     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& it : this-\/>buttons)}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00147}00147     \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00148}00148         it.second-\/>update(this-\/>\mbox{\hyperlink{class_state_ae19be9c58de5545c8cd162f11969d6ee}{mousePosWindow}});}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00149}00149     \}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00150}00150 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00151}00151     \textcolor{comment}{//New game}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00152}00152     \textcolor{keywordflow}{if} (this-\/>buttons[\textcolor{stringliteral}{"{}GAME\_STATE\_RESUME"{}}]-\/>isPressed())}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00153}00153     \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00154}00154         \textcolor{comment}{// this-\/>states-\/>push(new GameState(this-\/>stateData));}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00155}00155     \}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00156}00156 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00157}00157     \textcolor{comment}{//New game}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00158}00158     \textcolor{keywordflow}{if} (this-\/>buttons[\textcolor{stringliteral}{"{}GAME\_STATE\_NEW"{}}]-\/>isPressed())}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00159}00159     \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00160}00160         this-\/>\mbox{\hyperlink{class_state_a5692fac721147048fe1d2656f8a7a687}{states}}-\/>push(\textcolor{keyword}{new} \mbox{\hyperlink{class_game_state}{GameState}}(this-\/>\mbox{\hyperlink{class_state_a9c55cdba6e8a4a7b8a6a83fa51311514}{stateData}}));}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00161}00161     \}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00162}00162 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00163}00163     \textcolor{comment}{//Settings}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00164}00164     \textcolor{keywordflow}{if} (this-\/>buttons[\textcolor{stringliteral}{"{}SETTINGS\_STATE"{}}]-\/>isPressed())}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00165}00165     \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00166}00166         \textcolor{comment}{// this-\/>states-\/>push(new SettingsState(this-\/>stateData));}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00167}00167     \}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00168}00168 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00169}00169     \textcolor{comment}{//Editor}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00170}00170     \textcolor{keywordflow}{if} (this-\/>buttons[\textcolor{stringliteral}{"{}EDITOR\_STATE"{}}]-\/>isPressed())}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00171}00171     \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00172}00172         \textcolor{comment}{// this-\/>states-\/>push(new EditorState(this-\/>stateData));}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00173}00173     \}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00174}00174 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00175}00175     \textcolor{comment}{//Quit the game}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00176}00176     \textcolor{keywordflow}{if} (this-\/>buttons[\textcolor{stringliteral}{"{}EXIT\_STATE"{}}]-\/>isPressed())}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00177}00177     \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00178}00178         this-\/>\mbox{\hyperlink{class_state_a27907b80e927649f92e4dc6a845a9213}{endState}}();}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00179}00179     \}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00180}00180 \}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00181}00181 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00182}\mbox{\hyperlink{class_main_menu_state_af30b0d74b670cdde52f3f5be4d31f6d7}{00182}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_state_af30b0d74b670cdde52f3f5be4d31f6d7}{MainMenuState::update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime)}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00183}00183 \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00184}00184     this-\/>\mbox{\hyperlink{class_state_a55cd17e1b46e2a7345f3b98f01c123b8}{updateMousePositions}}();}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00185}00185     this-\/>\mbox{\hyperlink{class_main_menu_state_ad1bb8199b0e05cee38637cb28ffe278b}{updateInput}}(deltaTime);}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00186}00186 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00187}00187     this-\/>\mbox{\hyperlink{class_main_menu_state_a814fcf755b02804447b0460a57e25833}{updateButtons}}();}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00188}00188 \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00100}00100 \textcolor{keywordtype}{void} MainMenuState::resetGui()}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00101}00101 \{\}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00103}00103 \textcolor{comment}{// Constructeurs/Destructeur}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00104}\mbox{\hyperlink{class_main_menu_state_a4203159ff9f6dac008cfddac3df67ee8}{00104}} \mbox{\hyperlink{class_main_menu_state_a4203159ff9f6dac008cfddac3df67ee8}{MainMenuState::MainMenuState}}(\mbox{\hyperlink{struct_state_data}{StateData}}* \mbox{\hyperlink{class_state_a9c55cdba6e8a4a7b8a6a83fa51311514}{stateData}}) :}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00105}00105     \mbox{\hyperlink{class_state}{State}}(\mbox{\hyperlink{class_state_a9c55cdba6e8a4a7b8a6a83fa51311514}{stateData}})}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00106}00106 \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00107}00107     \textcolor{comment}{// this-\/>initVariables();}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00108}00108     this-\/>initFonts();}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00109}00109     \textcolor{comment}{// this-\/>initKeybinds();}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00110}00110     this-\/>initGui();}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00111}00111     \textcolor{comment}{// this-\/>resetGui();}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00112}00112 \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00114}\mbox{\hyperlink{class_main_menu_state_a8af4d586b93c315a1a15b5fe83ec0760}{00114}} \mbox{\hyperlink{class_main_menu_state_a8af4d586b93c315a1a15b5fe83ec0760}{MainMenuState::\string~MainMenuState}}()}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00115}00115 \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00116}00116     \textcolor{comment}{// auto it = this-\/>buttons.begin();}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00117}00117     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = this-\/>buttons.begin(); it != this-\/>buttons.end(); ++it)}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00118}00118     \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00119}00119         \textcolor{keyword}{delete} it-\/>second;}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00120}00120     \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00121}00121     this-\/>buttons.clear();}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00122}00122 \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00123}00123 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00124}00124 \textcolor{comment}{// Fonctions/Méthodes}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00125}00125 \textcolor{comment}{// void MainMenuState::endState()}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00126}00126 \textcolor{comment}{// \{}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00127}00127 \textcolor{comment}{//  cout << "{}Fin du Main menu state\(\backslash\)n"{};}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00128}00128 \textcolor{comment}{// \}}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00130}\mbox{\hyperlink{class_main_menu_state_ad1bb8199b0e05cee38637cb28ffe278b}{00130}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_state_ad1bb8199b0e05cee38637cb28ffe278b}{MainMenuState::updateInput}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime)}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00131}00131 \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00132}00132     \textcolor{keywordflow}{if} (deltaTime > 1)}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00133}00133         cerr << deltaTime << endl;}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00134}00134     \textcolor{comment}{// this-\/>checkForQuit();}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00135}00135 \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00136}00136 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00137}\mbox{\hyperlink{class_main_menu_state_a65bcc18f86712685e80aa103bdfefabe}{00137}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_state_a65bcc18f86712685e80aa103bdfefabe}{MainMenuState::updateSFMLEvents}}(\textcolor{keyword}{const} sf::Event\& sfEvent)}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00138}00138 \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00139}00139     \textcolor{keywordflow}{if} (sfEvent.type == sf::Event::KeyReleased)}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00140}00140     \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00141}00141         \textcolor{comment}{// Racouci clavier pour lancer les chose comme en utilisant la souris}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00142}00142     \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00143}00143 \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00145}\mbox{\hyperlink{class_main_menu_state_a814fcf755b02804447b0460a57e25833}{00145}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_state_a814fcf755b02804447b0460a57e25833}{MainMenuState::updateButtons}}()}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00146}00146 \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00147}00147     \textcolor{comment}{/*Updates all the buttons in the state and handles their functionlaity.*/}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00148}00148 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00149}00149     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& it : this-\/>buttons)}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00150}00150     \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00151}00151         it.second-\/>update(this-\/>\mbox{\hyperlink{class_state_ae19be9c58de5545c8cd162f11969d6ee}{mousePosWindow}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00152}00152     \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00153}00153 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00154}00154     \textcolor{comment}{//New game}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00155}00155     \textcolor{keywordflow}{if} (this-\/>buttons[\textcolor{stringliteral}{"{}GAME\_STATE\_RESUME"{}}]-\/>isPressed())}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00156}00156     \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00157}00157         \textcolor{comment}{// this-\/>states-\/>push(new GameState(this-\/>stateData));}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00158}00158     \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00159}00159 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00160}00160     \textcolor{comment}{//New game}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00161}00161     \textcolor{keywordflow}{if} (this-\/>buttons[\textcolor{stringliteral}{"{}GAME\_STATE\_NEW"{}}]-\/>isPressed())}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00162}00162     \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00163}00163         this-\/>\mbox{\hyperlink{class_state_a5692fac721147048fe1d2656f8a7a687}{states}}-\/>push(\textcolor{keyword}{new} \mbox{\hyperlink{class_game_state_a17b02b1db2986100cbeb35195087fb9b}{GameState}}(this-\/>\mbox{\hyperlink{class_state_a9c55cdba6e8a4a7b8a6a83fa51311514}{stateData}}));}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00164}00164     \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00165}00165 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00166}00166     \textcolor{comment}{//Settings}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00167}00167     \textcolor{keywordflow}{if} (this-\/>buttons[\textcolor{stringliteral}{"{}SETTINGS\_STATE"{}}]-\/>isPressed())}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00168}00168     \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00169}00169         \textcolor{comment}{// this-\/>states-\/>push(new SettingsState(this-\/>stateData));}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00170}00170     \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00171}00171 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00172}00172     \textcolor{comment}{//Editor}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00173}00173     \textcolor{keywordflow}{if} (this-\/>buttons[\textcolor{stringliteral}{"{}EDITOR\_STATE"{}}]-\/>isPressed())}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00174}00174     \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00175}00175         \textcolor{comment}{// this-\/>states-\/>push(new EditorState(this-\/>stateData));}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00176}00176     \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00177}00177 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00178}00178     \textcolor{comment}{//Quit the game}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00179}00179     \textcolor{keywordflow}{if} (this-\/>buttons[\textcolor{stringliteral}{"{}EXIT\_STATE"{}}]-\/>isPressed())}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00180}00180     \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00181}00181         this-\/>\mbox{\hyperlink{class_state_a27907b80e927649f92e4dc6a845a9213}{endState}}();}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00182}00182     \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00183}00183 \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00184}00184 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00185}\mbox{\hyperlink{class_main_menu_state_af30b0d74b670cdde52f3f5be4d31f6d7}{00185}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_state_af30b0d74b670cdde52f3f5be4d31f6d7}{MainMenuState::update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltaTime)}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00186}00186 \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00187}00187     this-\/>\mbox{\hyperlink{class_state_a55cd17e1b46e2a7345f3b98f01c123b8}{updateMousePositions}}();}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00188}00188     this-\/>\mbox{\hyperlink{class_main_menu_state_ad1bb8199b0e05cee38637cb28ffe278b}{updateInput}}(deltaTime);}
 \DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00189}00189 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00190}\mbox{\hyperlink{class_main_menu_state_a1a2766e02c64d370018588a79d32b584}{00190}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_state_a1a2766e02c64d370018588a79d32b584}{MainMenuState::renderButtons}}(sf::RenderTarget\& target)}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00191}00191 \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00192}00192     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& it : this-\/>buttons)}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00193}00193     \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00194}00194         it.second-\/>render(target);}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00195}00195     \}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00196}00196 \}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00197}00197 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00198}\mbox{\hyperlink{class_main_menu_state_a343f2f93b5fe14251f425b0709bf43ba}{00198}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_state_a343f2f93b5fe14251f425b0709bf43ba}{MainMenuState::render}}(sf::RenderTarget* target)}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00199}00199 \{}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00200}00200     \textcolor{comment}{// REVIEW -\/}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00201}00201     \textcolor{keywordflow}{if} (!target)}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00202}00202         target = this-\/>\mbox{\hyperlink{class_state_ae6259a383c98ae7496266a76a9daf478}{window}};}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00203}00203 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00204}00204     \textcolor{comment}{// cout << "{}Ecran : x"{} << this-\/>window-\/>getView().getCenter().x << "{} y"{} << this-\/>window-\/>getView().getCenter().y;}}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00205}00205 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00206}00206     target-\/>draw(this-\/>background);}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00207}00207 }
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00208}00208     this-\/>\mbox{\hyperlink{class_main_menu_state_a1a2766e02c64d370018588a79d32b584}{renderButtons}}(*target);}
-\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00209}00209 \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00190}00190     this-\/>\mbox{\hyperlink{class_main_menu_state_a814fcf755b02804447b0460a57e25833}{updateButtons}}();}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00191}00191 \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00192}00192 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00193}\mbox{\hyperlink{class_main_menu_state_a1a2766e02c64d370018588a79d32b584}{00193}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_state_a1a2766e02c64d370018588a79d32b584}{MainMenuState::renderButtons}}(sf::RenderTarget\& target)}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00194}00194 \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00195}00195     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& it : this-\/>buttons)}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00196}00196     \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00197}00197         it.second-\/>render(target);}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00198}00198     \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00199}00199 \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00200}00200 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00201}\mbox{\hyperlink{class_main_menu_state_a343f2f93b5fe14251f425b0709bf43ba}{00201}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_main_menu_state_a343f2f93b5fe14251f425b0709bf43ba}{MainMenuState::render}}(sf::RenderTarget* target)}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00202}00202 \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00203}00203     \textcolor{comment}{// REVIEW -\/}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00204}00204     \textcolor{keywordflow}{if} (!target)}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00205}00205         target = this-\/>\mbox{\hyperlink{class_state_ae6259a383c98ae7496266a76a9daf478}{window}};}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00206}00206 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00207}00207     \textcolor{comment}{// cout << "{}Ecran : x"{} << this-\/>window-\/>getView().getCenter().x << "{} y"{} << this-\/>window-\/>getView().getCenter().y;}}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00208}00208 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00209}00209     target-\/>draw(this-\/>background);}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00210}00210 }
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00211}00211     this-\/>\mbox{\hyperlink{class_main_menu_state_a1a2766e02c64d370018588a79d32b584}{renderButtons}}(*target);}
+\DoxyCodeLine{\Hypertarget{_main_menu_state_8cpp_source_l00212}00212 \}}
 
 \end{DoxyCode}

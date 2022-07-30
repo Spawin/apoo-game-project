@@ -1,4 +1,4 @@
-.TH "Soldier" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.TH "Soldier" 3 "Samedi 30 Juillet 2022" "Jeu POA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -26,22 +26,6 @@ Est dérivée de \fBPersonage\fP\&.
 .ti -1c
 .RI "virtual void \fBspecialAttack\fP (\fBPersonage\fP &target) override"
 .br
-.ti -1c
-.RI "virtual unsigned \fBreceiveHealthDamage\fP (int value) override"
-.br
-.RI "pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
-.ti -1c
-.RI "virtual unsigned \fBreceiveExpDamage\fP (int value) override"
-.br
-.RI "pour recevoir les dégats d'exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
-.ti -1c
-.RI "virtual unsigned \fBreceiveHealthCare\fP (int value) override"
-.br
-.RI "pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
-.ti -1c
-.RI "virtual unsigned \fBreceiveExpCare\fP (int value) override"
-.br
-.RI "pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
 .in -1c
 .SS "Membres hérités additionnels"
 .SH "Description détaillée"
@@ -52,93 +36,13 @@ Définition à la ligne \fB6\fP du fichier \fBSoldier\&.hpp\fP\&.
 .SS "Soldier::Soldier (bool isPlayer = \fCfalse\fP)\fC [explicit]\fP"
 
 .PP
-Définition à la ligne \fB11\fP du fichier \fBSoldier\&.cpp\fP\&.
+Définition à la ligne \fB12\fP du fichier \fBSoldier\&.cpp\fP\&.
 .SS "Soldier::~Soldier ()"
 
 .PP
-Définition à la ligne \fB17\fP du fichier \fBSoldier\&.cpp\fP\&.
+Définition à la ligne \fB18\fP du fichier \fBSoldier\&.cpp\fP\&.
 .SH "Documentation des fonctions membres"
 .PP 
-.SS "unsigned Soldier::receiveExpCare (int value)\fC [override]\fP, \fC [virtual]\fP"
-
-.PP
-pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) 
-.PP
-\fBParamètres\fP
-.RS 4
-\fIvalue\fP 
-.RE
-.PP
-\fBRenvoie\fP
-.RS 4
-unsigned 
-.RE
-.PP
-
-.PP
-Implémente \fBPersonage\fP\&.
-.PP
-Définition à la ligne \fB49\fP du fichier \fBSoldier\&.cpp\fP\&.
-.SS "unsigned Soldier::receiveExpDamage (int value)\fC [override]\fP, \fC [virtual]\fP"
-
-.PP
-pour recevoir les dégats d'exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) 
-.PP
-\fBParamètres\fP
-.RS 4
-\fIvalue\fP 
-.RE
-.PP
-\fBRenvoie\fP
-.RS 4
-unsigned 
-.RE
-.PP
-
-.PP
-Implémente \fBPersonage\fP\&.
-.PP
-Définition à la ligne \fB45\fP du fichier \fBSoldier\&.cpp\fP\&.
-.SS "unsigned Soldier::receiveHealthCare (int value)\fC [override]\fP, \fC [virtual]\fP"
-
-.PP
-pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) 
-.PP
-\fBParamètres\fP
-.RS 4
-\fIvalue\fP 
-.RE
-.PP
-\fBRenvoie\fP
-.RS 4
-unsigned 
-.RE
-.PP
-
-.PP
-Implémente \fBPersonage\fP\&.
-.PP
-Définition à la ligne \fB47\fP du fichier \fBSoldier\&.cpp\fP\&.
-.SS "unsigned Soldier::receiveHealthDamage (int value)\fC [override]\fP, \fC [virtual]\fP"
-
-.PP
-pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) 
-.PP
-\fBParamètres\fP
-.RS 4
-\fIvalue\fP 
-.RE
-.PP
-\fBRenvoie\fP
-.RS 4
-unsigned 
-.RE
-.PP
-
-.PP
-Implémente \fBPersonage\fP\&.
-.PP
-Définition à la ligne \fB43\fP du fichier \fBSoldier\&.cpp\fP\&.
 .SS "void Soldier::simpleAttack (\fBPersonage\fP & target)\fC [override]\fP, \fC [virtual]\fP"
 
 .PP
@@ -153,13 +57,13 @@ Pour dessiner l'élement dans la fenêtre\&.
 .PP
 Implémente \fBPersonage\fP\&.
 .PP
-Définition à la ligne \fB23\fP du fichier \fBSoldier\&.cpp\fP\&.
+Définition à la ligne \fB24\fP du fichier \fBSoldier\&.cpp\fP\&.
 .SS "void Soldier::specialAttack (\fBPersonage\fP & target)\fC [override]\fP, \fC [virtual]\fP"
 
 .PP
 Implémente \fBPersonage\fP\&.
 .PP
-Définition à la ligne \fB27\fP du fichier \fBSoldier\&.cpp\fP\&.
+Définition à la ligne \fB28\fP du fichier \fBSoldier\&.cpp\fP\&.
 
 .SH "Auteur"
 .PP 

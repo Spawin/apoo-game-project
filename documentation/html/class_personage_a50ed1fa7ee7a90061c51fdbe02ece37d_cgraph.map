@@ -1,0 +1,11 @@
+<map id="Personage::playCorrectSideHurtAnimation" name="Personage::playCorrectSideHurtAnimation">
+<area shape="rect" id="node1" title="Pour l&#39;animation HURT en tenant compte du coté vers lequel est dirigé le personage." alt="" coords="5,71,189,112"/>
+<area shape="rect" id="node2" href="$class_movable_game_object.html#ad3b241b18227ac3eacee79069af64fc7" title=" " alt="" coords="248,5,412,47"/>
+<area shape="rect" id="node3" href="$class_personage.html#a1f9047cde214e63d4f8dcc3c9265b0a1" title=" " alt="" coords="237,71,423,112"/>
+<area shape="rect" id="node5" href="$class_animation_component.html#aebd4155a58d405bbeaf9a60fe641181e" title=" " alt="" coords="257,153,403,195"/>
+<area shape="rect" id="node4" href="$class_personage.html#a885fd718ea73b82ecd6775667bc5aeeb" title="Get the Last Animation Side." alt="" coords="471,59,689,86"/>
+<area shape="rect" id="node6" href="$class_animation.html#ad8260ef1b6af2ca01a06a14de7436450" title=" " alt="" coords="507,110,653,137"/>
+<area shape="rect" id="node7" href="$class_animation.html#a01b69a109c36cddacea8b292cf928e95" title=" " alt="" coords="516,161,644,187"/>
+<area shape="rect" id="node8" href="$class_animation.html#a6b5ba7138aaf81af0609dd51092bfe53" title=" " alt="" coords="524,211,636,238"/>
+<area shape="rect" id="node9" href="$class_animation.html#a903eb4b61b8c7bc72bbedbdba4cbb501" title=" " alt="" coords="521,262,639,289"/>
+</map>

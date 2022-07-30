@@ -1,0 +1,50 @@
+<map id="Player::update" name="Player::update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,761,112,788"/>
+<area shape="rect" id="node2" href="$class_player.html#a583849c1d33124f3409b990b7c888bac" title=" " alt="" coords="362,327,558,369"/>
+<area shape="rect" id="node20" href="$class_player.html#aa14422c8d3c3950584dcd307172741b7" title=" " alt="" coords="160,761,303,788"/>
+<area shape="rect" id="node42" href="$class_personage.html#a492d4164bc6c439d43cc44fefcbd6468" title=" " alt="" coords="166,1137,297,1164"/>
+<area shape="rect" id="node3" href="$class_item.html#aaea0ac82b6ca4b3acfc348641efbd324" title="Get the Categorie object." alt="" coords="667,360,795,387"/>
+<area shape="rect" id="node4" href="$class_game_object.html#a800f7c8a8df0bd57aca9f8de170d7906" title=" " alt="" coords="617,411,845,437"/>
+<area shape="rect" id="node5" href="$class_personage.html#af938fe6b2fefb437d0c2b91bef48ed21" title=" " alt="" coords="624,309,839,336"/>
+<area shape="rect" id="node8" href="$class_player.html#a03b96343dc0a2c8c9ecfef6f36b50329" title=" " alt="" coords="658,461,805,488"/>
+<area shape="rect" id="node9" href="$class_personage.html#ae84a56d4a69b18dadd7bd1f5b1cea398" title=" " alt="" coords="642,512,821,539"/>
+<area shape="rect" id="node10" href="$class_game_object.html#a5f5f8870bb5d7e1496c2e565f5dd8bbd" title=" " alt="" coords="1155,613,1323,640"/>
+<area shape="rect" id="node11" href="$class_item.html#a9e29932b32336b689035d3f998fea76e" title="Retourne le rayon d&#39;action de l&#39;item." alt="" coords="651,56,811,83"/>
+<area shape="rect" id="node12" href="$class_item.html#a87358aef026b997a03e6477d85f00593" title="Returne la valeur de l&#39;effet de cet arme." alt="" coords="678,107,785,133"/>
+<area shape="rect" id="node13" href="$class_position.html#a252efaf275c7276a6f35338d198de7ee" title=" " alt="" coords="680,157,783,184"/>
+<area shape="rect" id="node14" href="$class_position.html#a53ad8ec2f8383db4d615b3fc4e888f77" title=" " alt="" coords="679,208,783,235"/>
+<area shape="rect" id="node15" href="$class_item.html#a900f9f23372ff903002ef063427f1ce4" title="Indique si l&#39;item est à usage unique." alt="" coords="675,259,787,285"/>
+<area shape="rect" id="node16" href="$class_personage.html#a27255cf1214312c1bdc5c77796378bbd" title=" " alt="" coords="652,5,811,32"/>
+<area shape="rect" id="node6" href="$class_bag.html#ab0117561af073f4f5c245acbd9f98026" title=" " alt="" coords="904,309,1079,336"/>
+<area shape="rect" id="node7" href="$class_inventory.html#aa8ea7d66f755600fded21fdb2c846e15" title="Retourne le type de l&#39;inventaire de l&#39;item." alt="" coords="1137,309,1340,336"/>
+<area shape="rect" id="node17" href="$class_bag.html#ae1902348311f9d34bc2c8226ab30f0f2" title=" " alt="" coords="932,5,1051,32"/>
+<area shape="rect" id="node18" href="$class_inventory.html#a376aed955014cbc28e74d5f380ab5365" title=" " alt="" coords="1177,5,1300,32"/>
+<area shape="rect" id="node19" href="$classgui_1_1_inventory.html#a5b441996b23e40dcd79faf8668296969" title=" " alt="" coords="1388,5,1560,32"/>
+<area shape="rect" id="node21" href="$class_animation_component.html#a6d21f017db5d731ac068921c28187429" title="Vérifie si cette animation peut etre lancée (on va comparer les priorité) Retourne vrai si la dernièr..." alt="" coords="387,995,533,1037"/>
+<area shape="rect" id="node24" href="$class_movable_game_object.html#ad3b241b18227ac3eacee79069af64fc7" title=" " alt="" coords="378,645,542,686"/>
+<area shape="rect" id="node25" href="$class_item.html#a1229606b7e0afaca04cb63cbb356a3a1" title="Retourne le temps d&#39;attente pour que l&#39;action soit faite." alt="" coords="359,711,561,737"/>
+<area shape="rect" id="node26" href="$class_personage.html#af9f5f4c71cf2113a83f1e8f401020ba0" title=" " alt="" coords="396,761,524,788"/>
+<area shape="rect" id="node27" href="$class_animation_component.html#a82e956ffa6989bfbade3447c58f413a6" title=" " alt="" coords="387,813,533,854"/>
+<area shape="rect" id="node28" href="$class_personage.html#acecd31422b51e2d0755c6d2de94d9510" title=" " alt="" coords="399,593,521,620"/>
+<area shape="rect" id="node38" href="$class_animation_component.html#aebd4155a58d405bbeaf9a60fe641181e" title=" " alt="" coords="387,930,533,971"/>
+<area shape="rect" id="node41" href="$class_personage.html#af96d090c870bfcc8ce3bbc8cda06b6d0" title=" " alt="" coords="351,879,569,905"/>
+<area shape="rect" id="node22" href="$class_animation.html#ad8260ef1b6af2ca01a06a14de7436450" title=" " alt="" coords="658,1021,805,1048"/>
+<area shape="rect" id="node23" href="$class_animation.html#a01b69a109c36cddacea8b292cf928e95" title=" " alt="" coords="667,971,795,997"/>
+<area shape="rect" id="node29" href="$class_personage.html#a3994eb488c9212770b697ff73c2d153b" title="Permet de mettre à jour la position actuelle. Cette position sera déterminé par l&#39;évenement reçu au p..." alt="" coords="642,781,821,808"/>
+<area shape="rect" id="node30" href="$class_personage.html#a0cca40cc77abdb95354998264a4f7229" title=" " alt="" coords="893,665,1089,706"/>
+<area shape="rect" id="node31" href="$class_position.html#af409de5592dd7da6fb0ccb8d1681bb19" title="Get the Position object." alt="" coords="920,883,1063,909"/>
+<area shape="rect" id="node32" href="$class_position.html#a44364e1b27dac50ec6d0e9e4d7d1b2c1" title="Set the Position object." alt="" coords="920,933,1063,960"/>
+<area shape="rect" id="node33" href="$classgui_1_1_progress_bar.html#ad19c7e4fcbc7a33631253f94dda7b4d5" title=" " alt="" coords="895,832,1087,859"/>
+<area shape="rect" id="node36" href="$class_game_master.html#af7ff109051deeded5e09a450f29399ea" title=" " alt="" coords="898,731,1085,757"/>
+<area shape="rect" id="node37" href="$struct_my_vector.html#ada641074b59d610778cdf2ec7c144905" title=" " alt="" coords="919,781,1064,808"/>
+<area shape="rect" id="node34" href="$namespacegui.html#a003286be817407a8a5192e664285dc91" title=" " alt="" coords="1201,807,1276,833"/>
+<area shape="rect" id="node35" href="$namespacegui.html#aefd757a25c06b1be8543d4ea0036461d" title=" " alt="" coords="1200,857,1277,884"/>
+<area shape="rect" id="node39" href="$class_animation.html#a6b5ba7138aaf81af0609dd51092bfe53" title=" " alt="" coords="675,920,787,947"/>
+<area shape="rect" id="node40" href="$class_animation.html#a903eb4b61b8c7bc72bbedbdba4cbb501" title=" " alt="" coords="673,869,790,896"/>
+<area shape="rect" id="node43" href="$class_inventory.html#adb0cf453e653bc719cdb207b906dbc56" title=" " alt="" coords="401,1264,519,1291"/>
+<area shape="rect" id="node44" href="$class_bag.html#a5c8e365a36667f800eec30c4148500a6" title=" " alt="" coords="399,1061,521,1088"/>
+<area shape="rect" id="node45" href="$classgui_1_1_inventory.html#ae9385f05ca7064cb8b0cc48d3602446e" title=" " alt="" coords="387,1112,533,1139"/>
+<area shape="rect" id="node46" href="$class_personage.html#ae81af6eab1894c26eb89fead2d82ed0d" title=" " alt="" coords="372,1163,548,1189"/>
+<area shape="rect" id="node48" href="$class_personage.html#a2b99762efecc865705da453c73ddf45d" title=" " alt="" coords="375,1213,545,1240"/>
+<area shape="rect" id="node47" href="$classgui_1_1_progress_bar.html#ac280f079c89eec3a71176d77d7680e94" title=" " alt="" coords="648,1188,815,1215"/>
+</map>

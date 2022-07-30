@@ -1,0 +1,5 @@
+<map id="Bag::renderInventory" name="Bag::renderInventory">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,145,57"/>
+<area shape="rect" id="node2" href="$class_inventory.html#adb0cf453e653bc719cdb207b906dbc56" title=" " alt="" coords="205,5,324,32"/>
+<area shape="rect" id="node3" href="$classgui_1_1_inventory.html#a20a0ed58d1b1bdfe941ba86ffc9091dc" title=" " alt="" coords="193,56,336,83"/>
+</map>

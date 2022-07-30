@@ -1,0 +1,4 @@
+<map id="GameMaster::render" name="GameMaster::render">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,147,32"/>
+<area shape="rect" id="node2" href="$class_collider.html#a765cffbef5d5e713672cea46c563dc67" title="C&#39;est à ce niveau qu&#39;on gère la détection de collisions." alt="" coords="195,5,307,32"/>
+</map>

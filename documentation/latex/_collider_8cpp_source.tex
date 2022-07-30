@@ -4,140 +4,148 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_collider_8hpp}{include/Collider.hpp}}"{}}}
 \DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_collision_8hpp}{include/Collision.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_position_8hpp}{include/Position.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{consts_8hpp}{include/consts.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <algorithm>}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <iostream>}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <memory>}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <utility>} \textcolor{comment}{// std::pair}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include <vector>}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00011}00011 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00012}00012 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_personage_8hpp}{include/Personage.hpp}}"{}}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00013}00013 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00014}00014 \textcolor{keyword}{using namespace }std;}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00015}00015 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00016}00016 \textcolor{comment}{// map<string, GameObject*> Collider::m\_objects = map::}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00017}00017 \textcolor{comment}{// map<string, GameObject*> Collider::m\_objects = \{\};}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00018}00018 \textcolor{comment}{// map<string, shared\_ptr<GameObject>> Collider::m\_objects = \{\};}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00019}00019 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00020}00020 Collider::GameObjectMap \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{Collider::m\_objects}} = [] \{}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00021}00021     GameObjectMap ret;}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00022}00022     \textcolor{keywordflow}{return} ret;}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00023}00023 \}();}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00024}00024 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00025}\mbox{\hyperlink{class_collider_a5f7d036476d2bff521151c2031f20d46}{00025}} \mbox{\hyperlink{class_collider_a5f7d036476d2bff521151c2031f20d46}{Collider::Collider}}(\mbox{\hyperlink{class_game_object}{GameObject}} \textcolor{keyword}{const}\& parent, std::string typeOfCollider \textcolor{comment}{/*, std::vector<sf::Vector2f> contactPoints*/}) :}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00026}00026     parent(parent),}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00027}00027     m\_colliderType(typeOfCollider) \textcolor{comment}{//,}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00028}00028 \textcolor{comment}{// m\_contactPoints(contactPoints)}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00029}00029 \{}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00030}00030     \textcolor{comment}{// if (contactPoints.empty())}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00031}00031     \textcolor{comment}{// \{}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00032}00032     \textcolor{comment}{//  cerr << "{}AU moin un point de contact"{} << endl;}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00033}00033     \textcolor{comment}{//  exit(-\/1);}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00034}00034     \textcolor{comment}{// \}}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00035}00035     \textcolor{comment}{// m\_contactPoints.insert(m\_contactPoints.end(), contactPoints.begin(), contactPoints.end());}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00036}00036     \textcolor{comment}{// m\_objects.insert(\{ to\_string(parent.getGameObjectId()), (GameObject*)\&parent \}); // REVIEW -\/}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00037}00037 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00038}00038     \textcolor{comment}{// cout << "{}dans le constructeur du collider"{} << endl;}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00039}00039     \textcolor{comment}{// m\_objects.insert(\{ to\_string(parent.getGameObjectId()), make\_shared<GameObject>(parent) \});}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_personage_8hpp}{include/Personage.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_position_8hpp}{include/Position.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{consts_8hpp}{include/consts.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00008}00008 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00009}00009 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00010}00010 \textcolor{preprocessor}{\#include <utility>} \textcolor{comment}{// std::pair}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00011}00011 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00013}00013 \textcolor{keyword}{class }\mbox{\hyperlink{class_collision}{Collision}};}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00014}00014 \textcolor{keyword}{class }\mbox{\hyperlink{class_personage}{Personage}};}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00015}00015 \textcolor{keyword}{class }\mbox{\hyperlink{class_position}{Position}};}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00017}00017 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00019}00019 \textcolor{comment}{// map<string, GameObject*> Collider::m\_objects = map::}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00020}00020 \textcolor{comment}{// map<string, GameObject*> Collider::m\_objects = \{\};}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00021}00021 \textcolor{comment}{// map<string, shared\_ptr<GameObject>> Collider::m\_objects = \{\};}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00023}00023 Collider::GameObjectMap \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{Collider::m\_objects}} = [] \{}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00024}00024     GameObjectMap ret;}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00025}00025     \textcolor{keywordflow}{return} ret;}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00026}00026 \}();}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00028}\mbox{\hyperlink{class_collider_a5f7d036476d2bff521151c2031f20d46}{00028}} \mbox{\hyperlink{class_collider_a5f7d036476d2bff521151c2031f20d46}{Collider::Collider}}(\mbox{\hyperlink{class_game_object}{GameObject}} \textcolor{keyword}{const}\& parent, std::string typeOfCollider \textcolor{comment}{/*, std::vector<sf::Vector2f> contactPoints*/}) :}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00029}00029     parent(parent),}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00030}00030     m\_colliderType(typeOfCollider) \textcolor{comment}{//,}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00031}00031 \textcolor{comment}{// m\_contactPoints(contactPoints)}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00032}00032 \{}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00033}00033     \textcolor{comment}{// if (contactPoints.empty())}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00034}00034     \textcolor{comment}{// \{}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00035}00035     \textcolor{comment}{//  cerr << "{}AU moin un point de contact"{} << endl;}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00036}00036     \textcolor{comment}{//  exit(-\/1);}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00037}00037     \textcolor{comment}{// \}}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00038}00038     \textcolor{comment}{// m\_contactPoints.insert(m\_contactPoints.end(), contactPoints.begin(), contactPoints.end());}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00039}00039     \textcolor{comment}{// m\_objects.insert(\{ to\_string(parent.getGameObjectId()), (GameObject*)\&parent \}); // REVIEW -\/}}
 \DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00040}00040 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00041}00041     \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{Collider::m\_objects}}.insert(\{ to\_string(\mbox{\hyperlink{class_collider_a937ddad2dd8d4d6a67370334d447210b}{parent}}.\mbox{\hyperlink{class_game_object_a7bc5db5459f66fad48f88c7d8e1863b6}{getGameObjectId}}()), \&\mbox{\hyperlink{class_collider_a937ddad2dd8d4d6a67370334d447210b}{parent}} \});}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00042}00042 \}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00041}00041     \textcolor{comment}{// cout << "{}dans le constructeur du collider"{} << endl;}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00042}00042     \textcolor{comment}{// m\_objects.insert(\{ to\_string(parent.getGameObjectId()), make\_shared<GameObject>(parent) \});}}
 \DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00043}00043 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00044}\mbox{\hyperlink{class_collider_a564acde9860f875a32a6638c573d87be}{00044}} \mbox{\hyperlink{class_collider_a564acde9860f875a32a6638c573d87be}{Collider::\string~Collider}}()}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00045}00045 \{\}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00044}00044     \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{Collider::m\_objects}}.insert(\{ to\_string(\mbox{\hyperlink{class_collider_a937ddad2dd8d4d6a67370334d447210b}{parent}}.\mbox{\hyperlink{class_game_object_a7bc5db5459f66fad48f88c7d8e1863b6}{getGameObjectId}}()), \&\mbox{\hyperlink{class_collider_a937ddad2dd8d4d6a67370334d447210b}{parent}} \});}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00045}00045 \}}
 \DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00046}00046 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00047}00047 \textcolor{comment}{//}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00048}00048 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00049}\mbox{\hyperlink{class_collider_ac5e78bcb91de52d8202beea5c4b3a5f8}{00049}} \mbox{\hyperlink{class_game_object}{GameObject}} \textcolor{keyword}{const}\& \mbox{\hyperlink{class_collider_ac5e78bcb91de52d8202beea5c4b3a5f8}{Collider::getParent}}()\textcolor{keyword}{ const}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00050}00050 \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00051}00051     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_collider_a937ddad2dd8d4d6a67370334d447210b}{parent}};}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00052}00052 \}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00053}00053 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00054}00054 \textcolor{comment}{// std::vector<sf::Vector2f> const\& Collider::getContactPoints() const}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00055}00055 \textcolor{comment}{// \{}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00056}00056 \textcolor{comment}{//  return m\_contactPoints;}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00057}00057 \textcolor{comment}{// \}}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00058}00058 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00059}\mbox{\hyperlink{class_collider_a765cffbef5d5e713672cea46c563dc67}{00059}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_collider_a765cffbef5d5e713672cea46c563dc67}{Collider::update}}()}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00060}00060 \{}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00061}00061     \textcolor{comment}{//}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00062}00062     GameObjectMap::iterator it1;}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00063}00063     \textcolor{comment}{// Pour lister les collider déjà testés}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00064}00064     vector<string> alreadyChecked = \{\};}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00065}00065 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00066}00066     \textcolor{comment}{// cout << "{}nombre d'objet avec collider "{} << m\_objects.size() << endl;}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00067}00067     \textcolor{keywordflow}{for} (it1 = \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}.begin(); it1 != \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}.end(); ++it1)}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00068}00068     \{}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00069}00069         alreadyChecked.push\_back(it1-\/>first);}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00070}00070         GameObjectMap::iterator it2;}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00071}00071         \textcolor{keywordflow}{for} (it2 = \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}.begin(); it2 != \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}.end(); ++it2)}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00072}00072         \{}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00073}00073             \textcolor{keywordflow}{if} (find(alreadyChecked.begin(), alreadyChecked.end(), it2-\/>first) != alreadyChecked.end())}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00074}00074                 \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00075}00075 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00076}00076             \textcolor{comment}{// On va dabor tester la proximité des deux entité par rapport à une constante qui définit la distance minimale entre 2 object}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00077}00077             \textcolor{comment}{// if (m\_objects[it1-\/>first]-\/>getPosition().getDistanceWith(m\_objects[it2-\/>first]-\/>getPosition()) < (float)DISTANCE\_MIN\_BETWEEN\_OBJECTS)}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00078}00078             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}[it1-\/>first]-\/>getCollider().touchEachOther(\mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}[it2-\/>first]-\/>getCollider()))}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00079}00079             \{}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00080}00080                 \textcolor{comment}{// cout << "{}1 -\/ "{} << m\_objects[it1-\/>firset]-\/>getGameObjectName() << "{} "{} << m\_objects[it1-\/>first]-\/>getGameObjectId() << endl;}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00081}00081                 \textcolor{comment}{// cout << "{}2 -\/ "{} << m\_objects[it2-\/>first]-\/>getGameObjectName() << "{} "{} << m\_objects[it2-\/>first]-\/>getGameObjectId() << endl;}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00082}00082 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00083}00083                 \textcolor{comment}{// cout << "{}distance entre les deux "{} << it1-\/>second-\/>getPosition().getDistanceWith(it2-\/>second-\/>getPosition()) << endl;}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00084}00084                 \textcolor{comment}{// NOTE -\/  Commenté car me sort un bug que j n'ai pas envie de géré}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00085}00085                 \textcolor{comment}{// if (m\_objects[it1-\/>first]-\/>getSprite().getGlobalBounds().intersects(m\_objects[it2-\/>first]-\/>getSprite().getGlobalBounds()))}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00086}00086                 \textcolor{comment}{// \{}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00087}00087                 \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}[it1-\/>first]-\/>fromColliderToRigidBody();}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00088}00088                 \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}[it2-\/>first]-\/>fromColliderToRigidBody();}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00089}00089 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00090}00090                 \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}[it1-\/>first]-\/>onCollisionEnter(\mbox{\hyperlink{class_collision}{Collision}}(*\mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}[it2-\/>first]));}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00091}00091                 \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}[it2-\/>first]-\/>onCollisionEnter(\mbox{\hyperlink{class_collision}{Collision}}(*\mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}[it1-\/>first]));}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00092}00092                 \textcolor{comment}{// \}}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00093}00093             \}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00094}00094         \}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00095}00095     \}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00096}00096 \}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00097}00097 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00098}00098 \textcolor{comment}{// void Collider::update()}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00099}00099 \textcolor{comment}{// \{}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00047}\mbox{\hyperlink{class_collider_a564acde9860f875a32a6638c573d87be}{00047}} \mbox{\hyperlink{class_collider_a564acde9860f875a32a6638c573d87be}{Collider::\string~Collider}}()}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00048}00048 \{\}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00050}00050 \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00052}\mbox{\hyperlink{class_collider_ac5e78bcb91de52d8202beea5c4b3a5f8}{00052}} \mbox{\hyperlink{class_game_object}{GameObject}} \textcolor{keyword}{const}\& \mbox{\hyperlink{class_collider_ac5e78bcb91de52d8202beea5c4b3a5f8}{Collider::getParent}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00053}00053 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00054}00054     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_collider_a937ddad2dd8d4d6a67370334d447210b}{parent}};}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00055}00055 \}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00057}00057 \textcolor{comment}{// std::vector<sf::Vector2f> const\& Collider::getContactPoints() const}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00058}00058 \textcolor{comment}{// \{}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00059}00059 \textcolor{comment}{//  return m\_contactPoints;}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00060}00060 \textcolor{comment}{// \}}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00062}\mbox{\hyperlink{class_collider_a765cffbef5d5e713672cea46c563dc67}{00062}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_collider_a765cffbef5d5e713672cea46c563dc67}{Collider::update}}()}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00063}00063 \{}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00064}00064     \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00065}00065     GameObjectMap::iterator it1;}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00066}00066     \textcolor{comment}{// Pour lister les collider déjà testés}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00067}00067     vector<string> alreadyChecked = \{\};}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00069}00069     \textcolor{comment}{// cout << "{}nombre d'objet avec collider "{} << m\_objects.size() << endl;}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00070}00070     \textcolor{keywordflow}{for} (it1 = \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}.begin(); it1 != \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}.end(); ++it1)}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00071}00071     \{}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00072}00072         alreadyChecked.push\_back(it1-\/>first);}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00073}00073         GameObjectMap::iterator it2;}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00074}00074         \textcolor{keywordflow}{for} (it2 = \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}.begin(); it2 != \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}.end(); ++it2)}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00075}00075         \{}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00076}00076             \textcolor{keywordflow}{if} (find(alreadyChecked.begin(), alreadyChecked.end(), it2-\/>first) != alreadyChecked.end())}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00077}00077                 \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00079}00079             \textcolor{comment}{// On va dabor tester la proximité des deux entité par rapport à une constante qui définit la distance minimale entre 2 object}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00080}00080             \textcolor{comment}{// if (m\_objects[it1-\/>first]-\/>getPosition().getDistanceWith(m\_objects[it2-\/>first]-\/>getPosition()) < (float)DISTANCE\_MIN\_BETWEEN\_OBJECTS)}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00081}00081             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}[it1-\/>first]-\/>getCollider().touchEachOther(\mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}[it2-\/>first]-\/>getCollider()))}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00082}00082             \{}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00083}00083                 \textcolor{comment}{// cout << "{}1 -\/ "{} << m\_objects[it1-\/>firset]-\/>getGameObjectName() << "{} "{} << m\_objects[it1-\/>first]-\/>getGameObjectId() << endl;}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00084}00084                 \textcolor{comment}{// cout << "{}2 -\/ "{} << m\_objects[it2-\/>first]-\/>getGameObjectName() << "{} "{} << m\_objects[it2-\/>first]-\/>getGameObjectId() << endl;}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00086}00086                 \textcolor{comment}{// cout << "{}distance entre les deux "{} << it1-\/>second-\/>getPosition().getDistanceWith(it2-\/>second-\/>getPosition()) << endl;}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00087}00087                 \textcolor{comment}{// NOTE -\/  Commenté car me sort un bug que j n'ai pas envie de géré}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00088}00088                 \textcolor{comment}{// if (m\_objects[it1-\/>first]-\/>getSprite().getGlobalBounds().intersects(m\_objects[it2-\/>first]-\/>getSprite().getGlobalBounds()))}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00089}00089                 \textcolor{comment}{// \{}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00090}00090                 \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}[it1-\/>first]-\/>fromColliderToRigidBody();}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00091}00091                 \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}[it2-\/>first]-\/>fromColliderToRigidBody();}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00093}00093                 \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}[it1-\/>first]-\/>onCollisionEnter(\mbox{\hyperlink{class_collision}{Collision}}(*\mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}[it2-\/>first]));}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00094}00094                 \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}[it2-\/>first]-\/>onCollisionEnter(\mbox{\hyperlink{class_collision}{Collision}}(*\mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{m\_objects}}[it1-\/>first]));}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00095}00095                 \textcolor{comment}{// \}}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00096}00096             \}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00097}00097         \}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00098}00098     \}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00099}00099 \}}
 \DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00100}00100 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00101}00101 \textcolor{comment}{//  /**}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00102}00102 \textcolor{comment}{//   * Ici on va juste vérifier la proximité de 2 objets}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00103}00103 \textcolor{comment}{//   * pour les informer si ils sont en contact ou non}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00104}00104 \textcolor{comment}{//   *}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00105}00105 \textcolor{comment}{//   */}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00106}00106 \textcolor{comment}{//  map<string, shared\_ptr<GameObject>>::iterator it;}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00107}00107 \textcolor{comment}{//  // Pour receillir les clés des object déjà parcourut}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00108}00108 \textcolor{comment}{//  vector<string> alreadyChecked = \{\};}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00109}00109 \textcolor{comment}{//  // for (auto\&\& gameObject : m\_objects)}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00110}00110 \textcolor{comment}{//  // for (pair<string, GameObject*> gameObject\_1 : m\_objects)}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00111}00111 \textcolor{comment}{//  for (it = m\_objects.begin(); it != m\_objects.end(); ++it)}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00112}00112 \textcolor{comment}{//  \{}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00113}00113 \textcolor{comment}{//      // const Position* gameObject\_1\_position = gameObject\_1.second-\/>getPosition();}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00114}00114 \textcolor{comment}{//      // const Position* gameObject\_1\_position = it-\/>second-\/>getPosition();}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00115}00115 \textcolor{comment}{//      // for (pair<string, GameObject*> gameObject\_2 : m\_objects)}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00116}00116 \textcolor{comment}{//      // map<string, GameObject*>::iterator it2;}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00117}00117 \textcolor{comment}{//      map<string, shared\_ptr<GameObject>>::iterator it2;}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00118}00118 \textcolor{comment}{//      for (it2 = m\_objects.begin(); it2 != m\_objects.end(); ++it2)}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00119}00119 \textcolor{comment}{//      \{}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00120}00120 \textcolor{comment}{//          if (find(alreadyChecked.begin(), alreadyChecked.end(), it-\/>first) != alreadyChecked.end())}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00121}00121 \textcolor{comment}{//              continue;}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00122}00122 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00123}00123 \textcolor{comment}{//          // const Position* gameObject\_2\_position = it2-\/>second-\/>getPosition();}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00124}00124 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00125}00125 \textcolor{comment}{//          if (it-\/>second-\/>getPosition()-\/>getDistanceWith((*(it2-\/>second-\/>getPosition()))) <= (float)DISTANCE\_MIN\_BETWEEN\_OBJECTS)}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00126}00126 \textcolor{comment}{//          \{}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00127}00127 \textcolor{comment}{//              it-\/>second-\/>onCollisionEnter(Collision(it2-\/>second));}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00128}00128 \textcolor{comment}{//              it2-\/>second-\/>onCollisionEnter(Collision(it-\/>second));}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00129}00129 \textcolor{comment}{//          \}}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00101}\mbox{\hyperlink{class_collider_a19074031377d5b600bf120adfdcdf1c9}{00101}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_collider_a19074031377d5b600bf120adfdcdf1c9}{Collider::removeObjects}}(\textcolor{keywordtype}{int} gameObjectId)}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00102}00102 \{}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00103}00103     \mbox{\hyperlink{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}{Collider::m\_objects}}.erase(to\_string(gameObjectId));}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00104}00104 \}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00106}00106 \textcolor{comment}{// void Collider::update()}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00107}00107 \textcolor{comment}{// \{}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00109}00109 \textcolor{comment}{//  /**}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00110}00110 \textcolor{comment}{//   * Ici on va juste vérifier la proximité de 2 objets}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00111}00111 \textcolor{comment}{//   * pour les informer si ils sont en contact ou non}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00112}00112 \textcolor{comment}{//   *}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00113}00113 \textcolor{comment}{//   */}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00114}00114 \textcolor{comment}{//  map<string, shared\_ptr<GameObject>>::iterator it;}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00115}00115 \textcolor{comment}{//  // Pour receillir les clés des object déjà parcourut}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00116}00116 \textcolor{comment}{//  vector<string> alreadyChecked = \{\};}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00117}00117 \textcolor{comment}{//  // for (auto\&\& gameObject : m\_objects)}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00118}00118 \textcolor{comment}{//  // for (pair<string, GameObject*> gameObject\_1 : m\_objects)}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00119}00119 \textcolor{comment}{//  for (it = m\_objects.begin(); it != m\_objects.end(); ++it)}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00120}00120 \textcolor{comment}{//  \{}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00121}00121 \textcolor{comment}{//      // const Position* gameObject\_1\_position = gameObject\_1.second-\/>getPosition();}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00122}00122 \textcolor{comment}{//      // const Position* gameObject\_1\_position = it-\/>second-\/>getPosition();}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00123}00123 \textcolor{comment}{//      // for (pair<string, GameObject*> gameObject\_2 : m\_objects)}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00124}00124 \textcolor{comment}{//      // map<string, GameObject*>::iterator it2;}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00125}00125 \textcolor{comment}{//      map<string, shared\_ptr<GameObject>>::iterator it2;}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00126}00126 \textcolor{comment}{//      for (it2 = m\_objects.begin(); it2 != m\_objects.end(); ++it2)}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00127}00127 \textcolor{comment}{//      \{}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00128}00128 \textcolor{comment}{//          if (find(alreadyChecked.begin(), alreadyChecked.end(), it-\/>first) != alreadyChecked.end())}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00129}00129 \textcolor{comment}{//              continue;}}
 \DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00130}00130 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00131}00131 \textcolor{comment}{//          // delete gameObject\_2\_position;}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00132}00132 \textcolor{comment}{//      \}}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00133}00133 \textcolor{comment}{//      alreadyChecked.push\_back(it-\/>first);}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00134}00134 }
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00135}00135 \textcolor{comment}{//      // delete gameObject\_1\_position;}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00136}00136 \textcolor{comment}{//  \}}}
-\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00137}00137 \textcolor{comment}{// \}}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00131}00131 \textcolor{comment}{//          // const Position* gameObject\_2\_position = it2-\/>second-\/>getPosition();}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00133}00133 \textcolor{comment}{//          if (it-\/>second-\/>getPosition()-\/>getDistanceWith((*(it2-\/>second-\/>getPosition()))) <= (float)DISTANCE\_MIN\_BETWEEN\_OBJECTS)}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00134}00134 \textcolor{comment}{//          \{}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00135}00135 \textcolor{comment}{//              it-\/>second-\/>onCollisionEnter(Collision(it2-\/>second));}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00136}00136 \textcolor{comment}{//              it2-\/>second-\/>onCollisionEnter(Collision(it-\/>second));}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00137}00137 \textcolor{comment}{//          \}}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00138}00138 }
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00139}00139 \textcolor{comment}{//          // delete gameObject\_2\_position;}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00140}00140 \textcolor{comment}{//      \}}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00141}00141 \textcolor{comment}{//      alreadyChecked.push\_back(it-\/>first);}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00142}00142 }
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00143}00143 \textcolor{comment}{//      // delete gameObject\_1\_position;}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00144}00144 \textcolor{comment}{//  \}}}
+\DoxyCodeLine{\Hypertarget{_collider_8cpp_source_l00145}00145 \textcolor{comment}{// \}}}
 
 \end{DoxyCode}

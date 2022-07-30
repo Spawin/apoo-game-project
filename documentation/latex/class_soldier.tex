@@ -4,10 +4,24 @@
 
 {\ttfamily \#include $<$Soldier.\+hpp$>$}
 
-Graphe d\textquotesingle{}héritage de Soldier\+:\begin{figure}[H]
+
+
+Graphe d\textquotesingle{}héritage de Soldier\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=4.000000cm]{class_soldier}
+\includegraphics[height=550pt]{class_soldier__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Soldier\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_soldier__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Fonctions membres publiques}
@@ -20,15 +34,7 @@ Graphe d\textquotesingle{}héritage de Soldier\+:\begin{figure}[H]
 virtual void \mbox{\hyperlink{class_soldier_ad55488b632b3e91eca9d20cfb06f52d7}{simple\+Attack}} (\mbox{\hyperlink{class_personage}{Personage}} \&target) override
 \begin{DoxyCompactList}\small\item\em Pour dessiner l\textquotesingle{}élement dans la fenêtre. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_soldier_aebd513f96b6f365ddc1d56ca1ea16a64}{special\+Attack}} (\mbox{\hyperlink{class_personage}{Personage}} \&target) override
-\item 
-virtual unsigned \mbox{\hyperlink{class_soldier_a25ee422f10bef83f254fc2428075fb03}{receive\+Health\+Damage}} (int value) override
-\begin{DoxyCompactList}\small\item\em pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) \end{DoxyCompactList}\item 
-virtual unsigned \mbox{\hyperlink{class_soldier_ae1d2c827e9eaa45938ae9e56f272104c}{receive\+Exp\+Damage}} (int value) override
-\begin{DoxyCompactList}\small\item\em pour recevoir les dégats d\textquotesingle{}exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) \end{DoxyCompactList}\item 
-virtual unsigned \mbox{\hyperlink{class_soldier_a921f5dac4dc77a844c2a4a0550128793}{receive\+Health\+Care}} (int value) override
-\begin{DoxyCompactList}\small\item\em pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) \end{DoxyCompactList}\item 
-virtual unsigned \mbox{\hyperlink{class_soldier_a3f0e9474cb28c4a769ccb88664d88d1f}{receive\+Exp\+Care}} (int value) override
-\begin{DoxyCompactList}\small\item\em pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \doxysubsection*{Membres hérités additionnels}
 
 
@@ -48,7 +54,7 @@ Définition à la ligne \mbox{\hyperlink{_soldier_8hpp_source_l00006}{6}} du fic
 
 
 
-Définition à la ligne \mbox{\hyperlink{_soldier_8cpp_source_l00011}{11}} du fichier \mbox{\hyperlink{_soldier_8cpp_source}{Soldier.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_soldier_8cpp_source_l00012}{12}} du fichier \mbox{\hyperlink{_soldier_8cpp_source}{Soldier.\+cpp}}.
 
 \mbox{\Hypertarget{class_soldier_a9e23372da5b3bd1b3346d8cce5df03b3}\label{class_soldier_a9e23372da5b3bd1b3346d8cce5df03b3}} 
 \index{Soldier@{Soldier}!````~Soldier@{$\sim$Soldier}}
@@ -58,115 +64,11 @@ Définition à la ligne \mbox{\hyperlink{_soldier_8cpp_source_l00011}{11}} du fi
 
 
 
-Définition à la ligne \mbox{\hyperlink{_soldier_8cpp_source_l00017}{17}} du fichier \mbox{\hyperlink{_soldier_8cpp_source}{Soldier.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_soldier_8cpp_source_l00018}{18}} du fichier \mbox{\hyperlink{_soldier_8cpp_source}{Soldier.\+cpp}}.
 
 
 
 \doxysubsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_soldier_a3f0e9474cb28c4a769ccb88664d88d1f}\label{class_soldier_a3f0e9474cb28c4a769ccb88664d88d1f}} 
-\index{Soldier@{Soldier}!receiveExpCare@{receiveExpCare}}
-\index{receiveExpCare@{receiveExpCare}!Soldier@{Soldier}}
-\doxysubsubsection{\texorpdfstring{receiveExpCare()}{receiveExpCare()}}
-{\footnotesize\ttfamily unsigned Soldier\+::receive\+Exp\+Care (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) 
-
-
-\begin{DoxyParams}{Paramètres}
-{\em value} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Renvoie}
-unsigned 
-\end{DoxyReturn}
-
-
-Implémente \mbox{\hyperlink{class_personage_a5e247c0fc009659808e3be549cbb54e7}{Personage}}.
-
-
-
-Définition à la ligne \mbox{\hyperlink{_soldier_8cpp_source_l00049}{49}} du fichier \mbox{\hyperlink{_soldier_8cpp_source}{Soldier.\+cpp}}.
-
-\mbox{\Hypertarget{class_soldier_ae1d2c827e9eaa45938ae9e56f272104c}\label{class_soldier_ae1d2c827e9eaa45938ae9e56f272104c}} 
-\index{Soldier@{Soldier}!receiveExpDamage@{receiveExpDamage}}
-\index{receiveExpDamage@{receiveExpDamage}!Soldier@{Soldier}}
-\doxysubsubsection{\texorpdfstring{receiveExpDamage()}{receiveExpDamage()}}
-{\footnotesize\ttfamily unsigned Soldier\+::receive\+Exp\+Damage (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-pour recevoir les dégats d\textquotesingle{}exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) 
-
-
-\begin{DoxyParams}{Paramètres}
-{\em value} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Renvoie}
-unsigned 
-\end{DoxyReturn}
-
-
-Implémente \mbox{\hyperlink{class_personage_a74a713ccc0ab68213086699330abeadc}{Personage}}.
-
-
-
-Définition à la ligne \mbox{\hyperlink{_soldier_8cpp_source_l00045}{45}} du fichier \mbox{\hyperlink{_soldier_8cpp_source}{Soldier.\+cpp}}.
-
-\mbox{\Hypertarget{class_soldier_a921f5dac4dc77a844c2a4a0550128793}\label{class_soldier_a921f5dac4dc77a844c2a4a0550128793}} 
-\index{Soldier@{Soldier}!receiveHealthCare@{receiveHealthCare}}
-\index{receiveHealthCare@{receiveHealthCare}!Soldier@{Soldier}}
-\doxysubsubsection{\texorpdfstring{receiveHealthCare()}{receiveHealthCare()}}
-{\footnotesize\ttfamily unsigned Soldier\+::receive\+Health\+Care (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) 
-
-
-\begin{DoxyParams}{Paramètres}
-{\em value} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Renvoie}
-unsigned 
-\end{DoxyReturn}
-
-
-Implémente \mbox{\hyperlink{class_personage_a6e442afbcc6eb7fc843478cbd66ad21b}{Personage}}.
-
-
-
-Définition à la ligne \mbox{\hyperlink{_soldier_8cpp_source_l00047}{47}} du fichier \mbox{\hyperlink{_soldier_8cpp_source}{Soldier.\+cpp}}.
-
-\mbox{\Hypertarget{class_soldier_a25ee422f10bef83f254fc2428075fb03}\label{class_soldier_a25ee422f10bef83f254fc2428075fb03}} 
-\index{Soldier@{Soldier}!receiveHealthDamage@{receiveHealthDamage}}
-\index{receiveHealthDamage@{receiveHealthDamage}!Soldier@{Soldier}}
-\doxysubsubsection{\texorpdfstring{receiveHealthDamage()}{receiveHealthDamage()}}
-{\footnotesize\ttfamily unsigned Soldier\+::receive\+Health\+Damage (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou...) 
-
-
-\begin{DoxyParams}{Paramètres}
-{\em value} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Renvoie}
-unsigned 
-\end{DoxyReturn}
-
-
-Implémente \mbox{\hyperlink{class_personage_a5a60566d579586450b87ac815d270f3c}{Personage}}.
-
-
-
-Définition à la ligne \mbox{\hyperlink{_soldier_8cpp_source_l00043}{43}} du fichier \mbox{\hyperlink{_soldier_8cpp_source}{Soldier.\+cpp}}.
-
 \mbox{\Hypertarget{class_soldier_ad55488b632b3e91eca9d20cfb06f52d7}\label{class_soldier_ad55488b632b3e91eca9d20cfb06f52d7}} 
 \index{Soldier@{Soldier}!simpleAttack@{simpleAttack}}
 \index{simpleAttack@{simpleAttack}!Soldier@{Soldier}}
@@ -188,8 +90,16 @@ Implémente \mbox{\hyperlink{class_personage_a1dade2c8ec548dd2df7791252719fe1d}{
 
 
 
-Définition à la ligne \mbox{\hyperlink{_soldier_8cpp_source_l00023}{23}} du fichier \mbox{\hyperlink{_soldier_8cpp_source}{Soldier.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_soldier_8cpp_source_l00024}{24}} du fichier \mbox{\hyperlink{_soldier_8cpp_source}{Soldier.\+cpp}}.
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_soldier_ad55488b632b3e91eca9d20cfb06f52d7_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_soldier_aebd513f96b6f365ddc1d56ca1ea16a64}\label{class_soldier_aebd513f96b6f365ddc1d56ca1ea16a64}} 
 \index{Soldier@{Soldier}!specialAttack@{specialAttack}}
 \index{specialAttack@{specialAttack}!Soldier@{Soldier}}
@@ -202,8 +112,16 @@ Implémente \mbox{\hyperlink{class_personage_a71f84a092284e295db1de628af4e918d}{
 
 
 
-Définition à la ligne \mbox{\hyperlink{_soldier_8cpp_source_l00027}{27}} du fichier \mbox{\hyperlink{_soldier_8cpp_source}{Soldier.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_soldier_8cpp_source_l00028}{28}} du fichier \mbox{\hyperlink{_soldier_8cpp_source}{Soldier.\+cpp}}.
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_soldier_aebd513f96b6f365ddc1d56ca1ea16a64_cgraph}
+\end{center}
+\end{figure}
 
 
 La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}

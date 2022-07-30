@@ -1,4 +1,4 @@
-.TH "Collision" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.TH "Collision" 3 "Samedi 30 Juillet 2022" "Jeu POA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -18,7 +18,7 @@ Collision
 .RI "\fB~Collision\fP ()"
 .br
 .ti -1c
-.RI "std::shared_ptr< \fBGameObject\fP > \fBgetGameObject\fP () const"
+.RI "\fBGameObject\fP const & \fBgetGameObject\fP () const"
 .br
 .RI "Get the Game Object object\&. "
 .ti -1c
@@ -40,7 +40,7 @@ Définition à la ligne \fB6\fP du fichier \fBCollision\&.cpp\fP\&.
 Définition à la ligne \fB14\fP du fichier \fBCollision\&.cpp\fP\&.
 .SH "Documentation des fonctions membres"
 .PP 
-.SS "std::shared_ptr< \fBGameObject\fP > Collision::getGameObject () const"
+.SS "\fBGameObject\fP const  & Collision::getGameObject () const"
 
 .PP
 Get the Game Object object\&. 
@@ -51,10 +51,12 @@ std::shared_ptr<GameObject>
 .RE
 .PP
 
-.SS "void Collision::test () const\fC [inline]\fP"
+.PP
+Définition à la ligne \fB19\fP du fichier \fBCollision\&.cpp\fP\&.
+.SS "void Collision::test () const"
 
 .PP
-Définition à la ligne \fB23\fP du fichier \fBCollision\&.hpp\fP\&.
+Définition à la ligne \fB24\fP du fichier \fBCollision\&.cpp\fP\&.
 
 .SH "Auteur"
 .PP 

@@ -4,6 +4,16 @@
 
 {\ttfamily \#include $<$Inventory.\+hpp$>$}
 
+
+
+Graphe de collaboration de Inventory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{class_inventory__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
@@ -11,11 +21,19 @@
 \item 
 \mbox{\hyperlink{class_inventory_a6c6dfcb6d977c74a7abf46809e892e3d}{$\sim$\+Inventory}} ()
 \item 
-bool \mbox{\hyperlink{class_inventory_a07d89fcb8469e7a2ee8e5dcc17e3931c}{add}} (\mbox{\hyperlink{class_item}{Item}} $\ast$item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}} type)
+bool \mbox{\hyperlink{class_inventory_a6ba8f9f2aacaaebf7aeccf82d8987924}{add}} (\mbox{\hyperlink{class_item}{Item}} $\ast$item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}} type, sf\+::\+Vector2f const \&coordinates)
 \item 
-bool \mbox{\hyperlink{class_inventory_a91d5c19993a18c877f5c867e42020bc3}{move}} (\mbox{\hyperlink{class_item}{Item}} $\ast$item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}} type, \mbox{\hyperlink{class_inventory}{Inventory}} $\ast$to\+\_\+inventory)
+bool \mbox{\hyperlink{class_inventory_a2caea8bbe0a4d963530f669ff4221cc6}{move}} (\mbox{\hyperlink{class_item}{Item}} $\ast$item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}} type, \mbox{\hyperlink{class_inventory}{Inventory}} $\ast$to\+\_\+inventory, sf\+::\+Vector2f const \&coordinates)
 \item 
 bool \mbox{\hyperlink{class_inventory_a376aed955014cbc28e74d5f380ab5365}{remove}} (\mbox{\hyperlink{class_item}{Item}} $\ast$item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}} type)
+\item 
+bool \mbox{\hyperlink{class_inventory_a2f5afd64ba2face47fd96b5ac93f9568}{have\+This\+Item}} (\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game\+::\+Items\+Categories}} const \&categorie) const
+\item 
+\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}} const \& \mbox{\hyperlink{class_inventory_aa8ea7d66f755600fded21fdb2c846e15}{get\+Inventory\+Item\+Type}} (\mbox{\hyperlink{class_item}{Item}} const $\ast$item) const
+\begin{DoxyCompactList}\small\item\em Retourne le type de l\textquotesingle{}inventaire de l\textquotesingle{}item. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_item}{Item}} const $\ast$ \mbox{\hyperlink{class_inventory_ab299b7578ab77568ed17af72088e6154}{get\+First\+Item\+Match}} (\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game\+::\+Items\+Categories}} const \&categorie) const
+\begin{DoxyCompactList}\small\item\em Retourne le premier item qui vérifie le paramètre. NOTE -\/ S\textquotesingle{}assurer d\textquotesingle{}appeler have\+This\+Item avant pour vérifier la disponibilité de l\textquotesingle{}objet recherché. Si l\textquotesingle{}item n\textquotesingle{}est pas trouvé un retour null\+\_\+ptr est envoyé. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_item}{Item}} $\ast$ \mbox{\hyperlink{class_inventory_aaceb59f1e54b06db60c391970313836b}{get\+First\+Item\+Match\+Non\+Const}} (\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game\+::\+Items\+Categories}} const \&categorie)
 \item 
 int \mbox{\hyperlink{class_inventory_a1bf036d4a5089fad46dccf36684bf98f}{get\+Type\+Limit}} (\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}} type)
 \item 
@@ -28,7 +46,7 @@ int \mbox{\hyperlink{class_inventory_a0c51a9678241da5fa2062183cc0afd6c}{get\+Fre
 \doxysubsection{Description détaillée}
 
 
-Définition à la ligne \mbox{\hyperlink{_inventory_8hpp_source_l00022}{22}} du fichier \mbox{\hyperlink{_inventory_8hpp_source}{Inventory.\+hpp}}.
+Définition à la ligne \mbox{\hyperlink{_inventory_8hpp_source_l00018}{18}} du fichier \mbox{\hyperlink{_inventory_8hpp_source}{Inventory.\+hpp}}.
 
 
 
@@ -51,21 +69,85 @@ Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00032}{32}} du 
 
 
 
-Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00039}{39}} du fichier \mbox{\hyperlink{_inventory_8cpp_source}{Inventory.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00040}{40}} du fichier \mbox{\hyperlink{_inventory_8cpp_source}{Inventory.\+cpp}}.
 
 
 
 \doxysubsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_inventory_a07d89fcb8469e7a2ee8e5dcc17e3931c}\label{class_inventory_a07d89fcb8469e7a2ee8e5dcc17e3931c}} 
+\mbox{\Hypertarget{class_inventory_a6ba8f9f2aacaaebf7aeccf82d8987924}\label{class_inventory_a6ba8f9f2aacaaebf7aeccf82d8987924}} 
 \index{Inventory@{Inventory}!add@{add}}
 \index{add@{add}!Inventory@{Inventory}}
 \doxysubsubsection{\texorpdfstring{add()}{add()}}
-{\footnotesize\ttfamily bool Inventory\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_item}{Item}} $\ast$}]{item,  }\item[{\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}}}]{type }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Inventory\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_item}{Item}} $\ast$}]{item,  }\item[{\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}}}]{type,  }\item[{sf\+::\+Vector2f const \&}]{coordinates }\end{DoxyParamCaption})}
 
 
 
-Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00055}{55}} du fichier \mbox{\hyperlink{_inventory_8cpp_source}{Inventory.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00056}{56}} du fichier \mbox{\hyperlink{_inventory_8cpp_source}{Inventory.\+cpp}}.
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inventory_a6ba8f9f2aacaaebf7aeccf82d8987924_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inventory_a6ba8f9f2aacaaebf7aeccf82d8987924_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_inventory_ab299b7578ab77568ed17af72088e6154}\label{class_inventory_ab299b7578ab77568ed17af72088e6154}} 
+\index{Inventory@{Inventory}!getFirstItemMatch@{getFirstItemMatch}}
+\index{getFirstItemMatch@{getFirstItemMatch}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{getFirstItemMatch()}{getFirstItemMatch()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_item}{Item}} const  $\ast$ Inventory\+::get\+First\+Item\+Match (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game\+::\+Items\+Categories}} const \&}]{categorie }\end{DoxyParamCaption}) const}
+
+
+
+Retourne le premier item qui vérifie le paramètre. NOTE -\/ S\textquotesingle{}assurer d\textquotesingle{}appeler have\+This\+Item avant pour vérifier la disponibilité de l\textquotesingle{}objet recherché. Si l\textquotesingle{}item n\textquotesingle{}est pas trouvé un retour null\+\_\+ptr est envoyé. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em categorie} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+\mbox{\hyperlink{class_item}{Item}} const$\ast$ 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00134}{134}} du fichier \mbox{\hyperlink{_inventory_8cpp_source}{Inventory.\+cpp}}.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inventory_ab299b7578ab77568ed17af72088e6154_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_inventory_aaceb59f1e54b06db60c391970313836b}\label{class_inventory_aaceb59f1e54b06db60c391970313836b}} 
+\index{Inventory@{Inventory}!getFirstItemMatchNonConst@{getFirstItemMatchNonConst}}
+\index{getFirstItemMatchNonConst@{getFirstItemMatchNonConst}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{getFirstItemMatchNonConst()}{getFirstItemMatchNonConst()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_item}{Item}} $\ast$ Inventory\+::get\+First\+Item\+Match\+Non\+Const (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game\+::\+Items\+Categories}} const \&}]{categorie }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00150}{150}} du fichier \mbox{\hyperlink{_inventory_8cpp_source}{Inventory.\+cpp}}.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inventory_aaceb59f1e54b06db60c391970313836b_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_inventory_a0c51a9678241da5fa2062183cc0afd6c}\label{class_inventory_a0c51a9678241da5fa2062183cc0afd6c}} 
 \index{Inventory@{Inventory}!getFreePlace@{getFreePlace}}
 \index{getFreePlace@{getFreePlace}!Inventory@{Inventory}}
@@ -74,7 +156,7 @@ Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00055}{55}} du 
 
 
 
-Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00094}{94}} du fichier \mbox{\hyperlink{_inventory_8cpp_source}{Inventory.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00171}{171}} du fichier \mbox{\hyperlink{_inventory_8cpp_source}{Inventory.\+cpp}}.
 
 \mbox{\Hypertarget{class_inventory_adb0cf453e653bc719cdb207b906dbc56}\label{class_inventory_adb0cf453e653bc719cdb207b906dbc56}} 
 \index{Inventory@{Inventory}!getGui@{getGui}}
@@ -84,8 +166,46 @@ Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00094}{94}} du 
 
 
 
-Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00099}{99}} du fichier \mbox{\hyperlink{_inventory_8cpp_source}{Inventory.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00176}{176}} du fichier \mbox{\hyperlink{_inventory_8cpp_source}{Inventory.\+cpp}}.
 
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inventory_adb0cf453e653bc719cdb207b906dbc56_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_inventory_aa8ea7d66f755600fded21fdb2c846e15}\label{class_inventory_aa8ea7d66f755600fded21fdb2c846e15}} 
+\index{Inventory@{Inventory}!getInventoryItemType@{getInventoryItemType}}
+\index{getInventoryItemType@{getInventoryItemType}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{getInventoryItemType()}{getInventoryItemType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}} const  \& Inventory\+::get\+Inventory\+Item\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_item}{Item}} const $\ast$}]{item }\end{DoxyParamCaption}) const}
+
+
+
+Retourne le type de l\textquotesingle{}inventaire de l\textquotesingle{}item. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em item} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}} const\& 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00118}{118}} du fichier \mbox{\hyperlink{_inventory_8cpp_source}{Inventory.\+cpp}}.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inventory_aa8ea7d66f755600fded21fdb2c846e15_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_inventory_a1bf036d4a5089fad46dccf36684bf98f}\label{class_inventory_a1bf036d4a5089fad46dccf36684bf98f}} 
 \index{Inventory@{Inventory}!getTypeLimit@{getTypeLimit}}
 \index{getTypeLimit@{getTypeLimit}!Inventory@{Inventory}}
@@ -94,18 +214,52 @@ Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00099}{99}} du 
 
 
 
-Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00089}{89}} du fichier \mbox{\hyperlink{_inventory_8cpp_source}{Inventory.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00166}{166}} du fichier \mbox{\hyperlink{_inventory_8cpp_source}{Inventory.\+cpp}}.
 
-\mbox{\Hypertarget{class_inventory_a91d5c19993a18c877f5c867e42020bc3}\label{class_inventory_a91d5c19993a18c877f5c867e42020bc3}} 
+\mbox{\Hypertarget{class_inventory_a2f5afd64ba2face47fd96b5ac93f9568}\label{class_inventory_a2f5afd64ba2face47fd96b5ac93f9568}} 
+\index{Inventory@{Inventory}!haveThisItem@{haveThisItem}}
+\index{haveThisItem@{haveThisItem}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{haveThisItem()}{haveThisItem()}}
+{\footnotesize\ttfamily bool Inventory\+::have\+This\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game\+::\+Items\+Categories}} const \&}]{categorie }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00101}{101}} du fichier \mbox{\hyperlink{_inventory_8cpp_source}{Inventory.\+cpp}}.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inventory_a2f5afd64ba2face47fd96b5ac93f9568_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_inventory_a2caea8bbe0a4d963530f669ff4221cc6}\label{class_inventory_a2caea8bbe0a4d963530f669ff4221cc6}} 
 \index{Inventory@{Inventory}!move@{move}}
 \index{move@{move}!Inventory@{Inventory}}
 \doxysubsubsection{\texorpdfstring{move()}{move()}}
-{\footnotesize\ttfamily bool Inventory\+::move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_item}{Item}} $\ast$}]{item,  }\item[{\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}}}]{type,  }\item[{\mbox{\hyperlink{class_inventory}{Inventory}} $\ast$}]{to\+\_\+inventory }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Inventory\+::move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_item}{Item}} $\ast$}]{item,  }\item[{\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}}}]{type,  }\item[{\mbox{\hyperlink{class_inventory}{Inventory}} $\ast$}]{to\+\_\+inventory,  }\item[{sf\+::\+Vector2f const \&}]{coordinates }\end{DoxyParamCaption})}
 
 
 
-Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00068}{68}} du fichier \mbox{\hyperlink{_inventory_8cpp_source}{Inventory.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00072}{72}} du fichier \mbox{\hyperlink{_inventory_8cpp_source}{Inventory.\+cpp}}.
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inventory_a2caea8bbe0a4d963530f669ff4221cc6_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inventory_a2caea8bbe0a4d963530f669ff4221cc6_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_inventory_a376aed955014cbc28e74d5f380ab5365}\label{class_inventory_a376aed955014cbc28e74d5f380ab5365}} 
 \index{Inventory@{Inventory}!remove@{remove}}
 \index{remove@{remove}!Inventory@{Inventory}}
@@ -114,8 +268,24 @@ Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00068}{68}} du 
 
 
 
-Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00080}{80}} du fichier \mbox{\hyperlink{_inventory_8cpp_source}{Inventory.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_inventory_8cpp_source_l00088}{88}} du fichier \mbox{\hyperlink{_inventory_8cpp_source}{Inventory.\+cpp}}.
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_inventory_a376aed955014cbc28e74d5f380ab5365_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_inventory_a376aed955014cbc28e74d5f380ab5365_icgraph}
+\end{center}
+\end{figure}
 
 
 La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['textures_0',['textures',['../class_state.html#af747b588cad4683d34c38a03c2f8d046',1,'State']]],
-  ['title_1',['title',['../class_graphics_settings.html#a524c4928c24954f1664cbba71489198a',1,'GraphicsSettings']]]
+  ['rangeofaction_0',['rangeOfAction',['../class_item.html#ac401c4d72c12ec78889efd2c6bd3476e',1,'Item']]],
+  ['resolution_1',['resolution',['../class_graphics_settings.html#adc582bb940381840fba48c7f0abd4d1d',1,'GraphicsSettings']]]
 ];

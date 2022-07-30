@@ -1,0 +1,8 @@
+<map id="BoxCollider" name="BoxCollider">
+<area shape="rect" id="node1" title=" " alt="" coords="11,791,193,1044"/>
+<area shape="rect" id="node2" href="$class_collider.html" title=" " alt="" coords="5,101,199,413"/>
+<area shape="rect" id="node3" href="$class_game_object.html" title=" " alt="" coords="247,571,471,1264"/>
+<area shape="rect" id="node6" href="$class_rigidbody.html" title=" " alt="" coords="239,1327,480,1448"/>
+<area shape="rect" id="node4" href="$class_position.html" title=" " alt="" coords="223,5,554,508"/>
+<area shape="rect" id="node5" href="$struct_my_vector.html" title=" " alt="" coords="579,115,775,398"/>
+</map>

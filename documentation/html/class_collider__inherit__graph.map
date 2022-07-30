@@ -1,0 +1,5 @@
+<map id="Collider" name="Collider">
+<area shape="rect" id="node1" title=" " alt="" coords="108,5,301,347"/>
+<area shape="rect" id="node2" href="$class_box_collider.html" title=" " alt="" coords="5,395,188,648"/>
+<area shape="rect" id="node3" href="$class_polygon_collider.html" title=" " alt="" coords="212,402,413,641"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="MovableGameObject" name="MovableGameObject">
+<area shape="rect" id="node1" title=" " alt="" coords="305,805,524,1323"/>
+<area shape="rect" id="node3" href="$class_personage.html" title=" " alt="" coords="306,1371,523,2357"/>
+<area shape="rect" id="node2" href="$class_game_object.html" title=" " alt="" coords="303,5,527,757"/>
+<area shape="rect" id="node4" href="$class_druid.html" title=" " alt="" coords="5,2413,192,2563"/>
+<area shape="rect" id="node5" href="$class_religious.html" title=" " alt="" coords="216,2413,403,2563"/>
+<area shape="rect" id="node6" href="$class_soldier.html" title=" " alt="" coords="427,2405,613,2571"/>
+<area shape="rect" id="node7" href="$class_worker.html" title=" " alt="" coords="637,2413,824,2563"/>
+</map>

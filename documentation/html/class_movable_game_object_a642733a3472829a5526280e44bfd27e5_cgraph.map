@@ -1,0 +1,4 @@
+<map id="MovableGameObject::show" name="MovableGameObject::show">
+<area shape="rect" id="node1" title="Pour dessiner l&#39;élement dans la fenêtre." alt="" coords="5,5,185,32"/>
+<area shape="rect" id="node2" href="$class_game_object.html#a3f7a674006e1cce96ccb6c60f0ff9aaf" title="Pour dessiner l&#39;élement dans la fenêtre." alt="" coords="233,5,367,32"/>
+</map>

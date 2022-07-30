@@ -1,0 +1,4 @@
+<map id="BoxingGloves::onCollisionEnter" name="BoxingGloves::onCollisionEnter">
+<area shape="rect" id="node1" title="émit quand il entre en contacte avec un autre élément" alt="" coords="5,5,177,47"/>
+<area shape="rect" id="node2" href="$class_collision.html#a8593db55ec453c4a041e68f70b345794" title=" " alt="" coords="225,13,327,39"/>
+</map>

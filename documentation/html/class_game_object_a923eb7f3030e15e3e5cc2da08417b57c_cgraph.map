@@ -1,0 +1,5 @@
+<map id="GameObject::fromColliderToRigidBody" name="GameObject::fromColliderToRigidBody">
+<area shape="rect" id="node1" title="Quand un collider détect une collision, il envoi l&#39;information au rigidBody." alt="" coords="5,27,176,69"/>
+<area shape="rect" id="node2" href="$class_game_object.html#a383ef4aec2bddf99d2255b7625c2e88a" title="Vérifie si &#39;objet est un corps rigid. (On ne peut pas passer à travers un corps rigid)" alt="" coords="224,5,400,32"/>
+<area shape="rect" id="node3" href="$class_rigidbody.html#a9d9614b3c76e39118e39bdd9e02ed740" title=" " alt="" coords="225,57,399,98"/>
+</map>

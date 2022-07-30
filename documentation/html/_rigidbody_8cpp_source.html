@@ -87,27 +87,28 @@ $(document).ready(function(){initNavTree('_rigidbody_8cpp_source.html',''); init
 <div class="contents">
 <a href="_rigidbody_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="_rigidbody_8hpp.html">include/Rigidbody.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">using namespace </span>std;</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="class_rigidbody.html#a3bf85856656cbef850eb8ed95e913a9d">    5</a></span><a class="code hl_function" href="class_rigidbody.html#a3bf85856656cbef850eb8ed95e913a9d">Rigidbody::Rigidbody</a>(<a class="code hl_class" href="class_game_object.html">GameObject</a>&amp; parent) :</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    m_parent(parent)</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>}</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_rigidbody.html#adef2355db93cd489250ce7ab2c797a10">   10</a></span><a class="code hl_function" href="class_rigidbody.html#adef2355db93cd489250ce7ab2c797a10">Rigidbody::~Rigidbody</a>()</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_rigidbody.html#a9d9614b3c76e39118e39bdd9e02ed740">   14</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_rigidbody.html#a9d9614b3c76e39118e39bdd9e02ed740">Rigidbody::onAnotherRigidBodyDetection</a>()</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_variable" href="class_rigidbody.html#af0b8c3a98c4ac0007e6140b48297dc95">m_parent</a>.<a class="code hl_variable" href="class_game_object.html#a13cde9cf52cf7e4d6771eee5ccdaa5d7">m_position</a>-&gt;m_thereIsARigidBody = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// #include &quot;include/Position.hpp&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_rigidbody.html#a3bf85856656cbef850eb8ed95e913a9d">    6</a></span><a class="code hl_function" href="class_rigidbody.html#a3bf85856656cbef850eb8ed95e913a9d">Rigidbody::Rigidbody</a>(<a class="code hl_class" href="class_game_object.html">GameObject</a>&amp; parent) :</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    m_parent(parent)</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_rigidbody.html#adef2355db93cd489250ce7ab2c797a10">   11</a></span><a class="code hl_function" href="class_rigidbody.html#adef2355db93cd489250ce7ab2c797a10">Rigidbody::~Rigidbody</a>()</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_rigidbody.html#a9d9614b3c76e39118e39bdd9e02ed740">   15</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_rigidbody.html#a9d9614b3c76e39118e39bdd9e02ed740">Rigidbody::onAnotherRigidBodyDetection</a>()</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <a class="code hl_variable" href="class_rigidbody.html#af0b8c3a98c4ac0007e6140b48297dc95">m_parent</a>.<a class="code hl_variable" href="class_game_object.html#a13cde9cf52cf7e4d6771eee5ccdaa5d7">m_position</a>-&gt;m_thereIsARigidBody = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
 <div class="ttc" id="a_rigidbody_8hpp_html"><div class="ttname"><a href="_rigidbody_8hpp.html">Rigidbody.hpp</a></div></div>
-<div class="ttc" id="aclass_game_object_html"><div class="ttname"><a href="class_game_object.html">GameObject</a></div><div class="ttdef"><b>Definition:</b> <a href="_game_object_8hpp_source.html#l00015">GameObject.hpp:16</a></div></div>
-<div class="ttc" id="aclass_game_object_html_a13cde9cf52cf7e4d6771eee5ccdaa5d7"><div class="ttname"><a href="class_game_object.html#a13cde9cf52cf7e4d6771eee5ccdaa5d7">GameObject::m_position</a></div><div class="ttdeci">Position * m_position</div><div class="ttdef"><b>Definition:</b> <a href="_game_object_8hpp_source.html#l00108">GameObject.hpp:108</a></div></div>
-<div class="ttc" id="aclass_rigidbody_html_a3bf85856656cbef850eb8ed95e913a9d"><div class="ttname"><a href="class_rigidbody.html#a3bf85856656cbef850eb8ed95e913a9d">Rigidbody::Rigidbody</a></div><div class="ttdeci">Rigidbody(GameObject &amp;parent)</div><div class="ttdef"><b>Definition:</b> <a href="_rigidbody_8cpp_source.html#l00005">Rigidbody.cpp:5</a></div></div>
-<div class="ttc" id="aclass_rigidbody_html_a9d9614b3c76e39118e39bdd9e02ed740"><div class="ttname"><a href="class_rigidbody.html#a9d9614b3c76e39118e39bdd9e02ed740">Rigidbody::onAnotherRigidBodyDetection</a></div><div class="ttdeci">void onAnotherRigidBodyDetection()</div><div class="ttdef"><b>Definition:</b> <a href="_rigidbody_8cpp_source.html#l00014">Rigidbody.cpp:14</a></div></div>
-<div class="ttc" id="aclass_rigidbody_html_adef2355db93cd489250ce7ab2c797a10"><div class="ttname"><a href="class_rigidbody.html#adef2355db93cd489250ce7ab2c797a10">Rigidbody::~Rigidbody</a></div><div class="ttdeci">~Rigidbody()</div><div class="ttdef"><b>Definition:</b> <a href="_rigidbody_8cpp_source.html#l00010">Rigidbody.cpp:10</a></div></div>
+<div class="ttc" id="aclass_game_object_html"><div class="ttname"><a href="class_game_object.html">GameObject</a></div><div class="ttdef"><b>Definition:</b> <a href="_game_object_8hpp_source.html#l00019">GameObject.hpp:20</a></div></div>
+<div class="ttc" id="aclass_game_object_html_a13cde9cf52cf7e4d6771eee5ccdaa5d7"><div class="ttname"><a href="class_game_object.html#a13cde9cf52cf7e4d6771eee5ccdaa5d7">GameObject::m_position</a></div><div class="ttdeci">Position * m_position</div><div class="ttdef"><b>Definition:</b> <a href="_game_object_8hpp_source.html#l00117">GameObject.hpp:117</a></div></div>
+<div class="ttc" id="aclass_rigidbody_html_a3bf85856656cbef850eb8ed95e913a9d"><div class="ttname"><a href="class_rigidbody.html#a3bf85856656cbef850eb8ed95e913a9d">Rigidbody::Rigidbody</a></div><div class="ttdeci">Rigidbody(GameObject &amp;parent)</div><div class="ttdef"><b>Definition:</b> <a href="_rigidbody_8cpp_source.html#l00006">Rigidbody.cpp:6</a></div></div>
+<div class="ttc" id="aclass_rigidbody_html_a9d9614b3c76e39118e39bdd9e02ed740"><div class="ttname"><a href="class_rigidbody.html#a9d9614b3c76e39118e39bdd9e02ed740">Rigidbody::onAnotherRigidBodyDetection</a></div><div class="ttdeci">void onAnotherRigidBodyDetection()</div><div class="ttdef"><b>Definition:</b> <a href="_rigidbody_8cpp_source.html#l00015">Rigidbody.cpp:15</a></div></div>
+<div class="ttc" id="aclass_rigidbody_html_adef2355db93cd489250ce7ab2c797a10"><div class="ttname"><a href="class_rigidbody.html#adef2355db93cd489250ce7ab2c797a10">Rigidbody::~Rigidbody</a></div><div class="ttdeci">~Rigidbody()</div><div class="ttdef"><b>Definition:</b> <a href="_rigidbody_8cpp_source.html#l00011">Rigidbody.cpp:11</a></div></div>
 <div class="ttc" id="aclass_rigidbody_html_af0b8c3a98c4ac0007e6140b48297dc95"><div class="ttname"><a href="class_rigidbody.html#af0b8c3a98c4ac0007e6140b48297dc95">Rigidbody::m_parent</a></div><div class="ttdeci">GameObject &amp; m_parent</div><div class="ttdef"><b>Definition:</b> <a href="_rigidbody_8hpp_source.html#l00018">Rigidbody.hpp:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

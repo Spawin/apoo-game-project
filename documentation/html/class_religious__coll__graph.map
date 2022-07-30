@@ -1,0 +1,15 @@
+<map id="Religious" name="Religious">
+<area shape="rect" id="node1" title=" " alt="" coords="237,3627,424,3777"/>
+<area shape="rect" id="node2" href="$class_personage.html" title=" " alt="" coords="222,2503,439,3577"/>
+<area shape="rect" id="node3" href="$class_movable_game_object.html" title=" " alt="" coords="5,1327,224,1815"/>
+<area shape="rect" id="node4" href="$class_game_object.html" title=" " alt="" coords="483,571,707,1264"/>
+<area shape="rect" id="node7" href="$class_collider.html" title=" " alt="" coords="750,1415,943,1727"/>
+<area shape="rect" id="node8" href="$class_rigidbody.html" title=" " alt="" coords="485,1510,726,1631"/>
+<area shape="rect" id="node12" href="$class_not_movable_game_object.html" title="Represente les objets imobiles. NOTE &#45; Certains de ces Object Peuvent être déplacée ou transporté par..." alt="" coords="249,1378,461,1763"/>
+<area shape="rect" id="node5" href="$class_position.html" title=" " alt="" coords="285,5,616,508"/>
+<area shape="rect" id="node6" href="$struct_my_vector.html" title=" " alt="" coords="641,115,837,398"/>
+<area shape="rect" id="node9" href="$class_animation_component.html" title=" " alt="" coords="15,747,215,1088"/>
+<area shape="rect" id="node10" href="$class_hall.html" title=" " alt="" coords="245,681,448,1154"/>
+<area shape="rect" id="node11" href="$class_bag.html" title=" " alt="" coords="222,1864,439,2425"/>
+<area shape="rect" id="node13" href="$classgui_1_1_progress_bar.html" title=" " alt="" coords="463,2011,710,2279"/>
+</map>

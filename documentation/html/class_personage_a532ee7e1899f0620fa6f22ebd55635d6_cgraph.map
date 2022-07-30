@@ -1,0 +1,5 @@
+<map id="Personage::haveThisItem" name="Personage::haveThisItem">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node2" href="$class_bag.html#a8307bb448999620f11f3f53155dedbb9" title=" " alt="" coords="220,5,348,32"/>
+<area shape="rect" id="node3" href="$class_inventory.html#a2f5afd64ba2face47fd96b5ac93f9568" title=" " alt="" coords="396,5,552,32"/>
+</map>

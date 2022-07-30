@@ -9,10 +9,24 @@ Represente les objets imobiles. NOTE -\/ Certains de ces Object Peuvent être d�
 
 {\ttfamily \#include $<$Not\+Movable\+Game\+Object.\+hpp$>$}
 
-Graphe d\textquotesingle{}héritage de Not\+Movable\+Game\+Object\+:\begin{figure}[H]
+
+
+Graphe d\textquotesingle{}héritage de Not\+Movable\+Game\+Object\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.566879cm]{class_not_movable_game_object}
+\includegraphics[height=550pt]{class_not_movable_game_object__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Not\+Movable\+Game\+Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_not_movable_game_object__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Fonctions membres publiques}
@@ -29,6 +43,8 @@ virtual void \mbox{\hyperlink{class_not_movable_game_object_a203fd11b9476996adcd
 virtual void \mbox{\hyperlink{class_not_movable_game_object_a4954c3c803930ca5faf48bab88fb19bd}{on\+Collision\+Enter}} (\mbox{\hyperlink{class_collision}{Collision}} const \&collision) const =0
 \begin{DoxyCompactList}\small\item\em émit quand il entre en contacte avec un autre élément \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_not_movable_game_object_aafd50ee8f5e31bd1f4dfb4bd95053267}{update}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_not_movable_game_object_ac15fa38f4fafb47ee0e58efa1996988c}{set\+Position}} (sf\+::\+Vector2f const \&coordinates)
 \end{DoxyCompactItemize}
 \doxysubsection*{Fonctions membres protégées}
 \begin{DoxyCompactItemize}
@@ -43,14 +59,14 @@ virtual void \mbox{\hyperlink{class_not_movable_game_object_a1ae6701a400e4455cb2
 \begin{DoxyCompactItemize}
 \item 
 const \mbox{\hyperlink{class_hall}{Hall}} $\ast$ \mbox{\hyperlink{class_not_movable_game_object_a91a3d24f39bf2f96b4092fc1573e525a}{hall}}
-\begin{DoxyCompactList}\small\item\em Initialiser animation\+Component et les animations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Ce pointeur ne doit pas être supprimé à ce niveau. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Membres hérités additionnels}
 
 
 \doxysubsection{Description détaillée}
 Represente les objets imobiles. NOTE -\/ Certains de ces Object Peuvent être déplacée ou transporté par un Personnage par exemple. 
 
-Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8hpp_source_l00021}{21}} du fichier \mbox{\hyperlink{_not_movable_game_object_8hpp_source}{Not\+Movable\+Game\+Object.\+hpp}}.
+Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8hpp_source_l00024}{24}} du fichier \mbox{\hyperlink{_not_movable_game_object_8hpp_source}{Not\+Movable\+Game\+Object.\+hpp}}.
 
 
 
@@ -65,6 +81,14 @@ Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8hpp_source_l0
 
 Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8cpp_source_l00013}{13}} du fichier \mbox{\hyperlink{_not_movable_game_object_8cpp_source}{Not\+Movable\+Game\+Object.\+cpp}}.
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_not_movable_game_object_ac0342d254de36c3f555c34247bcb26b3_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_not_movable_game_object_a46259bb4d181146b66bf1aa787a71222}\label{class_not_movable_game_object_a46259bb4d181146b66bf1aa787a71222}} 
 \index{NotMovableGameObject@{NotMovableGameObject}!````~NotMovableGameObject@{$\sim$NotMovableGameObject}}
 \index{````~NotMovableGameObject@{$\sim$NotMovableGameObject}!NotMovableGameObject@{NotMovableGameObject}}
@@ -102,6 +126,14 @@ false Si le déplacement n\textquotesingle{}a pas eu lieu
 
 Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8cpp_source_l00037}{37}} du fichier \mbox{\hyperlink{_not_movable_game_object_8cpp_source}{Not\+Movable\+Game\+Object.\+cpp}}.
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_not_movable_game_object_aa788f5bb11af921baaa8c12b2b69b4b6_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_not_movable_game_object_aca3c2dfcd7875f888650bb06d549bd2e}\label{class_not_movable_game_object_aca3c2dfcd7875f888650bb06d549bd2e}} 
 \index{NotMovableGameObject@{NotMovableGameObject}!initPosition@{initPosition}}
 \index{initPosition@{initPosition}!NotMovableGameObject@{NotMovableGameObject}}
@@ -116,6 +148,22 @@ Implémente \mbox{\hyperlink{class_game_object_ad860b401fa64188046b2b7019e006283
 
 Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8cpp_source_l00006}{6}} du fichier \mbox{\hyperlink{_not_movable_game_object_8cpp_source}{Not\+Movable\+Game\+Object.\+cpp}}.
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_not_movable_game_object_aca3c2dfcd7875f888650bb06d549bd2e_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_not_movable_game_object_aca3c2dfcd7875f888650bb06d549bd2e_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_not_movable_game_object_a4954c3c803930ca5faf48bab88fb19bd}\label{class_not_movable_game_object_a4954c3c803930ca5faf48bab88fb19bd}} 
 \index{NotMovableGameObject@{NotMovableGameObject}!onCollisionEnter@{onCollisionEnter}}
 \index{onCollisionEnter@{onCollisionEnter}!NotMovableGameObject@{NotMovableGameObject}}
@@ -137,8 +185,34 @@ Implémente \mbox{\hyperlink{class_game_object_a394309d681a8e5eb59656029a32881de
 
 
 
-Implémenté dans \mbox{\hyperlink{class_item_ab2a2e5e2b20b61602e8edf0e4e573599}{Item}}, \mbox{\hyperlink{class_bag_a0b6b0d7335ce631d81b785c63c959e1e}{Bag}}, \mbox{\hyperlink{class_money_af14a2e8f1f215da2cda5c833f25818e5}{Money}}, \mbox{\hyperlink{class_shield_af82912a68032d931aba13f28004568fd}{Shield}}, \mbox{\hyperlink{class_sword_a6484ea989954570c9ece11d9843e72d1}{Sword}}, et \mbox{\hyperlink{class_vial_ace9277c2d5c91183ed1357eff154cc1b}{Vial}}.
+Implémenté dans \mbox{\hyperlink{class_item_ab2a2e5e2b20b61602e8edf0e4e573599}{Item}}, \mbox{\hyperlink{class_bag_a0b6b0d7335ce631d81b785c63c959e1e}{Bag}}, \mbox{\hyperlink{class_boxing_gloves_ad6d311622857cccec7aa418a2ebee739}{Boxing\+Gloves}}, \mbox{\hyperlink{class_money_af14a2e8f1f215da2cda5c833f25818e5}{Money}}, \mbox{\hyperlink{class_shield_af82912a68032d931aba13f28004568fd}{Shield}}, \mbox{\hyperlink{class_sword_a6484ea989954570c9ece11d9843e72d1}{Sword}}, \mbox{\hyperlink{class_teleport_key_a7de596ef7713529170b78a3808d58555}{Teleport\+Key}}, et \mbox{\hyperlink{class_vial_ace9277c2d5c91183ed1357eff154cc1b}{Vial}}.
 
+\mbox{\Hypertarget{class_not_movable_game_object_ac15fa38f4fafb47ee0e58efa1996988c}\label{class_not_movable_game_object_ac15fa38f4fafb47ee0e58efa1996988c}} 
+\index{NotMovableGameObject@{NotMovableGameObject}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!NotMovableGameObject@{NotMovableGameObject}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Not\+Movable\+Game\+Object\+::set\+Position (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f const \&}]{coordinates }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8cpp_source_l00049}{49}} du fichier \mbox{\hyperlink{_not_movable_game_object_8cpp_source}{Not\+Movable\+Game\+Object.\+cpp}}.
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_not_movable_game_object_ac15fa38f4fafb47ee0e58efa1996988c_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_not_movable_game_object_ac15fa38f4fafb47ee0e58efa1996988c_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_not_movable_game_object_ad1d21edd47d563f733223b390bbdd969}\label{class_not_movable_game_object_ad1d21edd47d563f733223b390bbdd969}} 
 \index{NotMovableGameObject@{NotMovableGameObject}!setPositionMovementLimit@{setPositionMovementLimit}}
 \index{setPositionMovementLimit@{setPositionMovementLimit}!NotMovableGameObject@{NotMovableGameObject}}
@@ -156,8 +230,24 @@ Met à jour les nouvelle limite de déplacement.
 \end{DoxyParams}
 
 
-Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8cpp_source_l00049}{49}} du fichier \mbox{\hyperlink{_not_movable_game_object_8cpp_source}{Not\+Movable\+Game\+Object.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8cpp_source_l00056}{56}} du fichier \mbox{\hyperlink{_not_movable_game_object_8cpp_source}{Not\+Movable\+Game\+Object.\+cpp}}.
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_not_movable_game_object_ad1d21edd47d563f733223b390bbdd969_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_not_movable_game_object_ad1d21edd47d563f733223b390bbdd969_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_not_movable_game_object_a203fd11b9476996adcd1345b9d8a8d61}\label{class_not_movable_game_object_a203fd11b9476996adcd1345b9d8a8d61}} 
 \index{NotMovableGameObject@{NotMovableGameObject}!show@{show}}
 \index{show@{show}!NotMovableGameObject@{NotMovableGameObject}}
@@ -181,6 +271,14 @@ Réimplémentée à partir de \mbox{\hyperlink{class_game_object_a3f7a674006e1cc
 
 Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8cpp_source_l00044}{44}} du fichier \mbox{\hyperlink{_not_movable_game_object_8cpp_source}{Not\+Movable\+Game\+Object.\+cpp}}.
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{class_not_movable_game_object_a203fd11b9476996adcd1345b9d8a8d61_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_not_movable_game_object_aafd50ee8f5e31bd1f4dfb4bd95053267}\label{class_not_movable_game_object_aafd50ee8f5e31bd1f4dfb4bd95053267}} 
 \index{NotMovableGameObject@{NotMovableGameObject}!update@{update}}
 \index{update@{update}!NotMovableGameObject@{NotMovableGameObject}}
@@ -193,7 +291,7 @@ Implémente \mbox{\hyperlink{class_game_object_ae83128d0e0efef691417779605ee037c
 
 
 
-Implémenté dans \mbox{\hyperlink{class_bag_a790dadd6a2d45469cccd653ff5dd2317}{Bag}}, \mbox{\hyperlink{class_money_a9914e11ab0b3630f54b3711b3ef8cad8}{Money}}, \mbox{\hyperlink{class_shield_a22cfa66fa754653dd24c00bd13678b18}{Shield}}, \mbox{\hyperlink{class_sword_a4b650c68af5552a2f0d995b5fe3af3fc}{Sword}}, \mbox{\hyperlink{class_vial_ad00a07bd850ba8cec2ee0cb2164fe820}{Vial}}, et \mbox{\hyperlink{class_item_a5e7b6054dbde86c485f1be747cb9926c}{Item}}.
+Implémenté dans \mbox{\hyperlink{class_bag_a790dadd6a2d45469cccd653ff5dd2317}{Bag}}, \mbox{\hyperlink{class_boxing_gloves_a9b7927f53702f143eba8655fe94b7929}{Boxing\+Gloves}}, \mbox{\hyperlink{class_money_a9914e11ab0b3630f54b3711b3ef8cad8}{Money}}, \mbox{\hyperlink{class_shield_a22cfa66fa754653dd24c00bd13678b18}{Shield}}, \mbox{\hyperlink{class_sword_a4b650c68af5552a2f0d995b5fe3af3fc}{Sword}}, \mbox{\hyperlink{class_teleport_key_abdf3be75d26b434488d63acffb942e9d}{Teleport\+Key}}, \mbox{\hyperlink{class_vial_ad00a07bd850ba8cec2ee0cb2164fe820}{Vial}}, et \mbox{\hyperlink{class_item_a5e7b6054dbde86c485f1be747cb9926c}{Item}}.
 
 \mbox{\Hypertarget{class_not_movable_game_object_a1ae6701a400e4455cb28936d4f1cd30d}\label{class_not_movable_game_object_a1ae6701a400e4455cb28936d4f1cd30d}} 
 \index{NotMovableGameObject@{NotMovableGameObject}!updatePosition@{updatePosition}}
@@ -209,6 +307,14 @@ Permet de mettre à jour la position actuelle.
 
 Implémenté dans \mbox{\hyperlink{class_item_a4b98f05632e3641263c3d8f6fe26e58e}{Item}}.
 
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_not_movable_game_object_a1ae6701a400e4455cb28936d4f1cd30d_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Documentation des données membres}
@@ -220,11 +326,11 @@ Implémenté dans \mbox{\hyperlink{class_item_a4b98f05632e3641263c3d8f6fe26e58e}
 
 
 
-Initialiser animation\+Component et les animations. 
+Ce pointeur ne doit pas être supprimé à ce niveau. 
 
-Ce pointeur ne doit pas être supprimé à ce niveau 
 
-Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8hpp_source_l00067}{67}} du fichier \mbox{\hyperlink{_not_movable_game_object_8hpp_source}{Not\+Movable\+Game\+Object.\+hpp}}.
+
+Définition à la ligne \mbox{\hyperlink{_not_movable_game_object_8hpp_source_l00065}{65}} du fichier \mbox{\hyperlink{_not_movable_game_object_8hpp_source}{Not\+Movable\+Game\+Object.\+hpp}}.
 
 
 

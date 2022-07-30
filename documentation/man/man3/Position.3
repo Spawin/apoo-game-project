@@ -1,4 +1,4 @@
-.TH "Position" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.TH "Position" 3 "Samedi 30 Juillet 2022" "Jeu POA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -33,6 +33,9 @@ Position
 .RI "float \fBgetDistanceWith\fP (\fBPosition\fP const &autre) const"
 .br
 .RI "Get the Distance With object\&. "
+.ti -1c
+.RI "float \fBgetDistanceWith\fP (float const &x, float const &y) const"
+.br
 .ti -1c
 .RI "void \fBsetPosition\fP (float posX, float posY)"
 .br
@@ -77,13 +80,17 @@ Définition à la ligne \fB10\fP du fichier \fBPosition\&.hpp\fP\&.
 .SS "Position::Position (float px, float py, bool forMovableObject = \fCtrue\fP, float detectabilityRadius = \fC\fBgame::DEFAULT_DETECTABILITY_RADIUS\fP\fP)\fC [explicit]\fP"
 
 .PP
-Définition à la ligne \fB32\fP du fichier \fBPosition\&.cpp\fP\&.
+Définition à la ligne \fB36\fP du fichier \fBPosition\&.cpp\fP\&.
 .SS "Position::~Position ()\fC [virtual]\fP"
 
 .PP
-Définition à la ligne \fB47\fP du fichier \fBPosition\&.cpp\fP\&.
+Définition à la ligne \fB51\fP du fichier \fBPosition\&.cpp\fP\&.
 .SH "Documentation des fonctions membres"
 .PP 
+.SS "float Position::getDistanceWith (float const & x, float const & y) const"
+
+.PP
+Définition à la ligne \fB237\fP du fichier \fBPosition\&.cpp\fP\&.
 .SS "float Position::getDistanceWith (\fBPosition\fP const & autre) const"
 
 .PP
@@ -101,7 +108,7 @@ float
 .PP
 
 .PP
-Définition à la ligne \fB227\fP du fichier \fBPosition\&.cpp\fP\&.
+Définition à la ligne \fB231\fP du fichier \fBPosition\&.cpp\fP\&.
 .SS "\fBMyVector\fP Position::getPosition () const"
 
 .PP
@@ -114,35 +121,35 @@ Get the \fBPosition\fP object\&.
 .PP
 
 .PP
-Définition à la ligne \fB241\fP du fichier \fBPosition\&.cpp\fP\&.
+Définition à la ligne \fB251\fP du fichier \fBPosition\&.cpp\fP\&.
 .SS "int Position::getSpaceHeight () const"
 
 .PP
-Définition à la ligne \fB57\fP du fichier \fBPosition\&.cpp\fP\&.
+Définition à la ligne \fB61\fP du fichier \fBPosition\&.cpp\fP\&.
 .SS "int Position::getSpaceWidth () const"
 
 .PP
-Définition à la ligne \fB52\fP du fichier \fBPosition\&.cpp\fP\&.
+Définition à la ligne \fB56\fP du fichier \fBPosition\&.cpp\fP\&.
 .SS "float Position::getX () const"
 
 .PP
-Définition à la ligne \fB62\fP du fichier \fBPosition\&.cpp\fP\&.
+Définition à la ligne \fB66\fP du fichier \fBPosition\&.cpp\fP\&.
 .SS "float Position::getY () const"
 
 .PP
-Définition à la ligne \fB67\fP du fichier \fBPosition\&.cpp\fP\&.
+Définition à la ligne \fB71\fP du fichier \fBPosition\&.cpp\fP\&.
 .SS "void Position::initSpace (int width, int height)\fC [static]\fP"
 
 .PP
-Définition à la ligne \fB96\fP du fichier \fBPosition\&.cpp\fP\&.
+Définition à la ligne \fB100\fP du fichier \fBPosition\&.cpp\fP\&.
 .SS "void Position::operator+= (\fBMyVector\fP const & v)"
 
 .PP
-Définition à la ligne \fB73\fP du fichier \fBPosition\&.cpp\fP\&.
+Définition à la ligne \fB77\fP du fichier \fBPosition\&.cpp\fP\&.
 .SS "void Position::operator= (\fBPosition\fP const & p)"
 
 .PP
-Définition à la ligne \fB81\fP du fichier \fBPosition\&.cpp\fP\&.
+Définition à la ligne \fB85\fP du fichier \fBPosition\&.cpp\fP\&.
 .SS "void Position::setPosition (float posX, float posY)"
 
 .PP
@@ -157,7 +164,7 @@ Set the \fBPosition\fP object\&.
 .PP
 
 .PP
-Définition à la ligne \fB233\fP du fichier \fBPosition\&.cpp\fP\&.
+Définition à la ligne \fB243\fP du fichier \fBPosition\&.cpp\fP\&.
 .SS "void Position::setPositionMovementLimit (sf::IntRect const & hall)\fC [virtual]\fP"
 
 .PP
@@ -170,17 +177,17 @@ Met à jour les nouvelle limite de déplacement\&.
 .PP
 
 .PP
-Définition à la ligne \fB246\fP du fichier \fBPosition\&.cpp\fP\&.
+Définition à la ligne \fB256\fP du fichier \fBPosition\&.cpp\fP\&.
 .SH "Documentation des fonctions amies et associées"
 .PP 
 .SS "std::ostream & operator<< (std::ostream & out, \fBPosition\fP const & p)\fC [friend]\fP"
 
 .PP
-Définition à la ligne \fB89\fP du fichier \fBPosition\&.cpp\fP\&.
+Définition à la ligne \fB93\fP du fichier \fBPosition\&.cpp\fP\&.
 .SS "friend class \fBRigidbody\fP\fC [friend]\fP"
 
 .PP
-Définition à la ligne \fB83\fP du fichier \fBPosition\&.hpp\fP\&.
+Définition à la ligne \fB84\fP du fichier \fBPosition\&.hpp\fP\&.
 
 .SH "Auteur"
 .PP 

@@ -1,0 +1,8 @@
+<map id="Player::getPersonage" name="Player::getPersonage">
+<area shape="rect" id="node1" title=" " alt="" coords="777,60,924,87"/>
+<area shape="rect" id="node2" href="$class_player.html#a583849c1d33124f3409b990b7c888bac" title=" " alt="" coords="533,23,729,65"/>
+<area shape="rect" id="node6" href="$class_game_state.html#ab50a5f29dacea5b56158b45ae4129b51" title=" " alt="" coords="565,89,697,116"/>
+<area shape="rect" id="node3" href="$class_player.html#aa14422c8d3c3950584dcd307172741b7" title=" " alt="" coords="343,5,485,32"/>
+<area shape="rect" id="node4" href="$class_player.html#ad6867e0c7bc18e82a1da4be7bf156d97" title=" " alt="" coords="188,31,295,57"/>
+<area shape="rect" id="node5" href="$class_game_state.html#a775a7d0cf422aec17e5846852f3c997d" title=" " alt="" coords="5,31,140,57"/>
+</map>

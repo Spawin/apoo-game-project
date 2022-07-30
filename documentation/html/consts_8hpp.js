@@ -1,11 +1,31 @@
 var consts_8hpp =
 [
+    [ "game::AttackSateInformations", "structgame_1_1_attack_sate_informations.html", "structgame_1_1_attack_sate_informations" ],
+    [ "game::ItemActionResult", "structgame_1_1_item_action_result.html", "structgame_1_1_item_action_result" ],
+    [ "game::PlayerStats", "structgame_1_1_player_stats.html", "structgame_1_1_player_stats" ],
+    [ "AnimationSide", "consts_8hpp.html#ab3f078339ac2192dd0568f5a1491a513", [
+      [ "LEFT", "consts_8hpp.html#ab3f078339ac2192dd0568f5a1491a513a4f12877be097a8a1b71220e28c1817e0", null ],
+      [ "RIGHT", "consts_8hpp.html#ab3f078339ac2192dd0568f5a1491a513a6a6742137852f6e37c71330633fe9a83", null ]
+    ] ],
     [ "inventory_items_types", "consts_8hpp.html#a214a8f8fb832eaaa8cae6f1be423a2b0", [
       [ "DEFAULT", "consts_8hpp.html#a214a8f8fb832eaaa8cae6f1be423a2b0ade2b8abe881dd8e4494afd39e979ebf8", null ],
       [ "VIAL", "consts_8hpp.html#a214a8f8fb832eaaa8cae6f1be423a2b0a0783b29ef2cd9d2229b08af1093f5f0f", null ],
       [ "ARMORY", "consts_8hpp.html#a214a8f8fb832eaaa8cae6f1be423a2b0a2b602b3377438010ebb120c46572f3c7", null ],
       [ "TELEPORTKEY", "consts_8hpp.html#a214a8f8fb832eaaa8cae6f1be423a2b0a166de762fd24b8c7c9624d8b42d4cfab", null ],
       [ "MONEY", "consts_8hpp.html#a214a8f8fb832eaaa8cae6f1be423a2b0a73e510979d35b3bfb3c02215c02139a3", null ]
+    ] ],
+    [ "ItemsCategories", "consts_8hpp.html#a3627cfdb5f6ba53e14e5533e76530468", [
+      [ "NONE", "consts_8hpp.html#a3627cfdb5f6ba53e14e5533e76530468ab50339a10e1de285ac99d4c3990b8693", null ],
+      [ "MONEY", "consts_8hpp.html#a3627cfdb5f6ba53e14e5533e76530468a2bc794c2d9a28e52d1dd66d95e37d485", null ],
+      [ "TELEPORTKEY", "consts_8hpp.html#a3627cfdb5f6ba53e14e5533e76530468a223e1aaf0ac054deb62f01fd466b5b41", null ],
+      [ "DEFEND", "consts_8hpp.html#a3627cfdb5f6ba53e14e5533e76530468a95865673c8870cd531ef8333dd7399a2", null ],
+      [ "ATTACK_BODY_TO_BODY", "consts_8hpp.html#a3627cfdb5f6ba53e14e5533e76530468a51bd5d941c848fa5022c39ecd9df615c", null ],
+      [ "ATTACK_SEMI_DISTANCE", "consts_8hpp.html#a3627cfdb5f6ba53e14e5533e76530468a5b6dedb5671e6ae62bbb5f542324c48f", null ],
+      [ "ATTACK_DISTANCE", "consts_8hpp.html#a3627cfdb5f6ba53e14e5533e76530468a40711c589484941b36b935150b0403d4", null ],
+      [ "VIAL_EXP", "consts_8hpp.html#a3627cfdb5f6ba53e14e5533e76530468a6377a0bcb00687d145c2d69374b832a9", null ],
+      [ "VIAL_HEALTH", "consts_8hpp.html#a3627cfdb5f6ba53e14e5533e76530468ad9912f2805a6dd5ed5eeaf49fb65b427", null ],
+      [ "VIAL_ATTACK_EXP", "consts_8hpp.html#a3627cfdb5f6ba53e14e5533e76530468ab72904fbdd103b868d43271313251ec7", null ],
+      [ "VIAL_ATTACK_HEALTH", "consts_8hpp.html#a3627cfdb5f6ba53e14e5533e76530468a8c60e3ddd7fd61b8e930160f58a7ec7b", null ]
     ] ],
     [ "movement_states", "consts_8hpp.html#aaa1c0491864f6f8110948f609545c945", [
       [ "IDLE", "consts_8hpp.html#aaa1c0491864f6f8110948f609545c945a3222c48e2124279ca78ce26c8e90e428", null ],
@@ -25,9 +45,10 @@ var consts_8hpp =
     [ "INVENTORY_BLOCK_WIDTH", "consts_8hpp.html#aee7ec3c00c3424386587b3f2f5bdf437", null ],
     [ "PERSONAGE_MOVE_VELOCITY", "consts_8hpp.html#ad60933589116204d8fea5cc921815b4c", null ],
     [ "PERSONNAGE_DETECTABILITY_RADIUS", "consts_8hpp.html#a8dc8e2b0032cd0aa80f18625c2af7a50", null ],
+    [ "PERSONNAGE_MAX_EXP", "consts_8hpp.html#afc35392c19609797e41765c10e69c567", null ],
     [ "PERSONNAGE_MAX_HEALTH", "consts_8hpp.html#a170cbd165f05ad7fd18066f9892b4a58", null ],
-    [ "PERSONNAGE_MAX_SPECIALITY", "consts_8hpp.html#a152e426c092a87b10c433230c2fff193", null ],
     [ "PERSONNAGE_WIDTH", "consts_8hpp.html#ab43b1ee77948fb60b4bf11469c925d98", null ],
+    [ "SCORE_ADD_AFTER_ENEMY_KILLED", "consts_8hpp.html#a36bcccf1c84ae3d714f93abbf54055fd", null ],
     [ "WALL_HEIGHT", "consts_8hpp.html#a856fac7c03d1453ffaf4a9c0c649722c", null ],
     [ "WALL_WIDTH", "consts_8hpp.html#a0a7ab0e3e54d4d110ad489f223d91f14", null ],
     [ "WINDOW_HEIGHT", "consts_8hpp.html#a7e5a6e190446686addab44689f99a89b", null ],

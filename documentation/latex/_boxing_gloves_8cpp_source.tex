@@ -1,0 +1,53 @@
+\hypertarget{_boxing_gloves_8cpp_source}{}\doxysection{Boxing\+Gloves.\+cpp}
+\label{_boxing_gloves_8cpp_source}\index{C:/programs\_sc/CIC/MITST06/jeu/src/include/BoxingGloves.cpp@{C:/programs\_sc/CIC/MITST06/jeu/src/include/BoxingGloves.cpp}}
+\mbox{\hyperlink{_boxing_gloves_8cpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_boxing_gloves_8hpp}{include/BoxingGloves.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{consts_8hpp}{include/consts.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00004}00004 \textcolor{comment}{// Fonction static}}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00006}00006 \textcolor{comment}{// Fonctions d'initialisation}}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00008}00008 \textcolor{comment}{// Constructeurs/Destructeur}}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00009}\mbox{\hyperlink{class_boxing_gloves_ab05be7aa7c8b9b66c311f7fe56861b3c}{00009}} \mbox{\hyperlink{class_boxing_gloves_ab05be7aa7c8b9b66c311f7fe56861b3c}{BoxingGloves::BoxingGloves}}() :}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00010}00010     \mbox{\hyperlink{class_armory}{Armory}}(\textcolor{stringliteral}{"{}content/gameObjects/boxing\_gloves.png"{}}, \mbox{\hyperlink{namespacegame}{game}}::\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{ItemsCategories}}::ATTACK\_BODY\_TO\_BODY)}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00011}00011 \{}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00012}00012     \textcolor{comment}{// m\_gameObjectName = "{}"{};}}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00013}00013     this-\/>\mbox{\hyperlink{class_game_object_aad03571b58d55ca1de607cdf96e8207a}{setGameObjectName}}(\textcolor{stringliteral}{"{}BoxingGloves"{}});}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00015}00015     \mbox{\hyperlink{class_game_object_ab9f3598767553b274e98b2df36122bbd}{m\_body}}.setScale((\textcolor{keywordtype}{float})\mbox{\hyperlink{namespacegame_aee7ec3c00c3424386587b3f2f5bdf437}{game::INVENTORY\_BLOCK\_WIDTH}} / (\textcolor{keywordtype}{float})\mbox{\hyperlink{class_game_object_ab0ed65316ecb25733ecc0f23aa3561ae}{m\_texture}}.getSize().x, (\textcolor{keywordtype}{float})\mbox{\hyperlink{namespacegame_aee7ec3c00c3424386587b3f2f5bdf437}{game::INVENTORY\_BLOCK\_WIDTH}} / (\textcolor{keywordtype}{float})\mbox{\hyperlink{class_game_object_ab0ed65316ecb25733ecc0f23aa3561ae}{m\_texture}}.getSize().y);}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00017}00017     this-\/>\mbox{\hyperlink{class_item_ae7cf6de790b69baa614a1456d54bbd9e}{value}} = 40;}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00018}00018     this-\/>\mbox{\hyperlink{class_item_ac401c4d72c12ec78889efd2c6bd3476e}{rangeOfAction}} = 30.f;}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00019}00019     this-\/>\mbox{\hyperlink{class_item_a6f4b8cd3fc03d3e66125e1ceb501cd04}{waitingTimeForAction}} = .5f;}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00020}00020 \}}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00022}\mbox{\hyperlink{class_boxing_gloves_aa8a59e0f862a2d232a43d49139c9d878}{00022}} \mbox{\hyperlink{class_boxing_gloves_aa8a59e0f862a2d232a43d49139c9d878}{BoxingGloves::\string~BoxingGloves}}()}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00023}00023 \{}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00024}00024 \}}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00026}00026 \textcolor{comment}{// Fonctions/Méthodes}}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00027}\mbox{\hyperlink{class_boxing_gloves_ad6d311622857cccec7aa418a2ebee739}{00027}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_boxing_gloves_ad6d311622857cccec7aa418a2ebee739}{BoxingGloves::onCollisionEnter}}(\mbox{\hyperlink{class_collision}{Collision}} \textcolor{keyword}{const}\& collision)\textcolor{keyword}{ const}}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00028}00028 \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00029}00029     collision.\mbox{\hyperlink{class_collision_a8593db55ec453c4a041e68f70b345794}{test}}(); \textcolor{comment}{// REVIEW -\/}}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00030}00030 \}}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00032}\mbox{\hyperlink{class_boxing_gloves_a9b7927f53702f143eba8655fe94b7929}{00032}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_boxing_gloves_a9b7927f53702f143eba8655fe94b7929}{BoxingGloves::update}}()}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00033}00033 \{\}}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00035}00035 \textcolor{comment}{// void BoxingGloves::useOn(Personage\& personage)}}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00036}00036 \textcolor{comment}{// \{}}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00037}00037 \textcolor{comment}{//  personage.receiveHealthDamage(this-\/>value);}}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00038}00038 \textcolor{comment}{// \}}}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00040}00040 \textcolor{keywordtype}{void} BoxingGloves::updatePosition(\textcolor{keywordtype}{float} posX, \textcolor{keywordtype}{float} posY)}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00041}00041 \{}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00042}00042     \mbox{\hyperlink{class_game_object_a13cde9cf52cf7e4d6771eee5ccdaa5d7}{m\_position}}-\/>\mbox{\hyperlink{class_position_a44364e1b27dac50ec6d0e9e4d7d1b2c1}{setPosition}}(posX, posY);}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00043}00043     \textcolor{comment}{// On replace le body}}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00044}00044     \mbox{\hyperlink{class_game_object_ab9f3598767553b274e98b2df36122bbd}{m\_body}}.setPosition(\mbox{\hyperlink{class_game_object_a13cde9cf52cf7e4d6771eee5ccdaa5d7}{m\_position}}-\/>\mbox{\hyperlink{class_position_af409de5592dd7da6fb0ccb8d1681bb19}{getPosition}}().\mbox{\hyperlink{struct_my_vector_ada641074b59d610778cdf2ec7c144905}{toVector2f}}());}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00046}00046     std::cout << \textcolor{stringliteral}{"{}Position du "{}} << \mbox{\hyperlink{class_game_object_a1d82b32440a549f17b38660591896bb0}{m\_gameObjectName}} << \textcolor{stringliteral}{"{} : "{}} << \mbox{\hyperlink{class_game_object_a13cde9cf52cf7e4d6771eee5ccdaa5d7}{m\_position}} << \textcolor{stringliteral}{"{} => "{}} << (*m\_position) << std::endl;}
+\DoxyCodeLine{\Hypertarget{_boxing_gloves_8cpp_source_l00047}00047 \}}
+
+\end{DoxyCode}

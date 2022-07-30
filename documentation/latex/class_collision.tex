@@ -4,6 +4,16 @@
 
 {\ttfamily \#include $<$Collision.\+hpp$>$}
 
+
+
+Graphe de collaboration de Collision\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{class_collision__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
@@ -11,7 +21,7 @@
 \item 
 \mbox{\hyperlink{class_collision_a19ae49bcb3b16f4622443a34a171590c}{$\sim$\+Collision}} ()
 \item 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $>$ \mbox{\hyperlink{class_collision_aed8be664e8ddc16f38d99b33ce9c9d21}{get\+Game\+Object}} () const
+\mbox{\hyperlink{class_game_object}{Game\+Object}} const \& \mbox{\hyperlink{class_collision_aa999b0911c592967bf91cc2089cf8815}{get\+Game\+Object}} () const
 \begin{DoxyCompactList}\small\item\em Get the Game Object object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_collision_a8593db55ec453c4a041e68f70b345794}{test}} () const
 \end{DoxyCompactItemize}
@@ -48,11 +58,11 @@ Définition à la ligne \mbox{\hyperlink{_collision_8cpp_source_l00014}{14}} du 
 
 
 \doxysubsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_collision_aed8be664e8ddc16f38d99b33ce9c9d21}\label{class_collision_aed8be664e8ddc16f38d99b33ce9c9d21}} 
+\mbox{\Hypertarget{class_collision_aa999b0911c592967bf91cc2089cf8815}\label{class_collision_aa999b0911c592967bf91cc2089cf8815}} 
 \index{Collision@{Collision}!getGameObject@{getGameObject}}
 \index{getGameObject@{getGameObject}!Collision@{Collision}}
 \doxysubsubsection{\texorpdfstring{getGameObject()}{getGameObject()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $>$ Collision\+::get\+Game\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_object}{Game\+Object}} const  \& Collision\+::get\+Game\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -61,16 +71,36 @@ Get the Game Object object.
 \begin{DoxyReturn}{Renvoie}
 std\+::shared\+\_\+ptr$<$\+Game\+Object$>$ 
 \end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_collision_8cpp_source_l00019}{19}} du fichier \mbox{\hyperlink{_collision_8cpp_source}{Collision.\+cpp}}.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_collision_aa999b0911c592967bf91cc2089cf8815_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_collision_a8593db55ec453c4a041e68f70b345794}\label{class_collision_a8593db55ec453c4a041e68f70b345794}} 
 \index{Collision@{Collision}!test@{test}}
 \index{test@{test}!Collision@{Collision}}
 \doxysubsubsection{\texorpdfstring{test()}{test()}}
-{\footnotesize\ttfamily void Collision\+::test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void Collision\+::test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
-Définition à la ligne \mbox{\hyperlink{_collision_8hpp_source_l00023}{23}} du fichier \mbox{\hyperlink{_collision_8hpp_source}{Collision.\+hpp}}.
+Définition à la ligne \mbox{\hyperlink{_collision_8cpp_source_l00024}{24}} du fichier \mbox{\hyperlink{_collision_8cpp_source}{Collision.\+cpp}}.
 
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_collision_a8593db55ec453c4a041e68f70b345794_icgraph}
+\end{center}
+\end{figure}
 
 
 La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}

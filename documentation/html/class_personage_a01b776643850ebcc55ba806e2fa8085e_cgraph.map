@@ -1,0 +1,6 @@
+<map id="Personage::show" name="Personage::show">
+<area shape="rect" id="node1" title="Pour dessiner l&#39;élement dans la fenêtre." alt="" coords="5,31,128,57"/>
+<area shape="rect" id="node2" href="$class_personage.html#abc3bc1054dfc52ccdf479a48616b5504" title=" " alt="" coords="176,5,349,32"/>
+<area shape="rect" id="node4" href="$class_personage.html#a67392d993c6554540e2f59443abd5a59" title=" " alt="" coords="179,56,346,83"/>
+<area shape="rect" id="node3" href="$classgui_1_1_progress_bar.html#a2306f8517ac039e56095c389edbdb536" title=" " alt="" coords="397,31,560,57"/>
+</map>

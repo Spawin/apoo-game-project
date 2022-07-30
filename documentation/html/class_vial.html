@@ -93,19 +93,35 @@ $(document).ready(function(){initNavTree('class_vial.html',''); initResizable();
 <div class="dynheader">
 Graphe d'héritage de Vial:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_vial.png" usemap="#Vial_map" alt=""/>
-  <map id="Vial_map" name="Vial_map">
-<area href="class_item.html" title="Représente éssentiellement les object que pourra manipuler les personnages." alt="Item" shape="rect" coords="0,112,149,136"/>
-<area href="class_not_movable_game_object.html" title="Represente les objets imobiles. NOTE - Certains de ces Object Peuvent être déplacée ou transporté par..." alt="NotMovableGameObject" shape="rect" coords="0,56,149,80"/>
-<area href="class_game_object.html" alt="GameObject" shape="rect" coords="0,0,149,24"/>
-  </map>
-</div></div>
+<div class="center"><img src="class_vial__inherit__graph.png" border="0" usemap="#a_vial_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_vial_inherit__map" id="a_vial_inherit__map">
+<area shape="rect" title=" " alt="" coords="20,1731,215,1911"/>
+<area shape="rect" href="class_item.html" title="Représente éssentiellement les object que pourra manipuler les personnages." alt="" coords="7,1239,228,1683"/>
+<area shape="rect" href="class_not_movable_game_object.html" title="Represente les objets imobiles. NOTE &#45; Certains de ces Object Peuvent être déplacée ou transporté par..." alt="" coords="11,805,223,1191"/>
+<area shape="rect" href="class_game_object.html" title=" " alt="" coords="5,5,229,757"/>
+</map>
+</div>
+<div class="dynheader">
+Graphe de collaboration de Vial:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_vial__coll__graph.png" border="0" usemap="#a_vial_coll__map" alt="Collaboration graph"/></div>
+<map name="a_vial_coll__map" id="a_vial_coll__map">
+<area shape="rect" title=" " alt="" coords="529,2255,724,2435"/>
+<area shape="rect" href="class_item.html" title="Représente éssentiellement les object que pourra manipuler les personnages." alt="" coords="516,1761,737,2205"/>
+<area shape="rect" href="class_not_movable_game_object.html" title="Represente les objets imobiles. NOTE &#45; Certains de ces Object Peuvent être déplacée ou transporté par..." alt="" coords="521,1327,733,1712"/>
+<area shape="rect" href="class_game_object.html" title=" " alt="" coords="203,571,427,1264"/>
+<area shape="rect" href="class_collider.html" title=" " alt="" coords="38,1363,231,1675"/>
+<area shape="rect" href="class_rigidbody.html" title=" " alt="" coords="255,1459,497,1580"/>
+<area shape="rect" href="class_position.html" title=" " alt="" coords="5,5,336,508"/>
+<area shape="rect" href="struct_my_vector.html" title=" " alt="" coords="361,115,557,398"/>
+<area shape="rect" href="class_hall.html" title=" " alt="" coords="525,681,728,1154"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a151fc9de87a2511c6be632845a92c480"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vial.html#a151fc9de87a2511c6be632845a92c480">Vial</a> (<a class="el" href="_item_8hpp.html#ab96fbadc159fcb2380ed41ce0ec705fa">ItemsCategories</a> <a class="el" href="class_item.html#aaa167cf26678cc807e34f87ef6fa2f54">categorie</a>)</td></tr>
-<tr class="separator:a151fc9de87a2511c6be632845a92c480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eb64748ada3abcd0405007371b0fa6a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vial.html#a5eb64748ada3abcd0405007371b0fa6a">Vial</a> (<a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">game::ItemsCategories</a> <a class="el" href="class_item.html#a6176ff68b9bc6059bb6e8840c3090e3a">categorie</a>)</td></tr>
+<tr class="separator:a5eb64748ada3abcd0405007371b0fa6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6f1f69b83b26138705f10258542320a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vial.html#af6f1f69b83b26138705f10258542320a">~Vial</a> ()</td></tr>
 <tr class="separator:af6f1f69b83b26138705f10258542320a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace9277c2d5c91183ed1357eff154cc1b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vial.html#ace9277c2d5c91183ed1357eff154cc1b">onCollisionEnter</a> (<a class="el" href="class_collision.html">Collision</a> const &amp;collision) const override</td></tr>
@@ -114,18 +130,30 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:ad00a07bd850ba8cec2ee0cb2164fe820"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_vial.html#ad00a07bd850ba8cec2ee0cb2164fe820">update</a> () override</td></tr>
 <tr class="separator:ad00a07bd850ba8cec2ee0cb2164fe820"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_item"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_item')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="class_item.html">Item</a></td></tr>
-<tr class="memitem:ae819a092279f2c4432a163893d88905d inherit pub_methods_class_item"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#ae819a092279f2c4432a163893d88905d">Item</a> (std::string_view const &amp;imageSpritePath, <a class="el" href="_item_8hpp.html#ab96fbadc159fcb2380ed41ce0ec705fa">ItemsCategories</a> <a class="el" href="class_item.html#aaa167cf26678cc807e34f87ef6fa2f54">categorie</a>)</td></tr>
-<tr class="separator:ae819a092279f2c4432a163893d88905d inherit pub_methods_class_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f40c156d1ab6df5014d0b9a7353378f inherit pub_methods_class_item"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a1f40c156d1ab6df5014d0b9a7353378f">Item</a> (std::string_view const &amp;imageSpritePath, <a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">game::ItemsCategories</a> <a class="el" href="class_item.html#a6176ff68b9bc6059bb6e8840c3090e3a">categorie</a>)</td></tr>
+<tr class="separator:a1f40c156d1ab6df5014d0b9a7353378f inherit pub_methods_class_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11663c84075b78c3ae5e30fdfcd7c458 inherit pub_methods_class_item"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a11663c84075b78c3ae5e30fdfcd7c458">~Item</a> ()</td></tr>
 <tr class="separator:a11663c84075b78c3ae5e30fdfcd7c458 inherit pub_methods_class_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaea0ac82b6ca4b3acfc348641efbd324 inherit pub_methods_class_item"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">game::ItemsCategories</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#aaea0ac82b6ca4b3acfc348641efbd324">getCategorie</a> () const</td></tr>
+<tr class="memdesc:aaea0ac82b6ca4b3acfc348641efbd324 inherit pub_methods_class_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Categorie object.  <a href="class_item.html#aaea0ac82b6ca4b3acfc348641efbd324">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aaea0ac82b6ca4b3acfc348641efbd324 inherit pub_methods_class_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2a2e5e2b20b61602e8edf0e4e573599 inherit pub_methods_class_item"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#ab2a2e5e2b20b61602e8edf0e4e573599">onCollisionEnter</a> (<a class="el" href="class_collision.html">Collision</a> const &amp;collision) const =0</td></tr>
 <tr class="memdesc:ab2a2e5e2b20b61602e8edf0e4e573599 inherit pub_methods_class_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">émit quand il entre en contacte avec un autre élément  <a href="class_item.html#ab2a2e5e2b20b61602e8edf0e4e573599">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ab2a2e5e2b20b61602e8edf0e4e573599 inherit pub_methods_class_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e7b6054dbde86c485f1be747cb9926c inherit pub_methods_class_item"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a5e7b6054dbde86c485f1be747cb9926c">update</a> ()=0</td></tr>
 <tr class="separator:a5e7b6054dbde86c485f1be747cb9926c inherit pub_methods_class_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a180ec610ac1bfdec38466457f53ad3b7 inherit pub_methods_class_item"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a180ec610ac1bfdec38466457f53ad3b7">useOn</a> (<a class="el" href="class_personage.html">Personage</a> &amp;personage)=0</td></tr>
-<tr class="memdesc:a180ec610ac1bfdec38466457f53ad3b7 inherit pub_methods_class_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utiliser l'item sur le personnage indiqué  <a href="class_item.html#a180ec610ac1bfdec38466457f53ad3b7">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a180ec610ac1bfdec38466457f53ad3b7 inherit pub_methods_class_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87358aef026b997a03e6477d85f00593 inherit pub_methods_class_item"><td class="memItemLeft" align="right" valign="top">unsigned const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a87358aef026b997a03e6477d85f00593">getValue</a> () const</td></tr>
+<tr class="memdesc:a87358aef026b997a03e6477d85f00593 inherit pub_methods_class_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returne la valeur de l'effet de cet arme.  <a href="class_item.html#a87358aef026b997a03e6477d85f00593">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a87358aef026b997a03e6477d85f00593 inherit pub_methods_class_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e29932b32336b689035d3f998fea76e inherit pub_methods_class_item"><td class="memItemLeft" align="right" valign="top">float const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a9e29932b32336b689035d3f998fea76e">getRangeOfAction</a> () const</td></tr>
+<tr class="memdesc:a9e29932b32336b689035d3f998fea76e inherit pub_methods_class_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le rayon d'action de l'item.  <a href="class_item.html#a9e29932b32336b689035d3f998fea76e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9e29932b32336b689035d3f998fea76e inherit pub_methods_class_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1229606b7e0afaca04cb63cbb356a3a1 inherit pub_methods_class_item"><td class="memItemLeft" align="right" valign="top">float const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a1229606b7e0afaca04cb63cbb356a3a1">getWaitingTimeForAction</a> () const</td></tr>
+<tr class="memdesc:a1229606b7e0afaca04cb63cbb356a3a1 inherit pub_methods_class_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le temps d'attente pour que l'action soit faite.  <a href="class_item.html#a1229606b7e0afaca04cb63cbb356a3a1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1229606b7e0afaca04cb63cbb356a3a1 inherit pub_methods_class_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a900f9f23372ff903002ef063427f1ce4 inherit pub_methods_class_item"><td class="memItemLeft" align="right" valign="top">bool const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a900f9f23372ff903002ef063427f1ce4">isOneUse</a> () const</td></tr>
+<tr class="memdesc:a900f9f23372ff903002ef063427f1ce4 inherit pub_methods_class_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'item est à usage unique.  <a href="class_item.html#a900f9f23372ff903002ef063427f1ce4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a900f9f23372ff903002ef063427f1ce4 inherit pub_methods_class_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_not_movable_game_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_not_movable_game_object')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="class_not_movable_game_object.html">NotMovableGameObject</a></td></tr>
 <tr class="memitem:ac0342d254de36c3f555c34247bcb26b3 inherit pub_methods_class_not_movable_game_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_not_movable_game_object.html#ac0342d254de36c3f555c34247bcb26b3">NotMovableGameObject</a> (std::string_view const &amp;imageSpritePath)</td></tr>
 <tr class="separator:ac0342d254de36c3f555c34247bcb26b3 inherit pub_methods_class_not_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,6 +170,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:a4954c3c803930ca5faf48bab88fb19bd inherit pub_methods_class_not_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafd50ee8f5e31bd1f4dfb4bd95053267 inherit pub_methods_class_not_movable_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_not_movable_game_object.html#aafd50ee8f5e31bd1f4dfb4bd95053267">update</a> ()=0</td></tr>
 <tr class="separator:aafd50ee8f5e31bd1f4dfb4bd95053267 inherit pub_methods_class_not_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac15fa38f4fafb47ee0e58efa1996988c inherit pub_methods_class_not_movable_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_not_movable_game_object.html#ac15fa38f4fafb47ee0e58efa1996988c">setPosition</a> (sf::Vector2f const &amp;coordinates)</td></tr>
+<tr class="separator:ac15fa38f4fafb47ee0e58efa1996988c inherit pub_methods_class_not_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_game_object')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="class_game_object.html">GameObject</a></td></tr>
 <tr class="memitem:abcc6c98f8a45808760930dc5911da2e8 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#abcc6c98f8a45808760930dc5911da2e8">GameObject</a> (std::string_view const &amp;imageSpritePath)</td></tr>
 <tr class="memdesc:abcc6c98f8a45808760930dc5911da2e8 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Game Object object.  <a href="class_game_object.html#abcc6c98f8a45808760930dc5911da2e8">Plus de détails...</a><br /></td></tr>
@@ -161,6 +191,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:a1d7e99dbc0f116d7a20b0229180397db inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a800f7c8a8df0bd57aca9f8de170d7906 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a800f7c8a8df0bd57aca9f8de170d7906">getGameObjectName</a> () const</td></tr>
 <tr class="separator:a800f7c8a8df0bd57aca9f8de170d7906 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad03571b58d55ca1de607cdf96e8207a inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#aad03571b58d55ca1de607cdf96e8207a">setGameObjectName</a> (std::string name)</td></tr>
+<tr class="separator:aad03571b58d55ca1de607cdf96e8207a inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a394309d681a8e5eb59656029a32881de inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a394309d681a8e5eb59656029a32881de">onCollisionEnter</a> (<a class="el" href="class_collision.html">Collision</a> const &amp;collision) const =0</td></tr>
 <tr class="memdesc:a394309d681a8e5eb59656029a32881de inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">émit quand il entre en contacte avec un autre élément  <a href="class_game_object.html#a394309d681a8e5eb59656029a32881de">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a394309d681a8e5eb59656029a32881de inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,6 +213,8 @@ Membres hérités additionnels</h2></td></tr>
 <tr class="memitem:a5f826d1945fc978181c713da7fd7ccb9 inherit pub_static_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a5f826d1945fc978181c713da7fd7ccb9">SetTime</a> (float t)</td></tr>
 <tr class="memdesc:a5f826d1945fc978181c713da7fd7ccb9 inherit pub_static_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Time object.  <a href="class_game_object.html#a5f826d1945fc978181c713da7fd7ccb9">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5f826d1945fc978181c713da7fd7ccb9 inherit pub_static_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19b84dec4e9ab4daccad16a0ac7a68f7 inherit pub_static_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, <a class="el" href="class_game_object.html">GameObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a19b84dec4e9ab4daccad16a0ac7a68f7">getGameobjects</a> ()</td></tr>
+<tr class="separator:a19b84dec4e9ab4daccad16a0ac7a68f7 inherit pub_static_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b98f05632e3641263c3d8f6fe26e58e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a4b98f05632e3641263c3d8f6fe26e58e">updatePosition</a> (float posX, float posY)=0</td></tr>
 <tr class="memdesc:a4b98f05632e3641263c3d8f6fe26e58e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet de mettre à jour la position actuelle.  <a href="class_item.html#a4b98f05632e3641263c3d8f6fe26e58e">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a4b98f05632e3641263c3d8f6fe26e58e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -206,11 +240,21 @@ Membres hérités additionnels</h2></td></tr>
 <tr class="memitem:ae7cf6de790b69baa614a1456d54bbd9e inherit pro_attribs_class_item"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#ae7cf6de790b69baa614a1456d54bbd9e">value</a></td></tr>
 <tr class="memdesc:ae7cf6de790b69baa614a1456d54bbd9e inherit pro_attribs_class_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valeur de l'item à l'utilisation...  <a href="class_item.html#ae7cf6de790b69baa614a1456d54bbd9e">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae7cf6de790b69baa614a1456d54bbd9e inherit pro_attribs_class_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa167cf26678cc807e34f87ef6fa2f54 inherit pro_attribs_class_item"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="_item_8hpp.html#ab96fbadc159fcb2380ed41ce0ec705fa">ItemsCategories</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#aaa167cf26678cc807e34f87ef6fa2f54">categorie</a></td></tr>
-<tr class="separator:aaa167cf26678cc807e34f87ef6fa2f54 inherit pro_attribs_class_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac401c4d72c12ec78889efd2c6bd3476e inherit pro_attribs_class_item"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#ac401c4d72c12ec78889efd2c6bd3476e">rangeOfAction</a></td></tr>
+<tr class="memdesc:ac401c4d72c12ec78889efd2c6bd3476e inherit pro_attribs_class_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">rayon d'action de l'item  <a href="class_item.html#ac401c4d72c12ec78889efd2c6bd3476e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac401c4d72c12ec78889efd2c6bd3476e inherit pro_attribs_class_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f4b8cd3fc03d3e66125e1ceb501cd04 inherit pro_attribs_class_item"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a6f4b8cd3fc03d3e66125e1ceb501cd04">waitingTimeForAction</a></td></tr>
+<tr class="memdesc:a6f4b8cd3fc03d3e66125e1ceb501cd04 inherit pro_attribs_class_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le temps d'attente pour que l'action soit faite.  <a href="class_item.html#a6f4b8cd3fc03d3e66125e1ceb501cd04">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6f4b8cd3fc03d3e66125e1ceb501cd04 inherit pro_attribs_class_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6176ff68b9bc6059bb6e8840c3090e3a inherit pro_attribs_class_item"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">game::ItemsCategories</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a6176ff68b9bc6059bb6e8840c3090e3a">categorie</a></td></tr>
+<tr class="memdesc:a6176ff68b9bc6059bb6e8840c3090e3a inherit pro_attribs_class_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Représente les categories d'item. utilis pour définir les éffets...  <a href="class_item.html#a6176ff68b9bc6059bb6e8840c3090e3a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6176ff68b9bc6059bb6e8840c3090e3a inherit pro_attribs_class_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b2b122824df2c3518f99628ed1454b7 inherit pro_attribs_class_item"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a7b2b122824df2c3518f99628ed1454b7">oneUse</a></td></tr>
+<tr class="memdesc:a7b2b122824df2c3518f99628ed1454b7 inherit pro_attribs_class_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'item ne peut etre utilisé qu'une seule fois.  <a href="class_item.html#a7b2b122824df2c3518f99628ed1454b7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7b2b122824df2c3518f99628ed1454b7 inherit pro_attribs_class_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_not_movable_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_not_movable_game_object')"><img src="closed.png" alt="-"/>&#160;Attributs protégés hérités de <a class="el" href="class_not_movable_game_object.html">NotMovableGameObject</a></td></tr>
 <tr class="memitem:a91a3d24f39bf2f96b4092fc1573e525a inherit pro_attribs_class_not_movable_game_object"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_hall.html">Hall</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_not_movable_game_object.html#a91a3d24f39bf2f96b4092fc1573e525a">hall</a></td></tr>
-<tr class="memdesc:a91a3d24f39bf2f96b4092fc1573e525a inherit pro_attribs_class_not_movable_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialiser animationComponent et les animations.  <a href="class_not_movable_game_object.html#a91a3d24f39bf2f96b4092fc1573e525a">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a91a3d24f39bf2f96b4092fc1573e525a inherit pro_attribs_class_not_movable_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce pointeur ne doit pas être supprimé à ce niveau.  <a href="class_not_movable_game_object.html#a91a3d24f39bf2f96b4092fc1573e525a">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a91a3d24f39bf2f96b4092fc1573e525a inherit pro_attribs_class_not_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_game_object')"><img src="closed.png" alt="-"/>&#160;Attributs protégés hérités de <a class="el" href="class_game_object.html">GameObject</a></td></tr>
 <tr class="memitem:a8e26cde3f70b648288f6e07855ec03f5 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a8e26cde3f70b648288f6e07855ec03f5">m_id</a> { <a class="el" href="class_game_object.html#a9c0e2d6826099f2d8a5680ac67f01eab">GameObject::m_count</a> + 1 }</td></tr>
@@ -231,6 +275,8 @@ Membres hérités additionnels</h2></td></tr>
 <tr class="memitem:ac358cb5bc96418e4c11f3a75be24810a inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rigidbody.html">Rigidbody</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#ac358cb5bc96418e4c11f3a75be24810a">m_rigidbody</a> { nullptr }</td></tr>
 <tr class="separator:ac358cb5bc96418e4c11f3a75be24810a inherit pro_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_static_attribs_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_class_game_object')"><img src="closed.png" alt="-"/>&#160;Attributs protégés statiques hérités de <a class="el" href="class_game_object.html">GameObject</a></td></tr>
+<tr class="memitem:ae37236cecf990bd88e5e012ca950bbb3 inherit pro_static_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, <a class="el" href="class_game_object.html">GameObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#ae37236cecf990bd88e5e012ca950bbb3">gameObjects</a></td></tr>
+<tr class="separator:ae37236cecf990bd88e5e012ca950bbb3 inherit pro_static_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c0e2d6826099f2d8a5680ac67f01eab inherit pro_static_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a9c0e2d6826099f2d8a5680ac67f01eab">m_count</a> = 0</td></tr>
 <tr class="separator:a9c0e2d6826099f2d8a5680ac67f01eab inherit pro_static_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d27884636bd454b9858f179dc99e132 inherit pro_static_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a8d27884636bd454b9858f179dc99e132">m_time</a> = 0.f</td></tr>
@@ -238,10 +284,10 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock">
-<p class="definition">Définition à la ligne <a class="el" href="_vial_8hpp_source.html#l00015">15</a> du fichier <a class="el" href="_vial_8hpp_source.html">Vial.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_vial_8hpp_source.html#l00011">11</a> du fichier <a class="el" href="_vial_8hpp_source.html">Vial.hpp</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
-<a id="a151fc9de87a2511c6be632845a92c480" name="a151fc9de87a2511c6be632845a92c480"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a151fc9de87a2511c6be632845a92c480">&#9670;&nbsp;</a></span>Vial()</h2>
+<a id="a5eb64748ada3abcd0405007371b0fa6a" name="a5eb64748ada3abcd0405007371b0fa6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5eb64748ada3abcd0405007371b0fa6a">&#9670;&nbsp;</a></span>Vial()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,7 +295,7 @@ Membres hérités additionnels</h2></td></tr>
         <tr>
           <td class="memname">Vial::Vial </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_item_8hpp.html#ab96fbadc159fcb2380ed41ce0ec705fa">ItemsCategories</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">game::ItemsCategories</a>&#160;</td>
           <td class="paramname"><em>categorie</em></td><td>)</td>
           <td></td>
         </tr>
@@ -257,6 +303,25 @@ Membres hérités additionnels</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Définition à la ligne <a class="el" href="_vial_8cpp_source.html#l00009">9</a> du fichier <a class="el" href="_vial_8cpp_source.html">Vial.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_vial_a5eb64748ada3abcd0405007371b0fa6a_cgraph.png" border="0" usemap="#aclass_vial_a5eb64748ada3abcd0405007371b0fa6a_cgraph" alt=""/></div>
+<map name="aclass_vial_a5eb64748ada3abcd0405007371b0fa6a_cgraph" id="aclass_vial_a5eb64748ada3abcd0405007371b0fa6a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,80,32"/>
+<area shape="rect" href="class_game_object.html#aad03571b58d55ca1de607cdf96e8207a" title=" " alt="" coords="128,5,356,32"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_vial_a5eb64748ada3abcd0405007371b0fa6a_icgraph.png" border="0" usemap="#aclass_vial_a5eb64748ada3abcd0405007371b0fa6a_icgraph" alt=""/></div>
+<map name="aclass_vial_a5eb64748ada3abcd0405007371b0fa6a_icgraph" id="aclass_vial_a5eb64748ada3abcd0405007371b0fa6a_icgraph">
+<area shape="rect" title=" " alt="" coords="388,5,463,32"/>
+<area shape="rect" href="class_personage.html#a9670b4adc4283e6741f13289baf84387" title=" " alt="" coords="208,5,340,32"/>
+<area shape="rect" href="class_personage.html#a53b3b6c7865b2eb80de7c6edab217944" title=" " alt="" coords="5,5,160,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -275,7 +340,7 @@ Membres hérités additionnels</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_vial_8cpp_source.html#l00052">52</a> du fichier <a class="el" href="_vial_8cpp_source.html">Vial.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_vial_8cpp_source.html#l00058">58</a> du fichier <a class="el" href="_vial_8cpp_source.html">Vial.cpp</a>.</p>
 
 </div>
 </div>
@@ -314,7 +379,16 @@ Membres hérités additionnels</h2></td></tr>
 
 <p>Implémente <a class="el" href="class_item.html#ab2a2e5e2b20b61602e8edf0e4e573599">Item</a>.</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_vial_8cpp_source.html#l00057">57</a> du fichier <a class="el" href="_vial_8cpp_source.html">Vial.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_vial_8cpp_source.html#l00063">63</a> du fichier <a class="el" href="_vial_8cpp_source.html">Vial.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_vial_ace9277c2d5c91183ed1357eff154cc1b_cgraph.png" border="0" usemap="#aclass_vial_ace9277c2d5c91183ed1357eff154cc1b_cgraph" alt=""/></div>
+<map name="aclass_vial_ace9277c2d5c91183ed1357eff154cc1b_cgraph" id="aclass_vial_ace9277c2d5c91183ed1357eff154cc1b_cgraph">
+<area shape="rect" title="émit quand il entre en contacte avec un autre élément" alt="" coords="5,5,152,32"/>
+<area shape="rect" href="class_collision.html#a8593db55ec453c4a041e68f70b345794" title=" " alt="" coords="200,5,301,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -343,7 +417,7 @@ Membres hérités additionnels</h2></td></tr>
 
 <p>Implémente <a class="el" href="class_item.html#a5e7b6054dbde86c485f1be747cb9926c">Item</a>.</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_vial_8cpp_source.html#l00062">62</a> du fichier <a class="el" href="_vial_8cpp_source.html">Vial.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_vial_8cpp_source.html#l00068">68</a> du fichier <a class="el" href="_vial_8cpp_source.html">Vial.cpp</a>.</p>
 
 </div>
 </div>

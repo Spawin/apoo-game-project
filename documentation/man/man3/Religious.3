@@ -1,4 +1,4 @@
-.TH "Religious" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.TH "Religious" 3 "Samedi 30 Juillet 2022" "Jeu POA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -25,22 +25,6 @@ Est dérivée de \fBPersonage\fP\&.
 .ti -1c
 .RI "virtual void \fBspecialAttack\fP (\fBPersonage\fP &target) override"
 .br
-.ti -1c
-.RI "virtual unsigned \fBreceiveHealthDamage\fP (int value) override"
-.br
-.RI "pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
-.ti -1c
-.RI "virtual unsigned \fBreceiveExpDamage\fP (int value) override"
-.br
-.RI "pour recevoir les dégats d'exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
-.ti -1c
-.RI "virtual unsigned \fBreceiveHealthCare\fP (int value) override"
-.br
-.RI "pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
-.ti -1c
-.RI "virtual unsigned \fBreceiveExpCare\fP (int value) override"
-.br
-.RI "pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
 .in -1c
 .SS "Membres hérités additionnels"
 .SH "Description détaillée"
@@ -51,101 +35,25 @@ Définition à la ligne \fB6\fP du fichier \fBReligious\&.hpp\fP\&.
 .SS "Religious::Religious ()"
 
 .PP
-Définition à la ligne \fB15\fP du fichier \fBReligious\&.cpp\fP\&.
+Définition à la ligne \fB16\fP du fichier \fBReligious\&.cpp\fP\&.
 .SS "Religious::~Religious ()"
 
 .PP
-Définition à la ligne \fB20\fP du fichier \fBReligious\&.cpp\fP\&.
+Définition à la ligne \fB21\fP du fichier \fBReligious\&.cpp\fP\&.
 .SH "Documentation des fonctions membres"
 .PP 
-.SS "unsigned Religious::receiveExpCare (int value)\fC [override]\fP, \fC [virtual]\fP"
-
-.PP
-pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) 
-.PP
-\fBParamètres\fP
-.RS 4
-\fIvalue\fP 
-.RE
-.PP
-\fBRenvoie\fP
-.RS 4
-unsigned 
-.RE
-.PP
-
-.PP
-Implémente \fBPersonage\fP\&.
-.PP
-Définition à la ligne \fB32\fP du fichier \fBReligious\&.cpp\fP\&.
-.SS "unsigned Religious::receiveExpDamage (int value)\fC [override]\fP, \fC [virtual]\fP"
-
-.PP
-pour recevoir les dégats d'exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) 
-.PP
-\fBParamètres\fP
-.RS 4
-\fIvalue\fP 
-.RE
-.PP
-\fBRenvoie\fP
-.RS 4
-unsigned 
-.RE
-.PP
-
-.PP
-Implémente \fBPersonage\fP\&.
-.PP
-Définition à la ligne \fB28\fP du fichier \fBReligious\&.cpp\fP\&.
-.SS "unsigned Religious::receiveHealthCare (int value)\fC [override]\fP, \fC [virtual]\fP"
-
-.PP
-pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) 
-.PP
-\fBParamètres\fP
-.RS 4
-\fIvalue\fP 
-.RE
-.PP
-\fBRenvoie\fP
-.RS 4
-unsigned 
-.RE
-.PP
-
-.PP
-Implémente \fBPersonage\fP\&.
-.PP
-Définition à la ligne \fB30\fP du fichier \fBReligious\&.cpp\fP\&.
-.SS "unsigned Religious::receiveHealthDamage (int value)\fC [override]\fP, \fC [virtual]\fP"
-
-.PP
-pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) 
-.PP
-\fBParamètres\fP
-.RS 4
-\fIvalue\fP 
-.RE
-.PP
-\fBRenvoie\fP
-.RS 4
-unsigned 
-.RE
-.PP
+.SS "void Religious::simpleAttack (\fBPersonage\fP & target)\fC [override]\fP, \fC [virtual]\fP"
 
 .PP
 Implémente \fBPersonage\fP\&.
 .PP
 Définition à la ligne \fB26\fP du fichier \fBReligious\&.cpp\fP\&.
-.SS "virtual void Religious::simpleAttack (\fBPersonage\fP & target)\fC [override]\fP, \fC [virtual]\fP"
+.SS "void Religious::specialAttack (\fBPersonage\fP & target)\fC [override]\fP, \fC [virtual]\fP"
 
 .PP
 Implémente \fBPersonage\fP\&.
-.SS "virtual void Religious::specialAttack (\fBPersonage\fP & target)\fC [override]\fP, \fC [virtual]\fP"
-
 .PP
-Implémente \fBPersonage\fP\&.
+Définition à la ligne \fB31\fP du fichier \fBReligious\&.cpp\fP\&.
 
 .SH "Auteur"
 .PP 

@@ -1,4 +1,4 @@
-.TH "Druid" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.TH "Druid" 3 "Samedi 30 Juillet 2022" "Jeu POA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -25,127 +25,35 @@ Est dérivée de \fBPersonage\fP\&.
 .ti -1c
 .RI "virtual void \fBspecialAttack\fP (\fBPersonage\fP &target) override"
 .br
-.ti -1c
-.RI "virtual unsigned \fBreceiveHealthDamage\fP (int value) override"
-.br
-.RI "pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
-.ti -1c
-.RI "virtual unsigned \fBreceiveExpDamage\fP (int value) override"
-.br
-.RI "pour recevoir les dégats d'exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
-.ti -1c
-.RI "virtual unsigned \fBreceiveHealthCare\fP (int value) override"
-.br
-.RI "pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
-.ti -1c
-.RI "virtual unsigned \fBreceiveExpCare\fP (int value) override"
-.br
-.RI "pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) "
 .in -1c
 .SS "Membres hérités additionnels"
 .SH "Description détaillée"
 .PP 
-Définition à la ligne \fB6\fP du fichier \fBDruid\&.hpp\fP\&.
+Définition à la ligne \fB8\fP du fichier \fBDruid\&.hpp\fP\&.
 .SH "Documentation des constructeurs et destructeur"
 .PP 
 .SS "Druid::Druid ()"
 
 .PP
-Définition à la ligne \fB14\fP du fichier \fBDruid\&.cpp\fP\&.
+Définition à la ligne \fB16\fP du fichier \fBDruid\&.cpp\fP\&.
 .SS "Druid::~Druid ()"
 
 .PP
-Définition à la ligne \fB19\fP du fichier \fBDruid\&.cpp\fP\&.
+Définition à la ligne \fB21\fP du fichier \fBDruid\&.cpp\fP\&.
 .SH "Documentation des fonctions membres"
 .PP 
-.SS "unsigned Druid::receiveExpCare (int value)\fC [override]\fP, \fC [virtual]\fP"
-
-.PP
-pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) 
-.PP
-\fBParamètres\fP
-.RS 4
-\fIvalue\fP 
-.RE
-.PP
-\fBRenvoie\fP
-.RS 4
-unsigned 
-.RE
-.PP
-
-.PP
-Implémente \fBPersonage\fP\&.
-.PP
-Définition à la ligne \fB30\fP du fichier \fBDruid\&.cpp\fP\&.
-.SS "unsigned Druid::receiveExpDamage (int value)\fC [override]\fP, \fC [virtual]\fP"
-
-.PP
-pour recevoir les dégats d'exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) 
-.PP
-\fBParamètres\fP
-.RS 4
-\fIvalue\fP 
-.RE
-.PP
-\fBRenvoie\fP
-.RS 4
-unsigned 
-.RE
-.PP
+.SS "void Druid::simpleAttack (\fBPersonage\fP & target)\fC [override]\fP, \fC [virtual]\fP"
 
 .PP
 Implémente \fBPersonage\fP\&.
 .PP
 Définition à la ligne \fB26\fP du fichier \fBDruid\&.cpp\fP\&.
-.SS "unsigned Druid::receiveHealthCare (int value)\fC [override]\fP, \fC [virtual]\fP"
-
-.PP
-pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) 
-.PP
-\fBParamètres\fP
-.RS 4
-\fIvalue\fP 
-.RE
-.PP
-\fBRenvoie\fP
-.RS 4
-unsigned 
-.RE
-.PP
+.SS "void Druid::specialAttack (\fBPersonage\fP & target)\fC [override]\fP, \fC [virtual]\fP"
 
 .PP
 Implémente \fBPersonage\fP\&.
 .PP
-Définition à la ligne \fB28\fP du fichier \fBDruid\&.cpp\fP\&.
-.SS "unsigned Druid::receiveHealthDamage (int value)\fC [override]\fP, \fC [virtual]\fP"
-
-.PP
-pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un bouclié ou\&.\&.\&.) 
-.PP
-\fBParamètres\fP
-.RS 4
-\fIvalue\fP 
-.RE
-.PP
-\fBRenvoie\fP
-.RS 4
-unsigned 
-.RE
-.PP
-
-.PP
-Implémente \fBPersonage\fP\&.
-.PP
-Définition à la ligne \fB24\fP du fichier \fBDruid\&.cpp\fP\&.
-.SS "virtual void Druid::simpleAttack (\fBPersonage\fP & target)\fC [override]\fP, \fC [virtual]\fP"
-
-.PP
-Implémente \fBPersonage\fP\&.
-.SS "virtual void Druid::specialAttack (\fBPersonage\fP & target)\fC [override]\fP, \fC [virtual]\fP"
-
-.PP
-Implémente \fBPersonage\fP\&.
+Définition à la ligne \fB31\fP du fichier \fBDruid\&.cpp\fP\&.
 
 .SH "Auteur"
 .PP 

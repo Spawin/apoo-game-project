@@ -1,9 +1,15 @@
 var annotated_dup =
 [
+    [ "game", "namespacegame.html", [
+      [ "AttackSateInformations", "structgame_1_1_attack_sate_informations.html", "structgame_1_1_attack_sate_informations" ],
+      [ "ItemActionResult", "structgame_1_1_item_action_result.html", "structgame_1_1_item_action_result" ],
+      [ "PlayerStats", "structgame_1_1_player_stats.html", "structgame_1_1_player_stats" ]
+    ] ],
     [ "gui", "namespacegui.html", [
       [ "Button", "classgui_1_1_button.html", "classgui_1_1_button" ],
       [ "Inventory", "classgui_1_1_inventory.html", "classgui_1_1_inventory" ],
       [ "InventoryButton", "classgui_1_1_inventory_button.html", "classgui_1_1_inventory_button" ],
+      [ "InventoryItemData", "structgui_1_1_inventory_item_data.html", "structgui_1_1_inventory_item_data" ],
       [ "ProgressBar", "classgui_1_1_progress_bar.html", "classgui_1_1_progress_bar" ]
     ] ],
     [ "util", "namespaceutil.html", [
@@ -17,9 +23,13 @@ var annotated_dup =
     [ "Armory", "class_armory.html", "class_armory" ],
     [ "Bag", "class_bag.html", "class_bag" ],
     [ "BoxCollider", "class_box_collider.html", "class_box_collider" ],
+    [ "BoxingGloves", "class_boxing_gloves.html", "class_boxing_gloves" ],
     [ "Collider", "class_collider.html", "class_collider" ],
     [ "Collision", "class_collision.html", "class_collision" ],
     [ "Druid", "class_druid.html", "class_druid" ],
+    [ "Enemy", "class_enemy.html", "class_enemy" ],
+    [ "EnemyData", "struct_enemy_data.html", "struct_enemy_data" ],
+    [ "EnemyManager", "class_enemy_manager.html", "class_enemy_manager" ],
     [ "GameMap", "class_game_map.html", "class_game_map" ],
     [ "GameMaster", "class_game_master.html", "class_game_master" ],
     [ "GameObject", "class_game_object.html", "class_game_object" ],
@@ -31,7 +41,6 @@ var annotated_dup =
     [ "Item", "class_item.html", "class_item" ],
     [ "Lounge", "class_lounge.html", "class_lounge" ],
     [ "MainMenuState", "class_main_menu_state.html", "class_main_menu_state" ],
-    [ "Maison", "class_maison.html", "class_maison" ],
     [ "Money", "class_money.html", "class_money" ],
     [ "MovableGameObject", "class_movable_game_object.html", "class_movable_game_object" ],
     [ "MyVector", "struct_my_vector.html", "struct_my_vector" ],

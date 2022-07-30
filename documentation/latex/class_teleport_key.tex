@@ -4,10 +4,24 @@
 
 {\ttfamily \#include $<$Teleport\+Key.\+hpp$>$}
 
-Graphe d\textquotesingle{}héritage de Teleport\+Key\+:\begin{figure}[H]
+
+
+Graphe d\textquotesingle{}héritage de Teleport\+Key\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=4.000000cm]{class_teleport_key}
+\includegraphics[height=550pt]{class_teleport_key__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Teleport\+Key\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_teleport_key__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Fonctions membres publiques}
@@ -16,6 +30,10 @@ Graphe d\textquotesingle{}héritage de Teleport\+Key\+:\begin{figure}[H]
 \mbox{\hyperlink{class_teleport_key_a360b25fad5f49dab03fe5570d3f43b49}{Teleport\+Key}} ()
 \item 
 \mbox{\hyperlink{class_teleport_key_a26c6098c8877e7545647a8125b24a577}{$\sim$\+Teleport\+Key}} ()
+\item 
+virtual void \mbox{\hyperlink{class_teleport_key_a7de596ef7713529170b78a3808d58555}{on\+Collision\+Enter}} (\mbox{\hyperlink{class_collision}{Collision}} const \&collision) const override
+\begin{DoxyCompactList}\small\item\em émit quand il entre en contacte avec un autre élément \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_teleport_key_abdf3be75d26b434488d63acffb942e9d}{update}} () override
 \end{DoxyCompactItemize}
 \doxysubsection*{Membres hérités additionnels}
 
@@ -23,7 +41,7 @@ Graphe d\textquotesingle{}héritage de Teleport\+Key\+:\begin{figure}[H]
 \doxysubsection{Description détaillée}
 
 
-Définition à la ligne \mbox{\hyperlink{_teleport_key_8hpp_source_l00008}{8}} du fichier \mbox{\hyperlink{_teleport_key_8hpp_source}{Teleport\+Key.\+hpp}}.
+Définition à la ligne \mbox{\hyperlink{_teleport_key_8hpp_source_l00010}{10}} du fichier \mbox{\hyperlink{_teleport_key_8hpp_source}{Teleport\+Key.\+hpp}}.
 
 
 
@@ -46,7 +64,55 @@ Définition à la ligne \mbox{\hyperlink{_teleport_key_8cpp_source_l00008}{8}} d
 
 
 
-Définition à la ligne \mbox{\hyperlink{_teleport_key_8cpp_source_l00013}{13}} du fichier \mbox{\hyperlink{_teleport_key_8cpp_source}{Teleport\+Key.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_teleport_key_8cpp_source_l00014}{14}} du fichier \mbox{\hyperlink{_teleport_key_8cpp_source}{Teleport\+Key.\+cpp}}.
+
+
+
+\doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_teleport_key_a7de596ef7713529170b78a3808d58555}\label{class_teleport_key_a7de596ef7713529170b78a3808d58555}} 
+\index{TeleportKey@{TeleportKey}!onCollisionEnter@{onCollisionEnter}}
+\index{onCollisionEnter@{onCollisionEnter}!TeleportKey@{TeleportKey}}
+\doxysubsubsection{\texorpdfstring{onCollisionEnter()}{onCollisionEnter()}}
+{\footnotesize\ttfamily void Teleport\+Key\+::on\+Collision\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collision}{Collision}} const \&}]{collision }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+émit quand il entre en contacte avec un autre élément 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em collision} & \\
+\hline
+\end{DoxyParams}
+
+
+Implémente \mbox{\hyperlink{class_item_ab2a2e5e2b20b61602e8edf0e4e573599}{Item}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_teleport_key_8cpp_source_l00019}{19}} du fichier \mbox{\hyperlink{_teleport_key_8cpp_source}{Teleport\+Key.\+cpp}}.
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_teleport_key_a7de596ef7713529170b78a3808d58555_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_teleport_key_abdf3be75d26b434488d63acffb942e9d}\label{class_teleport_key_abdf3be75d26b434488d63acffb942e9d}} 
+\index{TeleportKey@{TeleportKey}!update@{update}}
+\index{update@{update}!TeleportKey@{TeleportKey}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Teleport\+Key\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implémente \mbox{\hyperlink{class_item_a5e7b6054dbde86c485f1be747cb9926c}{Item}}.
+
+
+
+Définition à la ligne \mbox{\hyperlink{_teleport_key_8cpp_source_l00024}{24}} du fichier \mbox{\hyperlink{_teleport_key_8cpp_source}{Teleport\+Key.\+cpp}}.
 
 
 

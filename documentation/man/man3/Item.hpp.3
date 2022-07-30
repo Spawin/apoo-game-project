@@ -1,4 +1,4 @@
-.TH "C:/programs_sc/CIC/MITST06/jeu/src/include/Item.hpp" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.TH "C:/programs_sc/CIC/MITST06/jeu/src/include/Item.hpp" 3 "Samedi 30 Juillet 2022" "Jeu POA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -6,9 +6,13 @@ C:/programs_sc/CIC/MITST06/jeu/src/include/Item.hpp
 .SH SYNOPSIS
 .br
 .PP
-\fC#include 'include/NotMovableGameObject\&.hpp'\fP
-.br
 \fC#include 'include/Personage\&.hpp'\fP
+.br
+\fC#include 'include/consts\&.hpp'\fP
+.br
+\fC#include 'include/Collision\&.hpp'\fP
+.br
+\fC#include 'include/NotMovableGameObject\&.hpp'\fP
 .br
 
 .SS "Classes"
@@ -19,43 +23,13 @@ C:/programs_sc/CIC/MITST06/jeu/src/include/Item.hpp
 .br
 .RI "Représente éssentiellement les object que pourra manipuler les personnages\&. "
 .in -1c
-.SS "Énumérations"
+.SS "Espaces de nommage"
 
 .in +1c
 .ti -1c
-.RI "enum class \fBItemsCategories\fP { \fBMONEY\fP, \fBTELEPORTKEY\fP, \fBDEFEND\fP, \fBATTACK_BODY_TO_BODY\fP, \fBATTACK_DISTANCE\fP, \fBVIAL_EXP\fP, \fBVIAL_HEALTH\fP, \fBVIAL_ATTACK_EXP\fP, \fBVIAL_ATTACK_HEALTH\fP }"
+.RI "namespace \fBgame\fP"
 .br
-.RI "Représente les catégories d'items\&. TODO - Compléter\&.\&.\&.\&. Va surtout aider dans l'utilisation de l'item et son comportement\&. "
 .in -1c
-.SH "Documentation du type de l'énumération"
-.PP 
-.SS "enum class \fBItemsCategories\fP\fC [strong]\fP"
-
-.PP
-Représente les catégories d'items\&. TODO - Compléter\&.\&.\&.\&. Va surtout aider dans l'utilisation de l'item et son comportement\&. 
-.PP
-\fBValeurs énumérées\fP
-.in +1c
-.TP
-\fB\fIMONEY \fP\fP
-.TP
-\fB\fITELEPORTKEY \fP\fP
-.TP
-\fB\fIDEFEND \fP\fP
-.TP
-\fB\fIATTACK_BODY_TO_BODY \fP\fP
-.TP
-\fB\fIATTACK_DISTANCE \fP\fP
-.TP
-\fB\fIVIAL_EXP \fP\fP
-.TP
-\fB\fIVIAL_HEALTH \fP\fP
-.TP
-\fB\fIVIAL_ATTACK_EXP \fP\fP
-.TP
-\fB\fIVIAL_ATTACK_HEALTH \fP\fP
-.PP
-Définition à la ligne \fB15\fP du fichier \fBItem\&.hpp\fP\&.
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Jeu POA à partir du code source\&.

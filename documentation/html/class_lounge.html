@@ -93,12 +93,21 @@ $(document).ready(function(){initNavTree('class_lounge.html',''); initResizable(
 <div class="dynheader">
 Graphe d'héritage de Lounge:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_lounge.png" usemap="#Lounge_map" alt=""/>
-  <map id="Lounge_map" name="Lounge_map">
-<area href="class_hall.html" alt="Hall" shape="rect" coords="0,0,54,24"/>
-  </map>
-</div></div>
+<div class="center"><img src="class_lounge__inherit__graph.png" border="0" usemap="#a_lounge_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_lounge_inherit__map" id="a_lounge_inherit__map">
+<area shape="rect" title=" " alt="" coords="29,527,184,648"/>
+<area shape="rect" href="class_hall.html" title=" " alt="" coords="5,5,208,479"/>
+</map>
+</div>
+<div class="dynheader">
+Graphe de collaboration de Lounge:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_lounge__coll__graph.png" border="0" usemap="#a_lounge_coll__map" alt="Collaboration graph"/></div>
+<map name="a_lounge_coll__map" id="a_lounge_coll__map">
+<area shape="rect" title=" " alt="" coords="29,527,184,648"/>
+<area shape="rect" href="class_hall.html" title=" " alt="" coords="5,5,208,479"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -111,11 +120,19 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:a895ca541045c940874bc7572059f8652 inherit pub_methods_class_hall"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28d5f4ed9d21684b7359dc980eacb8a0 inherit pub_methods_class_hall"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hall.html#a28d5f4ed9d21684b7359dc980eacb8a0">~Hall</a> ()</td></tr>
 <tr class="separator:a28d5f4ed9d21684b7359dc980eacb8a0 inherit pub_methods_class_hall"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a817dc6744558557c847eb6d74d08cb81 inherit pub_methods_class_hall"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hall.html#a817dc6744558557c847eb6d74d08cb81">addItem</a> (<a class="el" href="class_item.html">Item</a> *item, <a class="el" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0">game::inventory_items_types</a> type, sf::Vector2f const &amp;coordinates)</td></tr>
+<tr class="separator:a817dc6744558557c847eb6d74d08cb81 inherit pub_methods_class_hall"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32e746256200ea36db17b5d1e9ea50d5 inherit pub_methods_class_hall"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hall.html#a32e746256200ea36db17b5d1e9ea50d5">moveItem</a> (<a class="el" href="class_item.html">Item</a> *item, <a class="el" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0">game::inventory_items_types</a> type, <a class="el" href="class_inventory.html">Inventory</a> *to_inventory, sf::Vector2f const &amp;coordinates)</td></tr>
+<tr class="separator:a32e746256200ea36db17b5d1e9ea50d5 inherit pub_methods_class_hall"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29cee0bf1a5ede784e5b5d5413c5bda1 inherit pub_methods_class_hall"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hall.html#a29cee0bf1a5ede784e5b5d5413c5bda1">removeItem</a> (<a class="el" href="class_item.html">Item</a> *item, <a class="el" href="namespacegame.html#a214a8f8fb832eaaa8cae6f1be423a2b0">game::inventory_items_types</a> type)</td></tr>
+<tr class="separator:a29cee0bf1a5ede784e5b5d5413c5bda1 inherit pub_methods_class_hall"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c346daee6b9e4d03d2ef3d858826904 inherit pub_methods_class_hall"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hall.html#a0c346daee6b9e4d03d2ef3d858826904">addMovableGameObject</a> (<a class="el" href="class_movable_game_object.html">MovableGameObject</a> *movableGameObject)</td></tr>
 <tr class="separator:a0c346daee6b9e4d03d2ef3d858826904 inherit pub_methods_class_hall"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2a6f4440f87c17bfdbb292c542e542a inherit pub_methods_class_hall"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hall.html#ae2a6f4440f87c17bfdbb292c542e542a">isIn</a> (<a class="el" href="struct_my_vector.html">MyVector</a> const &amp;coordinates) const</td></tr>
+<tr class="memdesc:ae2a6f4440f87c17bfdbb292c542e542a inherit pub_methods_class_hall"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifier si les coordonnées de position données se trouve dans la pièce.  <a href="class_hall.html#ae2a6f4440f87c17bfdbb292c542e542a">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae2a6f4440f87c17bfdbb292c542e542a inherit pub_methods_class_hall"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cf17f386a894b3c7062a85a3d802802 inherit pub_methods_class_hall"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hall.html#a5cf17f386a894b3c7062a85a3d802802">isIn</a> (sf::Vector2f const &amp;coordinates) const</td></tr>
+<tr class="memdesc:a5cf17f386a894b3c7062a85a3d802802 inherit pub_methods_class_hall"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifier si les coordonnées de position données se trouve dans la pièce.  <a href="class_hall.html#a5cf17f386a894b3c7062a85a3d802802">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5cf17f386a894b3c7062a85a3d802802 inherit pub_methods_class_hall"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8b24a02bbc5c17bf1e557cb3d98a76d inherit pub_methods_class_hall"><td class="memItemLeft" align="right" valign="top">const sf::IntRect &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hall.html#ae8b24a02bbc5c17bf1e557cb3d98a76d">getIntRect</a> () const</td></tr>
 <tr class="separator:ae8b24a02bbc5c17bf1e557cb3d98a76d inherit pub_methods_class_hall"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,7 +141,7 @@ Fonctions membres publiques</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock">
-<p class="definition">Définition à la ligne <a class="el" href="_lounge_8hpp_source.html#l00006">6</a> du fichier <a class="el" href="_lounge_8hpp_source.html">Lounge.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_lounge_8hpp_source.html#l00008">8</a> du fichier <a class="el" href="_lounge_8hpp_source.html">Lounge.hpp</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="a41f7001fe7745b41f89123bd8654874a" name="a41f7001fe7745b41f89123bd8654874a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a41f7001fe7745b41f89123bd8654874a">&#9670;&nbsp;</a></span>Lounge()</h2>

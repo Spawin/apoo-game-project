@@ -1,0 +1,6 @@
+<map id="Inventory::move" name="Inventory::move">
+<area shape="rect" id="node1" title=" " alt="" coords="356,31,467,57"/>
+<area shape="rect" id="node2" href="$class_bag.html#a1564094e96027c1a0234fd4a8c84ee66" title=" " alt="" coords="200,5,308,32"/>
+<area shape="rect" id="node4" href="$class_hall.html#a32e746256200ea36db17b5d1e9ea50d5" title=" " alt="" coords="201,56,307,83"/>
+<area shape="rect" id="node3" href="$class_personage.html#a905c0a8340b7f13513b6166807a6e0c6" title=" " alt="" coords="5,5,152,32"/>
+</map>

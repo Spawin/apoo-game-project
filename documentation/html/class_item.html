@@ -98,34 +98,62 @@ $(document).ready(function(){initNavTree('class_item.html',''); initResizable();
 <div class="dynheader">
 Graphe d'héritage de Item:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_item.png" usemap="#Item_map" alt=""/>
-  <map id="Item_map" name="Item_map">
-<area href="class_not_movable_game_object.html" title="Represente les objets imobiles. NOTE - Certains de ces Object Peuvent être déplacée ou transporté par..." alt="NotMovableGameObject" shape="rect" coords="318,56,467,80"/>
-<area href="class_game_object.html" alt="GameObject" shape="rect" coords="318,0,467,24"/>
-<area href="class_armory.html" alt="Armory" shape="rect" coords="79,168,228,192"/>
-<area href="class_money.html" alt="Money" shape="rect" coords="238,168,387,192"/>
-<area href="class_teleport_key.html" alt="TeleportKey" shape="rect" coords="397,168,546,192"/>
-<area href="class_vial.html" alt="Vial" shape="rect" coords="556,168,705,192"/>
-<area href="class_shield.html" alt="Shield" shape="rect" coords="0,224,149,248"/>
-<area href="class_sword.html" alt="Sword" shape="rect" coords="159,224,308,248"/>
-  </map>
-</div></div>
+<div class="center"><img src="class_item__inherit__graph.png" border="0" usemap="#a_item_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_item_inherit__map" id="a_item_inherit__map">
+<area shape="rect" title="Représente éssentiellement les object que pourra manipuler les personnages." alt="" coords="492,1239,713,1683"/>
+<area shape="rect" href="class_armory.html" title=" " alt="" coords="175,1760,396,1881"/>
+<area shape="rect" href="class_money.html" title=" " alt="" coords="420,1738,591,1903"/>
+<area shape="rect" href="class_teleport_key.html" title=" " alt="" coords="615,1738,785,1903"/>
+<area shape="rect" href="class_vial.html" title=" " alt="" coords="809,1731,1004,1911"/>
+<area shape="rect" href="class_not_movable_game_object.html" title="Represente les objets imobiles. NOTE &#45; Certains de ces Object Peuvent être déplacée ou transporté par..." alt="" coords="497,805,709,1191"/>
+<area shape="rect" href="class_game_object.html" title=" " alt="" coords="491,5,715,757"/>
+<area shape="rect" href="class_boxing_gloves.html" title=" " alt="" coords="5,1959,176,2124"/>
+<area shape="rect" href="class_shield.html" title=" " alt="" coords="200,1959,371,2124"/>
+<area shape="rect" href="class_sword.html" title=" " alt="" coords="395,1959,565,2124"/>
+</map>
+</div>
+<div class="dynheader">
+Graphe de collaboration de Item:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_item__coll__graph.png" border="0" usemap="#a_item_coll__map" alt="Collaboration graph"/></div>
+<map name="a_item_coll__map" id="a_item_coll__map">
+<area shape="rect" title="Représente éssentiellement les object que pourra manipuler les personnages." alt="" coords="516,1761,737,2205"/>
+<area shape="rect" href="class_not_movable_game_object.html" title="Represente les objets imobiles. NOTE &#45; Certains de ces Object Peuvent être déplacée ou transporté par..." alt="" coords="521,1327,733,1712"/>
+<area shape="rect" href="class_game_object.html" title=" " alt="" coords="203,571,427,1264"/>
+<area shape="rect" href="class_collider.html" title=" " alt="" coords="38,1363,231,1675"/>
+<area shape="rect" href="class_rigidbody.html" title=" " alt="" coords="255,1459,497,1580"/>
+<area shape="rect" href="class_position.html" title=" " alt="" coords="5,5,336,508"/>
+<area shape="rect" href="struct_my_vector.html" title=" " alt="" coords="361,115,557,398"/>
+<area shape="rect" href="class_hall.html" title=" " alt="" coords="525,681,728,1154"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:ae819a092279f2c4432a163893d88905d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#ae819a092279f2c4432a163893d88905d">Item</a> (std::string_view const &amp;imageSpritePath, <a class="el" href="_item_8hpp.html#ab96fbadc159fcb2380ed41ce0ec705fa">ItemsCategories</a> <a class="el" href="class_item.html#aaa167cf26678cc807e34f87ef6fa2f54">categorie</a>)</td></tr>
-<tr class="separator:ae819a092279f2c4432a163893d88905d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f40c156d1ab6df5014d0b9a7353378f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a1f40c156d1ab6df5014d0b9a7353378f">Item</a> (std::string_view const &amp;imageSpritePath, <a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">game::ItemsCategories</a> <a class="el" href="class_item.html#a6176ff68b9bc6059bb6e8840c3090e3a">categorie</a>)</td></tr>
+<tr class="separator:a1f40c156d1ab6df5014d0b9a7353378f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11663c84075b78c3ae5e30fdfcd7c458"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a11663c84075b78c3ae5e30fdfcd7c458">~Item</a> ()</td></tr>
 <tr class="separator:a11663c84075b78c3ae5e30fdfcd7c458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaea0ac82b6ca4b3acfc348641efbd324"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">game::ItemsCategories</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#aaea0ac82b6ca4b3acfc348641efbd324">getCategorie</a> () const</td></tr>
+<tr class="memdesc:aaea0ac82b6ca4b3acfc348641efbd324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Categorie object.  <a href="class_item.html#aaea0ac82b6ca4b3acfc348641efbd324">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aaea0ac82b6ca4b3acfc348641efbd324"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2a2e5e2b20b61602e8edf0e4e573599"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#ab2a2e5e2b20b61602e8edf0e4e573599">onCollisionEnter</a> (<a class="el" href="class_collision.html">Collision</a> const &amp;collision) const =0</td></tr>
 <tr class="memdesc:ab2a2e5e2b20b61602e8edf0e4e573599"><td class="mdescLeft">&#160;</td><td class="mdescRight">émit quand il entre en contacte avec un autre élément  <a href="class_item.html#ab2a2e5e2b20b61602e8edf0e4e573599">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ab2a2e5e2b20b61602e8edf0e4e573599"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e7b6054dbde86c485f1be747cb9926c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a5e7b6054dbde86c485f1be747cb9926c">update</a> ()=0</td></tr>
 <tr class="separator:a5e7b6054dbde86c485f1be747cb9926c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a180ec610ac1bfdec38466457f53ad3b7"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a180ec610ac1bfdec38466457f53ad3b7">useOn</a> (<a class="el" href="class_personage.html">Personage</a> &amp;personage)=0</td></tr>
-<tr class="memdesc:a180ec610ac1bfdec38466457f53ad3b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utiliser l'item sur le personnage indiqué  <a href="class_item.html#a180ec610ac1bfdec38466457f53ad3b7">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a180ec610ac1bfdec38466457f53ad3b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87358aef026b997a03e6477d85f00593"><td class="memItemLeft" align="right" valign="top">unsigned const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a87358aef026b997a03e6477d85f00593">getValue</a> () const</td></tr>
+<tr class="memdesc:a87358aef026b997a03e6477d85f00593"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returne la valeur de l'effet de cet arme.  <a href="class_item.html#a87358aef026b997a03e6477d85f00593">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a87358aef026b997a03e6477d85f00593"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e29932b32336b689035d3f998fea76e"><td class="memItemLeft" align="right" valign="top">float const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a9e29932b32336b689035d3f998fea76e">getRangeOfAction</a> () const</td></tr>
+<tr class="memdesc:a9e29932b32336b689035d3f998fea76e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le rayon d'action de l'item.  <a href="class_item.html#a9e29932b32336b689035d3f998fea76e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9e29932b32336b689035d3f998fea76e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1229606b7e0afaca04cb63cbb356a3a1"><td class="memItemLeft" align="right" valign="top">float const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a1229606b7e0afaca04cb63cbb356a3a1">getWaitingTimeForAction</a> () const</td></tr>
+<tr class="memdesc:a1229606b7e0afaca04cb63cbb356a3a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le temps d'attente pour que l'action soit faite.  <a href="class_item.html#a1229606b7e0afaca04cb63cbb356a3a1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1229606b7e0afaca04cb63cbb356a3a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a900f9f23372ff903002ef063427f1ce4"><td class="memItemLeft" align="right" valign="top">bool const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a900f9f23372ff903002ef063427f1ce4">isOneUse</a> () const</td></tr>
+<tr class="memdesc:a900f9f23372ff903002ef063427f1ce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'item est à usage unique.  <a href="class_item.html#a900f9f23372ff903002ef063427f1ce4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a900f9f23372ff903002ef063427f1ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_not_movable_game_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_not_movable_game_object')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="class_not_movable_game_object.html">NotMovableGameObject</a></td></tr>
 <tr class="memitem:ac0342d254de36c3f555c34247bcb26b3 inherit pub_methods_class_not_movable_game_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_not_movable_game_object.html#ac0342d254de36c3f555c34247bcb26b3">NotMovableGameObject</a> (std::string_view const &amp;imageSpritePath)</td></tr>
 <tr class="separator:ac0342d254de36c3f555c34247bcb26b3 inherit pub_methods_class_not_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,6 +170,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:a4954c3c803930ca5faf48bab88fb19bd inherit pub_methods_class_not_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafd50ee8f5e31bd1f4dfb4bd95053267 inherit pub_methods_class_not_movable_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_not_movable_game_object.html#aafd50ee8f5e31bd1f4dfb4bd95053267">update</a> ()=0</td></tr>
 <tr class="separator:aafd50ee8f5e31bd1f4dfb4bd95053267 inherit pub_methods_class_not_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac15fa38f4fafb47ee0e58efa1996988c inherit pub_methods_class_not_movable_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_not_movable_game_object.html#ac15fa38f4fafb47ee0e58efa1996988c">setPosition</a> (sf::Vector2f const &amp;coordinates)</td></tr>
+<tr class="separator:ac15fa38f4fafb47ee0e58efa1996988c inherit pub_methods_class_not_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_game_object')"><img src="closed.png" alt="-"/>&#160;Fonctions membres publiques hérités de <a class="el" href="class_game_object.html">GameObject</a></td></tr>
 <tr class="memitem:abcc6c98f8a45808760930dc5911da2e8 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#abcc6c98f8a45808760930dc5911da2e8">GameObject</a> (std::string_view const &amp;imageSpritePath)</td></tr>
 <tr class="memdesc:abcc6c98f8a45808760930dc5911da2e8 inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Game Object object.  <a href="class_game_object.html#abcc6c98f8a45808760930dc5911da2e8">Plus de détails...</a><br /></td></tr>
@@ -161,6 +191,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="separator:a1d7e99dbc0f116d7a20b0229180397db inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a800f7c8a8df0bd57aca9f8de170d7906 inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a800f7c8a8df0bd57aca9f8de170d7906">getGameObjectName</a> () const</td></tr>
 <tr class="separator:a800f7c8a8df0bd57aca9f8de170d7906 inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad03571b58d55ca1de607cdf96e8207a inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#aad03571b58d55ca1de607cdf96e8207a">setGameObjectName</a> (std::string name)</td></tr>
+<tr class="separator:aad03571b58d55ca1de607cdf96e8207a inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a394309d681a8e5eb59656029a32881de inherit pub_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a394309d681a8e5eb59656029a32881de">onCollisionEnter</a> (<a class="el" href="class_collision.html">Collision</a> const &amp;collision) const =0</td></tr>
 <tr class="memdesc:a394309d681a8e5eb59656029a32881de inherit pub_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">émit quand il entre en contacte avec un autre élément  <a href="class_game_object.html#a394309d681a8e5eb59656029a32881de">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a394309d681a8e5eb59656029a32881de inherit pub_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -201,11 +233,21 @@ Attributs protégés</h2></td></tr>
 <tr class="memitem:ae7cf6de790b69baa614a1456d54bbd9e"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#ae7cf6de790b69baa614a1456d54bbd9e">value</a></td></tr>
 <tr class="memdesc:ae7cf6de790b69baa614a1456d54bbd9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valeur de l'item à l'utilisation...  <a href="class_item.html#ae7cf6de790b69baa614a1456d54bbd9e">Plus de détails...</a><br /></td></tr>
 <tr class="separator:ae7cf6de790b69baa614a1456d54bbd9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa167cf26678cc807e34f87ef6fa2f54"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="_item_8hpp.html#ab96fbadc159fcb2380ed41ce0ec705fa">ItemsCategories</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#aaa167cf26678cc807e34f87ef6fa2f54">categorie</a></td></tr>
-<tr class="separator:aaa167cf26678cc807e34f87ef6fa2f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac401c4d72c12ec78889efd2c6bd3476e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#ac401c4d72c12ec78889efd2c6bd3476e">rangeOfAction</a></td></tr>
+<tr class="memdesc:ac401c4d72c12ec78889efd2c6bd3476e"><td class="mdescLeft">&#160;</td><td class="mdescRight">rayon d'action de l'item  <a href="class_item.html#ac401c4d72c12ec78889efd2c6bd3476e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac401c4d72c12ec78889efd2c6bd3476e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f4b8cd3fc03d3e66125e1ceb501cd04"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a6f4b8cd3fc03d3e66125e1ceb501cd04">waitingTimeForAction</a></td></tr>
+<tr class="memdesc:a6f4b8cd3fc03d3e66125e1ceb501cd04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le temps d'attente pour que l'action soit faite.  <a href="class_item.html#a6f4b8cd3fc03d3e66125e1ceb501cd04">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6f4b8cd3fc03d3e66125e1ceb501cd04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6176ff68b9bc6059bb6e8840c3090e3a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">game::ItemsCategories</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a6176ff68b9bc6059bb6e8840c3090e3a">categorie</a></td></tr>
+<tr class="memdesc:a6176ff68b9bc6059bb6e8840c3090e3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Représente les categories d'item. utilis pour définir les éffets...  <a href="class_item.html#a6176ff68b9bc6059bb6e8840c3090e3a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6176ff68b9bc6059bb6e8840c3090e3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b2b122824df2c3518f99628ed1454b7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_item.html#a7b2b122824df2c3518f99628ed1454b7">oneUse</a></td></tr>
+<tr class="memdesc:a7b2b122824df2c3518f99628ed1454b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si l'item ne peut etre utilisé qu'une seule fois.  <a href="class_item.html#a7b2b122824df2c3518f99628ed1454b7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7b2b122824df2c3518f99628ed1454b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_not_movable_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_not_movable_game_object')"><img src="closed.png" alt="-"/>&#160;Attributs protégés hérités de <a class="el" href="class_not_movable_game_object.html">NotMovableGameObject</a></td></tr>
 <tr class="memitem:a91a3d24f39bf2f96b4092fc1573e525a inherit pro_attribs_class_not_movable_game_object"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_hall.html">Hall</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_not_movable_game_object.html#a91a3d24f39bf2f96b4092fc1573e525a">hall</a></td></tr>
-<tr class="memdesc:a91a3d24f39bf2f96b4092fc1573e525a inherit pro_attribs_class_not_movable_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialiser animationComponent et les animations.  <a href="class_not_movable_game_object.html#a91a3d24f39bf2f96b4092fc1573e525a">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a91a3d24f39bf2f96b4092fc1573e525a inherit pro_attribs_class_not_movable_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce pointeur ne doit pas être supprimé à ce niveau.  <a href="class_not_movable_game_object.html#a91a3d24f39bf2f96b4092fc1573e525a">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a91a3d24f39bf2f96b4092fc1573e525a inherit pro_attribs_class_not_movable_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_game_object')"><img src="closed.png" alt="-"/>&#160;Attributs protégés hérités de <a class="el" href="class_game_object.html">GameObject</a></td></tr>
 <tr class="memitem:a8e26cde3f70b648288f6e07855ec03f5 inherit pro_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a8e26cde3f70b648288f6e07855ec03f5">m_id</a> { <a class="el" href="class_game_object.html#a9c0e2d6826099f2d8a5680ac67f01eab">GameObject::m_count</a> + 1 }</td></tr>
@@ -232,10 +274,14 @@ Membres hérités additionnels</h2></td></tr>
 <tr class="memitem:a5f826d1945fc978181c713da7fd7ccb9 inherit pub_static_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a5f826d1945fc978181c713da7fd7ccb9">SetTime</a> (float t)</td></tr>
 <tr class="memdesc:a5f826d1945fc978181c713da7fd7ccb9 inherit pub_static_methods_class_game_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Time object.  <a href="class_game_object.html#a5f826d1945fc978181c713da7fd7ccb9">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5f826d1945fc978181c713da7fd7ccb9 inherit pub_static_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19b84dec4e9ab4daccad16a0ac7a68f7 inherit pub_static_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, <a class="el" href="class_game_object.html">GameObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a19b84dec4e9ab4daccad16a0ac7a68f7">getGameobjects</a> ()</td></tr>
+<tr class="separator:a19b84dec4e9ab4daccad16a0ac7a68f7 inherit pub_static_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_static_methods_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_static_methods_class_game_object')"><img src="closed.png" alt="-"/>&#160;Fonctions membres protégées statiques hérités de <a class="el" href="class_game_object.html">GameObject</a></td></tr>
 <tr class="memitem:a4b73684e5c01134509c61fc7bab43484 inherit pro_static_methods_class_game_object"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a4b73684e5c01134509c61fc7bab43484">incrementCount</a> ()</td></tr>
 <tr class="separator:a4b73684e5c01134509c61fc7bab43484 inherit pro_static_methods_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_static_attribs_class_game_object"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_class_game_object')"><img src="closed.png" alt="-"/>&#160;Attributs protégés statiques hérités de <a class="el" href="class_game_object.html">GameObject</a></td></tr>
+<tr class="memitem:ae37236cecf990bd88e5e012ca950bbb3 inherit pro_static_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">static std::map&lt; std::string, <a class="el" href="class_game_object.html">GameObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#ae37236cecf990bd88e5e012ca950bbb3">gameObjects</a></td></tr>
+<tr class="separator:ae37236cecf990bd88e5e012ca950bbb3 inherit pro_static_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c0e2d6826099f2d8a5680ac67f01eab inherit pro_static_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a9c0e2d6826099f2d8a5680ac67f01eab">m_count</a> = 0</td></tr>
 <tr class="separator:a9c0e2d6826099f2d8a5680ac67f01eab inherit pro_static_attribs_class_game_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d27884636bd454b9858f179dc99e132 inherit pro_static_attribs_class_game_object"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_object.html#a8d27884636bd454b9858f179dc99e132">m_time</a> = 0.f</td></tr>
@@ -244,10 +290,10 @@ Membres hérités additionnels</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p >Représente éssentiellement les object que pourra manipuler les personnages. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_item_8hpp_source.html#l00035">35</a> du fichier <a class="el" href="_item_8hpp_source.html">Item.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_item_8hpp_source.html#l00022">22</a> du fichier <a class="el" href="_item_8hpp_source.html">Item.hpp</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
-<a id="ae819a092279f2c4432a163893d88905d" name="ae819a092279f2c4432a163893d88905d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae819a092279f2c4432a163893d88905d">&#9670;&nbsp;</a></span>Item()</h2>
+<a id="a1f40c156d1ab6df5014d0b9a7353378f" name="a1f40c156d1ab6df5014d0b9a7353378f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f40c156d1ab6df5014d0b9a7353378f">&#9670;&nbsp;</a></span>Item()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -261,7 +307,7 @@ Membres hérités additionnels</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="_item_8hpp.html#ab96fbadc159fcb2380ed41ce0ec705fa">ItemsCategories</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">game::ItemsCategories</a>&#160;</td>
           <td class="paramname"><em>categorie</em>&#160;</td>
         </tr>
         <tr>
@@ -291,11 +337,182 @@ Membres hérités additionnels</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_item_8cpp_source.html#l00015">15</a> du fichier <a class="el" href="_item_8cpp_source.html">Item.cpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_item_8cpp_source.html#l00018">18</a> du fichier <a class="el" href="_item_8cpp_source.html">Item.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="aaea0ac82b6ca4b3acfc348641efbd324" name="aaea0ac82b6ca4b3acfc348641efbd324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaea0ac82b6ca4b3acfc348641efbd324">&#9670;&nbsp;</a></span>getCategorie()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">game::ItemsCategories</a> const  &amp; Item::getCategorie </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Categorie object. </p>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468" title="Représente les catégories d&#39;items. TODO - Compléter.... Va surtout aider dans l&#39;utilisation de l&#39;item...">game::ItemsCategories</a>&amp; </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_item_8cpp_source.html#l00022">22</a> du fichier <a class="el" href="_item_8cpp_source.html">Item.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_item_aaea0ac82b6ca4b3acfc348641efbd324_icgraph.png" border="0" usemap="#aclass_item_aaea0ac82b6ca4b3acfc348641efbd324_icgraph" alt=""/></div>
+<map name="aclass_item_aaea0ac82b6ca4b3acfc348641efbd324_icgraph" id="aclass_item_aaea0ac82b6ca4b3acfc348641efbd324_icgraph">
+<area shape="rect" title="Get the Categorie object." alt="" coords="777,31,905,57"/>
+<area shape="rect" href="class_player.html#a583849c1d33124f3409b990b7c888bac" title=" " alt="" coords="533,23,729,65"/>
+<area shape="rect" href="class_player.html#aa14422c8d3c3950584dcd307172741b7" title=" " alt="" coords="343,5,485,32"/>
+<area shape="rect" href="class_player.html#ad6867e0c7bc18e82a1da4be7bf156d97" title=" " alt="" coords="188,31,295,57"/>
+<area shape="rect" href="class_game_state.html#a775a7d0cf422aec17e5846852f3c997d" title=" " alt="" coords="5,31,140,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9e29932b32336b689035d3f998fea76e" name="a9e29932b32336b689035d3f998fea76e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e29932b32336b689035d3f998fea76e">&#9670;&nbsp;</a></span>getRangeOfAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float const  &amp; Item::getRangeOfAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne le rayon d'action de l'item. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>float const&amp; </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_item_8cpp_source.html#l00032">32</a> du fichier <a class="el" href="_item_8cpp_source.html">Item.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_item_a9e29932b32336b689035d3f998fea76e_icgraph.png" border="0" usemap="#aclass_item_a9e29932b32336b689035d3f998fea76e_icgraph" alt=""/></div>
+<map name="aclass_item_a9e29932b32336b689035d3f998fea76e_icgraph" id="aclass_item_a9e29932b32336b689035d3f998fea76e_icgraph">
+<area shape="rect" title="Retourne le rayon d&#39;action de l&#39;item." alt="" coords="777,31,937,57"/>
+<area shape="rect" href="class_player.html#a583849c1d33124f3409b990b7c888bac" title=" " alt="" coords="533,23,729,65"/>
+<area shape="rect" href="class_player.html#aa14422c8d3c3950584dcd307172741b7" title=" " alt="" coords="343,5,485,32"/>
+<area shape="rect" href="class_player.html#ad6867e0c7bc18e82a1da4be7bf156d97" title=" " alt="" coords="188,31,295,57"/>
+<area shape="rect" href="class_game_state.html#a775a7d0cf422aec17e5846852f3c997d" title=" " alt="" coords="5,31,140,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a87358aef026b997a03e6477d85f00593" name="a87358aef026b997a03e6477d85f00593"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87358aef026b997a03e6477d85f00593">&#9670;&nbsp;</a></span>getValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned const  &amp; Item::getValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returne la valeur de l'effet de cet arme. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>unsigned const&amp; </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_item_8cpp_source.html#l00027">27</a> du fichier <a class="el" href="_item_8cpp_source.html">Item.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_item_a87358aef026b997a03e6477d85f00593_icgraph.png" border="0" usemap="#aclass_item_a87358aef026b997a03e6477d85f00593_icgraph" alt=""/></div>
+<map name="aclass_item_a87358aef026b997a03e6477d85f00593_icgraph" id="aclass_item_a87358aef026b997a03e6477d85f00593_icgraph">
+<area shape="rect" title="Returne la valeur de l&#39;effet de cet arme." alt="" coords="777,31,884,57"/>
+<area shape="rect" href="class_player.html#a583849c1d33124f3409b990b7c888bac" title=" " alt="" coords="533,23,729,65"/>
+<area shape="rect" href="class_player.html#aa14422c8d3c3950584dcd307172741b7" title=" " alt="" coords="343,5,485,32"/>
+<area shape="rect" href="class_player.html#ad6867e0c7bc18e82a1da4be7bf156d97" title=" " alt="" coords="188,31,295,57"/>
+<area shape="rect" href="class_game_state.html#a775a7d0cf422aec17e5846852f3c997d" title=" " alt="" coords="5,31,140,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1229606b7e0afaca04cb63cbb356a3a1" name="a1229606b7e0afaca04cb63cbb356a3a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1229606b7e0afaca04cb63cbb356a3a1">&#9670;&nbsp;</a></span>getWaitingTimeForAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float const  &amp; Item::getWaitingTimeForAction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne le temps d'attente pour que l'action soit faite. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>float const&amp; </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_item_8cpp_source.html#l00037">37</a> du fichier <a class="el" href="_item_8cpp_source.html">Item.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_item_a1229606b7e0afaca04cb63cbb356a3a1_icgraph.png" border="0" usemap="#aclass_item_a1229606b7e0afaca04cb63cbb356a3a1_icgraph" alt=""/></div>
+<map name="aclass_item_a1229606b7e0afaca04cb63cbb356a3a1_icgraph" id="aclass_item_a1229606b7e0afaca04cb63cbb356a3a1_icgraph">
+<area shape="rect" title="Retourne le temps d&#39;attente pour que l&#39;action soit faite." alt="" coords="533,5,735,32"/>
+<area shape="rect" href="class_player.html#aa14422c8d3c3950584dcd307172741b7" title=" " alt="" coords="343,5,485,32"/>
+<area shape="rect" href="class_player.html#ad6867e0c7bc18e82a1da4be7bf156d97" title=" " alt="" coords="188,5,295,32"/>
+<area shape="rect" href="class_game_state.html#a775a7d0cf422aec17e5846852f3c997d" title=" " alt="" coords="5,5,140,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a900f9f23372ff903002ef063427f1ce4" name="a900f9f23372ff903002ef063427f1ce4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a900f9f23372ff903002ef063427f1ce4">&#9670;&nbsp;</a></span>isOneUse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool const  &amp; Item::isOneUse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indique si l'item est à usage unique. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_item_8cpp_source.html#l00042">42</a> du fichier <a class="el" href="_item_8cpp_source.html">Item.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_item_a900f9f23372ff903002ef063427f1ce4_icgraph.png" border="0" usemap="#aclass_item_a900f9f23372ff903002ef063427f1ce4_icgraph" alt=""/></div>
+<map name="aclass_item_a900f9f23372ff903002ef063427f1ce4_icgraph" id="aclass_item_a900f9f23372ff903002ef063427f1ce4_icgraph">
+<area shape="rect" title="Indique si l&#39;item est à usage unique." alt="" coords="777,31,889,57"/>
+<area shape="rect" href="class_player.html#a583849c1d33124f3409b990b7c888bac" title=" " alt="" coords="533,23,729,65"/>
+<area shape="rect" href="class_player.html#aa14422c8d3c3950584dcd307172741b7" title=" " alt="" coords="343,5,485,32"/>
+<area shape="rect" href="class_player.html#ad6867e0c7bc18e82a1da4be7bf156d97" title=" " alt="" coords="188,31,295,57"/>
+<area shape="rect" href="class_game_state.html#a775a7d0cf422aec17e5846852f3c997d" title=" " alt="" coords="5,31,140,57"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="ab2a2e5e2b20b61602e8edf0e4e573599" name="ab2a2e5e2b20b61602e8edf0e4e573599"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab2a2e5e2b20b61602e8edf0e4e573599">&#9670;&nbsp;</a></span>onCollisionEnter()</h2>
 
@@ -330,7 +547,7 @@ Membres hérités additionnels</h2></td></tr>
 
 <p>Implémente <a class="el" href="class_not_movable_game_object.html#a4954c3c803930ca5faf48bab88fb19bd">NotMovableGameObject</a>.</p>
 
-<p>Implémenté dans <a class="el" href="class_money.html#af14a2e8f1f215da2cda5c833f25818e5">Money</a>, <a class="el" href="class_shield.html#af82912a68032d931aba13f28004568fd">Shield</a>, <a class="el" href="class_sword.html#a6484ea989954570c9ece11d9843e72d1">Sword</a>, et <a class="el" href="class_vial.html#ace9277c2d5c91183ed1357eff154cc1b">Vial</a>.</p>
+<p>Implémenté dans <a class="el" href="class_boxing_gloves.html#ad6d311622857cccec7aa418a2ebee739">BoxingGloves</a>, <a class="el" href="class_money.html#af14a2e8f1f215da2cda5c833f25818e5">Money</a>, <a class="el" href="class_shield.html#af82912a68032d931aba13f28004568fd">Shield</a>, <a class="el" href="class_sword.html#a6484ea989954570c9ece11d9843e72d1">Sword</a>, <a class="el" href="class_teleport_key.html#a7de596ef7713529170b78a3808d58555">TeleportKey</a>, et <a class="el" href="class_vial.html#ace9277c2d5c91183ed1357eff154cc1b">Vial</a>.</p>
 
 </div>
 </div>
@@ -359,7 +576,7 @@ Membres hérités additionnels</h2></td></tr>
 
 <p>Implémente <a class="el" href="class_not_movable_game_object.html#aafd50ee8f5e31bd1f4dfb4bd95053267">NotMovableGameObject</a>.</p>
 
-<p>Implémenté dans <a class="el" href="class_money.html#a9914e11ab0b3630f54b3711b3ef8cad8">Money</a>, <a class="el" href="class_shield.html#a22cfa66fa754653dd24c00bd13678b18">Shield</a>, <a class="el" href="class_sword.html#a4b650c68af5552a2f0d995b5fe3af3fc">Sword</a>, et <a class="el" href="class_vial.html#ad00a07bd850ba8cec2ee0cb2164fe820">Vial</a>.</p>
+<p>Implémenté dans <a class="el" href="class_boxing_gloves.html#a9b7927f53702f143eba8655fe94b7929">BoxingGloves</a>, <a class="el" href="class_money.html#a9914e11ab0b3630f54b3711b3ef8cad8">Money</a>, <a class="el" href="class_shield.html#a22cfa66fa754653dd24c00bd13678b18">Shield</a>, <a class="el" href="class_sword.html#a4b650c68af5552a2f0d995b5fe3af3fc">Sword</a>, <a class="el" href="class_teleport_key.html#abdf3be75d26b434488d63acffb942e9d">TeleportKey</a>, et <a class="el" href="class_vial.html#ad00a07bd850ba8cec2ee0cb2164fe820">Vial</a>.</p>
 
 </div>
 </div>
@@ -403,43 +620,9 @@ Membres hérités additionnels</h2></td></tr>
 
 </div>
 </div>
-<a id="a180ec610ac1bfdec38466457f53ad3b7" name="a180ec610ac1bfdec38466457f53ad3b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a180ec610ac1bfdec38466457f53ad3b7">&#9670;&nbsp;</a></span>useOn()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual Item::useOn </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_personage.html">Personage</a> &amp;&#160;</td>
-          <td class="paramname"><em>personage</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Utiliser l'item sur le personnage indiqué </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">personage</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <h2 class="groupheader">Documentation des données membres</h2>
-<a id="aaa167cf26678cc807e34f87ef6fa2f54" name="aaa167cf26678cc807e34f87ef6fa2f54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa167cf26678cc807e34f87ef6fa2f54">&#9670;&nbsp;</a></span>categorie</h2>
+<a id="a6176ff68b9bc6059bb6e8840c3090e3a" name="a6176ff68b9bc6059bb6e8840c3090e3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6176ff68b9bc6059bb6e8840c3090e3a">&#9670;&nbsp;</a></span>categorie</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -448,7 +631,7 @@ Membres hérités additionnels</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="_item_8hpp.html#ab96fbadc159fcb2380ed41ce0ec705fa">ItemsCategories</a> Item::categorie</td>
+          <td class="memname">const <a class="el" href="namespacegame.html#a3627cfdb5f6ba53e14e5533e76530468">game::ItemsCategories</a> Item::categorie</td>
         </tr>
       </table>
   </td>
@@ -458,7 +641,61 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_item_8hpp_source.html#l00066">66</a> du fichier <a class="el" href="_item_8hpp_source.html">Item.hpp</a>.</p>
+<p>Représente les categories d'item. utilis pour définir les éffets... </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_item_8hpp_source.html#l00100">100</a> du fichier <a class="el" href="_item_8hpp_source.html">Item.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a7b2b122824df2c3518f99628ed1454b7" name="a7b2b122824df2c3518f99628ed1454b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b2b122824df2c3518f99628ed1454b7">&#9670;&nbsp;</a></span>oneUse</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Item::oneUse</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indique si l'item ne peut etre utilisé qu'une seule fois. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_item_8hpp_source.html#l00105">105</a> du fichier <a class="el" href="_item_8hpp_source.html">Item.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac401c4d72c12ec78889efd2c6bd3476e" name="ac401c4d72c12ec78889efd2c6bd3476e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac401c4d72c12ec78889efd2c6bd3476e">&#9670;&nbsp;</a></span>rangeOfAction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Item::rangeOfAction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>rayon d'action de l'item </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_item_8hpp_source.html#l00089">89</a> du fichier <a class="el" href="_item_8hpp_source.html">Item.hpp</a>.</p>
 
 </div>
 </div>
@@ -484,7 +721,33 @@ Membres hérités additionnels</h2></td></tr>
 
 <p>Valeur de l'item à l'utilisation... </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_item_8hpp_source.html#l00065">65</a> du fichier <a class="el" href="_item_8hpp_source.html">Item.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_item_8hpp_source.html#l00084">84</a> du fichier <a class="el" href="_item_8hpp_source.html">Item.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a6f4b8cd3fc03d3e66125e1ceb501cd04" name="a6f4b8cd3fc03d3e66125e1ceb501cd04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f4b8cd3fc03d3e66125e1ceb501cd04">&#9670;&nbsp;</a></span>waitingTimeForAction</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Item::waitingTimeForAction</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Le temps d'attente pour que l'action soit faite. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_item_8hpp_source.html#l00094">94</a> du fichier <a class="el" href="_item_8hpp_source.html">Item.hpp</a>.</p>
 
 </div>
 </div>

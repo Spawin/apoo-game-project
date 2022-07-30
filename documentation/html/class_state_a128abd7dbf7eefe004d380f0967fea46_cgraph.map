@@ -1,0 +1,4 @@
+<map id="State::scScF" name="State::scScF">
+<area shape="rect" id="node1" title="Retourne le &lt;screenScalingFactor&gt; fournit par le stateData..." alt="" coords="5,5,104,32"/>
+<area shape="rect" id="node2" href="$class_graphics_settings.html#a47599e8abbe9f491da4740ba2c0e5d17" title="Retourne &lt;screenScalingFactor&gt;" alt="" coords="152,5,320,32"/>
+</map>

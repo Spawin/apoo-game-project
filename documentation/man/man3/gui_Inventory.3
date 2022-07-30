@@ -1,4 +1,4 @@
-.TH "gui::Inventory" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.TH "gui::Inventory" 3 "Samedi 30 Juillet 2022" "Jeu POA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -21,7 +21,7 @@ gui::Inventory
 .RI "bool \fBaddItem\fP (const \fBItem\fP *item, \fBgame::inventory_items_types\fP type)"
 .br
 .ti -1c
-.RI "bool \fBremoveItem\fP (int index, \fBgame::inventory_items_types\fP type)"
+.RI "bool \fBremoveItem\fP (const \fBItem\fP *item, \fBgame::inventory_items_types\fP type)"
 .br
 .ti -1c
 .RI "void \fBupdateMousePosWindow\fP (sf::Vector2i mousePosWindow)"
@@ -35,7 +35,7 @@ gui::Inventory
 .in -1c
 .SH "Description détaillée"
 .PP 
-Définition à la ligne \fB171\fP du fichier \fBGui\&.hpp\fP\&.
+Définition à la ligne \fB176\fP du fichier \fBGui\&.hpp\fP\&.
 .SH "Documentation des constructeurs et destructeur"
 .PP 
 .SS "Inventory::Inventory (sf::Font const & font)"
@@ -52,22 +52,22 @@ Définition à la ligne \fB483\fP du fichier \fBGui\&.cpp\fP\&.
 
 .PP
 Définition à la ligne \fB498\fP du fichier \fBGui\&.cpp\fP\&.
-.SS "bool Inventory::removeItem (int index, \fBgame::inventory_items_types\fP type)"
+.SS "bool Inventory::removeItem (const \fBItem\fP * item, \fBgame::inventory_items_types\fP type)"
 
 .PP
-Définition à la ligne \fB562\fP du fichier \fBGui\&.cpp\fP\&.
+Définition à la ligne \fB571\fP du fichier \fBGui\&.cpp\fP\&.
 .SS "void Inventory::render (sf::RenderTarget & target)"
 
 .PP
-Définition à la ligne \fB589\fP du fichier \fBGui\&.cpp\fP\&.
+Définition à la ligne \fB606\fP du fichier \fBGui\&.cpp\fP\&.
 .SS "void Inventory::update ()"
 
 .PP
-Définition à la ligne \fB586\fP du fichier \fBGui\&.cpp\fP\&.
+Définition à la ligne \fB603\fP du fichier \fBGui\&.cpp\fP\&.
 .SS "void Inventory::updateMousePosWindow (sf::Vector2i mousePosWindow)"
 
 .PP
-Définition à la ligne \fB574\fP du fichier \fBGui\&.cpp\fP\&.
+Définition à la ligne \fB591\fP du fichier \fBGui\&.cpp\fP\&.
 
 .SH "Auteur"
 .PP 

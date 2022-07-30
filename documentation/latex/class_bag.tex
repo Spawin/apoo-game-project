@@ -4,10 +4,24 @@
 
 {\ttfamily \#include $<$Bag.\+hpp$>$}
 
-Graphe d\textquotesingle{}héritage de Bag\+:\begin{figure}[H]
+
+
+Graphe d\textquotesingle{}héritage de Bag\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=3.000000cm]{class_bag}
+\includegraphics[height=550pt]{class_bag__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Bag\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_bag__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Fonctions membres publiques}
@@ -17,11 +31,19 @@ Graphe d\textquotesingle{}héritage de Bag\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_bag_a5fd787cdb2fde600f589cbaa4777f5b3}{$\sim$\+Bag}} ()
 \item 
-bool \mbox{\hyperlink{class_bag_ad00edb64d5225b5a5b92ecdb38b4e719}{add\+Item}} (\mbox{\hyperlink{class_item}{Item}} $\ast$item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}} type)
+bool \mbox{\hyperlink{class_bag_a894be6b336ee6521272eb9dac2f75be6}{add\+Item}} (\mbox{\hyperlink{class_item}{Item}} $\ast$item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}} type, sf\+::\+Vector2f const \&coordinates)
 \item 
-bool \mbox{\hyperlink{class_bag_a627b9fd47761691dbc4f96be7dad35f5}{move\+Item}} (\mbox{\hyperlink{class_item}{Item}} $\ast$item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}} type, \mbox{\hyperlink{class_inventory}{Inventory}} $\ast$to\+\_\+inventory)
+bool \mbox{\hyperlink{class_bag_a1564094e96027c1a0234fd4a8c84ee66}{move\+Item}} (\mbox{\hyperlink{class_item}{Item}} $\ast$item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}} type, \mbox{\hyperlink{class_inventory}{Inventory}} $\ast$to\+\_\+inventory, sf\+::\+Vector2f const \&coordinates)
 \item 
 bool \mbox{\hyperlink{class_bag_ae1902348311f9d34bc2c8226ab30f0f2}{remove\+Item}} (\mbox{\hyperlink{class_item}{Item}} $\ast$item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}} type)
+\item 
+bool \mbox{\hyperlink{class_bag_a8307bb448999620f11f3f53155dedbb9}{have\+This\+Item}} (\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game\+::\+Items\+Categories}} const \&categorie) const
+\item 
+\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}} const \& \mbox{\hyperlink{class_bag_ab0117561af073f4f5c245acbd9f98026}{get\+Inventory\+Item\+Type}} (\mbox{\hyperlink{class_item}{Item}} const $\ast$item) const
+\item 
+\mbox{\hyperlink{class_item}{Item}} const $\ast$ \mbox{\hyperlink{class_bag_a591399dcb00750211dfa9499ada89c99}{get\+First\+Item\+Match}} (\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game\+::\+Items\+Categories}} const \&categorie) const
+\item 
+\mbox{\hyperlink{class_item}{Item}} $\ast$ \mbox{\hyperlink{class_bag_ad6233a55a38b4c8dfec00c06fd0fd69a}{get\+First\+Item\+Match\+Non\+Const}} (\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game\+::\+Items\+Categories}} const \&categorie)
 \item 
 \mbox{\hyperlink{class_inventory}{Inventory}} $\ast$ \mbox{\hyperlink{class_bag_a5c8e365a36667f800eec30c4148500a6}{get\+Inventory}} ()
 \item 
@@ -37,7 +59,7 @@ void \mbox{\hyperlink{class_bag_a81528b3dffe4e4542f31fab596d9daf4}{render\+Inven
 \doxysubsection{Description détaillée}
 
 
-Définition à la ligne \mbox{\hyperlink{_bag_8hpp_source_l00009}{9}} du fichier \mbox{\hyperlink{_bag_8hpp_source}{Bag.\+hpp}}.
+Définition à la ligne \mbox{\hyperlink{_bag_8hpp_source_l00015}{15}} du fichier \mbox{\hyperlink{_bag_8hpp_source}{Bag.\+hpp}}.
 
 
 
@@ -50,8 +72,16 @@ Définition à la ligne \mbox{\hyperlink{_bag_8hpp_source_l00009}{9}} du fichier
 
 
 
-Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00019}{19}} du fichier \mbox{\hyperlink{_bag_8cpp_source}{Bag.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00018}{18}} du fichier \mbox{\hyperlink{_bag_8cpp_source}{Bag.\+cpp}}.
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_bag_ae0593c22c7dd8b32cab469af92fb200c_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_bag_a5fd787cdb2fde600f589cbaa4777f5b3}\label{class_bag_a5fd787cdb2fde600f589cbaa4777f5b3}} 
 \index{Bag@{Bag}!````~Bag@{$\sim$Bag}}
 \index{````~Bag@{$\sim$Bag}!Bag@{Bag}}
@@ -65,16 +95,84 @@ Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00026}{26}} du fichie
 
 
 \doxysubsection{Documentation des fonctions membres}
-\mbox{\Hypertarget{class_bag_ad00edb64d5225b5a5b92ecdb38b4e719}\label{class_bag_ad00edb64d5225b5a5b92ecdb38b4e719}} 
+\mbox{\Hypertarget{class_bag_a894be6b336ee6521272eb9dac2f75be6}\label{class_bag_a894be6b336ee6521272eb9dac2f75be6}} 
 \index{Bag@{Bag}!addItem@{addItem}}
 \index{addItem@{addItem}!Bag@{Bag}}
 \doxysubsubsection{\texorpdfstring{addItem()}{addItem()}}
-{\footnotesize\ttfamily bool Bag\+::add\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_item}{Item}} $\ast$}]{item,  }\item[{\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}}}]{type }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Bag\+::add\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_item}{Item}} $\ast$}]{item,  }\item[{\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}}}]{type,  }\item[{sf\+::\+Vector2f const \&}]{coordinates }\end{DoxyParamCaption})}
 
 
 
 Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00032}{32}} du fichier \mbox{\hyperlink{_bag_8cpp_source}{Bag.\+cpp}}.
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bag_a894be6b336ee6521272eb9dac2f75be6_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bag_a894be6b336ee6521272eb9dac2f75be6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_bag_a591399dcb00750211dfa9499ada89c99}\label{class_bag_a591399dcb00750211dfa9499ada89c99}} 
+\index{Bag@{Bag}!getFirstItemMatch@{getFirstItemMatch}}
+\index{getFirstItemMatch@{getFirstItemMatch}!Bag@{Bag}}
+\doxysubsubsection{\texorpdfstring{getFirstItemMatch()}{getFirstItemMatch()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_item}{Item}} const  $\ast$ Bag\+::get\+First\+Item\+Match (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game\+::\+Items\+Categories}} const \&}]{categorie }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00057}{57}} du fichier \mbox{\hyperlink{_bag_8cpp_source}{Bag.\+cpp}}.
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bag_a591399dcb00750211dfa9499ada89c99_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bag_a591399dcb00750211dfa9499ada89c99_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_bag_ad6233a55a38b4c8dfec00c06fd0fd69a}\label{class_bag_ad6233a55a38b4c8dfec00c06fd0fd69a}} 
+\index{Bag@{Bag}!getFirstItemMatchNonConst@{getFirstItemMatchNonConst}}
+\index{getFirstItemMatchNonConst@{getFirstItemMatchNonConst}!Bag@{Bag}}
+\doxysubsubsection{\texorpdfstring{getFirstItemMatchNonConst()}{getFirstItemMatchNonConst()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_item}{Item}} $\ast$ Bag\+::get\+First\+Item\+Match\+Non\+Const (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game\+::\+Items\+Categories}} const \&}]{categorie }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00062}{62}} du fichier \mbox{\hyperlink{_bag_8cpp_source}{Bag.\+cpp}}.
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bag_ad6233a55a38b4c8dfec00c06fd0fd69a_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bag_ad6233a55a38b4c8dfec00c06fd0fd69a_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_bag_a5c8e365a36667f800eec30c4148500a6}\label{class_bag_a5c8e365a36667f800eec30c4148500a6}} 
 \index{Bag@{Bag}!getInventory@{getInventory}}
 \index{getInventory@{getInventory}!Bag@{Bag}}
@@ -83,18 +181,94 @@ Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00032}{32}} du fichie
 
 
 
+Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00067}{67}} du fichier \mbox{\hyperlink{_bag_8cpp_source}{Bag.\+cpp}}.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bag_a5c8e365a36667f800eec30c4148500a6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_bag_ab0117561af073f4f5c245acbd9f98026}\label{class_bag_ab0117561af073f4f5c245acbd9f98026}} 
+\index{Bag@{Bag}!getInventoryItemType@{getInventoryItemType}}
+\index{getInventoryItemType@{getInventoryItemType}!Bag@{Bag}}
+\doxysubsubsection{\texorpdfstring{getInventoryItemType()}{getInventoryItemType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}} const  \& Bag\+::get\+Inventory\+Item\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_item}{Item}} const $\ast$}]{item }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00052}{52}} du fichier \mbox{\hyperlink{_bag_8cpp_source}{Bag.\+cpp}}.
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bag_ab0117561af073f4f5c245acbd9f98026_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bag_ab0117561af073f4f5c245acbd9f98026_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_bag_a8307bb448999620f11f3f53155dedbb9}\label{class_bag_a8307bb448999620f11f3f53155dedbb9}} 
+\index{Bag@{Bag}!haveThisItem@{haveThisItem}}
+\index{haveThisItem@{haveThisItem}!Bag@{Bag}}
+\doxysubsubsection{\texorpdfstring{haveThisItem()}{haveThisItem()}}
+{\footnotesize\ttfamily bool Bag\+::have\+This\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacegame_a3627cfdb5f6ba53e14e5533e76530468}{game\+::\+Items\+Categories}} const \&}]{categorie }\end{DoxyParamCaption}) const}
+
+
+
 Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00047}{47}} du fichier \mbox{\hyperlink{_bag_8cpp_source}{Bag.\+cpp}}.
 
-\mbox{\Hypertarget{class_bag_a627b9fd47761691dbc4f96be7dad35f5}\label{class_bag_a627b9fd47761691dbc4f96be7dad35f5}} 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_bag_a8307bb448999620f11f3f53155dedbb9_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_bag_a8307bb448999620f11f3f53155dedbb9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_bag_a1564094e96027c1a0234fd4a8c84ee66}\label{class_bag_a1564094e96027c1a0234fd4a8c84ee66}} 
 \index{Bag@{Bag}!moveItem@{moveItem}}
 \index{moveItem@{moveItem}!Bag@{Bag}}
 \doxysubsubsection{\texorpdfstring{moveItem()}{moveItem()}}
-{\footnotesize\ttfamily bool Bag\+::move\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_item}{Item}} $\ast$}]{item,  }\item[{\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}}}]{type,  }\item[{\mbox{\hyperlink{class_inventory}{Inventory}} $\ast$}]{to\+\_\+inventory }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Bag\+::move\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_item}{Item}} $\ast$}]{item,  }\item[{\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}}}]{type,  }\item[{\mbox{\hyperlink{class_inventory}{Inventory}} $\ast$}]{to\+\_\+inventory,  }\item[{sf\+::\+Vector2f const \&}]{coordinates }\end{DoxyParamCaption})}
 
 
 
 Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00037}{37}} du fichier \mbox{\hyperlink{_bag_8cpp_source}{Bag.\+cpp}}.
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bag_a1564094e96027c1a0234fd4a8c84ee66_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{class_bag_a1564094e96027c1a0234fd4a8c84ee66_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_bag_a0b6b0d7335ce631d81b785c63c959e1e}\label{class_bag_a0b6b0d7335ce631d81b785c63c959e1e}} 
 \index{Bag@{Bag}!onCollisionEnter@{onCollisionEnter}}
 \index{onCollisionEnter@{onCollisionEnter}!Bag@{Bag}}
@@ -116,8 +290,16 @@ Implémente \mbox{\hyperlink{class_not_movable_game_object_a4954c3c803930ca5faf4
 
 
 
-Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00052}{52}} du fichier \mbox{\hyperlink{_bag_8cpp_source}{Bag.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00072}{72}} du fichier \mbox{\hyperlink{_bag_8cpp_source}{Bag.\+cpp}}.
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{class_bag_a0b6b0d7335ce631d81b785c63c959e1e_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_bag_ae1902348311f9d34bc2c8226ab30f0f2}\label{class_bag_ae1902348311f9d34bc2c8226ab30f0f2}} 
 \index{Bag@{Bag}!removeItem@{removeItem}}
 \index{removeItem@{removeItem}!Bag@{Bag}}
@@ -128,6 +310,22 @@ Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00052}{52}} du fichie
 
 Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00042}{42}} du fichier \mbox{\hyperlink{_bag_8cpp_source}{Bag.\+cpp}}.
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bag_ae1902348311f9d34bc2c8226ab30f0f2_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bag_ae1902348311f9d34bc2c8226ab30f0f2_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_bag_a81528b3dffe4e4542f31fab596d9daf4}\label{class_bag_a81528b3dffe4e4542f31fab596d9daf4}} 
 \index{Bag@{Bag}!renderInventory@{renderInventory}}
 \index{renderInventory@{renderInventory}!Bag@{Bag}}
@@ -136,8 +334,24 @@ Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00042}{42}} du fichie
 
 
 
-Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00062}{62}} du fichier \mbox{\hyperlink{_bag_8cpp_source}{Bag.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00082}{82}} du fichier \mbox{\hyperlink{_bag_8cpp_source}{Bag.\+cpp}}.
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_bag_a81528b3dffe4e4542f31fab596d9daf4_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bag_a81528b3dffe4e4542f31fab596d9daf4_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_bag_a790dadd6a2d45469cccd653ff5dd2317}\label{class_bag_a790dadd6a2d45469cccd653ff5dd2317}} 
 \index{Bag@{Bag}!update@{update}}
 \index{update@{update}!Bag@{Bag}}
@@ -150,7 +364,7 @@ Implémente \mbox{\hyperlink{class_not_movable_game_object_aafd50ee8f5e31bd1f4df
 
 
 
-Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00057}{57}} du fichier \mbox{\hyperlink{_bag_8cpp_source}{Bag.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_bag_8cpp_source_l00077}{77}} du fichier \mbox{\hyperlink{_bag_8cpp_source}{Bag.\+cpp}}.
 
 
 

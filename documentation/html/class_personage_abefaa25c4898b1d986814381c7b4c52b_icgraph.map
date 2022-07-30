@@ -1,0 +1,5 @@
+<map id="Personage::increaseHealth" name="Personage::increaseHealth">
+<area shape="rect" id="node1" title="Augmenter la santé" alt="" coords="492,5,671,32"/>
+<area shape="rect" id="node2" href="$class_personage.html#ac8ff8ae7e14c4b0bdccaf152c2081e7f" title="pour recevoir les soins santé Retourne les dégats réelemnt concidéré (au cas ou la personne utilise u..." alt="" coords="248,5,444,32"/>
+<area shape="rect" id="node3" href="$class_personage.html#a45dcefc883e2db0a6562d0d8239dca6c" title=" " alt="" coords="5,5,200,32"/>
+</map>

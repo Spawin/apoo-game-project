@@ -94,12 +94,25 @@ $(document).ready(function(){initNavTree('class_box_collider.html',''); initResi
 <div class="dynheader">
 Graphe d'héritage de BoxCollider:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_box_collider.png" usemap="#BoxCollider_map" alt=""/>
-  <map id="BoxCollider_map" name="BoxCollider_map">
-<area href="class_collider.html" alt="Collider" shape="rect" coords="0,0,77,24"/>
-  </map>
-</div></div>
+<div class="center"><img src="class_box_collider__inherit__graph.png" border="0" usemap="#a_box_collider_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_box_collider_inherit__map" id="a_box_collider_inherit__map">
+<area shape="rect" title=" " alt="" coords="11,395,193,648"/>
+<area shape="rect" href="class_collider.html" title=" " alt="" coords="5,5,199,347"/>
+</map>
+</div>
+<div class="dynheader">
+Graphe de collaboration de BoxCollider:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_box_collider__coll__graph.png" border="0" usemap="#a_box_collider_coll__map" alt="Collaboration graph"/></div>
+<map name="a_box_collider_coll__map" id="a_box_collider_coll__map">
+<area shape="rect" title=" " alt="" coords="11,791,193,1044"/>
+<area shape="rect" href="class_collider.html" title=" " alt="" coords="5,101,199,413"/>
+<area shape="rect" href="class_game_object.html" title=" " alt="" coords="247,571,471,1264"/>
+<area shape="rect" href="class_rigidbody.html" title=" " alt="" coords="239,1327,480,1448"/>
+<area shape="rect" href="class_position.html" title=" " alt="" coords="223,5,554,508"/>
+<area shape="rect" href="struct_my_vector.html" title=" " alt="" coords="579,115,775,398"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
@@ -132,6 +145,9 @@ Fonctions membres publiques statiques</h2></td></tr>
 <tr class="memitem:a765cffbef5d5e713672cea46c563dc67 inherit pub_static_methods_class_collider"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collider.html#a765cffbef5d5e713672cea46c563dc67">update</a> ()</td></tr>
 <tr class="memdesc:a765cffbef5d5e713672cea46c563dc67 inherit pub_static_methods_class_collider"><td class="mdescLeft">&#160;</td><td class="mdescRight">C'est à ce niveau qu'on gère la détection de collisions.  <a href="class_collider.html#a765cffbef5d5e713672cea46c563dc67">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a765cffbef5d5e713672cea46c563dc67 inherit pub_static_methods_class_collider"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19074031377d5b600bf120adfdcdf1c9 inherit pub_static_methods_class_collider"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collider.html#a19074031377d5b600bf120adfdcdf1c9">removeObjects</a> (int gameObjectId)</td></tr>
+<tr class="memdesc:a19074031377d5b600bf120adfdcdf1c9 inherit pub_static_methods_class_collider"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appelé à la destruction d'un objet pour l'enlever de la liste.  <a href="class_collider.html#a19074031377d5b600bf120adfdcdf1c9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a19074031377d5b600bf120adfdcdf1c9 inherit pub_static_methods_class_collider"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Membres hérités additionnels</h2></td></tr>
@@ -146,7 +162,7 @@ Membres hérités additionnels</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock">
-<p class="definition">Définition à la ligne <a class="el" href="_box_collider_8hpp_source.html#l00007">7</a> du fichier <a class="el" href="_box_collider_8hpp_source.html">BoxCollider.hpp</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_box_collider_8hpp_source.html#l00010">10</a> du fichier <a class="el" href="_box_collider_8hpp_source.html">BoxCollider.hpp</a>.</p>
 </div><h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a id="a172c4aae83dda5a0201673cd29b78b2d" name="a172c4aae83dda5a0201673cd29b78b2d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a172c4aae83dda5a0201673cd29b78b2d">&#9670;&nbsp;</a></span>BoxCollider()</h2>
@@ -319,6 +335,18 @@ Membres hérités additionnels</h2></td></tr>
 <p>Implémente <a class="el" href="class_collider.html#acecb570f58b885affcfcc5c25e9bc217">Collider</a>.</p>
 
 <p class="definition">Définition à la ligne <a class="el" href="_box_collider_8cpp_source.html#l00042">42</a> du fichier <a class="el" href="_box_collider_8cpp_source.html">BoxCollider.cpp</a>.</p>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="class_box_collider_a38200ed6f93b0f91bcb0f9f6b19954f9_cgraph.png" border="0" usemap="#aclass_box_collider_a38200ed6f93b0f91bcb0f9f6b19954f9_cgraph" alt=""/></div>
+<map name="aclass_box_collider_a38200ed6f93b0f91bcb0f9f6b19954f9_cgraph" id="aclass_box_collider_a38200ed6f93b0f91bcb0f9f6b19954f9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,196,108"/>
+<area shape="rect" href="class_collider.html#a97506e7e7a75b63c3358eb898194b866" title=" " alt="" coords="244,5,417,32"/>
+<area shape="rect" href="class_collider.html#ac5e78bcb91de52d8202beea5c4b3a5f8" title=" " alt="" coords="266,56,395,83"/>
+<area shape="rect" href="class_game_object.html#a5f5f8870bb5d7e1496c2e565f5dd8bbd" title=" " alt="" coords="247,107,415,133"/>
+<area shape="rect" href="class_position.html#af409de5592dd7da6fb0ccb8d1681bb19" title="Get the Position object." alt="" coords="259,157,402,184"/>
+</map>
+</div>
 
 </div>
 </div>

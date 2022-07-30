@@ -1,0 +1,12 @@
+<map id="Personage::receiveHealthDamage" name="Personage::receiveHealthDamage">
+<area shape="rect" id="node1" title="pour recevoir les dégats de santé Retourne les dégats réelemnt concidéré (au cas ou la personne utili..." alt="" coords="5,71,175,112"/>
+<area shape="rect" id="node2" href="$class_personage.html#a863a2c17aa860a54c8aeab5a62e68e56" title="Diminuer la santé" alt="" coords="223,78,405,105"/>
+<area shape="rect" id="node3" href="$class_movable_game_object.html#ad3b241b18227ac3eacee79069af64fc7" title=" " alt="" coords="464,5,628,47"/>
+<area shape="rect" id="node4" href="$class_personage.html#a1f9047cde214e63d4f8dcc3c9265b0a1" title=" " alt="" coords="453,71,639,112"/>
+<area shape="rect" id="node6" href="$class_animation_component.html#aebd4155a58d405bbeaf9a60fe641181e" title=" " alt="" coords="473,153,619,195"/>
+<area shape="rect" id="node5" href="$class_personage.html#a885fd718ea73b82ecd6775667bc5aeeb" title="Get the Last Animation Side." alt="" coords="687,59,905,86"/>
+<area shape="rect" id="node7" href="$class_animation.html#ad8260ef1b6af2ca01a06a14de7436450" title=" " alt="" coords="723,110,869,137"/>
+<area shape="rect" id="node8" href="$class_animation.html#a01b69a109c36cddacea8b292cf928e95" title=" " alt="" coords="732,161,860,187"/>
+<area shape="rect" id="node9" href="$class_animation.html#a6b5ba7138aaf81af0609dd51092bfe53" title=" " alt="" coords="740,211,852,238"/>
+<area shape="rect" id="node10" href="$class_animation.html#a903eb4b61b8c7bc72bbedbdba4cbb501" title=" " alt="" coords="737,262,855,289"/>
+</map>

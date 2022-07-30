@@ -4,10 +4,24 @@
 
 {\ttfamily \#include $<$Collider.\+hpp$>$}
 
-Graphe d\textquotesingle{}héritage de Collider\+:\begin{figure}[H]
+
+
+Graphe d\textquotesingle{}héritage de Collider\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_collider}
+\includegraphics[width=350pt]{class_collider__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Collider\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_collider__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Fonctions membres publiques}
@@ -27,7 +41,9 @@ virtual bool \mbox{\hyperlink{class_collider_acecb570f58b885affcfcc5c25e9bc217}{
 \begin{DoxyCompactItemize}
 \item 
 static void \mbox{\hyperlink{class_collider_a765cffbef5d5e713672cea46c563dc67}{update}} ()
-\begin{DoxyCompactList}\small\item\em C\textquotesingle{}est à ce niveau qu\textquotesingle{}on gère la détection de collisions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em C\textquotesingle{}est à ce niveau qu\textquotesingle{}on gère la détection de collisions. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_collider_a19074031377d5b600bf120adfdcdf1c9}{remove\+Objects}} (int game\+Object\+Id)
+\begin{DoxyCompactList}\small\item\em Appelé à la destruction d\textquotesingle{}un objet pour l\textquotesingle{}enlever de la liste. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Attributs protégés}
 \begin{DoxyCompactItemize}
 \item 
@@ -58,8 +74,16 @@ Définition à la ligne \mbox{\hyperlink{_collider_8hpp_source_l00013}{13}} du f
 
 
 
-Définition à la ligne \mbox{\hyperlink{_collider_8cpp_source_l00025}{25}} du fichier \mbox{\hyperlink{_collider_8cpp_source}{Collider.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_collider_8cpp_source_l00028}{28}} du fichier \mbox{\hyperlink{_collider_8cpp_source}{Collider.\+cpp}}.
 
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_collider_a5f7d036476d2bff521151c2031f20d46_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_collider_a564acde9860f875a32a6638c573d87be}\label{class_collider_a564acde9860f875a32a6638c573d87be}} 
 \index{Collider@{Collider}!````~Collider@{$\sim$Collider}}
 \index{````~Collider@{$\sim$Collider}!Collider@{Collider}}
@@ -68,7 +92,7 @@ Définition à la ligne \mbox{\hyperlink{_collider_8cpp_source_l00025}{25}} du f
 
 
 
-Définition à la ligne \mbox{\hyperlink{_collider_8cpp_source_l00044}{44}} du fichier \mbox{\hyperlink{_collider_8cpp_source}{Collider.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_collider_8cpp_source_l00047}{47}} du fichier \mbox{\hyperlink{_collider_8cpp_source}{Collider.\+cpp}}.
 
 
 
@@ -83,6 +107,14 @@ Définition à la ligne \mbox{\hyperlink{_collider_8cpp_source_l00044}{44}} du f
 
 Implémenté dans \mbox{\hyperlink{class_box_collider_ac9e717b633ad63fdcbaefb479d6d1e25}{Box\+Collider}}, et \mbox{\hyperlink{class_polygon_collider_ae312be67f56fcc6db3967f4b46a6242b}{Polygon\+Collider}}.
 
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_collider_a97506e7e7a75b63c3358eb898194b866_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_collider_ac5e78bcb91de52d8202beea5c4b3a5f8}\label{class_collider_ac5e78bcb91de52d8202beea5c4b3a5f8}} 
 \index{Collider@{Collider}!getParent@{getParent}}
 \index{getParent@{getParent}!Collider@{Collider}}
@@ -91,8 +123,38 @@ Implémenté dans \mbox{\hyperlink{class_box_collider_ac9e717b633ad63fdcbaefb479
 
 
 
-Définition à la ligne \mbox{\hyperlink{_collider_8cpp_source_l00049}{49}} du fichier \mbox{\hyperlink{_collider_8cpp_source}{Collider.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_collider_8cpp_source_l00052}{52}} du fichier \mbox{\hyperlink{_collider_8cpp_source}{Collider.\+cpp}}.
 
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_collider_ac5e78bcb91de52d8202beea5c4b3a5f8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_collider_a19074031377d5b600bf120adfdcdf1c9}\label{class_collider_a19074031377d5b600bf120adfdcdf1c9}} 
+\index{Collider@{Collider}!removeObjects@{removeObjects}}
+\index{removeObjects@{removeObjects}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{removeObjects()}{removeObjects()}}
+{\footnotesize\ttfamily void Collider\+::remove\+Objects (\begin{DoxyParamCaption}\item[{int}]{game\+Object\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Appelé à la destruction d\textquotesingle{}un objet pour l\textquotesingle{}enlever de la liste. 
+
+
+
+Définition à la ligne \mbox{\hyperlink{_collider_8cpp_source_l00101}{101}} du fichier \mbox{\hyperlink{_collider_8cpp_source}{Collider.\+cpp}}.
+
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_collider_a19074031377d5b600bf120adfdcdf1c9_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_collider_acecb570f58b885affcfcc5c25e9bc217}\label{class_collider_acecb570f58b885affcfcc5c25e9bc217}} 
 \index{Collider@{Collider}!touchEachOther@{touchEachOther}}
 \index{touchEachOther@{touchEachOther}!Collider@{Collider}}
@@ -115,8 +177,16 @@ C\textquotesingle{}est à ce niveau qu\textquotesingle{}on gère la détection d
 
 
 
-Définition à la ligne \mbox{\hyperlink{_collider_8cpp_source_l00059}{59}} du fichier \mbox{\hyperlink{_collider_8cpp_source}{Collider.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_collider_8cpp_source_l00062}{62}} du fichier \mbox{\hyperlink{_collider_8cpp_source}{Collider.\+cpp}}.
 
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_collider_a765cffbef5d5e713672cea46c563dc67_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Documentation des données membres}
@@ -128,7 +198,7 @@ Définition à la ligne \mbox{\hyperlink{_collider_8cpp_source_l00059}{59}} du f
 
 
 
-Définition à la ligne \mbox{\hyperlink{_collider_8hpp_source_l00036}{36}} du fichier \mbox{\hyperlink{_collider_8hpp_source}{Collider.\+hpp}}.
+Définition à la ligne \mbox{\hyperlink{_collider_8hpp_source_l00041}{41}} du fichier \mbox{\hyperlink{_collider_8hpp_source}{Collider.\+hpp}}.
 
 \mbox{\Hypertarget{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}\label{class_collider_aba48b78bab1384ce4c07a9fc8f8f793b}} 
 \index{Collider@{Collider}!m\_objects@{m\_objects}}
@@ -146,7 +216,7 @@ Définition à la ligne \mbox{\hyperlink{_collider_8hpp_source_l00036}{36}} du f
 \end{DoxyCode}
 
 
-Définition à la ligne \mbox{\hyperlink{_collider_8hpp_source_l00037}{37}} du fichier \mbox{\hyperlink{_collider_8hpp_source}{Collider.\+hpp}}.
+Définition à la ligne \mbox{\hyperlink{_collider_8hpp_source_l00042}{42}} du fichier \mbox{\hyperlink{_collider_8hpp_source}{Collider.\+hpp}}.
 
 \mbox{\Hypertarget{class_collider_a937ddad2dd8d4d6a67370334d447210b}\label{class_collider_a937ddad2dd8d4d6a67370334d447210b}} 
 \index{Collider@{Collider}!parent@{parent}}
@@ -156,7 +226,7 @@ Définition à la ligne \mbox{\hyperlink{_collider_8hpp_source_l00037}{37}} du f
 
 
 
-Définition à la ligne \mbox{\hyperlink{_collider_8hpp_source_l00035}{35}} du fichier \mbox{\hyperlink{_collider_8hpp_source}{Collider.\+hpp}}.
+Définition à la ligne \mbox{\hyperlink{_collider_8hpp_source_l00040}{40}} du fichier \mbox{\hyperlink{_collider_8hpp_source}{Collider.\+hpp}}.
 
 
 

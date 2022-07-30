@@ -1,0 +1,4 @@
+<map id="Personage::receiveExpCare" name="Personage::receiveExpCare">
+<area shape="rect" id="node1" title="pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un ..." alt="" coords="5,5,188,32"/>
+<area shape="rect" id="node2" href="$class_personage.html#ae40ec2da520a710bed7ea22e9f99bbbb" title="Augmenter l&#39;expérience." alt="" coords="236,5,400,32"/>
+</map>

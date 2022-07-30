@@ -1,0 +1,5 @@
+<map id="Player::Player" name="Player::Player">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,109,57"/>
+<area shape="rect" id="node2" href="$class_game_object.html#aad03571b58d55ca1de607cdf96e8207a" title=" " alt="" coords="157,5,385,32"/>
+<area shape="rect" id="node3" href="$class_personage.html#af96d090c870bfcc8ce3bbc8cda06b6d0" title=" " alt="" coords="162,56,381,83"/>
+</map>

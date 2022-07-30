@@ -100,23 +100,24 @@ $(document).ready(function(){initNavTree('_collision_8hpp_source.html',''); init
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">// explicit Collision(std::shared_ptr&lt;GameObject&gt; gameObject);</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_function" href="class_collision.html#a19ae49bcb3b16f4622443a34a171590c">~Collision</a>();</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_collision.html#aed8be664e8ddc16f38d99b33ce9c9d21">   21</a></span>    std::shared_ptr&lt;GameObject&gt; <a class="code hl_function" href="class_collision.html#aed8be664e8ddc16f38d99b33ce9c9d21">getGameObject</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_collision.html#a8593db55ec453c4a041e68f70b345794">   23</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_collision.html#a8593db55ec453c4a041e68f70b345794">test</a>()<span class="keyword"> const </span>{}; <span class="comment">// TODO - Remove this after</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_class" href="class_game_object.html">GameObject</a> <span class="keyword">const</span>&amp; m_gameObject;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// std::shared_ptr&lt;GameObject&gt; m_gameObject;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>};</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#endif </span><span class="comment">// __COLLISION_HPP__</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">// std::shared_ptr&lt;GameObject&gt; getGameObject() const;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_class" href="class_game_object.html">GameObject</a> <span class="keyword">const</span>&amp; <a class="code hl_function" href="class_collision.html#aa999b0911c592967bf91cc2089cf8815">getGameObject</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_collision.html#a8593db55ec453c4a041e68f70b345794">test</a>() <span class="keyword">const</span>; <span class="comment">// TODO - Remove this after</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_class" href="class_game_object.html">GameObject</a> <span class="keyword">const</span>&amp; m_gameObject;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// std::shared_ptr&lt;GameObject&gt; m_gameObject;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif </span><span class="comment">// __COLLISION_HPP__</span></div>
 <div class="ttc" id="a_game_object_8hpp_html"><div class="ttname"><a href="_game_object_8hpp.html">GameObject.hpp</a></div></div>
 <div class="ttc" id="aclass_collision_html"><div class="ttname"><a href="class_collision.html">Collision</a></div><div class="ttdef"><b>Definition:</b> <a href="_collision_8hpp_source.html#l00009">Collision.hpp:10</a></div></div>
 <div class="ttc" id="aclass_collision_html_a19ae49bcb3b16f4622443a34a171590c"><div class="ttname"><a href="class_collision.html#a19ae49bcb3b16f4622443a34a171590c">Collision::~Collision</a></div><div class="ttdeci">~Collision()</div><div class="ttdef"><b>Definition:</b> <a href="_collision_8cpp_source.html#l00014">Collision.cpp:14</a></div></div>
-<div class="ttc" id="aclass_collision_html_a8593db55ec453c4a041e68f70b345794"><div class="ttname"><a href="class_collision.html#a8593db55ec453c4a041e68f70b345794">Collision::test</a></div><div class="ttdeci">void test() const</div><div class="ttdef"><b>Definition:</b> <a href="_collision_8hpp_source.html#l00023">Collision.hpp:23</a></div></div>
-<div class="ttc" id="aclass_collision_html_aed8be664e8ddc16f38d99b33ce9c9d21"><div class="ttname"><a href="class_collision.html#aed8be664e8ddc16f38d99b33ce9c9d21">Collision::getGameObject</a></div><div class="ttdeci">std::shared_ptr&lt; GameObject &gt; getGameObject() const</div><div class="ttdoc">Get the Game Object object.</div></div>
+<div class="ttc" id="aclass_collision_html_a8593db55ec453c4a041e68f70b345794"><div class="ttname"><a href="class_collision.html#a8593db55ec453c4a041e68f70b345794">Collision::test</a></div><div class="ttdeci">void test() const</div><div class="ttdef"><b>Definition:</b> <a href="_collision_8cpp_source.html#l00024">Collision.cpp:24</a></div></div>
+<div class="ttc" id="aclass_collision_html_aa999b0911c592967bf91cc2089cf8815"><div class="ttname"><a href="class_collision.html#aa999b0911c592967bf91cc2089cf8815">Collision::getGameObject</a></div><div class="ttdeci">GameObject const &amp; getGameObject() const</div><div class="ttdoc">Get the Game Object object.</div><div class="ttdef"><b>Definition:</b> <a href="_collision_8cpp_source.html#l00019">Collision.cpp:19</a></div></div>
 <div class="ttc" id="aclass_collision_html_af18b1114b2bcf62a63e996d95ff620a0"><div class="ttname"><a href="class_collision.html#af18b1114b2bcf62a63e996d95ff620a0">Collision::Collision</a></div><div class="ttdeci">Collision(GameObject const &amp;gameObject)</div><div class="ttdef"><b>Definition:</b> <a href="_collision_8cpp_source.html#l00006">Collision.cpp:6</a></div></div>
-<div class="ttc" id="aclass_game_object_html"><div class="ttname"><a href="class_game_object.html">GameObject</a></div><div class="ttdef"><b>Definition:</b> <a href="_game_object_8hpp_source.html#l00015">GameObject.hpp:16</a></div></div>
+<div class="ttc" id="aclass_game_object_html"><div class="ttname"><a href="class_game_object.html">GameObject</a></div><div class="ttdef"><b>Definition:</b> <a href="_game_object_8hpp_source.html#l00019">GameObject.hpp:20</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

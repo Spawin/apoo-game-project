@@ -4,10 +4,24 @@
 
 {\ttfamily \#include $<$Hall.\+hpp$>$}
 
-Graphe d\textquotesingle{}héritage de Hall\+:\begin{figure}[H]
+
+
+Graphe d\textquotesingle{}héritage de Hall\+:
+\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_hall}
+\includegraphics[height=550pt]{class_hall__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Graphe de collaboration de Hall\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{class_hall__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Fonctions membres publiques}
@@ -17,12 +31,18 @@ Graphe d\textquotesingle{}héritage de Hall\+:\begin{figure}[H]
 \item 
 virtual \mbox{\hyperlink{class_hall_a28d5f4ed9d21684b7359dc980eacb8a0}{$\sim$\+Hall}} ()
 \item 
+bool \mbox{\hyperlink{class_hall_a817dc6744558557c847eb6d74d08cb81}{add\+Item}} (\mbox{\hyperlink{class_item}{Item}} $\ast$item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}} type, sf\+::\+Vector2f const \&coordinates)
+\item 
+bool \mbox{\hyperlink{class_hall_a32e746256200ea36db17b5d1e9ea50d5}{move\+Item}} (\mbox{\hyperlink{class_item}{Item}} $\ast$item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}} type, \mbox{\hyperlink{class_inventory}{Inventory}} $\ast$to\+\_\+inventory, sf\+::\+Vector2f const \&coordinates)
+\item 
+bool \mbox{\hyperlink{class_hall_a29cee0bf1a5ede784e5b5d5413c5bda1}{remove\+Item}} (\mbox{\hyperlink{class_item}{Item}} $\ast$item, \mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}} type)
+\item 
 virtual bool \mbox{\hyperlink{class_hall_a0c346daee6b9e4d03d2ef3d858826904}{add\+Movable\+Game\+Object}} (\mbox{\hyperlink{class_movable_game_object}{Movable\+Game\+Object}} $\ast$movable\+Game\+Object)
 \item 
 bool \mbox{\hyperlink{class_hall_ae2a6f4440f87c17bfdbb292c542e542a}{is\+In}} (\mbox{\hyperlink{struct_my_vector}{My\+Vector}} const \&coordinates) const
-\item 
+\begin{DoxyCompactList}\small\item\em Vérifier si les coordonnées de position données se trouve dans la pièce. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_hall_a5cf17f386a894b3c7062a85a3d802802}{is\+In}} (sf\+::\+Vector2f const \&coordinates) const
-\item 
+\begin{DoxyCompactList}\small\item\em Vérifier si les coordonnées de position données se trouve dans la pièce. \end{DoxyCompactList}\item 
 const sf\+::\+Int\+Rect \& \mbox{\hyperlink{class_hall_ae8b24a02bbc5c17bf1e557cb3d98a76d}{get\+Int\+Rect}} () const
 \item 
 virtual void \mbox{\hyperlink{class_hall_a20c1d21909f6909956f8546db9d5e039}{render}} (sf\+::\+Render\+Target \&target)
@@ -32,7 +52,7 @@ virtual void \mbox{\hyperlink{class_hall_a20c1d21909f6909956f8546db9d5e039}{rend
 \doxysubsection{Description détaillée}
 
 
-Définition à la ligne \mbox{\hyperlink{_hall_8hpp_source_l00011}{11}} du fichier \mbox{\hyperlink{_hall_8hpp_source}{Hall.\+hpp}}.
+Définition à la ligne \mbox{\hyperlink{_hall_8hpp_source_l00018}{18}} du fichier \mbox{\hyperlink{_hall_8hpp_source}{Hall.\+hpp}}.
 
 
 
@@ -45,7 +65,7 @@ Définition à la ligne \mbox{\hyperlink{_hall_8hpp_source_l00011}{11}} du fichi
 
 
 
-Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00008}{8}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00012}{12}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
 
 \mbox{\Hypertarget{class_hall_a28d5f4ed9d21684b7359dc980eacb8a0}\label{class_hall_a28d5f4ed9d21684b7359dc980eacb8a0}} 
 \index{Hall@{Hall}!````~Hall@{$\sim$Hall}}
@@ -55,11 +75,29 @@ Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00008}{8}} du fichie
 
 
 
-Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00024}{24}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00029}{29}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
 
 
 
 \doxysubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_hall_a817dc6744558557c847eb6d74d08cb81}\label{class_hall_a817dc6744558557c847eb6d74d08cb81}} 
+\index{Hall@{Hall}!addItem@{addItem}}
+\index{addItem@{addItem}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{addItem()}{addItem()}}
+{\footnotesize\ttfamily bool Hall\+::add\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_item}{Item}} $\ast$}]{item,  }\item[{\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}}}]{type,  }\item[{sf\+::\+Vector2f const \&}]{coordinates }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00035}{35}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_hall_a817dc6744558557c847eb6d74d08cb81_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_hall_a0c346daee6b9e4d03d2ef3d858826904}\label{class_hall_a0c346daee6b9e4d03d2ef3d858826904}} 
 \index{Hall@{Hall}!addMovableGameObject@{addMovableGameObject}}
 \index{addMovableGameObject@{addMovableGameObject}!Hall@{Hall}}
@@ -68,7 +106,7 @@ Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00024}{24}} du fichi
 
 
 
-Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00029}{29}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00050}{50}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
 
 \mbox{\Hypertarget{class_hall_ae8b24a02bbc5c17bf1e557cb3d98a76d}\label{class_hall_ae8b24a02bbc5c17bf1e557cb3d98a76d}} 
 \index{Hall@{Hall}!getIntRect@{getIntRect}}
@@ -78,8 +116,16 @@ Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00029}{29}} du fichi
 
 
 
-Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00060}{60}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00081}{81}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
 
+Voici le graphe des appelants de cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_hall_ae8b24a02bbc5c17bf1e557cb3d98a76d_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_hall_ae2a6f4440f87c17bfdbb292c542e542a}\label{class_hall_ae2a6f4440f87c17bfdbb292c542e542a}} 
 \index{Hall@{Hall}!isIn@{isIn}}
 \index{isIn@{isIn}!Hall@{Hall}}
@@ -88,7 +134,21 @@ Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00060}{60}} du fichi
 
 
 
-Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00035}{35}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
+Vérifier si les coordonnées de position données se trouve dans la pièce. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em coordinates} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00056}{56}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
 
 \mbox{\Hypertarget{class_hall_a5cf17f386a894b3c7062a85a3d802802}\label{class_hall_a5cf17f386a894b3c7062a85a3d802802}} 
 \index{Hall@{Hall}!isIn@{isIn}}
@@ -98,8 +158,58 @@ Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00035}{35}} du fichi
 
 
 
-Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00047}{47}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
+Vérifier si les coordonnées de position données se trouve dans la pièce. 
 
+
+\begin{DoxyParams}{Paramètres}
+{\em coordinates} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00068}{68}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
+
+\mbox{\Hypertarget{class_hall_a32e746256200ea36db17b5d1e9ea50d5}\label{class_hall_a32e746256200ea36db17b5d1e9ea50d5}} 
+\index{Hall@{Hall}!moveItem@{moveItem}}
+\index{moveItem@{moveItem}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{moveItem()}{moveItem()}}
+{\footnotesize\ttfamily bool Hall\+::move\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_item}{Item}} $\ast$}]{item,  }\item[{\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}}}]{type,  }\item[{\mbox{\hyperlink{class_inventory}{Inventory}} $\ast$}]{to\+\_\+inventory,  }\item[{sf\+::\+Vector2f const \&}]{coordinates }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00040}{40}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_hall_a32e746256200ea36db17b5d1e9ea50d5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_hall_a29cee0bf1a5ede784e5b5d5413c5bda1}\label{class_hall_a29cee0bf1a5ede784e5b5d5413c5bda1}} 
+\index{Hall@{Hall}!removeItem@{removeItem}}
+\index{removeItem@{removeItem}!Hall@{Hall}}
+\doxysubsubsection{\texorpdfstring{removeItem()}{removeItem()}}
+{\footnotesize\ttfamily bool Hall\+::remove\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_item}{Item}} $\ast$}]{item,  }\item[{\mbox{\hyperlink{namespacegame_a214a8f8fb832eaaa8cae6f1be423a2b0}{game\+::inventory\+\_\+items\+\_\+types}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00045}{45}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_hall_a29cee0bf1a5ede784e5b5d5413c5bda1_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_hall_a20c1d21909f6909956f8546db9d5e039}\label{class_hall_a20c1d21909f6909956f8546db9d5e039}} 
 \index{Hall@{Hall}!render@{render}}
 \index{render@{render}!Hall@{Hall}}
@@ -108,7 +218,7 @@ Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00047}{47}} du fichi
 
 
 
-Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00065}{65}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
+Définition à la ligne \mbox{\hyperlink{_hall_8cpp_source_l00086}{86}} du fichier \mbox{\hyperlink{_hall_8cpp_source}{Hall.\+cpp}}.
 
 
 

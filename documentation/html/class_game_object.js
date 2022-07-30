@@ -13,6 +13,7 @@ var class_game_object =
     [ "initPosition", "class_game_object.html#ad860b401fa64188046b2b7019e006283", null ],
     [ "isArigidBody", "class_game_object.html#a383ef4aec2bddf99d2255b7625c2e88a", null ],
     [ "onCollisionEnter", "class_game_object.html#a394309d681a8e5eb59656029a32881de", null ],
+    [ "setGameObjectName", "class_game_object.html#aad03571b58d55ca1de607cdf96e8207a", null ],
     [ "show", "class_game_object.html#a3f7a674006e1cce96ccb6c60f0ff9aaf", null ],
     [ "update", "class_game_object.html#ae83128d0e0efef691417779605ee037c", null ],
     [ "Rigidbody", "class_game_object.html#ab9677fbc0a8849136cf78204d65c4935", null ],

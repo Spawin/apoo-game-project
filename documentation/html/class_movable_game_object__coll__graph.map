@@ -1,0 +1,10 @@
+<map id="MovableGameObject" name="MovableGameObject">
+<area shape="rect" id="node1" title=" " alt="" coords="521,1327,740,1815"/>
+<area shape="rect" id="node2" href="$class_game_object.html" title=" " alt="" coords="203,571,427,1264"/>
+<area shape="rect" id="node5" href="$class_collider.html" title=" " alt="" coords="38,1415,231,1727"/>
+<area shape="rect" id="node6" href="$class_rigidbody.html" title=" " alt="" coords="255,1510,497,1631"/>
+<area shape="rect" id="node3" href="$class_position.html" title=" " alt="" coords="5,5,336,508"/>
+<area shape="rect" id="node4" href="$struct_my_vector.html" title=" " alt="" coords="361,115,557,398"/>
+<area shape="rect" id="node7" href="$class_animation_component.html" title=" " alt="" coords="512,747,712,1088"/>
+<area shape="rect" id="node8" href="$class_hall.html" title=" " alt="" coords="736,681,939,1154"/>
+</map>

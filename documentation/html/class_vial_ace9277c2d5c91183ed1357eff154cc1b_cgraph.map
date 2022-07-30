@@ -1,0 +1,4 @@
+<map id="Vial::onCollisionEnter" name="Vial::onCollisionEnter">
+<area shape="rect" id="node1" title="émit quand il entre en contacte avec un autre élément" alt="" coords="5,5,152,32"/>
+<area shape="rect" id="node2" href="$class_collision.html#a8593db55ec453c4a041e68f70b345794" title=" " alt="" coords="200,5,301,32"/>
+</map>

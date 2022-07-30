@@ -11,28 +11,45 @@
 \DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00007}00007 \textcolor{comment}{// Fonctions d'initialisation}}
 \DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00008}00008 \textcolor{keywordtype}{void} Worker::init()}
 \DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00009}00009 \{}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00010}00010     \mbox{\hyperlink{class_game_object_a1d82b32440a549f17b38660591896bb0}{m\_gameObjectName}} = \textcolor{stringliteral}{"{}Worker"{}};}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00011}00011     \mbox{\hyperlink{class_personage_a2e14c7228a3a5a6b6531c7b1077baa7f}{m\_specialtyName}} = \textcolor{stringliteral}{"{}Velocity"{}}; \textcolor{comment}{// REVIEW -\/}}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00012}00012 \}}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00013}00013 }
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00014}00014 \textcolor{comment}{// Constructeurs/Destructeur}}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00015}\mbox{\hyperlink{class_worker_a3754817df06ffe220f7f0d903c78ccac}{00015}} \mbox{\hyperlink{class_worker_a3754817df06ffe220f7f0d903c78ccac}{Worker::Worker}}()}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00016}00016 \{}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00017}00017     this-\/>init();}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00018}00018 \}}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00019}00019 }
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00020}\mbox{\hyperlink{class_worker_aa8e4543ef1e93fd9d884269ba30c5bfe}{00020}} \mbox{\hyperlink{class_worker_aa8e4543ef1e93fd9d884269ba30c5bfe}{Worker::\string~Worker}}()}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00021}00021 \{}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00022}00022 \}}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00023}00023 }
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00024}00024 \textcolor{comment}{// Fonctions/Méthodes}}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00025}\mbox{\hyperlink{class_worker_a94bb4bf6d58ada08dd1b035e255dfae7}{00025}} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_worker_a94bb4bf6d58ada08dd1b035e255dfae7}{Worker::receiveHealthDamage}}(\textcolor{keywordtype}{int} value)}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00026}00026 \{\}}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00027}\mbox{\hyperlink{class_worker_a8ac3ac378bc7f3153f0dd0df0f19d358}{00027}} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_worker_a8ac3ac378bc7f3153f0dd0df0f19d358}{Worker::receiveExpDamage}}(\textcolor{keywordtype}{int} value)}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00028}00028 \{\}}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00029}\mbox{\hyperlink{class_worker_a28557977add6a0726d53be410027c657}{00029}} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_worker_a28557977add6a0726d53be410027c657}{Worker::receiveHealthCare}}(\textcolor{keywordtype}{int} value)}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00030}00030 \{\}}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00031}\mbox{\hyperlink{class_worker_a2c49aa970c7e20cfe847ce1efa794573}{00031}} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{class_worker_a2c49aa970c7e20cfe847ce1efa794573}{Worker::receiveExpCare}}(\textcolor{keywordtype}{int} value)}
-\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00032}00032 \{\}}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00010}00010     \textcolor{comment}{// m\_gameObjectName = "{}"{};}}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00011}00011     this-\/>\mbox{\hyperlink{class_game_object_aad03571b58d55ca1de607cdf96e8207a}{setGameObjectName}}(\textcolor{stringliteral}{"{}Worker"{}});}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00012}00012     \mbox{\hyperlink{class_personage_a2e14c7228a3a5a6b6531c7b1077baa7f}{m\_specialtyName}} = \textcolor{stringliteral}{"{}Velocity"{}}; \textcolor{comment}{// REVIEW -\/}}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00013}00013 \}}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00015}00015 \textcolor{comment}{// Constructeurs/Destructeur}}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00016}\mbox{\hyperlink{class_worker_a3754817df06ffe220f7f0d903c78ccac}{00016}} \mbox{\hyperlink{class_worker_a3754817df06ffe220f7f0d903c78ccac}{Worker::Worker}}()}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00017}00017 \{}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00018}00018     this-\/>init();}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00019}00019 \}}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00021}\mbox{\hyperlink{class_worker_aa8e4543ef1e93fd9d884269ba30c5bfe}{00021}} \mbox{\hyperlink{class_worker_aa8e4543ef1e93fd9d884269ba30c5bfe}{Worker::\string~Worker}}()}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00022}00022 \{}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00023}00023 \}}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00025}00025 \textcolor{comment}{// Fonctions/Méthodes}}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00026}\mbox{\hyperlink{class_worker_a0f2da631bc38894a4d69943b344ea913}{00026}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_worker_a0f2da631bc38894a4d69943b344ea913}{Worker::simpleAttack}}(\mbox{\hyperlink{class_personage}{Personage}}\& target)}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00027}00027 \{}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00028}00028     cout << \textcolor{stringliteral}{"{}Attaque sur "{}} << target.\mbox{\hyperlink{class_game_object_a800f7c8a8df0bd57aca9f8de170d7906}{getGameObjectName}}() << endl;}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00029}00029 \}}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00031}\mbox{\hyperlink{class_worker_aada6d606903946c0fa1bf122a58722d3}{00031}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_worker_aada6d606903946c0fa1bf122a58722d3}{Worker::specialAttack}}(\mbox{\hyperlink{class_personage}{Personage}}\& target)}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00032}00032 \{}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00033}00033     cout << \textcolor{stringliteral}{"{}Attaque spéciale sur "{}} << target.\mbox{\hyperlink{class_game_object_a800f7c8a8df0bd57aca9f8de170d7906}{getGameObjectName}}() << endl;}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00034}00034 \}}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00036}00036 \textcolor{comment}{// unsigned Worker::receiveHealthDamage(int value)}}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00037}00037 \textcolor{comment}{// \{\}}}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00039}00039 \textcolor{comment}{// unsigned Worker::receiveExpDamage(int value)}}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00040}00040 \textcolor{comment}{// \{\}}}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00042}00042 \textcolor{comment}{// unsigned Worker::receiveHealthCare(int value)}}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00043}00043 \textcolor{comment}{// \{\}}}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00045}00045 \textcolor{comment}{// unsigned Worker::receiveExpCare(int value)}}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00046}00046 \textcolor{comment}{// \{\}}}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00048}00048 \textcolor{comment}{// void Worker::receiveShieldboost(int value)}}
+\DoxyCodeLine{\Hypertarget{_worker_8cpp_source_l00049}00049 \textcolor{comment}{// \{\}}}
 
 \end{DoxyCode}

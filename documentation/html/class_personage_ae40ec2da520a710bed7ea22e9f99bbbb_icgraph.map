@@ -1,0 +1,5 @@
+<map id="Personage::increaseExp" name="Personage::increaseExp">
+<area shape="rect" id="node1" title="Augmenter l&#39;expérience." alt="" coords="479,5,643,32"/>
+<area shape="rect" id="node2" href="$class_personage.html#a20ae5b420dc7d3f2715c111467a78e7c" title="pour recevoir les soins Exp Retourne les dégats réelemnt concidéré (au cas ou la personne utilise un ..." alt="" coords="248,5,431,32"/>
+<area shape="rect" id="node3" href="$class_personage.html#a45dcefc883e2db0a6562d0d8239dca6c" title=" " alt="" coords="5,5,200,32"/>
+</map>

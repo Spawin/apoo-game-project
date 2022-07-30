@@ -1,4 +1,4 @@
-.TH "Player" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.TH "Player" 3 "Samedi 30 Juillet 2022" "Jeu POA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -24,6 +24,9 @@ Player
 .RI "\fBPersonage\fP * \fBgetPersonage\fP ()"
 .br
 .ti -1c
+.RI "void \fBmanageActionToOtherPersonage\fP ()"
+.br
+.ti -1c
 .RI "void \fBmanageMove\fP (const float &deltaTime)"
 .br
 .ti -1c
@@ -38,43 +41,47 @@ Player
 .in -1c
 .SH "Description détaillée"
 .PP 
-Définition à la ligne \fB6\fP du fichier \fBPlayer\&.hpp\fP\&.
+Définition à la ligne \fB11\fP du fichier \fBPlayer\&.hpp\fP\&.
 .SH "Documentation des constructeurs et destructeur"
 .PP 
 .SS "Player::Player (\fBPersonage\fP * personage)"
 
 .PP
-Définition à la ligne \fB8\fP du fichier \fBPlayer\&.cpp\fP\&.
+Définition à la ligne \fB16\fP du fichier \fBPlayer\&.cpp\fP\&.
 .SS "Player::~Player ()"
 
 .PP
-Définition à la ligne \fB14\fP du fichier \fBPlayer\&.cpp\fP\&.
+Définition à la ligne \fB26\fP du fichier \fBPlayer\&.cpp\fP\&.
 .SH "Documentation des fonctions membres"
 .PP 
 .SS "\fBPersonage\fP * Player::getPersonage ()"
 
 .PP
-Définition à la ligne \fB25\fP du fichier \fBPlayer\&.cpp\fP\&.
+Définition à la ligne \fB37\fP du fichier \fBPlayer\&.cpp\fP\&.
 .SS "sf::Vector2f Player::getPosition () const"
 
 .PP
-Définition à la ligne \fB20\fP du fichier \fBPlayer\&.cpp\fP\&.
+Définition à la ligne \fB32\fP du fichier \fBPlayer\&.cpp\fP\&.
+.SS "void Player::manageActionToOtherPersonage ()"
+
+.PP
+Définition à la ligne \fB42\fP du fichier \fBPlayer\&.cpp\fP\&.
 .SS "void Player::manageMove (const float & deltaTime)"
 
 .PP
-Définition à la ligne \fB30\fP du fichier \fBPlayer\&.cpp\fP\&.
+Définition à la ligne \fB92\fP du fichier \fBPlayer\&.cpp\fP\&.
 .SS "void Player::render (sf::RenderTarget & target)"
 
 .PP
-Définition à la ligne \fB215\fP du fichier \fBPlayer\&.cpp\fP\&.
+Définition à la ligne \fB327\fP du fichier \fBPlayer\&.cpp\fP\&.
 .SS "void Player::update (const float & deltaTime)"
 
 .PP
-Définition à la ligne \fB208\fP du fichier \fBPlayer\&.cpp\fP\&.
+Définition à la ligne \fB312\fP du fichier \fBPlayer\&.cpp\fP\&.
 .SS "void Player::updateMousePosWindow (sf::Vector2i mousePosWindow)"
 
 .PP
-Définition à la ligne \fB203\fP du fichier \fBPlayer\&.cpp\fP\&.
+Définition à la ligne \fB307\fP du fichier \fBPlayer\&.cpp\fP\&.
 
 .SH "Auteur"
 .PP 

@@ -1,0 +1,12 @@
+<map id="Sword" name="Sword">
+<area shape="rect" id="node1" title=" " alt="" coords="541,2425,712,2591"/>
+<area shape="rect" id="node2" href="$class_armory.html" title=" " alt="" coords="516,2255,737,2376"/>
+<area shape="rect" id="node3" href="$class_item.html" title="Représente éssentiellement les object que pourra manipuler les personnages." alt="" coords="516,1761,737,2205"/>
+<area shape="rect" id="node4" href="$class_not_movable_game_object.html" title="Represente les objets imobiles. NOTE &#45; Certains de ces Object Peuvent être déplacée ou transporté par..." alt="" coords="521,1327,733,1712"/>
+<area shape="rect" id="node5" href="$class_game_object.html" title=" " alt="" coords="203,571,427,1264"/>
+<area shape="rect" id="node8" href="$class_collider.html" title=" " alt="" coords="38,1363,231,1675"/>
+<area shape="rect" id="node9" href="$class_rigidbody.html" title=" " alt="" coords="255,1459,497,1580"/>
+<area shape="rect" id="node6" href="$class_position.html" title=" " alt="" coords="5,5,336,508"/>
+<area shape="rect" id="node7" href="$struct_my_vector.html" title=" " alt="" coords="361,115,557,398"/>
+<area shape="rect" id="node10" href="$class_hall.html" title=" " alt="" coords="525,681,728,1154"/>
+</map>

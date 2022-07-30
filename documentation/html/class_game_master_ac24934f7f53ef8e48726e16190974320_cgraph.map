@@ -1,0 +1,10 @@
+<map id="GameMaster::run" name="GameMaster::run">
+<area shape="rect" id="node1" title=" " alt="" coords="5,69,128,96"/>
+<area shape="rect" id="node2" href="$class_game_master.html#abf9e9d93a26bcfd91e5c2863924c0d1a" title=" " alt="" coords="205,12,346,39"/>
+<area shape="rect" id="node4" href="$class_game_master.html#a08b8b7d117386ecb33ea75b8dd988a89" title=" " alt="" coords="203,69,347,96"/>
+<area shape="rect" id="node7" href="$class_game_master.html#a495d4518b25254927fd5b3c129ea1b5e" title=" " alt="" coords="176,132,375,159"/>
+<area shape="rect" id="node3" href="$class_collider.html#a765cffbef5d5e713672cea46c563dc67" title="C&#39;est à ce niveau qu&#39;on gère la détection de collisions." alt="" coords="476,5,588,32"/>
+<area shape="rect" id="node5" href="$class_game_master.html#a994ddff04a8411feb16cc0bf0cfdb4ec" title=" " alt="" coords="437,56,627,83"/>
+<area shape="rect" id="node6" href="$class_game_master.html#af88011b157f4e29e37ca9d6fce093196" title=" " alt="" coords="423,107,641,133"/>
+<area shape="rect" id="node8" href="$class_game_object.html#a5f826d1945fc978181c713da7fd7ccb9" title="Set the Time object." alt="" coords="457,157,607,184"/>
+</map>

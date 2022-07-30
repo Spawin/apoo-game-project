@@ -1,4 +1,4 @@
-.TH "Bag" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.TH "Bag" 3 "Samedi 30 Juillet 2022" "Jeu POA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -20,13 +20,25 @@ Est dérivée de \fBNotMovableGameObject\fP\&.
 .RI "\fB~Bag\fP ()"
 .br
 .ti -1c
-.RI "bool \fBaddItem\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type)"
+.RI "bool \fBaddItem\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type, sf::Vector2f const &coordinates)"
 .br
 .ti -1c
-.RI "bool \fBmoveItem\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type, \fBInventory\fP *to_inventory)"
+.RI "bool \fBmoveItem\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type, \fBInventory\fP *to_inventory, sf::Vector2f const &coordinates)"
 .br
 .ti -1c
 .RI "bool \fBremoveItem\fP (\fBItem\fP *item, \fBgame::inventory_items_types\fP type)"
+.br
+.ti -1c
+.RI "bool \fBhaveThisItem\fP (\fBgame::ItemsCategories\fP const &categorie) const"
+.br
+.ti -1c
+.RI "\fBgame::inventory_items_types\fP const & \fBgetInventoryItemType\fP (\fBItem\fP const *item) const"
+.br
+.ti -1c
+.RI "\fBItem\fP const * \fBgetFirstItemMatch\fP (\fBgame::ItemsCategories\fP const &categorie) const"
+.br
+.ti -1c
+.RI "\fBItem\fP * \fBgetFirstItemMatchNonConst\fP (\fBgame::ItemsCategories\fP const &categorie)"
 .br
 .ti -1c
 .RI "\fBInventory\fP * \fBgetInventory\fP ()"
@@ -45,28 +57,44 @@ Est dérivée de \fBNotMovableGameObject\fP\&.
 .SS "Membres hérités additionnels"
 .SH "Description détaillée"
 .PP 
-Définition à la ligne \fB9\fP du fichier \fBBag\&.hpp\fP\&.
+Définition à la ligne \fB15\fP du fichier \fBBag\&.hpp\fP\&.
 .SH "Documentation des constructeurs et destructeur"
 .PP 
 .SS "Bag::Bag ()"
 
 .PP
-Définition à la ligne \fB19\fP du fichier \fBBag\&.cpp\fP\&.
+Définition à la ligne \fB18\fP du fichier \fBBag\&.cpp\fP\&.
 .SS "Bag::~Bag ()"
 
 .PP
 Définition à la ligne \fB26\fP du fichier \fBBag\&.cpp\fP\&.
 .SH "Documentation des fonctions membres"
 .PP 
-.SS "bool Bag::addItem (\fBItem\fP * item, \fBgame::inventory_items_types\fP type)"
+.SS "bool Bag::addItem (\fBItem\fP * item, \fBgame::inventory_items_types\fP type, sf::Vector2f const & coordinates)"
 
 .PP
 Définition à la ligne \fB32\fP du fichier \fBBag\&.cpp\fP\&.
+.SS "\fBItem\fP const  * Bag::getFirstItemMatch (\fBgame::ItemsCategories\fP const & categorie) const"
+
+.PP
+Définition à la ligne \fB57\fP du fichier \fBBag\&.cpp\fP\&.
+.SS "\fBItem\fP * Bag::getFirstItemMatchNonConst (\fBgame::ItemsCategories\fP const & categorie)"
+
+.PP
+Définition à la ligne \fB62\fP du fichier \fBBag\&.cpp\fP\&.
 .SS "\fBInventory\fP * Bag::getInventory ()"
 
 .PP
+Définition à la ligne \fB67\fP du fichier \fBBag\&.cpp\fP\&.
+.SS "\fBgame::inventory_items_types\fP const  & Bag::getInventoryItemType (\fBItem\fP const * item) const"
+
+.PP
+Définition à la ligne \fB52\fP du fichier \fBBag\&.cpp\fP\&.
+.SS "bool Bag::haveThisItem (\fBgame::ItemsCategories\fP const & categorie) const"
+
+.PP
 Définition à la ligne \fB47\fP du fichier \fBBag\&.cpp\fP\&.
-.SS "bool Bag::moveItem (\fBItem\fP * item, \fBgame::inventory_items_types\fP type, \fBInventory\fP * to_inventory)"
+.SS "bool Bag::moveItem (\fBItem\fP * item, \fBgame::inventory_items_types\fP type, \fBInventory\fP * to_inventory, sf::Vector2f const & coordinates)"
 
 .PP
 Définition à la ligne \fB37\fP du fichier \fBBag\&.cpp\fP\&.
@@ -84,7 +112,7 @@ Définition à la ligne \fB37\fP du fichier \fBBag\&.cpp\fP\&.
 .PP
 Implémente \fBNotMovableGameObject\fP\&.
 .PP
-Définition à la ligne \fB52\fP du fichier \fBBag\&.cpp\fP\&.
+Définition à la ligne \fB72\fP du fichier \fBBag\&.cpp\fP\&.
 .SS "bool Bag::removeItem (\fBItem\fP * item, \fBgame::inventory_items_types\fP type)"
 
 .PP
@@ -92,13 +120,13 @@ Définition à la ligne \fB42\fP du fichier \fBBag\&.cpp\fP\&.
 .SS "void Bag::renderInventory (sf::RenderTarget & target)"
 
 .PP
-Définition à la ligne \fB62\fP du fichier \fBBag\&.cpp\fP\&.
+Définition à la ligne \fB82\fP du fichier \fBBag\&.cpp\fP\&.
 .SS "void Bag::update ()\fC [override]\fP, \fC [virtual]\fP"
 
 .PP
 Implémente \fBNotMovableGameObject\fP\&.
 .PP
-Définition à la ligne \fB57\fP du fichier \fBBag\&.cpp\fP\&.
+Définition à la ligne \fB77\fP du fichier \fBBag\&.cpp\fP\&.
 
 .SH "Auteur"
 .PP 

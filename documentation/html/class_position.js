@@ -2,6 +2,7 @@ var class_position =
 [
     [ "Position", "class_position.html#a34610cc3e60f5aa55ba2559743b132f7", null ],
     [ "~Position", "class_position.html#abe83df4cab7af756636b4e39e4378f4a", null ],
+    [ "getDistanceWith", "class_position.html#a6e8f96c2f8c94c7d93b22e204e67c27b", null ],
     [ "getDistanceWith", "class_position.html#aafccfd0fdf3662f2ce3a9648374f6ccb", null ],
     [ "getPosition", "class_position.html#af409de5592dd7da6fb0ccb8d1681bb19", null ],
     [ "getSpaceHeight", "class_position.html#ada8f3a2ea417b19569c095ab0601b0b3", null ],

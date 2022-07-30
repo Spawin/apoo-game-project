@@ -1,4 +1,4 @@
-.TH "Item" 3 "Jeudi 28 Juillet 2022" "Jeu POA" \" -*- nroff -*-
+.TH "Item" 3 "Samedi 30 Juillet 2022" "Jeu POA" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -17,11 +17,15 @@ Dérivée par \fBArmory\fP, \fBMoney\fP, \fBTeleportKey\fP, et \fBVial\fP\&.
 
 .in +1c
 .ti -1c
-.RI "\fBItem\fP (std::string_view const &imageSpritePath, \fBItemsCategories\fP \fBcategorie\fP)"
+.RI "\fBItem\fP (std::string_view const &imageSpritePath, \fBgame::ItemsCategories\fP \fBcategorie\fP)"
 .br
 .ti -1c
 .RI "\fB~Item\fP ()"
 .br
+.ti -1c
+.RI "\fBgame::ItemsCategories\fP const & \fBgetCategorie\fP () const"
+.br
+.RI "Get the Categorie object\&. "
 .ti -1c
 .RI "virtual void \fBonCollisionEnter\fP (\fBCollision\fP const &collision) const =0"
 .br
@@ -30,9 +34,21 @@ Dérivée par \fBArmory\fP, \fBMoney\fP, \fBTeleportKey\fP, et \fBVial\fP\&.
 .RI "virtual void \fBupdate\fP ()=0"
 .br
 .ti -1c
-.RI "virtual \fBuseOn\fP (\fBPersonage\fP &personage)=0"
+.RI "unsigned const & \fBgetValue\fP () const"
 .br
-.RI "Utiliser l'item sur le personnage indiqué "
+.RI "Returne la valeur de l'effet de cet arme\&. "
+.ti -1c
+.RI "float const & \fBgetRangeOfAction\fP () const"
+.br
+.RI "Retourne le rayon d'action de l'item\&. "
+.ti -1c
+.RI "float const & \fBgetWaitingTimeForAction\fP () const"
+.br
+.RI "Retourne le temps d'attente pour que l'action soit faite\&. "
+.ti -1c
+.RI "bool const & \fBisOneUse\fP () const"
+.br
+.RI "Indique si l'item est à usage unique\&. "
 .in -1c
 .SS "Fonctions membres protégées"
 
@@ -50,27 +66,107 @@ Dérivée par \fBArmory\fP, \fBMoney\fP, \fBTeleportKey\fP, et \fBVial\fP\&.
 .br
 .RI "Valeur de l'item à l'utilisation\&.\&.\&. "
 .ti -1c
-.RI "const \fBItemsCategories\fP \fBcategorie\fP"
+.RI "float \fBrangeOfAction\fP"
 .br
+.RI "rayon d'action de l'item "
+.ti -1c
+.RI "float \fBwaitingTimeForAction\fP"
+.br
+.RI "Le temps d'attente pour que l'action soit faite\&. "
+.ti -1c
+.RI "const \fBgame::ItemsCategories\fP \fBcategorie\fP"
+.br
+.RI "Représente les categories d'item\&. utilis pour définir les éffets\&.\&.\&. "
+.ti -1c
+.RI "bool \fBoneUse\fP"
+.br
+.RI "Indique si l'item ne peut etre utilisé qu'une seule fois\&. "
 .in -1c
 .SS "Membres hérités additionnels"
 .SH "Description détaillée"
 .PP 
 Représente éssentiellement les object que pourra manipuler les personnages\&. 
 .PP
-Définition à la ligne \fB35\fP du fichier \fBItem\&.hpp\fP\&.
+Définition à la ligne \fB22\fP du fichier \fBItem\&.hpp\fP\&.
 .SH "Documentation des constructeurs et destructeur"
 .PP 
-.SS "Item::Item (std::string_view const & imageSpritePath, \fBItemsCategories\fP categorie)"
+.SS "Item::Item (std::string_view const & imageSpritePath, \fBgame::ItemsCategories\fP categorie)"
 
 .PP
 Définition à la ligne \fB8\fP du fichier \fBItem\&.cpp\fP\&.
 .SS "Item::~Item ()"
 
 .PP
-Définition à la ligne \fB15\fP du fichier \fBItem\&.cpp\fP\&.
+Définition à la ligne \fB18\fP du fichier \fBItem\&.cpp\fP\&.
 .SH "Documentation des fonctions membres"
 .PP 
+.SS "\fBgame::ItemsCategories\fP const  & Item::getCategorie () const"
+
+.PP
+Get the Categorie object\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+\fBgame::ItemsCategories\fP& 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB22\fP du fichier \fBItem\&.cpp\fP\&.
+.SS "float const  & Item::getRangeOfAction () const"
+
+.PP
+Retourne le rayon d'action de l'item\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+float const& 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB32\fP du fichier \fBItem\&.cpp\fP\&.
+.SS "unsigned const  & Item::getValue () const"
+
+.PP
+Returne la valeur de l'effet de cet arme\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+unsigned const& 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB27\fP du fichier \fBItem\&.cpp\fP\&.
+.SS "float const  & Item::getWaitingTimeForAction () const"
+
+.PP
+Retourne le temps d'attente pour que l'action soit faite\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+float const& 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB37\fP du fichier \fBItem\&.cpp\fP\&.
+.SS "bool const  & Item::isOneUse () const"
+
+.PP
+Indique si l'item est à usage unique\&. 
+.PP
+\fBRenvoie\fP
+.RS 4
+true 
+.PP
+false 
+.RE
+.PP
+
+.PP
+Définition à la ligne \fB42\fP du fichier \fBItem\&.cpp\fP\&.
 .SS "virtual void Item::onCollisionEnter (\fBCollision\fP const & collision) const\fC [pure virtual]\fP"
 
 .PP
@@ -85,42 +181,51 @@ Définition à la ligne \fB15\fP du fichier \fBItem\&.cpp\fP\&.
 .PP
 Implémente \fBNotMovableGameObject\fP\&.
 .PP
-Implémenté dans \fBMoney\fP, \fBShield\fP, \fBSword\fP, et \fBVial\fP\&.
+Implémenté dans \fBBoxingGloves\fP, \fBMoney\fP, \fBShield\fP, \fBSword\fP, \fBTeleportKey\fP, et \fBVial\fP\&.
 .SS "virtual void Item::update ()\fC [pure virtual]\fP"
 
 .PP
 Implémente \fBNotMovableGameObject\fP\&.
 .PP
-Implémenté dans \fBMoney\fP, \fBShield\fP, \fBSword\fP, et \fBVial\fP\&.
+Implémenté dans \fBBoxingGloves\fP, \fBMoney\fP, \fBShield\fP, \fBSword\fP, \fBTeleportKey\fP, et \fBVial\fP\&.
 .SS "virtual void Item::updatePosition (float posX, float posY)\fC [protected]\fP, \fC [pure virtual]\fP"
 
 .PP
 Permet de mettre à jour la position actuelle\&. 
 .PP
 Implémente \fBNotMovableGameObject\fP\&.
-.SS "virtual Item::useOn (\fBPersonage\fP & personage)\fC [pure virtual]\fP"
-
-.PP
-Utiliser l'item sur le personnage indiqué 
-.PP
-\fBParamètres\fP
-.RS 4
-\fIpersonage\fP 
-.RE
-.PP
-
 .SH "Documentation des données membres"
 .PP 
-.SS "const \fBItemsCategories\fP Item::categorie\fC [protected]\fP"
+.SS "const \fBgame::ItemsCategories\fP Item::categorie\fC [protected]\fP"
 
 .PP
-Définition à la ligne \fB66\fP du fichier \fBItem\&.hpp\fP\&.
+Représente les categories d'item\&. utilis pour définir les éffets\&.\&.\&. 
+.PP
+Définition à la ligne \fB100\fP du fichier \fBItem\&.hpp\fP\&.
+.SS "bool Item::oneUse\fC [protected]\fP"
+
+.PP
+Indique si l'item ne peut etre utilisé qu'une seule fois\&. 
+.PP
+Définition à la ligne \fB105\fP du fichier \fBItem\&.hpp\fP\&.
+.SS "float Item::rangeOfAction\fC [protected]\fP"
+
+.PP
+rayon d'action de l'item 
+.PP
+Définition à la ligne \fB89\fP du fichier \fBItem\&.hpp\fP\&.
 .SS "unsigned Item::value\fC [protected]\fP"
 
 .PP
 Valeur de l'item à l'utilisation\&.\&.\&. 
 .PP
-Définition à la ligne \fB65\fP du fichier \fBItem\&.hpp\fP\&.
+Définition à la ligne \fB84\fP du fichier \fBItem\&.hpp\fP\&.
+.SS "float Item::waitingTimeForAction\fC [protected]\fP"
+
+.PP
+Le temps d'attente pour que l'action soit faite\&. 
+.PP
+Définition à la ligne \fB94\fP du fichier \fBItem\&.hpp\fP\&.
 
 .SH "Auteur"
 .PP 

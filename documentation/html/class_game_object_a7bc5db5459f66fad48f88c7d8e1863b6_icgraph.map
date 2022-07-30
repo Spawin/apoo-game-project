@@ -1,0 +1,9 @@
+<map id="GameObject::getGameObjectId" name="GameObject::getGameObjectId">
+<area shape="rect" id="node1" title=" " alt="" coords="461,107,665,133"/>
+<area shape="rect" id="node2" href="$class_collider.html#a5f7d036476d2bff521151c2031f20d46" title=" " alt="" coords="263,5,379,32"/>
+<area shape="rect" id="node3" href="$class_game_object.html#a9b565e5ec63bef28e5c860f724d2de7c" title="Pour initialiser les valeur par défaut du GameObject." alt="" coords="261,56,381,83"/>
+<area shape="rect" id="node5" href="$class_personage.html#a53b3b6c7865b2eb80de7c6edab217944" title=" " alt="" coords="244,107,399,133"/>
+<area shape="rect" id="node6" href="$class_game_object.html#ab82dfdb656f9051c0587e6593b2dda97" title=" " alt="" coords="229,157,413,184"/>
+<area shape="rect" id="node7" href="$class_personage.html#a1767f263a4d3681ce02ef14f9b2afae8" title=" " alt="" coords="240,208,403,235"/>
+<area shape="rect" id="node4" href="$class_game_object.html#abcc6c98f8a45808760930dc5911da2e8" title="Construct a new Game Object object." alt="" coords="5,56,181,83"/>
+</map>

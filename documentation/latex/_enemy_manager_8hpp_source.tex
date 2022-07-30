@@ -1,0 +1,47 @@
+\hypertarget{_enemy_manager_8hpp_source}{}\doxysection{Enemy\+Manager.\+hpp}
+\label{_enemy_manager_8hpp_source}\index{C:/programs\_sc/CIC/MITST06/jeu/src/include/EnemyManager.hpp@{C:/programs\_sc/CIC/MITST06/jeu/src/include/EnemyManager.hpp}}
+\mbox{\hyperlink{_enemy_manager_8hpp}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00001}00001 \textcolor{preprocessor}{\#if !defined(\_\_ENEMY\_MANAGER\_HPP\_\_)}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00002}00002 \textcolor{preprocessor}{    \#define \_\_ENEMY\_MANAGER\_HPP\_\_}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00004}00004 \textcolor{preprocessor}{    \#include "{}\mbox{\hyperlink{_enemy_8hpp}{include/Enemy.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00005}00005 \textcolor{preprocessor}{    \#include "{}\mbox{\hyperlink{_hall_8hpp}{include/Hall.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00006}00006 \textcolor{preprocessor}{    \#include <vector>}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00008}00008 \textcolor{keyword}{class }\mbox{\hyperlink{class_enemy}{Enemy}};}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00009}00009 \textcolor{keyword}{class }\mbox{\hyperlink{class_hall}{Hall}};}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00011}\mbox{\hyperlink{struct_enemy_data}{00011}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_enemy_data}{EnemyData}}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00012}00012 \{}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00017}\mbox{\hyperlink{struct_enemy_data_adb803f6ffaad2524d36e8b37740e41d5}{00017}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_enemy_data_adb803f6ffaad2524d36e8b37740e41d5}{active}};}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00018}\mbox{\hyperlink{struct_enemy_data_aa0a0a66209dc9f426271c0f2b336192f}{00018}}     \mbox{\hyperlink{class_enemy}{Enemy}}* \mbox{\hyperlink{struct_enemy_data_aa0a0a66209dc9f426271c0f2b336192f}{enemy}};}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00019}00019 \};}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00021}\mbox{\hyperlink{class_enemy_manager}{00021}} \textcolor{keyword}{class }\mbox{\hyperlink{class_enemy_manager}{EnemyManager}}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00022}00022 \{}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00023}00023 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00024}00024     \textcolor{comment}{// Constructeurs/Destructeur}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00025}00025     \mbox{\hyperlink{class_enemy_manager_a737886bd4068582bfaf8cf36929b6cfd}{EnemyManager}}(std::vector<Hall*>\& halls);}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00026}00026     \mbox{\hyperlink{class_enemy_manager_afe3583e45273d5509e59467d06a3feb6}{\string~EnemyManager}}();}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00028}00028     \textcolor{comment}{// Fonctions/Méthodes}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00029}00029     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_manager_acc8ce6c15754a5a1041614ffdd3f40d9}{createEnemy}}();}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00030}00030     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_manager_a7402fb1345dfbb8b9b841bd31973c395}{removeEnemy}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00037}00037     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_manager_ad2d9a377d3aa6020e3aa56685936f9f1}{updateEnemiesState}}(sf::Vector2f \textcolor{keyword}{const}\& playerCoordinates);}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00038}00038     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_manager_a0fd6551156815d291bbbb3bacc2fe8c1}{update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float}\& deltatime);}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00039}00039     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_enemy_manager_a96ae46ce3b26cd534d49363bcc344ed7}{render}}(sf::RenderTarget\& target);}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00041}00041 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00042}00042     \textcolor{comment}{// Variables}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00043}00043     std::vector<EnemyData> enemies;}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00045}00045     std::vector<Hall*>\& halls;}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00047}00047     \textcolor{comment}{// Fonctions d'initialisation}}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00048}00048 \};}
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{_enemy_manager_8hpp_source_l00050}00050 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_ENEMY\_MANAGER\_HPP\_\_}}
+
+\end{DoxyCode}

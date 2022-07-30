@@ -6,5 +6,6 @@ var searchData=
   ['collider_3',['Collider',['../class_collider.html#a5f7d036476d2bff521151c2031f20d46',1,'Collider']]],
   ['collision_4',['Collision',['../class_collision.html#af18b1114b2bcf62a63e996d95ff620a0',1,'Collision']]],
   ['createanimationcomponent_5',['createAnimationComponent',['../class_movable_game_object.html#a2e91f66b167c69682916b93cc5d900ae',1,'MovableGameObject']]],
-  ['createfromangle_6',['createFromAngle',['../struct_my_vector.html#aa4151ebdc189aa7572c9a2937ea63ac1',1,'MyVector']]]
+  ['createenemy_6',['createEnemy',['../class_enemy_manager.html#acc8ce6c15754a5a1041614ffdd3f40d9',1,'EnemyManager']]],
+  ['createfromangle_7',['createFromAngle',['../struct_my_vector.html#aa4151ebdc189aa7572c9a2937ea63ac1',1,'MyVector']]]
 ];
