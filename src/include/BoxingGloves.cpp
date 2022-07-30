@@ -12,6 +12,10 @@ BoxingGloves::BoxingGloves() :
 	this->setGameObjectName("BoxingGloves");
 
 	m_body.setScale((float)game::INVENTORY_BLOCK_WIDTH / (float)m_texture.getSize().x, (float)game::INVENTORY_BLOCK_WIDTH / (float)m_texture.getSize().y);
+
+	this->value = 40;
+	this->rangeOfAction = 30.f;
+	this->waitingTimeForAction = .5f;
 }
 
 BoxingGloves::~BoxingGloves()

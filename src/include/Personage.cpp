@@ -86,7 +86,7 @@ void Personage::initAnimations()
 	this->animationComponent->addAnimation(2, "RIGHT_ATTACK_SWORD", 7.f, 0, 4, 4, 4, 150, 150);			// Une fois
 	this->animationComponent->addAnimation(2, "RIGHT_DEFEND_SHIELD", 6.f, 0, 6, 3, 6, 150, 150, true);	// Une fois et reste maintenu
 	this->animationComponent->addAnimation(1, "RIGHT_HURT", 5.f, 0, 8, 1, 8, 150, 150);					// Une fois
-	this->animationComponent->addAnimation(0, "RIGHT_DIE", 10.f, 0, 10, 7, 10, 150, 150);				// Une fois et reste maintenu
+	this->animationComponent->addAnimation(0, "RIGHT_DIE", 10.f, 0, 10, 7, 10, 150, 150, true);			// Une fois et reste maintenu
 
 	this->animationComponent->addAnimation(4, "LEFT_IDLE", 10.f, 0, 1, 0, 1, 150, 150);
 	this->animationComponent->addAnimation(3, "LEFT_WALK", 10.f, 0, 1, 3, 1, 150, 150);				   //
@@ -94,7 +94,7 @@ void Personage::initAnimations()
 	this->animationComponent->addAnimation(2, "LEFT_ATTACK_SWORD", 7.f, 0, 5, 4, 5, 150, 150);		   // Une fois
 	this->animationComponent->addAnimation(2, "LEFT_DEFEND_SHIELD", 6.f, 0, 7, 3, 7, 150, 150, true);  // Une fois et reste maintenu
 	this->animationComponent->addAnimation(1, "LEFT_HURT", 5.f, 0, 9, 1, 9, 150, 150);				   // Une fois
-	this->animationComponent->addAnimation(0, "LEFT_DIE", 10.f, 0, 11, 7, 11, 150, 150);			   // Une fois et reste maintenu
+	this->animationComponent->addAnimation(0, "LEFT_DIE", 10.f, 0, 11, 7, 11, 150, 150, true);		   // Une fois et reste maintenu
 }
 
 void Personage::initEXPBar()
@@ -217,7 +217,8 @@ void Personage::decreaseHealth(int value)
 
 	m_healthLevel -= value;
 
-	if (m_healthLevel < 0)
+	// le = est nécessaire pour faire l'animation même quand le m_healthLevel arrive directement à z&ro
+	if (m_healthLevel <= 0)
 	{
 		m_healthLevel = 0;
 		// TODO - Méthode die et tous ce qui va avec
@@ -230,7 +231,8 @@ void Personage::decreaseHealth(int value)
 		// 	{
 		// 		animationName = "LEFT_" + animationName;
 		// 	}
-		this->getAnimationComponent()->play(animationName, 0.f);
+		this->getAnimationComponent()->play(animationName, 0.016417f);
+		// this->getAnimationComponent()->play("RIGHT_DIE", 0.016417f);
 	}
 }
 
@@ -332,6 +334,7 @@ unsigned Personage::receiveItemAction(int value, game::ItemsCategories categorie
 			break;
 		case game::ItemsCategories::ATTACK_BODY_TO_BODY:
 			this->receiveHealthDamage(value);
+			this->getAnimationComponent()->play("LEFT_HURT", 0.016417f);
 			break;
 		case game::ItemsCategories::ATTACK_SEMI_DISTANCE:
 

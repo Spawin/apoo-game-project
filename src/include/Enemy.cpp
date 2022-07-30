@@ -31,14 +31,21 @@ Personage* Enemy::getPersonage()
 
 void Enemy::manageMove(const float& deltaTime)
 {
-	this->personage->getAnimationComponent()->play("LEFT_IDLE", deltaTime);
-	return; // TODO - Sera géré par une ia
 
 	// On ne fait pas de mouvement quand on est mort...
 	if (this->personage->isDied())
 	{
+		// Jouer l'animation de la mort jusqu'a la fin
+		if (!this->personage->getAnimationComponent()->isDone("RIGHT_DIE") || !this->personage->getAnimationComponent()->isDone("LEFT_DIE"))
+		{
+			this->personage->getAnimationComponent()->play("LEFT_IDLE", deltaTime);
+		}
+
 		return;
 	}
+
+	this->personage->getAnimationComponent()->play("LEFT_IDLE", deltaTime);
+	return; // TODO - Sera géré par une ia
 
 	//* ATTACK_BOXING_GLOVES
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::B))
