@@ -12,6 +12,11 @@ Shield::Shield() :
 	this->setGameObjectName("Sword");
 
 	m_body.setScale((float)game::INVENTORY_BLOCK_WIDTH / (float)m_texture.getSize().x, (float)game::INVENTORY_BLOCK_WIDTH / (float)m_texture.getSize().y);
+
+	// REVIEW -
+	this->value = 40;
+	this->rangeOfAction = 30.f;
+	this->waitingTimeForAction = .2f;
 }
 
 Shield::~Shield()

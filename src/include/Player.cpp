@@ -5,6 +5,11 @@
 // Fonction static
 
 // Fonctions d'initialisation
+void Player::initPlayerStats()
+{
+	this->playerStats.score = 0;
+	this->playerStats.enemyKilled = 0;
+}
 
 // Constructeurs/Destructeur
 Player::Player(Personage* personage) :
@@ -43,7 +48,7 @@ void Player::manageActionToOtherPersonage(/*game::ItemsCategories categorie*/)
 			if (value.second->getGameObjectName().find("Enemy") != std::string::npos)
 			{
 				short& side = this->attackSateInformations.side;
-				Item const* item = this->getFirstItemMatch(game::ItemsCategories::ATTACK_BODY_TO_BODY);
+				Item const* item = this->getFirstItemMatch(this->attackSateInformations.itemCategorie);
 
 				std::cout << std::endl;
 				std::cout << "Position du joueur " << this->personage->getGameObjectName() << (*this->personage->getPosition()) << std::endl;
@@ -54,16 +59,21 @@ void Player::manageActionToOtherPersonage(/*game::ItemsCategories categorie*/)
 				if (value.second->getPosition()->getDistanceWith(this->personage->getPosition()->getX() + side * item->getRangeOfAction(), this->personage->getPosition()->getY()) < item->getRangeOfAction())
 				{
 					// On gère l'attaque
-					std::cout << "On le touche mal mal\n";
-					value.second->receiveItemAction(item->getValue(), item->getCategorie());
+					this->lastItemActionResult = value.second->receiveItemAction(item->getValue(), item->getCategorie());
+
+					// Si l'énemi meurt après l'attaque
+					if (this->lastItemActionResult.isDied)
+					{
+						this->playerStats.score += game::SCORE_ADD_AFTER_ENEMY_KILLED;
+						this->playerStats.enemyKilled++;
+					}
+
+					// On réitialise les informations et résultats d'attaque
+					this->resetLastItemActionResult();
+					this->resetAttackSateInformations();
 				}
 			}
 		}
-
-		this->attackSateInformations.attacking = false;
-		this->attackSateInformations.waitingForActionToOtherPersonageEnd = 0.0f;
-		this->attackSateInformations.itemCategorie = game::ItemsCategories::NONE;
-		this->attackSateInformations.side = 0;
 	}
 }
 
@@ -109,6 +119,12 @@ void Player::manageMove(const float& deltaTime)
 		{
 			if (this->personage->getAnimationComponent()->canPlay("RIGHT_ATTACK_SWORD"))
 			{
+				this->attackSateInformations.attacking = true;
+				this->attackSateInformations.waitingForActionToOtherPersonageEnd = this->getFirstItemMatch(game::ItemsCategories::ATTACK_SEMI_DISTANCE)->getWaitingTimeForAction();
+				this->attackSateInformations.itemCategorie = game::ItemsCategories::ATTACK_SEMI_DISTANCE;
+				this->attackSateInformations.side = this->isLastAnimationSideRight() ? 1 : -1;
+				this->manageActionToOtherPersonage(); //
+
 				std::string animationName = "ATTACK_SWORD";
 				// if (this->lastSideIsRight)
 				if (this->isLastAnimationSideRight())
@@ -128,6 +144,12 @@ void Player::manageMove(const float& deltaTime)
 		{
 			if (this->personage->getAnimationComponent()->canPlay("RIGHT_DEFEND_SHIELD"))
 			{
+				this->attackSateInformations.attacking = true; // REVIEW - ET renommer en itemActionstateInformation
+				this->attackSateInformations.waitingForActionToOtherPersonageEnd = this->getFirstItemMatch(game::ItemsCategories::DEFEND)->getWaitingTimeForAction();
+				this->attackSateInformations.itemCategorie = game::ItemsCategories::DEFEND;
+				this->attackSateInformations.side = this->isLastAnimationSideRight() ? 1 : -1;
+				this->manageActionToOtherPersonage(); //
+
 				std::string animationName = "DEFEND_SHIELD";
 				// if (this->lastSideIsRight)
 				if (this->isLastAnimationSideRight())
@@ -264,4 +286,21 @@ game::AnimationSide Player::getLastAnimationSide()
 bool Player::isLastAnimationSideRight()
 {
 	return this->getLastAnimationSide() == game::AnimationSide::RIGHT;
+}
+
+void Player::resetLastItemActionResult()
+{
+	this->lastItemActionResult.healthDecrease = 0;
+	this->lastItemActionResult.healthIncrease = 0;
+	this->lastItemActionResult.experienceDecrease = 0;
+	this->lastItemActionResult.experienceincrease = 0;
+	this->lastItemActionResult.isDied = false;
+}
+
+void Player::resetAttackSateInformations()
+{
+	this->attackSateInformations.attacking = false;
+	this->attackSateInformations.waitingForActionToOtherPersonageEnd = 0.0f;
+	this->attackSateInformations.itemCategorie = game::ItemsCategories::NONE;
+	this->attackSateInformations.side = 0;
 }

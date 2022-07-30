@@ -29,7 +29,14 @@ public:
 
 private:
 	// Variables
+	game::PlayerStats playerStats;
 	Personage* personage;
+
+	/**
+	 * @brief Il s'agit du resultat de la dernière utilisation d'un item sur un personnage (sur soi meme ou pas)
+	 *
+	 */
+	game::ItemActionResult lastItemActionResult;
 	/**
 	 * @brief Permet de controler de quelque coté diriger une animation (gauche ou droite)
 	 * TODO - Placer cela dans l'animation!
@@ -42,11 +49,18 @@ private:
 	game::AttackSateInformations attackSateInformations;
 
 	// Fonctions d'initialisation
+	void initPlayerStats();
 
 	bool haveThisItem(game::ItemsCategories const& categorie) const;
 	Item const* getFirstItemMatch(game::ItemsCategories const& categorie) const;
 	game::AnimationSide getLastAnimationSide();
 	bool isLastAnimationSideRight();
+	/**
+	 * @brief Remet les valeur par défaut
+	 *
+	 */
+	void resetLastItemActionResult();
+	void resetAttackSateInformations();
 };
 
 #endif // __PLAYER_HPP__

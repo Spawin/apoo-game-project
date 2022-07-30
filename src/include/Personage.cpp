@@ -341,40 +341,56 @@ void Personage::renderBagInventory(sf::RenderTarget& target)
 }
 
 //* ----------------------------  Gestion des effets d'item (interne externe)
-unsigned Personage::receiveItemAction(int value, game::ItemsCategories categorie)
+game::ItemActionResult Personage::receiveItemAction(int value, game::ItemsCategories categorie)
 {
+	game::ItemActionResult res;
+	res.healthDecrease = 0;
+	res.healthIncrease = 0;
+	res.experienceDecrease = 0;
+	res.experienceincrease = 0;
+	res.isDied = false;
+
 	switch (categorie)
 	{
 		case game::ItemsCategories::DEFEND:
-
+			// TODO -
+			this->receiveShieldboost(value);
 			break;
 		case game::ItemsCategories::ATTACK_BODY_TO_BODY:
-			this->receiveHealthDamage(value);
+			res.healthDecrease = this->receiveHealthDamage(value);
 			this->playCorrectSideHurtAnimation();
 			break;
 		case game::ItemsCategories::ATTACK_SEMI_DISTANCE:
-
+			res.healthDecrease = this->receiveHealthDamage(value);
+			this->playCorrectSideHurtAnimation();
 			break;
 		case game::ItemsCategories::ATTACK_DISTANCE:
-
+			res.healthDecrease = this->receiveHealthDamage(value);
+			this->playCorrectSideHurtAnimation();
 			break;
 		case game::ItemsCategories::VIAL_EXP:
-
+			res.experienceincrease = this->receiveExpCare(value);
+			// TODO - Une animation peut ètre
 			break;
 		case game::ItemsCategories::VIAL_HEALTH:
-
+			res.healthIncrease = this->receiveHealthCare(value);
+			// TODO -
 			break;
 		case game::ItemsCategories::VIAL_ATTACK_EXP:
-
+			res.experienceDecrease = this->receiveExpDamage(value);
+			this->playCorrectSideHurtAnimation();
 			break;
 		case game::ItemsCategories::VIAL_ATTACK_HEALTH:
-
+			res.healthDecrease = this->receiveHealthDamage(value);
+			this->playCorrectSideHurtAnimation();
 			break;
 
 		default:
 			break;
 	}
-	return 0;
+
+	res.isDied = this->isDied();
+	return res;
 }
 // TODO - Utiliser tous les systèmesde complexification de combat
 unsigned Personage::receiveHealthDamage(int value)
@@ -408,6 +424,7 @@ unsigned Personage::receiveExpCare(int value)
 void Personage::receiveShieldboost(int value)
 {
 	// REVIEW -
+
 	this->m_shieldBoost = value;
 }
 

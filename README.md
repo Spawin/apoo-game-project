@@ -1,3 +1,8 @@
+## BuGS
+- Quand on se dirige vers l'enemi en frappant (collé à l'enemi avec la direction enfoncé et on l'ance animation), on peut etre bloqué et ne plus pouvoir bouger
+
+# A la mort d'un énemi, on va lancer un compte à rebour pour ajouter un nouvel énemi
+
 # Quelque points :
 - là ou il y a les override, ajouter virtual devant
 

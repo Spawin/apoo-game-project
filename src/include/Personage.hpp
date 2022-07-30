@@ -76,7 +76,7 @@ public:
 	virtual void simpleAttack(Personage& target) = 0;
 	virtual void specialAttack(Personage& target) = 0;
 
-	virtual unsigned receiveItemAction(int value, game::ItemsCategories categorie);
+	virtual game::ItemActionResult receiveItemAction(int value, game::ItemsCategories categorie);
 
 	/**
 	 * @brief Get the Last Animation Side

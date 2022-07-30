@@ -48,6 +48,8 @@ constexpr int PERSONNAGE_MAX_EXP = 100;
 
 constexpr int INVENTORY_BLOCK_WIDTH = 80;
 
+constexpr int SCORE_ADD_AFTER_ENEMY_KILLED = 50;
+
 // constexpr int NOMBER_OF_WALLS = 32;
 
 enum movement_states
@@ -124,6 +126,45 @@ struct AttackSateInformations
 	game::ItemsCategories itemCategorie;
 	// -1 pour gauche, 1 pour doite  et zéro pour neutre
 	short int side;
+};
+
+/**
+ * @brief Resultat retourné à l'utilisateur après une l'utilisation d'un item sur un personage
+ *
+ */
+struct ItemActionResult
+{
+	/**
+	 * @brief Valeur de qanté diminué
+	 *
+	 */
+	short int healthDecrease;
+	/**
+	 * @brief Valeur de l'expérience diminué
+	 *
+	 */
+	short int experienceDecrease;
+	/**
+	 * @brief Valeur de qanté Augmenté
+	 *
+	 */
+	short int healthIncrease;
+	/**
+	 * @brief Valeur de l'expérience Augmenté
+	 *
+	 */
+	short int experienceincrease;
+	/**
+	 * @brief Le personage attaqué est mort?
+	 *
+	 */
+	bool isDied;
+};
+
+struct PlayerStats
+{
+	unsigned score;
+	unsigned enemyKilled;
 };
 
 } // namespace gui
