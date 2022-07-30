@@ -508,9 +508,9 @@ bool gui::Inventory::addItem(const Item* item, game::inventory_items_types type)
 		case game::inventory_items_types::ARMORY: {
 			float x = 80.f + 80.f * 4.f + 80.f * (this->inventoryButtons[type].size() % 2);
 			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
-			this->inventoryButtons[type].push_back(new gui::InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));
+			this->inventoryButtons[type][item->getGameObjectId()] = new gui::InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50));
 
-			this->inventoryItemDatas.push_back({ item, short(this->inventoryButtons[type].size() - 1) });
+			// this->inventoryItemDatas.push_back({ item, short(this->inventoryButtons[type].size() - 1) });
 			return true;
 		}
 		break;
@@ -524,39 +524,39 @@ bool gui::Inventory::addItem(const Item* item, game::inventory_items_types type)
 					// std::cout << "ancien " << std::stoi(this->inventoryButtons[type][0]->getText()) << std::endl;
 					// std::cout << "maintenant " << std::to_string(std::stoi(this->inventoryButtons[type][0]->getText()) + 1) << std::endl;
 					// on recupère l'ancien text, on a joute 1 et on met à jour l'affichage
-					this->inventoryButtons[type][0]->setText(std::to_string(std::stoi(this->inventoryButtons[type][0]->getText()) + 1));
+					this->inventoryButtons[type].begin()->second->setText(std::to_string(std::stoi(this->inventoryButtons[type].begin()->second->getText()) + 1));
 				}
 				catch (const std::exception& e)
 				{
 					// TODO -
 				}
 
-				this->inventoryItemDatas.push_back({ item, short(this->inventoryButtons[type].size() - 1) });
+				// this->inventoryItemDatas.push_back({ item, short(this->inventoryButtons[type].size() - 1) });
 				return true;
 			}
 			float x = 80.f + 80.f * 10.f + 80.f * (this->inventoryButtons[type].size() % 2);
 			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
-			this->inventoryButtons[type].push_back(new gui::InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50), sf::Color(255, 255, 255, 255), sf::Color(255, 255, 255, 255), sf::Color(20, 20, 20, 50)));
+			this->inventoryButtons[type][item->getGameObjectId()] = new gui::InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50), sf::Color(255, 255, 255, 255), sf::Color(255, 255, 255, 255), sf::Color(20, 20, 20, 50));
 
-			this->inventoryItemDatas.push_back({ item, short(this->inventoryButtons[type].size() - 1) });
+			// this->inventoryItemDatas.push_back({ item, short(this->inventoryButtons[type].size() - 1) });
 			return true;
 		}
 		break;
 		case game::inventory_items_types::TELEPORTKEY: {
 			float x = 80.f + 80.f * 7.f + 80.f * (this->inventoryButtons[type].size() % 2);
 			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
-			this->inventoryButtons[type].push_back(new gui::InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));
+			this->inventoryButtons[type][item->getGameObjectId()] = new gui::InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50));
 
-			this->inventoryItemDatas.push_back({ item, short(this->inventoryButtons[type].size() - 1) });
+			// this->inventoryItemDatas.push_back({ item, short(this->inventoryButtons[type].size() - 1) });
 			return true;
 		}
 		break;
 		case game::inventory_items_types::VIAL: {
 			float x = 80.f + 80.f + 80.f * (this->inventoryButtons[type].size() % 2);
 			float y = 130.f + 80.f + 80 * (floor((float)this->inventoryButtons[type].size() / 2.f));
-			this->inventoryButtons[type].push_back(new gui::InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50)));
+			this->inventoryButtons[type][item->getGameObjectId()] = new gui::InventoryButton(x, y, item->getSprite(), sf::Color(70, 70, 70, 50), sf::Color(250, 250, 250, 50), sf::Color(20, 20, 20, 50));
 
-			this->inventoryItemDatas.push_back({ item, short(this->inventoryButtons[type].size() - 1) });
+			// this->inventoryItemDatas.push_back({ item, short(this->inventoryButtons[type].size() - 1) });
 			return true;
 		}
 		break;
@@ -570,20 +570,25 @@ bool gui::Inventory::addItem(const Item* item, game::inventory_items_types type)
 
 bool gui::Inventory::removeItem(const Item* item /*, sf::Sprite const& itemSprite*/, game::inventory_items_types type)
 {
-	for (size_t i = 0; i < this->inventoryItemDatas.size(); i++)
-	{
-		if (this->inventoryItemDatas[i].item == item)
-		{
+	delete this->inventoryButtons[type][item->getGameObjectId()];
+	// this->inventoryButtons[type].erase(std::remove(this->inventoryButtons[type].begin(), this->inventoryButtons[type].end(), this->inventoryButtons[type][item->getGameObjectId()]), this->inventoryButtons[type].end());
+	this->inventoryButtons[type].erase(item->getGameObjectId());
+	//
+	return true;
+	// for (size_t i = 0; i < this->inventoryItemDatas.size(); i++)
+	// {
+	// 	if (this->inventoryItemDatas[i].item == item)
+	// 	{
 
-			// REVIEW -
-			// vec.erase(std::remove(vec.begin(), vec.end(), value), vec.end());
-			// this->inventoryItemSprites[type].erase(std::remove(this->inventoryItemSprites[type].begin(), this->inventoryItemSprites[type].end(), itemSprite), this->inventoryItemSprites[type].end());
-			delete this->inventoryButtons[type][this->inventoryItemDatas[i].Index];
-			this->inventoryButtons[type].erase(std::remove(this->inventoryButtons[type].begin(), this->inventoryButtons[type].end(), this->inventoryButtons[type][this->inventoryItemDatas[i].Index]), this->inventoryButtons[type].end());
-			//
-			return true;
-		}
-	}
+	// 		// REVIEW -
+	// 		// vec.erase(std::remove(vec.begin(), vec.end(), value), vec.end());
+	// 		// this->inventoryItemSprites[type].erase(std::remove(this->inventoryItemSprites[type].begin(), this->inventoryItemSprites[type].end(), itemSprite), this->inventoryItemSprites[type].end());
+	// 		delete this->inventoryButtons[type][this->inventoryItemDatas[i].Index];
+	// 		this->inventoryButtons[type].erase(std::remove(this->inventoryButtons[type].begin(), this->inventoryButtons[type].end(), this->inventoryButtons[type][this->inventoryItemDatas[i].Index]), this->inventoryButtons[type].end());
+	// 		//
+	// 		return true;
+	// 	}
+	// }
 
 	return false;
 }
@@ -593,9 +598,13 @@ void gui::Inventory::updateMousePosWindow(sf::Vector2i mousePosWindow)
 	// Hover
 	for (auto&& inventoryButtonVectorPair : this->inventoryButtons)
 	{
-		for (size_t i = 0; i < inventoryButtonVectorPair.second.size(); i++)
+		// for (size_t i = 0; i < inventoryButtonVectorPair.second.size(); i++)
+		// {
+		// 	inventoryButtonVectorPair.second[i]->update(mousePosWindow);
+		// }
+		for (auto&& inventoryButtonVectorPair2 : inventoryButtonVectorPair.second)
 		{
-			inventoryButtonVectorPair.second[i]->update(mousePosWindow);
+			inventoryButtonVectorPair2.second->update(mousePosWindow);
 		}
 	}
 }
@@ -616,9 +625,14 @@ void gui::Inventory::render(sf::RenderTarget& target)
 
 	for (auto it = this->inventoryButtons.begin(); it != this->inventoryButtons.end(); it++)
 	{
-		for (size_t i = 0; i < it->second.size(); i++)
+		// for (size_t i = 0; i < it->second.size(); i++)
+		// {
+		// 	it->second[i]->render(target);
+		// }
+
+		for (auto&& inventoryButtonVectorPair2 : it->second)
 		{
-			it->second[i]->render(target);
+			inventoryButtonVectorPair2.second->render(target);
 		}
 	}
 }
@@ -637,7 +651,9 @@ void gui::Inventory::setGraphicsElementPosition(sf::View const& view)
 
 	for (auto it = this->inventoryButtons.begin(); it != this->inventoryButtons.end(); it++)
 	{
-		for (size_t i = 0; i < it->second.size(); i++)
+		size_t i = 0;
+		for (auto&& inventoryButtonVectorPair2 : it->second)
+		// for (size_t i = 0; i < it->second.size(); i++)
 		{
 			float x(0.f);
 			float y(0.f);
@@ -671,7 +687,10 @@ void gui::Inventory::setGraphicsElementPosition(sf::View const& view)
 				default:
 					break;
 			}
-			it->second[i]->setPosition(x, y, addX, addY);
+			// it->second[i]->setPosition(x, y, addX, addY);
+			// TODO - renomer les inventoryButtonVectorPair2
+			inventoryButtonVectorPair2.second->setPosition(x, y, addX, addY);
+			i++;
 		}
 	}
 }

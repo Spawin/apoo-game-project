@@ -23,6 +23,8 @@ public:
 	bool addItem(Item* item, game::inventory_items_types type, sf::Vector2f const& coordinates);
 	bool moveItem(Item* item, game::inventory_items_types type, Inventory* to_inventory, sf::Vector2f const& coordinates);
 	bool removeItem(Item* item, game::inventory_items_types type);
+	bool drop(Item* item, game::inventory_items_types type, sf::Vector2f const& coordinates, bool directErase = true);
+	bool dropAll(sf::Vector2f const& coordinates);
 
 	bool haveThisItem(game::ItemsCategories const& categorie) const;
 	game::inventory_items_types const& getInventoryItemType(Item const* item) const;

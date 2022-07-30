@@ -1,6 +1,7 @@
 #include "include/GameState.hpp"
 #include "include/Gui.hpp"
 #include "include/House.hpp"
+#include "include/Inventory.hpp"
 #include "include/Lounge.hpp"
 #include "include/MovableGameObject.hpp"
 #include "include/Room.hpp"
@@ -14,6 +15,7 @@ class Lounge;
 class MovableGameObject;
 class Room;
 class Soldier;
+class Inventory;
 
 // REVIEW -
 namespace gui
@@ -283,6 +285,20 @@ void GameState::render(sf::RenderTarget* target)
 		if (hall->isIn(this->player->getPosition()))
 		{
 			hall->render(renderTexture);
+
+			for (auto&& pair : Inventory::getNotInventoriedItemsNonConst())
+			{
+				for (size_t i = 0; i < pair.second.size(); i++)
+				{
+					if (hall->isIn(pair.second[i]->getPosition()->getPosition()))
+					{
+						std::cout << "Cet item est libre\n";
+						std::cout << "Ces coordonnes " << (*pair.second[i]->getPosition()) << std::endl;
+
+						pair.second[i]->show(renderTexture);
+					}
+				}
+			}
 		}
 	}
 

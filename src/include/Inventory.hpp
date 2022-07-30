@@ -26,6 +26,8 @@ public:
 	bool add(Item* item, game::inventory_items_types type, sf::Vector2f const& coordinates);
 	bool move(Item* item, game::inventory_items_types type, Inventory* to_inventory, sf::Vector2f const& coordinates);
 	bool remove(Item* item, game::inventory_items_types type);
+	bool drop(Item* item, game::inventory_items_types type, sf::Vector2f const& coordinates, bool directErase = true);
+	bool dropAll(sf::Vector2f const& coordinates);
 
 	bool haveThisItem(game::ItemsCategories const& categorie) const;
 	/**
@@ -53,12 +55,20 @@ public:
 	gui::Inventory* getGui();
 
 	// std::map<game::inventory_items_types, std::vector<Item*>> const* getItems();
+	static std::map<game::inventory_items_types, std::vector<Item*>>& getNotInventoriedItemsNonConst();
 
 private:
 	// using ItemMap = std::map<int, std::vector<Item*>>;
 	using ItemMap = std::map<game::inventory_items_types, std::vector<Item*>>;
 	// Variables
 	ItemMap items;
+
+	/**
+	 * @brief Il s'agit des items qui ne se trouves pas dans un objet Inventory
+	 *
+	 */
+	static ItemMap notInventoriedItems;
+
 	std::map<int, int> limitPerType;
 
 	// Fonctions d'initialisation

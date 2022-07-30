@@ -44,6 +44,16 @@ bool Bag::removeItem(Item* item, game::inventory_items_types type)
 	return this->inventory->remove(item, type);
 }
 
+bool Bag::drop(Item* item, game::inventory_items_types type, sf::Vector2f const& coordinates, bool directErase)
+{
+	return this->inventory->drop(item, type, coordinates, directErase);
+}
+
+bool Bag::dropAll(sf::Vector2f const& coordinates)
+{
+	return this->inventory->dropAll(coordinates);
+}
+
 bool Bag::haveThisItem(game::ItemsCategories const& categorie) const
 {
 	return this->inventory->haveThisItem(categorie);

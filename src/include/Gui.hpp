@@ -199,7 +199,8 @@ private:
 
 	// sf::Sprite inventoryItemSprite;
 	// std::map<int, std::vector<sf::Sprite const&>> inventoryItemSprites;
-	std::map<int, std::vector<gui::InventoryButton*>> inventoryButtons;
+	// std::map<int, std::vector<gui::InventoryButton*>> inventoryButtons;
+	std::map<int, std::map<int, gui::InventoryButton*>> inventoryButtons;
 
 	std::vector<gui::InventoryItemData> inventoryItemDatas;
 

@@ -281,6 +281,9 @@ void Personage::decreaseHealth(int value)
 			animationName = "LEFT_" + animationName;
 		}
 		this->getAnimationComponent()->play(animationName, 0.016417f);
+
+		// On drop tout les items
+		this->bag->dropAll(this->getPosition()->getPosition().toVector2f());
 	}
 }
 
