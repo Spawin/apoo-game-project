@@ -114,7 +114,7 @@ class InventoryButton
 {
 public:
 	// Constructeurs/Destructeur
-	InventoryButton(float x, float y, sf::Sprite const& sprite,
+	InventoryButton(float x, float y, sf::Texture const* texture,
 		sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor,
 		sf::Color text_idle_color = sf::Color::Transparent, sf::Color text_hover_color = sf::Color::Transparent, sf::Color text_active_color = sf::Color::Transparent,
 		sf::Color outline_idle_color = sf::Color::Transparent, sf::Color outline_hover_color = sf::Color::Transparent, sf::Color outline_active_color = sf::Color::Transparent, short unsigned id = 0);
@@ -141,6 +141,7 @@ public:
 private:
 	// Variables
 	sf::Sprite sprite;
+	sf::Texture const* texture;
 
 	short unsigned buttonState;
 	short unsigned id;

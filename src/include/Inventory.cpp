@@ -131,12 +131,14 @@ bool Inventory::drop(Item* item, game::inventory_items_types type, sf::Vector2f 
 
 bool Inventory::dropAll(sf::Vector2f const& coordinates)
 {
+	size_t j = 0;
 	for (auto&& pair : this->items)
 	{
 		for (size_t i = 0; i < pair.second.size(); i++)
 		{
 			//
-			this->drop(pair.second[i], pair.first, sf::Vector2f(coordinates.x + 80 * (i % 5), coordinates.y + 80 * floor((float)i / 5.f)), false);
+			this->drop(pair.second[i], pair.first, sf::Vector2f(coordinates.x + 80 * (j % 5), coordinates.y + 80 * floor((float)j / 5.f)), false);
+			j++;
 		}
 
 		// On netoie tout ce qui concerne ces types car déjà transférés

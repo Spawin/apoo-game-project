@@ -8,7 +8,11 @@
 TeleportKey::TeleportKey() :
 	Item("content/gameObjects/teleportKey.png", game::ItemsCategories::TELEPORTKEY)
 {
-	m_body.setScale((float)game::INVENTORY_BLOCK_WIDTH / (float)m_texture.getSize().x, (float)game::INVENTORY_BLOCK_WIDTH / (float)m_texture.getSize().y);
+	this->setGameObjectName("TeleportKey");
+
+	m_body.setScale((float)game::ITEM_VIEW_WIDTH / (float)m_texture.getSize().x, (float)game::ITEM_VIEW_WIDTH / (float)m_texture.getSize().y);
+
+	this->value = 1;
 }
 
 TeleportKey::~TeleportKey()

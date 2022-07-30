@@ -50,7 +50,7 @@ Vial::Vial(/*std::string_view const& imageSpritePath, */ game::ItemsCategories c
 
 	m_body.setTexture(m_texture);
 
-	m_body.setScale((float)game::INVENTORY_BLOCK_WIDTH / (float)m_texture.getSize().x, (float)game::INVENTORY_BLOCK_WIDTH / (float)m_texture.getSize().y);
+	m_body.setScale((float)game::ITEM_VIEW_WIDTH / (float)m_texture.getSize().x, (float)game::ITEM_VIEW_WIDTH / (float)m_texture.getSize().y);
 
 	this->oneUse = true;
 }

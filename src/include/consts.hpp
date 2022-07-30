@@ -47,6 +47,7 @@ constexpr int PERSONNAGE_MAX_HEALTH = 100;
 constexpr int PERSONNAGE_MAX_EXP = 100;
 
 constexpr int INVENTORY_BLOCK_WIDTH = 80;
+constexpr int ITEM_VIEW_WIDTH = 30;
 
 constexpr int SCORE_ADD_AFTER_ENEMY_KILLED = 50;
 

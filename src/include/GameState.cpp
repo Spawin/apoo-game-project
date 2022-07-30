@@ -292,9 +292,6 @@ void GameState::render(sf::RenderTarget* target)
 				{
 					if (hall->isIn(pair.second[i]->getPosition()->getPosition()))
 					{
-						std::cout << "Cet item est libre\n";
-						std::cout << "Ces coordonnes " << (*pair.second[i]->getPosition()) << std::endl;
-
 						pair.second[i]->show(renderTexture);
 					}
 				}
