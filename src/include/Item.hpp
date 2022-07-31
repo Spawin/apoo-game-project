@@ -92,6 +92,10 @@ public:
 	 */
 	bool const& isOneUse() const;
 
+	bool const& playerMustTake() const;
+
+	void resetMustTake();
+
 protected:
 	// Variables
 	/**
@@ -120,6 +124,13 @@ protected:
 	 *
 	 */
 	bool oneUse;
+
+	/**
+	 * @brief Indique si l'item doit être ramassé par le joeur.
+	 * Par défaut c'est false (même dans étant dans l'inventaire du joeur)
+	 *
+	 */
+	bool mustTake;
 
 	// Fonctions d'initialisation
 

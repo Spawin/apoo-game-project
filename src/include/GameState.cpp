@@ -292,17 +292,38 @@ void GameState::render(sf::RenderTarget* target)
 				{
 					if (hall->isIn(pair2.second->getPosition()->getPosition()))
 					{
+						// On recupère la vue pour calculer le décalage par rapport à la souri
+						this->renderTexture.getView();
+						// REVIEW - Remplacer cesv valeurs crées
+						sf::Vector2f v(this->renderTexture.getView().getCenter());
+						sf::Vector2f s(this->renderTexture.getView().getSize());
+
+						// On affiche et  on met à jour les évène ment de clique
+						if (!this->paused)
+							pair2.second->updateMousePosWindow(sf::Vector2i(this->mousePosWindow.x + v.x - s.x / 2.f, this->mousePosWindow.y + v.y - s.y / 2.f));
 						pair2.second->show(renderTexture);
+
+						// True indique que le joeur à cliqué sur l'item
+						if (pair2.second->playerMustTake())
+						{
+							// On ajoute l'item à l'inventaire du joueur
+							if (this->player->getPersonage()->addItem(pair2.second, pair.first, sf::Vector2f()))
+							{
+								pair2.second->resetMustTake();
+
+								// On retire l'item de la liste globale
+								Inventory::getNotInventoriedItemsNonConst()[pair.first].erase(pair2.second->getGameObjectId());
+
+								// On casse la boucle pour éviter des soucis car on a modifier la map...
+								break;
+							}
+						}
 					}
 				}
-				// for (size_t i = 0; i < pair.second.size(); i++)
-				// {
-				// 	if (hall->isIn(pair.second[i]->getPosition()->getPosition()))
-				// 	{
-				// 		pair.second[i]->show(renderTexture);
-				// 	}
-				// }
 			}
+
+			// On casse la boucle car il ne peut se trouver que dans une piece à la fois...
+			break;
 		}
 	}
 
