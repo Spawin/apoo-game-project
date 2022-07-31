@@ -100,6 +100,19 @@ bool Hall::addMovableGameObject(MovableGameObject* movableGameObject)
 	return true;
 }
 
+bool Hall::removeMovableGameObject(MovableGameObject* movableGameObject)
+{
+	for (size_t i = 0; i < this->hallMovablesGameObjects.size(); i++)
+	{
+		if (this->hallMovablesGameObjects[i]->getGameObjectId() == movableGameObject->getGameObjectId())
+		{
+			this->hallMovablesGameObjects.erase(this->hallMovablesGameObjects.begin() + i);
+			return true;
+		}
+	}
+	return false;
+}
+
 bool Hall::isIn(MyVector const& coordinates) const
 {
 	// Vérifions si le point se trouve à l'intérieur du rectangle/carré

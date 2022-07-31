@@ -26,6 +26,8 @@ void Door::initHalls(std::vector<Hall*> halls)
 		{
 			this->halls.push_back(halls[i]);
 		}
+
+		this->hallsNumber = halls.size();
 	}
 
 	if (halls.size() == 0)
@@ -102,4 +104,9 @@ void Door::show(sf::RenderTarget& target)
 Door::DoorMap& Door::getDoors()
 {
 	return Door::doors;
+}
+
+std::vector<Hall*>& Door::getDoorHalls()
+{
+	return this->halls;
 }

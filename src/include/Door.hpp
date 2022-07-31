@@ -30,6 +30,12 @@ public:
 	virtual void show(sf::RenderTarget& target) override;
 
 	static DoorMap& getDoors();
+	/**
+	 * @brief Retourne les chambres auxquells la porte à accès
+	 *
+	 * @return std::vector<Hall*>&
+	 */
+	std::vector<Hall*>& getDoorHalls();
 
 protected:
 	// Variables

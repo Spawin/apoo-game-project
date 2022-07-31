@@ -30,6 +30,7 @@ public:
 	// bool removeItem(Item* item, game::inventory_items_types type);
 
 	virtual bool addMovableGameObject(MovableGameObject* movableGameObject);
+	virtual bool removeMovableGameObject(MovableGameObject* movableGameObject);
 	/**
 	 * @brief Vérifier si les coordonnées de position données se trouve dans la pièce
 	 *

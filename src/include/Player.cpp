@@ -43,7 +43,7 @@ Personage* Player::getPersonage()
 	return this->personage;
 }
 
-void Player::manageActionToOtherPersonage(/*game::ItemsCategories categorie*/)
+void Player::manageActionToOtherPersonage()
 {
 	if (this->attackSateInformations.attacking && this->attackSateInformations.waitingForActionToOtherPersonageEnd <= 0)
 	{
@@ -124,20 +124,32 @@ void Player::manageActionWithDoors()
 				{
 					// Porte simple
 					std::cout << "\n\n\tChangement de salle\n\n";
-					// for (size_t i = 0; i < pDoor.second.get; i++)
-					// {
-					// 	/* code */
-					// }
+
+					for (size_t i = 0; i < pDoor.second->getDoorHalls().size(); i++)
+					{
+						// Car pour les porte simple on a juste 2 salles
+						if (this->personage->getActualHall() != pDoor.second->getDoorHalls()[i])
+						{
+							if (this->personage->getActualHall()->getIntRect().left == pDoor.second->getDoorHalls()[i]->getIntRect().left)
+							{
+								float upOrDwn = this->personage->getActualHall()->getIntRect().top < pDoor.second->getDoorHalls()[i]->getIntRect().top ? 1.f : -1.f;
+
+								pDoor.second->getDoorHalls()[i]->addMovableGameObject(this->personage);
+								this->personage->addToHall(pDoor.second->getDoorHalls()[i]);
+								this->personage->getNonConstPosition()->setPosition(this->getPosition().x, this->getPosition().y + game::GAME_BLOCKS_WIDTH * upOrDwn);
+							}
+						}
+						else
+						{
+							// On enlève le joueur de ce hall
+							pDoor.second->getDoorHalls()[i]->removeMovableGameObject(this->personage);
+						}
+					}
 				}
 
 				// On arrète la boucle car on a trouvé la bonne porte
 				break;
 			}
-		}
-
-		if (this->hallChangeStateInformations.haveTeleportKey)
-		{
-			// REVIEW -
 		}
 	}
 
