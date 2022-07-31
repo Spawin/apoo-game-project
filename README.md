@@ -40,7 +40,7 @@
   - NotMovableGameObject Abstract (objets non déplaçables)
     -
     Chaque objet va se présenter devant le joueur ^_^
-    - Gate (la porte)
+    - Door (la porte)
     - Table
     - Shelf (étagère du commerçant)
     - Chair

@@ -28,7 +28,7 @@ game::ItemsCategories const& Item::getCategorie() const
 
 void Item::updateMousePosWindow(sf::Vector2i mousePosWindow)
 {
-	std::cout << "mousePosWindow x=" << mousePosWindow.x << " y=" << mousePosWindow.y << std::endl;
+	// std::cout << "mousePosWindow x=" << mousePosWindow.x << " y=" << mousePosWindow.y << std::endl;
 
 	if (this->m_body.getGlobalBounds().contains(mousePosWindow.x, mousePosWindow.y))
 	{
