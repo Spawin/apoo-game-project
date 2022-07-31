@@ -99,7 +99,7 @@ void Player::manageActionWithDoors()
 	{
 		for (auto&& pDoor : Door::getDoors())
 		{
-			if (pDoor.second->getPosition()->getDistanceWith(this->personage->getPosition()->getX(), this->personage->getPosition()->getY()) < 50.f)
+			if (pDoor.second->getPosition()->getDistanceWith(this->personage->getPosition()->getX(), this->personage->getPosition()->getY()) < 100.f)
 			{
 				// REVIEW - Un signale visuel au niveau de la porte
 
@@ -116,7 +116,7 @@ void Player::manageActionWithDoors()
 						if (this->getPersonage()->removeItem(this->getFirstItemMatchNonConst(game::ItemsCategories::TELEPORTKEY), game::inventory_items_types::TELEPORTKEY))
 						{
 							// TODO - On gère la téléportation -
-							std::cout << "\n\n\tChangement de salle zvec téléportation\n\n";
+							std::cout << "\n\n\tChangement de salle avec téléportation\n\n";
 						}
 					}
 				}
@@ -125,24 +125,39 @@ void Player::manageActionWithDoors()
 					// Porte simple
 					std::cout << "\n\n\tChangement de salle\n\n";
 
-					for (size_t i = 0; i < pDoor.second->getDoorHalls().size(); i++)
-					{
-						// Car pour les porte simple on a juste 2 salles
-						if (this->personage->getActualHall() != pDoor.second->getDoorHalls()[i])
-						{
-							if (this->personage->getActualHall()->getIntRect().left == pDoor.second->getDoorHalls()[i]->getIntRect().left)
-							{
-								float upOrDwn = this->personage->getActualHall()->getIntRect().top < pDoor.second->getDoorHalls()[i]->getIntRect().top ? 1.f : -1.f;
+					size_t otherHallIndex = this->personage->getActualHall() != pDoor.second->getDoorHalls()[0] ? 0 : 1;
+					size_t actualHallIndex = this->personage->getActualHall() == pDoor.second->getDoorHalls()[0] ? 0 : 1;
 
-								pDoor.second->getDoorHalls()[i]->addMovableGameObject(this->personage);
-								this->personage->addToHall(pDoor.second->getDoorHalls()[i]);
-								this->personage->getNonConstPosition()->setPosition(this->getPosition().x, this->getPosition().y + game::GAME_BLOCKS_WIDTH * upOrDwn);
-							}
-						}
-						else
+					// On enlève le joueur de ce hall
+					pDoor.second->getDoorHalls()[actualHallIndex]->removeMovableGameObject(this->personage);
+
+					// La salle avec index 0 est particulière
+					if (pDoor.second->getDoorHalls()[actualHallIndex]->getHallIndex() == 0 || pDoor.second->getDoorHalls()[otherHallIndex]->getHallIndex() == 0)
+					{
+						float upOrDwn = this->personage->getActualHall()->getIntRect().top < pDoor.second->getDoorHalls()[otherHallIndex]->getIntRect().top ? 1.f : -1.f;
+
+						pDoor.second->getDoorHalls()[otherHallIndex]->addMovableGameObject(this->personage);
+						this->personage->addToHall(pDoor.second->getDoorHalls()[otherHallIndex]);
+						this->personage->getNonConstPosition()->setPosition(this->getPosition().x, this->getPosition().y + game::GAME_BLOCKS_WIDTH * upOrDwn);
+					}
+					else
+					{
+						// D'abor on compare l'axe des x
+						if (pDoor.second->getDoorHalls()[actualHallIndex]->getIntRect().left == pDoor.second->getDoorHalls()[otherHallIndex]->getIntRect().left)
 						{
-							// On enlève le joueur de ce hall
-							pDoor.second->getDoorHalls()[i]->removeMovableGameObject(this->personage);
+							float upOrDwn = this->personage->getActualHall()->getIntRect().top < pDoor.second->getDoorHalls()[otherHallIndex]->getIntRect().top ? 1.f : -1.f;
+
+							pDoor.second->getDoorHalls()[otherHallIndex]->addMovableGameObject(this->personage);
+							this->personage->addToHall(pDoor.second->getDoorHalls()[otherHallIndex]);
+							this->personage->getNonConstPosition()->setPosition(this->getPosition().x, this->getPosition().y + game::GAME_BLOCKS_WIDTH * upOrDwn);
+						}
+						else // Soit on s'ait que les y sont les m^me
+						{
+							float leftOrRigth = this->personage->getActualHall()->getIntRect().left < pDoor.second->getDoorHalls()[otherHallIndex]->getIntRect().left ? 1.f : -1.f;
+
+							pDoor.second->getDoorHalls()[otherHallIndex]->addMovableGameObject(this->personage);
+							this->personage->addToHall(pDoor.second->getDoorHalls()[otherHallIndex]);
+							this->personage->getNonConstPosition()->setPosition(this->getPosition().x + game::GAME_BLOCKS_WIDTH * leftOrRigth, this->getPosition().y);
 						}
 					}
 				}

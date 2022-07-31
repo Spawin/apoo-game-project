@@ -156,12 +156,114 @@ void GameState::initDoors()
 	this->halls[0]->addDoor(new TransitDoor(sf::Vector2f(10 * 2 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 67 * game::GAME_BLOCKS_WIDTH), this->halls[0], this->halls[2]));
 	this->halls[0]->addDoor(new TransitDoor(sf::Vector2f(10 * 3 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 67 * game::GAME_BLOCKS_WIDTH), this->halls[0], this->halls[3]));
 	this->halls[0]->addDoor(new TeleportDoor(sf::Vector2f(10 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 80 * game::GAME_BLOCKS_WIDTH), this->halls));
-	// this->halls[0]->addDoor(new TeleportDoor());
 
-	// On commence par 1 car le zéro est une salle spéciale
-	for (size_t i = 1; i < this->halls.size(); i++)
-	{
-	}
+	// Chambre 1
+	this->halls[1]->addDoor(new TransitDoor(sf::Vector2f(10 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 56 * game::GAME_BLOCKS_WIDTH), this->halls[1], this->halls[4]));
+	this->halls[1]->addDoor(new TransitDoor(sf::Vector2f(15 * game::GAME_BLOCKS_WIDTH - game::GAME_BLOCKS_WIDTH / 2.f, (56 + 6) * game::GAME_BLOCKS_WIDTH), this->halls[1], this->halls[2]));
+	this->halls[1]->addDoor(this->halls[0]->getDoor(0));
+	this->halls[1]->addDoor(new TeleportDoor(sf::Vector2f(100, (56 + 6) * game::GAME_BLOCKS_WIDTH), this->halls));
+
+	// Chambre 2
+	this->halls[2]->addDoor(new TransitDoor(sf::Vector2f(10 * 2 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 56 * game::GAME_BLOCKS_WIDTH), this->halls[2], this->halls[5]));
+	this->halls[2]->addDoor(new TransitDoor(sf::Vector2f(26 * game::GAME_BLOCKS_WIDTH - game::GAME_BLOCKS_WIDTH / 2.f, (56 + 6) * game::GAME_BLOCKS_WIDTH), this->halls[2], this->halls[3]));
+	this->halls[2]->addDoor(this->halls[0]->getDoor(1));
+	this->halls[2]->addDoor(this->halls[1]->getDoor(1));
+
+	// Chambre 3
+	this->halls[3]->addDoor(new TransitDoor(sf::Vector2f(10 * 3 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 56 * game::GAME_BLOCKS_WIDTH), this->halls[3], this->halls[6]));
+	this->halls[3]->addDoor(new TeleportDoor(sf::Vector2f(40 * game::GAME_BLOCKS_WIDTH - game::GAME_BLOCKS_WIDTH / 2.f, (56 + 6) * game::GAME_BLOCKS_WIDTH), this->halls));
+	this->halls[3]->addDoor(this->halls[0]->getDoor(2));
+	this->halls[3]->addDoor(this->halls[2]->getDoor(1));
+
+	// Chambre 4
+	this->halls[4]->addDoor(new TransitDoor(sf::Vector2f(10 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, (45) * game::GAME_BLOCKS_WIDTH), this->halls[4], this->halls[7]));
+	this->halls[4]->addDoor(new TransitDoor(sf::Vector2f(15 * game::GAME_BLOCKS_WIDTH - game::GAME_BLOCKS_WIDTH / 2.f, (45 + 6) * game::GAME_BLOCKS_WIDTH), this->halls[4], this->halls[5]));
+	this->halls[4]->addDoor(this->halls[1]->getDoor(0));
+	this->halls[4]->addDoor(new TeleportDoor(sf::Vector2f(100, (45 + 6) * game::GAME_BLOCKS_WIDTH), this->halls));
+
+	// Chambre 5
+	this->halls[5]->addDoor(new TransitDoor(sf::Vector2f(10 * 2 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 45 * game::GAME_BLOCKS_WIDTH), this->halls[5], this->halls[8]));
+	this->halls[5]->addDoor(new TransitDoor(sf::Vector2f(26 * game::GAME_BLOCKS_WIDTH - game::GAME_BLOCKS_WIDTH / 2.f, (45 + 6) * game::GAME_BLOCKS_WIDTH), this->halls[5], this->halls[6]));
+	this->halls[5]->addDoor(this->halls[2]->getDoor(0));
+	this->halls[5]->addDoor(this->halls[4]->getDoor(1));
+
+	// Chambre 6
+	this->halls[6]->addDoor(new TransitDoor(sf::Vector2f(10 * 3 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 45 * game::GAME_BLOCKS_WIDTH), this->halls[6], this->halls[9]));
+	this->halls[6]->addDoor(new TeleportDoor(sf::Vector2f(40 * game::GAME_BLOCKS_WIDTH - game::GAME_BLOCKS_WIDTH / 2.f, (45 + 6) * game::GAME_BLOCKS_WIDTH), this->halls));
+	this->halls[6]->addDoor(this->halls[3]->getDoor(0));
+	this->halls[6]->addDoor(this->halls[5]->getDoor(1));
+
+	// Chambre 7
+	this->halls[7]->addDoor(new TransitDoor(sf::Vector2f(10 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 34 * game::GAME_BLOCKS_WIDTH), this->halls[7], this->halls[10]));
+	this->halls[7]->addDoor(new TransitDoor(sf::Vector2f(15 * game::GAME_BLOCKS_WIDTH - game::GAME_BLOCKS_WIDTH / 2.f, (34 + 6) * game::GAME_BLOCKS_WIDTH), this->halls[7], this->halls[8]));
+	this->halls[7]->addDoor(this->halls[4]->getDoor(0));
+	this->halls[7]->addDoor(new TeleportDoor(sf::Vector2f(100, (34 + 6) * game::GAME_BLOCKS_WIDTH), this->halls));
+
+	// Chambre 8
+	this->halls[8]->addDoor(new TransitDoor(sf::Vector2f(10 * 2 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 34 * game::GAME_BLOCKS_WIDTH), this->halls[8], this->halls[11]));
+	this->halls[8]->addDoor(new TransitDoor(sf::Vector2f(26 * game::GAME_BLOCKS_WIDTH - game::GAME_BLOCKS_WIDTH / 2.f, (34 + 6) * game::GAME_BLOCKS_WIDTH), this->halls[8], this->halls[9]));
+	this->halls[8]->addDoor(this->halls[5]->getDoor(0));
+	this->halls[8]->addDoor(this->halls[7]->getDoor(1));
+
+	// Chambre 9
+	this->halls[9]->addDoor(new TransitDoor(sf::Vector2f(10 * 3 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 34 * game::GAME_BLOCKS_WIDTH), this->halls[9], this->halls[12]));
+	this->halls[9]->addDoor(new TeleportDoor(sf::Vector2f(40 * game::GAME_BLOCKS_WIDTH - game::GAME_BLOCKS_WIDTH / 2.f, (34 + 6) * game::GAME_BLOCKS_WIDTH), this->halls));
+	this->halls[9]->addDoor(this->halls[6]->getDoor(0));
+	this->halls[9]->addDoor(this->halls[8]->getDoor(1));
+
+	// Chambre 10
+	this->halls[10]->addDoor(new TransitDoor(sf::Vector2f(10 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 23 * game::GAME_BLOCKS_WIDTH), this->halls[10], this->halls[13]));
+	this->halls[10]->addDoor(new TransitDoor(sf::Vector2f(15 * game::GAME_BLOCKS_WIDTH - game::GAME_BLOCKS_WIDTH / 2.f, (23 + 6) * game::GAME_BLOCKS_WIDTH), this->halls[10], this->halls[11]));
+	this->halls[10]->addDoor(this->halls[7]->getDoor(0));
+	this->halls[10]->addDoor(new TeleportDoor(sf::Vector2f(100, (23 + 6) * game::GAME_BLOCKS_WIDTH), this->halls));
+
+	// Chambre 11
+	this->halls[11]->addDoor(new TransitDoor(sf::Vector2f(10 * 2 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 23 * game::GAME_BLOCKS_WIDTH), this->halls[11], this->halls[14]));
+	this->halls[11]->addDoor(new TransitDoor(sf::Vector2f(26 * game::GAME_BLOCKS_WIDTH - game::GAME_BLOCKS_WIDTH / 2.f, (23 + 6) * game::GAME_BLOCKS_WIDTH), this->halls[11], this->halls[12]));
+	this->halls[11]->addDoor(this->halls[8]->getDoor(0));
+	this->halls[11]->addDoor(this->halls[10]->getDoor(1));
+
+	// Chambre 12
+	this->halls[12]->addDoor(new TransitDoor(sf::Vector2f(10 * 3 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 23 * game::GAME_BLOCKS_WIDTH), this->halls[12], this->halls[15]));
+	this->halls[12]->addDoor(new TeleportDoor(sf::Vector2f(40 * game::GAME_BLOCKS_WIDTH - game::GAME_BLOCKS_WIDTH / 2.f, (23 + 6) * game::GAME_BLOCKS_WIDTH), this->halls));
+	this->halls[12]->addDoor(this->halls[9]->getDoor(0));
+	this->halls[12]->addDoor(this->halls[11]->getDoor(1));
+
+	// Chambre 13
+	this->halls[13]->addDoor(new TransitDoor(sf::Vector2f(10 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 12 * game::GAME_BLOCKS_WIDTH), this->halls[13], this->halls[16]));
+	this->halls[13]->addDoor(new TransitDoor(sf::Vector2f(15 * game::GAME_BLOCKS_WIDTH - game::GAME_BLOCKS_WIDTH / 2.f, (12 + 6) * game::GAME_BLOCKS_WIDTH), this->halls[13], this->halls[14]));
+	this->halls[13]->addDoor(this->halls[10]->getDoor(0));
+	this->halls[13]->addDoor(new TeleportDoor(sf::Vector2f(100, (13 + 6) * game::GAME_BLOCKS_WIDTH), this->halls));
+
+	// Chambre 14
+	this->halls[14]->addDoor(new TransitDoor(sf::Vector2f(10 * 2 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 12 * game::GAME_BLOCKS_WIDTH), this->halls[14], this->halls[17]));
+	this->halls[14]->addDoor(new TransitDoor(sf::Vector2f(26 * game::GAME_BLOCKS_WIDTH - game::GAME_BLOCKS_WIDTH / 2.f, (12 + 6) * game::GAME_BLOCKS_WIDTH), this->halls[14], this->halls[15]));
+	this->halls[14]->addDoor(this->halls[11]->getDoor(0));
+	this->halls[14]->addDoor(this->halls[13]->getDoor(1));
+
+	// Chambre 15
+	this->halls[15]->addDoor(new TransitDoor(sf::Vector2f(10 * 3 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 12 * game::GAME_BLOCKS_WIDTH), this->halls[15], this->halls[18]));
+	this->halls[15]->addDoor(new TeleportDoor(sf::Vector2f(40 * game::GAME_BLOCKS_WIDTH - game::GAME_BLOCKS_WIDTH / 2.f, (12 + 6) * game::GAME_BLOCKS_WIDTH), this->halls));
+	this->halls[15]->addDoor(this->halls[12]->getDoor(0));
+	this->halls[15]->addDoor(this->halls[14]->getDoor(1));
+
+	// Chambre 16
+	this->halls[16]->addDoor(new TeleportDoor(sf::Vector2f(10 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 1 * game::GAME_BLOCKS_WIDTH), this->halls));
+	this->halls[16]->addDoor(new TransitDoor(sf::Vector2f(15 * game::GAME_BLOCKS_WIDTH - game::GAME_BLOCKS_WIDTH / 2.f, (1 + 6) * game::GAME_BLOCKS_WIDTH), this->halls[16], this->halls[17]));
+	this->halls[16]->addDoor(this->halls[13]->getDoor(0));
+	this->halls[16]->addDoor(new TeleportDoor(sf::Vector2f(100, (1 + 6) * game::GAME_BLOCKS_WIDTH), this->halls));
+
+	// Chambre 17
+	this->halls[17]->addDoor(new TeleportDoor(sf::Vector2f(10 * 2 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 1 * game::GAME_BLOCKS_WIDTH), this->halls));
+	this->halls[17]->addDoor(new TransitDoor(sf::Vector2f(26 * game::GAME_BLOCKS_WIDTH - game::GAME_BLOCKS_WIDTH / 2.f, (1 + 6) * game::GAME_BLOCKS_WIDTH), this->halls[17], this->halls[18]));
+	this->halls[17]->addDoor(this->halls[14]->getDoor(0));
+	this->halls[17]->addDoor(this->halls[16]->getDoor(1));
+
+	// Chambre 18
+	this->halls[18]->addDoor(new TeleportDoor(sf::Vector2f(10 * 3 * game::GAME_BLOCKS_WIDTH - game::DOORS_TEXTURE_WIDTH / .2f, 1 * game::GAME_BLOCKS_WIDTH), this->halls));
+	this->halls[18]->addDoor(new TeleportDoor(sf::Vector2f(40 * game::GAME_BLOCKS_WIDTH - game::GAME_BLOCKS_WIDTH / 2.f, (1 + 6) * game::GAME_BLOCKS_WIDTH), this->halls));
+	this->halls[18]->addDoor(this->halls[15]->getDoor(0));
+	this->halls[18]->addDoor(this->halls[17]->getDoor(1));
 }
 
 // Constructeurs/Destructeur

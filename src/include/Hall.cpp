@@ -156,6 +156,18 @@ bool Hall::addDoor(Door* door)
 	return true;
 }
 
+Door* Hall::getDoor(size_t index)
+{
+	try
+	{
+		return this->doors[index];
+	}
+	catch (const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+}
+
 void Hall::render(sf::RenderTarget& target)
 {
 	// this->renderInventory(target);

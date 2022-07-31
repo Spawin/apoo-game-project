@@ -49,6 +49,13 @@ public:
 	bool isIn(sf::Vector2f const& coordinates) const;
 	const sf::IntRect& getIntRect() const;
 	bool addDoor(Door* door);
+	/**
+	 * @brief Get the Door object with index
+	 *
+	 * @param index
+	 * @return Door*
+	 */
+	Door* getDoor(size_t index);
 
 	virtual void render(sf::RenderTarget& target);
 
