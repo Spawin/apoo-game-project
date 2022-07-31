@@ -100,6 +100,15 @@ void MainMenuState::initGui()
 void MainMenuState::resetGui()
 {}
 
+void MainMenuState::initAnimations()
+{
+	this->animationSprite.setPosition(500.f, ((float)this->stateData->graphicsSettings->resolution.height - 600) / 2.f);
+
+	this->createAnimationComponent();
+
+	this->animationComponent->addAnimation(0, "FIGHT_MENU", 5.f, 0, 0, 15, 0, 1000, 600);
+}
+
 // Constructeurs/Destructeur
 MainMenuState::MainMenuState(StateData* stateData) :
 	State(stateData)
@@ -109,6 +118,7 @@ MainMenuState::MainMenuState(StateData* stateData) :
 	// this->initKeybinds();
 	this->initGui();
 	// this->resetGui();
+	this->initAnimations();
 }
 
 MainMenuState::~MainMenuState()
@@ -119,6 +129,8 @@ MainMenuState::~MainMenuState()
 		delete it->second;
 	}
 	this->buttons.clear();
+
+	delete this->animationComponent;
 }
 
 // Fonctions/Méthodes
@@ -138,7 +150,7 @@ void MainMenuState::updateSFMLEvents(const sf::Event& sfEvent)
 {
 	if (sfEvent.type == sf::Event::KeyReleased)
 	{
-		// Racouci clavier pour lancer les chose comme en utilisant la souris
+		// REVIEW -  Racouci clavier pour lancer les chose comme en utilisant la souris
 	}
 }
 
@@ -188,6 +200,8 @@ void MainMenuState::update(const float& deltaTime)
 	this->updateInput(deltaTime);
 
 	this->updateButtons();
+
+	this->animationComponent->play("FIGHT_MENU", deltaTime);
 }
 
 void MainMenuState::renderButtons(sf::RenderTarget& target)
@@ -209,4 +223,20 @@ void MainMenuState::render(sf::RenderTarget* target)
 	target->draw(this->background);
 
 	this->renderButtons(*target);
+
+	target->draw(this->animationSprite);
+}
+
+void MainMenuState::createAnimationComponent()
+{
+	// On a une erreur quand on choisi le fichier avec tous les frames (>16)
+	if (!this->animationTexture.loadFromFile("content/main_menu/fight_menu.png"))
+	{
+		// TODO -
+		std::cerr << "Problème de chargement dimage <content/main_menu/fight_menu.png>\n";
+	}
+
+	this->animationSprite.setTexture(this->animationTexture);
+
+	this->animationComponent = new AnimationComponent(this->animationSprite, this->animationTexture);
 }

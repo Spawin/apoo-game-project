@@ -34,12 +34,18 @@ private:
 
 	std::map<std::string, gui::Button*> buttons;
 
+	AnimationComponent* animationComponent;
+	sf::Sprite animationSprite;
+	sf::Texture animationTexture;
+	void createAnimationComponent();
+
 	// Fonctions d'initialisation
 	// void initVariables();
 	void initFonts();
 	// void initKeybinds();
 	void initGui();
 	void resetGui();
+	void initAnimations();
 };
 
 #endif // __MAIN_MENU_STATE_HPP__
