@@ -140,6 +140,10 @@ void GameState::initEnemyManager()
 	this->enemyManager->createEnemy();
 }
 
+void GameState::initDoors()
+{
+}
+
 // Constructeurs/Destructeur
 GameState::GameState(StateData* stateData) :
 	State(stateData)
@@ -161,6 +165,7 @@ GameState::GameState(StateData* stateData) :
 	this->initEnemyManager();
 	// this->initTileMap();
 	// this->initSystems();
+	this->initDoors();
 }
 
 GameState::~GameState()

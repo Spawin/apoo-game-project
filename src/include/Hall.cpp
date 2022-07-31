@@ -83,6 +83,19 @@ const sf::IntRect& Hall::getIntRect() const
 	return this->intRect;
 }
 
+bool Hall::addDoor(Door* door)
+{
+	if (this->doors.size() >= game::DOORS_PER_HALL)
+	{
+		std::cerr << "Max de portes atteint!\n";
+		return false;
+	}
+
+	this->doors.push_back(door);
+
+	return true;
+}
+
 void Hall::render(sf::RenderTarget& target)
 {
 	// this->renderInventory(target);

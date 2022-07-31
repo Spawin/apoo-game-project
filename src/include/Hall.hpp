@@ -8,10 +8,12 @@
 	#include "include/consts.hpp"
 	#include "include/MyVector.hpp"
 	#include "include/MovableGameObject.hpp"
+	#include "include/Door.hpp"
 // #include "include/NotMovableGameObject.hpp"
 
 class MovableGameObject;
 class NotMovableGameObject;
+class Door;
 // class Inventory;
 // class Item;
 
@@ -45,6 +47,7 @@ public:
 	 */
 	bool isIn(sf::Vector2f const& coordinates) const;
 	const sf::IntRect& getIntRect() const;
+	bool addDoor(Door* door);
 
 	virtual void render(sf::RenderTarget& target);
 
@@ -58,6 +61,8 @@ private:
 	sf::IntRect intRect;
 
 	std::vector<const MovableGameObject*> hallMovablesGameObjects;
+
+	std::vector<Door*> doors;
 
 	// #if defined(_DEBUG)
 	sf::RectangleShape debug_shape;

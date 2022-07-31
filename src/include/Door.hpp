@@ -27,7 +27,10 @@ public:
 	virtual void update() override;
 
 protected:
+	using DoorMap = std::map<int, Door*>;
 	// Variables
+	static DoorMap doors;
+
 	/**
 	 * @brief Contour indiquant le type de port
 	 *

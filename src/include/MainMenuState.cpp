@@ -236,7 +236,5 @@ void MainMenuState::createAnimationComponent()
 		std::cerr << "Problème de chargement dimage <content/main_menu/fight_menu.png>\n";
 	}
 
-	this->animationSprite.setTexture(this->animationTexture);
-
 	this->animationComponent = new AnimationComponent(this->animationSprite, this->animationTexture);
 }

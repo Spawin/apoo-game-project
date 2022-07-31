@@ -51,6 +51,8 @@ constexpr int ITEM_VIEW_WIDTH = 30;
 
 constexpr int SCORE_ADD_AFTER_ENEMY_KILLED = 50;
 
+constexpr int DOORS_PER_HALL = 4;
+
 // constexpr int NOMBER_OF_WALLS = 32;
 
 enum movement_states

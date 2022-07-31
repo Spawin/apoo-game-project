@@ -72,6 +72,7 @@ private:
 	void initHalls();
 	void initPlayer();
 	void initEnemyManager();
+	void initDoors();
 };
 
 #endif // __GAME_STATE_HPP__

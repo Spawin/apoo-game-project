@@ -1,6 +1,11 @@
 #include "include/Door.hpp"
 
 // Fonction static
+// Initialisation à vide de la liste des portes
+Door::DoorMap Door::doors = [] {
+	DoorMap ret;
+	return ret;
+}();
 
 // Fonctions d'initialisation
 void Door::initHalls(std::vector<Hall*> halls)
@@ -39,6 +44,9 @@ Door::Door(sf::IntRect rect) :
 	NotMovableGameObject("content/gameObjects/door.png"),
 	intRect(rect)
 {
+	// On ajoute cette porte à la liste de portes
+	Door::doors[this->getGameObjectId()] = this;
+
 	this->setGameObjectName("Door");
 }
 
