@@ -72,6 +72,13 @@ enum inventory_items_types
 	MONEY
 };
 
+enum class button_states
+{
+	BTN_IDLE = 0,
+	BTN_HOVER,
+	BTN_ACTIVE
+};
+
 /**
  * @brief Représente les catégories d'items.
  * TODO - Compléter....

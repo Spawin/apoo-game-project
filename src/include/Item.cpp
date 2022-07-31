@@ -24,6 +24,17 @@ game::ItemsCategories const& Item::getCategorie() const
 	return this->categorie;
 }
 
+void Item::updateMousePosWindow(sf::Vector2i mousePosWindow)
+{
+	if (this->m_body.getGlobalBounds().contains(mousePosWindow.x, mousePosWindow.y))
+	{
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+		{
+			//
+		}
+	}
+}
+
 unsigned const& Item::getValue() const
 {
 	return this->value;

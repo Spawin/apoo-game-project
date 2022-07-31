@@ -5,8 +5,8 @@
 
 // Fonction static
 // Initialisation à vide de la liste des items n'apartenant pas à un objet inventaire
-Inventory::ItemMap Inventory::notInventoriedItems = [] {
-	ItemMap ret;
+Inventory::ItemDataMap Inventory::notInventoriedItems = [] {
+	ItemDataMap ret;
 	return ret;
 }();
 
@@ -116,7 +116,8 @@ bool Inventory::drop(Item* item, game::inventory_items_types type, sf::Vector2f 
 	item->setPosition(coordinates);
 
 	// On met dans le générale
-	Inventory::notInventoriedItems[type].push_back(item);
+	// Inventory::notInventoriedItems[type][item->getGameObjectId()] = { item, false };
+	Inventory::notInventoriedItems[type][item->getGameObjectId()] = item;
 
 	// On retire de l'aperçu
 	this->inventoryGui->removeItem(item, type);
@@ -233,7 +234,7 @@ gui::Inventory* Inventory::getGui()
 // 	return &items;
 // }
 
-std::map<game::inventory_items_types, std::vector<Item*>>& Inventory::getNotInventoriedItemsNonConst()
+std::map<game::inventory_items_types, std::map<int, Item*>>& Inventory::getNotInventoriedItemsNonConst()
 {
 	return Inventory::notInventoriedItems;
 }

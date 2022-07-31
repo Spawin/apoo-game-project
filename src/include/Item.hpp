@@ -10,6 +10,21 @@ class NotMovableGameObject;
 class Personage;
 class Collision;
 
+// // ANCHOR - Mettre dans un fichier propre?
+// /**
+//  * @brief Va permettre la manipulation lors de certains transferts
+//  *
+//  */
+// struct ItemData
+// {
+// 	Item* item;
+// 	/**
+// 	 * @brief est il pris? Si oui alors il sera récupéré et placé dans l'inventaire du joueur
+// 	 *
+// 	 */
+// 	bool taken;
+// };
+
 namespace game
 {
 enum class ItemsCategories;
@@ -41,6 +56,8 @@ public:
 	 */
 	virtual void onCollisionEnter(Collision const& collision) const = 0;
 	virtual void update() = 0;
+
+	void updateMousePosWindow(sf::Vector2i mousePosWindow);
 
 	// /**
 	//  * @brief Utiliser l'item sur le personnage indiqué

@@ -9,12 +9,12 @@
 // class Inventory;
 class Item;
 
-enum button_states
-{
-	BTN_IDLE = 0,
-	BTN_HOVER,
-	BTN_ACTIVE
-};
+// enum button_states
+// {
+// 	BTN_IDLE = 0,
+// 	BTN_HOVER,
+// 	BTN_ACTIVE
+// };
 
 namespace gui
 {
@@ -58,7 +58,7 @@ public:
 
 private:
 	// Variables
-	short unsigned buttonState;
+	game::button_states buttonState;
 	short unsigned id;
 
 	sf::RectangleShape shape;
@@ -83,6 +83,7 @@ private:
 	// Fonctions d'initialisation
 };
 
+// TODO - Remove
 class ProgressBar
 {
 
@@ -143,7 +144,7 @@ private:
 	sf::Sprite sprite;
 	sf::Texture const* texture;
 
-	short unsigned buttonState;
+	game::button_states buttonState;
 	short unsigned id;
 
 	sf::RectangleShape shape;
@@ -168,11 +169,11 @@ private:
 	// Fonctions d'initialisation
 };
 
-struct InventoryItemData
-{
-	const Item* item;
-	const short Index;
-};
+// struct InventoryItemData
+// {
+// 	const Item* item;
+// 	const short Index;
+// };
 
 class Inventory
 {
@@ -203,7 +204,7 @@ private:
 	// std::map<int, std::vector<gui::InventoryButton*>> inventoryButtons;
 	std::map<int, std::map<int, gui::InventoryButton*>> inventoryButtons;
 
-	std::vector<gui::InventoryItemData> inventoryItemDatas;
+	// std::vector<gui::InventoryItemData> inventoryItemDatas;
 
 	// static sf::Vector2i mousePosWindow;
 

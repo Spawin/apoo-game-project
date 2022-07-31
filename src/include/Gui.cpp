@@ -61,7 +61,7 @@ gui::Button::Button(float x, float y, float width, float height,
 	sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor,
 	sf::Color outline_idle_color, sf::Color outline_hover_color, sf::Color outline_active_color, short unsigned id)
 {
-	this->buttonState = BTN_IDLE;
+	this->buttonState = game::button_states::BTN_IDLE;
 	this->id = id;
 
 	this->shape.setPosition(sf::Vector2f(x, y));
@@ -102,7 +102,7 @@ gui::Button::~Button()
 // Fonctions/Méthodes
 bool gui::Button::isPressed() const
 {
-	if (this->buttonState == BTN_ACTIVE)
+	if (this->buttonState == game::button_states::BTN_ACTIVE)
 		return true;
 
 	return false;
@@ -152,35 +152,35 @@ void gui::Button::update(const sf::Vector2i& mousePosWindow)
 	// std::cout << "Position de la souris " << mousePosWindow.x << " " << mousePosWindow.y << std::endl;
 	// std::cout << "Position du shape " << this->shape.getPosition().x << " " << this->shape.getPosition().y << std::endl;
 	// Idle
-	this->buttonState = BTN_IDLE;
+	this->buttonState = game::button_states::BTN_IDLE;
 
 	// Hover
 	if (this->shape.getGlobalBounds().contains(mousePosWindow.x + this->offset.x, mousePosWindow.y + this->offset.y)) // NOTE - On a ajouter la position du shape pour tenir compte des décalage lors de l'affichage du menu dans certaines vues
 	{
-		this->buttonState = BTN_HOVER;
+		this->buttonState = game::button_states::BTN_HOVER;
 
 		// Pressed
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
-			this->buttonState = BTN_ACTIVE;
+			this->buttonState = game::button_states::BTN_ACTIVE;
 		}
 	}
 
 	switch (this->buttonState)
 	{
-		case BTN_IDLE:
+		case game::button_states::BTN_IDLE:
 			this->shape.setFillColor(this->idleColor);
 			this->text.setFillColor(this->textIdleColor);
 			this->shape.setOutlineColor(this->outlineIdleColor);
 			break;
 
-		case BTN_HOVER:
+		case game::button_states::BTN_HOVER:
 			this->shape.setFillColor(this->hoverColor);
 			this->text.setFillColor(this->textHoverColor);
 			this->shape.setOutlineColor(this->outlineHoverColor);
 			break;
 
-		case BTN_ACTIVE:
+		case game::button_states::BTN_ACTIVE:
 			this->shape.setFillColor(this->activeColor);
 			this->text.setFillColor(this->textActiveColor);
 			this->shape.setOutlineColor(this->outlineActiveColor);
@@ -292,7 +292,7 @@ gui::InventoryButton::InventoryButton(float x, float y, sf::Texture const* textu
 	sf::Color outline_idle_color, sf::Color outline_hover_color, sf::Color outline_active_color, short unsigned id) :
 	texture(texture)
 {
-	this->buttonState = BTN_IDLE;
+	this->buttonState = game::button_states::BTN_IDLE;
 	this->id = id;
 
 	this->sprite.setTexture(*this->texture);
@@ -355,7 +355,7 @@ const std::string gui::InventoryButton::getText() const
 
 bool gui::InventoryButton::isPressed() const
 {
-	if (this->buttonState == BTN_ACTIVE)
+	if (this->buttonState == game::button_states::BTN_ACTIVE)
 		return true;
 
 	return false;
@@ -389,35 +389,35 @@ void gui::InventoryButton::update(const sf::Vector2i& mousePosWindow)
 	// std::cout << "Position de la souris " << mousePosWindow.x << " " << mousePosWindow.y << std::endl;
 	// std::cout << "Position du shape " << this->shape.getPosition().x << " " << this->shape.getPosition().y << std::endl;
 	// Idle
-	this->buttonState = BTN_IDLE;
+	this->buttonState = game::button_states::BTN_IDLE;
 
 	// Hover
 	if (this->shape.getGlobalBounds().contains(mousePosWindow.x + this->offset.x, mousePosWindow.y + this->offset.y)) // NOTE - On a ajouter la position du shape pour tenir compte des décalage lors de l'affichage du menu dans certaines vues
 	{
-		this->buttonState = BTN_HOVER;
+		this->buttonState = game::button_states::BTN_HOVER;
 
 		// Pressed
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
-			this->buttonState = BTN_ACTIVE;
+			this->buttonState = game::button_states::BTN_ACTIVE;
 		}
 	}
 
 	switch (this->buttonState)
 	{
-		case BTN_IDLE:
+		case game::button_states::BTN_IDLE:
 			this->shape.setFillColor(this->idleColor);
 			this->text.setFillColor(this->textIdleColor);
 			this->shape.setOutlineColor(this->outlineIdleColor);
 			break;
 
-		case BTN_HOVER:
+		case game::button_states::BTN_HOVER:
 			this->shape.setFillColor(this->hoverColor);
 			this->text.setFillColor(this->textHoverColor);
 			this->shape.setOutlineColor(this->outlineHoverColor);
 			break;
 
-		case BTN_ACTIVE:
+		case game::button_states::BTN_ACTIVE:
 			this->shape.setFillColor(this->activeColor);
 			this->text.setFillColor(this->textActiveColor);
 			this->shape.setOutlineColor(this->outlineActiveColor);

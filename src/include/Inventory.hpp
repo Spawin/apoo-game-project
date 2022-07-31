@@ -55,11 +55,12 @@ public:
 	gui::Inventory* getGui();
 
 	// std::map<game::inventory_items_types, std::vector<Item*>> const* getItems();
-	static std::map<game::inventory_items_types, std::vector<Item*>>& getNotInventoriedItemsNonConst();
+	static std::map<game::inventory_items_types, std::map<int, Item*>>& getNotInventoriedItemsNonConst();
 
 private:
 	// using ItemMap = std::map<int, std::vector<Item*>>;
 	using ItemMap = std::map<game::inventory_items_types, std::vector<Item*>>;
+	using ItemDataMap = std::map<game::inventory_items_types, std::map<int, Item*>>;
 	// Variables
 	ItemMap items;
 
@@ -67,7 +68,7 @@ private:
 	 * @brief Il s'agit des items qui ne se trouves pas dans un objet Inventory
 	 *
 	 */
-	static ItemMap notInventoriedItems;
+	static ItemDataMap notInventoriedItems;
 
 	std::map<int, int> limitPerType;
 

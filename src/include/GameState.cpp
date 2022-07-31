@@ -288,13 +288,20 @@ void GameState::render(sf::RenderTarget* target)
 
 			for (auto&& pair : Inventory::getNotInventoriedItemsNonConst())
 			{
-				for (size_t i = 0; i < pair.second.size(); i++)
+				for (auto&& pair2 : pair.second)
 				{
-					if (hall->isIn(pair.second[i]->getPosition()->getPosition()))
+					if (hall->isIn(pair2.second->getPosition()->getPosition()))
 					{
-						pair.second[i]->show(renderTexture);
+						pair2.second->show(renderTexture);
 					}
 				}
+				// for (size_t i = 0; i < pair.second.size(); i++)
+				// {
+				// 	if (hall->isIn(pair.second[i]->getPosition()->getPosition()))
+				// 	{
+				// 		pair.second[i]->show(renderTexture);
+				// 	}
+				// }
 			}
 		}
 	}

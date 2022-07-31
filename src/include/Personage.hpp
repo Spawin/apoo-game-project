@@ -78,8 +78,8 @@ public:
 
 	void renderBagInventory(sf::RenderTarget& target);
 
-	virtual void simpleAttack(Personage& target) = 0;
-	virtual void specialAttack(Personage& target) = 0;
+	virtual void simpleAttack(Personage& target) = 0;  //! TODO -
+	virtual void specialAttack(Personage& target) = 0; //! TODO -
 
 	virtual game::ItemActionResult receiveItemAction(int value, game::ItemsCategories categorie);
 
