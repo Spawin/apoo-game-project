@@ -41,7 +41,7 @@ std::vector<sf::Vector2f> BoxCollider::getContactPoints() const
 
 bool BoxCollider::touchEachOther(Collider const& collider) const
 {
-	// REVIEW -  On va considérer que c'est un box collider
+	// REVIEW -
 
 	// Comparaison de la proximité de tous les points
 	MyVector c1 = this->parent.getPosition()->getPosition();

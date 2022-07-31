@@ -13,6 +13,7 @@ TeleportKey::TeleportKey() :
 	m_body.setScale((float)game::ITEM_VIEW_WIDTH / (float)m_texture.getSize().x, (float)game::ITEM_VIEW_WIDTH / (float)m_texture.getSize().y);
 
 	this->value = 1;
+	this->oneUse = true;
 }
 
 TeleportKey::~TeleportKey()

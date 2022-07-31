@@ -133,7 +133,7 @@ void GameState::initPlayer()
 	this->player->getPersonage()->addToHall(this->halls[0]);
 
 	// On place le joueur dans la salle de départ!
-	this->player->getPersonage()->getNonConstPosition()->setPosition(game::GAME_BLOCKS_WIDTH * 10 - game::DOORS_TEXTURE_WIDTH / .2f, game::GAME_BLOCKS_WIDTH * 78);
+	this->player->getPersonage()->getNonConstPosition()->setPosition(game::GAME_BLOCKS_WIDTH * 10 - game::DOORS_TEXTURE_WIDTH / .2f, game::GAME_BLOCKS_WIDTH * 79);
 
 	// this->testEnemy = new Enemy(new Soldier());
 	// this->halls[0]->addMovableGameObject(this->testEnemy->getPersonage());

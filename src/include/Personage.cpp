@@ -135,7 +135,7 @@ void Personage::initBag()
 	this->bag->addItem(new Sword(), game::inventory_items_types::ARMORY, sf::Vector2f());
 
 	// Start teleportkey
-	this->bag->addItem(new TeleportKey(), game::inventory_items_types::ARMORY, sf::Vector2f());
+	this->bag->addItem(new TeleportKey(), game::inventory_items_types::TELEPORTKEY, sf::Vector2f());
 
 	// Start money "3"
 	this->bag->addItem(new Money(), game::inventory_items_types::MONEY, sf::Vector2f());
@@ -350,7 +350,6 @@ void Personage::updateMousePosWindow(sf::Vector2i mousePosWindow)
 void Personage::onCollisionEnter(Collision const& collision) const
 {
 	cout << "COLLISION !!!!!\n";
-	collision.test(); // REVIEW
 	if (m_isPlayer)
 	{
 		cout << "Collision de " << m_gameObjectName << " avec "

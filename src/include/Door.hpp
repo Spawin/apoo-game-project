@@ -10,6 +10,8 @@ class Hall;
 
 class Door : public NotMovableGameObject
 {
+	using DoorMap = std::map<int, Door*>;
+
 public:
 	// Constructeurs/Destructeur
 	Door(sf::Vector2f coordinates);
@@ -27,8 +29,9 @@ public:
 	virtual void update() override;
 	virtual void show(sf::RenderTarget& target) override;
 
+	static DoorMap& getDoors();
+
 protected:
-	using DoorMap = std::map<int, Door*>;
 	// Variables
 	static DoorMap doors;
 

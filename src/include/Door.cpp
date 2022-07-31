@@ -1,4 +1,5 @@
 #include "include/Door.hpp"
+#include "include/BoxCollider.hpp"
 #include "include/consts.hpp"
 
 // Fonction static
@@ -48,6 +49,8 @@ Door::Door(sf::Vector2f coordinates) :
 	// On ajoute cette porte à la liste de portes
 	Door::doors[this->getGameObjectId()] = this;
 
+	// m_collider = new BoxCollider((*this), game::DOORS_TEXTURE_WIDTH * 2 / 3, game::DOORS_TEXTURE_HEIGHT * 2 / 3, { game::DOORS_TEXTURE_WIDTH, 0 });
+
 	this->m_body.setOrigin(game::DOORS_TEXTURE_WIDTH / 2.f, game::DOORS_TEXTURE_HEIGHT);
 	this->updatePosition(coordinates.x, coordinates.y);
 
@@ -94,4 +97,9 @@ void Door::show(sf::RenderTarget& target)
 	NotMovableGameObject::show(target);
 
 	target.draw(this->rectShape);
+}
+
+Door::DoorMap& Door::getDoors()
+{
+	return Door::doors;
 }

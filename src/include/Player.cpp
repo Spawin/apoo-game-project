@@ -1,5 +1,7 @@
 #include "include/Player.hpp"
+#include "include/Door.hpp"
 #include "include/GameObject.hpp"
+#include <string>
 
 class GameObject;
 
@@ -19,6 +21,8 @@ Player::Player(Personage* personage) :
 	// this->lastSideIsRight = true;
 	this->personage->setLastAnimationSide(game::AnimationSide::RIGHT);
 	this->attackSateInformations.attacking = false;
+
+	this->resetHallChangeStateInformations();
 
 	this->personage->setGameObjectName("Player");
 }
@@ -89,6 +93,57 @@ void Player::manageActionToOtherPersonage(/*game::ItemsCategories categorie*/)
 	}
 }
 
+void Player::manageActionWithDoors()
+{
+	if (this->hallChangeStateInformations.changeHall)
+	{
+		for (auto&& pDoor : Door::getDoors())
+		{
+			if (pDoor.second->getPosition()->getDistanceWith(this->personage->getPosition()->getX(), this->personage->getPosition()->getY()) < 50.f)
+			{
+				// REVIEW - Un signale visuel au niveau de la porte
+
+				// Si la porte est une porte de téléportation, on vérifie si on a une clé de téléportation et on l'en lève
+				if (pDoor.second->getGameObjectName().find("TeleportDoor") != std::string::npos)
+				{
+					if (!this->hallChangeStateInformations.haveTeleportKey)
+					{
+						this->resetHallChangeStateInformations();
+						return;
+					}
+					else
+					{
+						if (this->getPersonage()->removeItem(this->getFirstItemMatchNonConst(game::ItemsCategories::TELEPORTKEY), game::inventory_items_types::TELEPORTKEY))
+						{
+							// TODO - On gère la téléportation -
+							std::cout << "\n\n\tChangement de salle zvec téléportation\n\n";
+						}
+					}
+				}
+				else
+				{
+					// Porte simple
+					std::cout << "\n\n\tChangement de salle\n\n";
+					// for (size_t i = 0; i < pDoor.second.get; i++)
+					// {
+					// 	/* code */
+					// }
+				}
+
+				// On arrète la boucle car on a trouvé la bonne porte
+				break;
+			}
+		}
+
+		if (this->hallChangeStateInformations.haveTeleportKey)
+		{
+			// REVIEW -
+		}
+	}
+
+	this->resetHallChangeStateInformations();
+}
+
 void Player::manageMove(const float& deltaTime)
 {
 	// std::cout << "le deltatime " << deltaTime << std::endl;
@@ -99,12 +154,26 @@ void Player::manageMove(const float& deltaTime)
 		return;
 	}
 
+	// Pour le changement de salle
+	if (!this->hallChangeStateInformations.changeHall)
+	{
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::M))
+		{
+			this->hallChangeStateInformations.changeHall = true;
+			this->hallChangeStateInformations.haveTeleportKey = this->haveThisItem(game::ItemsCategories::TELEPORTKEY);
+
+			this->manageActionWithDoors();
+		}
+	}
+
 	// bool& isAttaking = this->attackSateInformations.attacking;
 	if (!this->attackSateInformations.attacking)
 	{
 		//* VIAL
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::V))
 		{
+			// TODO - SE soigner!!!
+
 			//* SOINS SANTE
 			if ((sf::Keyboard::isKeyPressed(sf::Keyboard::Num1) || sf::Keyboard::isKeyPressed(sf::Keyboard::Numpad1)) && this->haveThisItem(game::ItemsCategories::VIAL_HEALTH))
 			{
@@ -316,6 +385,7 @@ void Player::update(const float& deltaTime)
 		// On met à jour le décompte pour l'attaque
 		this->attackSateInformations.waitingForActionToOtherPersonageEnd -= deltaTime;
 
+		this->manageActionWithDoors();
 		this->manageActionToOtherPersonage();
 	}
 
@@ -369,4 +439,10 @@ void Player::resetAttackSateInformations()
 	this->attackSateInformations.waitingForActionToOtherPersonageEnd = 0.0f;
 	this->attackSateInformations.itemCategorie = game::ItemsCategories::NONE;
 	this->attackSateInformations.side = 0;
+}
+
+void Player::resetHallChangeStateInformations()
+{
+	this->hallChangeStateInformations.changeHall = false;
+	this->hallChangeStateInformations.haveTeleportKey = false;
 }

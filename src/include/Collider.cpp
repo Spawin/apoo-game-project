@@ -87,8 +87,11 @@ void Collider::update()
 				// NOTE -  Commenté car me sort un bug que j n'ai pas envie de géré
 				// if (m_objects[it1->first]->getSprite().getGlobalBounds().intersects(m_objects[it2->first]->getSprite().getGlobalBounds()))
 				// {
-				m_objects[it1->first]->fromColliderToRigidBody();
-				m_objects[it2->first]->fromColliderToRigidBody();
+				if (m_objects[it1->first]->isArigidBody() && m_objects[it2->first]->isArigidBody())
+				{
+					m_objects[it1->first]->fromColliderToRigidBody();
+					m_objects[it2->first]->fromColliderToRigidBody();
+				}
 
 				m_objects[it1->first]->onCollisionEnter(Collision(*m_objects[it2->first]));
 				m_objects[it2->first]->onCollisionEnter(Collision(*m_objects[it1->first]));

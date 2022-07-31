@@ -141,6 +141,16 @@ struct AttackSateInformations
 };
 
 /**
+ * @brief Utilisé pour le changement de pièce
+ *
+ */
+struct HallChangeStateInformations
+{
+	bool changeHall;
+	bool haveTeleportKey;
+};
+
+/**
  * @brief Resultat retourné à l'utilisateur après une l'utilisation d'un item sur un personage
  *
  */

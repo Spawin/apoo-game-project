@@ -18,7 +18,8 @@ public:
 	sf::Vector2f getPosition() const;
 	Personage* getPersonage();
 
-	void manageActionToOtherPersonage(/*game::ItemsCategories categorie*/); // REVIEW - Private?
+	void manageActionToOtherPersonage(); // REVIEW - Private?
+	void manageActionWithDoors();
 	void manageMove(const float& deltaTime);
 	// void updateAnimation(const float& deltaTime);
 
@@ -47,6 +48,8 @@ private:
 
 	game::AttackSateInformations attackSateInformations;
 
+	game::HallChangeStateInformations hallChangeStateInformations;
+
 	// Fonctions d'initialisation
 	void initPlayerStats();
 
@@ -61,6 +64,7 @@ private:
 	 */
 	void resetLastItemActionResult();
 	void resetAttackSateInformations();
+	void resetHallChangeStateInformations();
 };
 
 #endif // __PLAYER_HPP__
