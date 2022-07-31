@@ -12,7 +12,7 @@ class Door : public NotMovableGameObject
 {
 public:
 	// Constructeurs/Destructeur
-	Door(sf::IntRect rect);
+	Door(sf::Vector2f coordinates);
 	~Door();
 
 	// Fonctions/Méthodes
@@ -25,6 +25,7 @@ public:
 	 */
 	virtual void onCollisionEnter(Collision const& collision) const override;
 	virtual void update() override;
+	virtual void show(sf::RenderTarget& target) override;
 
 protected:
 	using DoorMap = std::map<int, Door*>;
@@ -53,6 +54,12 @@ protected:
 	// Fonctions d'initialisation
 	virtual void initHalls(std::vector<Hall*> halls);
 	virtual void initHallsNumber() = 0;
+
+	/**
+	 * @brief Permet de mettre à jour la position actuelle.
+	 *
+	 */
+	virtual void updatePosition(float posX, float posY) override;
 };
 
 #endif // __DOOR_HPP__

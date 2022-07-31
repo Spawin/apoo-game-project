@@ -1,4 +1,5 @@
 #include "include/Door.hpp"
+#include "include/consts.hpp"
 
 // Fonction static
 // Initialisation à vide de la liste des portes
@@ -10,15 +11,15 @@ Door::DoorMap Door::doors = [] {
 // Fonctions d'initialisation
 void Door::initHalls(std::vector<Hall*> halls)
 {
-	if (this->hallsNumber <= -1)
+	if (this->hallsNumber == -1)
 	{
 
-		if ((short)halls.size() != this->hallsNumber)
-		{
-			// REVIEW -
-			std::cerr << "Erreur nombre de hall\n";
-			exit(-1);
-		}
+		// if ((short)halls.size() != this->hallsNumber)
+		// {
+		// 	// REVIEW -
+		// 	std::cerr << "Erreur nombre de hall\n";
+		// 	exit(-1);
+		// }
 
 		for (size_t i = 0; i < halls.size(); i++)
 		{
@@ -40,12 +41,22 @@ void Door::initHalls(std::vector<Hall*> halls)
 }
 
 // Constructeurs/Destructeur
-Door::Door(sf::IntRect rect) :
+Door::Door(sf::Vector2f coordinates) :
 	NotMovableGameObject("content/gameObjects/door.png"),
-	intRect(rect)
+	intRect(coordinates.x, coordinates.y, game::DOORS_TEXTURE_WIDTH, game::DOORS_TEXTURE_HEIGHT)
 {
 	// On ajoute cette porte à la liste de portes
 	Door::doors[this->getGameObjectId()] = this;
+
+	this->m_body.setOrigin(game::DOORS_TEXTURE_WIDTH / 2.f, game::DOORS_TEXTURE_HEIGHT);
+	this->updatePosition(coordinates.x, coordinates.y);
+
+	this->rectShape.setOrigin(game::DOORS_TEXTURE_WIDTH / 2.f, game::DOORS_TEXTURE_HEIGHT);
+	this->rectShape.setPosition(coordinates.x, coordinates.y);
+	this->rectShape.setSize(sf::Vector2f(game::DOORS_TEXTURE_WIDTH, game::DOORS_TEXTURE_HEIGHT));
+	this->rectShape.setFillColor(sf::Color::Transparent);
+	this->rectShape.setOutlineThickness(-10.f);
+	this->rectShape.setOutlineColor(sf::Color::Red);
 
 	this->setGameObjectName("Door");
 }
@@ -67,4 +78,20 @@ void Door::onCollisionEnter(Collision const& collision) const
 void Door::update()
 {
 	// this->inventory-
+}
+
+void Door::updatePosition(float posX, float posY)
+{
+	m_position->setPosition(posX, posY);
+	// On replace le body
+	m_body.setPosition(m_position->getPosition().toVector2f());
+
+	std::cout << "Position du " << m_gameObjectName << " : " << m_position << " => " << (*m_position) << std::endl;
+}
+
+void Door::show(sf::RenderTarget& target)
+{
+	NotMovableGameObject::show(target);
+
+	target.draw(this->rectShape);
 }

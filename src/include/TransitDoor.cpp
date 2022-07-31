@@ -11,11 +11,13 @@ void TransitDoor::initHallsNumber()
 }
 
 // Constructeurs/Destructeur
-TransitDoor::TransitDoor(sf::IntRect rect, std::vector<Hall*> halls) :
-	Door(rect)
+TransitDoor::TransitDoor(sf::Vector2f coordinates, Hall* first_hall, Hall* second_hall) :
+	Door(coordinates)
 {
 	this->initHallsNumber();
-	this->initHalls(halls);
+	this->initHalls({ first_hall, second_hall });
+
+	this->setGameObjectName("TransitDoor");
 }
 
 TransitDoor::~TransitDoor()

@@ -11,7 +11,14 @@ class TransitDoor : public Door
 {
 public:
 	// Constructeurs/Destructeur
-	TransitDoor(sf::IntRect rect, std::vector<Hall*> halls);
+	/**
+	 * @brief Construct a new Transit Door object
+	 *
+	 * @param coordinates
+	 * @param first_hall Celui du bas
+	 * @param second_hall Celui du haut
+	 */
+	TransitDoor(sf::Vector2f coordinates, Hall* first_hall, Hall* second_hall);
 	~TransitDoor();
 
 	// Fonctions/Méthodes

@@ -48,13 +48,12 @@ private:
 
 	// Fonctions d'initialisation
 	void initInventory();
-	// void initAnimations() override;
 
 	/**
 	 * @brief Permet de mettre à jour la position actuelle.
 	 *
 	 */
-	virtual void updatePosition(float posX, float posY);
+	virtual void updatePosition(float posX, float posY) override;
 };
 
 #endif // __BAG_HPP__

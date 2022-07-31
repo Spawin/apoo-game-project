@@ -8,7 +8,7 @@ class Hall;
 class Lounge : public Hall
 {
 public:
-	Lounge(sf::Vector2i topLeftPoint, int width, int height);
+	Lounge(size_t index, sf::Vector2i topLeftPoint, int width, int height);
 	~Lounge();
 
 private:

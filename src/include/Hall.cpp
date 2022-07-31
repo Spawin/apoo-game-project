@@ -9,7 +9,8 @@ void Hall::initInventory()
 }
 
 // Constructeurs/Destructeur
-Hall::Hall(sf::Vector2i topLeftPoint, int width, int height) :
+Hall::Hall(sf::Vector2i topLeftPoint, int width, int height, size_t index) :
+	index(index),
 	topLeftPoint(topLeftPoint),
 	width(width),
 	height(height),
@@ -29,6 +30,52 @@ Hall::Hall(sf::Vector2i topLeftPoint, int width, int height) :
 Hall::~Hall()
 {
 	// delete this->inventory;
+
+	// FIXME - Les halls doivent avoir tourjours 4 portes pour Pour eviter des erreur; si cela venait à changer, modifier cette partie
+	if (this->doors.size())
+	{
+		// On détruit toutes les porte si c'est la chambre spéciale
+		if (this->index % 2 == 0)
+		{
+
+			// Cas du 2 spécial
+			if (this->index == 2)
+			{
+				for (size_t i = 0; i < this->doors.size(); i++)
+				{
+					if (i != 2)
+					{
+						delete this->doors[i];
+					}
+					this->doors.clear();
+				}
+			}
+			else
+			{
+				// On enlève toutes les porte
+				for (size_t i = 0; i < this->doors.size(); i++)
+				{
+					delete this->doors[i];
+				}
+				this->doors.clear();
+			}
+		}
+
+		// REVIEW - Un truc plus automatique
+		if (this->index == 1 || this->index == 7 || this->index == 13)
+		{
+			// Gauche
+			delete this->doors[3]; //!
+			this->doors.clear();
+		}
+
+		if (this->index == 3 || this->index == 9 || this->index == 15)
+		{
+			// Droite
+			delete this->doors[1]; //!
+			this->doors.clear();
+		}
+	}
 }
 
 // Fonctions/Méthodes
@@ -104,6 +151,16 @@ void Hall::render(sf::RenderTarget& target)
 	// On affiche les bords des pièces
 	target.draw(this->debug_shape);
 #endif
+
+	for (size_t i = 0; i < this->doors.size(); i++)
+	{
+		this->doors[i]->show(target);
+	}
+}
+
+size_t const& Hall::getHallIndex() const
+{
+	return this->index;
 }
 
 // void Hall::renderInventory(sf::RenderTarget& target)

@@ -37,11 +37,13 @@ void TeleportDoor::initHallsNumber()
 }
 
 // Constructeurs/Destructeur
-TeleportDoor::TeleportDoor(sf::IntRect rect, std::vector<Hall*> halls) :
-	Door(rect)
+TeleportDoor::TeleportDoor(sf::Vector2f coordinates, std::vector<Hall*> halls) :
+	Door(coordinates)
 {
 	this->initHallsNumber();
 	this->initHalls(halls);
+
+	this->setGameObjectName("TeleportDoor");
 }
 
 TeleportDoor::~TeleportDoor()

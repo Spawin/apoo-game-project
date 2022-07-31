@@ -11,7 +11,7 @@ class TeleportDoor : public Door
 {
 public:
 	// Constructeurs/Destructeur
-	TeleportDoor(sf::IntRect rect, std::vector<Hall*> halls);
+	TeleportDoor(sf::Vector2f coordinates, std::vector<Hall*> halls);
 	~TeleportDoor();
 
 	// Fonctions/Méthodes

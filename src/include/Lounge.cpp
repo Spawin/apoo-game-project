@@ -5,8 +5,8 @@
 // Fonctions d'initialisation
 
 // Constructeurs/Destructeur
-Lounge::Lounge(sf::Vector2i topLeftPoint, int width, int height) :
-	Hall(topLeftPoint, width, height)
+Lounge::Lounge(size_t index, sf::Vector2i topLeftPoint, int width, int height) :
+	Hall(topLeftPoint, width, height, index)
 {
 }
 

@@ -21,7 +21,7 @@ class Hall
 {
 public:
 	// Constructeurs/Destructeur
-	Hall(sf::Vector2i topLeftPoint, int width, int height);
+	Hall(sf::Vector2i topLeftPoint, int width, int height, size_t index);
 	virtual ~Hall();
 
 	// Fonctions/Méthodes
@@ -51,8 +51,16 @@ public:
 
 	virtual void render(sf::RenderTarget& target);
 
+	size_t const& getHallIndex() const;
+
 private:
 	// Variables
+	/**
+	 * @brief Index de la pièce
+	 * NOTE: Doit être unique!!!
+	 *
+	 */
+	const size_t index;
 	// Inventory* inventory;
 	// Représente le quandrilatère qui représente les dimension de la salle
 	sf::Vector2i topLeftPoint;

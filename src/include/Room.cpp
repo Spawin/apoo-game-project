@@ -4,8 +4,8 @@
 // Fonctions d'initialisation
 
 // Constructeurs/Destructeur
-Room::Room(sf::Vector2i topLeftPoint, int width, int height) :
-	Hall(topLeftPoint, width, height)
+Room::Room(size_t index, sf::Vector2i topLeftPoint, int width, int height) :
+	Hall(topLeftPoint, width, height, index)
 {
 }
 
